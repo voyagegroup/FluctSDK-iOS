@@ -7,6 +7,8 @@ FluctSDK は [CocoaPods](http://cocoapods.org) から利用可能です
 利用するプロジェクトの`Podfile`に下記の記述を追加して下さい
 
 ```ruby
+use_frameworks!
+
 pod "FluctSDK"
 ```
 
