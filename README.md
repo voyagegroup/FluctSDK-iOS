@@ -15,7 +15,7 @@ pod "FluctSDK"
 # FluctSDK Release Note
 
 ## v4.3.2 2016/01/20
-* Swiftプロジェクト時のCocoapods利用でうまくImport出来ないバグの修正
+* Swiftプロジェクト時のCocoaPods利用でうまくImport出来ないバグの修正
 
 ## v4.3.1 2016/01/13
 * CocoaPodsに対応
