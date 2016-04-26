@@ -12,14 +12,6 @@
 		3A94CFB71ABA611100A59094 /* MovieBannerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A94CFB61ABA611100A59094 /* MovieBannerTableViewCell.m */; };
 		3ACE35AE1C3BA25C002E6E22 /* FluctSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ACE35AC1C3BA25C002E6E22 /* FluctSDK.framework */; };
 		3ACE35AF1C3BA25C002E6E22 /* GSMMovieResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3ACE35AD1C3BA25C002E6E22 /* GSMMovieResources.bundle */; };
-		8B84B68519F8BEB1006BA6B3 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B84B68419F8BEB1006BA6B3 /* CoreTelephony.framework */; };
-		8B84B68719F8BEB7006BA6B3 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B84B68619F8BEB7006BA6B3 /* CFNetwork.framework */; };
-		8B84B68B19F8BF0A006BA6B3 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B84B68A19F8BF0A006BA6B3 /* CoreMedia.framework */; };
-		8B84B68E19F8BF18006BA6B3 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B84B68C19F8BF18006BA6B3 /* Social.framework */; };
-		8B84B68F19F8BF18006BA6B3 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B84B68D19F8BF18006BA6B3 /* StoreKit.framework */; };
-		A3418CA918D999C5003E302C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3418CA818D999C5003E302C /* Foundation.framework */; };
-		A3418CAB18D999C5003E302C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3418CAA18D999C5003E302C /* CoreGraphics.framework */; };
-		A3418CAD18D999C5003E302C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3418CAC18D999C5003E302C /* UIKit.framework */; };
 		A3418CB318D999C5003E302C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A3418CB118D999C5003E302C /* InfoPlist.strings */; };
 		A3418CB518D999C5003E302C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A3418CB418D999C5003E302C /* main.m */; };
 		A3418CB918D999C5003E302C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A3418CB818D999C5003E302C /* AppDelegate.m */; };
@@ -33,13 +25,8 @@
 		A3418CD518D999C5003E302C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A3418CD318D999C5003E302C /* InfoPlist.strings */; };
 		A3418CD718D999C5003E302C /* SampleAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A3418CD618D999C5003E302C /* SampleAppTests.m */; };
 		A3418CE218D9A040003E302C /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3418CE118D9A040003E302C /* BannerViewController.m */; };
-		A3418CEA18D9A366003E302C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3418CE918D9A366003E302C /* SystemConfiguration.framework */; };
-		A3418CEC18D9A377003E302C /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A3418CEB18D9A377003E302C /* libxml2.dylib */; };
 		A3418CF118D9AA25003E302C /* ManyBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3418CF018D9AA25003E302C /* ManyBannerViewController.m */; };
-		A3CC8C011949B1AA005BF429 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3CC8C001949B1AA005BF429 /* AdSupport.framework */; };
 		A3E7215318DAEFA900A3ABF1 /* InterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3E7215218DAEFA900A3ABF1 /* InterstitialViewController.m */; };
-		F38547171AFC63AC00144B08 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B84B68819F8BEFD006BA6B3 /* AVFoundation.framework */; };
-		F3CCEE141AE7A50900124007 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3CCEE131AE7A50900124007 /* MediaPlayer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,20 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F38547171AFC63AC00144B08 /* AVFoundation.framework in Frameworks */,
-				F3CCEE141AE7A50900124007 /* MediaPlayer.framework in Frameworks */,
-				8B84B68E19F8BF18006BA6B3 /* Social.framework in Frameworks */,
-				8B84B68F19F8BF18006BA6B3 /* StoreKit.framework in Frameworks */,
 				3ACE35AE1C3BA25C002E6E22 /* FluctSDK.framework in Frameworks */,
-				A3418CEA18D9A366003E302C /* SystemConfiguration.framework in Frameworks */,
-				8B84B68B19F8BF0A006BA6B3 /* CoreMedia.framework in Frameworks */,
-				8B84B68719F8BEB7006BA6B3 /* CFNetwork.framework in Frameworks */,
-				8B84B68519F8BEB1006BA6B3 /* CoreTelephony.framework in Frameworks */,
-				A3CC8C011949B1AA005BF429 /* AdSupport.framework in Frameworks */,
-				A3418CEC18D9A377003E302C /* libxml2.dylib in Frameworks */,
-				A3418CAB18D999C5003E302C /* CoreGraphics.framework in Frameworks */,
-				A3418CAD18D999C5003E302C /* UIKit.framework in Frameworks */,
-				A3418CA918D999C5003E302C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,7 +262,7 @@
 		A3418C9D18D999C5003E302C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "fluct, Inc";
 				TargetAttributes = {
 					A3418CC818D999C5003E302C = {
@@ -427,6 +401,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -487,13 +462,9 @@
 		A3418CDB18D999C5003E302C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					"$(ARCHS_STANDARD)",
-					armv7s,
-				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/SampleApp/FluctSDK";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SampleApp/SampleApp-Prefix.pch";
@@ -503,11 +474,9 @@
 					"TEST_SERVER_REQUEST=1",
 				);
 				INFOPLIST_FILE = "SampleApp/SampleApp-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/lib",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.voyagegroup.fluct.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -516,22 +485,16 @@
 		A3418CDC18D999C5003E302C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					"$(ARCHS_STANDARD)",
-					armv7s,
-				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				ENABLE_BITCODE = NO;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/SampleApp/FluctSDK";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SampleApp/SampleApp-Prefix.pch";
 				INFOPLIST_FILE = "SampleApp/SampleApp-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/lib",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.voyagegroup.fluct.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -553,6 +516,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "SampleAppTests/SampleAppTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.voyagegroup.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -571,6 +535,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SampleApp/SampleApp-Prefix.pch";
 				INFOPLIST_FILE = "SampleAppTests/SampleAppTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.voyagegroup.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;

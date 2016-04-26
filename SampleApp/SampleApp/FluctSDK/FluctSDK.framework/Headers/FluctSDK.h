@@ -12,8 +12,8 @@
  */
 
 #import <UIKit/UIKit.h>
-#import <FluctSDK/FluctBannerView.h>
-#import <FluctSDK/FluctInterstitialView.h>
+#import "FluctBannerView.h"
+#import "FluctInterstitialView.h"
 
 @interface FluctSDK : NSObject
 
