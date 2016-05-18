@@ -7,8 +7,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSInteger, FluctInterstitialViewCallbackType)
-{
+typedef NS_ENUM(NSInteger, FluctInterstitialViewCallbackType) {
     FluctInterstitialShow = 0,
     FluctInterstitialTap = 1,
     FluctInterstitialClose = 2,

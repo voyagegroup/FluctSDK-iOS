@@ -11,13 +11,13 @@
  * ・コンバージョン通知処理
  */
 
-#import <UIKit/UIKit.h>
 #import "FluctBannerView.h"
 #import "FluctInterstitialView.h"
+#import <UIKit/UIKit.h>
 
 @interface FluctSDK : NSObject
 
-@property (nonatomic, copy) NSString* applicationId;
+@property (nonatomic, copy) NSString *applicationId;
 + (FluctSDK *)sharedInstance;
 
 /*
@@ -29,7 +29,7 @@
  * (NSString*)mediaId : メディアID
  * (NSString*)orientationType : 未使用(v2.0.0未満との互換性用)
  */
--(void)setBannerConfiguration:(NSString*)mediaId orientationType:(NSString*)orientationType;
+- (void)setBannerConfiguration:(NSString *)mediaId orientationType:(NSString *)orientationType;
 
 /*
  * setBannerConfiguration
@@ -39,6 +39,6 @@
  * arguments:
  * (NSString*)mediaId : メディアID
  */
--(void)setBannerConfiguration:(NSString*)mediaId;
+- (void)setBannerConfiguration:(NSString *)mediaId;
 
 @end

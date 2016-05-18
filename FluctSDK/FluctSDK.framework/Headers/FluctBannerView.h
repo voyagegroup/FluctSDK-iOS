@@ -15,8 +15,7 @@
 /**
  コールバックタイプ
  */
-typedef NS_ENUM(NSInteger, FluctBannerViewCallbackType)
-{
+typedef NS_ENUM(NSInteger, FluctBannerViewCallbackType) {
     FluctBannerLoad = 0,
     FluctBannerTap = 1,
     FluctBannerOffline = 2,
@@ -30,9 +29,8 @@ typedef NS_ENUM(NSInteger, FluctBannerViewCallbackType)
 
 @class BannerWebView;
 
-@interface FluctBannerView : UIView
-{
-@private
+@interface FluctBannerView : UIView {
+  @private
     BannerWebView *_bannerWebView;
     BOOL _initialized;
 }
@@ -41,7 +39,7 @@ typedef NS_ENUM(NSInteger, FluctBannerViewCallbackType)
 @property (nonatomic, assign) id<FluctBannerViewDelegate> delegate;
 
 - (void)setMediaID:(NSString *)mediaID;
-- (void)setRootViewController:(UIViewController*)rootViewController;
+- (void)setRootViewController:(UIViewController *)rootViewController;
 - (void)scrollViewDidScroll;
 - (void)playMovie;
 - (void)pauseMovie;

@@ -13,6 +13,8 @@ pod "FluctSDK"
 ```
 
 # FluctSDK Release Note
+## v4.3.4 2016/05/17
+* IPv6 Only Networkに正式対応
 
 ## v4.3.3 2016/04/26
 * Bitcodeに対応
