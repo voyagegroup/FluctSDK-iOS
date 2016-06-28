@@ -13,6 +13,9 @@ pod "FluctSDK"
 ```
 
 # FluctSDK Release Note
+## v4.3.5 2016/06/27
+* サポートバージョンをiOS6.0以上に変更
+
 ## v4.3.4 2016/05/17
 * IPv6 Only Networkに正式対応
 
