@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A94CFB11ABA5F2100A59094 /* MovieBannerScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A94CFB01ABA5F2100A59094 /* MovieBannerScrollViewController.m */; };
-		3A94CFB41ABA60DD00A59094 /* MovieBannerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A94CFB31ABA60DD00A59094 /* MovieBannerTableViewController.m */; };
-		3A94CFB71ABA611100A59094 /* MovieBannerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A94CFB61ABA611100A59094 /* MovieBannerTableViewCell.m */; };
+		3A24ECA11D810B600014B706 /* BannerTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A24ECA01D810B600014B706 /* BannerTabBarController.m */; };
+		3A24ECA41D81207E0014B706 /* BannerNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A24ECA31D81207E0014B706 /* BannerNavigationController.m */; };
 		3ACE35AE1C3BA25C002E6E22 /* FluctSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ACE35AC1C3BA25C002E6E22 /* FluctSDK.framework */; };
 		3ACE35AF1C3BA25C002E6E22 /* GSMMovieResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3ACE35AD1C3BA25C002E6E22 /* GSMMovieResources.bundle */; };
 		A3418CB318D999C5003E302C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A3418CB118D999C5003E302C /* InfoPlist.strings */; };
@@ -40,12 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3A94CFAF1ABA5F2100A59094 /* MovieBannerScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieBannerScrollViewController.h; sourceTree = "<group>"; };
-		3A94CFB01ABA5F2100A59094 /* MovieBannerScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieBannerScrollViewController.m; sourceTree = "<group>"; };
-		3A94CFB21ABA60DD00A59094 /* MovieBannerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieBannerTableViewController.h; sourceTree = "<group>"; };
-		3A94CFB31ABA60DD00A59094 /* MovieBannerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieBannerTableViewController.m; sourceTree = "<group>"; };
-		3A94CFB51ABA611100A59094 /* MovieBannerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieBannerTableViewCell.h; sourceTree = "<group>"; };
-		3A94CFB61ABA611100A59094 /* MovieBannerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieBannerTableViewCell.m; sourceTree = "<group>"; };
+		3A24EC9F1D810B600014B706 /* BannerTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerTabBarController.h; sourceTree = "<group>"; };
+		3A24ECA01D810B600014B706 /* BannerTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerTabBarController.m; sourceTree = "<group>"; };
+		3A24ECA21D81207E0014B706 /* BannerNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerNavigationController.h; sourceTree = "<group>"; };
+		3A24ECA31D81207E0014B706 /* BannerNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerNavigationController.m; sourceTree = "<group>"; };
 		3ACE35AC1C3BA25C002E6E22 /* FluctSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FluctSDK.framework; sourceTree = "<group>"; };
 		3ACE35AD1C3BA25C002E6E22 /* GSMMovieResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GSMMovieResources.bundle; sourceTree = "<group>"; };
 		8B84B68419F8BEB1006BA6B3 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -176,12 +173,10 @@
 				A3418CF018D9AA25003E302C /* ManyBannerViewController.m */,
 				A3E7215118DAEFA900A3ABF1 /* InterstitialViewController.h */,
 				A3E7215218DAEFA900A3ABF1 /* InterstitialViewController.m */,
-				3A94CFAF1ABA5F2100A59094 /* MovieBannerScrollViewController.h */,
-				3A94CFB01ABA5F2100A59094 /* MovieBannerScrollViewController.m */,
-				3A94CFB21ABA60DD00A59094 /* MovieBannerTableViewController.h */,
-				3A94CFB31ABA60DD00A59094 /* MovieBannerTableViewController.m */,
-				3A94CFB51ABA611100A59094 /* MovieBannerTableViewCell.h */,
-				3A94CFB61ABA611100A59094 /* MovieBannerTableViewCell.m */,
+				3A24EC9F1D810B600014B706 /* BannerTabBarController.h */,
+				3A24ECA01D810B600014B706 /* BannerTabBarController.m */,
+				3A24ECA21D81207E0014B706 /* BannerNavigationController.h */,
+				3A24ECA31D81207E0014B706 /* BannerNavigationController.m */,
 				A3418CC318D999C5003E302C /* Images.xcassets */,
 				3ACE35AB1C3BA25C002E6E22 /* FluctSDK */,
 				A3418CAF18D999C5003E302C /* Supporting Files */,
@@ -317,13 +312,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A94CFB41ABA60DD00A59094 /* MovieBannerTableViewController.m in Sources */,
+				3A24ECA11D810B600014B706 /* BannerTabBarController.m in Sources */,
+				3A24ECA41D81207E0014B706 /* BannerNavigationController.m in Sources */,
 				A3418CF118D9AA25003E302C /* ManyBannerViewController.m in Sources */,
 				A3418CE218D9A040003E302C /* BannerViewController.m in Sources */,
-				3A94CFB71ABA611100A59094 /* MovieBannerTableViewCell.m in Sources */,
 				A3418CC218D999C5003E302C /* ViewController.m in Sources */,
 				A3418CB918D999C5003E302C /* AppDelegate.m in Sources */,
-				3A94CFB11ABA5F2100A59094 /* MovieBannerScrollViewController.m in Sources */,
 				A3E7215318DAEFA900A3ABF1 /* InterstitialViewController.m in Sources */,
 				A3418CB518D999C5003E302C /* main.m in Sources */,
 			);

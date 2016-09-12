@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A24ECA81D812CCC0014B706 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A24ECA71D812CCC0014B706 /* TabBarController.swift */; };
+		3A6AADB11D8148DA005D94C1 /* BannerNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AADB01D8148DA005D94C1 /* BannerNavigationController.swift */; };
+		3ADBC1981D825A62003D7AB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADBC1971D825A62003D7AB3 /* ViewController.swift */; };
 		969EC2001D3E0CF7005F475E /* ManyBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969EC1FF1D3E0CF7005F475E /* ManyBannerViewController.swift */; };
 		969EC2021D3E11C1005F475E /* InterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969EC2011D3E11C1005F475E /* InterstitialViewController.swift */; };
 		96F22C371D3899D300C3136E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F22C361D3899D300C3136E /* AppDelegate.swift */; };
@@ -19,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A24ECA71D812CCC0014B706 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		3A6AADB01D8148DA005D94C1 /* BannerNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerNavigationController.swift; sourceTree = "<group>"; };
+		3ADBC1971D825A62003D7AB3 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		969EC1FF1D3E0CF7005F475E /* ManyBannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManyBannerViewController.swift; sourceTree = "<group>"; };
 		969EC2011D3E11C1005F475E /* InterstitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterstitialViewController.swift; sourceTree = "<group>"; };
 		96F22C331D3899D300C3136E /* SampleApp-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SampleApp-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,14 +70,17 @@
 			isa = PBXGroup;
 			children = (
 				96F22C361D3899D300C3136E /* AppDelegate.swift */,
+				3ADBC1971D825A62003D7AB3 /* ViewController.swift */,
 				96F22C381D3899D300C3136E /* BannerViewController.swift */,
+				969EC1FF1D3E0CF7005F475E /* ManyBannerViewController.swift */,
+				969EC2011D3E11C1005F475E /* InterstitialViewController.swift */,
+				3A24ECA71D812CCC0014B706 /* TabBarController.swift */,
+				3A6AADB01D8148DA005D94C1 /* BannerNavigationController.swift */,
 				96F22C3A1D3899D300C3136E /* Main.storyboard */,
 				96F22C3D1D3899D300C3136E /* Assets.xcassets */,
 				96F22C3F1D3899D300C3136E /* LaunchScreen.storyboard */,
 				96F22C421D3899D300C3136E /* Info.plist */,
 				96F22C6D1D38A24300C3136E /* FluctSDK */,
-				969EC1FF1D3E0CF7005F475E /* ManyBannerViewController.swift */,
-				969EC2011D3E11C1005F475E /* InterstitialViewController.swift */,
 			);
 			path = "SampleApp-Swift";
 			sourceTree = "<group>";
@@ -113,7 +122,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
-				ORGANIZATIONNAME = "中川 慶悟";
+				ORGANIZATIONNAME = "fluct, Inc.";
 				TargetAttributes = {
 					96F22C321D3899D300C3136E = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -160,6 +169,9 @@
 				969EC2021D3E11C1005F475E /* InterstitialViewController.swift in Sources */,
 				96F22C391D3899D300C3136E /* BannerViewController.swift in Sources */,
 				96F22C371D3899D300C3136E /* AppDelegate.swift in Sources */,
+				3A24ECA81D812CCC0014B706 /* TabBarController.swift in Sources */,
+				3ADBC1981D825A62003D7AB3 /* ViewController.swift in Sources */,
+				3A6AADB11D8148DA005D94C1 /* BannerNavigationController.swift in Sources */,
 				969EC2001D3E0CF7005F475E /* ManyBannerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,6 +13,10 @@ pod "FluctSDK"
 ```
 
 # FluctSDK Release Note
+## v4.3.7 2016/09/12
+* ライフサイクルメソッドに関連した不具合修正
+* FluctBannerView のインタフェイス一部変更
+
 ## v4.3.6 2016/08/04
 * Swiftのサンプルコード及びサンプルプロジェクトを追加
 

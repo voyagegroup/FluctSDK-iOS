@@ -1,9 +1,9 @@
 //
 //  ManyBannerViewController.swift
-//  FluctSDKSwiftApp
+//  SampleApp-Swift
 //
-//  Created by 中川 慶悟 on 2016/07/19.
-//  Copyright © 2016年 中川 慶悟. All rights reserved.
+//  Fluct SDK
+//  Copyright © 2016年 fluct, Inc. All rights reserved.
 //
 
 import UIKit
