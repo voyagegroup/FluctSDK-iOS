@@ -10,9 +10,9 @@
 
 @import FluctSDK;
 
-@interface InterstitialViewController () <FluctInterstitialViewDelegate>
+@interface InterstitialViewController () <FSSInterstitialViewDelegate>
 
-@property (nonatomic) FluctInterstitialView *interstitialView;
+@property (nonatomic) FSSInterstitialView *interstitialView;
 @end
 
 @implementation InterstitialViewController
@@ -38,7 +38,7 @@
 }
 - (IBAction)showInterstitial:(id)sender
 {
-    self.interstitialView = [[FluctInterstitialView alloc] init];
+    self.interstitialView = [[FSSInterstitialView alloc] init];
     [self.interstitialView setMediaID: @"0000000108"];
     self.interstitialView.delegate = self;
     [self.interstitialView showInterstitialAd];
@@ -46,39 +46,39 @@
     // [self.interstitialView showInterstitialAdWithHexColor: @"#FF0000"];
 }
 
-- (void)fluctInterstitialView:(FluctInterstitialView *)interstitialView callbackValue:(NSInteger)callbackValue
+- (void)interstitialView:(FSSInterstitialView *)interstitialView callbackType:(FSSInterstitialViewCallbackType)callbackType
 {
-    NSLog(@"Interstitial callback : %ld", (long)callbackValue);
+    NSLog(@"Interstitial callback : %ld", (long)callbackType);
 
-    switch (callbackValue) {
-        case FluctInterstitialShow:
+    switch (callbackType) {
+        case FSSInterstitialViewCallbackTypeShow:
             NSLog(@"表示されました");
             break;
-        case FluctInterstitialTap:
+        case FSSInterstitialViewCallbackTypeTap:
             NSLog(@"タップされました");
             break;
-        case FluctInterstitialClose:
+        case FSSInterstitialViewCallbackTypeClose:
             NSLog(@"閉じました");
             break;
-        case FluctInterstitialCancel:
+        case FSSInterstitialViewCallbackTypeCancel:
             NSLog(@"キャンセルされました");
             break;
-        case FluctInterstitialOffline:
+        case FSSInterstitialViewCallbackTypeOffline:
             NSLog(@"圏外です");
             break;
-        case FluctInterstitialMediaIDError:
+        case FSSInterstitialViewCallbackTypeMediaIDError:
             NSLog(@"メディアIDが不正な値です");
             break;
-        case FluctInterstitialNoConfig:
+        case FSSInterstitialViewCallbackTypeNoConfig:
             NSLog(@"メディアIDに設定されていません");
             break;
-        case FluctInterstitialSizeError:
+        case FSSInterstitialViewCallbackTypeSizeError:
             NSLog(@"表示する端末のサイズより広告が大きいです");
             break;
-        case FluctInterstitialGetConfigError:
+        case FSSInterstitialViewCallbackTypeGetConfigError:
             NSLog(@"広告情報が取得出来ませんでした");
             break;
-        case FluctInterstitialOtherError:
+        case FSSInterstitialViewCallbackTypeOtherError:
             NSLog(@"その他のエラーです");
             break;
         default:

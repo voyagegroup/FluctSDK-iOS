@@ -12,7 +12,16 @@ use_frameworks!
 pod "FluctSDK"
 ```
 
+## APIドキュメント
+FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照してください
+
 # FluctSDK Release Note
+
+## v4.4.0 2016/09/29
+* 端末の画面サイズに合わせて調整された大きさのバナー広告を表示する機能を持ったクラスの追加
+* FluctBannerView（旧バナー広告クラス）, FluctInterstitialView（旧インタースティシャル広告クラス）を非推奨に変更
+* ドキュメントをGitHubのWikiに移行
+
 ## v4.3.7 2016/09/12
 * ライフサイクルメソッドに関連した不具合修正
 * FluctBannerView のインタフェイス一部変更

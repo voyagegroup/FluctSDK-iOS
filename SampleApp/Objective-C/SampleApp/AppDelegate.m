@@ -16,7 +16,7 @@
 {
     // Override point for customization after application launch.
 
-    [[FluctSDK sharedInstance] setBannerConfiguration:@"0000000108"];
+//    [[FluctSDK sharedInstance] setBannerConfiguration:@"0000005617"];
     
     return YES;
 }

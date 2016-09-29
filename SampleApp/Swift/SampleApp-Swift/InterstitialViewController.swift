@@ -9,10 +9,10 @@
 import UIKit
 import FluctSDK
 
-class InterstitialViewController: UIViewController, FluctInterstitialViewDelegate {
-   
-    var interstitialView: FluctInterstitialView? = nil
-    
+class InterstitialViewController: UIViewController, FSSInterstitialViewDelegate {
+
+    var interstitialView: FSSInterstitialView? = nil
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -22,38 +22,36 @@ class InterstitialViewController: UIViewController, FluctInterstitialViewDelegat
     }
 
     @IBAction func showInterstitial(sender: AnyObject) {
-        interstitialView = FluctInterstitialView(mediaID: "0000000108")
+        interstitialView = FSSInterstitialView(mediaID: "0000000108")
         interstitialView?.delegate = self
         interstitialView?.showInterstitialAd()
         // 背景色を設定してインタースティシャル広告を表示する場合
         // interstitialView?.showInterstitialAdWithHexColor("#FF0000")
     }
 
-    func fluctInterstitialView(interstitialView: FluctInterstitialView!, callbackValue: Int) {
-        print(callbackValue)
-        switch FluctInterstitialViewCallbackType(rawValue: callbackValue) {
-            case .Show?:
-                print("表示しました")
-            case .Tap?:
-                print("タップしました")
-            case .Close?:
-                print("閉じました")
-            case .Cancel?:
-                print("キャンセルされました")
-            case .Offline?:
-                print("圏外です")
-            case .MediaIDError?:
-                print("メディアIDが不正な値です")
-            case .NoConfig?:
-                print("メディアIDに設定されていません")
-            case .SizeError?:
-                print("表示する端末のサイズより広告が大きいです")
-            case .GetConfigError?:
-                print("広告情報が取得出来ませんでした")
-            case .OtherError?:
-                print("その他のエラーです")
-            default:
-                break
+    func interstitialView(interstitialView: FSSInterstitialView!, callbackType: FSSInterstitialViewCallbackType) {
+        print(callbackType)
+        switch (callbackType) {
+        case .Show:
+            print("表示しました")
+        case .Tap:
+            print("タップしました")
+        case .Close:
+            print("閉じました")
+        case .Cancel:
+            print("キャンセルされました")
+        case .Offline:
+            print("圏外です")
+        case .MediaIDError:
+            print("メディアIDが不正な値です")
+        case .NoConfig:
+            print("メディアIDに設定されていません")
+        case .SizeError:
+            print("表示する端末のサイズより広告が大きいです")
+        case .GetConfigError:
+            print("広告情報が取得出来ませんでした")
+        case .OtherError:
+            print("その他のエラーです")
         }
     }
 

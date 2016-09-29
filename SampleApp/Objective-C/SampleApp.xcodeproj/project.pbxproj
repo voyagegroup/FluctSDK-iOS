@@ -14,8 +14,7 @@
 		A3418CB318D999C5003E302C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A3418CB118D999C5003E302C /* InfoPlist.strings */; };
 		A3418CB518D999C5003E302C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A3418CB418D999C5003E302C /* main.m */; };
 		A3418CB918D999C5003E302C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A3418CB818D999C5003E302C /* AppDelegate.m */; };
-		A3418CBC18D999C5003E302C /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3418CBA18D999C5003E302C /* Main_iPhone.storyboard */; };
-		A3418CBF18D999C5003E302C /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3418CBD18D999C5003E302C /* Main_iPad.storyboard */; };
+		A3418CBC18D999C5003E302C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3418CBA18D999C5003E302C /* Main.storyboard */; };
 		A3418CC218D999C5003E302C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3418CC118D999C5003E302C /* ViewController.m */; };
 		A3418CC418D999C5003E302C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3418CC318D999C5003E302C /* Images.xcassets */; };
 		A3418CCB18D999C5003E302C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3418CCA18D999C5003E302C /* XCTest.framework */; };
@@ -77,8 +76,7 @@
 		A3418CEF18D9AA25003E302C /* ManyBannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManyBannerViewController.h; sourceTree = "<group>"; };
 		A3418CF018D9AA25003E302C /* ManyBannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManyBannerViewController.m; sourceTree = "<group>"; };
 		A3CC8C001949B1AA005BF429 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
-		A3E2EE3518E2CDB1004C511C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		A3E2EE3918E2CDD0004C511C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		A3E2EE3918E2CDD0004C511C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A3E7215118DAEFA900A3ABF1 /* InterstitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterstitialViewController.h; sourceTree = "<group>"; };
 		A3E7215218DAEFA900A3ABF1 /* InterstitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterstitialViewController.m; sourceTree = "<group>"; };
 		F3CCEE131AE7A50900124007 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
@@ -163,8 +161,7 @@
 			children = (
 				A3418CB718D999C5003E302C /* AppDelegate.h */,
 				A3418CB818D999C5003E302C /* AppDelegate.m */,
-				A3418CBA18D999C5003E302C /* Main_iPhone.storyboard */,
-				A3418CBD18D999C5003E302C /* Main_iPad.storyboard */,
+				A3418CBA18D999C5003E302C /* Main.storyboard */,
 				A3418CC018D999C5003E302C /* ViewController.h */,
 				A3418CC118D999C5003E302C /* ViewController.m */,
 				A3418CE018D9A040003E302C /* BannerViewController.h */,
@@ -289,9 +286,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3418CBF18D999C5003E302C /* Main_iPad.storyboard in Resources */,
 				A3418CC418D999C5003E302C /* Images.xcassets in Resources */,
-				A3418CBC18D999C5003E302C /* Main_iPhone.storyboard in Resources */,
+				A3418CBC18D999C5003E302C /* Main.storyboard in Resources */,
 				A3418CB318D999C5003E302C /* InfoPlist.strings in Resources */,
 				3ACE35AF1C3BA25C002E6E22 /* GSMMovieResources.bundle in Resources */,
 			);
@@ -350,20 +346,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		A3418CBA18D999C5003E302C /* Main_iPhone.storyboard */ = {
+		A3418CBA18D999C5003E302C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				A3E2EE3918E2CDD0004C511C /* en */,
 			);
-			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		A3418CBD18D999C5003E302C /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A3E2EE3518E2CDB1004C511C /* en */,
-			);
-			name = Main_iPad.storyboard;
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		A3418CD318D999C5003E302C /* InfoPlist.strings */ = {
@@ -472,6 +460,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.voyagegroup.fluct.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -490,6 +479,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.voyagegroup.fluct.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

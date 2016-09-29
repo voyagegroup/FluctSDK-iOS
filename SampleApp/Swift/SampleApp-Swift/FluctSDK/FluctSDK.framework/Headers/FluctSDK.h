@@ -12,7 +12,9 @@
  */
 
 #import "FluctBannerView.h"
+#import "FSSBannerView.h"
 #import "FluctInterstitialView.h"
+#import "FSSInterstitialView.h"
 #import <UIKit/UIKit.h>
 
 @interface FluctSDK : NSObject

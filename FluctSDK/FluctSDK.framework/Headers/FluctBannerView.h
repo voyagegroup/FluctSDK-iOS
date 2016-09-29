@@ -28,7 +28,7 @@ typedef NS_ENUM(NSInteger, FluctBannerViewCallbackType) {
 @protocol FluctBannerViewDelegate;
 
 @class BannerWebView;
-
+__attribute__((deprecated("FluctBannerView is deprecated. You should use FSSBannerView.")))
 @interface FluctBannerView : UIView {
   @private
     BannerWebView *_bannerWebView;
@@ -47,7 +47,13 @@ typedef NS_ENUM(NSInteger, FluctBannerViewCallbackType) {
 @end
 
 @protocol FluctBannerViewDelegate <NSObject>
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+
 @optional
 - (void)fluctBannerView:(FluctBannerView *)bannerView
           callbackValue:(NSInteger)callbackValue;
 @end
+
+#pragma clang diagnostic pop

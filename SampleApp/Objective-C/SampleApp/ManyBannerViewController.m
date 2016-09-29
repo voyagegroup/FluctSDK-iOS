@@ -10,10 +10,10 @@
 
 @import FluctSDK;
 
-@interface ManyBannerViewController () <FluctBannerViewDelegate>
+@interface ManyBannerViewController () <FSSBannerViewDelegate>
 
-@property (nonatomic) FluctBannerView *bottomBannerView;
-@property (weak, nonatomic) IBOutlet FluctBannerView *topBannerView;
+@property (nonatomic) FSSBannerView *bottomBannerView;
+@property (weak, nonatomic) IBOutlet FSSBannerView *topBannerView;
 
 @end
 
@@ -32,18 +32,11 @@
 {
     [super viewDidLoad];
     self.topBannerView.delegate = self;
-    self.topBannerView.tag = 100;
-    [self.view addSubview:self.topBannerView];
+    [self.topBannerView setMediaID:@"0000005617"];
     
-    CGRect bottomBannerFrame = CGRectMake(0.0, 0.0, 320.0, 50.0);
-    bottomBannerFrame.origin.x = (CGRectGetWidth(self.view.bounds) - CGRectGetWidth(bottomBannerFrame)) / 2.0;
-    bottomBannerFrame.origin.y = CGRectGetMaxY(self.view.bounds) - CGRectGetHeight(bottomBannerFrame);
-    self.bottomBannerView = [[FluctBannerView alloc] initWithFrame:bottomBannerFrame];
-    self.bottomBannerView.autoresizingMask = (UIViewAutoresizingFlexibleTopMargin |
-                                              UIViewAutoresizingFlexibleLeftMargin |
-                                              UIViewAutoresizingFlexibleRightMargin);
+    self.bottomBannerView = [[FSSBannerView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.frame) - 100, 320, 50)];
     self.bottomBannerView.delegate = self;
-    self.bottomBannerView.tag = 200;
+    [self.bottomBannerView setMediaID:@"0000005617"];
     [self.view addSubview:self.bottomBannerView];
 }
 
@@ -67,26 +60,26 @@
 }
 
 # pragma mark FluctBannerView delegate method
-- (void)fluctBannerView:(FluctBannerView *)bannerView callbackValue:(NSInteger)callbackValue
+- (void)bannerView:(FSSBannerView *)bannerView callbackType:(FSSBannerViewCallbackType)callbackType
 {
-    NSLog(@"bannerView : %ld", (long)callbackValue);
-    switch (callbackValue) {
-        case FluctBannerLoad:
+    NSLog(@"bannerView : %ld", (long)callbackType);
+    switch (callbackType) {
+        case FSSBannerViewCallbackTypeLoad:
             NSLog(@"読み込まれました");
             break;
-        case FluctBannerOffline:
+        case FSSBannerViewCallbackTypeOffline:
             NSLog(@"圏外です");
             break;
-        case FluctBannerMediaIdError:
+        case FSSBannerViewCallbackTypeMediaIdError:
             NSLog(@"メディアIDが不正な値です");
             break;
-        case FluctBannerNoConfig:
+        case FSSBannerViewCallbackTypeNoConfig:
             NSLog(@"広告情報を取得出来ませんでした");
             break;
-        case FluctBannerGetConfigError:
+        case FSSBannerViewCallbackTypeGetConfigError:
             NSLog(@"広告設定情報を取得出来ませんでした");
             break;
-        case FluctBannerOtherError:
+        case FSSBannerViewCallbackTypeOtherError:
             NSLog(@"その他のエラーです");
             break;
         default:

@@ -12,7 +12,7 @@
 
 @interface BannerViewController ()
 
-@property (nonatomic) FluctBannerView *topBannerView;
+@property (nonatomic) FSSBannerView *topBannerView;
 
 @end
 
@@ -32,13 +32,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.topBannerView = [[FluctBannerView alloc] init];
-    CGRect topBannerFrame = self.topBannerView.frame;
-    topBannerFrame.origin.x = (CGRectGetWidth(self.view.bounds) - CGRectGetWidth(topBannerFrame)) / 2.0;
-    self.topBannerView.frame = topBannerFrame;
-    self.topBannerView.autoresizingMask = (UIViewAutoresizingFlexibleBottomMargin |
-                                           UIViewAutoresizingFlexibleLeftMargin |
-                                           UIViewAutoresizingFlexibleRightMargin);
+    self.topBannerView = [[FSSBannerView alloc] initWithFrame: CGRectMake(0, 100, 320, 50)];
+    [self.topBannerView setMediaID:@"0000005617"];
     [self.view addSubview:self.topBannerView];
 }
 

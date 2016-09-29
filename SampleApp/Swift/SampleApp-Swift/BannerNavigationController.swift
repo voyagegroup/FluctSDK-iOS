@@ -13,8 +13,8 @@ class BannerNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let bannerView = FluctBannerView(frame: CGRect(x: 0, y: CGRectGetHeight(self.view.frame) - 50, width: 320, height: 50))
-        bannerView.setMediaID("0000000108")
+        let bannerView = FSSBannerView(frame: CGRect(x: 0, y: CGRectGetHeight(self.view.frame) - 100, width: 320, height: 50))
+        bannerView.setMediaID("0000005617")
         bannerView.setRootViewController(self)
         self.view.addSubview(bannerView)
     }

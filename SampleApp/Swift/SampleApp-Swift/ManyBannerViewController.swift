@@ -9,24 +9,24 @@
 import UIKit
 import FluctSDK
 
-class ManyBannerViewController: UIViewController, FluctBannerViewDelegate {
+class ManyBannerViewController: UIViewController, FSSBannerViewDelegate {
 
-    @IBOutlet weak var headerBanner: FluctBannerView!
+    @IBOutlet weak var headerBannerView: FSSBannerView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let footerBanner = FluctBannerView.init(frame: CGRectMake(0, CGRectGetHeight(self.view.frame) - 100, 320, 50))
-        footerBanner.center.x = self.view.center.x
-        headerBanner?.delegate = self
-        footerBanner.delegate = self
-        headerBanner?.setMediaID("0000000108")
-        footerBanner.setMediaID("0000000108")
-        self.view.addSubview(headerBanner)
-        self.view.addSubview(footerBanner)
+        headerBannerView?.delegate = self
+        headerBannerView?.setMediaID("0000005617")
+
+        let footerBannerView = FSSBannerView.init(frame: CGRectMake(0, CGRectGetHeight(self.view.frame) - 100, 320, 50))
+        footerBannerView.center.x = self.view.center.x
+        footerBannerView.delegate = self
+        footerBannerView.setMediaID("0000005617")
+        self.view.addSubview(footerBannerView)
     }
 
-    func fluctBannerView(bannerView: FluctBannerView!, callbackValue: Int) {
-        print(callbackValue)
+    func bannerView(bannerView: FSSBannerView!, callbackType: FSSBannerViewCallbackType) {
+        print(callbackType)
     }
 
     override func didReceiveMemoryWarning() {

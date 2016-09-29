@@ -17,8 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    FluctBannerView *bannerView = [[FluctBannerView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.frame) - 50, 320, 50)];
+    FSSBannerView *bannerView = [[FSSBannerView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.frame) - 100, 320, 50)];
     [bannerView setRootViewController:self];
+    [bannerView setMediaID:@"0000005617"];
     [self.view addSubview:bannerView];
 }
 
