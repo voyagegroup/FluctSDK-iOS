@@ -17,6 +17,9 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## v4.4.1 2016/10/27
+* デバッグ情報取得効率化のため, 内部処理を変更
+
 ## v4.4.0 2016/09/29
 * 端末の画面サイズに合わせて調整された大きさのバナー広告を表示する機能を持ったクラスの追加
 * FluctBannerView（旧バナー広告クラス）, FluctInterstitialView（旧インタースティシャル広告クラス）を非推奨に変更
@@ -47,7 +50,7 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 * SDKをframework化
 
 ## v4.3.0 以前の変更点について
-* [fluct広告配信SDK導入仕様書(iOS).pdf](https://github.com/voyagegroup/FluctSDK-iOS/blob/master/fluct%E5%BA%83%E5%91%8A%E9%85%8D%E4%BF%A1SDK%E5%B0%8E%E5%85%A5%E4%BB%95%E6%A7%98%E6%9B%B8(iOS).pdf)をご確認下さい
+* [改版履歴](https://github.com/voyagegroup/FluctSDK-iOS/wiki/%E6%94%B9%E7%89%88%E5%B1%A5%E6%AD%B4)をご確認下さい
 
 ## LICENSE
 Copyright fluct, Inc. All rights reserved.
