@@ -17,6 +17,9 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## v4.4.2 2016/11/08
+* 名前衝突対策のため一部定数名を変更
+
 ## v4.4.1 2016/10/27
 * デバッグ情報取得効率化のため, 内部処理を変更
 
