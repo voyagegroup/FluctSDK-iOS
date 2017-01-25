@@ -21,7 +21,7 @@ class InterstitialViewController: UIViewController, FSSInterstitialViewDelegate 
         super.didReceiveMemoryWarning()
     }
 
-    @IBAction func showInterstitial(sender: AnyObject) {
+    @IBAction func showInterstitial(_ sender: AnyObject) {
         interstitialView = FSSInterstitialView(mediaID: "0000000108")
         interstitialView?.delegate = self
         interstitialView?.showInterstitialAd()
@@ -29,34 +29,34 @@ class InterstitialViewController: UIViewController, FSSInterstitialViewDelegate 
         // interstitialView?.showInterstitialAdWithHexColor("#FF0000")
     }
 
-    func interstitialView(interstitialView: FSSInterstitialView!, callbackType: FSSInterstitialViewCallbackType) {
+    func interstitialView(_ interstitialView: FSSInterstitialView!, callbackType: FSSInterstitialViewCallbackType) {
         print(callbackType)
         switch (callbackType) {
-        case .Show:
+        case .show:
             print("表示しました")
-        case .Tap:
+        case .tap:
             print("タップしました")
-        case .Close:
+        case .close:
             print("閉じました")
-        case .Cancel:
+        case .cancel:
             print("キャンセルされました")
-        case .Offline:
+        case .offline:
             print("圏外です")
-        case .MediaIDError:
+        case .mediaIDError:
             print("メディアIDが不正な値です")
-        case .NoConfig:
+        case .noConfig:
             print("メディアIDに設定されていません")
-        case .SizeError:
+        case .sizeError:
             print("表示する端末のサイズより広告が大きいです")
-        case .GetConfigError:
+        case .getConfigError:
             print("広告情報が取得出来ませんでした")
-        case .OtherError:
+        case .otherError:
             print("その他のエラーです")
         }
     }
 
     // 画面の回転時にインタースティシャルを非表示にする
-    override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
+    override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
         interstitialView?.dismissInterstitialAd()
     }
 

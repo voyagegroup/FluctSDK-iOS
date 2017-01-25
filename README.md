@@ -17,6 +17,9 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## v4.4.3 2017/01/25
+* UITableViewにバナー広告を実装したサンプルコード及びドキュメントの追加
+
 ## v4.4.2 2016/11/08
 * 名前衝突対策のため一部定数名を変更
 

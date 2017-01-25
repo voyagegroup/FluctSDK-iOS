@@ -13,28 +13,28 @@ class BannerViewController: UIViewController, FSSBannerViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let bannerView = FSSBannerView.init(frame: CGRectMake(0, 100, 320, 50))
+        let bannerView = FSSBannerView.init(frame: CGRect(x: 0, y: 100, width: 320, height: 50))
         bannerView.delegate = self
         bannerView.setMediaID("0000005617")
         self.view.addSubview(bannerView)
     }
 
-    func bannerView(bannerView: FSSBannerView!, callbackType: FSSBannerViewCallbackType) {
+    func bannerView(_ bannerView: FSSBannerView, callbackType: FSSBannerViewCallbackType) {
         print(callbackType)
         switch (callbackType) {
-        case .Load:
+        case .load:
             print("表示しました")
-        case .Tap:
+        case .tap:
             print("タップしました")
-        case .Offline:
+        case .offline:
             print("圏外です")
-        case .MediaIdError:
+        case .mediaIdError:
             print("メディアIDが不正な値です")
-        case .NoConfig:
+        case .noConfig:
             print("メディアIDに設定されていません")
-        case .GetConfigError:
+        case .getConfigError:
             print("広告情報が取得出来ませんでした")
-        case .OtherError:
+        case .otherError:
             print("その他のエラーです")
         }
     }

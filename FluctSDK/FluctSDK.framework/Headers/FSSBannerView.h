@@ -30,16 +30,19 @@ typedef NS_ENUM(NSInteger, FSSBannerViewCallbackType) {
 @class BannerWebView;
 @interface FSSBannerView : UIView
 
-@property (nonatomic, weak) id<FSSBannerViewDelegate> delegate;
+NS_ASSUME_NONNULL_BEGIN
+@property (nullable, nonatomic, weak) id<FSSBannerViewDelegate> delegate;
 @property (nonatomic, getter=isSizeAdjust) IBInspectable BOOL sizeAdjust;
 - (id)init __attribute__((unavailable("FSSBannerView's init is not available")));
 - (id)initWithFrame:(CGRect)frame sizeAdjust:(BOOL)sizeAdjust;
 
 - (void)setMediaID:(NSString *)mediaID;
 - (void)setRootViewController:(UIViewController *)rootViewController;
+- (void)refreshBanner;
 @end
 
 @protocol FSSBannerViewDelegate <NSObject>
 @optional
 - (void)bannerView:(FSSBannerView *)bannerView callbackType:(FSSBannerViewCallbackType)callbackType;
 @end
+NS_ASSUME_NONNULL_END

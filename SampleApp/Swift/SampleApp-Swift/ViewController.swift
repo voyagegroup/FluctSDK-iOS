@@ -14,7 +14,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
 
-    @IBAction func didTouchUpCloseButton(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func didTouchUpCloseButton(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
     }
 }

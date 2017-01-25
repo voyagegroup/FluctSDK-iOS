@@ -18,14 +18,14 @@ class ManyBannerViewController: UIViewController, FSSBannerViewDelegate {
         headerBannerView?.delegate = self
         headerBannerView?.setMediaID("0000005617")
 
-        let footerBannerView = FSSBannerView.init(frame: CGRectMake(0, CGRectGetHeight(self.view.frame) - 100, 320, 50))
+        let footerBannerView = FSSBannerView.init(frame: CGRect(x: 0, y: self.view.frame.height - 100, width: 320, height: 50))
         footerBannerView.center.x = self.view.center.x
         footerBannerView.delegate = self
         footerBannerView.setMediaID("0000005617")
         self.view.addSubview(footerBannerView)
     }
 
-    func bannerView(bannerView: FSSBannerView!, callbackType: FSSBannerViewCallbackType) {
+    func bannerView(_ bannerView: FSSBannerView, callbackType: FSSBannerViewCallbackType) {
         print(callbackType)
     }
 

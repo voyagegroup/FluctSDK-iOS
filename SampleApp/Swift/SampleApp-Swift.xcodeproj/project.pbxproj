@@ -10,6 +10,8 @@
 		3A24ECA81D812CCC0014B706 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A24ECA71D812CCC0014B706 /* TabBarController.swift */; };
 		3A6AADB11D8148DA005D94C1 /* BannerNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AADB01D8148DA005D94C1 /* BannerNavigationController.swift */; };
 		3ADBC1981D825A62003D7AB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADBC1971D825A62003D7AB3 /* ViewController.swift */; };
+		966CC73C1DF7C98C0005EF1C /* BannerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966CC73B1DF7C98C0005EF1C /* BannerTableViewController.swift */; };
+		966CC73E1DF7C9B50005EF1C /* BannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966CC73D1DF7C9B50005EF1C /* BannerTableViewCell.swift */; };
 		969EC2001D3E0CF7005F475E /* ManyBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969EC1FF1D3E0CF7005F475E /* ManyBannerViewController.swift */; };
 		969EC2021D3E11C1005F475E /* InterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969EC2011D3E11C1005F475E /* InterstitialViewController.swift */; };
 		96F22C371D3899D300C3136E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F22C361D3899D300C3136E /* AppDelegate.swift */; };
@@ -25,6 +27,8 @@
 		3A24ECA71D812CCC0014B706 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		3A6AADB01D8148DA005D94C1 /* BannerNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerNavigationController.swift; sourceTree = "<group>"; };
 		3ADBC1971D825A62003D7AB3 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		966CC73B1DF7C98C0005EF1C /* BannerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerTableViewController.swift; sourceTree = "<group>"; };
+		966CC73D1DF7C9B50005EF1C /* BannerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerTableViewCell.swift; sourceTree = "<group>"; };
 		969EC1FF1D3E0CF7005F475E /* ManyBannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManyBannerViewController.swift; sourceTree = "<group>"; };
 		969EC2011D3E11C1005F475E /* InterstitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterstitialViewController.swift; sourceTree = "<group>"; };
 		96F22C331D3899D300C3136E /* SampleApp-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SampleApp-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +80,8 @@
 				969EC2011D3E11C1005F475E /* InterstitialViewController.swift */,
 				3A24ECA71D812CCC0014B706 /* TabBarController.swift */,
 				3A6AADB01D8148DA005D94C1 /* BannerNavigationController.swift */,
+				966CC73B1DF7C98C0005EF1C /* BannerTableViewController.swift */,
+				966CC73D1DF7C9B50005EF1C /* BannerTableViewCell.swift */,
 				96F22C3A1D3899D300C3136E /* Main.storyboard */,
 				96F22C3D1D3899D300C3136E /* Assets.xcassets */,
 				96F22C3F1D3899D300C3136E /* LaunchScreen.storyboard */,
@@ -121,11 +127,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "fluct, Inc.";
 				TargetAttributes = {
 					96F22C321D3899D300C3136E = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -169,10 +176,12 @@
 				969EC2021D3E11C1005F475E /* InterstitialViewController.swift in Sources */,
 				96F22C391D3899D300C3136E /* BannerViewController.swift in Sources */,
 				96F22C371D3899D300C3136E /* AppDelegate.swift in Sources */,
+				966CC73E1DF7C9B50005EF1C /* BannerTableViewCell.swift in Sources */,
 				3A24ECA81D812CCC0014B706 /* TabBarController.swift in Sources */,
 				3ADBC1981D825A62003D7AB3 /* ViewController.swift in Sources */,
 				3A6AADB11D8148DA005D94C1 /* BannerNavigationController.swift in Sources */,
 				969EC2001D3E0CF7005F475E /* ManyBannerViewController.swift in Sources */,
+				966CC73C1DF7C98C0005EF1C /* BannerTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,8 +221,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -260,8 +271,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -282,6 +295,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/FluctSDKSwiftApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -300,6 +314,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.fluct.SampleApp-Swift";
 				PRODUCT_NAME = "SampleApp-Swift";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -316,6 +331,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.fluct.SampleApp-Swift";
 				PRODUCT_NAME = "SampleApp-Swift";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

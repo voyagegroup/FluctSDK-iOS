@@ -11,6 +11,8 @@
 		3A24ECA41D81207E0014B706 /* BannerNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A24ECA31D81207E0014B706 /* BannerNavigationController.m */; };
 		3ACE35AE1C3BA25C002E6E22 /* FluctSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ACE35AC1C3BA25C002E6E22 /* FluctSDK.framework */; };
 		3ACE35AF1C3BA25C002E6E22 /* GSMMovieResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3ACE35AD1C3BA25C002E6E22 /* GSMMovieResources.bundle */; };
+		9614D1BF1DF7E89200AC935E /* BannerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9614D1BE1DF7E89200AC935E /* BannerTableViewCell.m */; };
+		9614D1C21DF7E8A800AC935E /* BannerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9614D1C11DF7E8A800AC935E /* BannerTableViewController.m */; };
 		A3418CB318D999C5003E302C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A3418CB118D999C5003E302C /* InfoPlist.strings */; };
 		A3418CB518D999C5003E302C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A3418CB418D999C5003E302C /* main.m */; };
 		A3418CB918D999C5003E302C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A3418CB818D999C5003E302C /* AppDelegate.m */; };
@@ -50,6 +52,10 @@
 		8B84B68A19F8BF0A006BA6B3 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		8B84B68C19F8BF18006BA6B3 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		8B84B68D19F8BF18006BA6B3 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		9614D1BD1DF7E89200AC935E /* BannerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerTableViewCell.h; sourceTree = "<group>"; };
+		9614D1BE1DF7E89200AC935E /* BannerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerTableViewCell.m; sourceTree = "<group>"; };
+		9614D1C01DF7E8A800AC935E /* BannerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerTableViewController.h; sourceTree = "<group>"; };
+		9614D1C11DF7E8A800AC935E /* BannerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerTableViewController.m; sourceTree = "<group>"; };
 		A3418CA518D999C5003E302C /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3418CA818D999C5003E302C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A3418CAA18D999C5003E302C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -174,6 +180,10 @@
 				3A24ECA01D810B600014B706 /* BannerTabBarController.m */,
 				3A24ECA21D81207E0014B706 /* BannerNavigationController.h */,
 				3A24ECA31D81207E0014B706 /* BannerNavigationController.m */,
+				9614D1BD1DF7E89200AC935E /* BannerTableViewCell.h */,
+				9614D1BE1DF7E89200AC935E /* BannerTableViewCell.m */,
+				9614D1C01DF7E8A800AC935E /* BannerTableViewController.h */,
+				9614D1C11DF7E8A800AC935E /* BannerTableViewController.m */,
 				A3418CC318D999C5003E302C /* Images.xcassets */,
 				3ACE35AB1C3BA25C002E6E22 /* FluctSDK */,
 				A3418CAF18D999C5003E302C /* Supporting Files */,
@@ -311,9 +321,11 @@
 				3A24ECA11D810B600014B706 /* BannerTabBarController.m in Sources */,
 				3A24ECA41D81207E0014B706 /* BannerNavigationController.m in Sources */,
 				A3418CF118D9AA25003E302C /* ManyBannerViewController.m in Sources */,
+				9614D1BF1DF7E89200AC935E /* BannerTableViewCell.m in Sources */,
 				A3418CE218D9A040003E302C /* BannerViewController.m in Sources */,
 				A3418CC218D999C5003E302C /* ViewController.m in Sources */,
 				A3418CB918D999C5003E302C /* AppDelegate.m in Sources */,
+				9614D1C21DF7E8A800AC935E /* BannerTableViewController.m in Sources */,
 				A3E7215318DAEFA900A3ABF1 /* InterstitialViewController.m in Sources */,
 				A3418CB518D999C5003E302C /* main.m in Sources */,
 			);
