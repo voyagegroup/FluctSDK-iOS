@@ -22,6 +22,8 @@ typedef NS_ENUM(NSInteger, FSSBannerViewCallbackType) {
     FSSBannerViewCallbackTypeMediaIdError = 3,
     FSSBannerViewCallbackTypeNoConfig = 4,
     FSSBannerViewCallbackTypeGetConfigError = 5,
+    FSSBannerViewCallbackTypeNoAd = 6,
+    FSSBannerViewCallbackTypeLoadFinish = 7,
     FSSBannerViewCallbackTypeOtherError = 100
 };
 

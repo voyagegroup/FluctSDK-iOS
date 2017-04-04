@@ -23,9 +23,10 @@ typedef NS_ENUM(NSInteger, FluctInterstitialViewCallbackType) {
 @protocol FluctInterstitialViewDelegate;
 
 __attribute__((deprecated("FluctInterstitialView is deprecated. You should use FSSInterstitialView.")))
-@interface FluctInterstitialView : UIView
+    @interface FluctInterstitialView : UIView
 
-- (id)init;
+                                       -
+                                       (id)init;
 - (id)initWithMediaID:(NSString *)mediaID;
 @property (nonatomic, copy, readwrite) NSString *mediaID;
 
@@ -38,14 +39,13 @@ __attribute__((deprecated("FluctInterstitialView is deprecated. You should use F
 
 @end
 
-@protocol FluctInterstitialViewDelegate <NSObject>
+    @protocol FluctInterstitialViewDelegate<NSObject>
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
-@optional
-- (void)fluctInterstitialView:(FluctInterstitialView *)interstitialView
-                callbackValue:(NSInteger)callbackValue;
+    @optional - (void)fluctInterstitialView : (FluctInterstitialView *)interstitialView
+                                              callbackValue : (NSInteger)callbackValue;
 @end
 
 #pragma clang diagnostic pop

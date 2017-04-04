@@ -67,6 +67,12 @@
         case FSSBannerViewCallbackTypeLoad:
             NSLog(@"読み込まれました");
             break;
+        case FSSBannerViewCallbackTypeLoadFinish:
+            NSLog(@"広告情報の読み込みが完了しました");
+            break;
+        case FSSBannerViewCallbackTypeTap:
+            NSLog(@"タップされました");
+            break;
         case FSSBannerViewCallbackTypeOffline:
             NSLog(@"圏外です");
             break;
@@ -79,11 +85,12 @@
         case FSSBannerViewCallbackTypeGetConfigError:
             NSLog(@"広告設定情報を取得出来ませんでした");
             break;
+        case FSSBannerViewCallbackTypeNoAd:
+            NSLog(@"広告在庫がありませんでした");
+            break;
         case FSSBannerViewCallbackTypeOtherError:
             NSLog(@"その他のエラーです");
             break;
-        default:
-          break;
     }
 }
 

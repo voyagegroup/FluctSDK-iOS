@@ -17,6 +17,12 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## v4.5.0 2017/04/04
+* サポートバージョンをiOS7.0以上に変更
+* FSSBannerViewのコールバックの種類を追加
+  * loadFinish: 広告情報の読み込み完了時の通知
+  * noAd: 表示する広告が存在しない時の通知
+
 ## v4.4.3 2017/01/25
 * UITableViewにバナー広告を実装したサンプルコード及びドキュメントの追加
 

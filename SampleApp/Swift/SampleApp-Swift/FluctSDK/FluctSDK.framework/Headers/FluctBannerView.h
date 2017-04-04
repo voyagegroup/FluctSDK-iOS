@@ -46,14 +46,13 @@ __attribute__((deprecated("FluctBannerView is deprecated. You should use FSSBann
 
 @end
 
-@protocol FluctBannerViewDelegate <NSObject>
+    @protocol FluctBannerViewDelegate<NSObject>
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
-@optional
-- (void)fluctBannerView:(FluctBannerView *)bannerView
-          callbackValue:(NSInteger)callbackValue;
+    @optional - (void)fluctBannerView : (FluctBannerView *)bannerView
+                                        callbackValue : (NSInteger)callbackValue;
 @end
 
 #pragma clang diagnostic pop

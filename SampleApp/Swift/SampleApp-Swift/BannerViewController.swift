@@ -24,6 +24,8 @@ class BannerViewController: UIViewController, FSSBannerViewDelegate {
         switch (callbackType) {
         case .load:
             print("表示しました")
+        case .loadFinish:
+            print("広告の読み込みが完了しました")
         case .tap:
             print("タップしました")
         case .offline:
@@ -33,7 +35,9 @@ class BannerViewController: UIViewController, FSSBannerViewDelegate {
         case .noConfig:
             print("メディアIDに設定されていません")
         case .getConfigError:
-            print("広告情報が取得出来ませんでした")
+            print("広告設定情報が取得出来ませんでした")
+        case .noAd:
+            print("広告を取得出来ませんでした。")
         case .otherError:
             print("その他のエラーです")
         }
