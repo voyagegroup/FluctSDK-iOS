@@ -13,6 +13,8 @@
 
 #import "FSSBannerView.h"
 #import "FSSInterstitialView.h"
+#import "FSSNativeTableViewCell.h"
+#import "FSSNativeView.h"
 #import "FluctBannerView.h"
 #import "FluctInterstitialView.h"
 #import <UIKit/UIKit.h>

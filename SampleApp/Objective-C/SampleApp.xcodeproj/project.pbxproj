@@ -13,6 +13,8 @@
 		3ACE35AF1C3BA25C002E6E22 /* GSMMovieResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3ACE35AD1C3BA25C002E6E22 /* GSMMovieResources.bundle */; };
 		9614D1BF1DF7E89200AC935E /* BannerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9614D1BE1DF7E89200AC935E /* BannerTableViewCell.m */; };
 		9614D1C21DF7E8A800AC935E /* BannerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9614D1C11DF7E8A800AC935E /* BannerTableViewController.m */; };
+		96ABC5C01F2579CB00C2A078 /* NativeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96ABC5BF1F2579CB00C2A078 /* NativeViewController.m */; };
+		96ABC5C31F2579DC00C2A078 /* NativeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96ABC5C21F2579DC00C2A078 /* NativeTableViewController.m */; };
 		A3418CB318D999C5003E302C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A3418CB118D999C5003E302C /* InfoPlist.strings */; };
 		A3418CB518D999C5003E302C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A3418CB418D999C5003E302C /* main.m */; };
 		A3418CB918D999C5003E302C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A3418CB818D999C5003E302C /* AppDelegate.m */; };
@@ -56,6 +58,10 @@
 		9614D1BE1DF7E89200AC935E /* BannerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerTableViewCell.m; sourceTree = "<group>"; };
 		9614D1C01DF7E8A800AC935E /* BannerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerTableViewController.h; sourceTree = "<group>"; };
 		9614D1C11DF7E8A800AC935E /* BannerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerTableViewController.m; sourceTree = "<group>"; };
+		96ABC5BE1F2579CB00C2A078 /* NativeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeViewController.h; sourceTree = "<group>"; };
+		96ABC5BF1F2579CB00C2A078 /* NativeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeViewController.m; sourceTree = "<group>"; };
+		96ABC5C11F2579DC00C2A078 /* NativeTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeTableViewController.h; sourceTree = "<group>"; };
+		96ABC5C21F2579DC00C2A078 /* NativeTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeTableViewController.m; sourceTree = "<group>"; };
 		A3418CA518D999C5003E302C /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3418CA818D999C5003E302C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A3418CAA18D999C5003E302C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -120,6 +126,45 @@
 			path = FluctSDK;
 			sourceTree = "<group>";
 		};
+		96C87E711F15FEA800D90AC3 /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				A3418CE018D9A040003E302C /* BannerViewController.h */,
+				A3418CE118D9A040003E302C /* BannerViewController.m */,
+				A3418CEF18D9AA25003E302C /* ManyBannerViewController.h */,
+				A3418CF018D9AA25003E302C /* ManyBannerViewController.m */,
+				3A24EC9F1D810B600014B706 /* BannerTabBarController.h */,
+				3A24ECA01D810B600014B706 /* BannerTabBarController.m */,
+				3A24ECA21D81207E0014B706 /* BannerNavigationController.h */,
+				3A24ECA31D81207E0014B706 /* BannerNavigationController.m */,
+				9614D1BD1DF7E89200AC935E /* BannerTableViewCell.h */,
+				9614D1BE1DF7E89200AC935E /* BannerTableViewCell.m */,
+				9614D1C01DF7E8A800AC935E /* BannerTableViewController.h */,
+				9614D1C11DF7E8A800AC935E /* BannerTableViewController.m */,
+			);
+			path = Banner;
+			sourceTree = "<group>";
+		};
+		96C87E721F15FEB000D90AC3 /* Interstitial */ = {
+			isa = PBXGroup;
+			children = (
+				A3E7215118DAEFA900A3ABF1 /* InterstitialViewController.h */,
+				A3E7215218DAEFA900A3ABF1 /* InterstitialViewController.m */,
+			);
+			path = Interstitial;
+			sourceTree = "<group>";
+		};
+		96C87E731F15FEB900D90AC3 /* Native */ = {
+			isa = PBXGroup;
+			children = (
+				96ABC5BE1F2579CB00C2A078 /* NativeViewController.h */,
+				96ABC5BF1F2579CB00C2A078 /* NativeViewController.m */,
+				96ABC5C11F2579DC00C2A078 /* NativeTableViewController.h */,
+				96ABC5C21F2579DC00C2A078 /* NativeTableViewController.m */,
+			);
+			path = Native;
+			sourceTree = "<group>";
+		};
 		A3418C9C18D999C5003E302C = {
 			isa = PBXGroup;
 			children = (
@@ -165,25 +210,14 @@
 		A3418CAE18D999C5003E302C /* SampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				96C87E731F15FEB900D90AC3 /* Native */,
+				96C87E721F15FEB000D90AC3 /* Interstitial */,
+				96C87E711F15FEA800D90AC3 /* Banner */,
 				A3418CB718D999C5003E302C /* AppDelegate.h */,
 				A3418CB818D999C5003E302C /* AppDelegate.m */,
 				A3418CBA18D999C5003E302C /* Main.storyboard */,
 				A3418CC018D999C5003E302C /* ViewController.h */,
 				A3418CC118D999C5003E302C /* ViewController.m */,
-				A3418CE018D9A040003E302C /* BannerViewController.h */,
-				A3418CE118D9A040003E302C /* BannerViewController.m */,
-				A3418CEF18D9AA25003E302C /* ManyBannerViewController.h */,
-				A3418CF018D9AA25003E302C /* ManyBannerViewController.m */,
-				A3E7215118DAEFA900A3ABF1 /* InterstitialViewController.h */,
-				A3E7215218DAEFA900A3ABF1 /* InterstitialViewController.m */,
-				3A24EC9F1D810B600014B706 /* BannerTabBarController.h */,
-				3A24ECA01D810B600014B706 /* BannerTabBarController.m */,
-				3A24ECA21D81207E0014B706 /* BannerNavigationController.h */,
-				3A24ECA31D81207E0014B706 /* BannerNavigationController.m */,
-				9614D1BD1DF7E89200AC935E /* BannerTableViewCell.h */,
-				9614D1BE1DF7E89200AC935E /* BannerTableViewCell.m */,
-				9614D1C01DF7E8A800AC935E /* BannerTableViewController.h */,
-				9614D1C11DF7E8A800AC935E /* BannerTableViewController.m */,
 				A3418CC318D999C5003E302C /* Images.xcassets */,
 				3ACE35AB1C3BA25C002E6E22 /* FluctSDK */,
 				A3418CAF18D999C5003E302C /* Supporting Files */,
@@ -318,6 +352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96ABC5C01F2579CB00C2A078 /* NativeViewController.m in Sources */,
 				3A24ECA11D810B600014B706 /* BannerTabBarController.m in Sources */,
 				3A24ECA41D81207E0014B706 /* BannerNavigationController.m in Sources */,
 				A3418CF118D9AA25003E302C /* ManyBannerViewController.m in Sources */,
@@ -325,6 +360,7 @@
 				A3418CE218D9A040003E302C /* BannerViewController.m in Sources */,
 				A3418CC218D999C5003E302C /* ViewController.m in Sources */,
 				A3418CB918D999C5003E302C /* AppDelegate.m in Sources */,
+				96ABC5C31F2579DC00C2A078 /* NativeTableViewController.m in Sources */,
 				9614D1C21DF7E8A800AC935E /* BannerTableViewController.m in Sources */,
 				A3E7215318DAEFA900A3ABF1 /* InterstitialViewController.m in Sources */,
 				A3418CB518D999C5003E302C /* main.m in Sources */,
@@ -468,6 +504,7 @@
 					"TEST_SERVER_REQUEST=1",
 				);
 				INFOPLIST_FILE = "SampleApp/SampleApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.voyagegroup.fluct.${PRODUCT_NAME:rfc1034identifier}";
@@ -487,6 +524,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SampleApp/SampleApp-Prefix.pch";
 				INFOPLIST_FILE = "SampleApp/SampleApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.voyagegroup.fluct.${PRODUCT_NAME:rfc1034identifier}";
