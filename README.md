@@ -17,6 +17,9 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## v4.6.1 2017/08/02
+* 軽微なバグ修正
+
 ## v4.6.0 2017/07/28
 * ネイティブ広告対応
   * ネイティブ広告用クラスの追加
