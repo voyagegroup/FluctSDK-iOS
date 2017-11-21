@@ -11,10 +11,15 @@
  * ・コンバージョン通知処理
  */
 
+#import "FSSAdRequestTargeting.h"
 #import "FSSBannerView.h"
 #import "FSSInterstitialView.h"
 #import "FSSNativeTableViewCell.h"
 #import "FSSNativeView.h"
+#import "FSSRewardedVideo.h"
+#import "FSSRewardedVideoCustomEvent.h"
+#import "FSSRewardedVideoError.h"
+#import "FSSRewardedVideoWorkQueue.h"
 #import "FluctBannerView.h"
 #import "FluctInterstitialView.h"
 #import <UIKit/UIKit.h>
@@ -45,4 +50,6 @@
  */
 - (void)setBannerConfiguration:(NSString *)mediaId;
 
+// Check the version of this FluctSDK
++ (NSString *)version;
 @end

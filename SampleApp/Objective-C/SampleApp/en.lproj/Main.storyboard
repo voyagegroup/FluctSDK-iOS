@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vH1-a9-d8T">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vH1-a9-d8T">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <userGuides>
-                            <userLayoutGuide location="333" affinity="minY"/>
+                            <userLayoutGuide location="331" affinity="minY"/>
                         </userGuides>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gbn-08-rDT">
@@ -56,6 +56,16 @@
                                         </state>
                                         <connections>
                                             <segue destination="sCi-ba-Ybb" kind="show" id="vWh-Ih-bBi"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNx-py-9hv">
+                                        <rect key="frame" x="20" y="175" width="280" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Sample for Rewarded Video">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Inb-sh-sZW" kind="show" id="kL7-05-TSY"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -128,7 +138,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UEb-fU-BZF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1599" y="-21"/>
+            <point key="canvasLocation" x="-282" y="-698"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="N0Y-jr-FME">
@@ -247,6 +257,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UAk-Kl-5iv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-140" y="698.5007496251875"/>
+        </scene>
+        <!--Rewarded Video View Controller-->
+        <scene sceneID="FrS-Jg-0Ua">
+            <objects>
+                <viewController id="Inb-sh-sZW" customClass="RewardedVideoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ql0-dr-dNw"/>
+                        <viewControllerLayoutGuide type="bottom" id="qgW-qm-Czr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FZg-H1-DpI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ISP-Ht-To4">
+                                <rect key="frame" x="159.5" y="264" width="56" height="30"/>
+                                <state key="normal" title="Load Ad"/>
+                                <connections>
+                                    <action selector="didTouchUpLoadAd:" destination="Inb-sh-sZW" eventType="touchUpInside" id="6zk-Cl-sdH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfn-x4-rqo">
+                                <rect key="frame" x="157" y="353" width="61" height="30"/>
+                                <state key="normal" title="Show Ad"/>
+                                <connections>
+                                    <action selector="didTouchUpShowAd:" destination="Inb-sh-sZW" eventType="touchUpInside" id="dyK-SK-n1F"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jfn-x4-rqo" firstAttribute="top" secondItem="ISP-Ht-To4" secondAttribute="bottom" constant="59" id="E98-gW-kdf"/>
+                            <constraint firstItem="jfn-x4-rqo" firstAttribute="centerX" secondItem="FZg-H1-DpI" secondAttribute="centerX" id="RMJ-nX-aen"/>
+                            <constraint firstItem="ISP-Ht-To4" firstAttribute="top" secondItem="Ql0-dr-dNw" secondAttribute="bottom" constant="200" id="b3i-Y8-OOj"/>
+                            <constraint firstItem="ISP-Ht-To4" firstAttribute="centerX" secondItem="FZg-H1-DpI" secondAttribute="centerX" id="jdj-uQ-gXM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="showButton" destination="jfn-x4-rqo" id="Hv2-ZG-wu9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="65o-jV-URP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1598" y="-21"/>
         </scene>
         <!--Native View Controller-->
         <scene sceneID="P4n-jH-73d">
@@ -437,7 +490,7 @@
                 <navigationController id="7Zr-UO-A1r" customClass="BannerNavigationController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="KUJ-JO-bdB"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fn5-tC-skr">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -542,11 +595,11 @@
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="banner" rowHeight="80" id="CuN-3C-o2K" customClass="BannerTableViewCell">
                                 <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CuN-3C-o2K" id="x2F-Xl-FZA">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="CuN-3C-o2K" id="x2F-Xl-FZA">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8rO-Qs-Zzq" customClass="FSSBannerView">
+                                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8rO-Qs-Zzq" customClass="FSSBannerView">
                                             <rect key="frame" x="140" y="15" width="320" height="50"/>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
@@ -635,7 +688,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vH1-a9-d8T" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="yda-3i-aNn">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -648,7 +701,4 @@
             <point key="canvasLocation" x="-138.75" y="-21.12676056338028"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="ZfG-J6-13l"/>
-    </inferredMetricsTieBreakers>
 </document>

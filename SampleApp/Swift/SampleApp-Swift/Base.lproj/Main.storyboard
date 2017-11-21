@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="saq-kr-HLN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="saq-kr-HLN">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,7 +15,7 @@
             <objects>
                 <navigationController id="saq-kr-HLN" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="EP8-iy-6yP">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -170,7 +170,7 @@
             <objects>
                 <navigationController id="tMh-CW-jSO" customClass="BannerNavigationController" customModule="SampleApp_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wt4-aR-0Ec">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -330,6 +330,29 @@
                                             <segue destination="jZ2-3O-PJp" kind="show" id="iRm-Cj-v3a"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="sya-7t-qvp">
+                                        <rect key="frame" x="0.0" y="298.5" width="375" height="81"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sya-7t-qvp" id="tEa-pI-G2n">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rewarded Video Sample" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L7j-Pc-Jds">
+                                                    <rect key="frame" x="94" y="30" width="187" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="L7j-Pc-Jds" firstAttribute="centerY" secondItem="tEa-pI-G2n" secondAttribute="centerY" id="5qv-Mt-txs"/>
+                                                <constraint firstItem="L7j-Pc-Jds" firstAttribute="centerX" secondItem="tEa-pI-G2n" secondAttribute="centerX" id="Ndj-RU-5hm"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="e0d-qv-QVf" kind="show" id="1pY-IB-0nJ"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -377,7 +400,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G0u-cD-MTV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-633" y="1179"/>
+            <point key="canvasLocation" x="-1249" y="1166"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="b94-rk-88x">
@@ -470,7 +493,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WRZ-xg-OW6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="177" y="1179"/>
+            <point key="canvasLocation" x="-503" y="1165"/>
         </scene>
         <!--Native Table View Controller-->
         <scene sceneID="JDV-95-mMu">
@@ -536,7 +559,50 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zHM-Pk-9Wn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1058" y="1179"/>
+            <point key="canvasLocation" x="177" y="1165"/>
+        </scene>
+        <!--Rewarded Video View Controller-->
+        <scene sceneID="QZ5-7h-XFB">
+            <objects>
+                <viewController id="e0d-qv-QVf" customClass="RewardedVideoViewController" customModule="SampleApp_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Dsa-4z-gIR"/>
+                        <viewControllerLayoutGuide type="bottom" id="pve-84-U6h"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lsO-6e-gpf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LwC-FC-MOx">
+                                <rect key="frame" x="162" y="307" width="51" height="30"/>
+                                <state key="normal" title="load ad"/>
+                                <connections>
+                                    <action selector="didTouchUpLoadAd:" destination="e0d-qv-QVf" eventType="touchUpInside" id="ouD-hU-NyU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u86-16-QZw">
+                                <rect key="frame" x="158" y="387" width="58" height="30"/>
+                                <state key="normal" title="show ad"/>
+                                <connections>
+                                    <action selector="didTouchUpShowAd:" destination="e0d-qv-QVf" eventType="touchUpInside" id="BaX-LX-UqL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LwC-FC-MOx" firstAttribute="top" secondItem="Dsa-4z-gIR" secondAttribute="bottom" constant="243" id="4De-bH-PkA"/>
+                            <constraint firstItem="LwC-FC-MOx" firstAttribute="centerX" secondItem="lsO-6e-gpf" secondAttribute="centerX" id="DyP-zS-2aJ"/>
+                            <constraint firstItem="u86-16-QZw" firstAttribute="centerX" secondItem="lsO-6e-gpf" secondAttribute="centerX" id="Hsx-iU-X1x"/>
+                            <constraint firstItem="u86-16-QZw" firstAttribute="top" secondItem="LwC-FC-MOx" secondAttribute="bottom" constant="50" id="cm5-4G-Vh9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="showButton" destination="u86-16-QZw" id="rgs-LU-C1Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VM9-QX-HIS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1089" y="1165"/>
         </scene>
         <!--Banner Table View Controller-->
         <scene sceneID="auh-pl-xc7">
@@ -550,11 +616,11 @@
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="banner" rowHeight="80" id="KLP-2Y-kbL" customClass="BannerTableViewCell" customModule="SampleApp_Swift" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KLP-2Y-kbL" id="YgK-Gs-djw">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KLP-2Y-kbL" id="YgK-Gs-djw">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lgA-WB-3Rz" customClass="FSSBannerView">
+                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lgA-WB-3Rz" customClass="FSSBannerView">
                                             <rect key="frame" x="27.5" y="14" width="320" height="50"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -581,7 +647,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUT-jI-Rxi">
-                                            <rect key="frame" x="173" y="30" width="29" height="19"/>
+                                            <rect key="frame" x="173" y="32.5" width="29" height="14"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -779,7 +845,4 @@
             <point key="canvasLocation" x="-1345" y="-323"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="872-Jq-Evv"/>
-    </inferredMetricsTieBreakers>
 </document>
