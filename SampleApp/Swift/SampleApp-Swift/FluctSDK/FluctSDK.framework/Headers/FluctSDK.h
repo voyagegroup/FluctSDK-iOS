@@ -13,6 +13,7 @@
 
 #import "FSSAdRequestTargeting.h"
 #import "FSSBannerView.h"
+#import "FSSConfigurationOptions.h"
 #import "FSSInterstitialView.h"
 #import "FSSNativeTableViewCell.h"
 #import "FSSNativeView.h"
@@ -52,4 +53,8 @@
 
 // Check the version of this FluctSDK
 + (NSString *)version;
+
++ (void)configure;
++ (void)configureWithOptions:(FSSConfigurationOptions *)options;
+
 @end

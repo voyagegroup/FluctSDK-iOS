@@ -33,6 +33,11 @@ AL_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, readonly) ALAdType *type;
 
 /**
+ *  The zone identifier for the ad, if any.
+ */
+@property (copy, nonatomic, readonly, alnullable) NSString *zoneIdentifier;
+
+/**
  *  Whether or not the current ad is a video advertisement.
  */
 @property (assign, readonly, getter=isVideoAd) BOOL videoAd;

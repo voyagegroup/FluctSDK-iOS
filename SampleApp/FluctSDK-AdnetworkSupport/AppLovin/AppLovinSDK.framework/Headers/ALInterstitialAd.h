@@ -59,7 +59,8 @@ AL_ASSUME_NONNULL_BEGIN
  *
  * @param placement  A placement to show the interstitial over
  */
-+ (ALInterstitialAd *)showOverPlacement:(alnullable NSString *)placement;
++ (ALInterstitialAd *)showOverPlacement:(alnullable NSString *)placement __deprecated_msg("Placements have been deprecated and will be removed in a future SDK version. Please configure zones from the UI and use them instead.");
+;
 
 /**
  * Show a new interstitial ad. This method will display an interstitial*
@@ -68,7 +69,8 @@ AL_ASSUME_NONNULL_BEGIN
  * @param window     A window to show the interstitial over
  * @param placement  A placement to show the interstitial over
  */
-+ (ALInterstitialAd *)showOver:(UIWindow *)window placement:(alnullable NSString *)placement;
++ (ALInterstitialAd *)showOver:(UIWindow *)window placement:(alnullable NSString *)placement __deprecated_msg("Placements have been deprecated and will be removed in a future SDK version. Please configure zones from the UI and use them instead.");
+;
 
 /**
  * Check if an ad is currently ready to display.
@@ -106,7 +108,8 @@ AL_ASSUME_NONNULL_BEGIN
  * @param placement  Placement over which this ad is displayed
  */
 
-- (void)showOverPlacement:(NSString *)placement;
+- (void)showOverPlacement:(NSString *)placement __deprecated_msg("Placements have been deprecated and will be removed in a future SDK version. Please configure zones from the UI and use them instead.");
+;
 
 /**
  * Show an interstitial over a given window.
@@ -129,7 +132,8 @@ AL_ASSUME_NONNULL_BEGIN
  * @param ad         The ad to render into this interstitial.
  * @param placement  Placement over which this ad is displayed
  */
-- (void)showOver:(UIWindow *)window placement:(alnullable NSString *)placement andRender:(ALAd *)ad;
+- (void)showOver:(UIWindow *)window placement:(alnullable NSString *)placement andRender:(ALAd *)ad __deprecated_msg("Placements have been deprecated and will be removed in a future SDK version. Please configure zones from the UI and use them instead.");
+;
 
 /**
  * Check if an ad is currently ready to display.

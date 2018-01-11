@@ -21,6 +21,11 @@ AL_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, readonly) NSNumber *adIdNumber;
 
 /**
+ *  The zone identifier for the ad, if any.
+ */
+@property (copy, nonatomic, readonly, alnullable) NSString *zoneIdentifier;
+
+/**
  *  The title of the native ad.
  */
 @property (copy, nonatomic, readonly, alnullable) NSString *title;

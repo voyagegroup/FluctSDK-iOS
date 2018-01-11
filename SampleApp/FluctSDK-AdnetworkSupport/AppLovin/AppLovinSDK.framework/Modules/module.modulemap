@@ -15,4 +15,5 @@ framework module AppLovinSDK {
     link framework "StoreKit"
     link framework "SystemConfiguration"
     link framework "UIKit"
+    link framework "WebKit"
 }

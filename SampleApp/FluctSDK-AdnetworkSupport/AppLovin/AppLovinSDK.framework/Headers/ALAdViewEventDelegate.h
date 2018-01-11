@@ -71,6 +71,16 @@ typedef NS_ENUM(NSInteger, ALAdViewDisplayErrorCode) {
 - (void)ad:(ALAd *)ad willLeaveApplicationForAdView:(ALAdView *)adView;
 
 /**
+ * This method is invoked after the user returns to the application after a click.
+ *
+ * This method is invoked on the main UI thread.
+ *
+ * @param ad     Ad for which the user will return to the application for.
+ * @param adView Ad view containing the ad for which the user will return to the application for.
+ */
+- (void)ad:(ALAd *)ad didReturnToApplicationForAdView:(ALAdView *)adView;
+
+/**
  * This method is invoked if the ad view fails to display an ad.
  *
  * This method is invoked on the main UI thread.

@@ -93,7 +93,9 @@ AL_ASSUME_NONNULL_BEGIN
  *
  * @param placement Placement to show the app over
  */
-+ (void)showOverPlacement:(alnullable NSString *)placement;
++ (void)showOverPlacement:(alnullable NSString *)placement
+    __deprecated_msg("Placements have been deprecated and will be removed in a future SDK version. Please configure zones from the UI and use them instead.");
+;
 
 /**
  * Show an incentivized interstitial over the current key window, using the most recently pre-loaded ad.
@@ -108,7 +110,9 @@ AL_ASSUME_NONNULL_BEGIN
  * @param adRewardDelegate The reward delegate to notify upon validating reward authenticity with AppLovin.
  * @param placement Placement to show the app over
  */
-+ (void)showOverPlacement:(alnullable NSString *)placement andNotify:(alnullable id<ALAdRewardDelegate>)adRewardDelegate;
++ (void)showOverPlacement:(alnullable NSString *)placement andNotify:(alnullable id<ALAdRewardDelegate>)adRewardDelegate
+    __deprecated_msg("Placements have been deprecated and will be removed in a future SDK version. Please configure zones from the UI and use them instead.");
+;
 
 /**
  * Show an incentivized interstitial, using the most recently pre-loaded ad.
@@ -140,7 +144,8 @@ AL_ASSUME_NONNULL_BEGIN
  * @param window The UIWindow over which the rewarded video should be displayed.
  * @param placement Placement to show the app over
  */
-+ (void)showOver:(UIWindow *)window placement:(alnullable NSString *)placement andNotify:(alnullable id<ALAdRewardDelegate>)adRewardDelegate;
++ (void)showOver:(UIWindow *)window placement:(alnullable NSString *)placement andNotify:(alnullable id<ALAdRewardDelegate>)adRewardDelegate
+    __deprecated_msg("Placements have been deprecated and will be removed in a future SDK version. Please configure zones from the UI and use them instead.");
 
 #pragma mark - Integration, Instance Methods
 
@@ -153,7 +158,19 @@ AL_ASSUME_NONNULL_BEGIN
  */
 - (instancetype)initWithSdk:(ALSdk *)sdk;
 
-- (instancetype)initIncentivizedInterstitialWithSdk:(ALSdk *)sdk __deprecated_msg("Use initWithSdk instead.");
+#pragma mark - Integration, zones
+
+/**
+ * Initialize an incentivized interstitial with a zone.
+ *
+ * @param zoneIdentifier The identifier of the zone for which to load ads for.
+ */
+- (instancetype)initWithZoneIdentifier:(NSString *)zoneIdentifier;
+
+/**
+ *  The zone identifier this incentivized ad was initialized with and is loading ads for, if any.
+ */
+@property (copy, nonatomic, readonly, alnullable) NSString *zoneIdentifier;
 
 /**
  * Pre-load an incentivized interstitial, and notify your provided Ad Load Delegate.
@@ -222,11 +239,14 @@ AL_ASSUME_NONNULL_BEGIN
  * the user's balance. The Reward Validation Delegate will tell you whether we were able to reach our servers or not. If you receive
  * a successful response, you should refresh the user's balance from your server. For more info, see the documentation.
  *
+ * @param window           The UIWindow over which the rewarded video should be displayed.
+ * @param ad               The ad to render into this incentivized ad.
  * @param adRewardDelegate The reward delegate to notify upon validating reward authenticity with AppLovin.
- * @param window The UIWindow over which the rewarded video should be displayed.
- * @param placement A placement current incentivized ad is shown over
  */
-- (void)showOver:(UIWindow *)window placement:(alnullable NSString *)placement andNotify:(alnullable id<ALAdRewardDelegate>)adRewardDelegate;
+- (void)showOver:(UIWindow *)window renderAd:(ALAd *)ad andNotify:(alnullable id<ALAdRewardDelegate>)adRewardDelegate;
+
+- (void)showOver:(UIWindow *)window placement:(alnullable NSString *)placement andNotify:(alnullable id<ALAdRewardDelegate>)adRewardDelegate
+    __deprecated_msg("Placements have been deprecated and will be removed in a future SDK version. Please configure zones from the UI and use them instead.");
 
 /**
  * Dismiss an incentivized interstitial prematurely, before video playback has completed.
@@ -255,7 +275,8 @@ AL_ASSUME_NONNULL_BEGIN
  */
 + (alnullable NSString *)userIdentifier;
 
-- (instancetype)init __attribute__((unavailable("Use [ALIncentivizedInterstitialAd shared] or initWithSdk: instead.")));
+- (instancetype)init __attribute__((unavailable("Use initWithSdk:, initWithZoneIdentifier:, or [ALIncentivizedInterstitialAd shared] instead.")));
+- (instancetype)initIncentivizedInterstitialWithSdk:(ALSdk *)sdk __deprecated_msg("Use initWithSdk:, initWithZoneIdentifier: or [ALIncentivizedInterstitialAd shared] instead.");
 
 @end
 

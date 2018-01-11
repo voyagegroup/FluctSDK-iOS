@@ -16,6 +16,8 @@ pod "FluctSDK"
 FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照してください
 
 # FluctSDK Release Note
+## v4.7.1 2018/01/11
+* 動画リワード広告のメディエーション用アドネットワークSDKのアップデート対応
 
 ## v4.7.0 2017/11/21
 * 動画リワード広告対応

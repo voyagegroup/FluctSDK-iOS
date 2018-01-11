@@ -33,7 +33,15 @@ AL_ASSUME_NONNULL_BEGIN
  * @param adSize    Size of an ad to load. Must not be nil.
  * @param delegate  A callback to notify of the fact that the ad is loaded.
  */
-- (void)loadNextAd:(ALAdSize *)adSize andNotify:(alnullable id<ALAdLoadDelegate>)delegate;
+- (void)loadNextAd:(ALAdSize *)adSize andNotify:(id<ALAdLoadDelegate>)delegate;
+
+/**
+ * Fetch a new ad, for a given zone, notifying a supplied delegate on completion.
+ *
+ * @param zoneIdentifier  The identifier of the zone to load an ad for. Must not be nil.
+ * @param delegate        A callback to notify of the fact that the ad is loaded.
+ */
+- (void)loadNextAdForZoneIdentifier:(NSString *)zoneIdentifier andNotify:(id<ALAdLoadDelegate>)delegate;
 
 /**
  * Pre-load an ad of a given size in the background, if one is not already available.
@@ -43,13 +51,29 @@ AL_ASSUME_NONNULL_BEGIN
 - (void)preloadAdOfSize:(ALAdSize *)adSize;
 
 /**
+ * Pre-load an ad for a given zone in the background, if one is not already available.
+ *
+ * @param zoneIdentifier The identifier of the zone to preload an ad for.
+ */
+- (void)preloadAdForZoneIdentifier:(NSString *)zoneIdentifier;
+
+/**
  * Check whether an ad of a given size is pre-loaded and ready to be displayed.
  *
- * @param adSize Size of the ad to check for.
+ * @param adSize  Size of the ad to check for.
  *
  * @return YES if an ad of this size is pre-loaded and ready to display without further network activity. NO if requesting an ad of this size would require fetching over the network.
  */
 - (BOOL)hasPreloadedAdOfSize:(ALAdSize *)adSize;
+
+/**
+ * Check whether an ad for a given zone is pre-loaded and ready to be displayed.
+ *
+ * @param zoneIdentifier  Zone for the ad to check for.
+ *
+ * @return YES if an ad for this zone is pre-loaded and ready to display without further network activity. NO if requesting an ad for this zone would require fetching over the network.
+ */
+- (BOOL)hasPreloadedAdForZoneIdentifier:(NSString *)zoneIdentifier;
 
 /**
  * @name Observing Ad Rotations

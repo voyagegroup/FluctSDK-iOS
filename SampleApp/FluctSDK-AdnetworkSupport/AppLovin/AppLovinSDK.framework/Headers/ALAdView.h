@@ -63,6 +63,11 @@ AL_ASSUME_NONNULL_BEGIN
 @property (strong, atomic) ALAdSize *adSize;
 
 /**
+ *  The zone identifier this ALAdView was initialized with and is loading ads for, if any.
+ */
+@property (copy, nonatomic, readonly, alnullable) NSString *zoneIdentifier;
+
+/**
  *  Whether or not this ALAdView should automatically load and rotate banners.
  *
  *  If YES, ads will be automatically loaded and updated. If NO, you are reponsible for this behavior via [ALAdView loadNextAd]. Defaults to YES.
@@ -105,7 +110,8 @@ AL_ASSUME_NONNULL_BEGIN
  * @param ad          Ad to render. Must not be nil.
  * @param placement   Name of the placement over which the ad is rendered. May be null
  */
-- (void)render:(ALAd *)ad overPlacement:(alnullable NSString *)placement;
+- (void)render:(ALAd *)ad overPlacement:(alnullable NSString *)placement __deprecated_msg("Placements have been deprecated and will be removed in a future SDK version. Please configure zones from the UI and use them instead.");
+;
 
 /**
  * @name Initialization
@@ -121,9 +127,19 @@ AL_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithSize:(ALAdSize *)size;
 
 /**
+ *  Initialize the ad view for a given size and zone.
+ *
+ *  @param size           ALAdSize representing the size of this ad. For example, [ALAdSize sizeBanner].
+ *  @param zoneIdentifier Identifier for the zone this ALAdView should load ads for.
+ *
+ *  @return A new instance of ALAdView.
+ */
+- (instancetype)initWithSize:(ALAdSize *)size zoneIdentifier:(alnullable NSString *)zoneIdentifier;
+
+/**
  *  Initialize the ad view with a given size.
  *
- *  @param sdk Instance of ALSdk to use.
+ *  @param sdk  Instance of ALSdk to use.
  *  @param size ALAdSize representing the size of this ad. For example, [ALAdSize sizeBanner].
  *
  *  @return A new instance of ALAdView.
@@ -135,13 +151,13 @@ AL_ASSUME_NONNULL_BEGIN
  *
  * @param frame  Frame to use.
  * @param size   Ad size to use.
- * @param sdk    Instace of ALSdk to use.
+ * @param sdk    Instance of ALSdk to use.
  *
  * @return A new instance of ALAdView.
  */
-- (id)initWithFrame:(CGRect)frame size:(ALAdSize *)size sdk:(ALSdk *)sdk;
+- (instancetype)initWithFrame:(CGRect)frame size:(ALAdSize *)size sdk:(ALSdk *)sdk;
 
-- (id)init __attribute__((unavailable("Use initWithSize:")));
+- (instancetype)init __attribute__((unavailable("Use one of the other provided initializers")));
 
 @end
 

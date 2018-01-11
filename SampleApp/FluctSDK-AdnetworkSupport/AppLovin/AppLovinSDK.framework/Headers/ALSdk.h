@@ -61,6 +61,13 @@ AL_ASSUME_NONNULL_BEGIN
 + (NSString *)version;
 
 /**
+ * Get the current version of the SDK in numeric format.
+ *
+ * @return The current SDK version in numeric format.
+ */
++ (NSUInteger)versionCode;
+
+/**
  * @name SDK Services
  */
 
