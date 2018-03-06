@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+#import "ALSdk.h"
 #import "ALAdService.h"
 #import "ALAdViewEventDelegate.h"
-#import "ALSdk.h"
 
 AL_ASSUME_NONNULL_BEGIN
 
@@ -34,24 +34,24 @@ AL_ASSUME_NONNULL_BEGIN
  *
  *  Please note: This delegate is retained strongly and might lead to retain cycles if delegate holds strong reference to this ALAdView.
  */
-@property (strong, atomic, alnullable) id<ALAdLoadDelegate> adLoadDelegate;
+@property (strong, atomic, alnullable) id <ALAdLoadDelegate> adLoadDelegate;
 
 /**
  *  An object conforming to the ALAdDisplayDelegate protocol, which, if set, will be notified of ad show/hide events.
  *
  *  Please note: This delegate is retained strongly and might lead to retain cycles if delegate holds strong reference to this ALAdView.
  */
-@property (strong, atomic, alnullable) id<ALAdDisplayDelegate> adDisplayDelegate;
+@property (strong, atomic, alnullable) id <ALAdDisplayDelegate> adDisplayDelegate;
 
 /**
  *  An object conforming to the ALAdViewEventDelegate protocol, which, if set, will be notified of ALAdView-specific events.
  *
  *  Please note: This delegate is retained strongly and might lead to retain cycles if delegate holds strong reference to this ALAdView.
  */
-@property (strong, atomic, alnullable) id<ALAdViewEventDelegate> adEventDelegate;
+@property (strong, atomic, alnullable) id <ALAdViewEventDelegate> adEventDelegate;
 
 // Primarily for internal use; banners and mrecs cannot contain videos.
-@property (strong, atomic, alnullable) id<ALAdVideoPlaybackDelegate> adVideoPlaybackDelegate;
+@property (strong, atomic, alnullable) id <ALAdVideoPlaybackDelegate> adVideoPlaybackDelegate;
 
 /**
  * @name Ad View Configuration
@@ -76,11 +76,6 @@ AL_ASSUME_NONNULL_BEGIN
 @property (assign, atomic, getter=isAutoloadEnabled, setter=setAutoloadEnabled:) BOOL shouldAutoload;
 
 /**
- *  The UIViewController in whose view this ALAdView is placed.
- */
-@property (strong, atomic, alnullable) UIViewController *parentController __deprecated_msg("This property is deprecated and will be removed in a future SDK version.");
-
-/**
  * @name Loading and Rendering Ads
  */
 
@@ -91,27 +86,11 @@ AL_ASSUME_NONNULL_BEGIN
 - (void)loadNextAd;
 
 /**
- * Check if the next ad is currently ready to display.
- *
- * @return YES if a subsequent call to a show method will result in an immediate display. NO if a call to a show method will require network activity first.
- */
-@property (readonly, atomic, getter=isReadyForDisplay) BOOL readyForDisplay;
-
-/**
  * Render a specific ad that was loaded via ALAdService.
  *
  * @param ad Ad to render. Must not be nil.
  */
 - (void)render:(ALAd *)ad;
-
-/**
- * Render a specific ad that was loaded via ALAdService.
- *
- * @param ad          Ad to render. Must not be nil.
- * @param placement   Name of the placement over which the ad is rendered. May be null
- */
-- (void)render:(ALAd *)ad overPlacement:(alnullable NSString *)placement __deprecated_msg("Placements have been deprecated and will be removed in a future SDK version. Please configure zones from the UI and use them instead.");
-;
 
 /**
  * @name Initialization
@@ -157,6 +136,7 @@ AL_ASSUME_NONNULL_BEGIN
  */
 - (instancetype)initWithFrame:(CGRect)frame size:(ALAdSize *)size sdk:(ALSdk *)sdk;
 
+
 - (instancetype)init __attribute__((unavailable("Use one of the other provided initializers")));
 
 @end
@@ -168,6 +148,12 @@ AL_ASSUME_NONNULL_BEGIN
  */
 @interface ALAdView : UIView <ALAdViewProtocol>
 
+@end
+
+@interface ALAdView(ALDeprecated)
+@property (strong, atomic, alnullable) UIViewController *parentController __deprecated_msg("This property is deprecated and will be removed in a future SDK version.");
+- (void)render:(ALAd *)ad overPlacement:(alnullable NSString *)placement __deprecated_msg("Placements have been deprecated and will be removed in a future SDK version. Please configure zones from the UI and use them instead.");
+@property (readonly, atomic, getter=isReadyForDisplay) BOOL readyForDisplay __deprecated_msg("Checking whether an ad is ready for display has been deprecated and will be removed in a future SDK version. Please use `loadNextAd` or `renderAd:` to display an ad.");
 @end
 
 AL_ASSUME_NONNULL_END

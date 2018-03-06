@@ -16,6 +16,10 @@ pod "FluctSDK"
 FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照してください
 
 # FluctSDK Release Note
+## v4.7.2 2018/03/06
+* 動画リワード広告の一部コールバックのタイミングがアドネットワークによって違っているのを修正
+* 動画リワード広告のメディエーション用アドネットワークSDKのアップデート対応
+
 ## v4.7.1 2018/01/11
 * 動画リワード広告のメディエーション用アドネットワークSDKのアップデート対応
 

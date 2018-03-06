@@ -20,25 +20,25 @@
 #define sdk_ALNullabilityAnnotations_h
 
 #if __has_feature(nullability)
-#define alnullable nullable
-#define alnonnull nonnull
-#define __alnullable __nullable
-#define __alnonnull __nonnull
-#define AL_ASSUME_NONNULL_BEGIN NS_ASSUME_NONNULL_BEGIN
-#define AL_ASSUME_NONNULL_END NS_ASSUME_NONNULL_END
+    #define alnullable nullable
+    #define alnonnull nonnull
+    #define __alnullable __nullable
+    #define __alnonnull __nonnull
+    #define AL_ASSUME_NONNULL_BEGIN NS_ASSUME_NONNULL_BEGIN
+    #define AL_ASSUME_NONNULL_END NS_ASSUME_NONNULL_END
 #else
-#define alnullable
-#define alnonnull
-#define __alnullable
-#define __alnonnull
-#define AL_ASSUME_NONNULL_BEGIN
-#define AL_ASSUME_NONNULL_END
+    #define alnullable
+    #define alnonnull
+    #define __alnullable
+    #define __alnonnull
+    #define AL_ASSUME_NONNULL_BEGIN
+    #define AL_ASSUME_NONNULL_END
 #endif
 
 #if __has_feature(objc_generics)
-#define AL_OF_TYPE(...) __VA_ARGS__
+    #define AL_OF_TYPE(...) __VA_ARGS__
 #else
-#define AL_OF_TYPE(...)
+    #define AL_OF_TYPE(...)
 #endif
 
 #endif

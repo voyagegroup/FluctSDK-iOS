@@ -62,7 +62,12 @@
 
 - (void)presentRewardedVideoAdFromViewController:(UIViewController *)viewController {
     if ([self.rewardedVideo isReadyForDisplay]) {
-        [self.rewardedVideo showOver:viewController.view.window placement:self.placement andNotify:nil];
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+        [self.rewardedVideo showOver:viewController.view.window
+                           placement:self.placement
+                           andNotify:nil];
+#pragma clang diagnostic pop
     } else {
         NSError *error = [NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain code:FSSRewardedVideoAdErrorNotReady userInfo:nil];
         [self.delegate rewardedVideoDidFailToPlayForCustomEvent:self fluctError:error adnetworkError:kALErrorCodeIncentiviziedAdNotPreloaded];

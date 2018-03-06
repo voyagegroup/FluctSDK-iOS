@@ -6,9 +6,9 @@
 //
 //
 
+#import <Foundation/Foundation.h>
 #import "ALAnnotations.h"
 #import "ALPostbackDelegate.h"
-#import <Foundation/Foundation.h>
 
 AL_ASSUME_NONNULL_BEGIN
 
@@ -27,7 +27,7 @@ AL_ASSUME_NONNULL_BEGIN
  * @param targetURL URL to call via HTTP GET.
  * @param delegate Optional postback delegate. May be nil.
  */
-- (void)dispatchPostbackAsync:(NSURL *)targetURL andNotify:(alnullable id<ALPostbackDelegate>)delegate;
+- (void)dispatchPostbackAsync:(NSURL *)targetURL andNotify:(alnullable id <ALPostbackDelegate>)delegate;
 
 @end
 

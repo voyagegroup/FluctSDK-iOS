@@ -6,8 +6,8 @@
 //
 //
 
-#import "ALAd.h"
 #import "ALAnnotations.h"
+#import "ALAd.h"
 
 @class ALAdView;
 
@@ -16,7 +16,8 @@ AL_ASSUME_NONNULL_BEGIN
 /**
  *  This enum contains possible error codes that should be returned when the ad view fails to display an ad.
  */
-typedef NS_ENUM(NSInteger, ALAdViewDisplayErrorCode) {
+typedef NS_ENUM(NSInteger, ALAdViewDisplayErrorCode)
+{
     /**
      * The ad view failed to display an ad for an unspecified reason.
      */

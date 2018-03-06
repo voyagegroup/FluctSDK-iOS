@@ -6,9 +6,9 @@
 //
 //
 
+#import <Foundation/Foundation.h>
 #import "ALAnnotations.h"
 #import "ALNativeAd.h"
-#import <Foundation/Foundation.h>
 
 AL_ASSUME_NONNULL_BEGIN
 
@@ -22,7 +22,7 @@ AL_ASSUME_NONNULL_BEGIN
  *  @param service      Native ad service which loaded the ad.
  *  @param ads          NSArray containing ALNativeAds which were loaded.
  */
-- (void)nativeAdService:(ALNativeAdService *)service didLoadAds:(NSArray * /* of ALNativeAd */)ads;
+- (void)nativeAdService:(ALNativeAdService *)service didLoadAds:(NSArray * /* of ALNativeAd */) ads;
 
 /**
  *  This method is invoked when the native ad service fails to load ad.

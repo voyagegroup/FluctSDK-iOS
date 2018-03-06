@@ -4,12 +4,12 @@
 //
 //
 //
-#import <AVFoundation/AVFoundation.h>
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
+#import <SystemConfiguration/SystemConfiguration.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <StoreKit/StoreKit.h>
-#import <SystemConfiguration/SystemConfiguration.h>
-#import <UIKit/UIKit.h>
 #import <sys/sysctl.h>
 #if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_5_0
 #import <AdSupport/AdSupport.h> // idfaの取得 用
@@ -18,7 +18,7 @@
 
 @class MaioInstance;
 
-@interface Maio : NSObject
+@interface Maio: NSObject
 
 /**
  *  maio SDK のバージョンを返します。
@@ -32,9 +32,9 @@
  */
 + (void)setAdTestMode:(BOOL)adTestMode
 #ifndef DEBUG
-    __attribute__((deprecated("Deprecated on Release build")))
+__attribute__((deprecated("Deprecated on Release build")))
 #endif
-    ;
+;
 
 /// maio SDK からの通知を受け取るデリゲート
 + (id<MaioDelegate>)delegate;
@@ -73,12 +73,14 @@
  */
 + (void)showAtZoneId:(NSString *)zoneId;
 
+
 + (void)showWithViewController:(UIViewController *)vc;
 + (void)showAtZoneId:(NSString *)zoneEid vc:(UIViewController *)vc;
 
 + (MaioInstance *)startWithNonDefaultMediaId:(NSString *)mediaEid delegate:(id<MaioDelegate>)delegate;
 
 @end
+
 
 @interface MaioInstance : NSObject
 
@@ -95,3 +97,4 @@
 - (void)showAtZoneId:(NSString *)zoneEid vc:(UIViewController *)vc;
 
 @end
+

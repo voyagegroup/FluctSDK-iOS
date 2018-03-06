@@ -24,6 +24,7 @@
 @interface NADFullBoard : NSObject
 
 @property (nonatomic, weak) id<NADFullBoardDelegate> delegate;
+@property (nonatomic, copy) UIColor *backgroundColor;
 
 - (void)showFromViewController:(UIViewController *)viewController;
 - (UIViewController<NADFullBoardView> *)fullBoardAdViewController;

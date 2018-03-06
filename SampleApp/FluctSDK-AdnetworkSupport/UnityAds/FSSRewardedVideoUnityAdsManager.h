@@ -11,7 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 typedef NS_ENUM(NSInteger, UnityAdsErrorExtend) {
     UnityAdsErrorExtendLoadFailed = -1,
-    UnityAdsErrorExtendTimeout = -2
+    UnityAdsErrorExtendTimeout = -2,
+    UnityAdsErrorExtendCallDidDisappearFailed = -3,
 };
 
 @protocol FSSRewardedVideoUnityAdsManagerDelegate <NSObject>

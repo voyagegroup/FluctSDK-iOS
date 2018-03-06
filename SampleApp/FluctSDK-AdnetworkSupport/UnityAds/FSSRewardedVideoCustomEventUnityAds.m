@@ -6,6 +6,7 @@
 //
 
 #import "FSSRewardedVideoCustomEventUnityAds.h"
+#import "FSSRewardedVideoConditionObserver.h"
 #import "FSSRewardedVideoUnityAdsManager.h"
 
 /**
@@ -23,6 +24,9 @@ static const NSInteger timeoutSecond = 30;
 @property (nonatomic, copy) NSString *placementID;
 @property (nonatomic) NSTimer *timeoutTimer;
 @property (nonatomic) BOOL isInitialNotificationForAdapter;
+@property (nonatomic, weak) UIViewController *viewController;
+
+@property (nonatomic) FSSRewardedVideoConditionObserver *observer;
 
 @end
 
@@ -58,6 +62,28 @@ static const NSInteger timeoutSecond = 30;
 }
 
 - (void)presentRewardedVideoAdFromViewController:(UIViewController *)viewController {
+    self.viewController = viewController;
+    __weak __typeof(self) weakSelf = self;
+    self.observer = [[FSSRewardedVideoConditionObserver alloc] initWithInterval:0.1f
+        fallbackLimit:10
+        completionHandler:^{
+            dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+                [weakSelf.delegate rewardedVideoDidDisappearForCustomEvent:weakSelf];
+            });
+        }
+        fallbackHandler:^{
+            dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+                [weakSelf.delegate rewardedVideoDidFailToPlayForCustomEvent:weakSelf
+                                                                 fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                                                                code:FSSRewardedVideoAdErrorUnknown
+                                                                                            userInfo:@{NSLocalizedDescriptionKey : @"Failed callback for rewardedVideoDidDisappearForCustomEvent"}]
+                                                             adnetworkError:UnityAdsErrorExtendCallDidDisappearFailed];
+            });
+        }
+        shouldCompletionCondition:^BOOL {
+            return !weakSelf.viewController.presentedViewController;
+        }];
+
     [[FSSRewardedVideoUnityAdsManager sharedInstance] presentRewardedVideoAdFromViewController:viewController
                                                                                    placementId:self.placementID];
 }
@@ -112,11 +138,13 @@ static const NSInteger timeoutSecond = 30;
 
 - (void)unityAdsDidFinish:(NSString *)placementId withFinishState:(UnityAdsFinishState)state {
     __weak __typeof(self) weakSelf = self;
+
     dispatch_async(FSSRewardedVideoWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoShouldRewardForCustomEvent:weakSelf];
         [weakSelf.delegate rewardedVideoWillDisappearForCustomEvent:weakSelf];
-        [weakSelf.delegate rewardedVideoDidDisappearForCustomEvent:weakSelf];
     });
+
+    [self.observer start];
 }
 
 - (void)unityAdsDidError:(UnityAdsError)error withMessage:(NSString *)message {

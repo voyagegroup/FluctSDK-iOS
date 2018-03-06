@@ -5,11 +5,14 @@
 
 #import <UIKit/UIKit.h>
 
+#import "NADUserFeature.h"
+
 NS_ASSUME_NONNULL_BEGIN
 @interface NADVideo : NSObject
 
 @property (nonatomic, copy, nullable) NSString *mediationName;
 @property (nonatomic, copy, nullable) NSString *userId;
+@property (nonatomic) NADUserFeature *userFeature;
 
 @property (nonatomic, readonly, getter=isReady) BOOL ready;
 @property (nonatomic) BOOL isOutputLog;

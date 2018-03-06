@@ -27,6 +27,7 @@ typedef NS_ENUM(NSInteger, MaioFailReason) {
     MaioFailReasonVideoPlayback,
 };
 
+
 /**
  *  maio SDK からの通知を受け取るデリゲート
  */
