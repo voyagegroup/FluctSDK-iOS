@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3A24ECA11D810B600014B706 /* BannerTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A24ECA01D810B600014B706 /* BannerTabBarController.m */; };
 		3A24ECA41D81207E0014B706 /* BannerNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A24ECA31D81207E0014B706 /* BannerNavigationController.m */; };
+		3A75999D204E78FD00392DBE /* FSSRewardedVideoConditionObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A75999C204E78FD00392DBE /* FSSRewardedVideoConditionObserver.m */; };
 		3A77FCF81FBE86E000B95DE0 /* FluctSDK-info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A77FCF71FBE86E000B95DE0 /* FluctSDK-info.plist */; };
 		3A77FD341FBE876000B95DE0 /* AppLovinSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A77FD1E1FBE876000B95DE0 /* AppLovinSDK.framework */; };
 		3A77FD351FBE876000B95DE0 /* FSSRewardedVideoCustomEventAppLovin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A77FD201FBE876000B95DE0 /* FSSRewardedVideoCustomEventAppLovin.m */; };
@@ -57,6 +58,8 @@
 		3A24ECA01D810B600014B706 /* BannerTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerTabBarController.m; sourceTree = "<group>"; };
 		3A24ECA21D81207E0014B706 /* BannerNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerNavigationController.h; sourceTree = "<group>"; };
 		3A24ECA31D81207E0014B706 /* BannerNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerNavigationController.m; sourceTree = "<group>"; };
+		3A75999B204E78FD00392DBE /* FSSRewardedVideoConditionObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoConditionObserver.h; sourceTree = "<group>"; };
+		3A75999C204E78FD00392DBE /* FSSRewardedVideoConditionObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoConditionObserver.m; sourceTree = "<group>"; };
 		3A77FCF71FBE86E000B95DE0 /* FluctSDK-info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "FluctSDK-info.plist"; sourceTree = "<group>"; };
 		3A77FD1E1FBE876000B95DE0 /* AppLovinSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppLovinSDK.framework; sourceTree = "<group>"; };
 		3A77FD1F1FBE876000B95DE0 /* FSSRewardedVideoCustomEventAppLovin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoCustomEventAppLovin.h; sourceTree = "<group>"; };
@@ -200,6 +203,8 @@
 		3A77FD2E1FBE876000B95DE0 /* UnityAds */ = {
 			isa = PBXGroup;
 			children = (
+				3A75999B204E78FD00392DBE /* FSSRewardedVideoConditionObserver.h */,
+				3A75999C204E78FD00392DBE /* FSSRewardedVideoConditionObserver.m */,
 				3A77FD2F1FBE876000B95DE0 /* FSSRewardedVideoCustomEventUnityAds.h */,
 				3A77FD301FBE876000B95DE0 /* FSSRewardedVideoCustomEventUnityAds.m */,
 				3A77FD311FBE876000B95DE0 /* FSSRewardedVideoUnityAdsManager.h */,
@@ -454,6 +459,7 @@
 				9614D1BF1DF7E89200AC935E /* BannerTableViewCell.m in Sources */,
 				A3418CE218D9A040003E302C /* BannerViewController.m in Sources */,
 				A3418CC218D999C5003E302C /* ViewController.m in Sources */,
+				3A75999D204E78FD00392DBE /* FSSRewardedVideoConditionObserver.m in Sources */,
 				3A77FD3D1FBE876000B95DE0 /* FSSRewardedVideoUnityAdsManager.m in Sources */,
 				96BE0A1D1FA30FF200474C66 /* RewardedVideoViewController.m in Sources */,
 				3A77FD371FBE876000B95DE0 /* FSSRewardedVideoMaioManager.m in Sources */,

@@ -11,6 +11,7 @@
 		3A6AADB11D8148DA005D94C1 /* BannerNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AADB01D8148DA005D94C1 /* BannerNavigationController.swift */; };
 		3A723D351FBE734300844514 /* FSSRewardedVideoMaioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A723D331FBE734300844514 /* FSSRewardedVideoMaioManager.m */; };
 		3A723D381FBE734900844514 /* FSSRewardedVideoUnityAdsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A723D371FBE734900844514 /* FSSRewardedVideoUnityAdsManager.m */; };
+		3A7599A0204E792300392DBE /* FSSRewardedVideoConditionObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A75999F204E792200392DBE /* FSSRewardedVideoConditionObserver.m */; };
 		3ADBC1981D825A62003D7AB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADBC1971D825A62003D7AB3 /* ViewController.swift */; };
 		960884221F9EC23B005F65FD /* RewardedVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960884211F9EC23A005F65FD /* RewardedVideoViewController.swift */; };
 		9661EEFA1F15FDAE00286B72 /* NativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9661EEF91F15FDAE00286B72 /* NativeViewController.swift */; };
@@ -47,6 +48,8 @@
 		3A723D341FBE734300844514 /* FSSRewardedVideoMaioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoMaioManager.h; sourceTree = "<group>"; };
 		3A723D361FBE734900844514 /* FSSRewardedVideoUnityAdsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoUnityAdsManager.h; sourceTree = "<group>"; };
 		3A723D371FBE734900844514 /* FSSRewardedVideoUnityAdsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoUnityAdsManager.m; sourceTree = "<group>"; };
+		3A75999E204E792200392DBE /* FSSRewardedVideoConditionObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoConditionObserver.h; sourceTree = "<group>"; };
+		3A75999F204E792200392DBE /* FSSRewardedVideoConditionObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoConditionObserver.m; sourceTree = "<group>"; };
 		3ADBC1971D825A62003D7AB3 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		960884211F9EC23A005F65FD /* RewardedVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardedVideoViewController.swift; sourceTree = "<group>"; };
 		9661EEF91F15FDAE00286B72 /* NativeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeViewController.swift; sourceTree = "<group>"; };
@@ -206,6 +209,8 @@
 				3A723D371FBE734900844514 /* FSSRewardedVideoUnityAdsManager.m */,
 				96CB38821FB430B7002EB14E /* FSSRewardedVideoCustomEventUnityAds.h */,
 				96CB38831FB430B7002EB14E /* FSSRewardedVideoCustomEventUnityAds.m */,
+				3A75999E204E792200392DBE /* FSSRewardedVideoConditionObserver.h */,
+				3A75999F204E792200392DBE /* FSSRewardedVideoConditionObserver.m */,
 				96CB38841FB430B7002EB14E /* UnityAds.framework */,
 			);
 			path = UnityAds;
@@ -341,9 +346,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9661EEFC1F15FDD800286B72 /* NativeTableViewController.swift in Sources */,
 				96CB38861FB430B7002EB14E /* FSSRewardedVideoCustomEventAppLovin.m in Sources */,
 				96CB38871FB430B7002EB14E /* FSSRewardedVideoCustomEventMaio.m in Sources */,
+				3A723D351FBE734300844514 /* FSSRewardedVideoMaioManager.m in Sources */,
+				96CB388C1FB430B7002EB14E /* FSSRewardedVideoCustomEventUnityAds.m in Sources */,
+				3A723D381FBE734900844514 /* FSSRewardedVideoUnityAdsManager.m in Sources */,
+				3A7599A0204E792300392DBE /* FSSRewardedVideoConditionObserver.m in Sources */,
+				96CB38891FB430B7002EB14E /* FSSRewardedVideoCustomEventNend.m in Sources */,
+				9661EEFC1F15FDD800286B72 /* NativeTableViewController.swift in Sources */,
 				969EC2021D3E11C1005F475E /* InterstitialViewController.swift in Sources */,
 				96F22C391D3899D300C3136E /* BannerViewController.swift in Sources */,
 				96F22C371D3899D300C3136E /* AppDelegate.swift in Sources */,
@@ -351,13 +361,9 @@
 				3A24ECA81D812CCC0014B706 /* TabBarController.swift in Sources */,
 				9661EEFA1F15FDAE00286B72 /* NativeViewController.swift in Sources */,
 				3ADBC1981D825A62003D7AB3 /* ViewController.swift in Sources */,
-				3A723D381FBE734900844514 /* FSSRewardedVideoUnityAdsManager.m in Sources */,
 				960884221F9EC23B005F65FD /* RewardedVideoViewController.swift in Sources */,
 				96D530F41F25DC22008B1066 /* FooterNativeViewController.swift in Sources */,
-				3A723D351FBE734300844514 /* FSSRewardedVideoMaioManager.m in Sources */,
 				3A6AADB11D8148DA005D94C1 /* BannerNavigationController.swift in Sources */,
-				96CB38891FB430B7002EB14E /* FSSRewardedVideoCustomEventNend.m in Sources */,
-				96CB388C1FB430B7002EB14E /* FSSRewardedVideoCustomEventUnityAds.m in Sources */,
 				969EC2001D3E0CF7005F475E /* ManyBannerViewController.swift in Sources */,
 				966CC73C1DF7C98C0005EF1C /* BannerTableViewController.swift in Sources */,
 			);
