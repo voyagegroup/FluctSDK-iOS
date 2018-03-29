@@ -16,6 +16,10 @@ pod "FluctSDK"
 FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照してください
 
 # FluctSDK Release Note
+## v4.7.4 2018/03/29
+* UnityAdsの動画リワード広告配信時にiOS9系以下の端末で `NSInvalidArgumentException` が発生しクラッシュするバグの修正
+* `FSSNativeTableViewCell` 内の`FSSNativeView` が常にセルの `ContentView` と同じサイズになる挙動に変更
+
 ## v4.7.3 2018/03/07
 * サンプルコードのプロジェクト構成を修正
 * v4.7.2で配布しているSDKバイナリに不要な実装が含まれていたのを削除

@@ -86,10 +86,23 @@ static NSString *const FSSNendSupportVersion = @"8.1";
         _adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
         [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:weakSelf
                                                          fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
-                                                                                        code:FSSRewardedVideoAdErrorLoadFailed
+                                                                                        code:[self rewardedVideoErrorCodeWithError:error]
                                                                                     userInfo:nil]
                                                      adnetworkError:error.code];
     });
+}
+
+- (FSSRewardedVideoErrorCode)rewardedVideoErrorCodeWithError:(NSError *)error {
+    switch (error.code) {
+    case 204:
+        return FSSRewardedVideoAdErrorNoAds;
+
+    case 400:
+        return FSSRewardedVideoAdErrorBadRequest;
+
+    default:
+        return FSSRewardedVideoAdErrorLoadFailed;
+    }
 }
 
 - (void)nadRewardVideoAdDidFailedToPlay:(NADRewardedVideo *)nadRewardedVideoAd {

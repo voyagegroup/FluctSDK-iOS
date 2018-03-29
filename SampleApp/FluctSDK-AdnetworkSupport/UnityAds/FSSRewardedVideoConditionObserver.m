@@ -35,26 +35,29 @@
 }
 
 - (void)start {
-    __weak __typeof(self) weakSelf = self;
     self.timer = [NSTimer scheduledTimerWithTimeInterval:self.interval
-                                                 repeats:YES
-                                                   block:^(NSTimer *_Nonnull timer) {
-                                                       weakSelf.count += 1;
-                                                       if (weakSelf.limit < weakSelf.count) {
-                                                           if (weakSelf.fallback) {
-                                                               weakSelf.fallback();
-                                                           }
-                                                           [weakSelf.timer invalidate];
-                                                           return;
-                                                       }
+                                                  target:self
+                                                selector:@selector(notifyIfPossible)
+                                                userInfo:nil
+                                                 repeats:YES];
+}
 
-                                                       if (!weakSelf.shouldCompletion()) {
-                                                           return;
-                                                       }
+- (void)notifyIfPossible {
+    self.count += 1;
+    if (self.limit < self.count) {
+        if (self.fallback) {
+            self.fallback();
+        }
+        [self.timer invalidate];
+        return;
+    }
 
-                                                       weakSelf.completion();
-                                                       [weakSelf.timer invalidate];
-                                                   }];
+    if (!self.shouldCompletion()) {
+        return;
+    }
+
+    self.completion();
+    [self.timer invalidate];
 }
 
 - (void)invalidate {
