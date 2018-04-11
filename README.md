@@ -16,6 +16,9 @@ pod "FluctSDK"
 FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照してください
 
 # FluctSDK Release Note
+## v4.8.0 2018/04/11
+* 動画リワード広告配信のターゲティングにユーザー属性を利用する機能を追加
+
 ## v4.7.4 2018/03/29
 * UnityAdsの動画リワード広告配信時にiOS9系以下の端末で `NSInvalidArgumentException` が発生しクラッシュするバグの修正
 * `FSSNativeTableViewCell` 内の`FSSNativeView` が常にセルの `ContentView` と同じサイズになる挙動に変更

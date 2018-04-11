@@ -27,6 +27,7 @@
 @interface NADInterstitialVideo : NADVideo
 
 @property (nonatomic, weak, readwrite) id<NADInterstitialVideoDelegate> delegate;
+@property (nonatomic, copy) UIColor *fallbackFullboardBackgroundColor;
 
 - (void)addFallbackFullboardWithSpotId:(NSString *)spotId apiKey:(NSString *)apiKey;
 

@@ -18,9 +18,8 @@ static const NSInteger timeoutSecond = 30;
 
 @implementation FSSRewardedVideoCustomEventMaio
 
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary delegate:(id<FSSRewardedVideoCustomEventDelegate>)delegate testMode:(BOOL)testMode debugMode:(BOOL)debugMode {
-
-    self = [super initWithDictionary:dictionary delegate:delegate testMode:testMode debugMode:debugMode];
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary delegate:(id<FSSRewardedVideoCustomEventDelegate>)delegate testMode:(BOOL)testMode debugMode:(BOOL)debugMode targeting:(FSSAdRequestTargeting *)targeting {
+    self = [super initWithDictionary:dictionary delegate:delegate testMode:testMode debugMode:debugMode targeting:nil];
     if (!self) {
         return nil;
     }

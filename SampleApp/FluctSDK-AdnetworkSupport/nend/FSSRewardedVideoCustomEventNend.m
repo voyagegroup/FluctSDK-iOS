@@ -26,14 +26,17 @@ static NSString *const FSSNendSupportVersion = @"8.1";
     return [[NADRewardedVideo alloc] initWithSpotId:spotId apiKey:apiKey];
 }
 
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary delegate:(id<FSSRewardedVideoCustomEventDelegate>)delegate testMode:(BOOL)testMode debugMode:(BOOL)debugMode {
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary delegate:(id<FSSRewardedVideoCustomEventDelegate>)delegate testMode:(BOOL)testMode debugMode:(BOOL)debugMode targeting:(FSSAdRequestTargeting *)targeting {
     if (![FSSRewardedVideoCustomEventNend shouldInitNendSDKWithSystemVersion:UIDevice.currentDevice.systemVersion]) {
         return nil;
     }
 
-    self = [super initWithDictionary:dictionary delegate:delegate testMode:testMode debugMode:debugMode];
+    self = [super initWithDictionary:dictionary delegate:delegate testMode:testMode debugMode:debugMode targeting:nil];
+
     _nendRewardedVideo = [FSSRewardedVideoCustomEventNend initializeNendSDKWithSpotId:dictionary[@"spot_id"] apiKey:dictionary[@"api_key"]];
     _nendRewardedVideo.delegate = self;
+    _nendRewardedVideo.userFeature = [FSSRewardedVideoCustomEventNend generateUserFeatureWithTargeting:targeting];
+
     return self;
 }
 
@@ -147,5 +150,34 @@ static NSString *const FSSNendSupportVersion = @"8.1";
 }
 
 - (void)nadRewardVideoAd:(NADRewardedVideo *)nadRewardedVideoAd didReward:(NADReward *)reward {
+}
+
++ (NADUserFeature *)generateUserFeatureWithTargeting:(FSSAdRequestTargeting *)targeting {
+    if (!targeting) {
+        return nil;
+    }
+
+    NADUserFeature *feature = [FSSRewardedVideoCustomEventNend userFeature];
+
+    if (targeting.gender == FSSGenderMale) {
+        feature.gender = NADGenderMale;
+    } else if (targeting.gender == NADGenderFemale) {
+        feature.gender = NADGenderFemale;
+    }
+
+    if (targeting.age) {
+        feature.age = targeting.age;
+    }
+
+    if (targeting.birthday) {
+        NSDateComponents *components = [[[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian] components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:targeting.birthday];
+        [feature setBirthdayWithYear:components.year month:components.month day:components.day];
+    }
+
+    return feature;
+}
+
++ (NADUserFeature *)userFeature {
+    return [NADUserFeature new];
 }
 @end

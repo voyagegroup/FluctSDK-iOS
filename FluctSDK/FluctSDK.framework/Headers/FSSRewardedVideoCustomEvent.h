@@ -5,6 +5,7 @@
 //  Copyright © 2017年 fluct, Inc. All rights reserved.
 //
 
+#import "FSSAdRequestTargeting.h"
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
@@ -28,7 +29,8 @@ typedef NS_ENUM(NSInteger, FSSRewardedVideoADNWStatus) {
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary
                           delegate:(id<FSSRewardedVideoCustomEventDelegate>)delegate
                           testMode:(BOOL)testMode
-                         debugMode:(BOOL)debugMode;
+                         debugMode:(BOOL)debugMode
+                         targeting:(FSSAdRequestTargeting *)targeting;
 
 - (void)loadRewardedVideoWithDictionary:(NSDictionary *)dictionary;
 - (FSSRewardedVideoADNWStatus)loadStatus;
