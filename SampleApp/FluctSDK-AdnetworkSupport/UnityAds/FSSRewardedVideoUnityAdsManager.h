@@ -13,6 +13,7 @@ typedef NS_ENUM(NSInteger, UnityAdsErrorExtend) {
     UnityAdsErrorExtendLoadFailed = -1,
     UnityAdsErrorExtendTimeout = -2,
     UnityAdsErrorExtendCallDidDisappearFailed = -3,
+    UnityAdsErrorExtendNoFill = -4,
 };
 
 @protocol FSSRewardedVideoUnityAdsManagerDelegate <NSObject>
@@ -22,6 +23,7 @@ typedef NS_ENUM(NSInteger, UnityAdsErrorExtend) {
 - (void)unityAdsReady:(nonnull NSString *)placementId;
 - (void)unityAdsDidClick:(nonnull NSString *)placementId;
 - (void)unityAdsWillAppear;
+- (void)unityAdsNoFill;
 @end
 
 @interface FSSRewardedVideoUnityAdsManager : NSObject

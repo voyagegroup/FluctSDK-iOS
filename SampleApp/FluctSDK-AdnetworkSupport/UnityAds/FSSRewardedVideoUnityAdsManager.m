@@ -106,5 +106,9 @@ static FSSRewardedVideoUnityAdsManager *sharedInstance;
 }
 
 - (void)unityAdsPlacementStateChanged:(nonnull NSString *)placementId oldState:(UnityAdsPlacementState)oldState newState:(UnityAdsPlacementState)newState {
+    if (newState == kUnityAdsPlacementStateNoFill) {
+        [[self getDelegate:placementId] unityAdsNoFill];
+        [self.delegateTable removeObjectForKey:placementId];
+    }
 }
 @end

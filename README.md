@@ -16,6 +16,10 @@ pod "FluctSDK"
 FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照してください
 
 # FluctSDK Release Note
+
+## v4.8.1 2018/04/24
+* UnityAdsに動画リワード広告キャンペーンが存在しない場合、タイムアウトまで待ってしまうバグの修正
+
 ## v4.8.0 2018/04/11
 * 動画リワード広告配信のターゲティングにユーザー属性を利用する機能を追加
 

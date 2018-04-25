@@ -205,4 +205,19 @@ static const NSInteger timeoutSecond = 30;
         [weakSelf.delegate rewardedVideoWillAppearForCustomEvent:weakSelf];
     });
 }
+
+- (void)unityAdsNoFill {
+    __weak __typeof(self) weakSelf = self;
+    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+        [weakSelf clearTimer];
+        _adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
+        weakSelf.isInitialNotificationForAdapter = NO;
+        [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:weakSelf
+                                                     fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                                                    code:FSSRewardedVideoAdErrorLoadFailed
+                                                                                userInfo:@{NSLocalizedDescriptionKey : @"no ad"}]
+                                                 adnetworkError:UnityAdsErrorExtendNoFill];
+    });
+}
+
 @end
