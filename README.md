@@ -17,6 +17,9 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## v4.9.0 2018/06/14
+* Tapjoyとの動画リワード広告メディエーション対応
+
 ## v4.8.1 2018/04/24
 * UnityAdsに動画リワード広告キャンペーンが存在しない場合、タイムアウトまで待ってしまうバグの修正
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A1810D8207F2DC900D584AD /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A1810D7207F2DC900D584AD /* ImageIO.framework */; };
 		3A24ECA81D812CCC0014B706 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A24ECA71D812CCC0014B706 /* TabBarController.swift */; };
 		3A6AADB11D8148DA005D94C1 /* BannerNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AADB01D8148DA005D94C1 /* BannerNavigationController.swift */; };
 		3A723D351FBE734300844514 /* FSSRewardedVideoMaioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A723D331FBE734300844514 /* FSSRewardedVideoMaioManager.m */; };
@@ -42,6 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A1810D7207F2DC900D584AD /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		3A24ECA71D812CCC0014B706 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		3A6AADB01D8148DA005D94C1 /* BannerNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerNavigationController.swift; sourceTree = "<group>"; };
 		3A723D331FBE734300844514 /* FSSRewardedVideoMaioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoMaioManager.m; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A1810D8207F2DC900D584AD /* ImageIO.framework in Frameworks */,
 				96F871C21FA175B3000C48F9 /* WebKit.framework in Frameworks */,
 				96F22C701D38A24300C3136E /* FluctSDK.framework in Frameworks */,
 				965E71F1206DF9A700AD342B /* Maio.framework in Frameworks */,
@@ -219,6 +222,7 @@
 		96E978781FA0738800125A02 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3A1810D7207F2DC900D584AD /* ImageIO.framework */,
 				96E978841FA0761800125A02 /* WebKit.framework */,
 			);
 			name = Frameworks;
@@ -529,6 +533,7 @@
 				INFOPLIST_FILE = "SampleApp-Swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.fluct.SampleApp-Swift";
 				PRODUCT_NAME = "SampleApp-Swift";
