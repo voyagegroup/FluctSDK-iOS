@@ -37,6 +37,7 @@ typedef NS_ENUM(NSInteger, FSSRewardedVideoADNWStatus) {
 - (void)presentRewardedVideoAdFromViewController:(UIViewController *)viewController;
 - (NSString *)sdkVersion;
 - (void)invalidate;
++ (BOOL)isOSAtLeastVersion:(NSString *)version;
 @end
 
 @protocol FSSRewardedVideoCustomEventDelegate <NSObject>

@@ -27,7 +27,7 @@ static NSString *const FSSNendSupportVersion = @"8.1";
 }
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary delegate:(id<FSSRewardedVideoCustomEventDelegate>)delegate testMode:(BOOL)testMode debugMode:(BOOL)debugMode targeting:(FSSAdRequestTargeting *)targeting {
-    if (![FSSRewardedVideoCustomEventNend shouldInitNendSDKWithSystemVersion:UIDevice.currentDevice.systemVersion]) {
+    if (![FSSRewardedVideoCustomEventNend isOSAtLeastVersion:FSSNendSupportVersion]) {
         return nil;
     }
 
@@ -38,10 +38,6 @@ static NSString *const FSSNendSupportVersion = @"8.1";
     _nendRewardedVideo.userFeature = [FSSRewardedVideoCustomEventNend generateUserFeatureWithTargeting:targeting];
 
     return self;
-}
-
-+ (BOOL)shouldInitNendSDKWithSystemVersion:(NSString *)systemVersion {
-    return [systemVersion compare:FSSNendSupportVersion options:NSNumericSearch] != NSOrderedAscending;
 }
 
 - (void)loadRewardedVideoWithDictionary:(NSDictionary *)dictionary {
