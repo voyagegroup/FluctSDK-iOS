@@ -16,9 +16,15 @@
 
 static const NSInteger timeoutSecond = 30;
 
+static NSString *const FSSMaioSupportVersion = @"8.0";
+
 @implementation FSSRewardedVideoCustomEventMaio
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary delegate:(id<FSSRewardedVideoCustomEventDelegate>)delegate testMode:(BOOL)testMode debugMode:(BOOL)debugMode targeting:(FSSAdRequestTargeting *)targeting {
+    if (![FSSRewardedVideoCustomEvent isOSAtLeastVersion:FSSMaioSupportVersion]) {
+        return nil;
+    }
+
     self = [super initWithDictionary:dictionary delegate:delegate testMode:testMode debugMode:debugMode targeting:nil];
     if (!self) {
         return nil;
