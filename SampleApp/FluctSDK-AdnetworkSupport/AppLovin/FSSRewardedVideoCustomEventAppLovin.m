@@ -14,7 +14,7 @@
 @property (nonatomic) ALIncentivizedInterstitialAd *rewardedVideo;
 
 + (ALSdk *)sharedWithKey:(NSString *)sdkKey;
-+ (ALIncentivizedInterstitialAd *)rewardedVideoWithSdk:(ALSdk *)sdk;
++ (ALIncentivizedInterstitialAd *)rewardedVideoWithSdk:(ALSdk *)sdk zoneName:(nonnull NSString *)zone;
 
 @end
 
@@ -24,8 +24,11 @@
     return [ALSdk sharedWithKey:sdkKey];
 }
 
-+ (ALIncentivizedInterstitialAd *)rewardedVideoWithSdk:(ALSdk *)sdk {
-    return [[ALIncentivizedInterstitialAd alloc] initWithSdk:sdk];
++ (ALIncentivizedInterstitialAd *)rewardedVideoWithSdk:(ALSdk *)sdk zoneName:(nonnull NSString *)zoneName {
+    if ([zoneName length] == 0) {
+        return [[ALIncentivizedInterstitialAd alloc] initWithSdk:sdk];
+    }
+    return [[ALIncentivizedInterstitialAd alloc] initWithZoneIdentifier:zoneName sdk:sdk];
 }
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary delegate:(id<FSSRewardedVideoCustomEventDelegate>)delegate testMode:(BOOL)testMode debugMode:(BOOL)debugMode targeting:(FSSAdRequestTargeting *)targeting {
@@ -38,7 +41,7 @@
             applovinSDK.settings.isTestAdsEnabled = testMode;
             [applovinSDK initializeSdk];
         });
-        _rewardedVideo = [FSSRewardedVideoCustomEventAppLovin rewardedVideoWithSdk:applovinSDK];
+        _rewardedVideo = [FSSRewardedVideoCustomEventAppLovin rewardedVideoWithSdk:applovinSDK zoneName:dictionary[@"zone"]];
         _rewardedVideo.adDisplayDelegate = self;
         _rewardedVideo.adVideoPlaybackDelegate = self;
         _placement = dictionary[@"placement"];
