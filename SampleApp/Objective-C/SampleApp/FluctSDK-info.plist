@@ -8,13 +8,19 @@
 	<false/>
 	<key>ActiveAdnetworks</key>
 	<dict>
+		<key>AppLovin</key>
+		<true/>
 		<key>Unity Ads</key>
 		<true/>
 		<key>Maio</key>
 		<true/>
 		<key>nend</key>
 		<true/>
-		<key>AppLovin</key>
+		<key>tapjoy</key>
+		<true/>
+		<key>AdColony</key>
+		<true/>
+		<key>fluct</key>
 		<true/>
 	</dict>
 </dict>

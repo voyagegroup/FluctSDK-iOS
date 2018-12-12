@@ -7,36 +7,40 @@
 
 import UIKit
 
-// アプリ内で遷移させるドメインを指定
-let APP_IN_VIEW_DOMAIN = "voyagegroup.com"
+/**
+ 連携方法2
+ JavaScriptのwindowオブジェクトにターゲティングパラメータを埋め込むサンプル
+ */
 
 class JsLinkViewController: UIViewController, UIWebViewDelegate {
 
-    @IBOutlet weak var adView: UIWebView!
+    @IBOutlet weak var webView: UIWebView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        webView.delegate = self
 
-        let adhtml: String = getHtmlString(fileName: "ad-jslink")
+        // ターゲティングパラメータの取得
+        let ifa = AdTargetingParameter.idetifierForAdvertising
+        let lmt = AdTargetingParameter.limitAdTracking
+        let bundle = AdTargetingParameter.bundleIdentifier
 
-        adView.delegate = self
-        adView.loadHTMLString(adhtml, baseURL: URL.init(string: "http://fluct.jp"))
-    }
-
-    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-
-        // HTMLに記述した広告識別子連携用の関数に広告識別子を渡す
-        let js: String = String(format: "window.fluctAdParam = {'ifa': '%@', 'lmt': '%@', 'bundle': '%@'}",
-                                getIdetifierForAdvertising(), getLimitAdTracking(), getBundleIdentifier())
+        // 1. windowオブジェクトにターゲティングパラメータを格納する
+        let js = "window.fluctAdParam = {'ifa': '\(ifa)', 'lmt': '\(lmt)', 'bundle': '\(bundle)'}"
         webView.stringByEvaluatingJavaScript(from: js)
 
-        // 広告がタップ時 かつ 指定したドメイン以外の時、外部ブラウザに遷移する
-        if navigationType == .linkClicked && request.url?.absoluteURL.host != APP_IN_VIEW_DOMAIN {
-            // open(_:​options:​completion​Handler:​) require iOS 10.0+
-            // iOS 2.0-10.0 use open​URL(_:​)
-            UIApplication.shared.open(request.url!, options: [:], completionHandler: nil)
+        // 2. 広告タグをWebViewで読み込む
+        let adHtml = FileUtils.readString(forFileName: "ad-jslink", ofType: "html")
+        webView.loadHTMLString(adHtml, baseURL: URL(string: "https://fluct.jp")!)
+    }
+
+    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebView.NavigationType) -> Bool {
+        // 3. 広告のリンクをタップした時に外部Safariを開く
+        if navigationType == .linkClicked {
+            UIApplication.shared.open(request.url!)
             return false
         }
+
         return true
     }
 }

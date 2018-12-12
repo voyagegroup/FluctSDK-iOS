@@ -40,9 +40,6 @@ __attribute__((deprecated("FluctBannerView is deprecated. You should use FSSBann
 
 - (void)setMediaID:(NSString *)mediaID;
 - (void)setRootViewController:(UIViewController *)rootViewController;
-- (void)scrollViewDidScroll;
-- (void)playMovie;
-- (void)pauseMovie;
 
 @end
 

@@ -10,6 +10,7 @@ framework module FluctSDK {
     link framework "CoreTelephony"
     link framework "Social"
     link framework "StoreKit"
+    link framework "WebKit"
     link "xml2"
 
     export *

@@ -60,7 +60,7 @@ typedef NS_ENUM(NSInteger, TJErrorExtended) {
 
 - (void)loadRewardedVideoWithDictionary:(NSDictionary *)dictionary {
     if (_connectionStatus == FSSTapjoyConnectionTrying) {
-        _adnwStatus = FSSRewardedVideoADNWStatusLoading;
+        self.adnwStatus = FSSRewardedVideoADNWStatusLoading;
         return;
     }
 
@@ -70,17 +70,17 @@ typedef NS_ENUM(NSInteger, TJErrorExtended) {
     }
 
     if ([self.tjPlacement isContentReady]) {
-        _adnwStatus = FSSRewardedVideoADNWStatusLoaded;
+        self.adnwStatus = FSSRewardedVideoADNWStatusLoaded;
         [self.delegate rewardedVideoDidLoadForCustomEvent:self];
         return;
     }
 
-    _adnwStatus = FSSRewardedVideoADNWStatusLoading;
+    self.adnwStatus = FSSRewardedVideoADNWStatusLoading;
     [self.tjPlacement requestContent];
 }
 
 - (void)onConnectionFailed {
-    _adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
+    self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
     [self.delegate rewardedVideoDidFailToLoadForCustomEvent:self
                                                  fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                                                 code:FSSRewardedVideoAdErrorLoadFailed
@@ -89,7 +89,7 @@ typedef NS_ENUM(NSInteger, TJErrorExtended) {
 }
 
 - (FSSRewardedVideoADNWStatus)loadStatus {
-    return _adnwStatus;
+    return self.adnwStatus;
 }
 
 - (void)presentRewardedVideoAdFromViewController:(UIViewController *)viewController {
@@ -106,7 +106,7 @@ typedef NS_ENUM(NSInteger, TJErrorExtended) {
                                                     name:TJC_CONNECT_SUCCESS
                                                   object:nil];
     _connectionStatus = FSSTapjoyConnectionSucceeded;
-    if (_adnwStatus == FSSRewardedVideoADNWStatusLoading) {
+    if (self.adnwStatus == FSSRewardedVideoADNWStatusLoading) {
         [self.tjPlacement requestContent];
     }
 }
@@ -120,7 +120,7 @@ typedef NS_ENUM(NSInteger, TJErrorExtended) {
 
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSRewardedVideoWorkQueue(), ^{
-        if (_adnwStatus == FSSRewardedVideoADNWStatusLoading) {
+        if (self.adnwStatus == FSSRewardedVideoADNWStatusLoading) {
             [weakSelf onConnectionFailed];
         }
     });
@@ -142,7 +142,7 @@ typedef NS_ENUM(NSInteger, TJErrorExtended) {
     if (!placement.isContentAvailable) {
         __weak __typeof(self) weakSelf = self;
         dispatch_async(FSSRewardedVideoWorkQueue(), ^{
-            _adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
+            self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
             [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:weakSelf
                                                              fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                                                             code:FSSRewardedVideoAdErrorLoadFailed
@@ -155,8 +155,8 @@ typedef NS_ENUM(NSInteger, TJErrorExtended) {
 - (void)contentIsReady:(TJPlacement *)placement {
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSRewardedVideoWorkQueue(), ^{
-        if (_adnwStatus == FSSRewardedVideoADNWStatusLoading) {
-            _adnwStatus = FSSRewardedVideoADNWStatusLoaded;
+        if (self.adnwStatus == FSSRewardedVideoADNWStatusLoading) {
+            self.adnwStatus = FSSRewardedVideoADNWStatusLoaded;
             [weakSelf.delegate rewardedVideoDidLoadForCustomEvent:weakSelf];
         }
     });
@@ -165,7 +165,7 @@ typedef NS_ENUM(NSInteger, TJErrorExtended) {
 - (void)requestDidFail:(TJPlacement *)placement error:(NSError *)error {
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSRewardedVideoWorkQueue(), ^{
-        _adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
+        self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
         [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:weakSelf
                                                          fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                                                         code:FSSRewardedVideoAdErrorLoadFailed
@@ -205,7 +205,7 @@ typedef NS_ENUM(NSInteger, TJErrorExtended) {
 - (void)videoDidFail:(TJPlacement *)placement error:(NSString *)errorMsg {
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSRewardedVideoWorkQueue(), ^{
-        _adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
+        self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
         [weakSelf.delegate rewardedVideoDidFailToPlayForCustomEvent:weakSelf
                                                          fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                                                         code:FSSRewardedVideoAdErrorPlayFailed

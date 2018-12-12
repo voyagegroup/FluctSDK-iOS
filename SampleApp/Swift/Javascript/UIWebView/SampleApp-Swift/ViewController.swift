@@ -7,41 +7,43 @@
 
 import UIKit
 
-let IFA = "IFA_REPLACE_STRING"
-let LMT = "LMT_REPLACE_STRING"
-let BUNDLE = "BUNDLE_REPLACE_STRING"
+/**
+ 連携方法1
+ ターゲティングパラメータを置換するサンプル
+ */
+
+// 1. 事前にfluct広告タグの広告配信サーバへのリクエストパラメータにターゲティングパラメータを追加する
 
 class ViewController: UIViewController, UIWebViewDelegate {
 
-    @IBOutlet weak var adView: UIWebView!
+    @IBOutlet weak var webview: UIWebView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        webview.delegate = self
 
-        // 広告識別子の取得
-        let ifa = getIdetifierForAdvertising()
-        let lmt = getLimitAdTracking()
-        let bundle = getBundleIdentifier()
+        // ターゲティングパラメータの取得
+        let ifa = AdTargetingParameter.idetifierForAdvertising
+        let lmt = AdTargetingParameter.limitAdTracking
+        let bundle = AdTargetingParameter.bundleIdentifier
 
-        var adhtml: String = getHtmlString(fileName: "ad")
+        // 2. fluctタグを埋め込んだHTMLを表示する前に置換用文字列を実際の値へ置換する
+        let adhtml = FileUtils.readString(forFileName: "ad", ofType: "html")
+            .replacingOccurrences(of: "${FLUCT_IFA}", with: ifa)
+            .replacingOccurrences(of: "${FLUCT_LMT}", with:"\(lmt)")
+            .replacingOccurrences(of: "${FLUCT_BUNDLE}", with: bundle)
 
-        // 広告識別子を置換
-        adhtml = replaceStringWithBaseString(key: IFA, value: ifa, base: adhtml)
-        adhtml = replaceStringWithBaseString(key: LMT, value: lmt, base: adhtml)
-        adhtml = replaceStringWithBaseString(key: BUNDLE, value: bundle, base: adhtml)
-
-        adView.delegate = self
-        adView.loadHTMLString(adhtml, baseURL: URL.init(string: "http://fluct.jp"))
+        // 3. 置換したHTMLをWebViewで読み込む
+        webview.loadHTMLString(adhtml, baseURL: URL(string: "http://fluct.jp")!)
     }
 
-    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-
-        // 広告がタップ時に外部ブラウザに遷移する
+    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebView.NavigationType) -> Bool {
+        // 4. 広告のリンクをタップした時に外部Safariを開く
         if navigationType == .linkClicked {
-            // open(_:​options:​completion​Handler:​) require iOS 10.0+
-            // iOS 2.0-10.0 use open​URL(_:​)
-            UIApplication.shared.open(request.url!, options: [:], completionHandler: nil)
+            UIApplication.shared.open(request.url!)
             return false
         }
+
         return true
     }
 }

@@ -43,7 +43,7 @@ static const NSInteger timeoutSecond = 30;
 - (void)loadRewardedVideoWithDictionary:(NSDictionary *)dictionary {
     self.gameID = dictionary[@"game_id"];
     self.placementID = dictionary[@"placement_id"];
-    _adnwStatus = FSSRewardedVideoADNWStatusLoading;
+    self.adnwStatus = FSSRewardedVideoADNWStatusLoading;
     // if target placement id could not complete load, call load failed
     self.timeoutTimer = [NSTimer scheduledTimerWithTimeInterval:timeoutSecond
                                                          target:self
@@ -58,7 +58,7 @@ static const NSInteger timeoutSecond = 30;
 }
 
 - (FSSRewardedVideoADNWStatus)loadStatus {
-    return _adnwStatus;
+    return self.adnwStatus;
 }
 
 - (void)presentRewardedVideoAdFromViewController:(UIViewController *)viewController {
@@ -96,7 +96,7 @@ static const NSInteger timeoutSecond = 30;
     [self clearTimer];
     if (self.isInitialNotificationForAdapter) {
         self.isInitialNotificationForAdapter = NO;
-        _adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
+        self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
         [self.delegate rewardedVideoDidFailToLoadForCustomEvent:self
                                                      fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                                                     code:FSSRewardedVideoAdErrorBadRequest
@@ -123,7 +123,7 @@ static const NSInteger timeoutSecond = 30;
 
         if (weakSelf.isInitialNotificationForAdapter) {
             weakSelf.isInitialNotificationForAdapter = NO;
-            _adnwStatus = FSSRewardedVideoADNWStatusLoaded;
+            self.adnwStatus = FSSRewardedVideoADNWStatusLoaded;
             [weakSelf.delegate rewardedVideoDidLoadForCustomEvent:weakSelf];
         }
     });
@@ -151,7 +151,7 @@ static const NSInteger timeoutSecond = 30;
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSRewardedVideoWorkQueue(), ^{
         [weakSelf clearTimer];
-        _adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
+        self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
         if (error == kUnityAdsErrorShowError) {
             [weakSelf.delegate rewardedVideoDidFailToPlayForCustomEvent:weakSelf
                                                              fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
@@ -210,7 +210,7 @@ static const NSInteger timeoutSecond = 30;
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSRewardedVideoWorkQueue(), ^{
         [weakSelf clearTimer];
-        _adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
+        self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
         weakSelf.isInitialNotificationForAdapter = NO;
         [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:weakSelf
                                                          fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain

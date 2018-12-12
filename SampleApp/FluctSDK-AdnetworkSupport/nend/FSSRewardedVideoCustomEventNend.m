@@ -43,15 +43,15 @@ static NSString *const FSSNendSupportVersion = @"8.1";
 - (void)loadRewardedVideoWithDictionary:(NSDictionary *)dictionary {
     if (!self.nendRewardedVideo.isReady) {
         [self.nendRewardedVideo loadAd];
-        _adnwStatus = FSSRewardedVideoADNWStatusLoading;
+        self.adnwStatus = FSSRewardedVideoADNWStatusLoading;
     } else {
-        _adnwStatus = FSSRewardedVideoADNWStatusLoaded;
+        self.adnwStatus = FSSRewardedVideoADNWStatusLoaded;
         [self.delegate rewardedVideoDidLoadForCustomEvent:self];
     }
 }
 
 - (FSSRewardedVideoADNWStatus)loadStatus {
-    return _adnwStatus;
+    return self.adnwStatus;
 }
 
 - (void)presentRewardedVideoAdFromViewController:(UIViewController *)viewController {
@@ -74,7 +74,7 @@ static NSString *const FSSNendSupportVersion = @"8.1";
 - (void)nadRewardVideoAdDidReceiveAd:(NADRewardedVideo *)nadRewardedVideoAd {
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSRewardedVideoWorkQueue(), ^{
-        _adnwStatus = FSSRewardedVideoADNWStatusLoaded;
+        self.adnwStatus = FSSRewardedVideoADNWStatusLoaded;
         [weakSelf.delegate rewardedVideoDidLoadForCustomEvent:weakSelf];
     });
 }
@@ -82,7 +82,7 @@ static NSString *const FSSNendSupportVersion = @"8.1";
 - (void)nadRewardVideoAd:(NADRewardedVideo *)nadRewardedVideoAd didFailToLoadWithError:(NSError *)error {
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSRewardedVideoWorkQueue(), ^{
-        _adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
+        self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
         [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:weakSelf
                                                          fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                                                         code:[self rewardedVideoErrorCodeWithError:error]
@@ -107,7 +107,7 @@ static NSString *const FSSNendSupportVersion = @"8.1";
 - (void)nadRewardVideoAdDidFailedToPlay:(NADRewardedVideo *)nadRewardedVideoAd {
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSRewardedVideoWorkQueue(), ^{
-        _adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
+        self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
         [weakSelf.delegate rewardedVideoDidFailToPlayForCustomEvent:weakSelf
                                                          fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                                                         code:FSSRewardedVideoAdErrorPlayFailed

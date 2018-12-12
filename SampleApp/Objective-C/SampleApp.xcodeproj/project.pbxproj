@@ -24,7 +24,20 @@
 		3A77FD3E1FBE876000B95DE0 /* UnityAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A77FD331FBE876000B95DE0 /* UnityAds.framework */; };
 		3AB37653207F1C7600BA82F4 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB37652207F1C7600BA82F4 /* ImageIO.framework */; };
 		3ACE35AE1C3BA25C002E6E22 /* FluctSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ACE35AC1C3BA25C002E6E22 /* FluctSDK.framework */; };
-		3ACE35AF1C3BA25C002E6E22 /* GSMMovieResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3ACE35AD1C3BA25C002E6E22 /* GSMMovieResources.bundle */; };
+		7548161B21C0E6F400A57D9F /* FluctSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7548161A21C0E6F400A57D9F /* FluctSDKResources.bundle */; };
+		75C0AC1121C0B9FA0074AA86 /* FSSRewardedVideoCustomEventAdColony.m in Sources */ = {isa = PBXBuildFile; fileRef = 75C0AC0921C0B9FA0074AA86 /* FSSRewardedVideoCustomEventAdColony.m */; };
+		75C0AC1221C0B9FA0074AA86 /* FSSRewardedVideoAdColonyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 75C0AC0A21C0B9FA0074AA86 /* FSSRewardedVideoAdColonyManager.m */; };
+		75C0AC1321C0B9FA0074AA86 /* AdColony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C0AC0C21C0B9FA0074AA86 /* AdColony.framework */; };
+		75C0AC1421C0B9FA0074AA86 /* Tapjoy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C0AC0E21C0B9FA0074AA86 /* Tapjoy.framework */; };
+		75C0AC1521C0B9FA0074AA86 /* FSSRewardedVideoCustomEventTapjoy.m in Sources */ = {isa = PBXBuildFile; fileRef = 75C0AC1021C0B9FA0074AA86 /* FSSRewardedVideoCustomEventTapjoy.m */; };
+		75C0AC1721C0BA270074AA86 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C0AC1621C0BA270074AA86 /* EventKit.framework */; };
+		75C0AC1921C0BA2C0074AA86 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C0AC1821C0BA2B0074AA86 /* MessageUI.framework */; };
+		75C0AC1B21C0BA320074AA86 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C0AC1A21C0BA320074AA86 /* WatchConnectivity.framework */; };
+		75C0AC1D21C0BA380074AA86 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C0AC1C21C0BA380074AA86 /* JavaScriptCore.framework */; };
+		75C0AC1F21C0BA3D0074AA86 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C0AC1E21C0BA3D0074AA86 /* libc++.tbd */; };
+		75C0AC2121C0BA440074AA86 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C0AC2021C0BA440074AA86 /* libz.tbd */; };
+		75C0AC2321C0BA490074AA86 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C0AC2221C0BA490074AA86 /* libxml2.tbd */; };
+		75C0AC2521C0BA4E0074AA86 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C0AC2421C0BA4E0074AA86 /* libsqlite3.0.tbd */; };
 		9614D1BF1DF7E89200AC935E /* BannerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9614D1BE1DF7E89200AC935E /* BannerTableViewCell.m */; };
 		9614D1C21DF7E8A800AC935E /* BannerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9614D1C11DF7E8A800AC935E /* BannerTableViewController.m */; };
 		96A2B0041FA30B8700BA5E71 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96A2B0031FA30B8700BA5E71 /* WebKit.framework */; };
@@ -81,7 +94,23 @@
 		3A77FD331FBE876000B95DE0 /* UnityAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnityAds.framework; sourceTree = "<group>"; };
 		3AB37652207F1C7600BA82F4 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		3ACE35AC1C3BA25C002E6E22 /* FluctSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FluctSDK.framework; sourceTree = "<group>"; };
-		3ACE35AD1C3BA25C002E6E22 /* GSMMovieResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GSMMovieResources.bundle; sourceTree = "<group>"; };
+		7548161A21C0E6F400A57D9F /* FluctSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FluctSDKResources.bundle; sourceTree = "<group>"; };
+		75C0AC0821C0B9FA0074AA86 /* FSSRewardedVideoAdColonyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoAdColonyManager.h; sourceTree = "<group>"; };
+		75C0AC0921C0B9FA0074AA86 /* FSSRewardedVideoCustomEventAdColony.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoCustomEventAdColony.m; sourceTree = "<group>"; };
+		75C0AC0A21C0B9FA0074AA86 /* FSSRewardedVideoAdColonyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoAdColonyManager.m; sourceTree = "<group>"; };
+		75C0AC0B21C0B9FA0074AA86 /* FSSRewardedVideoCustomEventAdColony.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoCustomEventAdColony.h; sourceTree = "<group>"; };
+		75C0AC0C21C0B9FA0074AA86 /* AdColony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AdColony.framework; sourceTree = "<group>"; };
+		75C0AC0E21C0B9FA0074AA86 /* Tapjoy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Tapjoy.framework; sourceTree = "<group>"; };
+		75C0AC0F21C0B9FA0074AA86 /* FSSRewardedVideoCustomEventTapjoy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoCustomEventTapjoy.h; sourceTree = "<group>"; };
+		75C0AC1021C0B9FA0074AA86 /* FSSRewardedVideoCustomEventTapjoy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoCustomEventTapjoy.m; sourceTree = "<group>"; };
+		75C0AC1621C0BA270074AA86 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		75C0AC1821C0BA2B0074AA86 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		75C0AC1A21C0BA320074AA86 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
+		75C0AC1C21C0BA380074AA86 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		75C0AC1E21C0BA3D0074AA86 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		75C0AC2021C0BA440074AA86 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		75C0AC2221C0BA490074AA86 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		75C0AC2421C0BA4E0074AA86 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		9614D1BD1DF7E89200AC935E /* BannerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerTableViewCell.h; sourceTree = "<group>"; };
 		9614D1BE1DF7E89200AC935E /* BannerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerTableViewCell.m; sourceTree = "<group>"; };
 		9614D1C01DF7E8A800AC935E /* BannerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerTableViewController.h; sourceTree = "<group>"; };
@@ -122,13 +151,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75C0AC2521C0BA4E0074AA86 /* libsqlite3.0.tbd in Frameworks */,
+				75C0AC2321C0BA490074AA86 /* libxml2.tbd in Frameworks */,
+				75C0AC2121C0BA440074AA86 /* libz.tbd in Frameworks */,
+				75C0AC1F21C0BA3D0074AA86 /* libc++.tbd in Frameworks */,
+				75C0AC1D21C0BA380074AA86 /* JavaScriptCore.framework in Frameworks */,
+				75C0AC1B21C0BA320074AA86 /* WatchConnectivity.framework in Frameworks */,
+				75C0AC1921C0BA2C0074AA86 /* MessageUI.framework in Frameworks */,
+				75C0AC1721C0BA270074AA86 /* EventKit.framework in Frameworks */,
 				3AB37653207F1C7600BA82F4 /* ImageIO.framework in Frameworks */,
 				3A77FD381FBE876000B95DE0 /* Maio.framework in Frameworks */,
 				96A2B0041FA30B8700BA5E71 /* WebKit.framework in Frameworks */,
 				3ACE35AE1C3BA25C002E6E22 /* FluctSDK.framework in Frameworks */,
 				3A77FD3A1FBE876000B95DE0 /* NendAd.framework in Frameworks */,
+				75C0AC1421C0B9FA0074AA86 /* Tapjoy.framework in Frameworks */,
 				3A77FD341FBE876000B95DE0 /* AppLovinSDK.framework in Frameworks */,
 				3A77FD3E1FBE876000B95DE0 /* UnityAds.framework in Frameworks */,
+				75C0AC1321C0B9FA0074AA86 /* AdColony.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +184,8 @@
 		3A77FD1C1FBE876000B95DE0 /* FluctSDK-AdnetworkSupport */ = {
 			isa = PBXGroup;
 			children = (
+				75C0AC0721C0B9FA0074AA86 /* AdColony */,
+				75C0AC0D21C0B9FA0074AA86 /* Tapjoy */,
 				3A77FD1D1FBE876000B95DE0 /* AppLovin */,
 				3A77FD211FBE876000B95DE0 /* maio */,
 				3A77FD271FBE876000B95DE0 /* nend */,
@@ -220,10 +261,32 @@
 		3ACE35AB1C3BA25C002E6E22 /* FluctSDK */ = {
 			isa = PBXGroup;
 			children = (
+				7548161A21C0E6F400A57D9F /* FluctSDKResources.bundle */,
 				3ACE35AC1C3BA25C002E6E22 /* FluctSDK.framework */,
-				3ACE35AD1C3BA25C002E6E22 /* GSMMovieResources.bundle */,
 			);
 			path = FluctSDK;
+			sourceTree = "<group>";
+		};
+		75C0AC0721C0B9FA0074AA86 /* AdColony */ = {
+			isa = PBXGroup;
+			children = (
+				75C0AC0821C0B9FA0074AA86 /* FSSRewardedVideoAdColonyManager.h */,
+				75C0AC0921C0B9FA0074AA86 /* FSSRewardedVideoCustomEventAdColony.m */,
+				75C0AC0A21C0B9FA0074AA86 /* FSSRewardedVideoAdColonyManager.m */,
+				75C0AC0B21C0B9FA0074AA86 /* FSSRewardedVideoCustomEventAdColony.h */,
+				75C0AC0C21C0B9FA0074AA86 /* AdColony.framework */,
+			);
+			path = AdColony;
+			sourceTree = "<group>";
+		};
+		75C0AC0D21C0B9FA0074AA86 /* Tapjoy */ = {
+			isa = PBXGroup;
+			children = (
+				75C0AC0E21C0B9FA0074AA86 /* Tapjoy.framework */,
+				75C0AC0F21C0B9FA0074AA86 /* FSSRewardedVideoCustomEventTapjoy.h */,
+				75C0AC1021C0B9FA0074AA86 /* FSSRewardedVideoCustomEventTapjoy.m */,
+			);
+			path = Tapjoy;
 			sourceTree = "<group>";
 		};
 		96BE0A1A1FA30FD700474C66 /* RewardedVideo */ = {
@@ -297,6 +360,14 @@
 		A3418CA718D999C5003E302C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				75C0AC2421C0BA4E0074AA86 /* libsqlite3.0.tbd */,
+				75C0AC2221C0BA490074AA86 /* libxml2.tbd */,
+				75C0AC2021C0BA440074AA86 /* libz.tbd */,
+				75C0AC1E21C0BA3D0074AA86 /* libc++.tbd */,
+				75C0AC1C21C0BA380074AA86 /* JavaScriptCore.framework */,
+				75C0AC1A21C0BA320074AA86 /* WatchConnectivity.framework */,
+				75C0AC1821C0BA2B0074AA86 /* MessageUI.framework */,
+				75C0AC1621C0BA270074AA86 /* EventKit.framework */,
 				3AB37652207F1C7600BA82F4 /* ImageIO.framework */,
 				96BE0A121FA30EA500474C66 /* MobileCoreServices.framework */,
 				96A2B0031FA30B8700BA5E71 /* WebKit.framework */,
@@ -432,9 +503,9 @@
 				3A77FCF81FBE86E000B95DE0 /* FluctSDK-info.plist in Resources */,
 				3A77FD3B1FBE876000B95DE0 /* NendAdResource.bundle in Resources */,
 				A3418CC418D999C5003E302C /* Images.xcassets in Resources */,
+				7548161B21C0E6F400A57D9F /* FluctSDKResources.bundle in Resources */,
 				A3418CBC18D999C5003E302C /* Main.storyboard in Resources */,
 				A3418CB318D999C5003E302C /* InfoPlist.strings in Resources */,
-				3ACE35AF1C3BA25C002E6E22 /* GSMMovieResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,8 +532,10 @@
 				3A24ECA41D81207E0014B706 /* BannerNavigationController.m in Sources */,
 				A3418CF118D9AA25003E302C /* ManyBannerViewController.m in Sources */,
 				9614D1BF1DF7E89200AC935E /* BannerTableViewCell.m in Sources */,
+				75C0AC1121C0B9FA0074AA86 /* FSSRewardedVideoCustomEventAdColony.m in Sources */,
 				A3418CE218D9A040003E302C /* BannerViewController.m in Sources */,
 				A3418CC218D999C5003E302C /* ViewController.m in Sources */,
+				75C0AC1221C0B9FA0074AA86 /* FSSRewardedVideoAdColonyManager.m in Sources */,
 				3A75999D204E78FD00392DBE /* FSSRewardedVideoConditionObserver.m in Sources */,
 				3A77FD3D1FBE876000B95DE0 /* FSSRewardedVideoUnityAdsManager.m in Sources */,
 				96BE0A1D1FA30FF200474C66 /* RewardedVideoViewController.m in Sources */,
@@ -472,6 +545,7 @@
 				9614D1C21DF7E8A800AC935E /* BannerTableViewController.m in Sources */,
 				3A77FD3C1FBE876000B95DE0 /* FSSRewardedVideoCustomEventUnityAds.m in Sources */,
 				A3E7215318DAEFA900A3ABF1 /* InterstitialViewController.m in Sources */,
+				75C0AC1521C0B9FA0074AA86 /* FSSRewardedVideoCustomEventTapjoy.m in Sources */,
 				A3418CB518D999C5003E302C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -556,7 +630,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
@@ -591,7 +665,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
@@ -611,6 +685,8 @@
 					"$(PROJECT_DIR)/../FluctSDK-AdnetworkSupport/AppLovin",
 					"$(PROJECT_DIR)/../FluctSDK-AdnetworkSupport/maio",
 					"$(PROJECT_DIR)/../FluctSDK-AdnetworkSupport/UnityAds",
+					"$(PROJECT_DIR)/../FluctSDK-AdnetworkSupport/TapJoy",
+					"$(PROJECT_DIR)/../FluctSDK-AdnetworkSupport/AdColony",
 					"$(PROJECT_DIR)/../FluctSDK-AdnetworkSupport/nend/NendAd.embeddedframework",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -621,7 +697,7 @@
 					"TEST_SERVER_REQUEST=1",
 				);
 				INFOPLIST_FILE = "SampleApp/SampleApp-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
@@ -644,12 +720,14 @@
 					"$(PROJECT_DIR)/../FluctSDK-AdnetworkSupport/AppLovin",
 					"$(PROJECT_DIR)/../FluctSDK-AdnetworkSupport/maio",
 					"$(PROJECT_DIR)/../FluctSDK-AdnetworkSupport/UnityAds",
+					"$(PROJECT_DIR)/../FluctSDK-AdnetworkSupport/TapJoy",
+					"$(PROJECT_DIR)/../FluctSDK-AdnetworkSupport/AdColony",
 					"$(PROJECT_DIR)/../FluctSDK-AdnetworkSupport/nend/NendAd.embeddedframework",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SampleApp/SampleApp-Prefix.pch";
 				INFOPLIST_FILE = "SampleApp/SampleApp-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";

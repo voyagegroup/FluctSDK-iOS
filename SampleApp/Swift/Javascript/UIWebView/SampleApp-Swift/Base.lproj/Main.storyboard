@@ -1,82 +1,95 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f7B-o6-Rd3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--連携方法1-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SampleApp_Swift" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oYA-Dq-r9f">
-                                <rect key="frame" x="0.0" y="20" width="375" height="627"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EQr-eE-PO4">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </webView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="oYA-Dq-r9f" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="JWG-jt-a4G"/>
-                            <constraint firstItem="oYA-Dq-r9f" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QyQ-LJ-JOY"/>
-                            <constraint firstAttribute="trailing" secondItem="oYA-Dq-r9f" secondAttribute="trailing" id="fLf-Yu-Ztd"/>
-                            <constraint firstItem="oYA-Dq-r9f" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="k4m-2m-CSt"/>
-                            <constraint firstItem="oYA-Dq-r9f" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="20" id="ysv-Ge-aUu"/>
+                            <constraint firstItem="EQr-eE-PO4" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="1bf-Eg-qaH"/>
+                            <constraint firstItem="EQr-eE-PO4" firstAttribute="trailing" secondItem="GWK-fy-C1t" secondAttribute="trailing" id="BtE-i9-m5M"/>
+                            <constraint firstItem="EQr-eE-PO4" firstAttribute="leading" secondItem="GWK-fy-C1t" secondAttribute="leading" id="kci-QU-EZp"/>
+                            <constraint firstAttribute="bottom" secondItem="EQr-eE-PO4" secondAttribute="bottom" id="znz-tI-0ek"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="GWK-fy-C1t"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="連携方法1" id="g23-jc-HRO"/>
                     <connections>
-                        <outlet property="adView" destination="oYA-Dq-r9f" id="L3h-yS-Ok9"/>
+                        <outlet property="webview" destination="EQr-eE-PO4" id="UEp-vu-Khe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
+            <point key="canvasLocation" x="-508" y="591.45427286356824"/>
         </scene>
-        <!--Js Link View Controller-->
+        <!--連携方法2-->
         <scene sceneID="lo1-NL-2DO">
             <objects>
                 <viewController id="lbq-5e-dng" customClass="JsLinkViewController" customModule="SampleApp_Swift" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="mKU-Q7-mo2"/>
-                        <viewControllerLayoutGuide type="bottom" id="PWT-Sh-AFc"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="TE3-ld-xHS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UIS-G9-sBa">
-                                <rect key="frame" x="0.0" y="20" width="375" height="627"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VSX-1P-YQR">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </webView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="UIS-G9-sBa" firstAttribute="centerY" secondItem="TE3-ld-xHS" secondAttribute="centerY" id="2i7-ci-Veu"/>
-                            <constraint firstItem="UIS-G9-sBa" firstAttribute="centerX" secondItem="TE3-ld-xHS" secondAttribute="centerX" id="73q-WH-rak"/>
-                            <constraint firstItem="UIS-G9-sBa" firstAttribute="top" secondItem="TE3-ld-xHS" secondAttribute="topMargin" constant="20" id="GbP-Yq-coR"/>
-                            <constraint firstAttribute="trailing" secondItem="UIS-G9-sBa" secondAttribute="trailing" id="she-an-uhq"/>
-                            <constraint firstItem="UIS-G9-sBa" firstAttribute="leading" secondItem="TE3-ld-xHS" secondAttribute="leading" id="y8S-Ps-0xr"/>
+                            <constraint firstAttribute="bottom" secondItem="VSX-1P-YQR" secondAttribute="bottom" id="G61-MZ-21v"/>
+                            <constraint firstItem="VSX-1P-YQR" firstAttribute="trailing" secondItem="D6R-gn-o6b" secondAttribute="trailing" id="JRP-mu-9f6"/>
+                            <constraint firstItem="VSX-1P-YQR" firstAttribute="top" secondItem="TE3-ld-xHS" secondAttribute="top" id="NAI-FP-90D"/>
+                            <constraint firstItem="VSX-1P-YQR" firstAttribute="leading" secondItem="D6R-gn-o6b" secondAttribute="leading" id="P0g-xu-0Ms"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="D6R-gn-o6b"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="連携方法2" id="KcD-zu-4HG"/>
                     <connections>
-                        <outlet property="adView" destination="UIS-G9-sBa" id="dLC-Xv-Xlo"/>
+                        <outlet property="webView" destination="VSX-1P-YQR" id="CZa-9N-uAr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xBH-Qr-PqH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="876" y="125"/>
+            <point key="canvasLocation" x="213.59999999999999" y="591.45427286356824"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="OzE-oH-eBi">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="f7B-o6-Rd3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lWO-7D-vFw">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="4SX-yt-r8c"/>
+                        <segue destination="lbq-5e-dng" kind="relationship" relationship="viewControllers" id="phM-ZI-Ytr"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Se-Wg-z41" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-158" y="-182"/>
         </scene>
     </scenes>
 </document>

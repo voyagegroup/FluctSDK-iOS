@@ -18,13 +18,12 @@ typedef NS_ENUM(NSInteger, FSSRewardedVideoADNWStatus) {
     FSSRewardedVideoADNWStatusNotDisplayable
 };
 
-@interface FSSRewardedVideoCustomEvent : NSObject {
-    FSSRewardedVideoADNWStatus _adnwStatus;
-}
+@interface FSSRewardedVideoCustomEvent : NSObject
 
 @property (nonatomic, weak) id<FSSRewardedVideoCustomEventDelegate> delegate;
 @property (nonatomic, readonly) BOOL testMode;
 @property (nonatomic, readonly) BOOL debugMode;
+@property (nonatomic) FSSRewardedVideoADNWStatus adnwStatus;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary
                           delegate:(id<FSSRewardedVideoCustomEventDelegate>)delegate

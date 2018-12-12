@@ -21,9 +21,9 @@ typedef NS_ENUM(NSUInteger, FSSGender) {
 
 @property (nonatomic, copy, nullable) NSString *userID;
 @property (nonatomic, copy, nullable) CLLocation *location;
-@property (nonatomic) FSSGender gender;
 @property (nonatomic, copy, nullable) NSDate *birthday;
 @property (nonatomic) NSInteger age;
+@property (nonatomic) FSSGender gender;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -51,16 +51,16 @@
 
 - (void)loadRewardedVideoWithDictionary:(NSDictionary *)dictionary {
     if ([self.rewardedVideo isReadyForDisplay]) {
-        _adnwStatus = FSSRewardedVideoADNWStatusLoaded;
+        self.adnwStatus = FSSRewardedVideoADNWStatusLoaded;
         [self.delegate rewardedVideoDidLoadForCustomEvent:self];
     } else {
         [self.rewardedVideo preloadAndNotify:self];
-        _adnwStatus = FSSRewardedVideoADNWStatusLoading;
+        self.adnwStatus = FSSRewardedVideoADNWStatusLoading;
     }
 }
 
 - (FSSRewardedVideoADNWStatus)loadStatus {
-    return _adnwStatus;
+    return self.adnwStatus;
 }
 
 - (void)presentRewardedVideoAdFromViewController:(UIViewController *)viewController {
@@ -90,7 +90,7 @@
 - (void)adService:(ALAdService *)adService didLoadAd:(ALAd *)ad {
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSRewardedVideoWorkQueue(), ^{
-        _adnwStatus = FSSRewardedVideoADNWStatusLoaded;
+        self.adnwStatus = FSSRewardedVideoADNWStatusLoaded;
         [weakSelf.delegate rewardedVideoDidLoadForCustomEvent:weakSelf];
     });
 }
@@ -98,7 +98,7 @@
 - (void)adService:(ALAdService *)adService didFailToLoadAdWithError:(int)code {
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSRewardedVideoWorkQueue(), ^{
-        _adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
+        self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
         switch (code) {
         case kALErrorCodeNoFill:
             [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:weakSelf

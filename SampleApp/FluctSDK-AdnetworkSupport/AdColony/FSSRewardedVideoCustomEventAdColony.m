@@ -48,11 +48,11 @@ static NSString *const FSSAdColonySupportVersion = @"8.0";
 }
 
 - (FSSRewardedVideoADNWStatus)loadStatus {
-    return _adnwStatus;
+    return self.adnwStatus;
 }
 
 - (void)loadRewardedVideoWithDictionary:(NSDictionary *)dictionary {
-    _adnwStatus = FSSRewardedVideoADNWStatusLoading;
+    self.adnwStatus = FSSRewardedVideoADNWStatusLoading;
     self.timeoutTimer = [NSTimer scheduledTimerWithTimeInterval:timeoutSecond
                                                          target:self
                                                        selector:@selector(timeout)
@@ -73,8 +73,8 @@ static NSString *const FSSAdColonySupportVersion = @"8.0";
 
 - (void)timeout {
     [self clearTimer];
-    if (_adnwStatus == FSSRewardedVideoADNWStatusLoading) {
-        _adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
+    if (self.adnwStatus == FSSRewardedVideoADNWStatusLoading) {
+        self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
         [self.delegate rewardedVideoDidFailToLoadForCustomEvent:self
                                                      fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                                                     code:FSSRewardedVideoAdErrorBadRequest
@@ -96,23 +96,23 @@ static NSString *const FSSAdColonySupportVersion = @"8.0";
 - (void)loadSuccess {
     [self clearTimer];
 
-    if (_adnwStatus == FSSRewardedVideoADNWStatusNotDisplayable) {
+    if (self.adnwStatus == FSSRewardedVideoADNWStatusNotDisplayable) {
         //already timeout. do nothing.
         return;
     }
 
-    _adnwStatus = FSSRewardedVideoADNWStatusLoaded;
+    self.adnwStatus = FSSRewardedVideoADNWStatusLoaded;
     [self.delegate rewardedVideoDidLoadForCustomEvent:self];
 }
 
 - (void)loadFailure:(AdColonyAdRequestError *)error {
     [self clearTimer];
 
-    if (_adnwStatus == FSSRewardedVideoADNWStatusNotDisplayable) {
+    if (self.adnwStatus == FSSRewardedVideoADNWStatusNotDisplayable) {
         //already timeout. do nothing.
         return;
     }
-    _adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
+    self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
 
     NSError *fluctError = [NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                               code:[self errorCodeForAdColonyRequestError:error.code]
@@ -138,7 +138,7 @@ static NSString *const FSSAdColonySupportVersion = @"8.0";
 }
 
 - (void)expired {
-    _adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
+    self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
     [self.delegate rewardedVideoDidFailToPlayForCustomEvent:self
                                                  fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                                                 code:FSSRewardedVideoAdErrorExpired

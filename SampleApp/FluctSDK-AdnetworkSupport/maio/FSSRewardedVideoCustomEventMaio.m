@@ -35,7 +35,7 @@ static NSString *const FSSMaioSupportVersion = @"8.0";
 }
 
 - (void)loadRewardedVideoWithDictionary:(NSDictionary *)dictionary {
-    _adnwStatus = FSSRewardedVideoADNWStatusLoading;
+    self.adnwStatus = FSSRewardedVideoADNWStatusLoading;
     self.timeoutTimer = [NSTimer scheduledTimerWithTimeInterval:timeoutSecond
                                                          target:self
                                                        selector:@selector(timeout)
@@ -47,7 +47,7 @@ static NSString *const FSSMaioSupportVersion = @"8.0";
 }
 
 - (FSSRewardedVideoADNWStatus)loadStatus {
-    return _adnwStatus;
+    return self.adnwStatus;
 }
 
 - (void)presentRewardedVideoAdFromViewController:(UIViewController *)viewController {
@@ -63,7 +63,7 @@ static NSString *const FSSMaioSupportVersion = @"8.0";
     [self clearTimer];
     if (self.isInitialNotificationForAdapter) {
         self.isInitialNotificationForAdapter = NO;
-        _adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
+        self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
         [self.delegate rewardedVideoDidFailToLoadForCustomEvent:self
                                                      fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                                                     code:FSSRewardedVideoAdErrorBadRequest
@@ -90,7 +90,7 @@ static NSString *const FSSMaioSupportVersion = @"8.0";
 
         if (self.isInitialNotificationForAdapter) {
             weakSelf.isInitialNotificationForAdapter = NO;
-            _adnwStatus = FSSRewardedVideoADNWStatusLoaded;
+            self.adnwStatus = FSSRewardedVideoADNWStatusLoaded;
             [weakSelf.delegate rewardedVideoDidLoadForCustomEvent:weakSelf];
         }
     });
@@ -130,7 +130,7 @@ static NSString *const FSSMaioSupportVersion = @"8.0";
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSRewardedVideoWorkQueue(), ^{
         [self clearTimer];
-        _adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
+        self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
 
         //error after initialization
         if (reason == MaioFailReasonVideoPlayback) {

@@ -8,42 +8,44 @@
 import UIKit
 import WebKit
 
-let IFA = "IFA_REPLACE_STRING"
-let LMT = "LMT_REPLACE_STRING"
-let BUNDLE = "BUNDLE_REPLACE_STRING"
+/**
+ 連携方法1
+ ターゲティングパラメータを置換するサンプル
+ */
+
+// 1. 事前にfluct広告タグの広告配信サーバへのリクエストパラメータにターゲティングパラメータを追加する
 
 class ViewController: UIViewController, WKNavigationDelegate {
 
     @IBOutlet weak var webview: WKWebView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // 広告識別子の取得
-        let ifa = getIdetifierForAdvertising()
-        let lmt = getLimitAdTracking()
-        let bundle = getBundleIdentifier()
-
-        var adhtml: String = getHtmlString(fileName: "ad")
-
-        // 広告識別子を置換
-        adhtml = replaceStringWithBaseString(key: IFA, value: ifa, base: adhtml)
-        adhtml = replaceStringWithBaseString(key: LMT, value: lmt, base: adhtml)
-        adhtml = replaceStringWithBaseString(key: BUNDLE, value: bundle, base: adhtml)
-
-        // WebViewにhtmlをロード
         webview.navigationDelegate = self
-        webview.loadHTMLString(adhtml, baseURL: URL.init(string: "http://fluct.jp"))
+
+        // ターゲティングパラメータの取得
+        let ifa = AdTargetingParameter.idetifierForAdvertising
+        let lmt = AdTargetingParameter.limitAdTracking
+        let bundle = AdTargetingParameter.bundleIdentifier
+
+        // 2. fluctタグを埋め込んだHTMLを表示する前に置換用文字列を実際の値へ置換する
+        let adhtml = FileUtils.readString(forFileName: "ad", ofType: "html")
+            .replacingOccurrences(of: "${FLUCT_IFA}", with: ifa)
+            .replacingOccurrences(of: "${FLUCT_LMT}", with:"\(lmt)")
+            .replacingOccurrences(of: "${FLUCT_BUNDLE}", with: bundle)
+
+        // 3. 置換したHTMLをWebViewで読み込む
+        webview.loadHTMLString(adhtml, baseURL: URL(string: "http://fluct.jp")!)
     }
 
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        // 広告がタップ時に外部ブラウザに遷移する
+        // 4. 広告のリンクをタップした時に外部Safariを開く
         if navigationAction.navigationType == .linkActivated {
-            UIApplication.shared.open(webView.url!, options: [:], completionHandler: nil)
+            UIApplication.shared.open(navigationAction.request.url!)
             decisionHandler(.cancel)
             return
         }
+
         decisionHandler(.allow)
     }
-    
 }
