@@ -17,6 +17,15 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## v4.11.1 2018/12/18
+* 動画リワード広告のメディエーション用アドネットワークSDKのアップデート対応
+* サンプルアプリでTapjoyが再生されるときにクラッシュする問題の対応
+* Wikiの更新
+
+[リリースページ](https://github.com/voyagegroup/FluctSDK-iOS/releases/latest)より`Fluct-info.plist`をダウンロードして更新してください。
+
+アドネットワーク各社SDKのインストールを手動で追加している場合、[最新のSDK](https://github.com/voyagegroup/FluctSDK-iOS/releases/tag/4.11.1)をダウンロードし、プロジェクトに追加し直してください。
+
 ## v4.11.0 2018/12/12
 * 動画リワード広告のRTB対応
 

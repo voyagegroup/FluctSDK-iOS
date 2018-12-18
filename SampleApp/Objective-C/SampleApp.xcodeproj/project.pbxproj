@@ -28,8 +28,6 @@
 		75C0AC1121C0B9FA0074AA86 /* FSSRewardedVideoCustomEventAdColony.m in Sources */ = {isa = PBXBuildFile; fileRef = 75C0AC0921C0B9FA0074AA86 /* FSSRewardedVideoCustomEventAdColony.m */; };
 		75C0AC1221C0B9FA0074AA86 /* FSSRewardedVideoAdColonyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 75C0AC0A21C0B9FA0074AA86 /* FSSRewardedVideoAdColonyManager.m */; };
 		75C0AC1321C0B9FA0074AA86 /* AdColony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C0AC0C21C0B9FA0074AA86 /* AdColony.framework */; };
-		75C0AC1421C0B9FA0074AA86 /* Tapjoy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C0AC0E21C0B9FA0074AA86 /* Tapjoy.framework */; };
-		75C0AC1521C0B9FA0074AA86 /* FSSRewardedVideoCustomEventTapjoy.m in Sources */ = {isa = PBXBuildFile; fileRef = 75C0AC1021C0B9FA0074AA86 /* FSSRewardedVideoCustomEventTapjoy.m */; };
 		75C0AC1721C0BA270074AA86 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C0AC1621C0BA270074AA86 /* EventKit.framework */; };
 		75C0AC1921C0BA2C0074AA86 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C0AC1821C0BA2B0074AA86 /* MessageUI.framework */; };
 		75C0AC1B21C0BA320074AA86 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C0AC1A21C0BA320074AA86 /* WatchConnectivity.framework */; };
@@ -55,6 +53,9 @@
 		A3418CE218D9A040003E302C /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3418CE118D9A040003E302C /* BannerViewController.m */; };
 		A3418CF118D9AA25003E302C /* ManyBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3418CF018D9AA25003E302C /* ManyBannerViewController.m */; };
 		A3E7215318DAEFA900A3ABF1 /* InterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3E7215218DAEFA900A3ABF1 /* InterstitialViewController.m */; };
+		F9610FC821C3B35A004EBE13 /* Tapjoy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9610FC421C3B359004EBE13 /* Tapjoy.framework */; };
+		F9610FC921C3B35A004EBE13 /* TapjoyResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F9610FC621C3B359004EBE13 /* TapjoyResources.bundle */; };
+		F9610FCA21C3B35A004EBE13 /* FSSRewardedVideoCustomEventTapjoy.m in Sources */ = {isa = PBXBuildFile; fileRef = F9610FC721C3B359004EBE13 /* FSSRewardedVideoCustomEventTapjoy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,9 +101,6 @@
 		75C0AC0A21C0B9FA0074AA86 /* FSSRewardedVideoAdColonyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoAdColonyManager.m; sourceTree = "<group>"; };
 		75C0AC0B21C0B9FA0074AA86 /* FSSRewardedVideoCustomEventAdColony.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoCustomEventAdColony.h; sourceTree = "<group>"; };
 		75C0AC0C21C0B9FA0074AA86 /* AdColony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AdColony.framework; sourceTree = "<group>"; };
-		75C0AC0E21C0B9FA0074AA86 /* Tapjoy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Tapjoy.framework; sourceTree = "<group>"; };
-		75C0AC0F21C0B9FA0074AA86 /* FSSRewardedVideoCustomEventTapjoy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoCustomEventTapjoy.h; sourceTree = "<group>"; };
-		75C0AC1021C0B9FA0074AA86 /* FSSRewardedVideoCustomEventTapjoy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoCustomEventTapjoy.m; sourceTree = "<group>"; };
 		75C0AC1621C0BA270074AA86 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		75C0AC1821C0BA2B0074AA86 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		75C0AC1A21C0BA320074AA86 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
@@ -144,6 +142,10 @@
 		A3E2EE3918E2CDD0004C511C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A3E7215118DAEFA900A3ABF1 /* InterstitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterstitialViewController.h; sourceTree = "<group>"; };
 		A3E7215218DAEFA900A3ABF1 /* InterstitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterstitialViewController.m; sourceTree = "<group>"; };
+		F9610FC221C3B359004EBE13 /* FSSRewardedVideoCustomEventTapjoy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoCustomEventTapjoy.h; sourceTree = "<group>"; };
+		F9610FC421C3B359004EBE13 /* Tapjoy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Tapjoy.framework; sourceTree = "<group>"; };
+		F9610FC621C3B359004EBE13 /* TapjoyResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TapjoyResources.bundle; sourceTree = "<group>"; };
+		F9610FC721C3B359004EBE13 /* FSSRewardedVideoCustomEventTapjoy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoCustomEventTapjoy.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9610FC821C3B35A004EBE13 /* Tapjoy.framework in Frameworks */,
 				75C0AC2521C0BA4E0074AA86 /* libsqlite3.0.tbd in Frameworks */,
 				75C0AC2321C0BA490074AA86 /* libxml2.tbd in Frameworks */,
 				75C0AC2121C0BA440074AA86 /* libz.tbd in Frameworks */,
@@ -164,7 +167,6 @@
 				96A2B0041FA30B8700BA5E71 /* WebKit.framework in Frameworks */,
 				3ACE35AE1C3BA25C002E6E22 /* FluctSDK.framework in Frameworks */,
 				3A77FD3A1FBE876000B95DE0 /* NendAd.framework in Frameworks */,
-				75C0AC1421C0B9FA0074AA86 /* Tapjoy.framework in Frameworks */,
 				3A77FD341FBE876000B95DE0 /* AppLovinSDK.framework in Frameworks */,
 				3A77FD3E1FBE876000B95DE0 /* UnityAds.framework in Frameworks */,
 				75C0AC1321C0B9FA0074AA86 /* AdColony.framework in Frameworks */,
@@ -185,7 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				75C0AC0721C0B9FA0074AA86 /* AdColony */,
-				75C0AC0D21C0B9FA0074AA86 /* Tapjoy */,
+				F9610FC121C3B359004EBE13 /* Tapjoy */,
 				3A77FD1D1FBE876000B95DE0 /* AppLovin */,
 				3A77FD211FBE876000B95DE0 /* maio */,
 				3A77FD271FBE876000B95DE0 /* nend */,
@@ -277,16 +279,6 @@
 				75C0AC0C21C0B9FA0074AA86 /* AdColony.framework */,
 			);
 			path = AdColony;
-			sourceTree = "<group>";
-		};
-		75C0AC0D21C0B9FA0074AA86 /* Tapjoy */ = {
-			isa = PBXGroup;
-			children = (
-				75C0AC0E21C0B9FA0074AA86 /* Tapjoy.framework */,
-				75C0AC0F21C0B9FA0074AA86 /* FSSRewardedVideoCustomEventTapjoy.h */,
-				75C0AC1021C0B9FA0074AA86 /* FSSRewardedVideoCustomEventTapjoy.m */,
-			);
-			path = Tapjoy;
 			sourceTree = "<group>";
 		};
 		96BE0A1A1FA30FD700474C66 /* RewardedVideo */ = {
@@ -424,6 +416,33 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F9610FC121C3B359004EBE13 /* Tapjoy */ = {
+			isa = PBXGroup;
+			children = (
+				F9610FC221C3B359004EBE13 /* FSSRewardedVideoCustomEventTapjoy.h */,
+				F9610FC321C3B359004EBE13 /* Tapjoy.embeddedframework */,
+				F9610FC721C3B359004EBE13 /* FSSRewardedVideoCustomEventTapjoy.m */,
+			);
+			path = Tapjoy;
+			sourceTree = "<group>";
+		};
+		F9610FC321C3B359004EBE13 /* Tapjoy.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				F9610FC421C3B359004EBE13 /* Tapjoy.framework */,
+				F9610FC521C3B359004EBE13 /* Resources */,
+			);
+			path = Tapjoy.embeddedframework;
+			sourceTree = "<group>";
+		};
+		F9610FC521C3B359004EBE13 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F9610FC621C3B359004EBE13 /* TapjoyResources.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -506,6 +525,7 @@
 				7548161B21C0E6F400A57D9F /* FluctSDKResources.bundle in Resources */,
 				A3418CBC18D999C5003E302C /* Main.storyboard in Resources */,
 				A3418CB318D999C5003E302C /* InfoPlist.strings in Resources */,
+				F9610FC921C3B35A004EBE13 /* TapjoyResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,7 +565,7 @@
 				9614D1C21DF7E8A800AC935E /* BannerTableViewController.m in Sources */,
 				3A77FD3C1FBE876000B95DE0 /* FSSRewardedVideoCustomEventUnityAds.m in Sources */,
 				A3E7215318DAEFA900A3ABF1 /* InterstitialViewController.m in Sources */,
-				75C0AC1521C0B9FA0074AA86 /* FSSRewardedVideoCustomEventTapjoy.m in Sources */,
+				F9610FCA21C3B35A004EBE13 /* FSSRewardedVideoCustomEventTapjoy.m in Sources */,
 				A3418CB518D999C5003E302C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -685,7 +705,7 @@
 					"$(PROJECT_DIR)/../FluctSDK-AdnetworkSupport/AppLovin",
 					"$(PROJECT_DIR)/../FluctSDK-AdnetworkSupport/maio",
 					"$(PROJECT_DIR)/../FluctSDK-AdnetworkSupport/UnityAds",
-					"$(PROJECT_DIR)/../FluctSDK-AdnetworkSupport/TapJoy",
+					"$(PROJECT_DIR)/../FluctSDK-AdnetworkSupport/tapjoy/TapJoy.embeddedframework",
 					"$(PROJECT_DIR)/../FluctSDK-AdnetworkSupport/AdColony",
 					"$(PROJECT_DIR)/../FluctSDK-AdnetworkSupport/nend/NendAd.embeddedframework",
 				);
@@ -720,7 +740,7 @@
 					"$(PROJECT_DIR)/../FluctSDK-AdnetworkSupport/AppLovin",
 					"$(PROJECT_DIR)/../FluctSDK-AdnetworkSupport/maio",
 					"$(PROJECT_DIR)/../FluctSDK-AdnetworkSupport/UnityAds",
-					"$(PROJECT_DIR)/../FluctSDK-AdnetworkSupport/TapJoy",
+					"$(PROJECT_DIR)/../FluctSDK-AdnetworkSupport/tapjoy/TapJoy.embeddedframework",
 					"$(PROJECT_DIR)/../FluctSDK-AdnetworkSupport/AdColony",
 					"$(PROJECT_DIR)/../FluctSDK-AdnetworkSupport/nend/NendAd.embeddedframework",
 				);
