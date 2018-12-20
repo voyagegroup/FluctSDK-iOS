@@ -17,6 +17,9 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## v4.11.2 2018/12/20
+* サンプルアプリの軽微なバグの修正
+
 ## v4.11.1 2018/12/18
 * 動画リワード広告のメディエーション用アドネットワークSDKのアップデート対応
 * サンプルアプリでTapjoyが再生されるときにクラッシュする問題の対応
