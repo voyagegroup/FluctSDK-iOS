@@ -23,4 +23,5 @@ struct AdTargetingParameter {
     static var bundleIdentifier: String {
         return Bundle.main.bundleIdentifier!
     }
+
 }

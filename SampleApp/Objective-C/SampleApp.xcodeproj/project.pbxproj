@@ -9,25 +9,10 @@
 /* Begin PBXBuildFile section */
 		3A24ECA11D810B600014B706 /* BannerTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A24ECA01D810B600014B706 /* BannerTabBarController.m */; };
 		3A24ECA41D81207E0014B706 /* BannerNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A24ECA31D81207E0014B706 /* BannerNavigationController.m */; };
-		3A75999D204E78FD00392DBE /* FSSRewardedVideoConditionObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A75999C204E78FD00392DBE /* FSSRewardedVideoConditionObserver.m */; };
 		3A77FCF81FBE86E000B95DE0 /* FluctSDK-info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A77FCF71FBE86E000B95DE0 /* FluctSDK-info.plist */; };
-		3A77FD341FBE876000B95DE0 /* AppLovinSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A77FD1E1FBE876000B95DE0 /* AppLovinSDK.framework */; };
-		3A77FD351FBE876000B95DE0 /* FSSRewardedVideoCustomEventAppLovin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A77FD201FBE876000B95DE0 /* FSSRewardedVideoCustomEventAppLovin.m */; };
-		3A77FD361FBE876000B95DE0 /* FSSRewardedVideoCustomEventMaio.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A77FD231FBE876000B95DE0 /* FSSRewardedVideoCustomEventMaio.m */; };
-		3A77FD371FBE876000B95DE0 /* FSSRewardedVideoMaioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A77FD251FBE876000B95DE0 /* FSSRewardedVideoMaioManager.m */; };
-		3A77FD381FBE876000B95DE0 /* Maio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A77FD261FBE876000B95DE0 /* Maio.framework */; };
-		3A77FD391FBE876000B95DE0 /* FSSRewardedVideoCustomEventNend.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A77FD291FBE876000B95DE0 /* FSSRewardedVideoCustomEventNend.m */; };
-		3A77FD3A1FBE876000B95DE0 /* NendAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A77FD2B1FBE876000B95DE0 /* NendAd.framework */; };
-		3A77FD3B1FBE876000B95DE0 /* NendAdResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3A77FD2D1FBE876000B95DE0 /* NendAdResource.bundle */; };
-		3A77FD3C1FBE876000B95DE0 /* FSSRewardedVideoCustomEventUnityAds.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A77FD301FBE876000B95DE0 /* FSSRewardedVideoCustomEventUnityAds.m */; };
-		3A77FD3D1FBE876000B95DE0 /* FSSRewardedVideoUnityAdsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A77FD321FBE876000B95DE0 /* FSSRewardedVideoUnityAdsManager.m */; };
-		3A77FD3E1FBE876000B95DE0 /* UnityAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A77FD331FBE876000B95DE0 /* UnityAds.framework */; };
 		3AB37653207F1C7600BA82F4 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB37652207F1C7600BA82F4 /* ImageIO.framework */; };
 		3ACE35AE1C3BA25C002E6E22 /* FluctSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ACE35AC1C3BA25C002E6E22 /* FluctSDK.framework */; };
-		7548161B21C0E6F400A57D9F /* FluctSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7548161A21C0E6F400A57D9F /* FluctSDKResources.bundle */; };
-		75C0AC1121C0B9FA0074AA86 /* FSSRewardedVideoCustomEventAdColony.m in Sources */ = {isa = PBXBuildFile; fileRef = 75C0AC0921C0B9FA0074AA86 /* FSSRewardedVideoCustomEventAdColony.m */; };
-		75C0AC1221C0B9FA0074AA86 /* FSSRewardedVideoAdColonyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 75C0AC0A21C0B9FA0074AA86 /* FSSRewardedVideoAdColonyManager.m */; };
-		75C0AC1321C0B9FA0074AA86 /* AdColony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C0AC0C21C0B9FA0074AA86 /* AdColony.framework */; };
+		7451C8E421E5D07000C42F1F /* FluctSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7451C8E321E5D07000C42F1F /* FluctSDKResources.bundle */; };
 		75C0AC1721C0BA270074AA86 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C0AC1621C0BA270074AA86 /* EventKit.framework */; };
 		75C0AC1921C0BA2C0074AA86 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C0AC1821C0BA2B0074AA86 /* MessageUI.framework */; };
 		75C0AC1B21C0BA320074AA86 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C0AC1A21C0BA320074AA86 /* WatchConnectivity.framework */; };
@@ -36,6 +21,24 @@
 		75C0AC2121C0BA440074AA86 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C0AC2021C0BA440074AA86 /* libz.tbd */; };
 		75C0AC2321C0BA490074AA86 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C0AC2221C0BA490074AA86 /* libxml2.tbd */; };
 		75C0AC2521C0BA4E0074AA86 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C0AC2421C0BA4E0074AA86 /* libsqlite3.0.tbd */; };
+		75DB9A5021CB55FA00A999ED /* UnityAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75DB9A2E21CB55FA00A999ED /* UnityAds.framework */; };
+		75DB9A5121CB55FA00A999ED /* FSSRewardedVideoCustomEventUnityAds.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9A2F21CB55FA00A999ED /* FSSRewardedVideoCustomEventUnityAds.m */; };
+		75DB9A5221CB55FA00A999ED /* FSSRewardedVideoUnityAdsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9A3021CB55FA00A999ED /* FSSRewardedVideoUnityAdsManager.m */; };
+		75DB9A5321CB55FA00A999ED /* FSSRewardedVideoConditionObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9A3121CB55FA00A999ED /* FSSRewardedVideoConditionObserver.m */; };
+		75DB9A5421CB55FA00A999ED /* Tapjoy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75DB9A3521CB55FA00A999ED /* Tapjoy.framework */; };
+		75DB9A5521CB55FA00A999ED /* TapjoyResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 75DB9A3721CB55FA00A999ED /* TapjoyResources.bundle */; };
+		75DB9A5621CB55FA00A999ED /* FSSRewardedVideoCustomEventTapjoy.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9A3821CB55FA00A999ED /* FSSRewardedVideoCustomEventTapjoy.m */; };
+		75DB9A5721CB55FA00A999ED /* AppLovinSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75DB9A3B21CB55FA00A999ED /* AppLovinSDK.framework */; };
+		75DB9A5821CB55FA00A999ED /* FSSRewardedVideoCustomEventAppLovin.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9A3C21CB55FA00A999ED /* FSSRewardedVideoCustomEventAppLovin.m */; };
+		75DB9A5921CB55FA00A999ED /* FSSRewardedVideoCustomEventAdColony.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9A3F21CB55FA00A999ED /* FSSRewardedVideoCustomEventAdColony.m */; };
+		75DB9A5A21CB55FA00A999ED /* FSSRewardedVideoAdColonyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9A4021CB55FA00A999ED /* FSSRewardedVideoAdColonyManager.m */; };
+		75DB9A5B21CB55FA00A999ED /* AdColony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75DB9A4221CB55FA00A999ED /* AdColony.framework */; };
+		75DB9A5C21CB55FA00A999ED /* FSSRewardedVideoCustomEventMaio.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9A4621CB55FA00A999ED /* FSSRewardedVideoCustomEventMaio.m */; };
+		75DB9A5D21CB55FA00A999ED /* FSSRewardedVideoMaioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9A4721CB55FA00A999ED /* FSSRewardedVideoMaioManager.m */; };
+		75DB9A5E21CB55FA00A999ED /* Maio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75DB9A4821CB55FA00A999ED /* Maio.framework */; };
+		75DB9A5F21CB55FA00A999ED /* FSSRewardedVideoCustomEventNend.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9A4A21CB55FA00A999ED /* FSSRewardedVideoCustomEventNend.m */; };
+		75DB9A6021CB55FA00A999ED /* NendAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75DB9A4C21CB55FA00A999ED /* NendAd.framework */; };
+		75DB9A6121CB55FA00A999ED /* NendAdResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 75DB9A4E21CB55FA00A999ED /* NendAdResource.bundle */; };
 		9614D1BF1DF7E89200AC935E /* BannerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9614D1BE1DF7E89200AC935E /* BannerTableViewCell.m */; };
 		9614D1C21DF7E8A800AC935E /* BannerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9614D1C11DF7E8A800AC935E /* BannerTableViewController.m */; };
 		96A2B0041FA30B8700BA5E71 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96A2B0031FA30B8700BA5E71 /* WebKit.framework */; };
@@ -53,9 +56,6 @@
 		A3418CE218D9A040003E302C /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3418CE118D9A040003E302C /* BannerViewController.m */; };
 		A3418CF118D9AA25003E302C /* ManyBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3418CF018D9AA25003E302C /* ManyBannerViewController.m */; };
 		A3E7215318DAEFA900A3ABF1 /* InterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3E7215218DAEFA900A3ABF1 /* InterstitialViewController.m */; };
-		F9610FC821C3B35A004EBE13 /* Tapjoy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9610FC421C3B359004EBE13 /* Tapjoy.framework */; };
-		F9610FC921C3B35A004EBE13 /* TapjoyResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F9610FC621C3B359004EBE13 /* TapjoyResources.bundle */; };
-		F9610FCA21C3B35A004EBE13 /* FSSRewardedVideoCustomEventTapjoy.m in Sources */ = {isa = PBXBuildFile; fileRef = F9610FC721C3B359004EBE13 /* FSSRewardedVideoCustomEventTapjoy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,34 +73,10 @@
 		3A24ECA01D810B600014B706 /* BannerTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerTabBarController.m; sourceTree = "<group>"; };
 		3A24ECA21D81207E0014B706 /* BannerNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerNavigationController.h; sourceTree = "<group>"; };
 		3A24ECA31D81207E0014B706 /* BannerNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerNavigationController.m; sourceTree = "<group>"; };
-		3A75999B204E78FD00392DBE /* FSSRewardedVideoConditionObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoConditionObserver.h; sourceTree = "<group>"; };
-		3A75999C204E78FD00392DBE /* FSSRewardedVideoConditionObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoConditionObserver.m; sourceTree = "<group>"; };
 		3A77FCF71FBE86E000B95DE0 /* FluctSDK-info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "FluctSDK-info.plist"; sourceTree = "<group>"; };
-		3A77FD1E1FBE876000B95DE0 /* AppLovinSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppLovinSDK.framework; sourceTree = "<group>"; };
-		3A77FD1F1FBE876000B95DE0 /* FSSRewardedVideoCustomEventAppLovin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoCustomEventAppLovin.h; sourceTree = "<group>"; };
-		3A77FD201FBE876000B95DE0 /* FSSRewardedVideoCustomEventAppLovin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoCustomEventAppLovin.m; sourceTree = "<group>"; };
-		3A77FD221FBE876000B95DE0 /* FSSRewardedVideoCustomEventMaio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoCustomEventMaio.h; sourceTree = "<group>"; };
-		3A77FD231FBE876000B95DE0 /* FSSRewardedVideoCustomEventMaio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoCustomEventMaio.m; sourceTree = "<group>"; };
-		3A77FD241FBE876000B95DE0 /* FSSRewardedVideoMaioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoMaioManager.h; sourceTree = "<group>"; };
-		3A77FD251FBE876000B95DE0 /* FSSRewardedVideoMaioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoMaioManager.m; sourceTree = "<group>"; };
-		3A77FD261FBE876000B95DE0 /* Maio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Maio.framework; sourceTree = "<group>"; };
-		3A77FD281FBE876000B95DE0 /* FSSRewardedVideoCustomEventNend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoCustomEventNend.h; sourceTree = "<group>"; };
-		3A77FD291FBE876000B95DE0 /* FSSRewardedVideoCustomEventNend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoCustomEventNend.m; sourceTree = "<group>"; };
-		3A77FD2B1FBE876000B95DE0 /* NendAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NendAd.framework; sourceTree = "<group>"; };
-		3A77FD2D1FBE876000B95DE0 /* NendAdResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NendAdResource.bundle; sourceTree = "<group>"; };
-		3A77FD2F1FBE876000B95DE0 /* FSSRewardedVideoCustomEventUnityAds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoCustomEventUnityAds.h; sourceTree = "<group>"; };
-		3A77FD301FBE876000B95DE0 /* FSSRewardedVideoCustomEventUnityAds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoCustomEventUnityAds.m; sourceTree = "<group>"; };
-		3A77FD311FBE876000B95DE0 /* FSSRewardedVideoUnityAdsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoUnityAdsManager.h; sourceTree = "<group>"; };
-		3A77FD321FBE876000B95DE0 /* FSSRewardedVideoUnityAdsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoUnityAdsManager.m; sourceTree = "<group>"; };
-		3A77FD331FBE876000B95DE0 /* UnityAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnityAds.framework; sourceTree = "<group>"; };
 		3AB37652207F1C7600BA82F4 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		3ACE35AC1C3BA25C002E6E22 /* FluctSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FluctSDK.framework; sourceTree = "<group>"; };
-		7548161A21C0E6F400A57D9F /* FluctSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FluctSDKResources.bundle; sourceTree = "<group>"; };
-		75C0AC0821C0B9FA0074AA86 /* FSSRewardedVideoAdColonyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoAdColonyManager.h; sourceTree = "<group>"; };
-		75C0AC0921C0B9FA0074AA86 /* FSSRewardedVideoCustomEventAdColony.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoCustomEventAdColony.m; sourceTree = "<group>"; };
-		75C0AC0A21C0B9FA0074AA86 /* FSSRewardedVideoAdColonyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoAdColonyManager.m; sourceTree = "<group>"; };
-		75C0AC0B21C0B9FA0074AA86 /* FSSRewardedVideoCustomEventAdColony.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoCustomEventAdColony.h; sourceTree = "<group>"; };
-		75C0AC0C21C0B9FA0074AA86 /* AdColony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AdColony.framework; sourceTree = "<group>"; };
+		7451C8E321E5D07000C42F1F /* FluctSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FluctSDKResources.bundle; path = Resources/FluctSDKResources.bundle; sourceTree = "<group>"; };
 		75C0AC1621C0BA270074AA86 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		75C0AC1821C0BA2B0074AA86 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		75C0AC1A21C0BA320074AA86 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
@@ -109,6 +85,34 @@
 		75C0AC2021C0BA440074AA86 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		75C0AC2221C0BA490074AA86 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		75C0AC2421C0BA4E0074AA86 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		75DB9A2B21CB55FA00A999ED /* FSSRewardedVideoConditionObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoConditionObserver.h; sourceTree = "<group>"; };
+		75DB9A2C21CB55FA00A999ED /* FSSRewardedVideoUnityAdsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoUnityAdsManager.h; sourceTree = "<group>"; };
+		75DB9A2D21CB55FA00A999ED /* FSSRewardedVideoCustomEventUnityAds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoCustomEventUnityAds.h; sourceTree = "<group>"; };
+		75DB9A2E21CB55FA00A999ED /* UnityAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnityAds.framework; sourceTree = "<group>"; };
+		75DB9A2F21CB55FA00A999ED /* FSSRewardedVideoCustomEventUnityAds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoCustomEventUnityAds.m; sourceTree = "<group>"; };
+		75DB9A3021CB55FA00A999ED /* FSSRewardedVideoUnityAdsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoUnityAdsManager.m; sourceTree = "<group>"; };
+		75DB9A3121CB55FA00A999ED /* FSSRewardedVideoConditionObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoConditionObserver.m; sourceTree = "<group>"; };
+		75DB9A3321CB55FA00A999ED /* FSSRewardedVideoCustomEventTapjoy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoCustomEventTapjoy.h; sourceTree = "<group>"; };
+		75DB9A3521CB55FA00A999ED /* Tapjoy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Tapjoy.framework; sourceTree = "<group>"; };
+		75DB9A3721CB55FA00A999ED /* TapjoyResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TapjoyResources.bundle; sourceTree = "<group>"; };
+		75DB9A3821CB55FA00A999ED /* FSSRewardedVideoCustomEventTapjoy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoCustomEventTapjoy.m; sourceTree = "<group>"; };
+		75DB9A3A21CB55FA00A999ED /* FSSRewardedVideoCustomEventAppLovin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoCustomEventAppLovin.h; sourceTree = "<group>"; };
+		75DB9A3B21CB55FA00A999ED /* AppLovinSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppLovinSDK.framework; sourceTree = "<group>"; };
+		75DB9A3C21CB55FA00A999ED /* FSSRewardedVideoCustomEventAppLovin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoCustomEventAppLovin.m; sourceTree = "<group>"; };
+		75DB9A3E21CB55FA00A999ED /* FSSRewardedVideoAdColonyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoAdColonyManager.h; sourceTree = "<group>"; };
+		75DB9A3F21CB55FA00A999ED /* FSSRewardedVideoCustomEventAdColony.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoCustomEventAdColony.m; sourceTree = "<group>"; };
+		75DB9A4021CB55FA00A999ED /* FSSRewardedVideoAdColonyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoAdColonyManager.m; sourceTree = "<group>"; };
+		75DB9A4121CB55FA00A999ED /* FSSRewardedVideoCustomEventAdColony.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoCustomEventAdColony.h; sourceTree = "<group>"; };
+		75DB9A4221CB55FA00A999ED /* AdColony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AdColony.framework; sourceTree = "<group>"; };
+		75DB9A4421CB55FA00A999ED /* FSSRewardedVideoCustomEventMaio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoCustomEventMaio.h; sourceTree = "<group>"; };
+		75DB9A4521CB55FA00A999ED /* FSSRewardedVideoMaioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoMaioManager.h; sourceTree = "<group>"; };
+		75DB9A4621CB55FA00A999ED /* FSSRewardedVideoCustomEventMaio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoCustomEventMaio.m; sourceTree = "<group>"; };
+		75DB9A4721CB55FA00A999ED /* FSSRewardedVideoMaioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoMaioManager.m; sourceTree = "<group>"; };
+		75DB9A4821CB55FA00A999ED /* Maio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Maio.framework; sourceTree = "<group>"; };
+		75DB9A4A21CB55FA00A999ED /* FSSRewardedVideoCustomEventNend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoCustomEventNend.m; sourceTree = "<group>"; };
+		75DB9A4C21CB55FA00A999ED /* NendAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NendAd.framework; sourceTree = "<group>"; };
+		75DB9A4E21CB55FA00A999ED /* NendAdResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NendAdResource.bundle; sourceTree = "<group>"; };
+		75DB9A4F21CB55FA00A999ED /* FSSRewardedVideoCustomEventNend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoCustomEventNend.h; sourceTree = "<group>"; };
 		9614D1BD1DF7E89200AC935E /* BannerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerTableViewCell.h; sourceTree = "<group>"; };
 		9614D1BE1DF7E89200AC935E /* BannerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerTableViewCell.m; sourceTree = "<group>"; };
 		9614D1C01DF7E8A800AC935E /* BannerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerTableViewController.h; sourceTree = "<group>"; };
@@ -142,10 +146,6 @@
 		A3E2EE3918E2CDD0004C511C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A3E7215118DAEFA900A3ABF1 /* InterstitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterstitialViewController.h; sourceTree = "<group>"; };
 		A3E7215218DAEFA900A3ABF1 /* InterstitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterstitialViewController.m; sourceTree = "<group>"; };
-		F9610FC221C3B359004EBE13 /* FSSRewardedVideoCustomEventTapjoy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoCustomEventTapjoy.h; sourceTree = "<group>"; };
-		F9610FC421C3B359004EBE13 /* Tapjoy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Tapjoy.framework; sourceTree = "<group>"; };
-		F9610FC621C3B359004EBE13 /* TapjoyResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TapjoyResources.bundle; sourceTree = "<group>"; };
-		F9610FC721C3B359004EBE13 /* FSSRewardedVideoCustomEventTapjoy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoCustomEventTapjoy.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,23 +153,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9610FC821C3B35A004EBE13 /* Tapjoy.framework in Frameworks */,
+				75DB9A5E21CB55FA00A999ED /* Maio.framework in Frameworks */,
 				75C0AC2521C0BA4E0074AA86 /* libsqlite3.0.tbd in Frameworks */,
 				75C0AC2321C0BA490074AA86 /* libxml2.tbd in Frameworks */,
+				75DB9A5721CB55FA00A999ED /* AppLovinSDK.framework in Frameworks */,
 				75C0AC2121C0BA440074AA86 /* libz.tbd in Frameworks */,
+				75DB9A5B21CB55FA00A999ED /* AdColony.framework in Frameworks */,
 				75C0AC1F21C0BA3D0074AA86 /* libc++.tbd in Frameworks */,
 				75C0AC1D21C0BA380074AA86 /* JavaScriptCore.framework in Frameworks */,
 				75C0AC1B21C0BA320074AA86 /* WatchConnectivity.framework in Frameworks */,
 				75C0AC1921C0BA2C0074AA86 /* MessageUI.framework in Frameworks */,
 				75C0AC1721C0BA270074AA86 /* EventKit.framework in Frameworks */,
 				3AB37653207F1C7600BA82F4 /* ImageIO.framework in Frameworks */,
-				3A77FD381FBE876000B95DE0 /* Maio.framework in Frameworks */,
+				75DB9A5421CB55FA00A999ED /* Tapjoy.framework in Frameworks */,
 				96A2B0041FA30B8700BA5E71 /* WebKit.framework in Frameworks */,
+				75DB9A6021CB55FA00A999ED /* NendAd.framework in Frameworks */,
 				3ACE35AE1C3BA25C002E6E22 /* FluctSDK.framework in Frameworks */,
-				3A77FD3A1FBE876000B95DE0 /* NendAd.framework in Frameworks */,
-				3A77FD341FBE876000B95DE0 /* AppLovinSDK.framework in Frameworks */,
-				3A77FD3E1FBE876000B95DE0 /* UnityAds.framework in Frameworks */,
-				75C0AC1321C0B9FA0074AA86 /* AdColony.framework in Frameworks */,
+				75DB9A5021CB55FA00A999ED /* UnityAds.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,102 +183,128 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3A77FD1C1FBE876000B95DE0 /* FluctSDK-AdnetworkSupport */ = {
-			isa = PBXGroup;
-			children = (
-				75C0AC0721C0B9FA0074AA86 /* AdColony */,
-				F9610FC121C3B359004EBE13 /* Tapjoy */,
-				3A77FD1D1FBE876000B95DE0 /* AppLovin */,
-				3A77FD211FBE876000B95DE0 /* maio */,
-				3A77FD271FBE876000B95DE0 /* nend */,
-				3A77FD2E1FBE876000B95DE0 /* UnityAds */,
-			);
-			name = "FluctSDK-AdnetworkSupport";
-			path = "../FluctSDK-AdnetworkSupport";
-			sourceTree = "<group>";
-		};
-		3A77FD1D1FBE876000B95DE0 /* AppLovin */ = {
-			isa = PBXGroup;
-			children = (
-				3A77FD1E1FBE876000B95DE0 /* AppLovinSDK.framework */,
-				3A77FD1F1FBE876000B95DE0 /* FSSRewardedVideoCustomEventAppLovin.h */,
-				3A77FD201FBE876000B95DE0 /* FSSRewardedVideoCustomEventAppLovin.m */,
-			);
-			path = AppLovin;
-			sourceTree = "<group>";
-		};
-		3A77FD211FBE876000B95DE0 /* maio */ = {
-			isa = PBXGroup;
-			children = (
-				3A77FD221FBE876000B95DE0 /* FSSRewardedVideoCustomEventMaio.h */,
-				3A77FD231FBE876000B95DE0 /* FSSRewardedVideoCustomEventMaio.m */,
-				3A77FD241FBE876000B95DE0 /* FSSRewardedVideoMaioManager.h */,
-				3A77FD251FBE876000B95DE0 /* FSSRewardedVideoMaioManager.m */,
-				3A77FD261FBE876000B95DE0 /* Maio.framework */,
-			);
-			path = maio;
-			sourceTree = "<group>";
-		};
-		3A77FD271FBE876000B95DE0 /* nend */ = {
-			isa = PBXGroup;
-			children = (
-				3A77FD281FBE876000B95DE0 /* FSSRewardedVideoCustomEventNend.h */,
-				3A77FD291FBE876000B95DE0 /* FSSRewardedVideoCustomEventNend.m */,
-				3A77FD2A1FBE876000B95DE0 /* NendAd.embeddedframework */,
-			);
-			path = nend;
-			sourceTree = "<group>";
-		};
-		3A77FD2A1FBE876000B95DE0 /* NendAd.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				3A77FD2B1FBE876000B95DE0 /* NendAd.framework */,
-				3A77FD2C1FBE876000B95DE0 /* Resources */,
-			);
-			path = NendAd.embeddedframework;
-			sourceTree = "<group>";
-		};
-		3A77FD2C1FBE876000B95DE0 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				3A77FD2D1FBE876000B95DE0 /* NendAdResource.bundle */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		3A77FD2E1FBE876000B95DE0 /* UnityAds */ = {
-			isa = PBXGroup;
-			children = (
-				3A75999B204E78FD00392DBE /* FSSRewardedVideoConditionObserver.h */,
-				3A75999C204E78FD00392DBE /* FSSRewardedVideoConditionObserver.m */,
-				3A77FD2F1FBE876000B95DE0 /* FSSRewardedVideoCustomEventUnityAds.h */,
-				3A77FD301FBE876000B95DE0 /* FSSRewardedVideoCustomEventUnityAds.m */,
-				3A77FD311FBE876000B95DE0 /* FSSRewardedVideoUnityAdsManager.h */,
-				3A77FD321FBE876000B95DE0 /* FSSRewardedVideoUnityAdsManager.m */,
-				3A77FD331FBE876000B95DE0 /* UnityAds.framework */,
-			);
-			path = UnityAds;
-			sourceTree = "<group>";
-		};
 		3ACE35AB1C3BA25C002E6E22 /* FluctSDK */ = {
 			isa = PBXGroup;
 			children = (
-				7548161A21C0E6F400A57D9F /* FluctSDKResources.bundle */,
+				7451C8E321E5D07000C42F1F /* FluctSDKResources.bundle */,
 				3ACE35AC1C3BA25C002E6E22 /* FluctSDK.framework */,
 			);
 			path = FluctSDK;
 			sourceTree = "<group>";
 		};
-		75C0AC0721C0B9FA0074AA86 /* AdColony */ = {
+		75DB9A2921CB55FA00A999ED /* FluctSDK-AdnetworkSupport */ = {
 			isa = PBXGroup;
 			children = (
-				75C0AC0821C0B9FA0074AA86 /* FSSRewardedVideoAdColonyManager.h */,
-				75C0AC0921C0B9FA0074AA86 /* FSSRewardedVideoCustomEventAdColony.m */,
-				75C0AC0A21C0B9FA0074AA86 /* FSSRewardedVideoAdColonyManager.m */,
-				75C0AC0B21C0B9FA0074AA86 /* FSSRewardedVideoCustomEventAdColony.h */,
-				75C0AC0C21C0B9FA0074AA86 /* AdColony.framework */,
+				75DB9A2A21CB55FA00A999ED /* UnityAds */,
+				75DB9A3221CB55FA00A999ED /* Tapjoy */,
+				75DB9A3921CB55FA00A999ED /* AppLovin */,
+				75DB9A3D21CB55FA00A999ED /* AdColony */,
+				75DB9A4321CB55FA00A999ED /* maio */,
+				75DB9A4921CB55FA00A999ED /* nend */,
+			);
+			path = "FluctSDK-AdnetworkSupport";
+			sourceTree = "<group>";
+		};
+		75DB9A2A21CB55FA00A999ED /* UnityAds */ = {
+			isa = PBXGroup;
+			children = (
+				75DB9A2B21CB55FA00A999ED /* FSSRewardedVideoConditionObserver.h */,
+				75DB9A2C21CB55FA00A999ED /* FSSRewardedVideoUnityAdsManager.h */,
+				75DB9A2D21CB55FA00A999ED /* FSSRewardedVideoCustomEventUnityAds.h */,
+				75DB9A2E21CB55FA00A999ED /* UnityAds.framework */,
+				75DB9A2F21CB55FA00A999ED /* FSSRewardedVideoCustomEventUnityAds.m */,
+				75DB9A3021CB55FA00A999ED /* FSSRewardedVideoUnityAdsManager.m */,
+				75DB9A3121CB55FA00A999ED /* FSSRewardedVideoConditionObserver.m */,
+			);
+			path = UnityAds;
+			sourceTree = "<group>";
+		};
+		75DB9A3221CB55FA00A999ED /* Tapjoy */ = {
+			isa = PBXGroup;
+			children = (
+				75DB9A3321CB55FA00A999ED /* FSSRewardedVideoCustomEventTapjoy.h */,
+				75DB9A3421CB55FA00A999ED /* Tapjoy.embeddedframework */,
+				75DB9A3821CB55FA00A999ED /* FSSRewardedVideoCustomEventTapjoy.m */,
+			);
+			path = Tapjoy;
+			sourceTree = "<group>";
+		};
+		75DB9A3421CB55FA00A999ED /* Tapjoy.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				75DB9A3521CB55FA00A999ED /* Tapjoy.framework */,
+				75DB9A3621CB55FA00A999ED /* Resources */,
+			);
+			path = Tapjoy.embeddedframework;
+			sourceTree = "<group>";
+		};
+		75DB9A3621CB55FA00A999ED /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				75DB9A3721CB55FA00A999ED /* TapjoyResources.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		75DB9A3921CB55FA00A999ED /* AppLovin */ = {
+			isa = PBXGroup;
+			children = (
+				75DB9A3A21CB55FA00A999ED /* FSSRewardedVideoCustomEventAppLovin.h */,
+				75DB9A3B21CB55FA00A999ED /* AppLovinSDK.framework */,
+				75DB9A3C21CB55FA00A999ED /* FSSRewardedVideoCustomEventAppLovin.m */,
+			);
+			path = AppLovin;
+			sourceTree = "<group>";
+		};
+		75DB9A3D21CB55FA00A999ED /* AdColony */ = {
+			isa = PBXGroup;
+			children = (
+				75DB9A3E21CB55FA00A999ED /* FSSRewardedVideoAdColonyManager.h */,
+				75DB9A3F21CB55FA00A999ED /* FSSRewardedVideoCustomEventAdColony.m */,
+				75DB9A4021CB55FA00A999ED /* FSSRewardedVideoAdColonyManager.m */,
+				75DB9A4121CB55FA00A999ED /* FSSRewardedVideoCustomEventAdColony.h */,
+				75DB9A4221CB55FA00A999ED /* AdColony.framework */,
 			);
 			path = AdColony;
+			sourceTree = "<group>";
+		};
+		75DB9A4321CB55FA00A999ED /* maio */ = {
+			isa = PBXGroup;
+			children = (
+				75DB9A4421CB55FA00A999ED /* FSSRewardedVideoCustomEventMaio.h */,
+				75DB9A4521CB55FA00A999ED /* FSSRewardedVideoMaioManager.h */,
+				75DB9A4621CB55FA00A999ED /* FSSRewardedVideoCustomEventMaio.m */,
+				75DB9A4721CB55FA00A999ED /* FSSRewardedVideoMaioManager.m */,
+				75DB9A4821CB55FA00A999ED /* Maio.framework */,
+			);
+			path = maio;
+			sourceTree = "<group>";
+		};
+		75DB9A4921CB55FA00A999ED /* nend */ = {
+			isa = PBXGroup;
+			children = (
+				75DB9A4A21CB55FA00A999ED /* FSSRewardedVideoCustomEventNend.m */,
+				75DB9A4B21CB55FA00A999ED /* NendAd.embeddedframework */,
+				75DB9A4F21CB55FA00A999ED /* FSSRewardedVideoCustomEventNend.h */,
+			);
+			path = nend;
+			sourceTree = "<group>";
+		};
+		75DB9A4B21CB55FA00A999ED /* NendAd.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				75DB9A4C21CB55FA00A999ED /* NendAd.framework */,
+				75DB9A4D21CB55FA00A999ED /* Resources */,
+			);
+			path = NendAd.embeddedframework;
+			sourceTree = "<group>";
+		};
+		75DB9A4D21CB55FA00A999ED /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				75DB9A4E21CB55FA00A999ED /* NendAdResource.bundle */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		96BE0A1A1FA30FD700474C66 /* RewardedVideo */ = {
@@ -332,7 +358,6 @@
 		A3418C9C18D999C5003E302C = {
 			isa = PBXGroup;
 			children = (
-				3A77FD1C1FBE876000B95DE0 /* FluctSDK-AdnetworkSupport */,
 				A3418CAE18D999C5003E302C /* SampleApp */,
 				A3418CD018D999C5003E302C /* SampleAppTests */,
 				A3418CA718D999C5003E302C /* Frameworks */,
@@ -370,18 +395,19 @@
 		A3418CAE18D999C5003E302C /* SampleApp */ = {
 			isa = PBXGroup;
 			children = (
-				96BE0A1A1FA30FD700474C66 /* RewardedVideo */,
-				96C87E731F15FEB900D90AC3 /* Native */,
-				96C87E721F15FEB000D90AC3 /* Interstitial */,
-				96C87E711F15FEA800D90AC3 /* Banner */,
 				A3418CB718D999C5003E302C /* AppDelegate.h */,
-				A3418CB818D999C5003E302C /* AppDelegate.m */,
-				A3418CBA18D999C5003E302C /* Main.storyboard */,
 				A3418CC018D999C5003E302C /* ViewController.h */,
+				A3418CB818D999C5003E302C /* AppDelegate.m */,
 				A3418CC118D999C5003E302C /* ViewController.m */,
-				A3418CC318D999C5003E302C /* Images.xcassets */,
 				3A77FCF71FBE86E000B95DE0 /* FluctSDK-info.plist */,
+				A3418CC318D999C5003E302C /* Images.xcassets */,
+				96C87E711F15FEA800D90AC3 /* Banner */,
 				3ACE35AB1C3BA25C002E6E22 /* FluctSDK */,
+				75DB9A2921CB55FA00A999ED /* FluctSDK-AdnetworkSupport */,
+				96C87E721F15FEB000D90AC3 /* Interstitial */,
+				A3418CBA18D999C5003E302C /* Main.storyboard */,
+				96C87E731F15FEB900D90AC3 /* Native */,
+				96BE0A1A1FA30FD700474C66 /* RewardedVideo */,
 				A3418CAF18D999C5003E302C /* Supporting Files */,
 			);
 			path = SampleApp;
@@ -414,33 +440,6 @@
 				A3418CD318D999C5003E302C /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		F9610FC121C3B359004EBE13 /* Tapjoy */ = {
-			isa = PBXGroup;
-			children = (
-				F9610FC221C3B359004EBE13 /* FSSRewardedVideoCustomEventTapjoy.h */,
-				F9610FC321C3B359004EBE13 /* Tapjoy.embeddedframework */,
-				F9610FC721C3B359004EBE13 /* FSSRewardedVideoCustomEventTapjoy.m */,
-			);
-			path = Tapjoy;
-			sourceTree = "<group>";
-		};
-		F9610FC321C3B359004EBE13 /* Tapjoy.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				F9610FC421C3B359004EBE13 /* Tapjoy.framework */,
-				F9610FC521C3B359004EBE13 /* Resources */,
-			);
-			path = Tapjoy.embeddedframework;
-			sourceTree = "<group>";
-		};
-		F9610FC521C3B359004EBE13 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				F9610FC621C3B359004EBE13 /* TapjoyResources.bundle */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -519,13 +518,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75DB9A6121CB55FA00A999ED /* NendAdResource.bundle in Resources */,
 				3A77FCF81FBE86E000B95DE0 /* FluctSDK-info.plist in Resources */,
-				3A77FD3B1FBE876000B95DE0 /* NendAdResource.bundle in Resources */,
 				A3418CC418D999C5003E302C /* Images.xcassets in Resources */,
-				7548161B21C0E6F400A57D9F /* FluctSDKResources.bundle in Resources */,
+				7451C8E421E5D07000C42F1F /* FluctSDKResources.bundle in Resources */,
 				A3418CBC18D999C5003E302C /* Main.storyboard in Resources */,
+				75DB9A5521CB55FA00A999ED /* TapjoyResources.bundle in Resources */,
 				A3418CB318D999C5003E302C /* InfoPlist.strings in Resources */,
-				F9610FC921C3B35A004EBE13 /* TapjoyResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,27 +544,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				96ABC5C01F2579CB00C2A078 /* NativeViewController.m in Sources */,
-				3A77FD351FBE876000B95DE0 /* FSSRewardedVideoCustomEventAppLovin.m in Sources */,
-				3A77FD391FBE876000B95DE0 /* FSSRewardedVideoCustomEventNend.m in Sources */,
-				3A77FD361FBE876000B95DE0 /* FSSRewardedVideoCustomEventMaio.m in Sources */,
 				3A24ECA11D810B600014B706 /* BannerTabBarController.m in Sources */,
 				3A24ECA41D81207E0014B706 /* BannerNavigationController.m in Sources */,
+				75DB9A5A21CB55FA00A999ED /* FSSRewardedVideoAdColonyManager.m in Sources */,
 				A3418CF118D9AA25003E302C /* ManyBannerViewController.m in Sources */,
+				75DB9A5921CB55FA00A999ED /* FSSRewardedVideoCustomEventAdColony.m in Sources */,
 				9614D1BF1DF7E89200AC935E /* BannerTableViewCell.m in Sources */,
-				75C0AC1121C0B9FA0074AA86 /* FSSRewardedVideoCustomEventAdColony.m in Sources */,
 				A3418CE218D9A040003E302C /* BannerViewController.m in Sources */,
 				A3418CC218D999C5003E302C /* ViewController.m in Sources */,
-				75C0AC1221C0B9FA0074AA86 /* FSSRewardedVideoAdColonyManager.m in Sources */,
-				3A75999D204E78FD00392DBE /* FSSRewardedVideoConditionObserver.m in Sources */,
-				3A77FD3D1FBE876000B95DE0 /* FSSRewardedVideoUnityAdsManager.m in Sources */,
+				75DB9A5121CB55FA00A999ED /* FSSRewardedVideoCustomEventUnityAds.m in Sources */,
 				96BE0A1D1FA30FF200474C66 /* RewardedVideoViewController.m in Sources */,
-				3A77FD371FBE876000B95DE0 /* FSSRewardedVideoMaioManager.m in Sources */,
+				75DB9A5221CB55FA00A999ED /* FSSRewardedVideoUnityAdsManager.m in Sources */,
+				75DB9A5D21CB55FA00A999ED /* FSSRewardedVideoMaioManager.m in Sources */,
 				A3418CB918D999C5003E302C /* AppDelegate.m in Sources */,
+				75DB9A5821CB55FA00A999ED /* FSSRewardedVideoCustomEventAppLovin.m in Sources */,
 				96ABC5C31F2579DC00C2A078 /* NativeTableViewController.m in Sources */,
 				9614D1C21DF7E8A800AC935E /* BannerTableViewController.m in Sources */,
-				3A77FD3C1FBE876000B95DE0 /* FSSRewardedVideoCustomEventUnityAds.m in Sources */,
 				A3E7215318DAEFA900A3ABF1 /* InterstitialViewController.m in Sources */,
-				F9610FCA21C3B35A004EBE13 /* FSSRewardedVideoCustomEventTapjoy.m in Sources */,
+				75DB9A5C21CB55FA00A999ED /* FSSRewardedVideoCustomEventMaio.m in Sources */,
+				75DB9A5621CB55FA00A999ED /* FSSRewardedVideoCustomEventTapjoy.m in Sources */,
+				75DB9A5321CB55FA00A999ED /* FSSRewardedVideoConditionObserver.m in Sources */,
+				75DB9A5F21CB55FA00A999ED /* FSSRewardedVideoCustomEventNend.m in Sources */,
 				A3418CB518D999C5003E302C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -702,12 +701,12 @@
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/SampleApp/FluctSDK",
-					"$(PROJECT_DIR)/../FluctSDK-AdnetworkSupport/AppLovin",
-					"$(PROJECT_DIR)/../FluctSDK-AdnetworkSupport/maio",
-					"$(PROJECT_DIR)/../FluctSDK-AdnetworkSupport/UnityAds",
-					"$(PROJECT_DIR)/../FluctSDK-AdnetworkSupport/tapjoy/TapJoy.embeddedframework",
-					"$(PROJECT_DIR)/../FluctSDK-AdnetworkSupport/AdColony",
-					"$(PROJECT_DIR)/../FluctSDK-AdnetworkSupport/nend/NendAd.embeddedframework",
+					"$(PROJECT_DIR)/SampleApp/FluctSDK-AdnetworkSupport/UnityAds",
+					"$(PROJECT_DIR)/SampleApp/FluctSDK-AdnetworkSupport/Tapjoy/Tapjoy.embeddedframework",
+					"$(PROJECT_DIR)/SampleApp/FluctSDK-AdnetworkSupport/AppLovin",
+					"$(PROJECT_DIR)/SampleApp/FluctSDK-AdnetworkSupport/AdColony",
+					"$(PROJECT_DIR)/SampleApp/FluctSDK-AdnetworkSupport/maio",
+					"$(PROJECT_DIR)/SampleApp/FluctSDK-AdnetworkSupport/nend/NendAd.embeddedframework",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SampleApp/SampleApp-Prefix.pch";
@@ -737,12 +736,12 @@
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/SampleApp/FluctSDK",
-					"$(PROJECT_DIR)/../FluctSDK-AdnetworkSupport/AppLovin",
-					"$(PROJECT_DIR)/../FluctSDK-AdnetworkSupport/maio",
-					"$(PROJECT_DIR)/../FluctSDK-AdnetworkSupport/UnityAds",
-					"$(PROJECT_DIR)/../FluctSDK-AdnetworkSupport/tapjoy/TapJoy.embeddedframework",
-					"$(PROJECT_DIR)/../FluctSDK-AdnetworkSupport/AdColony",
-					"$(PROJECT_DIR)/../FluctSDK-AdnetworkSupport/nend/NendAd.embeddedframework",
+					"$(PROJECT_DIR)/SampleApp/FluctSDK-AdnetworkSupport/UnityAds",
+					"$(PROJECT_DIR)/SampleApp/FluctSDK-AdnetworkSupport/Tapjoy/Tapjoy.embeddedframework",
+					"$(PROJECT_DIR)/SampleApp/FluctSDK-AdnetworkSupport/AppLovin",
+					"$(PROJECT_DIR)/SampleApp/FluctSDK-AdnetworkSupport/AdColony",
+					"$(PROJECT_DIR)/SampleApp/FluctSDK-AdnetworkSupport/maio",
+					"$(PROJECT_DIR)/SampleApp/FluctSDK-AdnetworkSupport/nend/NendAd.embeddedframework",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SampleApp/SampleApp-Prefix.pch";

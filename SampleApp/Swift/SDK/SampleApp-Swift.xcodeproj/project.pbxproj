@@ -10,13 +10,8 @@
 		3A1810D8207F2DC900D584AD /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A1810D7207F2DC900D584AD /* ImageIO.framework */; };
 		3A24ECA81D812CCC0014B706 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A24ECA71D812CCC0014B706 /* TabBarController.swift */; };
 		3A6AADB11D8148DA005D94C1 /* BannerNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AADB01D8148DA005D94C1 /* BannerNavigationController.swift */; };
-		3A723D351FBE734300844514 /* FSSRewardedVideoMaioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A723D331FBE734300844514 /* FSSRewardedVideoMaioManager.m */; };
-		3A723D381FBE734900844514 /* FSSRewardedVideoUnityAdsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A723D371FBE734900844514 /* FSSRewardedVideoUnityAdsManager.m */; };
-		3A7599A0204E792300392DBE /* FSSRewardedVideoConditionObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A75999F204E792200392DBE /* FSSRewardedVideoConditionObserver.m */; };
 		3ADBC1981D825A62003D7AB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADBC1971D825A62003D7AB3 /* ViewController.swift */; };
-		7519964E21C0B3C0007C62CE /* FSSRewardedVideoCustomEventAdColony.m in Sources */ = {isa = PBXBuildFile; fileRef = 7519964621C0B3C0007C62CE /* FSSRewardedVideoCustomEventAdColony.m */; };
-		7519964F21C0B3C0007C62CE /* FSSRewardedVideoAdColonyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7519964721C0B3C0007C62CE /* FSSRewardedVideoAdColonyManager.m */; };
-		7519965021C0B3C0007C62CE /* AdColony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7519964921C0B3C0007C62CE /* AdColony.framework */; };
+		7451C8E621E5D12C00C42F1F /* FluctSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7451C8E521E5D12B00C42F1F /* FluctSDKResources.bundle */; };
 		7519965421C0B507007C62CE /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7519965321C0B507007C62CE /* EventKit.framework */; };
 		7519965621C0B522007C62CE /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7519965521C0B521007C62CE /* MessageUI.framework */; };
 		7519965821C0B54E007C62CE /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7519965721C0B54E007C62CE /* WatchConnectivity.framework */; };
@@ -25,12 +20,25 @@
 		7519965E21C0B59D007C62CE /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7519965D21C0B59D007C62CE /* libxml2.tbd */; };
 		7519966021C0B5A6007C62CE /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7519965F21C0B5A6007C62CE /* libz.tbd */; };
 		7519966221C0B5AD007C62CE /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7519966121C0B5AD007C62CE /* libc++.tbd */; };
-		759DC58221C0E467003471CE /* FluctSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 759DC58121C0E467003471CE /* FluctSDKResources.bundle */; };
+		7580FA9921CB567D00653042 /* UnityAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7580FA7721CB567C00653042 /* UnityAds.framework */; };
+		7580FA9A21CB567D00653042 /* FSSRewardedVideoCustomEventUnityAds.m in Sources */ = {isa = PBXBuildFile; fileRef = 7580FA7821CB567C00653042 /* FSSRewardedVideoCustomEventUnityAds.m */; };
+		7580FA9B21CB567D00653042 /* FSSRewardedVideoUnityAdsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7580FA7921CB567C00653042 /* FSSRewardedVideoUnityAdsManager.m */; };
+		7580FA9C21CB567D00653042 /* FSSRewardedVideoConditionObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 7580FA7A21CB567C00653042 /* FSSRewardedVideoConditionObserver.m */; };
+		7580FA9D21CB567D00653042 /* Tapjoy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7580FA7E21CB567C00653042 /* Tapjoy.framework */; };
+		7580FA9E21CB567D00653042 /* TapjoyResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7580FA8021CB567D00653042 /* TapjoyResources.bundle */; };
+		7580FA9F21CB567D00653042 /* FSSRewardedVideoCustomEventTapjoy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7580FA8121CB567D00653042 /* FSSRewardedVideoCustomEventTapjoy.m */; };
+		7580FAA021CB567D00653042 /* AppLovinSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7580FA8421CB567D00653042 /* AppLovinSDK.framework */; };
+		7580FAA121CB567D00653042 /* FSSRewardedVideoCustomEventAppLovin.m in Sources */ = {isa = PBXBuildFile; fileRef = 7580FA8521CB567D00653042 /* FSSRewardedVideoCustomEventAppLovin.m */; };
+		7580FAA221CB567D00653042 /* FSSRewardedVideoCustomEventAdColony.m in Sources */ = {isa = PBXBuildFile; fileRef = 7580FA8821CB567D00653042 /* FSSRewardedVideoCustomEventAdColony.m */; };
+		7580FAA321CB567D00653042 /* FSSRewardedVideoAdColonyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7580FA8921CB567D00653042 /* FSSRewardedVideoAdColonyManager.m */; };
+		7580FAA421CB567D00653042 /* AdColony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7580FA8B21CB567D00653042 /* AdColony.framework */; };
+		7580FAA521CB567D00653042 /* FSSRewardedVideoCustomEventMaio.m in Sources */ = {isa = PBXBuildFile; fileRef = 7580FA8F21CB567D00653042 /* FSSRewardedVideoCustomEventMaio.m */; };
+		7580FAA621CB567D00653042 /* FSSRewardedVideoMaioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7580FA9021CB567D00653042 /* FSSRewardedVideoMaioManager.m */; };
+		7580FAA721CB567D00653042 /* Maio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7580FA9121CB567D00653042 /* Maio.framework */; };
+		7580FAA821CB567D00653042 /* FSSRewardedVideoCustomEventNend.m in Sources */ = {isa = PBXBuildFile; fileRef = 7580FA9321CB567D00653042 /* FSSRewardedVideoCustomEventNend.m */; };
+		7580FAA921CB567D00653042 /* NendAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7580FA9521CB567D00653042 /* NendAd.framework */; };
+		7580FAAA21CB567D00653042 /* NendAdResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7580FA9721CB567D00653042 /* NendAdResource.bundle */; };
 		960884221F9EC23B005F65FD /* RewardedVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960884211F9EC23A005F65FD /* RewardedVideoViewController.swift */; };
-		965E71F0206DF9A400AD342B /* AppLovinSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96CB38731FB430B7002EB14E /* AppLovinSDK.framework */; };
-		965E71F1206DF9A700AD342B /* Maio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96CB38791FB430B7002EB14E /* Maio.framework */; };
-		965E71F2206DF9AE00AD342B /* NendAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96CB387E1FB430B7002EB14E /* NendAd.framework */; };
-		965E71F3206DF9B300AD342B /* UnityAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96CB38841FB430B7002EB14E /* UnityAds.framework */; };
 		9661EEFA1F15FDAE00286B72 /* NativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9661EEF91F15FDAE00286B72 /* NativeViewController.swift */; };
 		9661EEFC1F15FDD800286B72 /* NativeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9661EEFB1F15FDD800286B72 /* NativeTableViewController.swift */; };
 		966CC73C1DF7C98C0005EF1C /* BannerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966CC73B1DF7C98C0005EF1C /* BannerTableViewController.swift */; };
@@ -38,11 +46,6 @@
 		969EC2001D3E0CF7005F475E /* ManyBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969EC1FF1D3E0CF7005F475E /* ManyBannerViewController.swift */; };
 		969EC2021D3E11C1005F475E /* InterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969EC2011D3E11C1005F475E /* InterstitialViewController.swift */; };
 		96CB38701FB3F136002EB14E /* FluctSDK-info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96CB386F1FB3F136002EB14E /* FluctSDK-info.plist */; };
-		96CB38861FB430B7002EB14E /* FSSRewardedVideoCustomEventAppLovin.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CB38751FB430B7002EB14E /* FSSRewardedVideoCustomEventAppLovin.m */; };
-		96CB38871FB430B7002EB14E /* FSSRewardedVideoCustomEventMaio.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CB38781FB430B7002EB14E /* FSSRewardedVideoCustomEventMaio.m */; };
-		96CB38891FB430B7002EB14E /* FSSRewardedVideoCustomEventNend.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CB387C1FB430B7002EB14E /* FSSRewardedVideoCustomEventNend.m */; };
-		96CB388B1FB430B7002EB14E /* NendAdResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 96CB38801FB430B7002EB14E /* NendAdResource.bundle */; };
-		96CB388C1FB430B7002EB14E /* FSSRewardedVideoCustomEventUnityAds.m in Sources */ = {isa = PBXBuildFile; fileRef = 96CB38831FB430B7002EB14E /* FSSRewardedVideoCustomEventUnityAds.m */; };
 		96D530F41F25DC22008B1066 /* FooterNativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D530F31F25DC22008B1066 /* FooterNativeViewController.swift */; };
 		96F22C371D3899D300C3136E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F22C361D3899D300C3136E /* AppDelegate.swift */; };
 		96F22C391D3899D300C3136E /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F22C381D3899D300C3136E /* BannerViewController.swift */; };
@@ -51,27 +54,14 @@
 		96F22C411D3899D300C3136E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96F22C3F1D3899D300C3136E /* LaunchScreen.storyboard */; };
 		96F22C701D38A24300C3136E /* FluctSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F22C6E1D38A24300C3136E /* FluctSDK.framework */; };
 		96F871C21FA175B3000C48F9 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96E978841FA0761800125A02 /* WebKit.framework */; };
-		F9610F4221C3A4B4004EBE13 /* Tapjoy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9610F3E21C3A4B4004EBE13 /* Tapjoy.framework */; };
-		F9610F4321C3A4B4004EBE13 /* TapjoyResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F9610F4021C3A4B4004EBE13 /* TapjoyResources.bundle */; };
-		F9610F4421C3A4B4004EBE13 /* FSSRewardedVideoCustomEventTapjoy.m in Sources */ = {isa = PBXBuildFile; fileRef = F9610F4121C3A4B4004EBE13 /* FSSRewardedVideoCustomEventTapjoy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3A1810D7207F2DC900D584AD /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		3A24ECA71D812CCC0014B706 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		3A6AADB01D8148DA005D94C1 /* BannerNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerNavigationController.swift; sourceTree = "<group>"; };
-		3A723D331FBE734300844514 /* FSSRewardedVideoMaioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoMaioManager.m; sourceTree = "<group>"; };
-		3A723D341FBE734300844514 /* FSSRewardedVideoMaioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoMaioManager.h; sourceTree = "<group>"; };
-		3A723D361FBE734900844514 /* FSSRewardedVideoUnityAdsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoUnityAdsManager.h; sourceTree = "<group>"; };
-		3A723D371FBE734900844514 /* FSSRewardedVideoUnityAdsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoUnityAdsManager.m; sourceTree = "<group>"; };
-		3A75999E204E792200392DBE /* FSSRewardedVideoConditionObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoConditionObserver.h; sourceTree = "<group>"; };
-		3A75999F204E792200392DBE /* FSSRewardedVideoConditionObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoConditionObserver.m; sourceTree = "<group>"; };
 		3ADBC1971D825A62003D7AB3 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		7519964521C0B3C0007C62CE /* FSSRewardedVideoAdColonyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoAdColonyManager.h; sourceTree = "<group>"; };
-		7519964621C0B3C0007C62CE /* FSSRewardedVideoCustomEventAdColony.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoCustomEventAdColony.m; sourceTree = "<group>"; };
-		7519964721C0B3C0007C62CE /* FSSRewardedVideoAdColonyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoAdColonyManager.m; sourceTree = "<group>"; };
-		7519964821C0B3C0007C62CE /* FSSRewardedVideoCustomEventAdColony.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoCustomEventAdColony.h; sourceTree = "<group>"; };
-		7519964921C0B3C0007C62CE /* AdColony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AdColony.framework; sourceTree = "<group>"; };
+		7451C8E521E5D12B00C42F1F /* FluctSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FluctSDKResources.bundle; path = Resources/FluctSDKResources.bundle; sourceTree = "<group>"; };
 		7519965321C0B507007C62CE /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		7519965521C0B521007C62CE /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		7519965721C0B54E007C62CE /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
@@ -80,7 +70,34 @@
 		7519965D21C0B59D007C62CE /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		7519965F21C0B5A6007C62CE /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		7519966121C0B5AD007C62CE /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
-		759DC58121C0E467003471CE /* FluctSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FluctSDKResources.bundle; sourceTree = "<group>"; };
+		7580FA7421CB567C00653042 /* FSSRewardedVideoConditionObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoConditionObserver.h; sourceTree = "<group>"; };
+		7580FA7521CB567C00653042 /* FSSRewardedVideoUnityAdsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoUnityAdsManager.h; sourceTree = "<group>"; };
+		7580FA7621CB567C00653042 /* FSSRewardedVideoCustomEventUnityAds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoCustomEventUnityAds.h; sourceTree = "<group>"; };
+		7580FA7721CB567C00653042 /* UnityAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnityAds.framework; sourceTree = "<group>"; };
+		7580FA7821CB567C00653042 /* FSSRewardedVideoCustomEventUnityAds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoCustomEventUnityAds.m; sourceTree = "<group>"; };
+		7580FA7921CB567C00653042 /* FSSRewardedVideoUnityAdsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoUnityAdsManager.m; sourceTree = "<group>"; };
+		7580FA7A21CB567C00653042 /* FSSRewardedVideoConditionObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoConditionObserver.m; sourceTree = "<group>"; };
+		7580FA7C21CB567C00653042 /* FSSRewardedVideoCustomEventTapjoy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoCustomEventTapjoy.h; sourceTree = "<group>"; };
+		7580FA7E21CB567C00653042 /* Tapjoy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Tapjoy.framework; sourceTree = "<group>"; };
+		7580FA8021CB567D00653042 /* TapjoyResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TapjoyResources.bundle; sourceTree = "<group>"; };
+		7580FA8121CB567D00653042 /* FSSRewardedVideoCustomEventTapjoy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoCustomEventTapjoy.m; sourceTree = "<group>"; };
+		7580FA8321CB567D00653042 /* FSSRewardedVideoCustomEventAppLovin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoCustomEventAppLovin.h; sourceTree = "<group>"; };
+		7580FA8421CB567D00653042 /* AppLovinSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppLovinSDK.framework; sourceTree = "<group>"; };
+		7580FA8521CB567D00653042 /* FSSRewardedVideoCustomEventAppLovin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoCustomEventAppLovin.m; sourceTree = "<group>"; };
+		7580FA8721CB567D00653042 /* FSSRewardedVideoAdColonyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoAdColonyManager.h; sourceTree = "<group>"; };
+		7580FA8821CB567D00653042 /* FSSRewardedVideoCustomEventAdColony.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoCustomEventAdColony.m; sourceTree = "<group>"; };
+		7580FA8921CB567D00653042 /* FSSRewardedVideoAdColonyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoAdColonyManager.m; sourceTree = "<group>"; };
+		7580FA8A21CB567D00653042 /* FSSRewardedVideoCustomEventAdColony.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoCustomEventAdColony.h; sourceTree = "<group>"; };
+		7580FA8B21CB567D00653042 /* AdColony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AdColony.framework; sourceTree = "<group>"; };
+		7580FA8D21CB567D00653042 /* FSSRewardedVideoCustomEventMaio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoCustomEventMaio.h; sourceTree = "<group>"; };
+		7580FA8E21CB567D00653042 /* FSSRewardedVideoMaioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoMaioManager.h; sourceTree = "<group>"; };
+		7580FA8F21CB567D00653042 /* FSSRewardedVideoCustomEventMaio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoCustomEventMaio.m; sourceTree = "<group>"; };
+		7580FA9021CB567D00653042 /* FSSRewardedVideoMaioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoMaioManager.m; sourceTree = "<group>"; };
+		7580FA9121CB567D00653042 /* Maio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Maio.framework; sourceTree = "<group>"; };
+		7580FA9321CB567D00653042 /* FSSRewardedVideoCustomEventNend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoCustomEventNend.m; sourceTree = "<group>"; };
+		7580FA9521CB567D00653042 /* NendAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NendAd.framework; sourceTree = "<group>"; };
+		7580FA9721CB567D00653042 /* NendAdResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NendAdResource.bundle; sourceTree = "<group>"; };
+		7580FA9821CB567D00653042 /* FSSRewardedVideoCustomEventNend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoCustomEventNend.h; sourceTree = "<group>"; };
 		960884211F9EC23A005F65FD /* RewardedVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardedVideoViewController.swift; sourceTree = "<group>"; };
 		9661EEF91F15FDAE00286B72 /* NativeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeViewController.swift; sourceTree = "<group>"; };
 		9661EEFB1F15FDD800286B72 /* NativeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeTableViewController.swift; sourceTree = "<group>"; };
@@ -89,19 +106,6 @@
 		969EC1FF1D3E0CF7005F475E /* ManyBannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManyBannerViewController.swift; sourceTree = "<group>"; };
 		969EC2011D3E11C1005F475E /* InterstitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterstitialViewController.swift; sourceTree = "<group>"; };
 		96CB386F1FB3F136002EB14E /* FluctSDK-info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "FluctSDK-info.plist"; sourceTree = "<group>"; };
-		96CB38731FB430B7002EB14E /* AppLovinSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppLovinSDK.framework; sourceTree = "<group>"; };
-		96CB38741FB430B7002EB14E /* FSSRewardedVideoCustomEventAppLovin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoCustomEventAppLovin.h; sourceTree = "<group>"; };
-		96CB38751FB430B7002EB14E /* FSSRewardedVideoCustomEventAppLovin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoCustomEventAppLovin.m; sourceTree = "<group>"; };
-		96CB38771FB430B7002EB14E /* FSSRewardedVideoCustomEventMaio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoCustomEventMaio.h; sourceTree = "<group>"; };
-		96CB38781FB430B7002EB14E /* FSSRewardedVideoCustomEventMaio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoCustomEventMaio.m; sourceTree = "<group>"; };
-		96CB38791FB430B7002EB14E /* Maio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Maio.framework; sourceTree = "<group>"; };
-		96CB387B1FB430B7002EB14E /* FSSRewardedVideoCustomEventNend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoCustomEventNend.h; sourceTree = "<group>"; };
-		96CB387C1FB430B7002EB14E /* FSSRewardedVideoCustomEventNend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoCustomEventNend.m; sourceTree = "<group>"; };
-		96CB387E1FB430B7002EB14E /* NendAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NendAd.framework; sourceTree = "<group>"; };
-		96CB38801FB430B7002EB14E /* NendAdResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NendAdResource.bundle; sourceTree = "<group>"; };
-		96CB38821FB430B7002EB14E /* FSSRewardedVideoCustomEventUnityAds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoCustomEventUnityAds.h; sourceTree = "<group>"; };
-		96CB38831FB430B7002EB14E /* FSSRewardedVideoCustomEventUnityAds.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoCustomEventUnityAds.m; sourceTree = "<group>"; };
-		96CB38841FB430B7002EB14E /* UnityAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnityAds.framework; sourceTree = "<group>"; };
 		96D530F31F25DC22008B1066 /* FooterNativeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterNativeViewController.swift; sourceTree = "<group>"; };
 		96E978841FA0761800125A02 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		96F22C331D3899D300C3136E /* SampleApp-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SampleApp-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,10 +116,6 @@
 		96F22C401D3899D300C3136E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		96F22C421D3899D300C3136E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96F22C6E1D38A24300C3136E /* FluctSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FluctSDK.framework; sourceTree = "<group>"; };
-		F9610F3C21C3A4B4004EBE13 /* FSSRewardedVideoCustomEventTapjoy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoCustomEventTapjoy.h; sourceTree = "<group>"; };
-		F9610F3E21C3A4B4004EBE13 /* Tapjoy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Tapjoy.framework; sourceTree = "<group>"; };
-		F9610F4021C3A4B4004EBE13 /* TapjoyResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TapjoyResources.bundle; sourceTree = "<group>"; };
-		F9610F4121C3A4B4004EBE13 /* FSSRewardedVideoCustomEventTapjoy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoCustomEventTapjoy.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,39 +123,142 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9610F4221C3A4B4004EBE13 /* Tapjoy.framework in Frameworks */,
+				7580FAA721CB567D00653042 /* Maio.framework in Frameworks */,
 				7519966221C0B5AD007C62CE /* libc++.tbd in Frameworks */,
 				7519966021C0B5A6007C62CE /* libz.tbd in Frameworks */,
+				7580FAA021CB567D00653042 /* AppLovinSDK.framework in Frameworks */,
 				7519965E21C0B59D007C62CE /* libxml2.tbd in Frameworks */,
+				7580FAA421CB567D00653042 /* AdColony.framework in Frameworks */,
 				7519965C21C0B596007C62CE /* libsqlite3.0.tbd in Frameworks */,
 				7519965A21C0B554007C62CE /* JavaScriptCore.framework in Frameworks */,
 				7519965821C0B54E007C62CE /* WatchConnectivity.framework in Frameworks */,
 				7519965621C0B522007C62CE /* MessageUI.framework in Frameworks */,
 				7519965421C0B507007C62CE /* EventKit.framework in Frameworks */,
 				3A1810D8207F2DC900D584AD /* ImageIO.framework in Frameworks */,
+				7580FA9D21CB567D00653042 /* Tapjoy.framework in Frameworks */,
 				96F871C21FA175B3000C48F9 /* WebKit.framework in Frameworks */,
+				7580FAA921CB567D00653042 /* NendAd.framework in Frameworks */,
 				96F22C701D38A24300C3136E /* FluctSDK.framework in Frameworks */,
-				965E71F1206DF9A700AD342B /* Maio.framework in Frameworks */,
-				965E71F0206DF9A400AD342B /* AppLovinSDK.framework in Frameworks */,
-				965E71F2206DF9AE00AD342B /* NendAd.framework in Frameworks */,
-				965E71F3206DF9B300AD342B /* UnityAds.framework in Frameworks */,
-				7519965021C0B3C0007C62CE /* AdColony.framework in Frameworks */,
+				7580FA9921CB567D00653042 /* UnityAds.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7519964421C0B3C0007C62CE /* AdColony */ = {
+		7580FA7221CB567C00653042 /* FluctSDK-AdnetworkSupport */ = {
 			isa = PBXGroup;
 			children = (
-				7519964521C0B3C0007C62CE /* FSSRewardedVideoAdColonyManager.h */,
-				7519964621C0B3C0007C62CE /* FSSRewardedVideoCustomEventAdColony.m */,
-				7519964721C0B3C0007C62CE /* FSSRewardedVideoAdColonyManager.m */,
-				7519964821C0B3C0007C62CE /* FSSRewardedVideoCustomEventAdColony.h */,
-				7519964921C0B3C0007C62CE /* AdColony.framework */,
+				7580FA7321CB567C00653042 /* UnityAds */,
+				7580FA7B21CB567C00653042 /* Tapjoy */,
+				7580FA8221CB567D00653042 /* AppLovin */,
+				7580FA8621CB567D00653042 /* AdColony */,
+				7580FA8C21CB567D00653042 /* maio */,
+				7580FA9221CB567D00653042 /* nend */,
+			);
+			path = "FluctSDK-AdnetworkSupport";
+			sourceTree = "<group>";
+		};
+		7580FA7321CB567C00653042 /* UnityAds */ = {
+			isa = PBXGroup;
+			children = (
+				7580FA7421CB567C00653042 /* FSSRewardedVideoConditionObserver.h */,
+				7580FA7521CB567C00653042 /* FSSRewardedVideoUnityAdsManager.h */,
+				7580FA7621CB567C00653042 /* FSSRewardedVideoCustomEventUnityAds.h */,
+				7580FA7721CB567C00653042 /* UnityAds.framework */,
+				7580FA7821CB567C00653042 /* FSSRewardedVideoCustomEventUnityAds.m */,
+				7580FA7921CB567C00653042 /* FSSRewardedVideoUnityAdsManager.m */,
+				7580FA7A21CB567C00653042 /* FSSRewardedVideoConditionObserver.m */,
+			);
+			path = UnityAds;
+			sourceTree = "<group>";
+		};
+		7580FA7B21CB567C00653042 /* Tapjoy */ = {
+			isa = PBXGroup;
+			children = (
+				7580FA7C21CB567C00653042 /* FSSRewardedVideoCustomEventTapjoy.h */,
+				7580FA7D21CB567C00653042 /* Tapjoy.embeddedframework */,
+				7580FA8121CB567D00653042 /* FSSRewardedVideoCustomEventTapjoy.m */,
+			);
+			path = Tapjoy;
+			sourceTree = "<group>";
+		};
+		7580FA7D21CB567C00653042 /* Tapjoy.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				7580FA7E21CB567C00653042 /* Tapjoy.framework */,
+				7580FA7F21CB567D00653042 /* Resources */,
+			);
+			path = Tapjoy.embeddedframework;
+			sourceTree = "<group>";
+		};
+		7580FA7F21CB567D00653042 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7580FA8021CB567D00653042 /* TapjoyResources.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7580FA8221CB567D00653042 /* AppLovin */ = {
+			isa = PBXGroup;
+			children = (
+				7580FA8321CB567D00653042 /* FSSRewardedVideoCustomEventAppLovin.h */,
+				7580FA8421CB567D00653042 /* AppLovinSDK.framework */,
+				7580FA8521CB567D00653042 /* FSSRewardedVideoCustomEventAppLovin.m */,
+			);
+			path = AppLovin;
+			sourceTree = "<group>";
+		};
+		7580FA8621CB567D00653042 /* AdColony */ = {
+			isa = PBXGroup;
+			children = (
+				7580FA8721CB567D00653042 /* FSSRewardedVideoAdColonyManager.h */,
+				7580FA8821CB567D00653042 /* FSSRewardedVideoCustomEventAdColony.m */,
+				7580FA8921CB567D00653042 /* FSSRewardedVideoAdColonyManager.m */,
+				7580FA8A21CB567D00653042 /* FSSRewardedVideoCustomEventAdColony.h */,
+				7580FA8B21CB567D00653042 /* AdColony.framework */,
 			);
 			path = AdColony;
+			sourceTree = "<group>";
+		};
+		7580FA8C21CB567D00653042 /* maio */ = {
+			isa = PBXGroup;
+			children = (
+				7580FA8D21CB567D00653042 /* FSSRewardedVideoCustomEventMaio.h */,
+				7580FA8E21CB567D00653042 /* FSSRewardedVideoMaioManager.h */,
+				7580FA8F21CB567D00653042 /* FSSRewardedVideoCustomEventMaio.m */,
+				7580FA9021CB567D00653042 /* FSSRewardedVideoMaioManager.m */,
+				7580FA9121CB567D00653042 /* Maio.framework */,
+			);
+			path = maio;
+			sourceTree = "<group>";
+		};
+		7580FA9221CB567D00653042 /* nend */ = {
+			isa = PBXGroup;
+			children = (
+				7580FA9321CB567D00653042 /* FSSRewardedVideoCustomEventNend.m */,
+				7580FA9421CB567D00653042 /* NendAd.embeddedframework */,
+				7580FA9821CB567D00653042 /* FSSRewardedVideoCustomEventNend.h */,
+			);
+			path = nend;
+			sourceTree = "<group>";
+		};
+		7580FA9421CB567D00653042 /* NendAd.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				7580FA9521CB567D00653042 /* NendAd.framework */,
+				7580FA9621CB567D00653042 /* Resources */,
+			);
+			path = NendAd.embeddedframework;
+			sourceTree = "<group>";
+		};
+		7580FA9621CB567D00653042 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7580FA9721CB567D00653042 /* NendAdResource.bundle */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		960884201F9EC17A005F65FD /* RewardedVideo */ = {
@@ -197,83 +300,6 @@
 			path = Native;
 			sourceTree = "<group>";
 		};
-		96CB38711FB430B7002EB14E /* FluctSDK-AdnetworkSupport */ = {
-			isa = PBXGroup;
-			children = (
-				7519964421C0B3C0007C62CE /* AdColony */,
-				96CB38721FB430B7002EB14E /* AppLovin */,
-				96CB38761FB430B7002EB14E /* maio */,
-				96CB387A1FB430B7002EB14E /* nend */,
-				F9610F3B21C3A4B4004EBE13 /* Tapjoy */,
-				96CB38811FB430B7002EB14E /* UnityAds */,
-			);
-			name = "FluctSDK-AdnetworkSupport";
-			path = "../../FluctSDK-AdnetworkSupport";
-			sourceTree = "<group>";
-		};
-		96CB38721FB430B7002EB14E /* AppLovin */ = {
-			isa = PBXGroup;
-			children = (
-				96CB38731FB430B7002EB14E /* AppLovinSDK.framework */,
-				96CB38741FB430B7002EB14E /* FSSRewardedVideoCustomEventAppLovin.h */,
-				96CB38751FB430B7002EB14E /* FSSRewardedVideoCustomEventAppLovin.m */,
-			);
-			path = AppLovin;
-			sourceTree = "<group>";
-		};
-		96CB38761FB430B7002EB14E /* maio */ = {
-			isa = PBXGroup;
-			children = (
-				3A723D341FBE734300844514 /* FSSRewardedVideoMaioManager.h */,
-				3A723D331FBE734300844514 /* FSSRewardedVideoMaioManager.m */,
-				96CB38771FB430B7002EB14E /* FSSRewardedVideoCustomEventMaio.h */,
-				96CB38781FB430B7002EB14E /* FSSRewardedVideoCustomEventMaio.m */,
-				96CB38791FB430B7002EB14E /* Maio.framework */,
-			);
-			path = maio;
-			sourceTree = "<group>";
-		};
-		96CB387A1FB430B7002EB14E /* nend */ = {
-			isa = PBXGroup;
-			children = (
-				96CB387B1FB430B7002EB14E /* FSSRewardedVideoCustomEventNend.h */,
-				96CB387C1FB430B7002EB14E /* FSSRewardedVideoCustomEventNend.m */,
-				96CB387D1FB430B7002EB14E /* NendAd.embeddedframework */,
-			);
-			path = nend;
-			sourceTree = "<group>";
-		};
-		96CB387D1FB430B7002EB14E /* NendAd.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				96CB387E1FB430B7002EB14E /* NendAd.framework */,
-				96CB387F1FB430B7002EB14E /* Resources */,
-			);
-			path = NendAd.embeddedframework;
-			sourceTree = "<group>";
-		};
-		96CB387F1FB430B7002EB14E /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				96CB38801FB430B7002EB14E /* NendAdResource.bundle */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		96CB38811FB430B7002EB14E /* UnityAds */ = {
-			isa = PBXGroup;
-			children = (
-				3A723D361FBE734900844514 /* FSSRewardedVideoUnityAdsManager.h */,
-				3A723D371FBE734900844514 /* FSSRewardedVideoUnityAdsManager.m */,
-				96CB38821FB430B7002EB14E /* FSSRewardedVideoCustomEventUnityAds.h */,
-				96CB38831FB430B7002EB14E /* FSSRewardedVideoCustomEventUnityAds.m */,
-				3A75999E204E792200392DBE /* FSSRewardedVideoConditionObserver.h */,
-				3A75999F204E792200392DBE /* FSSRewardedVideoConditionObserver.m */,
-				96CB38841FB430B7002EB14E /* UnityAds.framework */,
-			);
-			path = UnityAds;
-			sourceTree = "<group>";
-		};
 		96E978781FA0738800125A02 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,7 +320,6 @@
 		96F22C2A1D3899D300C3136E = {
 			isa = PBXGroup;
 			children = (
-				96CB38711FB430B7002EB14E /* FluctSDK-AdnetworkSupport */,
 				96F22C351D3899D300C3136E /* SampleApp-Swift */,
 				96F22C341D3899D300C3136E /* Products */,
 				96E978781FA0738800125A02 /* Frameworks */,
@@ -312,18 +337,19 @@
 		96F22C351D3899D300C3136E /* SampleApp-Swift */ = {
 			isa = PBXGroup;
 			children = (
-				960884201F9EC17A005F65FD /* RewardedVideo */,
-				9661EEF81F15FD3B00286B72 /* Native */,
-				9661EEF71F15FD2D00286B72 /* Interstitial */,
-				9661EEF61F15FCE400286B72 /* Banner */,
+				96CB386F1FB3F136002EB14E /* FluctSDK-info.plist */,
+				96F22C421D3899D300C3136E /* Info.plist */,
 				96F22C361D3899D300C3136E /* AppDelegate.swift */,
 				3ADBC1971D825A62003D7AB3 /* ViewController.swift */,
-				96F22C3A1D3899D300C3136E /* Main.storyboard */,
 				96F22C3D1D3899D300C3136E /* Assets.xcassets */,
-				96F22C3F1D3899D300C3136E /* LaunchScreen.storyboard */,
-				96F22C421D3899D300C3136E /* Info.plist */,
-				96CB386F1FB3F136002EB14E /* FluctSDK-info.plist */,
+				9661EEF61F15FCE400286B72 /* Banner */,
 				96F22C6D1D38A24300C3136E /* FluctSDK */,
+				7580FA7221CB567C00653042 /* FluctSDK-AdnetworkSupport */,
+				9661EEF71F15FD2D00286B72 /* Interstitial */,
+				96F22C3F1D3899D300C3136E /* LaunchScreen.storyboard */,
+				96F22C3A1D3899D300C3136E /* Main.storyboard */,
+				9661EEF81F15FD3B00286B72 /* Native */,
+				960884201F9EC17A005F65FD /* RewardedVideo */,
 			);
 			path = "SampleApp-Swift";
 			sourceTree = "<group>";
@@ -331,37 +357,10 @@
 		96F22C6D1D38A24300C3136E /* FluctSDK */ = {
 			isa = PBXGroup;
 			children = (
-				759DC58121C0E467003471CE /* FluctSDKResources.bundle */,
+				7451C8E521E5D12B00C42F1F /* FluctSDKResources.bundle */,
 				96F22C6E1D38A24300C3136E /* FluctSDK.framework */,
 			);
 			path = FluctSDK;
-			sourceTree = "<group>";
-		};
-		F9610F3B21C3A4B4004EBE13 /* Tapjoy */ = {
-			isa = PBXGroup;
-			children = (
-				F9610F3C21C3A4B4004EBE13 /* FSSRewardedVideoCustomEventTapjoy.h */,
-				F9610F4121C3A4B4004EBE13 /* FSSRewardedVideoCustomEventTapjoy.m */,
-				F9610F3D21C3A4B4004EBE13 /* Tapjoy.embeddedframework */,
-			);
-			path = Tapjoy;
-			sourceTree = "<group>";
-		};
-		F9610F3D21C3A4B4004EBE13 /* Tapjoy.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				F9610F3E21C3A4B4004EBE13 /* Tapjoy.framework */,
-				F9610F3F21C3A4B4004EBE13 /* Resources */,
-			);
-			path = Tapjoy.embeddedframework;
-			sourceTree = "<group>";
-		};
-		F9610F3F21C3A4B4004EBE13 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				F9610F4021C3A4B4004EBE13 /* TapjoyResources.bundle */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -424,12 +423,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7580FAAA21CB567D00653042 /* NendAdResource.bundle in Resources */,
 				96CB38701FB3F136002EB14E /* FluctSDK-info.plist in Resources */,
-				96CB388B1FB430B7002EB14E /* NendAdResource.bundle in Resources */,
 				96F22C411D3899D300C3136E /* LaunchScreen.storyboard in Resources */,
-				759DC58221C0E467003471CE /* FluctSDKResources.bundle in Resources */,
+				7451C8E621E5D12C00C42F1F /* FluctSDKResources.bundle in Resources */,
 				96F22C3E1D3899D300C3136E /* Assets.xcassets in Resources */,
-				F9610F4321C3A4B4004EBE13 /* TapjoyResources.bundle in Resources */,
+				7580FA9E21CB567D00653042 /* TapjoyResources.bundle in Resources */,
 				96F22C3C1D3899D300C3136E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -441,28 +440,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96CB38861FB430B7002EB14E /* FSSRewardedVideoCustomEventAppLovin.m in Sources */,
-				96CB38871FB430B7002EB14E /* FSSRewardedVideoCustomEventMaio.m in Sources */,
-				3A723D351FBE734300844514 /* FSSRewardedVideoMaioManager.m in Sources */,
-				96CB388C1FB430B7002EB14E /* FSSRewardedVideoCustomEventUnityAds.m in Sources */,
-				3A723D381FBE734900844514 /* FSSRewardedVideoUnityAdsManager.m in Sources */,
-				3A7599A0204E792300392DBE /* FSSRewardedVideoConditionObserver.m in Sources */,
-				96CB38891FB430B7002EB14E /* FSSRewardedVideoCustomEventNend.m in Sources */,
 				9661EEFC1F15FDD800286B72 /* NativeTableViewController.swift in Sources */,
-				7519964E21C0B3C0007C62CE /* FSSRewardedVideoCustomEventAdColony.m in Sources */,
 				969EC2021D3E11C1005F475E /* InterstitialViewController.swift in Sources */,
 				96F22C391D3899D300C3136E /* BannerViewController.swift in Sources */,
-				7519964F21C0B3C0007C62CE /* FSSRewardedVideoAdColonyManager.m in Sources */,
+				7580FAA321CB567D00653042 /* FSSRewardedVideoAdColonyManager.m in Sources */,
 				96F22C371D3899D300C3136E /* AppDelegate.swift in Sources */,
+				7580FAA221CB567D00653042 /* FSSRewardedVideoCustomEventAdColony.m in Sources */,
 				966CC73E1DF7C9B50005EF1C /* BannerTableViewCell.swift in Sources */,
 				3A24ECA81D812CCC0014B706 /* TabBarController.swift in Sources */,
 				9661EEFA1F15FDAE00286B72 /* NativeViewController.swift in Sources */,
+				7580FA9A21CB567D00653042 /* FSSRewardedVideoCustomEventUnityAds.m in Sources */,
 				3ADBC1981D825A62003D7AB3 /* ViewController.swift in Sources */,
+				7580FA9B21CB567D00653042 /* FSSRewardedVideoUnityAdsManager.m in Sources */,
+				7580FAA621CB567D00653042 /* FSSRewardedVideoMaioManager.m in Sources */,
 				960884221F9EC23B005F65FD /* RewardedVideoViewController.swift in Sources */,
+				7580FAA121CB567D00653042 /* FSSRewardedVideoCustomEventAppLovin.m in Sources */,
 				96D530F41F25DC22008B1066 /* FooterNativeViewController.swift in Sources */,
 				3A6AADB11D8148DA005D94C1 /* BannerNavigationController.swift in Sources */,
 				969EC2001D3E0CF7005F475E /* ManyBannerViewController.swift in Sources */,
-				F9610F4421C3A4B4004EBE13 /* FSSRewardedVideoCustomEventTapjoy.m in Sources */,
+				7580FAA521CB567D00653042 /* FSSRewardedVideoCustomEventMaio.m in Sources */,
+				7580FA9F21CB567D00653042 /* FSSRewardedVideoCustomEventTapjoy.m in Sources */,
+				7580FA9C21CB567D00653042 /* FSSRewardedVideoConditionObserver.m in Sources */,
+				7580FAA821CB567D00653042 /* FSSRewardedVideoCustomEventNend.m in Sources */,
 				966CC73C1DF7C98C0005EF1C /* BannerTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -610,12 +609,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SampleApp-Swift/FluctSDK",
-					"$(PROJECT_DIR)/../../FluctSDK-AdNetworkSupport/AppLovin",
-					"$(PROJECT_DIR)/../../FluctSDK-AdNetworkSupport/UnityAds",
-					"$(PROJECT_DIR)/../../FluctSDK-AdNetworkSupport/nend/NendAd.embeddedframework",
-					"$(PROJECT_DIR)/../../FluctSDK-AdNetworkSupport/Tapjoy/Tapjoy.embeddedframework",
-					"$(PROJECT_DIR)/../../FluctSDK-AdNetworkSupport/AdColony",
-					"$(PROJECT_DIR)/../../FluctSDK-AdNetworkSupport/maio",
+					"$(PROJECT_DIR)/SampleApp-Swift/FluctSDK-AdnetworkSupport/UnityAds",
+					"$(PROJECT_DIR)/SampleApp-Swift/FluctSDK-AdnetworkSupport/Tapjoy/Tapjoy.embeddedframework",
+					"$(PROJECT_DIR)/SampleApp-Swift/FluctSDK-AdnetworkSupport/AppLovin",
+					"$(PROJECT_DIR)/SampleApp-Swift/FluctSDK-AdnetworkSupport/AdColony",
+					"$(PROJECT_DIR)/SampleApp-Swift/FluctSDK-AdnetworkSupport/maio",
+					"$(PROJECT_DIR)/SampleApp-Swift/FluctSDK-AdnetworkSupport/nend/NendAd.embeddedframework",
 				);
 				INFOPLIST_FILE = "SampleApp-Swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -637,12 +636,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SampleApp-Swift/FluctSDK",
-					"$(PROJECT_DIR)/../../FluctSDK-AdNetworkSupport/AppLovin",
-					"$(PROJECT_DIR)/../../FluctSDK-AdNetworkSupport/UnityAds",
-					"$(PROJECT_DIR)/../../FluctSDK-AdNetworkSupport/nend/NendAd.embeddedframework",
-					"$(PROJECT_DIR)/../../FluctSDK-AdNetworkSupport/Tapjoy/Tapjoy.embeddedframework",
-					"$(PROJECT_DIR)/../../FluctSDK-AdNetworkSupport/AdColony",
-					"$(PROJECT_DIR)/../../FluctSDK-AdNetworkSupport/maio",
+					"$(PROJECT_DIR)/SampleApp-Swift/FluctSDK-AdnetworkSupport/UnityAds",
+					"$(PROJECT_DIR)/SampleApp-Swift/FluctSDK-AdnetworkSupport/Tapjoy/Tapjoy.embeddedframework",
+					"$(PROJECT_DIR)/SampleApp-Swift/FluctSDK-AdnetworkSupport/AppLovin",
+					"$(PROJECT_DIR)/SampleApp-Swift/FluctSDK-AdnetworkSupport/AdColony",
+					"$(PROJECT_DIR)/SampleApp-Swift/FluctSDK-AdnetworkSupport/maio",
+					"$(PROJECT_DIR)/SampleApp-Swift/FluctSDK-AdnetworkSupport/nend/NendAd.embeddedframework",
 				);
 				INFOPLIST_FILE = "SampleApp-Swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

@@ -17,6 +17,9 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## v4.11.3 2019/01/10
+* SDK配布用のディレクトリ名をFluctSDK.embeddedframeworkに変更
+
 ## v4.11.2 2018/12/20
 * サンプルアプリの軽微なバグの修正
 
