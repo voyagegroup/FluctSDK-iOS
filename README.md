@@ -17,6 +17,9 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## v4.12.0 2019/01/21
+* AdCorsaとの動画リワード広告メディエーション対応
+
 ## v4.11.3 2019/01/10
 * SDK配布用のディレクトリ名をFluctSDK.embeddedframeworkに変更
 

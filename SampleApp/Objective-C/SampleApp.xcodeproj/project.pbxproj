@@ -11,8 +11,8 @@
 		3A24ECA41D81207E0014B706 /* BannerNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A24ECA31D81207E0014B706 /* BannerNavigationController.m */; };
 		3A77FCF81FBE86E000B95DE0 /* FluctSDK-info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A77FCF71FBE86E000B95DE0 /* FluctSDK-info.plist */; };
 		3AB37653207F1C7600BA82F4 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB37652207F1C7600BA82F4 /* ImageIO.framework */; };
-		3ACE35AE1C3BA25C002E6E22 /* FluctSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ACE35AC1C3BA25C002E6E22 /* FluctSDK.framework */; };
-		7451C8E421E5D07000C42F1F /* FluctSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7451C8E321E5D07000C42F1F /* FluctSDKResources.bundle */; };
+		7451C8EB21E8745800C42F1F /* FluctSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7451C8E921E8745800C42F1F /* FluctSDKResources.bundle */; };
+		7451C8EC21E8745800C42F1F /* FluctSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7451C8EA21E8745800C42F1F /* FluctSDK.framework */; };
 		75C0AC1721C0BA270074AA86 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C0AC1621C0BA270074AA86 /* EventKit.framework */; };
 		75C0AC1921C0BA2C0074AA86 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C0AC1821C0BA2B0074AA86 /* MessageUI.framework */; };
 		75C0AC1B21C0BA320074AA86 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C0AC1A21C0BA320074AA86 /* WatchConnectivity.framework */; };
@@ -75,8 +75,8 @@
 		3A24ECA31D81207E0014B706 /* BannerNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerNavigationController.m; sourceTree = "<group>"; };
 		3A77FCF71FBE86E000B95DE0 /* FluctSDK-info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "FluctSDK-info.plist"; sourceTree = "<group>"; };
 		3AB37652207F1C7600BA82F4 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
-		3ACE35AC1C3BA25C002E6E22 /* FluctSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FluctSDK.framework; sourceTree = "<group>"; };
-		7451C8E321E5D07000C42F1F /* FluctSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FluctSDKResources.bundle; path = Resources/FluctSDKResources.bundle; sourceTree = "<group>"; };
+		7451C8E921E8745800C42F1F /* FluctSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FluctSDKResources.bundle; sourceTree = "<group>"; };
+		7451C8EA21E8745800C42F1F /* FluctSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FluctSDK.framework; sourceTree = "<group>"; };
 		75C0AC1621C0BA270074AA86 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		75C0AC1821C0BA2B0074AA86 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		75C0AC1A21C0BA320074AA86 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
@@ -155,6 +155,7 @@
 			files = (
 				75DB9A5E21CB55FA00A999ED /* Maio.framework in Frameworks */,
 				75C0AC2521C0BA4E0074AA86 /* libsqlite3.0.tbd in Frameworks */,
+				7451C8EC21E8745800C42F1F /* FluctSDK.framework in Frameworks */,
 				75C0AC2321C0BA490074AA86 /* libxml2.tbd in Frameworks */,
 				75DB9A5721CB55FA00A999ED /* AppLovinSDK.framework in Frameworks */,
 				75C0AC2121C0BA440074AA86 /* libz.tbd in Frameworks */,
@@ -168,7 +169,6 @@
 				75DB9A5421CB55FA00A999ED /* Tapjoy.framework in Frameworks */,
 				96A2B0041FA30B8700BA5E71 /* WebKit.framework in Frameworks */,
 				75DB9A6021CB55FA00A999ED /* NendAd.framework in Frameworks */,
-				3ACE35AE1C3BA25C002E6E22 /* FluctSDK.framework in Frameworks */,
 				75DB9A5021CB55FA00A999ED /* UnityAds.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -183,13 +183,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3ACE35AB1C3BA25C002E6E22 /* FluctSDK */ = {
+		7451C8E721E8745800C42F1F /* FluctSDK.embeddedframework */ = {
 			isa = PBXGroup;
 			children = (
-				7451C8E321E5D07000C42F1F /* FluctSDKResources.bundle */,
-				3ACE35AC1C3BA25C002E6E22 /* FluctSDK.framework */,
+				7451C8E821E8745800C42F1F /* Resources */,
+				7451C8EA21E8745800C42F1F /* FluctSDK.framework */,
 			);
-			path = FluctSDK;
+			name = FluctSDK.embeddedframework;
+			path = SampleApp/FluctSDK.embeddedframework;
+			sourceTree = SOURCE_ROOT;
+		};
+		7451C8E821E8745800C42F1F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7451C8E921E8745800C42F1F /* FluctSDKResources.bundle */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		75DB9A2921CB55FA00A999ED /* FluctSDK-AdnetworkSupport */ = {
@@ -402,7 +411,7 @@
 				3A77FCF71FBE86E000B95DE0 /* FluctSDK-info.plist */,
 				A3418CC318D999C5003E302C /* Images.xcassets */,
 				96C87E711F15FEA800D90AC3 /* Banner */,
-				3ACE35AB1C3BA25C002E6E22 /* FluctSDK */,
+				7451C8E721E8745800C42F1F /* FluctSDK.embeddedframework */,
 				75DB9A2921CB55FA00A999ED /* FluctSDK-AdnetworkSupport */,
 				96C87E721F15FEB000D90AC3 /* Interstitial */,
 				A3418CBA18D999C5003E302C /* Main.storyboard */,
@@ -521,7 +530,7 @@
 				75DB9A6121CB55FA00A999ED /* NendAdResource.bundle in Resources */,
 				3A77FCF81FBE86E000B95DE0 /* FluctSDK-info.plist in Resources */,
 				A3418CC418D999C5003E302C /* Images.xcassets in Resources */,
-				7451C8E421E5D07000C42F1F /* FluctSDKResources.bundle in Resources */,
+				7451C8EB21E8745800C42F1F /* FluctSDKResources.bundle in Resources */,
 				A3418CBC18D999C5003E302C /* Main.storyboard in Resources */,
 				75DB9A5521CB55FA00A999ED /* TapjoyResources.bundle in Resources */,
 				A3418CB318D999C5003E302C /* InfoPlist.strings in Resources */,
@@ -707,6 +716,7 @@
 					"$(PROJECT_DIR)/SampleApp/FluctSDK-AdnetworkSupport/AdColony",
 					"$(PROJECT_DIR)/SampleApp/FluctSDK-AdnetworkSupport/maio",
 					"$(PROJECT_DIR)/SampleApp/FluctSDK-AdnetworkSupport/nend/NendAd.embeddedframework",
+					"$(PROJECT_DIR)/SampleApp/FluctSDK.embeddedframework",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SampleApp/SampleApp-Prefix.pch";
@@ -742,6 +752,7 @@
 					"$(PROJECT_DIR)/SampleApp/FluctSDK-AdnetworkSupport/AdColony",
 					"$(PROJECT_DIR)/SampleApp/FluctSDK-AdnetworkSupport/maio",
 					"$(PROJECT_DIR)/SampleApp/FluctSDK-AdnetworkSupport/nend/NendAd.embeddedframework",
+					"$(PROJECT_DIR)/SampleApp/FluctSDK.embeddedframework",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SampleApp/SampleApp-Prefix.pch";

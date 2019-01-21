@@ -11,7 +11,8 @@
 		3A24ECA81D812CCC0014B706 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A24ECA71D812CCC0014B706 /* TabBarController.swift */; };
 		3A6AADB11D8148DA005D94C1 /* BannerNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AADB01D8148DA005D94C1 /* BannerNavigationController.swift */; };
 		3ADBC1981D825A62003D7AB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADBC1971D825A62003D7AB3 /* ViewController.swift */; };
-		7451C8E621E5D12C00C42F1F /* FluctSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7451C8E521E5D12B00C42F1F /* FluctSDKResources.bundle */; };
+		7451C8F121E874E000C42F1F /* FluctSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7451C8EF21E874E000C42F1F /* FluctSDKResources.bundle */; };
+		7451C8F221E874E000C42F1F /* FluctSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7451C8F021E874E000C42F1F /* FluctSDK.framework */; };
 		7519965421C0B507007C62CE /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7519965321C0B507007C62CE /* EventKit.framework */; };
 		7519965621C0B522007C62CE /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7519965521C0B521007C62CE /* MessageUI.framework */; };
 		7519965821C0B54E007C62CE /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7519965721C0B54E007C62CE /* WatchConnectivity.framework */; };
@@ -52,7 +53,6 @@
 		96F22C3C1D3899D300C3136E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96F22C3A1D3899D300C3136E /* Main.storyboard */; };
 		96F22C3E1D3899D300C3136E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96F22C3D1D3899D300C3136E /* Assets.xcassets */; };
 		96F22C411D3899D300C3136E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96F22C3F1D3899D300C3136E /* LaunchScreen.storyboard */; };
-		96F22C701D38A24300C3136E /* FluctSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F22C6E1D38A24300C3136E /* FluctSDK.framework */; };
 		96F871C21FA175B3000C48F9 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96E978841FA0761800125A02 /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,7 +61,8 @@
 		3A24ECA71D812CCC0014B706 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		3A6AADB01D8148DA005D94C1 /* BannerNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerNavigationController.swift; sourceTree = "<group>"; };
 		3ADBC1971D825A62003D7AB3 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		7451C8E521E5D12B00C42F1F /* FluctSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FluctSDKResources.bundle; path = Resources/FluctSDKResources.bundle; sourceTree = "<group>"; };
+		7451C8EF21E874E000C42F1F /* FluctSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FluctSDKResources.bundle; sourceTree = "<group>"; };
+		7451C8F021E874E000C42F1F /* FluctSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FluctSDK.framework; sourceTree = "<group>"; };
 		7519965321C0B507007C62CE /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		7519965521C0B521007C62CE /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		7519965721C0B54E007C62CE /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
@@ -115,7 +116,6 @@
 		96F22C3D1D3899D300C3136E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96F22C401D3899D300C3136E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		96F22C421D3899D300C3136E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		96F22C6E1D38A24300C3136E /* FluctSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FluctSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +125,7 @@
 			files = (
 				7580FAA721CB567D00653042 /* Maio.framework in Frameworks */,
 				7519966221C0B5AD007C62CE /* libc++.tbd in Frameworks */,
+				7451C8F221E874E000C42F1F /* FluctSDK.framework in Frameworks */,
 				7519966021C0B5A6007C62CE /* libz.tbd in Frameworks */,
 				7580FAA021CB567D00653042 /* AppLovinSDK.framework in Frameworks */,
 				7519965E21C0B59D007C62CE /* libxml2.tbd in Frameworks */,
@@ -138,7 +139,6 @@
 				7580FA9D21CB567D00653042 /* Tapjoy.framework in Frameworks */,
 				96F871C21FA175B3000C48F9 /* WebKit.framework in Frameworks */,
 				7580FAA921CB567D00653042 /* NendAd.framework in Frameworks */,
-				96F22C701D38A24300C3136E /* FluctSDK.framework in Frameworks */,
 				7580FA9921CB567D00653042 /* UnityAds.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,6 +146,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7451C8ED21E874E000C42F1F /* FluctSDK.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				7451C8EE21E874E000C42F1F /* Resources */,
+				7451C8F021E874E000C42F1F /* FluctSDK.framework */,
+			);
+			name = FluctSDK.embeddedframework;
+			path = "SampleApp-Swift/FluctSDK.embeddedframework";
+			sourceTree = SOURCE_ROOT;
+		};
+		7451C8EE21E874E000C42F1F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7451C8EF21E874E000C42F1F /* FluctSDKResources.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		7580FA7221CB567C00653042 /* FluctSDK-AdnetworkSupport */ = {
 			isa = PBXGroup;
 			children = (
@@ -343,7 +361,7 @@
 				3ADBC1971D825A62003D7AB3 /* ViewController.swift */,
 				96F22C3D1D3899D300C3136E /* Assets.xcassets */,
 				9661EEF61F15FCE400286B72 /* Banner */,
-				96F22C6D1D38A24300C3136E /* FluctSDK */,
+				7451C8ED21E874E000C42F1F /* FluctSDK.embeddedframework */,
 				7580FA7221CB567C00653042 /* FluctSDK-AdnetworkSupport */,
 				9661EEF71F15FD2D00286B72 /* Interstitial */,
 				96F22C3F1D3899D300C3136E /* LaunchScreen.storyboard */,
@@ -352,15 +370,6 @@
 				960884201F9EC17A005F65FD /* RewardedVideo */,
 			);
 			path = "SampleApp-Swift";
-			sourceTree = "<group>";
-		};
-		96F22C6D1D38A24300C3136E /* FluctSDK */ = {
-			isa = PBXGroup;
-			children = (
-				7451C8E521E5D12B00C42F1F /* FluctSDKResources.bundle */,
-				96F22C6E1D38A24300C3136E /* FluctSDK.framework */,
-			);
-			path = FluctSDK;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -426,7 +435,7 @@
 				7580FAAA21CB567D00653042 /* NendAdResource.bundle in Resources */,
 				96CB38701FB3F136002EB14E /* FluctSDK-info.plist in Resources */,
 				96F22C411D3899D300C3136E /* LaunchScreen.storyboard in Resources */,
-				7451C8E621E5D12C00C42F1F /* FluctSDKResources.bundle in Resources */,
+				7451C8F121E874E000C42F1F /* FluctSDKResources.bundle in Resources */,
 				96F22C3E1D3899D300C3136E /* Assets.xcassets in Resources */,
 				7580FA9E21CB567D00653042 /* TapjoyResources.bundle in Resources */,
 				96F22C3C1D3899D300C3136E /* Main.storyboard in Resources */,
@@ -615,6 +624,7 @@
 					"$(PROJECT_DIR)/SampleApp-Swift/FluctSDK-AdnetworkSupport/AdColony",
 					"$(PROJECT_DIR)/SampleApp-Swift/FluctSDK-AdnetworkSupport/maio",
 					"$(PROJECT_DIR)/SampleApp-Swift/FluctSDK-AdnetworkSupport/nend/NendAd.embeddedframework",
+					"$(PROJECT_DIR)/SampleApp-Swift/FluctSDK.embeddedframework",
 				);
 				INFOPLIST_FILE = "SampleApp-Swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -642,6 +652,7 @@
 					"$(PROJECT_DIR)/SampleApp-Swift/FluctSDK-AdnetworkSupport/AdColony",
 					"$(PROJECT_DIR)/SampleApp-Swift/FluctSDK-AdnetworkSupport/maio",
 					"$(PROJECT_DIR)/SampleApp-Swift/FluctSDK-AdnetworkSupport/nend/NendAd.embeddedframework",
+					"$(PROJECT_DIR)/SampleApp-Swift/FluctSDK.embeddedframework",
 				);
 				INFOPLIST_FILE = "SampleApp-Swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
