@@ -33,26 +33,30 @@ typedef NS_ENUM(NSInteger, TJErrorExtended) {
         return nil;
     }
 
-    if (![Tapjoy isConnected]) {
-        [Tapjoy setDebugEnabled:debugMode];
+    if (![Tapjoy isLimitedConnected]) {
+        if (debugMode) {
+            [Tapjoy setDebugEnabled:debugMode];
+        }
+
         _connectionStatus = FSSTapjoyConnectionTrying;
 
         // https://dev.tapjoy.com/ja/sdk-integration/ios/getting-started-guide-publishers-ios/#connect
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(tjcConnectSuccess:)
-                                                     name:TJC_CONNECT_SUCCESS
+                                                     name:TJC_LIMITED_CONNECT_SUCCESS
                                                    object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(tjcConnectFailed:)
-                                                     name:TJC_CONNECT_FAILED
+                                                     name:TJC_LIMITED_CONNECT_FAILED
                                                    object:nil];
 
-        [Tapjoy connect:dictionary[@"sdk_key"]];
+        [Tapjoy limitedConnect:dictionary[@"sdk_key"]];
     } else {
         _connectionStatus = FSSTapjoyConnectionSucceeded;
     }
 
-    _tjPlacement = [TJPlacement placementWithName:dictionary[@"placement_name"] delegate:self];
+    _tjPlacement = [TJPlacement limitedPlacementWithName:dictionary[@"placement_name"] mediationAgent:@"fluct" delegate:self];
+    _tjPlacement.adapterVersion = [FluctSDK version];
     _tjPlacement.videoDelegate = self;
 
     return self;
