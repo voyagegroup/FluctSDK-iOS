@@ -90,7 +90,7 @@ static NSString *const FSSMaioSupportVersion = @"8.0";
 
         if (self.isInitialNotificationForAdapter) {
             weakSelf.isInitialNotificationForAdapter = NO;
-            self.adnwStatus = FSSRewardedVideoADNWStatusLoaded;
+            weakSelf.adnwStatus = FSSRewardedVideoADNWStatusLoaded;
             [weakSelf.delegate rewardedVideoDidLoadForCustomEvent:weakSelf];
         }
     });
@@ -130,7 +130,7 @@ static NSString *const FSSMaioSupportVersion = @"8.0";
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSRewardedVideoWorkQueue(), ^{
         [self clearTimer];
-        self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
+        weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
 
         //error after initialization
         if (reason == MaioFailReasonVideoPlayback) {

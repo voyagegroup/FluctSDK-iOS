@@ -7,8 +7,6 @@
 
 #import "FSSRewardedVideoUnityAdsManager.h"
 
-static FSSRewardedVideoUnityAdsManager *sharedInstance;
-
 @interface FSSRewardedVideoUnityAdsManager () <UnityAdsExtendedDelegate>
 @property (nonatomic) NSMutableDictionary *delegateTable;
 @property (nonatomic, copy) NSString *currentPlacementId;
@@ -17,9 +15,11 @@ static FSSRewardedVideoUnityAdsManager *sharedInstance;
 @implementation FSSRewardedVideoUnityAdsManager
 
 + (instancetype)sharedInstance {
+    static FSSRewardedVideoUnityAdsManager *sharedInstance;
     static dispatch_once_t onceToken;
+
     dispatch_once(&onceToken, ^{
-        sharedInstance = [[FSSRewardedVideoUnityAdsManager alloc] init];
+        sharedInstance = [self new];
     });
     return sharedInstance;
 }

@@ -90,7 +90,7 @@
 - (void)adService:(ALAdService *)adService didLoadAd:(ALAd *)ad {
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSRewardedVideoWorkQueue(), ^{
-        self.adnwStatus = FSSRewardedVideoADNWStatusLoaded;
+        weakSelf.adnwStatus = FSSRewardedVideoADNWStatusLoaded;
         [weakSelf.delegate rewardedVideoDidLoadForCustomEvent:weakSelf];
     });
 }
@@ -98,7 +98,7 @@
 - (void)adService:(ALAdService *)adService didFailToLoadAdWithError:(int)code {
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSRewardedVideoWorkQueue(), ^{
-        self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
+        weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
         switch (code) {
         case kALErrorCodeNoFill:
             [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:weakSelf

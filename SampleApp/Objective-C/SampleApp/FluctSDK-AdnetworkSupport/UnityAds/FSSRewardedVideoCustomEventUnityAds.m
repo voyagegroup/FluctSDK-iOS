@@ -123,7 +123,7 @@ static const NSInteger timeoutSecond = 30;
 
         if (weakSelf.isInitialNotificationForAdapter) {
             weakSelf.isInitialNotificationForAdapter = NO;
-            self.adnwStatus = FSSRewardedVideoADNWStatusLoaded;
+            weakSelf.adnwStatus = FSSRewardedVideoADNWStatusLoaded;
             [weakSelf.delegate rewardedVideoDidLoadForCustomEvent:weakSelf];
         }
     });
@@ -151,7 +151,7 @@ static const NSInteger timeoutSecond = 30;
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSRewardedVideoWorkQueue(), ^{
         [weakSelf clearTimer];
-        self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
+        weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
         if (error == kUnityAdsErrorShowError) {
             [weakSelf.delegate rewardedVideoDidFailToPlayForCustomEvent:weakSelf
                                                              fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
@@ -210,7 +210,7 @@ static const NSInteger timeoutSecond = 30;
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSRewardedVideoWorkQueue(), ^{
         [weakSelf clearTimer];
-        self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
+        weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
         weakSelf.isInitialNotificationForAdapter = NO;
         [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:weakSelf
                                                          fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain

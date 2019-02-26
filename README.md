@@ -17,6 +17,9 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## v4.12.3 2019/02/26
+* 内部処理の変更および改善
+
 ## v4.12.2 2019/02/08
 * Tapjoy SDKのLimited Connecに対応
 

@@ -7,8 +7,6 @@
 
 #import "FSSRewardedVideoMaioManager.h"
 
-static FSSRewardedVideoMaioManager *sharedInstance;
-
 @interface FSSRewardedVideoMaioManager ()
 @property (nonatomic) NSMutableDictionary *delegateTable;
 @property (nonatomic) MaioInstance *maioInstance;
@@ -17,9 +15,11 @@ static FSSRewardedVideoMaioManager *sharedInstance;
 @implementation FSSRewardedVideoMaioManager
 
 + (instancetype)sharedInstance {
+    static FSSRewardedVideoMaioManager *sharedInstance;
     static dispatch_once_t onceToken;
+
     dispatch_once(&onceToken, ^{
-        sharedInstance = [[FSSRewardedVideoMaioManager alloc] init];
+        sharedInstance = [self new];
     });
     return sharedInstance;
 }

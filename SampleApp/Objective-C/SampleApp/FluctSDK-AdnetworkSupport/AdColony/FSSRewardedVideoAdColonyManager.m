@@ -24,12 +24,14 @@ typedef NS_ENUM(NSUInteger, AdColonyManagerState) {
  * Not thread safe. All method should be called on UI thread.
  */
 @implementation FSSRewardedVideoAdColonyManager
+
 + (instancetype)sharedInstance {
-    static FSSRewardedVideoAdColonyManager *sharedInstance = nil;
+    static FSSRewardedVideoAdColonyManager *sharedInstance;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        sharedInstance = [FSSRewardedVideoAdColonyManager new];
+        sharedInstance = [self new];
     });
+
     return sharedInstance;
 }
 
