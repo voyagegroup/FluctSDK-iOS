@@ -17,6 +17,9 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## v4.12.4 2019/03/12
+* 動画リワード広告のメディエーション用アドネットワークSDKのアップデート対応
+
 ## v4.12.3 2019/02/26
 * 内部処理の変更および改善
 
