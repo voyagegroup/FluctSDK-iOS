@@ -17,6 +17,9 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## v4.13.0 2019/03/25
+* 動画リワード広告にプレイアブル広告配信機能を追加
+
 ## v4.12.4 2019/03/12
 * 動画リワード広告のメディエーション用アドネットワークSDKのアップデート対応
 
