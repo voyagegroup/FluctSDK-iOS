@@ -17,6 +17,9 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## v4.13.1 2019/03/26
+* VAST広告における配信エラー時のアドサーバーへの通知を改善
+
 ## v4.13.0 2019/03/25
 * 動画リワード広告にプレイアブル広告配信機能を追加
 
