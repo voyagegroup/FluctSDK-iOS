@@ -28,6 +28,7 @@
 
 @property (nonatomic, weak, readwrite) id<NADInterstitialVideoDelegate> delegate;
 @property (nonatomic, copy) UIColor *fallbackFullboardBackgroundColor;
+@property (nonatomic) BOOL isMuteStartPlaying;
 
 - (void)addFallbackFullboardWithSpotId:(NSString *)spotId apiKey:(NSString *)apiKey;
 

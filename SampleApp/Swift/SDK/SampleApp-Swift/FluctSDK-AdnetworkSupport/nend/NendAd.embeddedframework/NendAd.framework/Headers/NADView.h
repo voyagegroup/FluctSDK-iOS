@@ -56,7 +56,7 @@ typedef NS_ENUM(NSInteger, NADViewErrorCode) {
 @property (nonatomic, weak) id<NADViewDelegate> delegate;
 
 #pragma mark - Log出力設定
-@property (nonatomic) BOOL isOutputLog;
+@property (nonatomic) BOOL isOutputLog __deprecated_msg("This method is deprecated. Use setLogLevel: method of NADLogger instead.");
 
 #pragma mark - エラー内容出力
 @property (nonatomic) NSError *error;

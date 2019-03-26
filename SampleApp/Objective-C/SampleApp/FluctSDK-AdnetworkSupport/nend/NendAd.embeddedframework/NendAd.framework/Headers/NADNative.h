@@ -60,7 +60,7 @@ typedef NS_ENUM(NSInteger, NADNativeAdvertisingExplicitly) {
 /**
  * To enable ad click.
  */
-- (void)activateAdView:(UIView *)view withPrLabel:(UILabel *)prLabel;
+- (void)activateAdView:(UIView *)view withPrLabel:(UIView *)prLabel;
 
 /**
  * Download ad image if contains ad image.

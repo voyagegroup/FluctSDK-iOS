@@ -79,7 +79,7 @@ typedef NS_ENUM(NSInteger, NADInterstitialShowResult) {
 /**
  Log setting.
  */
-@property (nonatomic) BOOL isOutputLog;
+@property (nonatomic) BOOL isOutputLog __deprecated_msg("This method is deprecated. Use setLogLevel: method of NADLogger instead.");
 
 /**
  Reload the interstitial ad when close.

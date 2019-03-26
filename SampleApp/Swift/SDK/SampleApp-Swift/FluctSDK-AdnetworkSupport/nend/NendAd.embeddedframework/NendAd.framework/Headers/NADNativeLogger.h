@@ -15,6 +15,7 @@ typedef NS_ENUM(NSInteger, NADNativeLogLevel) {
     NADNativeLogLevelNone = INT_MAX,
 };
 
+__deprecated_msg("NADNativeLogger is deprecated. Use NADLogger instead.")
 @interface NADNativeLogger : NSObject
 
 + (void)setLogLevel:(NADNativeLogLevel)level;
