@@ -25,10 +25,12 @@
 #import "FluctInterstitialView.h"
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface FluctSDK : NSObject
 
-@property (nonatomic, copy) NSString *applicationId;
-+ (FluctSDK *)sharedInstance;
+@property (class, nonatomic, readonly) FluctSDK *sharedInstance NS_SWIFT_NAME(shared);
+@property (nonatomic, copy, nullable) NSString *applicationId;
 
 /*
  * setBannerConfiguration
@@ -39,7 +41,7 @@
  * (NSString*)mediaId : メディアID
  * (NSString*)orientationType : 未使用(v2.0.0未満との互換性用)
  */
-- (void)setBannerConfiguration:(NSString *)mediaId orientationType:(NSString *)orientationType;
+- (void)setBannerConfiguration:(NSString *)mediaId orientationType:(NSString *_Nullable)orientationType;
 
 /*
  * setBannerConfiguration
@@ -58,3 +60,5 @@
 + (void)configureWithOptions:(FSSConfigurationOptions *)options;
 
 @end
+
+NS_ASSUME_NONNULL_END

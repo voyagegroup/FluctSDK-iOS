@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3A24ECA11D810B600014B706 /* BannerTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A24ECA01D810B600014B706 /* BannerTabBarController.m */; };
 		3A24ECA41D81207E0014B706 /* BannerNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A24ECA31D81207E0014B706 /* BannerNavigationController.m */; };
-		3A77FCF81FBE86E000B95DE0 /* FluctSDK-info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A77FCF71FBE86E000B95DE0 /* FluctSDK-info.plist */; };
 		3AB37653207F1C7600BA82F4 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB37652207F1C7600BA82F4 /* ImageIO.framework */; };
 		7451C8EB21E8745800C42F1F /* FluctSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7451C8E921E8745800C42F1F /* FluctSDKResources.bundle */; };
 		7451C8EC21E8745800C42F1F /* FluctSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7451C8EA21E8745800C42F1F /* FluctSDK.framework */; };
@@ -73,7 +72,6 @@
 		3A24ECA01D810B600014B706 /* BannerTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerTabBarController.m; sourceTree = "<group>"; };
 		3A24ECA21D81207E0014B706 /* BannerNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerNavigationController.h; sourceTree = "<group>"; };
 		3A24ECA31D81207E0014B706 /* BannerNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerNavigationController.m; sourceTree = "<group>"; };
-		3A77FCF71FBE86E000B95DE0 /* FluctSDK-info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "FluctSDK-info.plist"; sourceTree = "<group>"; };
 		3AB37652207F1C7600BA82F4 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		7451C8E921E8745800C42F1F /* FluctSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FluctSDKResources.bundle; sourceTree = "<group>"; };
 		7451C8EA21E8745800C42F1F /* FluctSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FluctSDK.framework; sourceTree = "<group>"; };
@@ -408,7 +406,6 @@
 				A3418CC018D999C5003E302C /* ViewController.h */,
 				A3418CB818D999C5003E302C /* AppDelegate.m */,
 				A3418CC118D999C5003E302C /* ViewController.m */,
-				3A77FCF71FBE86E000B95DE0 /* FluctSDK-info.plist */,
 				A3418CC318D999C5003E302C /* Images.xcassets */,
 				96C87E711F15FEA800D90AC3 /* Banner */,
 				7451C8E721E8745800C42F1F /* FluctSDK.embeddedframework */,
@@ -528,7 +525,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				75DB9A6121CB55FA00A999ED /* NendAdResource.bundle in Resources */,
-				3A77FCF81FBE86E000B95DE0 /* FluctSDK-info.plist in Resources */,
 				A3418CC418D999C5003E302C /* Images.xcassets in Resources */,
 				7451C8EB21E8745800C42F1F /* FluctSDKResources.bundle in Resources */,
 				A3418CBC18D999C5003E302C /* Main.storyboard in Resources */,
@@ -658,7 +654,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
@@ -693,7 +689,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
@@ -726,13 +722,11 @@
 					"TEST_SERVER_REQUEST=1",
 				);
 				INFOPLIST_FILE = "SampleApp/SampleApp-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.voyagegroup.fluct.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
 				WRAPPER_EXTENSION = app;
 			};
@@ -757,13 +751,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SampleApp/SampleApp-Prefix.pch";
 				INFOPLIST_FILE = "SampleApp/SampleApp-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.voyagegroup.fluct.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
 				WRAPPER_EXTENSION = app;
 			};

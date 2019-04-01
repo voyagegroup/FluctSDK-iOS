@@ -46,7 +46,6 @@
 		966CC73E1DF7C9B50005EF1C /* BannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966CC73D1DF7C9B50005EF1C /* BannerTableViewCell.swift */; };
 		969EC2001D3E0CF7005F475E /* ManyBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969EC1FF1D3E0CF7005F475E /* ManyBannerViewController.swift */; };
 		969EC2021D3E11C1005F475E /* InterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969EC2011D3E11C1005F475E /* InterstitialViewController.swift */; };
-		96CB38701FB3F136002EB14E /* FluctSDK-info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96CB386F1FB3F136002EB14E /* FluctSDK-info.plist */; };
 		96D530F41F25DC22008B1066 /* FooterNativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D530F31F25DC22008B1066 /* FooterNativeViewController.swift */; };
 		96F22C371D3899D300C3136E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F22C361D3899D300C3136E /* AppDelegate.swift */; };
 		96F22C391D3899D300C3136E /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F22C381D3899D300C3136E /* BannerViewController.swift */; };
@@ -106,7 +105,6 @@
 		966CC73D1DF7C9B50005EF1C /* BannerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerTableViewCell.swift; sourceTree = "<group>"; };
 		969EC1FF1D3E0CF7005F475E /* ManyBannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManyBannerViewController.swift; sourceTree = "<group>"; };
 		969EC2011D3E11C1005F475E /* InterstitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterstitialViewController.swift; sourceTree = "<group>"; };
-		96CB386F1FB3F136002EB14E /* FluctSDK-info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "FluctSDK-info.plist"; sourceTree = "<group>"; };
 		96D530F31F25DC22008B1066 /* FooterNativeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterNativeViewController.swift; sourceTree = "<group>"; };
 		96E978841FA0761800125A02 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		96F22C331D3899D300C3136E /* SampleApp-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SampleApp-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -355,7 +353,6 @@
 		96F22C351D3899D300C3136E /* SampleApp-Swift */ = {
 			isa = PBXGroup;
 			children = (
-				96CB386F1FB3F136002EB14E /* FluctSDK-info.plist */,
 				96F22C421D3899D300C3136E /* Info.plist */,
 				96F22C361D3899D300C3136E /* AppDelegate.swift */,
 				3ADBC1971D825A62003D7AB3 /* ViewController.swift */,
@@ -433,7 +430,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7580FAAA21CB567D00653042 /* NendAdResource.bundle in Resources */,
-				96CB38701FB3F136002EB14E /* FluctSDK-info.plist in Resources */,
 				96F22C411D3899D300C3136E /* LaunchScreen.storyboard in Resources */,
 				7451C8F121E874E000C42F1F /* FluctSDKResources.bundle in Resources */,
 				96F22C3E1D3899D300C3136E /* Assets.xcassets in Resources */,
@@ -546,7 +542,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -600,7 +596,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/FluctSDKSwiftApp-Bridging-Header.h";
@@ -627,7 +623,6 @@
 					"$(PROJECT_DIR)/SampleApp-Swift/FluctSDK.embeddedframework",
 				);
 				INFOPLIST_FILE = "SampleApp-Swift/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
@@ -655,7 +650,6 @@
 					"$(PROJECT_DIR)/SampleApp-Swift/FluctSDK.embeddedframework",
 				);
 				INFOPLIST_FILE = "SampleApp-Swift/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";

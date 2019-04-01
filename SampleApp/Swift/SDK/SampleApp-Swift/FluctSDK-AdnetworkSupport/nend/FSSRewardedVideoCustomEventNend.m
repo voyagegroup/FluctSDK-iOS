@@ -35,6 +35,15 @@ static NSString *const FSSNendSupportVersion = @"8.1";
 
     _nendRewardedVideo = [FSSRewardedVideoCustomEventNend initializeNendSDKWithSpotId:dictionary[@"spot_id"] apiKey:dictionary[@"api_key"]];
     _nendRewardedVideo.delegate = self;
+    SEL selector = NSSelectorFromString(@"setIsLocationEnabled:");
+    if ([_nendRewardedVideo respondsToSelector:selector]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+        [_nendRewardedVideo performSelector:selector
+                                 withObject:@NO];
+#pragma clang diagnostic pop
+    }
+
     _nendRewardedVideo.userFeature = [FSSRewardedVideoCustomEventNend generateUserFeatureWithTargeting:targeting];
 
     return self;

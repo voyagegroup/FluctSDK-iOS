@@ -17,6 +17,13 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## v5.0.0 2019/04/01
+* interfaceの変更
+* 動画リワード導入方法の変更
+* 動画リワード配信オプションの指定方法の変更
+
+詳しくは[アップグレードガイド](https://github.com/voyagegroup/FluctSDK-iOS/wiki/アップグレードガイド.md)を参照ください
+
 ## v4.13.1 2019/03/26
 * VAST広告における配信エラー時のアドサーバーへの通知を改善
 
