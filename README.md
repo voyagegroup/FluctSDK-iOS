@@ -17,6 +17,9 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## v5.1.0 2019/04/24
+* 動画リワード広告のAppLovinメディエーションにおいて予期せぬアプリからのインプレッション発生を予防する機能を追加
+
 ## v5.0.1 2019/04/01
 * 動画リワード広告のメディエーション用アドネットワークSDKのアップデート対応
 

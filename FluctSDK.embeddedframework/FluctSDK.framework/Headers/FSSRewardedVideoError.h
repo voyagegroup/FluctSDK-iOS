@@ -21,6 +21,7 @@ typedef NS_ENUM(NSInteger, FSSRewardedVideoErrorCode) {
     FSSRewardedVideoAdErrorNotConnectedToInternet = -1008,
     FSSRewardedVideoAdErrorExpired = -1009,
     FSSRewardedVideoAdErrorVastParseFailed = -1010,
+    FSSRewardedVideoAdErrorInvalidApp = -1011,
 };
 
 extern NSString *const FSSRewardedVideoAdsSDKDomain;
