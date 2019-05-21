@@ -17,6 +17,9 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## v5.2.0 2019/05/21
+* RTBの動画リワードにおいて、iOSアプリ広告をApp内ストアで表示する機能を追加
+
 ## v5.1.1 2019/05/15
 * 内部処理の変更および改善
 
@@ -46,7 +49,7 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 * 内部処理の変更および改善
 
 ## v4.12.2 2019/02/08
-* Tapjoy SDKのLimited Connecに対応
+* Tapjoy SDKのLimited Connectに対応
 
 ## v4.12.1 2019/01/28
 * 配布カスタムイベントアーカイブの不備修正
