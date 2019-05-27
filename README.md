@@ -17,6 +17,9 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## v5.3.0 2019/05/27
+* Mintegralとの動画リワード広告メディエーション対応
+
 ## v5.2.0 2019/05/21
 * RTBの動画リワードにおいて、iOSアプリ広告をApp内ストアで表示する機能を追加
 

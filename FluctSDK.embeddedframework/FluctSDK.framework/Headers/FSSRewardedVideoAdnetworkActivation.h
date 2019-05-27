@@ -66,6 +66,12 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, getter=isUnityAdsActivated) BOOL unityAdsActivated;
 
+/**
+ * Activation setting for Mintegral.
+ * Required to include `FSSRewardedVideoCustomEventMintegral` in project.
+ */
+@property (nonatomic, getter=isMintegralActivated) BOOL mintegralActivated;
+
 - (NSString *)description;
 
 - (BOOL)hasDeactivatedAdnetwork;
