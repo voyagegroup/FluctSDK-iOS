@@ -5,7 +5,7 @@
 //  Created by yujinping on 16/4/12.
 //
 
-#define MTGRewardVideoSDKVersion @"5.2.0"
+#define MTGRewardVideoSDKVersion @"5.3.3"
 
 #import <Foundation/Foundation.h>
 #import <MTGSDK/MTGRewardAdInfo.h>
@@ -84,13 +84,21 @@
 - (void)onVideoAdClicked:(nullable NSString *)unitId;
 
 /** 
- *  Called when the ad has been dismissed from being displayed, and control will return to your app
+ *  Called when the ad will be dismissed from being displayed, and control will return to your app
  *
  *  @param unitId      - the unitId string of the Ad that has been dismissed
  *  @param converted   - BOOL describing whether the ad has converted
  *  @param rewardInfo  - the rewardInfo object containing the info that should be given to your user.
  */
 - (void)onVideoAdDismissed:(nullable NSString *)unitId withConverted:(BOOL)converted withRewardInfo:(nullable MTGRewardAdInfo *)rewardInfo;
+
+/**
+ *  Called when the ad  did closed;
+ *
+ *  @param unitId - the unitId string of the Ad clicked.
+ */
+- (void)onVideoAdDidClosed:(nullable NSString *)unitId;
+
 @end
 
 

@@ -24,6 +24,8 @@ class NativeViewController: UIViewController, FSSNativeViewDelegate {
             print("広告の読み込みが完了しました")
         case .tap:
             print("広告がタップされました")
+        @unknown default:
+            break
         }
     }
     
@@ -39,6 +41,8 @@ class NativeViewController: UIViewController, FSSNativeViewDelegate {
             print("サーバ側でエラーが発生しました")
         case .other:
             print("その他のエラーです")
+        @unknown default:
+            break
         }
     }
 }

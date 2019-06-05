@@ -40,6 +40,8 @@ class BannerViewController: UIViewController, FSSBannerViewDelegate {
             print("広告を取得出来ませんでした。")
         case .otherError:
             print("その他のエラーです")
+        @unknown default:
+            break
         }
     }
 

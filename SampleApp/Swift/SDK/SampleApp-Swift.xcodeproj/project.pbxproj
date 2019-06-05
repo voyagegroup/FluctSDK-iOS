@@ -21,6 +21,9 @@
 		7519965E21C0B59D007C62CE /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7519965D21C0B59D007C62CE /* libxml2.tbd */; };
 		7519966021C0B5A6007C62CE /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7519965F21C0B5A6007C62CE /* libz.tbd */; };
 		7519966221C0B5AD007C62CE /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7519966121C0B5AD007C62CE /* libc++.tbd */; };
+		757D0C9422A4EE22002B33D3 /* FSSRewardedVideoCustomEventMintegral.m in Sources */ = {isa = PBXBuildFile; fileRef = 757D0C8F22A4EE22002B33D3 /* FSSRewardedVideoCustomEventMintegral.m */; };
+		757D0C9522A4EE22002B33D3 /* MTGSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 757D0C9022A4EE22002B33D3 /* MTGSDK.framework */; };
+		757D0C9622A4EE22002B33D3 /* MTGSDKReward.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 757D0C9122A4EE22002B33D3 /* MTGSDKReward.framework */; };
 		7580FA9921CB567D00653042 /* UnityAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7580FA7721CB567C00653042 /* UnityAds.framework */; };
 		7580FA9A21CB567D00653042 /* FSSRewardedVideoCustomEventUnityAds.m in Sources */ = {isa = PBXBuildFile; fileRef = 7580FA7821CB567C00653042 /* FSSRewardedVideoCustomEventUnityAds.m */; };
 		7580FA9B21CB567D00653042 /* FSSRewardedVideoUnityAdsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7580FA7921CB567C00653042 /* FSSRewardedVideoUnityAdsManager.m */; };
@@ -70,6 +73,10 @@
 		7519965D21C0B59D007C62CE /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		7519965F21C0B5A6007C62CE /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		7519966121C0B5AD007C62CE /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		757D0C8E22A4EE22002B33D3 /* FSSRewardedVideoCustomEventMintegral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoCustomEventMintegral.h; sourceTree = "<group>"; };
+		757D0C8F22A4EE22002B33D3 /* FSSRewardedVideoCustomEventMintegral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoCustomEventMintegral.m; sourceTree = "<group>"; };
+		757D0C9022A4EE22002B33D3 /* MTGSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MTGSDK.framework; sourceTree = "<group>"; };
+		757D0C9122A4EE22002B33D3 /* MTGSDKReward.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MTGSDKReward.framework; sourceTree = "<group>"; };
 		7580FA7421CB567C00653042 /* FSSRewardedVideoConditionObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoConditionObserver.h; sourceTree = "<group>"; };
 		7580FA7521CB567C00653042 /* FSSRewardedVideoUnityAdsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoUnityAdsManager.h; sourceTree = "<group>"; };
 		7580FA7621CB567C00653042 /* FSSRewardedVideoCustomEventUnityAds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoCustomEventUnityAds.h; sourceTree = "<group>"; };
@@ -135,7 +142,9 @@
 				7519965421C0B507007C62CE /* EventKit.framework in Frameworks */,
 				3A1810D8207F2DC900D584AD /* ImageIO.framework in Frameworks */,
 				7580FA9D21CB567D00653042 /* Tapjoy.framework in Frameworks */,
+				757D0C9522A4EE22002B33D3 /* MTGSDK.framework in Frameworks */,
 				96F871C21FA175B3000C48F9 /* WebKit.framework in Frameworks */,
+				757D0C9622A4EE22002B33D3 /* MTGSDKReward.framework in Frameworks */,
 				7580FAA921CB567D00653042 /* NendAd.framework in Frameworks */,
 				7580FA9921CB567D00653042 /* UnityAds.framework in Frameworks */,
 			);
@@ -162,15 +171,27 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		757D0C8D22A4EE22002B33D3 /* Mintegral */ = {
+			isa = PBXGroup;
+			children = (
+				757D0C8E22A4EE22002B33D3 /* FSSRewardedVideoCustomEventMintegral.h */,
+				757D0C8F22A4EE22002B33D3 /* FSSRewardedVideoCustomEventMintegral.m */,
+				757D0C9022A4EE22002B33D3 /* MTGSDK.framework */,
+				757D0C9122A4EE22002B33D3 /* MTGSDKReward.framework */,
+			);
+			path = Mintegral;
+			sourceTree = "<group>";
+		};
 		7580FA7221CB567C00653042 /* FluctSDK-AdnetworkSupport */ = {
 			isa = PBXGroup;
 			children = (
-				7580FA7321CB567C00653042 /* UnityAds */,
-				7580FA7B21CB567C00653042 /* Tapjoy */,
-				7580FA8221CB567D00653042 /* AppLovin */,
 				7580FA8621CB567D00653042 /* AdColony */,
+				7580FA8221CB567D00653042 /* AppLovin */,
 				7580FA8C21CB567D00653042 /* maio */,
+				757D0C8D22A4EE22002B33D3 /* Mintegral */,
 				7580FA9221CB567D00653042 /* nend */,
+				7580FA7B21CB567C00653042 /* Tapjoy */,
+				7580FA7321CB567C00653042 /* UnityAds */,
 			);
 			path = "FluctSDK-AdnetworkSupport";
 			sourceTree = "<group>";
@@ -396,19 +417,18 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "fluct, Inc.";
 				TargetAttributes = {
 					96F22C321D3899D300C3136E = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = ED52ZNS3N9;
 						LastSwiftMigration = 1000;
 					};
 				};
 			};
 			buildConfigurationList = 96F22C2E1D3899D300C3136E /* Build configuration list for PBXProject "SampleApp-Swift" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -451,6 +471,7 @@
 				7580FAA321CB567D00653042 /* FSSRewardedVideoAdColonyManager.m in Sources */,
 				96F22C371D3899D300C3136E /* AppDelegate.swift in Sources */,
 				7580FAA221CB567D00653042 /* FSSRewardedVideoCustomEventAdColony.m in Sources */,
+				757D0C9422A4EE22002B33D3 /* FSSRewardedVideoCustomEventMintegral.m in Sources */,
 				966CC73E1DF7C9B50005EF1C /* BannerTableViewCell.swift in Sources */,
 				3A24ECA81D812CCC0014B706 /* TabBarController.swift in Sources */,
 				9661EEFA1F15FDAE00286B72 /* NativeViewController.swift in Sources */,
@@ -497,6 +518,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -548,8 +570,9 @@
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/FluctSDKSwiftApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "arm64 armv7 armv7s x86_64";
+				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
 			name = Debug;
 		};
@@ -557,6 +580,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -601,19 +625,19 @@
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/FluctSDKSwiftApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "arm64 armv7 armv7s x86_64";
+				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
 			name = Release;
 		};
 		96F22C5C1D3899D300C3136E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = ED52ZNS3N9;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/SampleApp-Swift/FluctSDK",
 					"$(PROJECT_DIR)/SampleApp-Swift/FluctSDK-AdnetworkSupport/UnityAds",
 					"$(PROJECT_DIR)/SampleApp-Swift/FluctSDK-AdnetworkSupport/Tapjoy/Tapjoy.embeddedframework",
 					"$(PROJECT_DIR)/SampleApp-Swift/FluctSDK-AdnetworkSupport/AppLovin",
@@ -621,26 +645,25 @@
 					"$(PROJECT_DIR)/SampleApp-Swift/FluctSDK-AdnetworkSupport/maio",
 					"$(PROJECT_DIR)/SampleApp-Swift/FluctSDK-AdnetworkSupport/nend/NendAd.embeddedframework",
 					"$(PROJECT_DIR)/SampleApp-Swift/FluctSDK.embeddedframework",
+					"$(PROJECT_DIR)/SampleApp-Swift/FluctSDK-AdnetworkSupport/AdCorsa",
+					"$(PROJECT_DIR)/SampleApp-Swift/FluctSDK-AdnetworkSupport/Mintegral",
 				);
 				INFOPLIST_FILE = "SampleApp-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.fluct.SampleApp-Swift";
 				PRODUCT_NAME = "SampleApp-Swift";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_VERSION = 4.2;
-				VALID_ARCHS = "arm64 armv7 armv7s x86_64";
+				WARNING_CFLAGS = "";
 			};
 			name = Debug;
 		};
 		96F22C5D1D3899D300C3136E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = ED52ZNS3N9;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/SampleApp-Swift/FluctSDK",
 					"$(PROJECT_DIR)/SampleApp-Swift/FluctSDK-AdnetworkSupport/UnityAds",
 					"$(PROJECT_DIR)/SampleApp-Swift/FluctSDK-AdnetworkSupport/Tapjoy/Tapjoy.embeddedframework",
 					"$(PROJECT_DIR)/SampleApp-Swift/FluctSDK-AdnetworkSupport/AppLovin",
@@ -648,16 +671,16 @@
 					"$(PROJECT_DIR)/SampleApp-Swift/FluctSDK-AdnetworkSupport/maio",
 					"$(PROJECT_DIR)/SampleApp-Swift/FluctSDK-AdnetworkSupport/nend/NendAd.embeddedframework",
 					"$(PROJECT_DIR)/SampleApp-Swift/FluctSDK.embeddedframework",
+					"$(PROJECT_DIR)/SampleApp-Swift/FluctSDK-AdnetworkSupport/AdCorsa",
+					"$(PROJECT_DIR)/SampleApp-Swift/FluctSDK-AdnetworkSupport/Mintegral",
 				);
 				INFOPLIST_FILE = "SampleApp-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.fluct.SampleApp-Swift";
 				PRODUCT_NAME = "SampleApp-Swift";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_VERSION = 4.2;
-				VALID_ARCHS = "arm64 armv7 armv7s x86_64";
+				WARNING_CFLAGS = "";
 			};
 			name = Release;
 		};

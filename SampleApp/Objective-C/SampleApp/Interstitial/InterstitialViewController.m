@@ -87,10 +87,4 @@
 
 }
 
-// 画面の回転時にインタースティシャルを非表示にする
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
-{
-    [self.interstitialView dismissInterstitialAd];
-}
-
 @end

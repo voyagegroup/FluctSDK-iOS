@@ -52,6 +52,8 @@ class InterstitialViewController: UIViewController, FSSInterstitialViewDelegate 
             print("広告情報が取得出来ませんでした")
         case .otherError:
             print("その他のエラーです")
+        @unknown default:
+            break
         }
     }
 

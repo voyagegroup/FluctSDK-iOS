@@ -20,6 +20,9 @@
 		75C0AC2121C0BA440074AA86 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C0AC2021C0BA440074AA86 /* libz.tbd */; };
 		75C0AC2321C0BA490074AA86 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C0AC2221C0BA490074AA86 /* libxml2.tbd */; };
 		75C0AC2521C0BA4E0074AA86 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C0AC2421C0BA4E0074AA86 /* libsqlite3.0.tbd */; };
+		75CDFC0C22A4E9120085B18D /* FSSRewardedVideoCustomEventMintegral.m in Sources */ = {isa = PBXBuildFile; fileRef = 75CDFC0522A4E9120085B18D /* FSSRewardedVideoCustomEventMintegral.m */; };
+		75CDFC0D22A4E9120085B18D /* MTGSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75CDFC0622A4E9120085B18D /* MTGSDK.framework */; };
+		75CDFC0E22A4E9120085B18D /* MTGSDKReward.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75CDFC0722A4E9120085B18D /* MTGSDKReward.framework */; };
 		75DB9A5021CB55FA00A999ED /* UnityAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75DB9A2E21CB55FA00A999ED /* UnityAds.framework */; };
 		75DB9A5121CB55FA00A999ED /* FSSRewardedVideoCustomEventUnityAds.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9A2F21CB55FA00A999ED /* FSSRewardedVideoCustomEventUnityAds.m */; };
 		75DB9A5221CB55FA00A999ED /* FSSRewardedVideoUnityAdsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 75DB9A3021CB55FA00A999ED /* FSSRewardedVideoUnityAdsManager.m */; };
@@ -83,6 +86,10 @@
 		75C0AC2021C0BA440074AA86 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		75C0AC2221C0BA490074AA86 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		75C0AC2421C0BA4E0074AA86 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		75CDFC0422A4E9120085B18D /* FSSRewardedVideoCustomEventMintegral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoCustomEventMintegral.h; sourceTree = "<group>"; };
+		75CDFC0522A4E9120085B18D /* FSSRewardedVideoCustomEventMintegral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoCustomEventMintegral.m; sourceTree = "<group>"; };
+		75CDFC0622A4E9120085B18D /* MTGSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MTGSDK.framework; sourceTree = "<group>"; };
+		75CDFC0722A4E9120085B18D /* MTGSDKReward.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MTGSDKReward.framework; sourceTree = "<group>"; };
 		75DB9A2B21CB55FA00A999ED /* FSSRewardedVideoConditionObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoConditionObserver.h; sourceTree = "<group>"; };
 		75DB9A2C21CB55FA00A999ED /* FSSRewardedVideoUnityAdsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoUnityAdsManager.h; sourceTree = "<group>"; };
 		75DB9A2D21CB55FA00A999ED /* FSSRewardedVideoCustomEventUnityAds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoCustomEventUnityAds.h; sourceTree = "<group>"; };
@@ -153,6 +160,7 @@
 			files = (
 				75DB9A5E21CB55FA00A999ED /* Maio.framework in Frameworks */,
 				75C0AC2521C0BA4E0074AA86 /* libsqlite3.0.tbd in Frameworks */,
+				75CDFC0D22A4E9120085B18D /* MTGSDK.framework in Frameworks */,
 				7451C8EC21E8745800C42F1F /* FluctSDK.framework in Frameworks */,
 				75C0AC2321C0BA490074AA86 /* libxml2.tbd in Frameworks */,
 				75DB9A5721CB55FA00A999ED /* AppLovinSDK.framework in Frameworks */,
@@ -164,6 +172,7 @@
 				75C0AC1921C0BA2C0074AA86 /* MessageUI.framework in Frameworks */,
 				75C0AC1721C0BA270074AA86 /* EventKit.framework in Frameworks */,
 				3AB37653207F1C7600BA82F4 /* ImageIO.framework in Frameworks */,
+				75CDFC0E22A4E9120085B18D /* MTGSDKReward.framework in Frameworks */,
 				75DB9A5421CB55FA00A999ED /* Tapjoy.framework in Frameworks */,
 				96A2B0041FA30B8700BA5E71 /* WebKit.framework in Frameworks */,
 				75DB9A6021CB55FA00A999ED /* NendAd.framework in Frameworks */,
@@ -199,15 +208,27 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		75CDFC0322A4E9120085B18D /* Mintegral */ = {
+			isa = PBXGroup;
+			children = (
+				75CDFC0422A4E9120085B18D /* FSSRewardedVideoCustomEventMintegral.h */,
+				75CDFC0522A4E9120085B18D /* FSSRewardedVideoCustomEventMintegral.m */,
+				75CDFC0622A4E9120085B18D /* MTGSDK.framework */,
+				75CDFC0722A4E9120085B18D /* MTGSDKReward.framework */,
+			);
+			path = Mintegral;
+			sourceTree = "<group>";
+		};
 		75DB9A2921CB55FA00A999ED /* FluctSDK-AdnetworkSupport */ = {
 			isa = PBXGroup;
 			children = (
-				75DB9A2A21CB55FA00A999ED /* UnityAds */,
-				75DB9A3221CB55FA00A999ED /* Tapjoy */,
-				75DB9A3921CB55FA00A999ED /* AppLovin */,
 				75DB9A3D21CB55FA00A999ED /* AdColony */,
+				75DB9A3921CB55FA00A999ED /* AppLovin */,
 				75DB9A4321CB55FA00A999ED /* maio */,
+				75CDFC0322A4E9120085B18D /* Mintegral */,
 				75DB9A4921CB55FA00A999ED /* nend */,
+				75DB9A3221CB55FA00A999ED /* Tapjoy */,
+				75DB9A2A21CB55FA00A999ED /* UnityAds */,
 			);
 			path = "FluctSDK-AdnetworkSupport";
 			sourceTree = "<group>";
@@ -492,9 +513,12 @@
 		A3418C9D18D999C5003E302C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "fluct, Inc";
 				TargetAttributes = {
+					A3418CA418D999C5003E302C = {
+						ProvisioningStyle = Automatic;
+					};
 					A3418CC818D999C5003E302C = {
 						TestTargetID = A3418CA418D999C5003E302C;
 					};
@@ -502,7 +526,7 @@
 			};
 			buildConfigurationList = A3418CA018D999C5003E302C /* Build configuration list for PBXProject "SampleApp" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -558,6 +582,7 @@
 				A3418CE218D9A040003E302C /* BannerViewController.m in Sources */,
 				A3418CC218D999C5003E302C /* ViewController.m in Sources */,
 				75DB9A5121CB55FA00A999ED /* FSSRewardedVideoCustomEventUnityAds.m in Sources */,
+				75CDFC0C22A4E9120085B18D /* FSSRewardedVideoCustomEventMintegral.m in Sources */,
 				96BE0A1D1FA30FF200474C66 /* RewardedVideoViewController.m in Sources */,
 				75DB9A5221CB55FA00A999ED /* FSSRewardedVideoUnityAdsManager.m in Sources */,
 				75DB9A5D21CB55FA00A999ED /* FSSRewardedVideoMaioManager.m in Sources */,
@@ -628,19 +653,32 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -659,6 +697,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
 			name = Debug;
 		};
@@ -670,18 +709,31 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -695,6 +747,7 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
 			name = Release;
 		};
@@ -703,9 +756,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/SampleApp/FluctSDK",
 					"$(PROJECT_DIR)/SampleApp/FluctSDK-AdnetworkSupport/UnityAds",
 					"$(PROJECT_DIR)/SampleApp/FluctSDK-AdnetworkSupport/Tapjoy/Tapjoy.embeddedframework",
 					"$(PROJECT_DIR)/SampleApp/FluctSDK-AdnetworkSupport/AppLovin",
@@ -713,6 +768,8 @@
 					"$(PROJECT_DIR)/SampleApp/FluctSDK-AdnetworkSupport/maio",
 					"$(PROJECT_DIR)/SampleApp/FluctSDK-AdnetworkSupport/nend/NendAd.embeddedframework",
 					"$(PROJECT_DIR)/SampleApp/FluctSDK.embeddedframework",
+					"$(PROJECT_DIR)/SampleApp/FluctSDK-AdnetworkSupport/Mintegral",
+					"$(PROJECT_DIR)/SampleApp/FluctSDK-AdnetworkSupport/AdCorsa",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SampleApp/SampleApp-Prefix.pch";
@@ -727,7 +784,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.voyagegroup.fluct.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -737,9 +794,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/SampleApp/FluctSDK",
 					"$(PROJECT_DIR)/SampleApp/FluctSDK-AdnetworkSupport/UnityAds",
 					"$(PROJECT_DIR)/SampleApp/FluctSDK-AdnetworkSupport/Tapjoy/Tapjoy.embeddedframework",
 					"$(PROJECT_DIR)/SampleApp/FluctSDK-AdnetworkSupport/AppLovin",
@@ -747,6 +806,8 @@
 					"$(PROJECT_DIR)/SampleApp/FluctSDK-AdnetworkSupport/maio",
 					"$(PROJECT_DIR)/SampleApp/FluctSDK-AdnetworkSupport/nend/NendAd.embeddedframework",
 					"$(PROJECT_DIR)/SampleApp/FluctSDK.embeddedframework",
+					"$(PROJECT_DIR)/SampleApp/FluctSDK-AdnetworkSupport/Mintegral",
+					"$(PROJECT_DIR)/SampleApp/FluctSDK-AdnetworkSupport/AdCorsa",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SampleApp/SampleApp-Prefix.pch";
@@ -756,7 +817,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.voyagegroup.fluct.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
