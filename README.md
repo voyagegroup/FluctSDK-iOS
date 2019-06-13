@@ -17,6 +17,9 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## v5.4.0 2019/06/13
+* GoogleMobileAdsMediationFluctの作成
+
 ## v5.3.1 2019/06/05
 * SampleAppにMintegralを追加
 * 不要なログ出力の削除
