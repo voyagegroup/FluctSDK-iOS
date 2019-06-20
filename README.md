@@ -17,6 +17,9 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## v5.4.1 2019/6/20
+* AppStoreのDomain変更に伴う対応
+
 ## v5.4.0 2019/06/13
 * GoogleMobileAdsMediationFluctの作成
 
