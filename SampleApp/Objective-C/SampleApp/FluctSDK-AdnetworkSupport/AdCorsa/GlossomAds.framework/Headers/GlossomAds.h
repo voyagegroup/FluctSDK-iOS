@@ -378,18 +378,18 @@ typedef NS_ENUM(NSInteger, GlossomBillBoardAdLayoutHorizontal) {
 @interface GlossomAdsNativeAd : NSObject
 
 @property (nonatomic, weak, nullable) id<GlossomNativeAdDelegate> delegate;
-@property (nonatomic, copy, readonly) NSString *appId;
-@property (nonatomic, copy, readonly) NSString *zoneId;
+@property (nonatomic, copy, readonly) NSString * _Nonnull appId;
+@property (nonatomic, copy, readonly) NSString * _Nonnull zoneId;
 @property (nonatomic, copy, nullable) NSString *title;
 
-- (instancetype)init __unavailable;
+- (instancetype _Nonnull)init __unavailable;
 
 /**
  *  Initialize a Native ad with zoneId
  *
  *  @param zoneId   The zone from which the ad should play.
  */
-- (instancetype)initWithZoneId:(NSString *)zoneId;
+- (instancetype _Nonnull)initWithZoneId:(NSString *_Nonnull)zoneId;
 
 /**
  *  Load a Native ad.
@@ -453,3 +453,4 @@ typedef NS_ENUM(NSInteger, GlossomBillBoardAdLayoutHorizontal) {
  */
 - (void)onGlossomNativeAdPlayWithError:(nullable NSError *)error;
 @end
+

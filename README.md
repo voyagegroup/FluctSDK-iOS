@@ -17,6 +17,11 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## v5.5.0 2019/6/25
+* GoogleMobileAdsのインタースティシャル広告のカスタムイベントに対応
+* SampleAppにAdCorsaを追加
+* AdCorsaの対応バージョンを1.10.4にアップデート
+
 ## v5.4.1 2019/6/20
 * AppStoreのDomain変更に伴う対応
 

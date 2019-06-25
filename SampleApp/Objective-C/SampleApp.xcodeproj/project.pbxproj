@@ -12,6 +12,8 @@
 		3AB37653207F1C7600BA82F4 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB37652207F1C7600BA82F4 /* ImageIO.framework */; };
 		7451C8EB21E8745800C42F1F /* FluctSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7451C8E921E8745800C42F1F /* FluctSDKResources.bundle */; };
 		7451C8EC21E8745800C42F1F /* FluctSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7451C8EA21E8745800C42F1F /* FluctSDK.framework */; };
+		7547CCC722C09D6800549A07 /* GlossomAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7547CCC422C09D6800549A07 /* GlossomAds.framework */; };
+		7547CCC822C09D6800549A07 /* FSSRewardedVideoCustomEventAdCorsa.m in Sources */ = {isa = PBXBuildFile; fileRef = 7547CCC522C09D6800549A07 /* FSSRewardedVideoCustomEventAdCorsa.m */; };
 		75C0AC1721C0BA270074AA86 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C0AC1621C0BA270074AA86 /* EventKit.framework */; };
 		75C0AC1921C0BA2C0074AA86 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C0AC1821C0BA2B0074AA86 /* MessageUI.framework */; };
 		75C0AC1B21C0BA320074AA86 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C0AC1A21C0BA320074AA86 /* WatchConnectivity.framework */; };
@@ -78,6 +80,9 @@
 		3AB37652207F1C7600BA82F4 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		7451C8E921E8745800C42F1F /* FluctSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FluctSDKResources.bundle; sourceTree = "<group>"; };
 		7451C8EA21E8745800C42F1F /* FluctSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FluctSDK.framework; sourceTree = "<group>"; };
+		7547CCC422C09D6800549A07 /* GlossomAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GlossomAds.framework; sourceTree = "<group>"; };
+		7547CCC522C09D6800549A07 /* FSSRewardedVideoCustomEventAdCorsa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoCustomEventAdCorsa.m; sourceTree = "<group>"; };
+		7547CCC622C09D6800549A07 /* FSSRewardedVideoCustomEventAdCorsa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoCustomEventAdCorsa.h; sourceTree = "<group>"; };
 		75C0AC1621C0BA270074AA86 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		75C0AC1821C0BA2B0074AA86 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		75C0AC1A21C0BA320074AA86 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
@@ -158,6 +163,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7547CCC722C09D6800549A07 /* GlossomAds.framework in Frameworks */,
 				75DB9A5E21CB55FA00A999ED /* Maio.framework in Frameworks */,
 				75C0AC2521C0BA4E0074AA86 /* libsqlite3.0.tbd in Frameworks */,
 				75CDFC0D22A4E9120085B18D /* MTGSDK.framework in Frameworks */,
@@ -208,6 +214,16 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		7547CCC322C09D6800549A07 /* AdCorsa */ = {
+			isa = PBXGroup;
+			children = (
+				7547CCC422C09D6800549A07 /* GlossomAds.framework */,
+				7547CCC622C09D6800549A07 /* FSSRewardedVideoCustomEventAdCorsa.h */,
+				7547CCC522C09D6800549A07 /* FSSRewardedVideoCustomEventAdCorsa.m */,
+			);
+			path = AdCorsa;
+			sourceTree = "<group>";
+		};
 		75CDFC0322A4E9120085B18D /* Mintegral */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				75DB9A3D21CB55FA00A999ED /* AdColony */,
+				7547CCC322C09D6800549A07 /* AdCorsa */,
 				75DB9A3921CB55FA00A999ED /* AppLovin */,
 				75DB9A4321CB55FA00A999ED /* maio */,
 				75CDFC0322A4E9120085B18D /* Mintegral */,
@@ -572,6 +589,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7547CCC822C09D6800549A07 /* FSSRewardedVideoCustomEventAdCorsa.m in Sources */,
 				96ABC5C01F2579CB00C2A078 /* NativeViewController.m in Sources */,
 				3A24ECA11D810B600014B706 /* BannerTabBarController.m in Sources */,
 				3A24ECA41D81207E0014B706 /* BannerNavigationController.m in Sources */,

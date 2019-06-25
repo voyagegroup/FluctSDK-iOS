@@ -42,6 +42,8 @@
 		7580FAA821CB567D00653042 /* FSSRewardedVideoCustomEventNend.m in Sources */ = {isa = PBXBuildFile; fileRef = 7580FA9321CB567D00653042 /* FSSRewardedVideoCustomEventNend.m */; };
 		7580FAA921CB567D00653042 /* NendAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7580FA9521CB567D00653042 /* NendAd.framework */; };
 		7580FAAA21CB567D00653042 /* NendAdResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7580FA9721CB567D00653042 /* NendAdResource.bundle */; };
+		75BE32AE22C09E3100713D4B /* GlossomAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75BE32AB22C09E3100713D4B /* GlossomAds.framework */; };
+		75BE32AF22C09E3100713D4B /* FSSRewardedVideoCustomEventAdCorsa.m in Sources */ = {isa = PBXBuildFile; fileRef = 75BE32AC22C09E3100713D4B /* FSSRewardedVideoCustomEventAdCorsa.m */; };
 		960884221F9EC23B005F65FD /* RewardedVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960884211F9EC23A005F65FD /* RewardedVideoViewController.swift */; };
 		9661EEFA1F15FDAE00286B72 /* NativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9661EEF91F15FDAE00286B72 /* NativeViewController.swift */; };
 		9661EEFC1F15FDD800286B72 /* NativeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9661EEFB1F15FDD800286B72 /* NativeTableViewController.swift */; };
@@ -105,6 +107,9 @@
 		7580FA9521CB567D00653042 /* NendAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NendAd.framework; sourceTree = "<group>"; };
 		7580FA9721CB567D00653042 /* NendAdResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NendAdResource.bundle; sourceTree = "<group>"; };
 		7580FA9821CB567D00653042 /* FSSRewardedVideoCustomEventNend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoCustomEventNend.h; sourceTree = "<group>"; };
+		75BE32AB22C09E3100713D4B /* GlossomAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GlossomAds.framework; sourceTree = "<group>"; };
+		75BE32AC22C09E3100713D4B /* FSSRewardedVideoCustomEventAdCorsa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSSRewardedVideoCustomEventAdCorsa.m; sourceTree = "<group>"; };
+		75BE32AD22C09E3100713D4B /* FSSRewardedVideoCustomEventAdCorsa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSSRewardedVideoCustomEventAdCorsa.h; sourceTree = "<group>"; };
 		960884211F9EC23A005F65FD /* RewardedVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardedVideoViewController.swift; sourceTree = "<group>"; };
 		9661EEF91F15FDAE00286B72 /* NativeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeViewController.swift; sourceTree = "<group>"; };
 		9661EEFB1F15FDD800286B72 /* NativeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeTableViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75BE32AE22C09E3100713D4B /* GlossomAds.framework in Frameworks */,
 				7580FAA721CB567D00653042 /* Maio.framework in Frameworks */,
 				7519966221C0B5AD007C62CE /* libc++.tbd in Frameworks */,
 				7451C8F221E874E000C42F1F /* FluctSDK.framework in Frameworks */,
@@ -186,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				7580FA8621CB567D00653042 /* AdColony */,
+				75BE32AA22C09E3100713D4B /* AdCorsa */,
 				7580FA8221CB567D00653042 /* AppLovin */,
 				7580FA8C21CB567D00653042 /* maio */,
 				757D0C8D22A4EE22002B33D3 /* Mintegral */,
@@ -296,6 +303,16 @@
 				7580FA9721CB567D00653042 /* NendAdResource.bundle */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		75BE32AA22C09E3100713D4B /* AdCorsa */ = {
+			isa = PBXGroup;
+			children = (
+				75BE32AB22C09E3100713D4B /* GlossomAds.framework */,
+				75BE32AC22C09E3100713D4B /* FSSRewardedVideoCustomEventAdCorsa.m */,
+				75BE32AD22C09E3100713D4B /* FSSRewardedVideoCustomEventAdCorsa.h */,
+			);
+			path = AdCorsa;
 			sourceTree = "<group>";
 		};
 		960884201F9EC17A005F65FD /* RewardedVideo */ = {
@@ -465,6 +482,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75BE32AF22C09E3100713D4B /* FSSRewardedVideoCustomEventAdCorsa.m in Sources */,
 				9661EEFC1F15FDD800286B72 /* NativeTableViewController.swift in Sources */,
 				969EC2021D3E11C1005F475E /* InterstitialViewController.swift in Sources */,
 				96F22C391D3899D300C3136E /* BannerViewController.swift in Sources */,
