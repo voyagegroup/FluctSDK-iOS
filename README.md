@@ -17,6 +17,10 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## v5.5.1 2019/07/03
+* GoogleMobileAdsSDKの依存バージョンの不具合を修正
+* iOS13においてRTBの動画リワード画面がスワイプで閉じられてしまう問題の対応
+
 ## v5.5.0 2019/6/25
 * GoogleMobileAdsのインタースティシャル広告のカスタムイベントに対応
 * SampleAppにAdCorsaを追加
