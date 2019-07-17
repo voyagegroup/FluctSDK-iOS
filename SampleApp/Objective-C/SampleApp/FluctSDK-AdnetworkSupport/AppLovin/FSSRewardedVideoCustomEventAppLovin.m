@@ -10,7 +10,6 @@
 
 @interface FSSRewardedVideoCustomEventAppLovin () <ALAdLoadDelegate, ALAdDisplayDelegate, ALAdVideoPlaybackDelegate>
 
-@property (nonatomic, copy) NSString *placement;
 @property (nonatomic) ALIncentivizedInterstitialAd *rewardedVideo;
 
 + (ALSdk *)sharedWithKey:(NSString *)sdkKey;
@@ -25,9 +24,6 @@
 }
 
 + (ALIncentivizedInterstitialAd *)rewardedVideoWithSdk:(ALSdk *)sdk zoneName:(nonnull NSString *)zoneName {
-    if ([zoneName length] == 0) {
-        return [[ALIncentivizedInterstitialAd alloc] initWithSdk:sdk];
-    }
     return [[ALIncentivizedInterstitialAd alloc] initWithZoneIdentifier:zoneName sdk:sdk];
 }
 
@@ -44,7 +40,6 @@
         _rewardedVideo = [FSSRewardedVideoCustomEventAppLovin rewardedVideoWithSdk:applovinSDK zoneName:dictionary[@"zone"]];
         _rewardedVideo.adDisplayDelegate = self;
         _rewardedVideo.adVideoPlaybackDelegate = self;
-        _placement = dictionary[@"placement"];
     }
     return self;
 }
@@ -65,12 +60,8 @@
 
 - (void)presentRewardedVideoAdFromViewController:(UIViewController *)viewController {
     if ([self.rewardedVideo isReadyForDisplay]) {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
         [self.rewardedVideo showOver:viewController.view.window
-                           placement:self.placement
                            andNotify:nil];
-#pragma clang diagnostic pop
     } else {
         NSError *error = [NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain code:FSSRewardedVideoAdErrorNotReady userInfo:nil];
         [self.delegate rewardedVideoDidFailToPlayForCustomEvent:self fluctError:error adnetworkError:kALErrorCodeIncentiviziedAdNotPreloaded];

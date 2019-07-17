@@ -17,6 +17,9 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## v5.6.1 2019/07/17
+* AppLovinのZone機能に対応
+
 ## v5.6.0 2019/07/12
 * プレイアブル広告においてiOSアプリの広告で遷移先がAppStoreの場合、App内で表示する機能を追加
 
