@@ -5,10 +5,10 @@
 //  Copyright © 2017年 fluct, Inc. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
+
 #import "FSSAdRequestTargeting.h"
 #import "FSSRewardedVideoSetting.h"
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

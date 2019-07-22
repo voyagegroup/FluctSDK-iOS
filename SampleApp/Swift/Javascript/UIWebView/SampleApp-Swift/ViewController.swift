@@ -30,7 +30,7 @@ class ViewController: UIViewController, UIWebViewDelegate {
         // 2. fluctタグを埋め込んだHTMLを表示する前に置換用文字列を実際の値へ置換する
         let adhtml = FileUtils.readString(forFileName: "ad", ofType: "html")
             .replacingOccurrences(of: "${FLUCT_IFA}", with: ifa)
-            .replacingOccurrences(of: "${FLUCT_LMT}", with:"\(lmt)")
+            .replacingOccurrences(of: "${FLUCT_LMT}", with: "\(lmt)")
             .replacingOccurrences(of: "${FLUCT_BUNDLE}", with: bundle)
 
         // 3. 置換したHTMLをWebViewで読み込む

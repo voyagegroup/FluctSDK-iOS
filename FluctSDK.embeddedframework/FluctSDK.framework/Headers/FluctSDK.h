@@ -1,29 +1,43 @@
 //
 //  FluctSDK.h
+//  FluctSDK
 //
-//  Fluct SDK
-//  Copyright 2011-2014 fluct, Inc. All rights reserved.
+//  Copyright © 2019 fluct, Inc. All rights reserved.
 //
+
+#import <UIKit/UIKit.h>
+
+//! Project version number for FluctSDK.
+FOUNDATION_EXPORT double FluctSDKVersionNumber;
+
+//! Project version string for FluctSDK.
+FOUNDATION_EXPORT const unsigned char FluctSDKVersionString[];
+
+// In this header, you should import all the public headers of your framework using statements like #import <FluctSDK/PublicHeader.h>
+#import <FluctSDK/FSSBannerView.h>
+#import <FluctSDK/FluctBannerView.h>
+
+#import <FluctSDK/FSSInterstitialView.h>
+#import <FluctSDK/FluctInterstitialView.h>
+
+#import <FluctSDK/FSSNativeTableViewCell.h>
+#import <FluctSDK/FSSNativeView.h>
+
+#import <FluctSDK/FSSRewardedVideo.h>
+#import <FluctSDK/FSSRewardedVideoAdnetworkActivation.h>
+#import <FluctSDK/FSSRewardedVideoCustomEvent.h>
+#import <FluctSDK/FSSRewardedVideoError.h>
+#import <FluctSDK/FSSRewardedVideoSetting.h>
+#import <FluctSDK/FSSRewardedVideoWorkQueue.h>
+
+#import <FluctSDK/FSSAdRequestTargeting.h>
+#import <FluctSDK/FSSConfigurationOptions.h>
 
 /*
  * SDKの各処理を行う
  * ・広告表示設定 (表示処理はFluctBannerViewにて行われる)
  * ・コンバージョン通知処理
  */
-
-#import "FSSAdRequestTargeting.h"
-#import "FSSBannerView.h"
-#import "FSSConfigurationOptions.h"
-#import "FSSInterstitialView.h"
-#import "FSSNativeTableViewCell.h"
-#import "FSSNativeView.h"
-#import "FSSRewardedVideo.h"
-#import "FSSRewardedVideoCustomEvent.h"
-#import "FSSRewardedVideoError.h"
-#import "FSSRewardedVideoWorkQueue.h"
-#import "FluctBannerView.h"
-#import "FluctInterstitialView.h"
-#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

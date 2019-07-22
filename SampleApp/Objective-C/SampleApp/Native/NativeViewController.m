@@ -13,7 +13,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    FSSNativeView *nativeView = [[FSSNativeView alloc] initWithFrame:CGRectMake(0, 100, 320, 50) groupID: @"1000076934" unitID: @"1000115021"];
+    FSSNativeView *nativeView = [[FSSNativeView alloc] initWithFrame:CGRectMake(0, 100, 320, 50) groupID:@"1000076934" unitID:@"1000115021"];
     [nativeView loadRequest];
     [self.view addSubview:nativeView];
 }

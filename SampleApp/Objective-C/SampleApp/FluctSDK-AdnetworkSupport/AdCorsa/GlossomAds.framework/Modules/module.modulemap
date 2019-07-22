@@ -1,6 +1,0 @@
-framework module GlossomAds {
-  umbrella header "GlossomAds.h"
-
-  export *
-  module * { export * }
-}

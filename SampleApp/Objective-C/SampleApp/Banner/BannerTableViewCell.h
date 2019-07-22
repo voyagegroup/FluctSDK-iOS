@@ -9,5 +9,5 @@
 @import FluctSDK;
 
 @interface BannerTableViewCell : UITableViewCell
-@property(weak, nonatomic) IBOutlet FSSBannerView *banner;
+@property (weak, nonatomic) IBOutlet FSSBannerView *banner;
 @end

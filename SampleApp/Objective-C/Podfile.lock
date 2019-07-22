@@ -1,0 +1,76 @@
+PODS:
+  - AdColony (3.3.8.1)
+  - AppLovinSDK (5.1.2)
+  - FluctSDK (5.6.2)
+  - FluctSDK-MediationAdapter (5.6.2):
+    - FluctSDK-MediationAdapter/AdColony (= 5.6.2)
+    - FluctSDK-MediationAdapter/AdCorsa (= 5.6.2)
+    - FluctSDK-MediationAdapter/AppLovin (= 5.6.2)
+    - FluctSDK-MediationAdapter/maio (= 5.6.2)
+    - FluctSDK-MediationAdapter/Mintegral (= 5.6.2)
+    - FluctSDK-MediationAdapter/nend (= 5.6.2)
+    - FluctSDK-MediationAdapter/Tapjoy (= 5.6.2)
+    - FluctSDK-MediationAdapter/UnityAds (= 5.6.2)
+  - FluctSDK-MediationAdapter/AdColony (5.6.2):
+    - AdColony
+    - FluctSDK
+  - FluctSDK-MediationAdapter/AdCorsa (5.6.2):
+    - FluctSDK
+    - GlossomAds
+  - FluctSDK-MediationAdapter/AppLovin (5.6.2):
+    - AppLovinSDK
+    - FluctSDK
+  - FluctSDK-MediationAdapter/maio (5.6.2):
+    - FluctSDK
+    - MaioSDK
+  - FluctSDK-MediationAdapter/Mintegral (5.6.2):
+    - FluctSDK
+  - FluctSDK-MediationAdapter/nend (5.6.2):
+    - FluctSDK
+    - NendSDK_iOS
+  - FluctSDK-MediationAdapter/Tapjoy (5.6.2):
+    - FluctSDK
+    - TapjoySDK
+  - FluctSDK-MediationAdapter/UnityAds (5.6.2):
+    - FluctSDK
+    - UnityAds
+  - GlossomAds (2.0.0)
+  - MaioSDK (1.4.7)
+  - NendSDK_iOS (5.1.1)
+  - TapjoySDK (12.3.1)
+  - UnityAds (3.1.0)
+
+DEPENDENCIES:
+  - FluctSDK (from `../../FluctSDK.podspec`)
+  - FluctSDK-MediationAdapter (from `../../FluctSDK-MediationAdapter.podspec`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AdColony
+    - AppLovinSDK
+    - GlossomAds
+    - MaioSDK
+    - NendSDK_iOS
+    - TapjoySDK
+    - UnityAds
+
+EXTERNAL SOURCES:
+  FluctSDK:
+    :path: "../../FluctSDK.podspec"
+  FluctSDK-MediationAdapter:
+    :path: "../../FluctSDK-MediationAdapter.podspec"
+
+SPEC CHECKSUMS:
+  AdColony: 21c9cdcc780854d406e213cb1e5ef9f2b165cca3
+  AppLovinSDK: 5a6c0ab59aaed00da1bc95d54e2065266ab3b379
+  FluctSDK: 0467c7c0d1d7207a13209636250f5cd2b417a4ae
+  FluctSDK-MediationAdapter: 6f9f5ffa5d675691a8b28dffd7ecf8db4f527d81
+  GlossomAds: 0bd35eccb23cfacbe1577e24c03e90e1ab1a975c
+  MaioSDK: 6ad318ee8198b1e4399812791e09f8e317493f39
+  NendSDK_iOS: 0e86624061da461eb5a8e825e7b955e556f61541
+  TapjoySDK: 753e103874719a63dd37c479bd8046db3c274cd6
+  UnityAds: 7fb217f6a354abe1f08a6bfc90bd2391fff72e6b
+
+PODFILE CHECKSUM: 28852a35ed28b8285b526c2583884d80eab5553d
+
+COCOAPODS: 1.7.3

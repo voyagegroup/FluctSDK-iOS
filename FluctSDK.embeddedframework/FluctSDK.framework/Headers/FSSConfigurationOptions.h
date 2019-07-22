@@ -2,7 +2,6 @@
 //  FSSConfigurationOptions.h
 //  FluctSDK
 //
-//  Created by 清 貴幸 on 2017/12/13.
 //  Copyright © 2017年 fluct, Inc. All rights reserved.
 //
 

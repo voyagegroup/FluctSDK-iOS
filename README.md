@@ -17,6 +17,10 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## V5.6.2 2019/07/22
+* FluctSDKのSampleプロジェクトにCocoaPodsを使用する
+* 使用していないプロパティの削除
+
 ## v5.6.1 2019/07/17
 * AppLovinのZone機能に対応
 
