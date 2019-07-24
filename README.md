@@ -17,6 +17,9 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## V5.7.0 2019/07/24
+* RTBの動画リワードにおいて、エンドカード選択ロジックを改良
+
 ## V5.6.2 2019/07/22
 * FluctSDKのSampleプロジェクトにCocoaPodsを使用する
 * 使用していないプロパティの削除

@@ -12,6 +12,7 @@
 //ref: https://github.com/voyagegroup/FluctSDK-iOS-Dev/issues/731
 @property id<FSSRewardedVideoAdMobManagerDelegate> delegate;
 @property NSString *currentAdUnitId;
+@property NSString *applicationID;
 @end
 
 @implementation FSSRewardedVideoAdMobManager
@@ -27,15 +28,20 @@
 - (void)loadWithApplicationID:(NSString *)applicationID
                      adUnitID:(NSString *)adUnitID
                      delegate:(id<FSSRewardedVideoAdMobManagerDelegate>)delegate {
+    if (!self.applicationID) {
+        __weak typeof(self) weakSelf = self;
+        [[GADMobileAds sharedInstance] startWithCompletionHandler:^(GADInitializationStatus *_Nonnull status) {
+            weakSelf.applicationID = applicationID;
+            GADRewardBasedVideoAd.sharedInstance.delegate = weakSelf;
+            [weakSelf loadWithApplicationID:applicationID adUnitID:adUnitID delegate:delegate];
+        }];
+        return;
+    }
+
     if (!self.currentAdUnitId) {
         //Now no AdUnit is proccessed
         self.currentAdUnitId = adUnitID;
         self.delegate = delegate;
-        static dispatch_once_t onceToken;
-        dispatch_once(&onceToken, ^{
-            [GADMobileAds configureWithApplicationID:applicationID];
-            [GADRewardBasedVideoAd sharedInstance].delegate = self;
-        });
         GADRequest *request = [GADRequest request];
         [[GADRewardBasedVideoAd sharedInstance] loadRequest:request withAdUnitID:adUnitID];
         return;
