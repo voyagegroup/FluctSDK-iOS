@@ -1,37 +1,37 @@
 PODS:
   - AdColony (3.3.8.1)
   - AppLovinSDK (5.1.2)
-  - FluctSDK (5.7.0)
-  - FluctSDK-MediationAdapter (5.7.0):
-    - FluctSDK-MediationAdapter/AdColony (= 5.7.0)
-    - FluctSDK-MediationAdapter/AdCorsa (= 5.7.0)
-    - FluctSDK-MediationAdapter/AppLovin (= 5.7.0)
-    - FluctSDK-MediationAdapter/maio (= 5.7.0)
-    - FluctSDK-MediationAdapter/Mintegral (= 5.7.0)
-    - FluctSDK-MediationAdapter/nend (= 5.7.0)
-    - FluctSDK-MediationAdapter/Tapjoy (= 5.7.0)
-    - FluctSDK-MediationAdapter/UnityAds (= 5.7.0)
-  - FluctSDK-MediationAdapter/AdColony (5.7.0):
+  - FluctSDK (5.7.1)
+  - FluctSDK-MediationAdapter (5.7.1):
+    - FluctSDK-MediationAdapter/AdColony (= 5.7.1)
+    - FluctSDK-MediationAdapter/AdCorsa (= 5.7.1)
+    - FluctSDK-MediationAdapter/AppLovin (= 5.7.1)
+    - FluctSDK-MediationAdapter/maio (= 5.7.1)
+    - FluctSDK-MediationAdapter/Mintegral (= 5.7.1)
+    - FluctSDK-MediationAdapter/nend (= 5.7.1)
+    - FluctSDK-MediationAdapter/Tapjoy (= 5.7.1)
+    - FluctSDK-MediationAdapter/UnityAds (= 5.7.1)
+  - FluctSDK-MediationAdapter/AdColony (5.7.1):
     - AdColony
     - FluctSDK
-  - FluctSDK-MediationAdapter/AdCorsa (5.7.0):
+  - FluctSDK-MediationAdapter/AdCorsa (5.7.1):
     - FluctSDK
     - GlossomAds
-  - FluctSDK-MediationAdapter/AppLovin (5.7.0):
+  - FluctSDK-MediationAdapter/AppLovin (5.7.1):
     - AppLovinSDK
     - FluctSDK
-  - FluctSDK-MediationAdapter/maio (5.7.0):
+  - FluctSDK-MediationAdapter/maio (5.7.1):
     - FluctSDK
     - MaioSDK
-  - FluctSDK-MediationAdapter/Mintegral (5.7.0):
+  - FluctSDK-MediationAdapter/Mintegral (5.7.1):
     - FluctSDK
-  - FluctSDK-MediationAdapter/nend (5.7.0):
+  - FluctSDK-MediationAdapter/nend (5.7.1):
     - FluctSDK
     - NendSDK_iOS
-  - FluctSDK-MediationAdapter/Tapjoy (5.7.0):
+  - FluctSDK-MediationAdapter/Tapjoy (5.7.1):
     - FluctSDK
     - TapjoySDK
-  - FluctSDK-MediationAdapter/UnityAds (5.7.0):
+  - FluctSDK-MediationAdapter/UnityAds (5.7.1):
     - FluctSDK
     - UnityAds
   - GlossomAds (2.0.0)
@@ -45,7 +45,7 @@ DEPENDENCIES:
   - FluctSDK-MediationAdapter (from `../../../FluctSDK-MediationAdapter.podspec`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://cdn.cocoapods.org/:
     - AdColony
     - AppLovinSDK
     - GlossomAds
@@ -63,14 +63,14 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AdColony: 21c9cdcc780854d406e213cb1e5ef9f2b165cca3
   AppLovinSDK: 5a6c0ab59aaed00da1bc95d54e2065266ab3b379
-  FluctSDK: 02bc10237cc82199bba1fb3e208fae00c4b45ec2
-  FluctSDK-MediationAdapter: 2c5d1a684ff125baf6fafe8aff5062b1dcab8447
+  FluctSDK: de082b0f95d1b52b1219e66c74a3e8cb8a81f1d4
+  FluctSDK-MediationAdapter: 24008aa2e0d37fed24945869a2e1e5056401afa7
   GlossomAds: 0bd35eccb23cfacbe1577e24c03e90e1ab1a975c
   MaioSDK: 6ad318ee8198b1e4399812791e09f8e317493f39
   NendSDK_iOS: 0e86624061da461eb5a8e825e7b955e556f61541
   TapjoySDK: 753e103874719a63dd37c479bd8046db3c274cd6
   UnityAds: 7fb217f6a354abe1f08a6bfc90bd2391fff72e6b
 
-PODFILE CHECKSUM: cbba141b04e7ac4bab8fb62cc8779eadfbeee4c4
+PODFILE CHECKSUM: 8f3f1ef3b8eab0fb0ef599541711970178f996cc
 
-COCOAPODS: 1.7.3
+COCOAPODS: 1.7.5

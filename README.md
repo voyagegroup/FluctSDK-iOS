@@ -17,6 +17,9 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## V5.7.1 2019/07/29
+* ストアへアップロードする際に起こる`FluctSDKResources`に起因するエラーの対応
+
 ## V5.7.0 2019/07/24
 * RTBの動画リワードにおいて、エンドカード選択ロジックを改良
 
