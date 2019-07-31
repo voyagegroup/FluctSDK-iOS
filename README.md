@@ -17,6 +17,9 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## V5.8.0 2019/07/31
+* RTBに必要な情報をリクエストに追加
+
 ## V5.7.1 2019/07/29
 * ストアへアップロードする際に起こる`FluctSDKResources`に起因するエラーの対応
 

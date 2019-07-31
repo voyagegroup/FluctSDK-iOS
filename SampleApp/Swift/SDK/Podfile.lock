@@ -1,37 +1,37 @@
 PODS:
   - AdColony (3.3.8.1)
   - AppLovinSDK (5.1.2)
-  - FluctSDK (5.7.1)
-  - FluctSDK-MediationAdapter (5.7.1):
-    - FluctSDK-MediationAdapter/AdColony (= 5.7.1)
-    - FluctSDK-MediationAdapter/AdCorsa (= 5.7.1)
-    - FluctSDK-MediationAdapter/AppLovin (= 5.7.1)
-    - FluctSDK-MediationAdapter/maio (= 5.7.1)
-    - FluctSDK-MediationAdapter/Mintegral (= 5.7.1)
-    - FluctSDK-MediationAdapter/nend (= 5.7.1)
-    - FluctSDK-MediationAdapter/Tapjoy (= 5.7.1)
-    - FluctSDK-MediationAdapter/UnityAds (= 5.7.1)
-  - FluctSDK-MediationAdapter/AdColony (5.7.1):
+  - FluctSDK (5.8.0)
+  - FluctSDK-MediationAdapter (5.8.0):
+    - FluctSDK-MediationAdapter/AdColony (= 5.8.0)
+    - FluctSDK-MediationAdapter/AdCorsa (= 5.8.0)
+    - FluctSDK-MediationAdapter/AppLovin (= 5.8.0)
+    - FluctSDK-MediationAdapter/maio (= 5.8.0)
+    - FluctSDK-MediationAdapter/Mintegral (= 5.8.0)
+    - FluctSDK-MediationAdapter/nend (= 5.8.0)
+    - FluctSDK-MediationAdapter/Tapjoy (= 5.8.0)
+    - FluctSDK-MediationAdapter/UnityAds (= 5.8.0)
+  - FluctSDK-MediationAdapter/AdColony (5.8.0):
     - AdColony
     - FluctSDK
-  - FluctSDK-MediationAdapter/AdCorsa (5.7.1):
+  - FluctSDK-MediationAdapter/AdCorsa (5.8.0):
     - FluctSDK
     - GlossomAds
-  - FluctSDK-MediationAdapter/AppLovin (5.7.1):
+  - FluctSDK-MediationAdapter/AppLovin (5.8.0):
     - AppLovinSDK
     - FluctSDK
-  - FluctSDK-MediationAdapter/maio (5.7.1):
+  - FluctSDK-MediationAdapter/maio (5.8.0):
     - FluctSDK
     - MaioSDK
-  - FluctSDK-MediationAdapter/Mintegral (5.7.1):
+  - FluctSDK-MediationAdapter/Mintegral (5.8.0):
     - FluctSDK
-  - FluctSDK-MediationAdapter/nend (5.7.1):
+  - FluctSDK-MediationAdapter/nend (5.8.0):
     - FluctSDK
     - NendSDK_iOS
-  - FluctSDK-MediationAdapter/Tapjoy (5.7.1):
+  - FluctSDK-MediationAdapter/Tapjoy (5.8.0):
     - FluctSDK
     - TapjoySDK
-  - FluctSDK-MediationAdapter/UnityAds (5.7.1):
+  - FluctSDK-MediationAdapter/UnityAds (5.8.0):
     - FluctSDK
     - UnityAds
   - GlossomAds (2.0.0)
@@ -63,8 +63,8 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AdColony: 21c9cdcc780854d406e213cb1e5ef9f2b165cca3
   AppLovinSDK: 5a6c0ab59aaed00da1bc95d54e2065266ab3b379
-  FluctSDK: de082b0f95d1b52b1219e66c74a3e8cb8a81f1d4
-  FluctSDK-MediationAdapter: 24008aa2e0d37fed24945869a2e1e5056401afa7
+  FluctSDK: 73d50b2d09be3a3514f14300b3b7906c7be470a1
+  FluctSDK-MediationAdapter: 461c02675abcdd8ae1c9a69474bb84ff2e994f43
   GlossomAds: 0bd35eccb23cfacbe1577e24c03e90e1ab1a975c
   MaioSDK: 6ad318ee8198b1e4399812791e09f8e317493f39
   NendSDK_iOS: 0e86624061da461eb5a8e825e7b955e556f61541
