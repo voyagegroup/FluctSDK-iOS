@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)loadFailure:(AdColonyAdRequestError *)error;
 - (void)open;
 - (void)close;
+- (void)rewarded;
 - (void)click;
 - (void)expired;
 @end

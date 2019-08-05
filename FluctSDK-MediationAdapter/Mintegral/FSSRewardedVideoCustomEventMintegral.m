@@ -109,7 +109,7 @@ typedef NS_ENUM(NSInteger, MintegralErrorExtend) {
         NSError *fluctError = [NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                   code:FSSRewardedVideoAdErrorLoadFailed
                                               userInfo:nil];
-        [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:self
+        [weakSelf.delegate rewardedVideoDidFailToPlayForCustomEvent:self
                                                          fluctError:fluctError
                                                      adnetworkError:error.code];
     });

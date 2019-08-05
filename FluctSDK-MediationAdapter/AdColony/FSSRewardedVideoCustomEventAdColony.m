@@ -77,7 +77,7 @@ static NSString *const FSSAdColonySupportVersion = @"8.0";
         self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
         [self.delegate rewardedVideoDidFailToLoadForCustomEvent:self
                                                      fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
-                                                                                    code:FSSRewardedVideoAdErrorBadRequest
+                                                                                    code:FSSRewardedVideoAdErrorTimeout
                                                                                 userInfo:nil]
                                                  adnetworkError:AdColonyVideoErrorExtendendTimeout];
     }
@@ -128,9 +128,12 @@ static NSString *const FSSAdColonySupportVersion = @"8.0";
 }
 
 - (void)close {
-    [self.delegate rewardedVideoShouldRewardForCustomEvent:self];
     [self.delegate rewardedVideoWillDisappearForCustomEvent:self];
     [self.delegate rewardedVideoDidDisappearForCustomEvent:self];
+}
+
+- (void)rewarded {
+    [self.delegate rewardedVideoShouldRewardForCustomEvent:self];
 }
 
 - (void)click {

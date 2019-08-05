@@ -99,7 +99,7 @@ static const NSInteger timeoutSecond = 30;
         self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
         [self.delegate rewardedVideoDidFailToLoadForCustomEvent:self
                                                      fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
-                                                                                    code:FSSRewardedVideoAdErrorBadRequest
+                                                                                    code:FSSRewardedVideoAdErrorTimeout
                                                                                 userInfo:nil]
                                                  adnetworkError:UnityAdsErrorExtendTimeout];
     }
@@ -214,7 +214,7 @@ static const NSInteger timeoutSecond = 30;
         weakSelf.isInitialNotificationForAdapter = NO;
         [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:weakSelf
                                                          fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
-                                                                                        code:FSSRewardedVideoAdErrorLoadFailed
+                                                                                        code:FSSRewardedVideoAdErrorNoAds
                                                                                     userInfo:@{NSLocalizedDescriptionKey : @"no ad"}]
                                                      adnetworkError:UnityAdsErrorExtendNoFill];
     });

@@ -17,6 +17,10 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## V5.8.1 2019/08/05
+* 動画リワードAdColonyメディエーションのリワード付与コールバックのタイミングを修正
+* 内部処理の変更および改善
+
 ## V5.8.0 2019/07/31
 * RTBに必要な情報をリクエストに追加
 

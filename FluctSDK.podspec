@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
     s.name                  = "FluctSDK"
     s.summary               = "FluctSDK ad Framework"
     s.license               = { :type => "Copyright", :text => "Copyright (c) fluct,Inc. All rights reserved." }
-    s.version               = "5.8.0"
+    s.version               = "5.8.1"
     s.author                = "fluct,Inc."
     s.requires_arc          = true
     s.homepage              = "https://fluct.jp/"

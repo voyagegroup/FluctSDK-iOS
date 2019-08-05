@@ -66,7 +66,7 @@ static NSString *const FSSMaioSupportVersion = @"8.0";
         self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
         [self.delegate rewardedVideoDidFailToLoadForCustomEvent:self
                                                      fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
-                                                                                    code:FSSRewardedVideoAdErrorBadRequest
+                                                                                    code:FSSRewardedVideoAdErrorTimeout
                                                                                 userInfo:nil]
                                                  adnetworkError:MaioFailReasonExtendTimeout];
     }

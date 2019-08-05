@@ -64,6 +64,15 @@ typedef NS_ENUM(NSUInteger, AdColonyManagerState) {
                       completion:^(NSArray<AdColonyZone *> *_Nonnull zones) {
                           weakSelf.state = Configured;
                           __weak __typeof(self) weakSelf = self;
+                          [zones enumerateObjectsUsingBlock:^(AdColonyZone *_Nonnull zone, NSUInteger idx, BOOL *_Nonnull stop) {
+                              NSString *zoneID = zone.identifier;
+                              zone.reward = ^(BOOL success, NSString *name, int amount) {
+                                  __weak __typeof(id<FSSRewardedVideoAdColonyManagerDelegate>) delegate = weakSelf.delegateTable[zoneID];
+                                  dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+                                      [delegate rewarded];
+                                  });
+                              };
+                          }];
                           dispatch_async(FSSRewardedVideoWorkQueue(), ^{
                               for (void (^callback)(void) in weakSelf.configCompletionArray) {
                                   callback();
