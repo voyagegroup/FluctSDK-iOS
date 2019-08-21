@@ -17,6 +17,9 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## V5.10.0 2019/08/21
+* GoogleMobileAdsのカスタムイベントでオプション設定ができる機能を追加
+
 ## V5.9.0 2019/08/14
 * 動画リワード広告表示時のイベントをログ出力する機能を追加
 * アドサーバーへのリクエストにおける不具合の修正

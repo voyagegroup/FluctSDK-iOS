@@ -6,8 +6,10 @@
 //
 
 #import "GADMediationAdapterFluct.h"
+#import "GADMAdapterFluctExtras.h"
 #import "GADMAdapterFluctRewardedAd.h"
 #import "GADMFluctError.h"
+
 @import FluctSDK;
 
 @interface GADMediationAdapterFluct ()
@@ -60,7 +62,7 @@
 }
 
 + (nullable Class<GADAdNetworkExtras>)networkExtrasClass {
-    return nil;
+    return [GADMAdapterFluctExtras class];
 }
 
 - (void)loadRewardedAdForAdConfiguration:(GADMediationRewardedAdConfiguration *)adConfiguration completionHandler:(GADMediationRewardedLoadCompletionHandler)completionHandler {

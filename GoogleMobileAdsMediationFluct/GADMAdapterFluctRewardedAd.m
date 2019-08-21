@@ -6,7 +6,9 @@
 //
 
 #import "GADMAdapterFluctRewardedAd.h"
+#import "GADMAdapterFluctExtras.h"
 #import "GADMFluctError.h"
+
 @import FluctSDK;
 
 @interface GADMAdapterFluctRewardedAd () <FSSRewardedVideoDelegate>
@@ -37,8 +39,17 @@
     self.completionHandler = completionHandler;
 
     FSSRewardedVideo.sharedInstance.delegate = self;
-    [[FSSRewardedVideo sharedInstance] loadRewardedVideoWithGroupId:self.groupID
-                                                             unitId:self.unitID];
+
+    GADMAdapterFluctExtras *extras = adConfiguration.extras;
+    if (extras) {
+        FSSRewardedVideo.sharedInstance.setting = extras.setting;
+        [[FSSRewardedVideo sharedInstance] loadRewardedVideoWithGroupId:self.groupID
+                                                                 unitId:self.unitID
+                                                              targeting:extras.targeting];
+        return;
+    }
+
+    [[FSSRewardedVideo sharedInstance] loadRewardedVideoWithGroupId:self.groupID unitId:self.unitID];
 }
 
 - (void)presentFromViewController:(nonnull UIViewController *)viewController {
