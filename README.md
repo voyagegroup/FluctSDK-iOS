@@ -17,6 +17,9 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## V5.10.3 2019/09/12
+* 内部処理の変更および改善
+
 ## V5.10.2 2019/09/09
 * ファイルキャッシュ機構の改善
 
