@@ -17,6 +17,9 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## V5.10.4 2019/09/24
+* RTBの動画リワードのplayerの閉じるボタンに黒透過の背景を追加
+
 ## V5.10.3 2019/09/12
 * 内部処理の変更および改善
 
