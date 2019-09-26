@@ -13,7 +13,7 @@ typedef NS_ENUM(NSInteger, AdColonyVideoErrorExtendend) {
 };
 
 static const NSInteger timeoutSecond = 30;
-static NSString *const FSSAdColonySupportVersion = @"8.0";
+static NSString *const FSSAdColonySupportVersion = @"9.0";
 
 @interface FSSRewardedVideoCustomEventAdColony () <FSSRewardedVideoAdColonyManagerDelegate>
 @property (nonatomic, copy) NSString *zoneId;

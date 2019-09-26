@@ -5,19 +5,23 @@
 //  Created by Jomy on 15/9/28.
 //
 
-#define MTGSDKVersion @"5.3.3"
+
+#define MTGSDKVersion @"5.7.0"
 
 #import <Foundation/Foundation.h>
-#import <MTGSDK/MTGCampaign.h>
-#import <MTGSDK/MTGFrame.h>
-#import <MTGSDK/MTGMediaView.h>
-#import <MTGSDK/MTGNativeAdManager.h>
-#import <MTGSDK/MTGNativeScrollView.h>
-#import <MTGSDK/MTGTemplate.h>
-#import <MTGSDK/MTGUserInfo.h>
 #import <UIKit/UIKit.h>
+#import <MTGSDK/MTGNativeAdManager.h>
+#import <MTGSDK/MTGBidNativeAdManager.h>
+#import <MTGSDK/MTGCampaign.h>
+#import <MTGSDK/MTGTemplate.h>
+#import <MTGSDK/MTGFrame.h>
+#import <MTGSDK/MTGNativeScrollView.h>
+#import <MTGSDK/MTGMediaView.h>
+#import <MTGSDK/MTGUserInfo.h>
+
 
 @interface MTGSDK : NSObject
+
 
 /**
  * The shared instance of the SDK.
@@ -67,7 +71,7 @@
  */
 - (void)preloadNativeAdsWithUnitId:(nonnull NSString *)unitId
                      fbPlacementId:(nullable NSString *)fbPlacementId
-                      videoSupport:(BOOL)videoSupport
+                     videoSupport:(BOOL)videoSupport
                 forNumAdsRequested:(NSUInteger)numAdsRequested;
 
 /**
@@ -117,6 +121,7 @@
  */
 - (void)preloadAppWallAdsWithUnitId:(nonnull NSString *)unitId;
 
+
 @property (nonatomic, assign) BOOL autoSetAudioCategory;
 
 /**
@@ -139,6 +144,7 @@
  @param callback A block that accepts a Bool and an NSError as input parameters. The NSError parameter which provides information on a failed consent update request, the Bool parameter which provides the updated consent status.
  */
 - (void)showConsentInfoTips:(nullable void (^)(BOOL consentStatus, NSError *_Nullable error))callback;
+
 
 /**
  *
@@ -168,6 +174,7 @@
  Authorization tips view is added upon the "window”, don't cover it.
  @param block result block.
  */
-- (void)showUserPrivateInfoTips:(MTGUserPrivateInfoTipsResultBlock _Nonnull)block DEPRECATED_MSG_ATTRIBUTE("Use `[MTGSDK sharedInstance] showConsentInfoTips:` instead");
+- (void)showUserPrivateInfoTips:(MTGUserPrivateInfoTipsResultBlock _Nonnull )block DEPRECATED_MSG_ATTRIBUTE("Use `[MTGSDK sharedInstance] showConsentInfoTips:` instead");
+
 
 @end

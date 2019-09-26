@@ -5,8 +5,8 @@
 //  Created by Jomy on 16/2/3.
 //
 
-#import "MTGCampaign.h"
 #import <Foundation/Foundation.h>
+#import "MTGCampaign.h"
 
 /*!
  @class MTGTemplate

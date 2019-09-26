@@ -17,6 +17,8 @@
 
 @end
 
+static NSString *const FSSAppLovinSupportVersion = @"9.0";
+
 @implementation FSSRewardedVideoCustomEventAppLovin
 
 + (ALSdk *)sharedWithKey:(NSString *)sdkKey {
@@ -28,6 +30,10 @@
 }
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary delegate:(id<FSSRewardedVideoCustomEventDelegate>)delegate testMode:(BOOL)testMode debugMode:(BOOL)debugMode targeting:(FSSAdRequestTargeting *)targeting {
+    if (![FSSRewardedVideoCustomEventAppLovin isOSAtLeastVersion:FSSAppLovinSupportVersion]) {
+        return nil;
+    }
+
     self = [super initWithDictionary:dictionary delegate:delegate testMode:testMode debugMode:debugMode targeting:nil];
     if (self) {
         static dispatch_once_t onceToken;
@@ -60,8 +66,7 @@
 
 - (void)presentRewardedVideoAdFromViewController:(UIViewController *)viewController {
     if ([self.rewardedVideo isReadyForDisplay]) {
-        [self.rewardedVideo showOver:viewController.view.window
-                           andNotify:nil];
+        [self.rewardedVideo showAndNotify:nil];
     } else {
         NSError *error = [NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain code:FSSRewardedVideoAdErrorNotReady userInfo:nil];
         [self.delegate rewardedVideoDidFailToPlayForCustomEvent:self fluctError:error adnetworkError:kALErrorCodeIncentiviziedAdNotPreloaded];

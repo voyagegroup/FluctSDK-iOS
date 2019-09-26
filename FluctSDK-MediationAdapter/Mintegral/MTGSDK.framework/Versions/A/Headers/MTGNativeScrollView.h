@@ -5,18 +5,18 @@
 //  Created by Jomy on 16/1/28.
 //
 
-#import "MTGFrame.h"
 #import <UIKit/UIKit.h>
+#import "MTGFrame.h"
 
 __deprecated_msg("Delegate is deprecated.")
 
-    /*!
+/*!
  @protocol MTGNativeScrollViewDelegate
  
  @abstract Messages from MTGNativeScrollView offering ads data to get custom views.
  */
 
-    @protocol MTGNativeScrollViewDelegate<NSObject>
+@protocol MTGNativeScrollViewDelegate <NSObject>
 
 /*!
  @method
@@ -33,7 +33,8 @@ __deprecated_msg("Delegate is deprecated.")
 
 __deprecated_msg("Class is deprecated.")
 
-    @interface MTGNativeScrollView : UIView
+
+@interface MTGNativeScrollView : UIView
 
 /*!
  @property
@@ -42,7 +43,7 @@ __deprecated_msg("Class is deprecated.")
  
  @discussion All delegate method will be called in main thread.
  */
-@property (nonatomic, weak, nullable) id<MTGNativeScrollViewDelegate> delegate;
+@property (nonatomic, weak, nullable) id <MTGNativeScrollViewDelegate> delegate;
 
 /*!
  @method
@@ -62,5 +63,6 @@ __deprecated_msg("Class is deprecated.")
  
  */
 - (void)setDataList:(nonnull NSArray *)nativeFrames;
+
 
 @end

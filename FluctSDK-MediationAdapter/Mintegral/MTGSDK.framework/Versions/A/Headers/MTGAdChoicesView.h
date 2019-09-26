@@ -30,6 +30,7 @@ Since the image icon's size changes, you need to update this view's size too. Ad
  */
 @property (nonatomic, weak, readwrite, nullable) MTGCampaign *campaign;
 
+
 @end
 
 NS_ASSUME_NONNULL_END

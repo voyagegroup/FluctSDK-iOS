@@ -5,12 +5,12 @@
 //  Created by Jomy on 16/1/28.
 //
 
-#import "MTGCampaign.h"
 #import <Foundation/Foundation.h>
+#import "MTGCampaign.h"
 
 __deprecated_msg("Class is deprecated.")
 
-    @interface MTGFrame : NSObject
+@interface MTGFrame : NSObject
 
 /*!
  @property
@@ -31,14 +31,14 @@ __deprecated_msg("Class is deprecated.")
  
  @abstract The timestap of the frame
  */
-@property (nonatomic, assign) double timestamp;
+@property (nonatomic, assign) double      timestamp;
 
 /*!
  @property
  
  @abstract The id of the frame
  */
-@property (nonatomic, strong) NSString *frameId;
+@property (nonatomic, strong) NSString      *frameId;
 
 /*!
  @property

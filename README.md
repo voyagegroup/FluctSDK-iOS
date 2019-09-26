@@ -17,6 +17,10 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## V5.11.0 2019/09/26
+* 動画リワードメディエーションするADNWのSDKをiOS13対応したバージョンに更新
+* AppLovin、AdColonyがiOS9以上をサポートするようになったので対応
+
 ## V5.10.4 2019/09/24
 * RTBの動画リワードのplayerの閉じるボタンに黒透過の背景を追加
 

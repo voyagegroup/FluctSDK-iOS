@@ -6,8 +6,8 @@
 //  Copyright © 2017年 Mintegral. All rights reserved.
 //
 
-#import "MTGCampaign.h"
 #import <UIKit/UIKit.h>
+#import "MTGCampaign.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol MTGMediaViewDelegate;
@@ -20,22 +20,23 @@ NS_ASSUME_NONNULL_BEGIN
 /**
 the media source, can be set again to reuse this view.
 */
-- (void)setMediaSourceWithCampaign:(MTGCampaign *)campaign unitId:(NSString *)unitId;
+- (void)setMediaSourceWithCampaign:(MTGCampaign *)campaign unitId:(NSString*)unitId;
+
 
 @property (nonatomic, weak, nullable) id<MTGMediaViewDelegate> delegate;
 
 // Whether to allow full-screen playback, default YES
-@property (nonatomic, assign) BOOL allowFullscreen;
+@property (nonatomic, assign) BOOL  allowFullscreen;
 
 // Whether update to video from static image when video is ready to be played, default YES
-@property (nonatomic, assign) BOOL videoRefresh;
+@property (nonatomic, assign) BOOL  videoRefresh;
 
 // Auto replay, default YES
-@property (nonatomic, assign) BOOL autoLoopPlay;
+@property (nonatomic, assign) BOOL  autoLoopPlay;
 /* show video process view or not. Default to be YES. */
-@property (nonatomic, assign) BOOL showVideoProcessView;
+@property (nonatomic, assign) BOOL  showVideoProcessView;
 /* show sound indicator view or not. Default to be YES. */
-@property (nonatomic, assign) BOOL showSoundIndicatorView;
+@property (nonatomic, assign) BOOL  showSoundIndicatorView;
 /* mute audio output of the video player or not. Default to be YES, means video player is muted. */
 @property (nonatomic, assign) BOOL mute;
 
@@ -47,7 +48,7 @@ the media source, can be set again to reuse this view.
  After called 'setMediaSourceWithCampaign:(MTGCampaign *)campaign unitId:(NSString*)unitId',
  you can check this MediaView whether has video content via isVideoContent if needed;
  */
-@property (nonatomic, readonly, getter=isVideoContent) BOOL videoContent;
+@property (nonatomic,readonly,getter = isVideoContent) BOOL videoContent;
 
 @end
 
@@ -75,6 +76,7 @@ the media source, can be set again to reuse this view.
  */
 - (void)MTGMediaViewDidExitFullscreen:(MTGMediaView *)mediaView;
 
+
 /**
  *  Called when the native video was starting to play.
  *
@@ -92,6 +94,7 @@ the media source, can be set again to reuse this view.
  */
 - (void)nativeAdDidClick:(nonnull MTGCampaign *)nativeAd;
 - (void)nativeAdDidClick:(nonnull MTGCampaign *)nativeAd mediaView:(MTGMediaView *)mediaView;
+
 
 /*!
  @method
@@ -115,7 +118,7 @@ the media source, can be set again to reuse this view.
  @discussion It will not be called if a ad's final jump url has been cached
  */
 - (void)nativeAdClickUrlDidJumpToUrl:(nonnull NSURL *)jumpUrl;
-- (void)nativeAdClickUrlDidJumpToUrl:(nonnull NSURL *)jumpUrl mediaView:(MTGMediaView *)mediaView;
+- (void)nativeAdClickUrlDidJumpToUrl:(nonnull NSURL *)jumpUrl  mediaView:(MTGMediaView *)mediaView;
 
 /*!
  @method
@@ -129,8 +132,7 @@ the media source, can be set again to reuse this view.
 - (void)nativeAdClickUrlDidEndJump:(nullable NSURL *)finalUrl
                              error:(nullable NSError *)error;
 - (void)nativeAdClickUrlDidEndJump:(nullable NSURL *)finalUrl
-                             error:(nullable NSError *)error
-                         mediaView:(MTGMediaView *)mediaView;
+                             error:(nullable NSError *)error  mediaView:(MTGMediaView *)mediaView;
 
 - (void)nativeAdImpressionWithType:(MTGAdSourceType)type mediaView:(MTGMediaView *)mediaView;
 
