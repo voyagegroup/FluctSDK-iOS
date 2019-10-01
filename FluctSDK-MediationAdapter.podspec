@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
     s.name                  = "FluctSDK-MediationAdapter"
     s.summary               = "Mediation Adapter for FluctSDK ad Framework"
     s.license               = { :type => "Copyright", :text => "Copyright (c) fluct,Inc. All rights reserved." }
-    s.version               = "5.11.0"
+    s.version               = "5.11.1"
     s.author                = "fluct,Inc."
     s.requires_arc          = true
     s.static_framework      = true

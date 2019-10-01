@@ -6,6 +6,7 @@
 //
 
 #import "GADVideoInterstitialAdapterFluct.h"
+#import "GADAdapterFluctVideoDelegateProxy.h"
 #import "GADMFluctError.h"
 @import FluctSDK;
 
@@ -29,7 +30,8 @@
         return;
     }
 
-    FSSRewardedVideo.sharedInstance.delegate = self;
+    [[GADAdapterFluctVideoDelegateProxy sharedInstance] registerDelegate:self groupId:self.groupID unitId:self.unitID];
+    FSSRewardedVideo.sharedInstance.delegate = GADAdapterFluctVideoDelegateProxy.sharedInstance;
     [[FSSRewardedVideo sharedInstance] loadRewardedVideoWithGroupId:self.groupID unitId:self.unitID];
 }
 

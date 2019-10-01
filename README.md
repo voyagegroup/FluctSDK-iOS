@@ -17,6 +17,9 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## V5.11.1 2019/10/01
+* GoogleMobileAdsMediationFluctにおいて、複数の枠に対して同時にリクエストを行うと発生する不具合の修正
+
 ## V5.11.0 2019/09/26
 * 動画リワードメディエーションするADNWのSDKをiOS13対応したバージョンに更新
 * AppLovin、AdColonyがiOS9以上をサポートするようになったので対応

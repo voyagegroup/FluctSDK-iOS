@@ -6,6 +6,7 @@
 //
 
 #import "GADMAdapterFluctRewardedAd.h"
+#import "GADAdapterFluctVideoDelegateProxy.h"
 #import "GADMAdapterFluctExtras.h"
 #import "GADMFluctError.h"
 
@@ -38,7 +39,8 @@
 
     self.completionHandler = completionHandler;
 
-    FSSRewardedVideo.sharedInstance.delegate = self;
+    [[GADAdapterFluctVideoDelegateProxy sharedInstance] registerDelegate:self groupId:self.groupID unitId:self.unitID];
+    FSSRewardedVideo.sharedInstance.delegate = GADAdapterFluctVideoDelegateProxy.sharedInstance;
 
     GADMAdapterFluctExtras *extras = adConfiguration.extras;
     if (extras) {
@@ -59,7 +61,6 @@
 }
 
 #pragma mark - FSSRewardedVideoDelegate
-
 - (void)rewardedVideoDidLoadForGroupID:(NSString *)groupId unitId:(NSString *)unitId {
     if (self.completionHandler) {
         self.adEventDelegate = self.completionHandler(self, nil);
