@@ -109,7 +109,7 @@ typedef NS_ENUM(NSInteger, MintegralErrorExtend) {
         NSError *fluctError = [NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                   code:FSSRewardedVideoAdErrorLoadFailed
                                               userInfo:nil];
-        [weakSelf.delegate rewardedVideoDidFailToPlayForCustomEvent:self
+        [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:self
                                                          fluctError:fluctError
                                                      adnetworkError:error.code];
     });
@@ -122,7 +122,7 @@ typedef NS_ENUM(NSInteger, MintegralErrorExtend) {
         if (![unitId isEqualToString:weakSelf.unitId]) {
             //unexpected
             weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
-            [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:self
+            [weakSelf.delegate rewardedVideoDidFailToPlayForCustomEvent:self
                                                              fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                                                             code:FSSRewardedVideoAdErrorPlayFailed
                                                                                         userInfo:nil]
@@ -142,7 +142,7 @@ typedef NS_ENUM(NSInteger, MintegralErrorExtend) {
         NSError *fluctError = [NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                   code:FSSRewardedVideoAdErrorPlayFailed
                                               userInfo:nil];
-        [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:self
+        [weakSelf.delegate rewardedVideoDidFailToPlayForCustomEvent:self
                                                          fluctError:fluctError
                                                      adnetworkError:error.code];
     });
@@ -154,7 +154,7 @@ typedef NS_ENUM(NSInteger, MintegralErrorExtend) {
         if (![unitId isEqualToString:weakSelf.unitId]) {
             //unexpected
             weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
-            [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:self
+            [weakSelf.delegate rewardedVideoDidFailToPlayForCustomEvent:self
                                                              fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                                                             code:FSSRewardedVideoAdErrorPlayFailed
                                                                                         userInfo:nil]
@@ -172,7 +172,7 @@ typedef NS_ENUM(NSInteger, MintegralErrorExtend) {
         if (![unitId isEqualToString:weakSelf.unitId]) {
             //unexpected
             weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
-            [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:self
+            [weakSelf.delegate rewardedVideoDidFailToPlayForCustomEvent:self
                                                              fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                                                             code:FSSRewardedVideoAdErrorPlayFailed
                                                                                         userInfo:nil]
@@ -190,7 +190,7 @@ typedef NS_ENUM(NSInteger, MintegralErrorExtend) {
         if (![unitId isEqualToString:weakSelf.unitId]) {
             //unexpected
             weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
-            [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:self
+            [weakSelf.delegate rewardedVideoDidFailToPlayForCustomEvent:self
                                                              fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                                                             code:FSSRewardedVideoAdErrorPlayFailed
                                                                                         userInfo:nil]

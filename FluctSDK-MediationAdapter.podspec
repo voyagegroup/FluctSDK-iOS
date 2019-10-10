@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
     s.name                  = "FluctSDK-MediationAdapter"
     s.summary               = "Mediation Adapter for FluctSDK ad Framework"
     s.license               = { :type => "Copyright", :text => "Copyright (c) fluct,Inc. All rights reserved." }
-    s.version               = "5.11.1"
+    s.version               = "5.12.0"
     s.author                = "fluct,Inc."
     s.requires_arc          = true
     s.static_framework      = true
@@ -56,9 +56,6 @@ Pod::Spec.new do |s|
     s.subspec "Mintegral" do |ss|
         ss.source_files = "FluctSDK-MediationAdapter/Mintegral/*.{h,m}"
         ss.dependency "FluctSDK"
-        ss.libraries = "sqlite3", "z"
-        ss.compiler_flags = "-ObjC"
-        ss.frameworks = "CoreGraphics", "AdSupport", "StoreKit", "QuartzCore", "CoreTelephony", "MobileCoreServices", "Accelerate", "AVFoundation", "WebKit"
-        ss.vendored_frameworks = "FluctSDK-MediationAdapter/Mintegral/MTGSDK.framework", "FluctSDK-MediationAdapter/Mintegral/MTGSDKReward.framework"
+        ss.dependency "MintegralAdSDK/RewardVideoAd"
     end
 end

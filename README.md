@@ -17,6 +17,10 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## V5.12.0 2019/10/10
+* 動画リワードメディエーションしているMintegralのSDKをCocoapods経由で管理するように変更
+* 動画リワードメディエーションしているMintegralの読み込み失敗通知時の処理を修正
+
 ## V5.11.1 2019/10/01
 * GoogleMobileAdsMediationFluctにおいて、複数の枠に対して同時にリクエストを行うと発生する不具合の修正
 
