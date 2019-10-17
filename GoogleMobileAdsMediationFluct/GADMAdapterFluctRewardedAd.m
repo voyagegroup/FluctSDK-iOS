@@ -12,7 +12,7 @@
 
 @import FluctSDK;
 
-@interface GADMAdapterFluctRewardedAd () <FSSRewardedVideoDelegate>
+@interface GADMAdapterFluctRewardedAd () <GADAdapterFluctVideoDelegateProxyItem>
 @property (nonatomic, nullable, copy) GADMediationRewardedLoadCompletionHandler completionHandler;
 @property (nonatomic, nullable, weak) id<GADMediationRewardedAdEventDelegate> adEventDelegate;
 @property (nonatomic, nullable, copy) NSString *groupID;
@@ -60,7 +60,7 @@
                                                      fromViewController:viewController];
 }
 
-#pragma mark - FSSRewardedVideoDelegate
+#pragma mark - GADAdapterFluctVideoDelegateProxyItem
 - (void)rewardedVideoDidLoadForGroupID:(NSString *)groupId unitId:(NSString *)unitId {
     if (self.completionHandler) {
         self.adEventDelegate = self.completionHandler(self, nil);

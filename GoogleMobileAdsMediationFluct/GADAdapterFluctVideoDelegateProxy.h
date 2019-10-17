@@ -9,11 +9,22 @@
 @import FluctSDK;
 
 NS_ASSUME_NONNULL_BEGIN
+@protocol GADAdapterFluctVideoDelegateProxyItem <NSObject>
+- (void)rewardedVideoDidLoadForGroupID:(NSString *)groupId unitId:(NSString *)unitId;
+- (void)rewardedVideoDidFailToLoadForGroupId:(NSString *)groupId unitId:(NSString *)unitId error:(NSError *)error;
+- (void)rewardedVideoWillAppearForGroupId:(NSString *)groupId unitId:(NSString *)unitId;
+- (void)rewardedVideoDidAppearForGroupId:(NSString *)groupId unitId:(NSString *)unitId;
+- (void)rewardedVideoWillDisappearForGroupId:(NSString *)groupId unitId:(NSString *)unitId;
+- (void)rewardedVideoDidDisappearForGroupId:(NSString *)groupId unitId:(NSString *)unitId;
+- (void)rewardedVideoDidFailToPlayForGroupId:(NSString *)groupId unitId:(NSString *)unitId error:(NSError *)error;
+@optional
+- (void)rewardedVideoShouldRewardForGroupID:(NSString *)groupId unitId:(NSString *)unitId;
+@end
 
 @interface GADAdapterFluctVideoDelegateProxy : NSObject <FSSRewardedVideoDelegate>
 
 @property (class, nonatomic, readonly) GADAdapterFluctVideoDelegateProxy *sharedInstance;
-- (void)registerDelegate:(id<FSSRewardedVideoDelegate>)delegate groupId:(NSString *)groupId unitId:(NSString *)unitId;
+- (void)registerDelegate:(id<GADAdapterFluctVideoDelegateProxyItem>)delegate groupId:(NSString *)groupId unitId:(NSString *)unitId;
 
 @end
 

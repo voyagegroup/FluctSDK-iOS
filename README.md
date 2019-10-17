@@ -17,6 +17,9 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## V5.12.2 2019/10/17
+* GoogleMobileAdsMediationFluctにおいて、動画インタースティシャル広告表示時にクラッシュする不具合を修正
+
 ## V5.12.1 2019/10/16
 * TapjoySDKをiOS13対応したバージョンに更新
 

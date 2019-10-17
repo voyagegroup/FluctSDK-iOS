@@ -10,7 +10,7 @@
 #import "GADMFluctError.h"
 @import FluctSDK;
 
-@interface GADVideoInterstitialAdapterFluct () <FSSRewardedVideoDelegate>
+@interface GADVideoInterstitialAdapterFluct () <GADAdapterFluctVideoDelegateProxyItem>
 
 @property (nonatomic, nullable) NSString *groupID;
 @property (nonatomic, nullable) NSString *unitID;
@@ -60,7 +60,7 @@
     return YES;
 }
 
-#pragma mark - FSSRewardedVideoDelegate
+#pragma mark - GADAdapterFluctVideoDelegateProxyItem
 - (void)rewardedVideoDidLoadForGroupID:(NSString *)groupId unitId:(NSString *)unitId {
     [self.delegate customEventInterstitialDidReceiveAd:self];
 }

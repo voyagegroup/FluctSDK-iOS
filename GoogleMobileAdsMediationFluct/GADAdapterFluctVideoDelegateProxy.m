@@ -9,7 +9,7 @@
 
 @interface GADAdapterFluctVideoDelegateProxy ()
 
-@property (nonatomic) NSMutableDictionary<NSString *, id<FSSRewardedVideoDelegate>> *delegateTable;
+@property (nonatomic) NSMutableDictionary<NSString *, id<GADAdapterFluctVideoDelegateProxyItem>> *delegateTable;
 
 @end
 
@@ -33,7 +33,7 @@
     return self;
 }
 
-- (void)registerDelegate:(id<FSSRewardedVideoDelegate>)delegate groupId:(NSString *)groupId unitId:(NSString *)unitId {
+- (void)registerDelegate:(id<GADAdapterFluctVideoDelegateProxyItem>)delegate groupId:(NSString *)groupId unitId:(NSString *)unitId {
     NSString *key = [self keyWithGroupId:groupId unitId:unitId];
     self.delegateTable[key] = delegate;
 }
@@ -83,7 +83,10 @@
 
 - (void)rewardedVideoShouldRewardForGroupID:(NSString *)groupId unitId:(NSString *)unitId {
     NSString *key = [self keyWithGroupId:groupId unitId:unitId];
-    [self.delegateTable[key] rewardedVideoShouldRewardForGroupID:groupId unitId:unitId];
+    id<GADAdapterFluctVideoDelegateProxyItem> delegate = self.delegateTable[key];
+    if ([delegate respondsToSelector:@selector(rewardedVideoShouldRewardForGroupID:unitId:)]) {
+        [delegate rewardedVideoShouldRewardForGroupID:groupId unitId:unitId];
+    }
 }
 
 @end
