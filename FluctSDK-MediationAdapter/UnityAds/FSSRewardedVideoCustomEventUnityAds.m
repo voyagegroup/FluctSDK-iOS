@@ -30,9 +30,15 @@ static const NSInteger timeoutSecond = 30;
 
 @end
 
+static NSString *const FSSUnityAdsSupportVersion = @"9.0";
+
 @implementation FSSRewardedVideoCustomEventUnityAds
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary delegate:(id<FSSRewardedVideoCustomEventDelegate>)delegate testMode:(BOOL)testMode debugMode:(BOOL)debugMode targeting:(FSSAdRequestTargeting *)targeting {
+    if (![FSSRewardedVideoCustomEventUnityAds isOSAtLeastVersion:FSSUnityAdsSupportVersion]) {
+        return nil;
+    }
+
     self = [super initWithDictionary:dictionary delegate:delegate testMode:testMode debugMode:debugMode targeting:nil];
     if (self != nil) {
         _isInitialNotificationForAdapter = YES;

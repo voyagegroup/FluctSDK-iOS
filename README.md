@@ -17,6 +17,11 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## V5.13.0 2019/10/25
+* Xcode10以下の環境でも使用できるように修正
+* 動画リワードメディエーションしているADNWのSDKをアップデート
+  * 詳しくは[動画リワード広告実装](https://github.com/voyagegroup/FluctSDK-iOS/wiki/%E5%8B%95%E7%94%BB%E3%83%AA%E3%83%AF%E3%83%BC%E3%83%89%E5%BA%83%E5%91%8A%E5%AE%9F%E8%A3%85)を参照ください
+
 ## V5.12.2 2019/10/17
 * GoogleMobileAdsMediationFluctにおいて、動画インタースティシャル広告表示時にクラッシュする不具合を修正
 
