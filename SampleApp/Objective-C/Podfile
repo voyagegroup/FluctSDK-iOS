@@ -10,4 +10,8 @@ target 'SampleApp' do
   pod 'FluctSDK', :path => '../../FluctSDK.podspec'
   pod 'FluctSDK-MediationAdapter', :path => '../../FluctSDK-MediationAdapter.podspec'
 
+  # Xcode10の環境で動作させる場合は以下のADNWのSDKのバージョンを指定する必要があります
+  pod 'MaioSDK', '1.4.8'
+  pod 'AdColony', '4.1.1'
+
 end

@@ -2,6 +2,11 @@
 
 ## 環境構築
 
+```
+Xcode: 11.2
+cocoapods: 1.8.4
+```
+
 CocoaPodsを使用します
 
 ```sh

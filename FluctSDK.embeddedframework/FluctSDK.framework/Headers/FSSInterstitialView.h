@@ -22,12 +22,12 @@ typedef NS_ENUM(NSInteger, FSSInterstitialViewCallbackType) {
 
 @protocol FSSInterstitialViewDelegate;
 
+__attribute__((deprecated))
 @interface FSSInterstitialView : UIView
 
 - (id)init;
 - (id)initWithMediaID:(NSString *)mediaID;
 @property (nonatomic, copy, readwrite) NSString *mediaID;
-
 - (void)showInterstitialAd;
 - (void)showInterstitialAdWithHexColor:(NSString *)hexColorString;
 - (void)dismissInterstitialAd;
@@ -37,7 +37,8 @@ typedef NS_ENUM(NSInteger, FSSInterstitialViewCallbackType) {
 
 @end
 
-@protocol FSSInterstitialViewDelegate <NSObject>
+__attribute__((deprecated))
+@protocol FSSInterstitialViewDelegate<NSObject>
 
 @optional
 - (void)interstitialView:(FSSInterstitialView *)interstitialView callbackType:(FSSInterstitialViewCallbackType)callbackType;

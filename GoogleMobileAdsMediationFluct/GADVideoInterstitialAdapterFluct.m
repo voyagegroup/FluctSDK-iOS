@@ -30,6 +30,11 @@
         return;
     }
 
+    FSSConfigurationOptions *options = FSSConfigurationOptions.defaultOptions;
+    options.mediationPlatformType = FSSMediationPlatformTypeGoogleMobileAds;
+    options.mediationPlatformSDKVersion = [NSString stringWithFormat:@"%s", GoogleMobileAdsVersionString];
+    [FluctSDK configureWithOptions:options];
+
     [[GADAdapterFluctVideoDelegateProxy sharedInstance] registerDelegate:self groupId:self.groupID unitId:self.unitID];
     FSSRewardedVideo.sharedInstance.delegate = GADAdapterFluctVideoDelegateProxy.sharedInstance;
     [[FSSRewardedVideo sharedInstance] loadRewardedVideoWithGroupId:self.groupID unitId:self.unitID];

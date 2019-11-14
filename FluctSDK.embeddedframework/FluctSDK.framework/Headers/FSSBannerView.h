@@ -30,6 +30,8 @@ typedef NS_ENUM(NSInteger, FSSBannerViewCallbackType) {
 @protocol FSSBannerViewDelegate;
 
 @class BannerWebView;
+
+__attribute__((deprecated("No longer supported; please adopt FSSAdView.")))
 @interface FSSBannerView : UIView
 
 NS_ASSUME_NONNULL_BEGIN
@@ -43,7 +45,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)refreshBanner;
 @end
 
-@protocol FSSBannerViewDelegate <NSObject>
+__attribute__((deprecated))
+@protocol FSSBannerViewDelegate<NSObject>
 @optional
 - (void)bannerView:(FSSBannerView *)bannerView callbackType:(FSSBannerViewCallbackType)callbackType;
 @end

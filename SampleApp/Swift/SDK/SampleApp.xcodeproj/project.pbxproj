@@ -7,18 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A1810D8207F2DC900D584AD /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A1810D7207F2DC900D584AD /* ImageIO.framework */; };
 		3A24ECA81D812CCC0014B706 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A24ECA71D812CCC0014B706 /* TabBarController.swift */; };
 		3A6AADB11D8148DA005D94C1 /* BannerNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AADB01D8148DA005D94C1 /* BannerNavigationController.swift */; };
 		3ADBC1981D825A62003D7AB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADBC1971D825A62003D7AB3 /* ViewController.swift */; };
-		7519965421C0B507007C62CE /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7519965321C0B507007C62CE /* EventKit.framework */; };
-		7519965621C0B522007C62CE /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7519965521C0B521007C62CE /* MessageUI.framework */; };
-		7519965821C0B54E007C62CE /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7519965721C0B54E007C62CE /* WatchConnectivity.framework */; };
-		7519965A21C0B554007C62CE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7519965921C0B554007C62CE /* JavaScriptCore.framework */; };
-		7519965C21C0B596007C62CE /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7519965B21C0B596007C62CE /* libsqlite3.0.tbd */; };
-		7519965E21C0B59D007C62CE /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7519965D21C0B59D007C62CE /* libxml2.tbd */; };
-		7519966021C0B5A6007C62CE /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7519965F21C0B5A6007C62CE /* libz.tbd */; };
-		7519966221C0B5AD007C62CE /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7519966121C0B5AD007C62CE /* libc++.tbd */; };
 		960884221F9EC23B005F65FD /* RewardedVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960884211F9EC23A005F65FD /* RewardedVideoViewController.swift */; };
 		9661EEFA1F15FDAE00286B72 /* NativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9661EEF91F15FDAE00286B72 /* NativeViewController.swift */; };
 		9661EEFC1F15FDD800286B72 /* NativeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9661EEFB1F15FDD800286B72 /* NativeTableViewController.swift */; };
@@ -32,7 +23,6 @@
 		96F22C3C1D3899D300C3136E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96F22C3A1D3899D300C3136E /* Main.storyboard */; };
 		96F22C3E1D3899D300C3136E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96F22C3D1D3899D300C3136E /* Assets.xcassets */; };
 		96F22C411D3899D300C3136E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96F22C3F1D3899D300C3136E /* LaunchScreen.storyboard */; };
-		96F871C21FA175B3000C48F9 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96E978841FA0761800125A02 /* WebKit.framework */; };
 		BAB9772100FA3F7CD1D94451 /* Pods_SampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 568C2CDD7B81A45C8434AAE9 /* Pods_SampleApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,16 +67,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7519966221C0B5AD007C62CE /* libc++.tbd in Frameworks */,
-				7519966021C0B5A6007C62CE /* libz.tbd in Frameworks */,
-				7519965E21C0B59D007C62CE /* libxml2.tbd in Frameworks */,
-				7519965C21C0B596007C62CE /* libsqlite3.0.tbd in Frameworks */,
-				7519965A21C0B554007C62CE /* JavaScriptCore.framework in Frameworks */,
-				7519965821C0B54E007C62CE /* WatchConnectivity.framework in Frameworks */,
-				7519965621C0B522007C62CE /* MessageUI.framework in Frameworks */,
-				7519965421C0B507007C62CE /* EventKit.framework in Frameworks */,
-				3A1810D8207F2DC900D584AD /* ImageIO.framework in Frameworks */,
-				96F871C21FA175B3000C48F9 /* WebKit.framework in Frameworks */,
 				BAB9772100FA3F7CD1D94451 /* Pods_SampleApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,8 +256,8 @@
 				"${PODS_ROOT}/Target Support Files/Pods-SampleApp/Pods-SampleApp-resources.sh",
 				"${PODS_ROOT}/../../../../FluctSDK.embeddedframework/Resources/FluctSDKResources.bundle",
 				"${PODS_ROOT}/NendSDK_iOS/NendAd.embeddedframework/NendAd.framework/Resources/NendAdResource.bundle",
-				"${PODS_ROOT}/TapjoySDK/TapjoySDK_iOS_v12.3.1/Libraries/Tapjoy.embeddedframework/Resources/TapjoyResources.bundle",
-				"${PODS_ROOT}/TapjoySDK/TapjoySDK_iOS_v12.3.1/Libraries/Tapjoy.embeddedframework/Tapjoy.framework/Versions/A/Resources/TapjoyResources.bundle",
+				"${PODS_ROOT}/TapjoySDK/TapjoySDK_iOS_v12.3.4/Libraries/Tapjoy.embeddedframework/Resources/TapjoyResources.bundle",
+				"${PODS_ROOT}/TapjoySDK/TapjoySDK_iOS_v12.3.4/Libraries/Tapjoy.embeddedframework/Tapjoy.framework/Versions/A/Resources/TapjoyResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (

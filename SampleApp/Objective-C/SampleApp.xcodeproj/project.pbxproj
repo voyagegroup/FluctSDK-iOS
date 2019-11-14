@@ -86,10 +86,10 @@
 		7581896822D30F8600EBC905 /* Native */ = {
 			isa = PBXGroup;
 			children = (
-				7581896922D30F8600EBC905 /* NativeViewController.h */,
-				7581896A22D30F8600EBC905 /* NativeTableViewController.m */,
-				7581896B22D30F8600EBC905 /* NativeViewController.m */,
 				7581896C22D30F8600EBC905 /* NativeTableViewController.h */,
+				7581896A22D30F8600EBC905 /* NativeTableViewController.m */,
+				7581896922D30F8600EBC905 /* NativeViewController.h */,
+				7581896B22D30F8600EBC905 /* NativeViewController.m */,
 			);
 			path = Native;
 			sourceTree = "<group>";
@@ -106,8 +106,8 @@
 		7581897322D30F8600EBC905 /* RewardedVideo */ = {
 			isa = PBXGroup;
 			children = (
-				7581897422D30F8600EBC905 /* RewardedVideoViewController.m */,
 				7581897522D30F8600EBC905 /* RewardedVideoViewController.h */,
+				7581897422D30F8600EBC905 /* RewardedVideoViewController.m */,
 			);
 			path = RewardedVideo;
 			sourceTree = "<group>";
@@ -115,18 +115,18 @@
 		7581897C22D30F8600EBC905 /* Banner */ = {
 			isa = PBXGroup;
 			children = (
-				7581897D22D30F8600EBC905 /* BannerTableViewController.m */,
 				7581897E22D30F8600EBC905 /* BannerNavigationController.h */,
-				7581897F22D30F8600EBC905 /* BannerViewController.m */,
-				7581898022D30F8600EBC905 /* ManyBannerViewController.m */,
-				7581898122D30F8600EBC905 /* BannerTableViewCell.m */,
-				7581898222D30F8600EBC905 /* BannerTabBarController.m */,
-				7581898322D30F8600EBC905 /* BannerTableViewController.h */,
-				7581898422D30F8600EBC905 /* BannerTabBarController.h */,
-				7581898522D30F8600EBC905 /* BannerTableViewCell.h */,
-				7581898622D30F8600EBC905 /* ManyBannerViewController.h */,
-				7581898722D30F8600EBC905 /* BannerViewController.h */,
 				7581898822D30F8600EBC905 /* BannerNavigationController.m */,
+				7581898422D30F8600EBC905 /* BannerTabBarController.h */,
+				7581898222D30F8600EBC905 /* BannerTabBarController.m */,
+				7581898522D30F8600EBC905 /* BannerTableViewCell.h */,
+				7581898122D30F8600EBC905 /* BannerTableViewCell.m */,
+				7581898322D30F8600EBC905 /* BannerTableViewController.h */,
+				7581897D22D30F8600EBC905 /* BannerTableViewController.m */,
+				7581898722D30F8600EBC905 /* BannerViewController.h */,
+				7581897F22D30F8600EBC905 /* BannerViewController.m */,
+				7581898622D30F8600EBC905 /* ManyBannerViewController.h */,
+				7581898022D30F8600EBC905 /* ManyBannerViewController.m */,
 			);
 			path = Banner;
 			sourceTree = "<group>";
@@ -220,6 +220,7 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				en,
 				Base,
 			);
 			mainGroup = 75F740DD22D30D96002A9928;

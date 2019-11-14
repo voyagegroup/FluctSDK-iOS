@@ -15,10 +15,7 @@ FOUNDATION_EXPORT const unsigned char FluctSDKVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <FluctSDK/PublicHeader.h>
 #import <FluctSDK/FSSBannerView.h>
-#import <FluctSDK/FluctBannerView.h>
-
 #import <FluctSDK/FSSInterstitialView.h>
-#import <FluctSDK/FluctInterstitialView.h>
 
 #import <FluctSDK/FSSNativeTableViewCell.h>
 #import <FluctSDK/FSSNativeView.h>
@@ -32,6 +29,9 @@ FOUNDATION_EXPORT const unsigned char FluctSDKVersionString[];
 
 #import <FluctSDK/FSSAdRequestTargeting.h>
 #import <FluctSDK/FSSConfigurationOptions.h>
+
+#import <FluctSDK/FSSAdView.h>
+#import <FluctSDK/FSSAdViewError.h>
 
 /*
  * SDKの各処理を行う
@@ -72,6 +72,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)configure;
 + (void)configureWithOptions:(FSSConfigurationOptions *)options;
++ (FSSConfigurationOptions *)currentConfigureOptions;
 
 @end
 

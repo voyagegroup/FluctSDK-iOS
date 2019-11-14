@@ -9,44 +9,60 @@
 import UIKit
 import FluctSDK
 
-class BannerViewController: UIViewController, FSSBannerViewDelegate {
+class BannerViewController: UIViewController, FSSAdViewDelegate {
+
+    private var adView: FSSAdView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let bannerView = FSSBannerView.init(frame: CGRect(x: 0, y: 100, width: 320, height: 50))
-        bannerView.delegate = self
-        bannerView.setMediaID("0000005617")
-        self.view.addSubview(bannerView)
+        let adView = FSSAdView(groupId: "1000055927", unitId: "1000084701", adSize: FSSAdSize320x50)
+        adView.delegate = self
+        self.view.addSubview(adView)
+        adView.loadAd()
+        self.adView = adView
     }
 
-    func bannerView(_ bannerView: FSSBannerView, callbackType: FSSBannerViewCallbackType) {
-        print(callbackType)
-        switch callbackType {
-        case .load:
-            print("表示しました")
-        case .loadFinish:
-            print("広告の読み込みが完了しました")
-        case .tap:
-            print("タップしました")
-        case .offline:
-            print("圏外です")
-        case .mediaIdError:
-            print("メディアIDが不正な値です")
-        case .noConfig:
-            print("メディアIDに設定されていません")
-        case .getConfigError:
-            print("広告設定情報が取得出来ませんでした")
-        case .noAd:
-            print("広告を取得出来ませんでした。")
-        case .otherError:
-            print("その他のエラーです")
-        @unknown default:
-            break
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        let adViewHeight = self.adView?.frame.height ?? 0.0
+        let maxY = self.view.bounds.maxY
+        let adViewY = maxY - self.view.layoutMargins.bottom - adViewHeight
+
+        let adViewWidth = self.adView?.frame.width ?? 0.0
+        let midX = self.view.bounds.midX
+        let adViewX = midX - adViewWidth * 0.5
+
+        var frame = adView?.frame ?? .zero
+        frame.origin = CGPoint(x: adViewX, y: adViewY)
+        adView?.frame = frame
+    }
+
+    // MARK: - FSSAdViewDelegate
+
+    func adViewDidStoreAd(_ adView: FSSAdView) {
+        print("広告表示が完了しました")
+    }
+
+    func adView(_ adView: FSSAdView, didFailToStoreAdWithError error: Error) {
+        print(error.localizedDescription)
+        let fluctError = FSSAdViewError(rawValue: (error as NSError).code) ?? .unknown
+        switch fluctError {
+        case .unknown:
+            print("Unkown Error")
+        case .notConnectedToInternet:
+            print("ネットワークエラー")
+        case .serverError:
+            print("サーバーエラー")
+        case .noAds:
+            print("表示する広告がありません")
+        case .badRequest:
+            print("groupId / unitId / 登録されているbundleのどれかが間違っています")
         }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    func willLeaveApplicationForAdView(_ adView: FSSAdView) {
+        print("広告へ遷移します")
     }
 
 }
