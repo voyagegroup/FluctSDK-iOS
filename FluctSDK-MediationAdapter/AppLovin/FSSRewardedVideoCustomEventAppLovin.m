@@ -40,7 +40,6 @@ static NSString *const FSSAppLovinSupportVersion = @"9.0";
         ALSdk *applovinSDK = [FSSRewardedVideoCustomEventAppLovin sharedWithKey:dictionary[@"sdk_key"]];
         dispatch_once(&onceToken, ^{
             applovinSDK.settings.isVerboseLogging = debugMode;
-            applovinSDK.settings.isTestAdsEnabled = testMode;
             [applovinSDK initializeSdk];
         });
         _rewardedVideo = [FSSRewardedVideoCustomEventAppLovin rewardedVideoWithSdk:applovinSDK zoneName:dictionary[@"zone"]];

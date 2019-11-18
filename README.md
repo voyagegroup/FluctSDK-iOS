@@ -17,6 +17,9 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## V5.14.1 2019/11/18
+* AppLovin v6.10.0のAPI変更の対応
+
 ## V5.14.0 2019/11/14
 * バナー広告表示用の新しいAPI(FSSAdView)を追加
 * FSSAdViewのサンプルコード及びドキュメントの追加
