@@ -1,11 +1,10 @@
 (function (fluctSdkEnv) {
-  var isIOS = (/iphone|ipad|ipod/i).test(window.navigator.userAgent.toLowerCase());
-  if (isIOS && fluctSdkEnv && fluctSdkEnv.isDebug) {
+  if (fluctSdkEnv && fluctSdkEnv.isDebug) {
     console = {};
     console.log = function (log) {
       var iframe = document.createElement('iframe');
-      iframe.setAttribute('src', 'ios-log: ' + log);
-      document.documentElement.appendChild(iframe);
+      iframe.setAttribute('src', 'fluct-log: ' + log);
+      document.body.appendChild(iframe);
       iframe.parentNode.removeChild(iframe);
       iframe = null;
     };

@@ -17,6 +17,10 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## V5.14.2 2019/11/19
+* バナー広告のビューアビリティー計算ロジックの不具合を修正
+* 内部処理の変更
+
 ## V5.14.1 2019/11/18
 * AppLovin v6.10.0のAPI変更の対応
 
