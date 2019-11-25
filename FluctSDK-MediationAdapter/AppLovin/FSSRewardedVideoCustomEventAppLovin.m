@@ -67,8 +67,13 @@ static NSString *const FSSAppLovinSupportVersion = @"9.0";
     if ([self.rewardedVideo isReadyForDisplay]) {
         [self.rewardedVideo showAndNotify:nil];
     } else {
+        // kALErrorCodeIncentiviziedAdNotPreloaded
         NSError *error = [NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain code:FSSRewardedVideoAdErrorNotReady userInfo:nil];
-        [self.delegate rewardedVideoDidFailToPlayForCustomEvent:self fluctError:error adnetworkError:kALErrorCodeIncentiviziedAdNotPreloaded];
+        [self.delegate rewardedVideoDidFailToPlayForCustomEvent:self
+                                                     fluctError:error
+                                                 adnetworkError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                                                    code:kALErrorCodeIncentiviziedAdNotPreloaded
+                                                                                userInfo:@{NSLocalizedDescriptionKey : @"incentivizied ad not preloaded."}]];
     }
 }
 
@@ -100,28 +105,36 @@ static NSString *const FSSAppLovinSupportVersion = @"9.0";
                                                              fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                                                             code:FSSRewardedVideoAdErrorNoAds
                                                                                         userInfo:nil]
-                                                         adnetworkError:code];
+                                                         adnetworkError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                                                            code:code
+                                                                                        userInfo:@{NSLocalizedDescriptionKey : @"no fill."}]];
             break;
         case kALErrorCodeIncentivizedValidationNetworkTimeout:
             [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:weakSelf
                                                              fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                                                             code:FSSRewardedVideoAdErrorTimeout
                                                                                         userInfo:nil]
-                                                         adnetworkError:code];
+                                                         adnetworkError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                                                            code:code
+                                                                                        userInfo:@{NSLocalizedDescriptionKey : @"incentivized validation network timeout."}]];
             break;
         case kALErrorCodeUnableToRenderAd:
             [weakSelf.delegate rewardedVideoDidFailToPlayForCustomEvent:weakSelf
                                                              fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                                                             code:FSSRewardedVideoAdErrorPlayFailed
                                                                                         userInfo:nil]
-                                                         adnetworkError:code];
+                                                         adnetworkError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                                                            code:code
+                                                                                        userInfo:@{NSLocalizedDescriptionKey : @"unable to render ad."}]];
             break;
         default:
             [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:weakSelf
                                                              fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                                                             code:FSSRewardedVideoAdErrorUnknown
                                                                                         userInfo:nil]
-                                                         adnetworkError:code];
+                                                         adnetworkError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                                                            code:code
+                                                                                        userInfo:nil]];
             break;
         }
     });

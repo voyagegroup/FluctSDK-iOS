@@ -42,11 +42,11 @@ typedef NS_ENUM(NSInteger, FSSRewardedVideoADNWStatus) {
 @protocol FSSRewardedVideoCustomEventDelegate <NSObject>
 - (void)rewardedVideoShouldRewardForCustomEvent:(FSSRewardedVideoCustomEvent *)customEvent;
 - (void)rewardedVideoDidLoadForCustomEvent:(FSSRewardedVideoCustomEvent *)customEvent;
-- (void)rewardedVideoDidFailToLoadForCustomEvent:(FSSRewardedVideoCustomEvent *)customEvent fluctError:(NSError *)fluctError adnetworkError:(NSInteger)adnetworkError;
+- (void)rewardedVideoDidFailToLoadForCustomEvent:(FSSRewardedVideoCustomEvent *)customEvent fluctError:(NSError *)fluctError adnetworkError:(NSError *)adnetworkError;
 - (void)rewardedVideoWillAppearForCustomEvent:(FSSRewardedVideoCustomEvent *)customEvent;
 - (void)rewardedVideoDidAppearForCustomEvent:(FSSRewardedVideoCustomEvent *)customEvent;
 - (void)rewardedVideoWillDisappearForCustomEvent:(FSSRewardedVideoCustomEvent *)customEvent;
 - (void)rewardedVideoDidDisappearForCustomEvent:(FSSRewardedVideoCustomEvent *)customEvent;
-- (void)rewardedVideoDidFailToPlayForCustomEvent:(FSSRewardedVideoCustomEvent *)customEvent fluctError:(NSError *)fluctError adnetworkError:(NSInteger)adnetworkError;
+- (void)rewardedVideoDidFailToPlayForCustomEvent:(FSSRewardedVideoCustomEvent *)customEvent fluctError:(NSError *)fluctError adnetworkError:(NSError *)adnetworkError;
 - (void)rewardedVideoDidClickForCustomEvent:(FSSRewardedVideoCustomEvent *)customEvent;
 @end

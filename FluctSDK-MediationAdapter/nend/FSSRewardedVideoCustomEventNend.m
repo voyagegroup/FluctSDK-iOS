@@ -9,6 +9,7 @@
 #import <NendAd/NendAd.h>
 
 typedef NS_ENUM(NSInteger, NADRewardedVideoErrorExtend) {
+    NADRewardedVideoErrorExtendNotReady = -2,
     NADRewardedVideoErrorExtendPlayFailed = -1
 };
 
@@ -69,7 +70,11 @@ static NSString *const FSSNendSupportVersion = @"8.1";
         [self.delegate rewardedVideoWillAppearForCustomEvent:self];
     } else {
         NSError *error = [NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain code:FSSRewardedVideoAdErrorNotReady userInfo:nil];
-        [self.delegate rewardedVideoDidFailToPlayForCustomEvent:self fluctError:error adnetworkError:-1];
+        [self.delegate rewardedVideoDidFailToPlayForCustomEvent:self
+                                                     fluctError:error
+                                                 adnetworkError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                                                    code:NADRewardedVideoErrorExtendNotReady
+                                                                                userInfo:@{NSLocalizedDescriptionKey : @"not ready"}]];
     }
 }
 
@@ -96,7 +101,7 @@ static NSString *const FSSNendSupportVersion = @"8.1";
                                                          fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                                                         code:[self rewardedVideoErrorCodeWithError:error]
                                                                                     userInfo:nil]
-                                                     adnetworkError:error.code];
+                                                     adnetworkError:error];
     });
 }
 
@@ -121,7 +126,9 @@ static NSString *const FSSNendSupportVersion = @"8.1";
                                                          fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                                                         code:FSSRewardedVideoAdErrorPlayFailed
                                                                                     userInfo:nil]
-                                                     adnetworkError:NADRewardedVideoErrorExtendPlayFailed];
+                                                     adnetworkError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                                                        code:NADRewardedVideoErrorExtendPlayFailed
+                                                                                    userInfo:@{NSLocalizedDescriptionKey : @"play failed"}]];
     });
 }
 

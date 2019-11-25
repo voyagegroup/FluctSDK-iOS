@@ -79,11 +79,12 @@ static NSString *const FSSUnityAdsSupportVersion = @"9.0";
         }
         fallbackHandler:^{
             dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+                NSError *fluctError = [NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                          code:FSSRewardedVideoAdErrorUnknown
+                                                      userInfo:@{NSLocalizedDescriptionKey : @"Failed callback for rewardedVideoDidDisappearForCustomEvent"}];
                 [weakSelf.delegate rewardedVideoDidFailToPlayForCustomEvent:weakSelf
-                                                                 fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
-                                                                                                code:FSSRewardedVideoAdErrorUnknown
-                                                                                            userInfo:@{NSLocalizedDescriptionKey : @"Failed callback for rewardedVideoDidDisappearForCustomEvent"}]
-                                                             adnetworkError:UnityAdsErrorExtendCallDidDisappearFailed];
+                                                                 fluctError:fluctError
+                                                             adnetworkError:fluctError];
             });
         }
         shouldCompletionCondition:^BOOL {
@@ -103,11 +104,10 @@ static NSString *const FSSUnityAdsSupportVersion = @"9.0";
     if (self.isInitialNotificationForAdapter) {
         self.isInitialNotificationForAdapter = NO;
         self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
+        NSError *fluctError = [NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain code:FSSRewardedVideoAdErrorTimeout userInfo:nil];
         [self.delegate rewardedVideoDidFailToLoadForCustomEvent:self
-                                                     fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
-                                                                                    code:FSSRewardedVideoAdErrorTimeout
-                                                                                userInfo:nil]
-                                                 adnetworkError:UnityAdsErrorExtendTimeout];
+                                                     fluctError:fluctError
+                                                 adnetworkError:fluctError];
     }
 }
 
@@ -156,6 +156,9 @@ static NSString *const FSSUnityAdsSupportVersion = @"9.0";
 - (void)unityAdsDidError:(UnityAdsError)error withMessage:(NSString *)message {
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+        NSError *unityAdsError = [NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                     code:error
+                                                 userInfo:@{NSLocalizedDescriptionKey : message}];
         [weakSelf clearTimer];
         weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
         if (error == kUnityAdsErrorShowError) {
@@ -163,7 +166,7 @@ static NSString *const FSSUnityAdsSupportVersion = @"9.0";
                                                              fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                                                             code:FSSRewardedVideoAdErrorPlayFailed
                                                                                         userInfo:@{NSLocalizedDescriptionKey : message}]
-                                                         adnetworkError:error];
+                                                         adnetworkError:unityAdsError];
             return;
         }
 
@@ -175,7 +178,7 @@ static NSString *const FSSUnityAdsSupportVersion = @"9.0";
                                                                  fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                                                                 code:FSSRewardedVideoAdErrorInitializeFailed
                                                                                             userInfo:@{NSLocalizedDescriptionKey : message}]
-                                                             adnetworkError:error];
+                                                             adnetworkError:unityAdsError];
                 break;
 
             case kUnityAdsErrorInvalidArgument:
@@ -183,7 +186,7 @@ static NSString *const FSSUnityAdsSupportVersion = @"9.0";
                                                                  fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                                                                 code:FSSRewardedVideoAdErrorBadRequest
                                                                                             userInfo:@{NSLocalizedDescriptionKey : message}]
-                                                             adnetworkError:error];
+                                                             adnetworkError:unityAdsError];
                 break;
 
             default:
@@ -191,7 +194,7 @@ static NSString *const FSSUnityAdsSupportVersion = @"9.0";
                                                                  fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                                                                 code:FSSRewardedVideoAdErrorUnknown
                                                                                             userInfo:@{NSLocalizedDescriptionKey : message}]
-                                                             adnetworkError:error];
+                                                             adnetworkError:unityAdsError];
                 break;
             }
         }
@@ -218,11 +221,12 @@ static NSString *const FSSUnityAdsSupportVersion = @"9.0";
         [weakSelf clearTimer];
         weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
         weakSelf.isInitialNotificationForAdapter = NO;
+        NSError *fluctError = [NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                  code:FSSRewardedVideoAdErrorNoAds
+                                              userInfo:@{NSLocalizedDescriptionKey : @"no ad"}];
         [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:weakSelf
-                                                         fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
-                                                                                        code:FSSRewardedVideoAdErrorNoAds
-                                                                                    userInfo:@{NSLocalizedDescriptionKey : @"no ad"}]
-                                                     adnetworkError:UnityAdsErrorExtendNoFill];
+                                                         fluctError:fluctError
+                                                     adnetworkError:fluctError];
     });
 }
 

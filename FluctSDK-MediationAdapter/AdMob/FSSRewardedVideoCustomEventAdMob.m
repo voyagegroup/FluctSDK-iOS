@@ -60,7 +60,7 @@ typedef NS_ENUM(NSInteger, FSSAdMobVideoErrorExtendend) {
                                                          fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                                                         code:FSSRewardedVideoAdErrorLoadFailed
                                                                                     userInfo:nil]
-                                                     adnetworkError:error.code];
+                                                     adnetworkError:error];
     });
 }
 
@@ -103,7 +103,9 @@ typedef NS_ENUM(NSInteger, FSSAdMobVideoErrorExtendend) {
                                                          fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                                                         code:FSSRewardedVideoAdErrorLoadFailed
                                                                                     userInfo:nil]
-                                                     adnetworkError:FSSAdMobVideoErrorExtendendProcessingAnotherAd];
+                                                     adnetworkError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                                                        code:FSSAdMobVideoErrorExtendendProcessingAnotherAd
+                                                                                    userInfo:@{NSLocalizedDescriptionKey : @"processing another ad."}]];
     });
 }
 

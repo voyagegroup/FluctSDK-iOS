@@ -89,7 +89,9 @@ typedef NS_ENUM(NSInteger, TJErrorExtended) {
                                                  fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                                                 code:FSSRewardedVideoAdErrorLoadFailed
                                                                             userInfo:@{NSLocalizedDescriptionKey : @"Tapjoy connect Failed"}]
-                                             adnetworkError:TJErrorExtendedConnectionFailed];
+                                             adnetworkError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                                                code:TJErrorExtendedConnectionFailed
+                                                                            userInfo:@{NSLocalizedDescriptionKey : @"connection failed."}]];
 }
 
 - (FSSRewardedVideoADNWStatus)loadStatus {
@@ -147,11 +149,14 @@ typedef NS_ENUM(NSInteger, TJErrorExtended) {
         __weak __typeof(self) weakSelf = self;
         dispatch_async(FSSRewardedVideoWorkQueue(), ^{
             weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
+            // TJErrorExtendedNoContentAvailable
             [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:weakSelf
                                                              fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                                                             code:FSSRewardedVideoAdErrorLoadFailed
                                                                                         userInfo:@{NSLocalizedDescriptionKey : @"Tapjoy has no ad content"}]
-                                                         adnetworkError:TJErrorExtendedNoContentAvailable];
+                                                         adnetworkError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                                                            code:TJErrorExtendedNoContentAvailable
+                                                                                        userInfo:@{NSLocalizedDescriptionKey : @"no content available."}]];
         });
     }
 }
@@ -174,7 +179,7 @@ typedef NS_ENUM(NSInteger, TJErrorExtended) {
                                                          fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                                                         code:FSSRewardedVideoAdErrorLoadFailed
                                                                                     userInfo:error.userInfo]
-                                                     adnetworkError:error.code];
+                                                     adnetworkError:error];
     });
 }
 
@@ -214,7 +219,9 @@ typedef NS_ENUM(NSInteger, TJErrorExtended) {
                                                          fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                                                         code:FSSRewardedVideoAdErrorPlayFailed
                                                                                     userInfo:@{NSLocalizedDescriptionKey : errorMsg}]
-                                                     adnetworkError:TJErrorExtendedPlayFailed];
+                                                     adnetworkError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                                                        code:TJErrorExtendedPlayFailed
+                                                                                    userInfo:@{NSLocalizedDescriptionKey : errorMsg}]];
     });
 }
 

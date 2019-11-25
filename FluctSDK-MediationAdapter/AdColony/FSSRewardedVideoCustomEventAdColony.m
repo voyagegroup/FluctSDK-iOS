@@ -79,7 +79,9 @@ static NSString *const FSSAdColonySupportVersion = @"9.0";
                                                      fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                                                     code:FSSRewardedVideoAdErrorTimeout
                                                                                 userInfo:nil]
-                                                 adnetworkError:AdColonyVideoErrorExtendendTimeout];
+                                                 adnetworkError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                                                    code:AdColonyVideoErrorExtendendTimeout
+                                                                                userInfo:@{NSLocalizedDescriptionKey : @"timeout."}]];
     }
 }
 
@@ -119,7 +121,7 @@ static NSString *const FSSAdColonySupportVersion = @"9.0";
                                           userInfo:error.userInfo];
     [self.delegate rewardedVideoDidFailToLoadForCustomEvent:self
                                                  fluctError:fluctError
-                                             adnetworkError:error.code];
+                                             adnetworkError:error];
 }
 
 - (void)open {
@@ -146,7 +148,9 @@ static NSString *const FSSAdColonySupportVersion = @"9.0";
                                                  fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                                                 code:FSSRewardedVideoAdErrorExpired
                                                                             userInfo:@{NSLocalizedDescriptionKey : @"expired ad"}]
-                                             adnetworkError:AdColonyVideoErrorExtendendExpired];
+                                             adnetworkError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                                                code:AdColonyVideoErrorExtendendTimeout
+                                                                            userInfo:@{NSLocalizedDescriptionKey : @"expired ad."}]];
 }
 
 - (FSSRewardedVideoErrorCode)errorCodeForAdColonyRequestError:(AdColonyRequestError)adColonyRequestError {

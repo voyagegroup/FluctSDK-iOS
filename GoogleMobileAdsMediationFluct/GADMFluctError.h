@@ -11,7 +11,8 @@
 static NSString *const GADMFluctErrorDomain = @"jp.fluct.GADMediationAdapterFluct";
 
 typedef NS_ENUM(NSInteger, GADMFluctError) {
-    GADMFluctErrorInvalidCustomParameters = 0
+    GADMFluctErrorInvalidCustomParameters = 0,
+    GADMFluctErrorInvalidSize = 1
 };
 
 #endif /* GADMFluctError_h */

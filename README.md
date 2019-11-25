@@ -17,6 +17,10 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## V5.15.0 2019/11/25
+* GoogleMobileAdsのバナー広告のカスタムイベントに対応
+* 内部処理の変更および改善
+
 ## V5.14.2 2019/11/19
 * バナー広告のビューアビリティー計算ロジックの不具合を修正
 * 内部処理の変更

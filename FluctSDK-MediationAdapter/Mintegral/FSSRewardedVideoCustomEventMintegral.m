@@ -74,7 +74,7 @@ typedef NS_ENUM(NSInteger, MintegralErrorExtend) {
                                          userInfo:nil];
         [self.delegate rewardedVideoDidFailToLoadForCustomEvent:self
                                                      fluctError:error
-                                                 adnetworkError:MintegralErrorExtendPlayFailed];
+                                                 adnetworkError:error];
     }
 }
 
@@ -93,7 +93,9 @@ typedef NS_ENUM(NSInteger, MintegralErrorExtend) {
                                                              fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                                                             code:FSSRewardedVideoAdErrorLoadFailed
                                                                                         userInfo:nil]
-                                                         adnetworkError:MintegralErrorExtendUnexpectedUnitId];
+                                                         adnetworkError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                                                            code:MintegralErrorExtendUnexpectedUnitId
+                                                                                        userInfo:@{NSLocalizedDescriptionKey : @"unexpected unit id when onVideoAdLoadSuccess."}]];
             return;
         }
 
@@ -111,7 +113,7 @@ typedef NS_ENUM(NSInteger, MintegralErrorExtend) {
                                               userInfo:nil];
         [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:self
                                                          fluctError:fluctError
-                                                     adnetworkError:error.code];
+                                                     adnetworkError:error];
     });
 }
 
@@ -126,7 +128,9 @@ typedef NS_ENUM(NSInteger, MintegralErrorExtend) {
                                                              fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                                                             code:FSSRewardedVideoAdErrorPlayFailed
                                                                                         userInfo:nil]
-                                                         adnetworkError:MintegralErrorExtendUnexpectedUnitId];
+                                                         adnetworkError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                                                            code:MintegralErrorExtendUnexpectedUnitId
+                                                                                        userInfo:@{NSLocalizedDescriptionKey : @"unexpected unit id when onVideoAdShowSuccess."}]];
             return;
         }
 
@@ -144,7 +148,7 @@ typedef NS_ENUM(NSInteger, MintegralErrorExtend) {
                                               userInfo:nil];
         [weakSelf.delegate rewardedVideoDidFailToPlayForCustomEvent:self
                                                          fluctError:fluctError
-                                                     adnetworkError:error.code];
+                                                     adnetworkError:error];
     });
 }
 
@@ -158,7 +162,9 @@ typedef NS_ENUM(NSInteger, MintegralErrorExtend) {
                                                              fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                                                             code:FSSRewardedVideoAdErrorPlayFailed
                                                                                         userInfo:nil]
-                                                         adnetworkError:MintegralErrorExtendUnexpectedUnitId];
+                                                         adnetworkError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                                                            code:MintegralErrorExtendUnexpectedUnitId
+                                                                                        userInfo:@{NSLocalizedDescriptionKey : @"unexpected unit id when onVideoPlayCompleted."}]];
             return;
         }
 
@@ -176,7 +182,9 @@ typedef NS_ENUM(NSInteger, MintegralErrorExtend) {
                                                              fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                                                             code:FSSRewardedVideoAdErrorPlayFailed
                                                                                         userInfo:nil]
-                                                         adnetworkError:MintegralErrorExtendUnexpectedUnitId];
+                                                         adnetworkError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                                                            code:MintegralErrorExtendUnexpectedUnitId
+                                                                                        userInfo:@{NSLocalizedDescriptionKey : @"unexpected unit id when onVideoAdClicked."}]];
             return;
         }
 
@@ -194,7 +202,9 @@ typedef NS_ENUM(NSInteger, MintegralErrorExtend) {
                                                              fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                                                             code:FSSRewardedVideoAdErrorPlayFailed
                                                                                         userInfo:nil]
-                                                         adnetworkError:MintegralErrorExtendUnexpectedUnitId];
+                                                         adnetworkError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                                                            code:MintegralErrorExtendUnexpectedUnitId
+                                                                                        userInfo:@{NSLocalizedDescriptionKey : @"unexpected unit id when onVideoAdDismissed."}]];
             return;
         }
 

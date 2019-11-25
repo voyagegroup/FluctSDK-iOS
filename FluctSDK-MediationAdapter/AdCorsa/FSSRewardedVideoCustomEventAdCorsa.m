@@ -71,11 +71,14 @@ static const NSTimeInterval timeoutSecond = 5;
         return;
     }
 
+    // AdCorsaVideoErrorExtendendNotReady
     [self.delegate rewardedVideoDidFailToPlayForCustomEvent:self
                                                  fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                                                 code:FSSRewardedVideoAdErrorNotReady
                                                                             userInfo:nil]
-                                             adnetworkError:AdCorsaVideoErrorExtendendNotReady];
+                                             adnetworkError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                                                code:AdCorsaVideoErrorExtendendNotReady
+                                                                            userInfo:@{NSLocalizedDescriptionKey : @"not ready."}]];
 }
 
 - (NSString *)sdkVersion {
@@ -90,7 +93,9 @@ static const NSTimeInterval timeoutSecond = 5;
                                                      fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                                                     code:FSSRewardedVideoAdErrorTimeout
                                                                                 userInfo:nil]
-                                                 adnetworkError:AdCorsaVideoErrorExtendendTimeout];
+                                                 adnetworkError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                                                    code:AdCorsaVideoErrorExtendendTimeout
+                                                                                userInfo:@{NSLocalizedDescriptionKey : @"time out."}]];
     }
 }
 

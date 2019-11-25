@@ -68,7 +68,9 @@ static NSString *const FSSMaioSupportVersion = @"8.0";
                                                      fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                                                     code:FSSRewardedVideoAdErrorTimeout
                                                                                 userInfo:nil]
-                                                 adnetworkError:MaioFailReasonExtendTimeout];
+                                                 adnetworkError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                                                    code:MaioFailReasonExtendTimeout
+                                                                                userInfo:@{NSLocalizedDescriptionKey : @"timeout."}]];
     }
 }
 
@@ -132,13 +134,15 @@ static NSString *const FSSMaioSupportVersion = @"8.0";
         [self clearTimer];
         weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
 
+        NSError *adnwError = [self convertADNWErrorFromFailReason:reason];
+
         //error after initialization
         if (reason == MaioFailReasonVideoPlayback) {
             [weakSelf.delegate rewardedVideoDidFailToPlayForCustomEvent:weakSelf
                                                              fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                                                             code:FSSRewardedVideoAdErrorPlayFailed
                                                                                         userInfo:nil]
-                                                         adnetworkError:reason];
+                                                         adnetworkError:adnwError];
             return;
         }
 
@@ -152,24 +156,63 @@ static NSString *const FSSMaioSupportVersion = @"8.0";
                                                                  fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                                                                 code:FSSRewardedVideoAdErrorNoAds
                                                                                             userInfo:nil]
-                                                             adnetworkError:reason];
+                                                             adnetworkError:adnwError];
                 break;
             case MaioFailReasonUnknown:
                 [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:weakSelf
                                                                  fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                                                                 code:FSSRewardedVideoAdErrorUnknown
                                                                                             userInfo:nil]
-                                                             adnetworkError:reason];
+                                                             adnetworkError:adnwError];
             default:
                 [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:weakSelf
                                                                  fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
                                                                                                 code:FSSRewardedVideoAdErrorLoadFailed
                                                                                             userInfo:nil]
-                                                             adnetworkError:reason];
+                                                             adnetworkError:adnwError];
                 break;
             }
         }
     });
+}
+
+- (NSError *)convertADNWErrorFromFailReason:(MaioFailReason)failReason {
+    NSString *message = @"unkonw.";
+    switch (failReason) {
+    case MaioFailReasonUnknown:
+        message = @"unkonw.";
+        break;
+    case MaioFailReasonAdStockOut:
+        message = @"ad stock out.";
+        break;
+    case MaioFailReasonNetworkConnection:
+        message = @"network connection.";
+        break;
+    case MaioFailReasonNetworkClient:
+        message = @"network client.";
+        break;
+    case MaioFailReasonNetworkServer:
+        message = @"network server.";
+        break;
+    case MaioFailReasonSdk:
+        message = @"sdk.";
+        break;
+    case MaioFailReasonDownloadCancelled:
+        message = @"download cancelled.";
+        break;
+    case MaioFailReasonVideoPlayback:
+        message = @"video playback.";
+        break;
+    case MaioFailReasonIncorrectMediaId:
+        message = @"incorrect media id.";
+        break;
+    case MaioFailReasonIncorrectZoneId:
+        message = @"incorrect zone id.";
+        break;
+    }
+    return [NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                               code:failReason
+                           userInfo:@{NSLocalizedDescriptionKey : message}];
 }
 
 @end
