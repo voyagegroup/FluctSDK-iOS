@@ -31,8 +31,8 @@ FOUNDATION_EXPORT const unsigned char FluctSDKVersionString[];
 #import <FluctSDK/FSSConfigurationOptions.h>
 
 #import <FluctSDK/FSSAdView.h>
+#import <FluctSDK/FSSAdViewCustomEventDelegate.h>
 #import <FluctSDK/FSSAdViewError.h>
-
 /*
  * SDKの各処理を行う
  * ・広告表示設定 (表示処理はFluctBannerViewにて行われる)

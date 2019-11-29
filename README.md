@@ -1,21 +1,13 @@
 # FluctSDK
 
-## Installation
-
-FluctSDK は [CocoaPods](http://cocoapods.org) から利用可能です
-
-利用するプロジェクトの`Podfile`に下記の記述を追加して下さい
-
-```ruby
-use_frameworks!
-
-pod "FluctSDK"
-```
-
 ## APIドキュメント
 FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照してください
 
 # FluctSDK Release Note
+
+## V5.16.0 2019/11/29
+* MoPubのカスタムイベントに対応
+* 内部処理の変更および改善
 
 ## V5.15.0 2019/11/25
 * GoogleMobileAdsのバナー広告のカスタムイベントに対応

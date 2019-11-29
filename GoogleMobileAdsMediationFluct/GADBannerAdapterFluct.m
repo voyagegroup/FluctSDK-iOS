@@ -9,7 +9,7 @@
 #import "GADMFluctError.h"
 @import FluctSDK;
 
-@interface GADBannerAdapterFluct () <FSSAdViewDelegate>
+@interface GADBannerAdapterFluct () <FSSAdViewDelegate, FSSAdViewCustomEventDelegate>
 @property (nonatomic, nullable) NSString *groupID;
 @property (nonatomic, nullable) NSString *unitID;
 @property (nonatomic) FSSAdSize adSize;
@@ -34,6 +34,7 @@
 
     self.adView = [[FSSAdView alloc] initWithGroupId:self.groupID unitId:self.unitID adSize:self.adSize];
     self.adView.delegate = self;
+    self.adView.customEventDelegate = self;
     [self.adView loadAd];
 }
 
@@ -66,10 +67,6 @@
 }
 
 #pragma mark - FSSAdViewDelegate
-- (void)adViewDidStoreAd:(FSSAdView *)adView {
-    [self.delegate customEventBanner:self didReceiveAd:adView];
-}
-
 - (void)adView:(FSSAdView *)adView didFailToStoreAdWithError:(NSError *)error {
     [self.delegate customEventBanner:self didFailAd:error];
 }
@@ -77,6 +74,11 @@
 - (void)willLeaveApplicationForAdView:(FSSAdView *)adView {
     [self.delegate customEventBannerWasClicked:self];
     [self.delegate customEventBannerWillLeaveApplication:self];
+}
+
+#pragma mark - FSSAdViewCustomEventDelegate
+- (void)adViewDidReadyForCustomEvent:(FSSAdView *)adView {
+    [self.delegate customEventBanner:self didReceiveAd:adView];
 }
 
 @end
