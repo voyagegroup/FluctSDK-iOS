@@ -5,8 +5,8 @@
 //  Copyright © 2019 fluct, Inc. All rights reserved.
 //
 
-#import "MPBaseAdapterConfiguration.h"
 #import <Foundation/Foundation.h>
+#import <MoPub/MoPub.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
