@@ -5,6 +5,9 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## V5.16.1 2019/12/02
+* RTBに必要な情報をリクエストに追加
+
 ## V5.16.0 2019/11/29
 * MoPubのカスタムイベントに対応
 * 内部処理の変更および改善
