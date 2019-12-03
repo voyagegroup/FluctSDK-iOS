@@ -10,7 +10,7 @@
 /**
  * FSSAdViewのエラー
  */
-typedef NS_CLOSED_ENUM(NSInteger, FSSAdViewError){
+typedef NS_ENUM(NSInteger, FSSAdViewError) {
     /**
      * Unknown error
      */

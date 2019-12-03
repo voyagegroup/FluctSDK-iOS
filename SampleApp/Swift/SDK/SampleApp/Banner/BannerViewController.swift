@@ -58,6 +58,8 @@ class BannerViewController: UIViewController, FSSAdViewDelegate {
             print("表示する広告がありません")
         case .badRequest:
             print("groupId / unitId / 登録されているbundleのどれかが間違っています")
+        @unknown default:
+            fatalError()
         }
     }
 

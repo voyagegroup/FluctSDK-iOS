@@ -5,6 +5,10 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## V5.16.2 2019/12/03
+* FSSAdViewDelegateへ通知がいかなくなる不具合を修正
+* Xcode9.xでビルドできるように修正
+
 ## V5.16.1 2019/12/02
 * RTBに必要な情報をリクエストに追加
 
