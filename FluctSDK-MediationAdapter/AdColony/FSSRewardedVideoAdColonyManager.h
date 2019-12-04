@@ -10,13 +10,18 @@
 
 NS_ASSUME_NONNULL_BEGIN
 @protocol FSSRewardedVideoAdColonyManagerDelegate <NSObject>
-- (void)loadSuccess;
-- (void)loadFailure:(AdColonyAdRequestError *)error;
-- (void)open;
-- (void)close;
+- (void)adColonyInterstitialDidLoad;
+- (void)adColonyInterstitialDidFailToLoad:(AdColonyAdRequestError *)error;
+- (void)adColonyInterstitialWillOpen;
+- (void)adColonyInterstitialDidClose;
 - (void)rewarded;
-- (void)click;
-- (void)expired;
+- (void)adColonyInterstitialDidReceiveClick;
+- (void)adColonyInterstitialExpired;
+@end
+
+@interface FSSAdColonyDelegateDispacher : NSObject <AdColonyInterstitialDelegate>
+@property (nonatomic, weak) id<FSSRewardedVideoAdColonyManagerDelegate> delegate;
+@property (nonatomic, nullable) AdColonyInterstitial *ad;
 @end
 
 @interface FSSRewardedVideoAdColonyManager : NSObject

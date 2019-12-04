@@ -1,17 +1,3 @@
-(function (fluctSdkEnv) {
-  if (fluctSdkEnv && fluctSdkEnv.isDebug) {
-    console = {};
-    console.log = function (log) {
-      var iframe = document.createElement('iframe');
-      iframe.setAttribute('src', 'fluct-log: ' + log);
-      document.body.appendChild(iframe);
-      iframe.parentNode.removeChild(iframe);
-      iframe = null;
-    };
-    console.debug = console.info = console.warn = console.error = console.log;
-  }
-}(window.fluctSdkEnv));
-
 (function () {
   //////////////////////////
   /// MRAID

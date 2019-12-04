@@ -5,6 +5,9 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## V5.16.3 2019/12/04
+* 動画リワードメディエーションでAdColonyの新しいAPIを利用するように変更
+
 ## V5.16.2 2019/12/03
 * FSSAdViewDelegateへ通知がいかなくなる不具合を修正
 * Xcode9.xでビルドできるように修正

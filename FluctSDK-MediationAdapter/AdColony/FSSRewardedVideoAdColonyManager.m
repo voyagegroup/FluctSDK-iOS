@@ -13,11 +13,49 @@ typedef NS_ENUM(NSUInteger, AdColonyManagerState) {
     Configured
 };
 
+@implementation FSSAdColonyDelegateDispacher
+- (instancetype)initWithDelegate:(id<FSSRewardedVideoAdColonyManagerDelegate>)delegate {
+    self = [super init];
+    if (self) {
+        _delegate = delegate;
+    }
+    return self;
+}
+
+- (void)adColonyInterstitialDidLoad:(AdColonyInterstitial *_Nonnull)interstitial {
+    self.ad = interstitial;
+    [self.delegate adColonyInterstitialDidLoad];
+}
+
+- (void)adColonyInterstitialDidFailToLoad:(AdColonyAdRequestError *_Nonnull)error {
+    [self.delegate adColonyInterstitialDidFailToLoad:error];
+}
+
+- (void)adColonyInterstitialWillOpen:(AdColonyInterstitial *_Nonnull)interstitial {
+    [self.delegate adColonyInterstitialWillOpen];
+}
+
+- (void)adColonyInterstitialDidClose:(AdColonyInterstitial *_Nonnull)interstitial {
+    [self.delegate adColonyInterstitialDidClose];
+}
+
+- (void)adColonyInterstitialExpired:(AdColonyInterstitial *_Nonnull)interstitial {
+    [self.delegate adColonyInterstitialExpired];
+}
+
+- (void)adColonyInterstitialWillLeaveApplication:(AdColonyInterstitial *_Nonnull)interstitial {
+    //do nothing so far
+}
+
+- (void)adColonyInterstitialDidReceiveClick:(AdColonyInterstitial *_Nonnull)interstitial {
+    [self.delegate adColonyInterstitialDidReceiveClick];
+}
+@end
+
 @interface FSSRewardedVideoAdColonyManager ()
 @property (nonatomic) AdColonyManagerState state;
 @property (nonatomic) NSMutableArray *configCompletionArray;
-@property (nonatomic) NSMutableDictionary<NSString *, id<FSSRewardedVideoAdColonyManagerDelegate>> *delegateTable;
-@property (nonatomic) NSMutableDictionary<NSString *, AdColonyInterstitial *> *adTable;
+@property (nonatomic) NSMutableDictionary<NSString *, FSSAdColonyDelegateDispacher *> *delegateDispatcherTable;
 @end
 
 /*
@@ -40,8 +78,7 @@ typedef NS_ENUM(NSUInteger, AdColonyManagerState) {
     if (self) {
         _state = Initial;
         _configCompletionArray = [NSMutableArray new];
-        _delegateTable = [NSMutableDictionary new];
-        _adTable = [NSMutableDictionary new];
+        _delegateDispatcherTable = [NSMutableDictionary new];
     }
     return self;
 }
@@ -62,59 +99,40 @@ typedef NS_ENUM(NSUInteger, AdColonyManagerState) {
                          zoneIDs:zoneIDs
                          options:options
                       completion:^(NSArray<AdColonyZone *> *_Nonnull zones) {
-                          weakSelf.state = Configured;
-                          __weak __typeof(self) weakSelf = self;
-                          [zones enumerateObjectsUsingBlock:^(AdColonyZone *_Nonnull zone, NSUInteger idx, BOOL *_Nonnull stop) {
-                              NSString *zoneID = zone.identifier;
-                              zone.reward = ^(BOOL success, NSString *name, int amount) {
-                                  __weak __typeof(id<FSSRewardedVideoAdColonyManagerDelegate>) delegate = weakSelf.delegateTable[zoneID];
-                                  dispatch_async(FSSRewardedVideoWorkQueue(), ^{
-                                      [delegate rewarded];
-                                  });
-                              };
-                          }];
-                          dispatch_async(FSSRewardedVideoWorkQueue(), ^{
-                              for (void (^callback)(void) in weakSelf.configCompletionArray) {
-                                  callback();
-                              }
-                          });
+                          [weakSelf adColonyConfigureCallback:zones];
                       }];
+}
+
+- (void)adColonyConfigureCallback:(NSArray<AdColonyZone *> *)zones {
+    self.state = Configured;
+
+    __weak __typeof(self) weakSelf = self;
+    [zones enumerateObjectsUsingBlock:^(AdColonyZone *_Nonnull zone, NSUInteger idx, BOOL *_Nonnull stop) {
+        NSString *zoneID = zone.identifier;
+        zone.reward = ^(BOOL success, NSString *name, int amount) {
+            FSSAdColonyDelegateDispacher *delegateDispatcher = weakSelf.delegateDispatcherTable[zoneID];
+            __weak __typeof(delegateDispatcher) weakDelegateDispatcher = delegateDispatcher;
+            dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+                [weakDelegateDispatcher.delegate rewarded];
+            });
+        };
+    }];
+    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+        for (void (^callback)(void) in weakSelf.configCompletionArray) {
+            callback();
+        }
+    });
 }
 
 - (void)loadRewardedVideoWithZoneId:(NSString *)zoneId
                            delegate:(id<FSSRewardedVideoAdColonyManagerDelegate>)delegate {
-    _delegateTable[zoneId] = delegate;
-    __weak __typeof(self) weakSelf = self;
-    __weak __typeof(delegate) weakDelegate = delegate;
 
+    FSSAdColonyDelegateDispacher *adcolonyDelegate = [self getOrCreateDelgateDispatcherByZoneId:zoneId
+                                                                                           from:self.delegateDispatcherTable
+                                                                                           with:delegate];
+    __weak __typeof(adcolonyDelegate) weakDelegate = adcolonyDelegate;
     void (^callback)(void) = ^{
-        [AdColony requestInterstitialInZone:zoneId
-            options:nil
-            success:^(AdColonyInterstitial *_Nonnull ad) {
-                weakSelf.adTable[zoneId] = ad;
-                [weakDelegate loadSuccess];
-                [ad setOpen:^{
-                    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
-                        [weakDelegate open];
-                    });
-                }];
-                [ad setClose:^{
-                    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
-                        [weakDelegate close];
-                        [weakSelf.delegateTable removeObjectForKey:zoneId];
-                        [weakSelf.adTable removeObjectForKey:zoneId];
-                    });
-                }];
-                [ad setClick:^{
-                    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
-                        [weakDelegate click];
-                    });
-                }];
-            }
-            failure:^(AdColonyAdRequestError *_Nonnull error) {
-                [weakDelegate loadFailure:error];
-                [weakSelf.delegateTable removeObjectForKey:zoneId];
-            }];
+        [AdColony requestInterstitialInZone:zoneId options:nil andDelegate:weakDelegate];
     };
 
     if (self.state == Configured) {
@@ -125,11 +143,20 @@ typedef NS_ENUM(NSUInteger, AdColonyManagerState) {
     [_configCompletionArray addObject:callback];
 }
 
+- (FSSAdColonyDelegateDispacher *)getOrCreateDelgateDispatcherByZoneId:(NSString *)zoneId
+                                                                  from:(NSMutableDictionary<NSString *, FSSAdColonyDelegateDispacher *> *)table
+                                                                  with:(id<FSSRewardedVideoAdColonyManagerDelegate>)managerDelegate {
+    if (!table[zoneId]) {
+        table[zoneId] = [[FSSAdColonyDelegateDispacher alloc] initWithDelegate:managerDelegate];
+    }
+    return table[zoneId];
+}
+
 - (void)presentRewardedVideoAdFromViewController:(UIViewController *)viewController zoneID:(NSString *)zoneId {
-    AdColonyInterstitial *ad = _adTable[zoneId];
+    AdColonyInterstitial *ad = self.delegateDispatcherTable[zoneId].ad;
     if (ad.expired) {
-        [_delegateTable[zoneId] expired];
-        [_adTable removeObjectForKey:zoneId];
+        [self.delegateDispatcherTable[zoneId].delegate adColonyInterstitialExpired];
+        [self.delegateDispatcherTable removeObjectForKey:zoneId];
         return;
     }
     [ad showWithPresentingViewController:viewController];

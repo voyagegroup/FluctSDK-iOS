@@ -95,7 +95,7 @@ static NSString *const FSSAdColonySupportVersion = @"9.0";
 }
 
 #pragma mark - FSSRewardedVideoAdColonyManagerDelegate
-- (void)loadSuccess {
+- (void)adColonyInterstitialDidLoad {
     [self clearTimer];
 
     if (self.adnwStatus == FSSRewardedVideoADNWStatusNotDisplayable) {
@@ -107,7 +107,7 @@ static NSString *const FSSAdColonySupportVersion = @"9.0";
     [self.delegate rewardedVideoDidLoadForCustomEvent:self];
 }
 
-- (void)loadFailure:(AdColonyAdRequestError *)error {
+- (void)adColonyInterstitialDidFailToLoad:(AdColonyAdRequestError *)error {
     [self clearTimer];
 
     if (self.adnwStatus == FSSRewardedVideoADNWStatusNotDisplayable) {
@@ -124,12 +124,12 @@ static NSString *const FSSAdColonySupportVersion = @"9.0";
                                              adnetworkError:error];
 }
 
-- (void)open {
+- (void)adColonyInterstitialWillOpen {
     [self.delegate rewardedVideoWillAppearForCustomEvent:self];
     [self.delegate rewardedVideoDidAppearForCustomEvent:self];
 }
 
-- (void)close {
+- (void)adColonyInterstitialDidClose {
     [self.delegate rewardedVideoWillDisappearForCustomEvent:self];
     [self.delegate rewardedVideoDidDisappearForCustomEvent:self];
 }
@@ -138,11 +138,11 @@ static NSString *const FSSAdColonySupportVersion = @"9.0";
     [self.delegate rewardedVideoShouldRewardForCustomEvent:self];
 }
 
-- (void)click {
+- (void)adColonyInterstitialDidReceiveClick {
     [self.delegate rewardedVideoDidClickForCustomEvent:self];
 }
 
-- (void)expired {
+- (void)adColonyInterstitialExpired {
     self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
     [self.delegate rewardedVideoDidFailToPlayForCustomEvent:self
                                                  fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
