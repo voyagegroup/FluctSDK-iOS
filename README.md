@@ -5,6 +5,9 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## V5.16.4 2019/12/06
+* RTBの動画リワードのplayerでアプリ内ストアを複数回表示しようとしてクラッシュする問題の対応
+
 ## V5.16.3 2019/12/04
 * 動画リワードメディエーションでAdColonyの新しいAPIを利用するように変更
 
