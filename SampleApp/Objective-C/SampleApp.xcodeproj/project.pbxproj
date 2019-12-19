@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7581898A22D30F8600EBC905 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7581896722D30F8600EBC905 /* main.m */; };
-		7581898B22D30F8600EBC905 /* NativeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7581896A22D30F8600EBC905 /* NativeTableViewController.m */; };
-		7581898C22D30F8600EBC905 /* NativeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7581896B22D30F8600EBC905 /* NativeViewController.m */; };
-		7581898D22D30F8600EBC905 /* InterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7581896F22D30F8600EBC905 /* InterstitialViewController.m */; };
 		7581898E22D30F8600EBC905 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7581897022D30F8600EBC905 /* Images.xcassets */; };
 		7581898F22D30F8600EBC905 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7581897122D30F8600EBC905 /* ViewController.m */; };
 		7581899022D30F8600EBC905 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7581897222D30F8600EBC905 /* AppDelegate.m */; };
@@ -33,12 +30,6 @@
 		7581896522D30F8600EBC905 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7581896622D30F8600EBC905 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		7581896722D30F8600EBC905 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		7581896922D30F8600EBC905 /* NativeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeViewController.h; sourceTree = "<group>"; };
-		7581896A22D30F8600EBC905 /* NativeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeTableViewController.m; sourceTree = "<group>"; };
-		7581896B22D30F8600EBC905 /* NativeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeViewController.m; sourceTree = "<group>"; };
-		7581896C22D30F8600EBC905 /* NativeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeTableViewController.h; sourceTree = "<group>"; };
-		7581896E22D30F8600EBC905 /* InterstitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterstitialViewController.h; sourceTree = "<group>"; };
-		7581896F22D30F8600EBC905 /* InterstitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterstitialViewController.m; sourceTree = "<group>"; };
 		7581897022D30F8600EBC905 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7581897122D30F8600EBC905 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		7581897222D30F8600EBC905 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -81,26 +72,6 @@
 				8D40E52541BDBD396EA50814 /* Pods_SampleApp.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		7581896822D30F8600EBC905 /* Native */ = {
-			isa = PBXGroup;
-			children = (
-				7581896C22D30F8600EBC905 /* NativeTableViewController.h */,
-				7581896A22D30F8600EBC905 /* NativeTableViewController.m */,
-				7581896922D30F8600EBC905 /* NativeViewController.h */,
-				7581896B22D30F8600EBC905 /* NativeViewController.m */,
-			);
-			path = Native;
-			sourceTree = "<group>";
-		};
-		7581896D22D30F8600EBC905 /* Interstitial */ = {
-			isa = PBXGroup;
-			children = (
-				7581896E22D30F8600EBC905 /* InterstitialViewController.h */,
-				7581896F22D30F8600EBC905 /* InterstitialViewController.m */,
-			);
-			path = Interstitial;
 			sourceTree = "<group>";
 		};
 		7581897322D30F8600EBC905 /* RewardedVideo */ = {
@@ -163,8 +134,6 @@
 				7581899A22D30FB200EBC905 /* Main.storyboard */,
 				7581897022D30F8600EBC905 /* Images.xcassets */,
 				7581897C22D30F8600EBC905 /* Banner */,
-				7581896D22D30F8600EBC905 /* Interstitial */,
-				7581896822D30F8600EBC905 /* Native */,
 				7581897322D30F8600EBC905 /* RewardedVideo */,
 			);
 			path = SampleApp;
@@ -293,7 +262,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7581898B22D30F8600EBC905 /* NativeTableViewController.m in Sources */,
 				7581899822D30F8600EBC905 /* BannerTabBarController.m in Sources */,
 				7581898A22D30F8600EBC905 /* main.m in Sources */,
 				7581899122D30F8600EBC905 /* RewardedVideoViewController.m in Sources */,
@@ -302,8 +270,6 @@
 				7581899422D30F8600EBC905 /* BannerTableViewController.m in Sources */,
 				7581899022D30F8600EBC905 /* AppDelegate.m in Sources */,
 				7581899522D30F8600EBC905 /* BannerViewController.m in Sources */,
-				7581898D22D30F8600EBC905 /* InterstitialViewController.m in Sources */,
-				7581898C22D30F8600EBC905 /* NativeViewController.m in Sources */,
 				7581898F22D30F8600EBC905 /* ViewController.m in Sources */,
 				7581899622D30F8600EBC905 /* ManyBannerViewController.m in Sources */,
 			);

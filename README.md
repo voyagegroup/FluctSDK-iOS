@@ -5,6 +5,12 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## V6.0.0 2019/12/19
+* FSSBannerViewを削除
+* FSSInterstitialViewを削除
+* FSSNativeViewを削除
+* FSSNativeTableViewCellを削除
+
 ## V5.16.4 2019/12/06
 * RTBの動画リワードのplayerでアプリ内ストアを複数回表示しようとしてクラッシュする問題の対応
 

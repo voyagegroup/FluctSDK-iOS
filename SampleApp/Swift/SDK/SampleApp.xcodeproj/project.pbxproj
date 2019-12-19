@@ -11,13 +11,9 @@
 		3A6AADB11D8148DA005D94C1 /* BannerNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AADB01D8148DA005D94C1 /* BannerNavigationController.swift */; };
 		3ADBC1981D825A62003D7AB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADBC1971D825A62003D7AB3 /* ViewController.swift */; };
 		960884221F9EC23B005F65FD /* RewardedVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960884211F9EC23A005F65FD /* RewardedVideoViewController.swift */; };
-		9661EEFA1F15FDAE00286B72 /* NativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9661EEF91F15FDAE00286B72 /* NativeViewController.swift */; };
-		9661EEFC1F15FDD800286B72 /* NativeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9661EEFB1F15FDD800286B72 /* NativeTableViewController.swift */; };
 		966CC73C1DF7C98C0005EF1C /* BannerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966CC73B1DF7C98C0005EF1C /* BannerTableViewController.swift */; };
 		966CC73E1DF7C9B50005EF1C /* BannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966CC73D1DF7C9B50005EF1C /* BannerTableViewCell.swift */; };
 		969EC2001D3E0CF7005F475E /* ManyBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969EC1FF1D3E0CF7005F475E /* ManyBannerViewController.swift */; };
-		969EC2021D3E11C1005F475E /* InterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969EC2011D3E11C1005F475E /* InterstitialViewController.swift */; };
-		96D530F41F25DC22008B1066 /* FooterNativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D530F31F25DC22008B1066 /* FooterNativeViewController.swift */; };
 		96F22C371D3899D300C3136E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F22C361D3899D300C3136E /* AppDelegate.swift */; };
 		96F22C391D3899D300C3136E /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F22C381D3899D300C3136E /* BannerViewController.swift */; };
 		96F22C3C1D3899D300C3136E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96F22C3A1D3899D300C3136E /* Main.storyboard */; };
@@ -45,13 +41,9 @@
 		845EBA47124CC371A063A0EC /* Pods-SampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.debug.xcconfig"; path = "Target Support Files/Pods-SampleApp/Pods-SampleApp.debug.xcconfig"; sourceTree = "<group>"; };
 		8DCF10F0021ED2BCF9314B50 /* Pods-SampleApp-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp-Swift.debug.xcconfig"; path = "Target Support Files/Pods-SampleApp-Swift/Pods-SampleApp-Swift.debug.xcconfig"; sourceTree = "<group>"; };
 		960884211F9EC23A005F65FD /* RewardedVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardedVideoViewController.swift; sourceTree = "<group>"; };
-		9661EEF91F15FDAE00286B72 /* NativeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeViewController.swift; sourceTree = "<group>"; };
-		9661EEFB1F15FDD800286B72 /* NativeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeTableViewController.swift; sourceTree = "<group>"; };
 		966CC73B1DF7C98C0005EF1C /* BannerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerTableViewController.swift; sourceTree = "<group>"; };
 		966CC73D1DF7C9B50005EF1C /* BannerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerTableViewCell.swift; sourceTree = "<group>"; };
 		969EC1FF1D3E0CF7005F475E /* ManyBannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManyBannerViewController.swift; sourceTree = "<group>"; };
-		969EC2011D3E11C1005F475E /* InterstitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterstitialViewController.swift; sourceTree = "<group>"; };
-		96D530F31F25DC22008B1066 /* FooterNativeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterNativeViewController.swift; sourceTree = "<group>"; };
 		96E978841FA0761800125A02 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		96F22C331D3899D300C3136E /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96F22C361D3899D300C3136E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,24 +98,6 @@
 			path = Banner;
 			sourceTree = "<group>";
 		};
-		9661EEF71F15FD2D00286B72 /* Interstitial */ = {
-			isa = PBXGroup;
-			children = (
-				969EC2011D3E11C1005F475E /* InterstitialViewController.swift */,
-			);
-			path = Interstitial;
-			sourceTree = "<group>";
-		};
-		9661EEF81F15FD3B00286B72 /* Native */ = {
-			isa = PBXGroup;
-			children = (
-				9661EEF91F15FDAE00286B72 /* NativeViewController.swift */,
-				9661EEFB1F15FDD800286B72 /* NativeTableViewController.swift */,
-				96D530F31F25DC22008B1066 /* FooterNativeViewController.swift */,
-			);
-			path = Native;
-			sourceTree = "<group>";
-		};
 		96E978781FA0738800125A02 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,8 +144,6 @@
 				96F22C3A1D3899D300C3136E /* Main.storyboard */,
 				96F22C3D1D3899D300C3136E /* Assets.xcassets */,
 				9661EEF61F15FCE400286B72 /* Banner */,
-				9661EEF71F15FD2D00286B72 /* Interstitial */,
-				9661EEF81F15FD3B00286B72 /* Native */,
 				960884201F9EC17A005F65FD /* RewardedVideo */,
 			);
 			path = SampleApp;
@@ -299,16 +271,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9661EEFC1F15FDD800286B72 /* NativeTableViewController.swift in Sources */,
-				969EC2021D3E11C1005F475E /* InterstitialViewController.swift in Sources */,
 				96F22C391D3899D300C3136E /* BannerViewController.swift in Sources */,
 				96F22C371D3899D300C3136E /* AppDelegate.swift in Sources */,
 				966CC73E1DF7C9B50005EF1C /* BannerTableViewCell.swift in Sources */,
 				3A24ECA81D812CCC0014B706 /* TabBarController.swift in Sources */,
-				9661EEFA1F15FDAE00286B72 /* NativeViewController.swift in Sources */,
 				3ADBC1981D825A62003D7AB3 /* ViewController.swift in Sources */,
 				960884221F9EC23B005F65FD /* RewardedVideoViewController.swift in Sources */,
-				96D530F41F25DC22008B1066 /* FooterNativeViewController.swift in Sources */,
 				3A6AADB11D8148DA005D94C1 /* BannerNavigationController.swift in Sources */,
 				969EC2001D3E0CF7005F475E /* ManyBannerViewController.swift in Sources */,
 				966CC73C1DF7C98C0005EF1C /* BannerTableViewController.swift in Sources */,

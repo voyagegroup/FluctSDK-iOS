@@ -7,19 +7,7 @@
 
 #import <UIKit/UIKit.h>
 
-//! Project version number for FluctSDK.
-FOUNDATION_EXPORT double FluctSDKVersionNumber;
-
-//! Project version string for FluctSDK.
-FOUNDATION_EXPORT const unsigned char FluctSDKVersionString[];
-
 // In this header, you should import all the public headers of your framework using statements like #import <FluctSDK/PublicHeader.h>
-#import <FluctSDK/FSSBannerView.h>
-#import <FluctSDK/FSSInterstitialView.h>
-
-#import <FluctSDK/FSSNativeTableViewCell.h>
-#import <FluctSDK/FSSNativeView.h>
-
 #import <FluctSDK/FSSRewardedVideo.h>
 #import <FluctSDK/FSSRewardedVideoAdnetworkActivation.h>
 #import <FluctSDK/FSSRewardedVideoCustomEvent.h>
@@ -33,47 +21,41 @@ FOUNDATION_EXPORT const unsigned char FluctSDKVersionString[];
 #import <FluctSDK/FSSAdView.h>
 #import <FluctSDK/FSSAdViewCustomEventDelegate.h>
 #import <FluctSDK/FSSAdViewError.h>
-/*
- * SDKの各処理を行う
- * ・広告表示設定 (表示処理はFluctBannerViewにて行われる)
- * ・コンバージョン通知処理
- */
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ * FluctSDK共通クラス
+ */
 @interface FluctSDK : NSObject
 
+/**
+ * FluctSDKクラスのインスタンス
+ */
 @property (class, nonatomic, readonly) FluctSDK *sharedInstance NS_SWIFT_NAME(shared);
-@property (nonatomic, copy, nullable) NSString *applicationId;
 
-/*
- * setBannerConfiguration
- * 広告表示設定を行う
- * FluctBannerViewのインスタンス生成前にコールします
- *
- * arguments:
- * (NSString*)mediaId : メディアID
- * (NSString*)orientationType : 未使用(v2.0.0未満との互換性用)
+/**
+ * FluctSDKのバージョン番号を返す。
+ * @return バージョン番号
  */
-- (void)setBannerConfiguration:(NSString *)mediaId orientationType:(NSString *_Nullable)orientationType;
-
-/*
- * setBannerConfiguration
- * 広告表示設定を行う
- * FluctBannerViewのインスタンス生成前にコールします
- *
- * arguments:
- * (NSString*)mediaId : メディアID
- */
-- (void)setBannerConfiguration:(NSString *)mediaId;
-
-// Check the version of this FluctSDK
 + (NSString *)version;
 
+/**
+ * FluctSDKの設定を行う。
+ */
 + (void)configure;
-+ (void)configureWithOptions:(FSSConfigurationOptions *)options;
-+ (FSSConfigurationOptions *)currentConfigureOptions;
 
+/**
+ * FluctSDKの設定を行う。
+ * @param options 設定オプション
+ */
++ (void)configureWithOptions:(FSSConfigurationOptions *)options;
+
+/**
+ * 現在の設定オプションを返す。
+ * @return 現在の設定オプション
+ */
++ (FSSConfigurationOptions *)currentConfigureOptions;
 @end
 
 NS_ASSUME_NONNULL_END

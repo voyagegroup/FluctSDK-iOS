@@ -1,38 +1,38 @@
 PODS:
   - AdColony (4.1.1)
   - AppLovinSDK (5.1.2)
-  - FluctSDK (5.16.4)
-  - FluctSDK-MediationAdapter (5.16.4):
-    - FluctSDK-MediationAdapter/AdColony (= 5.16.4)
-    - FluctSDK-MediationAdapter/AdCorsa (= 5.16.4)
-    - FluctSDK-MediationAdapter/AppLovin (= 5.16.4)
-    - FluctSDK-MediationAdapter/maio (= 5.16.4)
-    - FluctSDK-MediationAdapter/Mintegral (= 5.16.4)
-    - FluctSDK-MediationAdapter/nend (= 5.16.4)
-    - FluctSDK-MediationAdapter/Tapjoy (= 5.16.4)
-    - FluctSDK-MediationAdapter/UnityAds (= 5.16.4)
-  - FluctSDK-MediationAdapter/AdColony (5.16.4):
+  - FluctSDK (6.0.0)
+  - FluctSDK-MediationAdapter (6.0.0):
+    - FluctSDK-MediationAdapter/AdColony (= 6.0.0)
+    - FluctSDK-MediationAdapter/AdCorsa (= 6.0.0)
+    - FluctSDK-MediationAdapter/AppLovin (= 6.0.0)
+    - FluctSDK-MediationAdapter/maio (= 6.0.0)
+    - FluctSDK-MediationAdapter/Mintegral (= 6.0.0)
+    - FluctSDK-MediationAdapter/nend (= 6.0.0)
+    - FluctSDK-MediationAdapter/Tapjoy (= 6.0.0)
+    - FluctSDK-MediationAdapter/UnityAds (= 6.0.0)
+  - FluctSDK-MediationAdapter/AdColony (6.0.0):
     - AdColony
     - FluctSDK
-  - FluctSDK-MediationAdapter/AdCorsa (5.16.4):
+  - FluctSDK-MediationAdapter/AdCorsa (6.0.0):
     - FluctSDK
     - GlossomAds
-  - FluctSDK-MediationAdapter/AppLovin (5.16.4):
+  - FluctSDK-MediationAdapter/AppLovin (6.0.0):
     - AppLovinSDK
     - FluctSDK
-  - FluctSDK-MediationAdapter/maio (5.16.4):
+  - FluctSDK-MediationAdapter/maio (6.0.0):
     - FluctSDK
     - MaioSDK
-  - FluctSDK-MediationAdapter/Mintegral (5.16.4):
+  - FluctSDK-MediationAdapter/Mintegral (6.0.0):
     - FluctSDK
     - MintegralAdSDK/RewardVideoAd
-  - FluctSDK-MediationAdapter/nend (5.16.4):
+  - FluctSDK-MediationAdapter/nend (6.0.0):
     - FluctSDK
     - NendSDK_iOS
-  - FluctSDK-MediationAdapter/Tapjoy (5.16.4):
+  - FluctSDK-MediationAdapter/Tapjoy (6.0.0):
     - FluctSDK
     - TapjoySDK
-  - FluctSDK-MediationAdapter/UnityAds (5.16.4):
+  - FluctSDK-MediationAdapter/UnityAds (6.0.0):
     - FluctSDK
     - UnityAds
   - GlossomAds (2.0.0)
@@ -70,8 +70,8 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AdColony: bc18ed5b7cd138b547f602e9da1572b0140396ee
   AppLovinSDK: 5a6c0ab59aaed00da1bc95d54e2065266ab3b379
-  FluctSDK: 0b009ab789aa4a2466b6c368dd1f85158d4ade10
-  FluctSDK-MediationAdapter: bbfdc5c80db692fbc1c28d6f8c57a63ea0104816
+  FluctSDK: 6534acfb0825a842df706df48b75ba8fd6b24f17
+  FluctSDK-MediationAdapter: a4b9f73c9843eb5a2bd22e344c83ba1d817f551b
   GlossomAds: 0bd35eccb23cfacbe1577e24c03e90e1ab1a975c
   MaioSDK: 739514080b0d9c3b3e3457c90b53fec2ee1d5cc2
   MintegralAdSDK: f5a04c8205d34ebbb203eacb65eac428b014d469
