@@ -5,6 +5,9 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## V6.0.2 2020/01/08
+* 内部処理の変更
+
 ## V6.0.1 2020/01/06
 * FluctSDKからUIWebViewへの参照を削除
 

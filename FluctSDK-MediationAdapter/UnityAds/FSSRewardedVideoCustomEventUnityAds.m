@@ -71,7 +71,7 @@ static NSString *const FSSUnityAdsSupportVersion = @"9.0";
     self.viewController = viewController;
     __weak __typeof(self) weakSelf = self;
     self.observer = [[FSSRewardedVideoConditionObserver alloc] initWithInterval:0.1f
-        fallbackLimit:10
+        fallbackLimit:20
         completionHandler:^{
             dispatch_async(FSSRewardedVideoWorkQueue(), ^{
                 [weakSelf.delegate rewardedVideoDidDisappearForCustomEvent:weakSelf];
