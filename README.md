@@ -5,6 +5,12 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## V6.1.0 2020/01/17
+* 動画インタースティシャル広告のRTB対応
+* AdMob / MoPubの動画インタースティシャル広告のカスタムイベントをRTB対応済みAPIを使用するように変更
+* `FSSRewardedVideoError`をdeprecatedにして新しく作成した`FSSVideoError`を使用するように変更
+* SampleAppをiOS13対応
+
 ## V6.0.3 2020/01/09
 * 通信モジュールの改善
 

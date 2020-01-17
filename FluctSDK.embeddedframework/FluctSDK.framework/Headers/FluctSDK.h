@@ -13,7 +13,6 @@
 #import <FluctSDK/FSSRewardedVideoCustomEvent.h>
 #import <FluctSDK/FSSRewardedVideoError.h>
 #import <FluctSDK/FSSRewardedVideoSetting.h>
-#import <FluctSDK/FSSRewardedVideoWorkQueue.h>
 
 #import <FluctSDK/FSSAdRequestTargeting.h>
 #import <FluctSDK/FSSConfigurationOptions.h>
@@ -21,6 +20,19 @@
 #import <FluctSDK/FSSAdView.h>
 #import <FluctSDK/FSSAdViewCustomEventDelegate.h>
 #import <FluctSDK/FSSAdViewError.h>
+
+#import <FluctSDK/FSSFullscreenVideoWorkQueue.h>
+
+#import <FluctSDK/FSSVideoError.h>
+#import <FluctSDK/FSSVideoInterstitial.h>
+#import <FluctSDK/FSSVideoInterstitialAdnetworkActivation.h>
+#import <FluctSDK/FSSVideoInterstitialSetting.h>
+
+/*
+ * SDKの各処理を行う
+ * ・広告表示設定 (表示処理はFluctBannerViewにて行われる)
+ * ・コンバージョン通知処理
+ */
 
 NS_ASSUME_NONNULL_BEGIN
 

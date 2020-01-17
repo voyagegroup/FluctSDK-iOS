@@ -3,7 +3,7 @@
 ## 環境構築
 
 ```
-Xcode: 11.2
+Xcode: 11.3.1
 cocoapods: 1.8.4
 ```
 
@@ -16,4 +16,8 @@ $ pod install --repo-update
 ## 用意しているサンプル
 
 - バナー
+- 動画インタースティシャル
 - 動画リワード
+- Mediation
+    - AdMob
+    - MoPub

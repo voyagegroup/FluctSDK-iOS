@@ -6,15 +6,14 @@
 //
 
 #import "GADVideoInterstitialAdapterFluct.h"
-#import "GADAdapterFluctVideoDelegateProxy.h"
 #import "GADMFluctError.h"
 @import FluctSDK;
 
-@interface GADVideoInterstitialAdapterFluct () <GADAdapterFluctVideoDelegateProxyItem>
+@interface GADVideoInterstitialAdapterFluct () <FSSVideoInterstitialDelegate>
 
 @property (nonatomic, nullable) NSString *groupID;
 @property (nonatomic, nullable) NSString *unitID;
-
+@property (nonatomic, nullable) FSSVideoInterstitial *videoInterstitial;
 @end
 
 @implementation GADVideoInterstitialAdapterFluct
@@ -35,16 +34,16 @@
     options.mediationPlatformSDKVersion = [NSString stringWithFormat:@"%s", GoogleMobileAdsVersionString];
     [FluctSDK configureWithOptions:options];
 
-    [[GADAdapterFluctVideoDelegateProxy sharedInstance] registerDelegate:self groupId:self.groupID unitId:self.unitID];
-    FSSRewardedVideo.sharedInstance.delegate = GADAdapterFluctVideoDelegateProxy.sharedInstance;
-    [[FSSRewardedVideo sharedInstance] loadRewardedVideoWithGroupId:self.groupID unitId:self.unitID];
+    self.videoInterstitial = [[FSSVideoInterstitial alloc] initWithGroupId:self.groupID
+                                                                    unitId:self.unitID
+                                                                   setting:[FSSVideoInterstitialSetting defaultSetting]];
+    self.videoInterstitial.delegate = self;
+    [self.videoInterstitial loadAd];
 }
 
 - (void)presentFromRootViewController:(UIViewController *)rootViewController {
-    if ([[FSSRewardedVideo sharedInstance] hasAdAvailableForGroupId:self.groupID unitId:self.unitID]) {
-        [[FSSRewardedVideo sharedInstance] presentRewardedVideoAdForGroupId:self.groupID
-                                                                     unitId:self.unitID
-                                                         fromViewController:rootViewController];
+    if ([self.videoInterstitial hasAdAvailable]) {
+        [self.videoInterstitial presentAdFromViewController:rootViewController];
     }
 }
 
@@ -65,33 +64,31 @@
     return YES;
 }
 
-#pragma mark - GADAdapterFluctVideoDelegateProxyItem
-- (void)rewardedVideoDidLoadForGroupID:(NSString *)groupId unitId:(NSString *)unitId {
+#pragma mark - FSSVideoInterstitialDelegate
+- (void)videoInterstitialDidLoad:(FSSVideoInterstitial *)interstitial {
     [self.delegate customEventInterstitialDidReceiveAd:self];
 }
 
-- (void)rewardedVideoDidFailToLoadForGroupId:(NSString *)groupId unitId:(NSString *)unitId error:(NSError *)error {
+- (void)videoInterstitial:(FSSVideoInterstitial *)interstitial didFailToLoadWithError:(NSError *)error {
     [self.delegate customEventInterstitial:self didFailAd:error];
 }
 
-- (void)rewardedVideoWillAppearForGroupId:(NSString *)groupId unitId:(NSString *)unitId {
+- (void)videoInterstitialWillAppear:(FSSVideoInterstitial *)interstitial {
     [self.delegate customEventInterstitialWillPresent:self];
 }
 
-- (void)rewardedVideoDidAppearForGroupId:(NSString *)groupId unitId:(NSString *)unitId {
-    // nothing
+- (void)videoInterstitialDidAppear:(FSSVideoInterstitial *)interstitial {
 }
 
-- (void)rewardedVideoDidFailToPlayForGroupId:(NSString *)groupId unitId:(NSString *)unitId error:(NSError *)error {
-    [self.delegate customEventInterstitial:self didFailAd:error];
-}
-
-- (void)rewardedVideoWillDisappearForGroupId:(NSString *)groupId unitId:(NSString *)unitId {
+- (void)videoInterstitialWillDisappear:(FSSVideoInterstitial *)interstitial {
     [self.delegate customEventInterstitialWillDismiss:self];
 }
 
-- (void)rewardedVideoDidDisappearForGroupId:(NSString *)groupId unitId:(NSString *)unitId {
+- (void)videoInterstitialDidDisappear:(FSSVideoInterstitial *)interstitial {
     [self.delegate customEventInterstitialDidDismiss:self];
 }
 
+- (void)videoInterstitial:(FSSVideoInterstitial *)interstitial didFailToPlayWithError:(NSError *)error {
+    [self.delegate customEventInterstitial:self didFailAd:error];
+}
 @end

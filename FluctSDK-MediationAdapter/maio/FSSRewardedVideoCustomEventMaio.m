@@ -20,12 +20,24 @@ static NSString *const FSSMaioSupportVersion = @"8.0";
 
 @implementation FSSRewardedVideoCustomEventMaio
 
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary delegate:(id<FSSRewardedVideoCustomEventDelegate>)delegate testMode:(BOOL)testMode debugMode:(BOOL)debugMode targeting:(FSSAdRequestTargeting *)targeting {
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary
+                          delegate:(id<FSSRewardedVideoCustomEventDelegate>)delegate
+                          testMode:(BOOL)testMode
+                         debugMode:(BOOL)debugMode
+                         skippable:(BOOL)skippable
+                         targeting:(FSSAdRequestTargeting *)targeting {
+
     if (![FSSRewardedVideoCustomEvent isOSAtLeastVersion:FSSMaioSupportVersion]) {
         return nil;
     }
 
-    self = [super initWithDictionary:dictionary delegate:delegate testMode:testMode debugMode:debugMode targeting:nil];
+    self = [super initWithDictionary:dictionary
+                            delegate:delegate
+                            testMode:testMode
+                           debugMode:debugMode
+                           skippable:skippable
+                           targeting:nil];
+
     if (!self) {
         return nil;
     }
@@ -65,10 +77,10 @@ static NSString *const FSSMaioSupportVersion = @"8.0";
         self.isInitialNotificationForAdapter = NO;
         self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
         [self.delegate rewardedVideoDidFailToLoadForCustomEvent:self
-                                                     fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
-                                                                                    code:FSSRewardedVideoAdErrorTimeout
+                                                     fluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
+                                                                                    code:FSSVideoErrorTimeout
                                                                                 userInfo:nil]
-                                                 adnetworkError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                 adnetworkError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
                                                                                     code:MaioFailReasonExtendTimeout
                                                                                 userInfo:@{NSLocalizedDescriptionKey : @"timeout."}]];
     }
@@ -87,7 +99,7 @@ static NSString *const FSSMaioSupportVersion = @"8.0";
 - (void)maioDidChangeCanShow:(NSString *)zoneId newValue:(BOOL)newValue {
     __weak __typeof(self) weakSelf = self;
 
-    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [weakSelf clearTimer];
 
         if (self.isInitialNotificationForAdapter) {
@@ -100,7 +112,7 @@ static NSString *const FSSMaioSupportVersion = @"8.0";
 
 - (void)maioWillStartAd:(NSString *)zoneId {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoWillAppearForCustomEvent:weakSelf];
         [weakSelf.delegate rewardedVideoDidAppearForCustomEvent:weakSelf];
     });
@@ -108,21 +120,21 @@ static NSString *const FSSMaioSupportVersion = @"8.0";
 
 - (void)maioDidFinishAd:(NSString *)zoneId playtime:(NSInteger)playtime skipped:(BOOL)skipped rewardParam:(NSString *)rewardParam {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoShouldRewardForCustomEvent:weakSelf];
     });
 }
 
 - (void)maioDidClickAd:(NSString *)zoneId {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoDidClickForCustomEvent:self];
     });
 }
 
 - (void)maioDidCloseAd:(NSString *)zoneId {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoWillDisappearForCustomEvent:weakSelf];
         [weakSelf.delegate rewardedVideoDidDisappearForCustomEvent:weakSelf];
     });
@@ -130,7 +142,7 @@ static NSString *const FSSMaioSupportVersion = @"8.0";
 
 - (void)maioDidFail:(NSString *)zoneId reason:(MaioFailReason)reason {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [self clearTimer];
         weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
 
@@ -139,8 +151,8 @@ static NSString *const FSSMaioSupportVersion = @"8.0";
         //error after initialization
         if (reason == MaioFailReasonVideoPlayback) {
             [weakSelf.delegate rewardedVideoDidFailToPlayForCustomEvent:weakSelf
-                                                             fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
-                                                                                            code:FSSRewardedVideoAdErrorPlayFailed
+                                                             fluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
+                                                                                            code:FSSVideoErrorPlayFailed
                                                                                         userInfo:nil]
                                                          adnetworkError:adnwError];
             return;
@@ -153,21 +165,21 @@ static NSString *const FSSMaioSupportVersion = @"8.0";
             switch (reason) {
             case MaioFailReasonAdStockOut:
                 [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:weakSelf
-                                                                 fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
-                                                                                                code:FSSRewardedVideoAdErrorNoAds
+                                                                 fluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
+                                                                                                code:FSSVideoErrorNoAds
                                                                                             userInfo:nil]
                                                              adnetworkError:adnwError];
                 break;
             case MaioFailReasonUnknown:
                 [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:weakSelf
-                                                                 fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
-                                                                                                code:FSSRewardedVideoAdErrorUnknown
+                                                                 fluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
+                                                                                                code:FSSVideoErrorUnknown
                                                                                             userInfo:nil]
                                                              adnetworkError:adnwError];
             default:
                 [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:weakSelf
-                                                                 fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
-                                                                                                code:FSSRewardedVideoAdErrorLoadFailed
+                                                                 fluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
+                                                                                                code:FSSVideoErrorLoadFailed
                                                                                             userInfo:nil]
                                                              adnetworkError:adnwError];
                 break;
@@ -210,7 +222,7 @@ static NSString *const FSSMaioSupportVersion = @"8.0";
         message = @"incorrect zone id.";
         break;
     }
-    return [NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+    return [NSError errorWithDomain:FSSVideoErrorSDKDomain
                                code:failReason
                            userInfo:@{NSLocalizedDescriptionKey : message}];
 }

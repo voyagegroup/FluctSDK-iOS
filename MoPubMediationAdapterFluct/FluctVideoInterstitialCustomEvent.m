@@ -10,8 +10,9 @@
 #import "FluctRewardedVideoDelegateRouter.h"
 #import <FluctSDK/FluctSDK.h>
 
-@interface FluctVideoInterstitialCustomEvent () <FSSRewardedVideoDelegate>
+@interface FluctVideoInterstitialCustomEvent () <FSSVideoInterstitialDelegate>
 @property (nonatomic, nullable) FluctCustomEventInfo *customEventInfo;
+@property (nonatomic, nullable) FSSVideoInterstitial *interstitial;
 @end
 
 @implementation FluctVideoInterstitialCustomEvent
@@ -31,59 +32,56 @@
     options.mediationPlatformSDKVersion = MP_SDK_VERSION;
     [FluctSDK configureWithOptions:options];
 
-    [FluctRewardedVideoDelegateRouter.sharedInstance addDelegate:self
-                                                         groupID:self.customEventInfo.groupID
-                                                          unitID:self.customEventInfo.unitID];
-
-    FSSRewardedVideo.sharedInstance.delegate = FluctRewardedVideoDelegateRouter.sharedInstance;
+    FSSVideoInterstitialSetting *setting = FSSVideoInterstitialSetting.defaultSetting;
+    self.interstitial = [[FSSVideoInterstitial alloc] initWithGroupId:self.customEventInfo.groupID
+                                                               unitId:self.customEventInfo.unitID
+                                                              setting:setting];
+    self.interstitial.delegate = self;
 
     MPLogEvent([MPLogEvent adLoadAttemptForAdapter:NSStringFromClass(self.class) dspCreativeId:nil dspName:nil]);
 
-    [FSSRewardedVideo.sharedInstance loadRewardedVideoWithGroupId:self.customEventInfo.groupID
-                                                           unitId:self.customEventInfo.unitID];
+    [self.interstitial loadAd];
 }
 
 - (void)showInterstitialFromRootViewController:(UIViewController *)rootViewController {
     MPLogEvent([MPLogEvent adShowAttemptForAdapter:NSStringFromClass(self.class)]);
     MPLogEvent([MPLogEvent adWillPresentModalForAdapter:NSStringFromClass(self.class)]);
-    [FSSRewardedVideo.sharedInstance presentRewardedVideoAdForGroupId:self.customEventInfo.groupID
-                                                               unitId:self.customEventInfo.unitID
-                                                   fromViewController:rootViewController];
+    [self.interstitial presentAdFromViewController:rootViewController];
 }
 
-#pragma mark - FSSRewardedVideoDelegate
+#pragma mark - FSSVideoInterstitialDelegate
 
-- (void)rewardedVideoDidLoadForGroupID:(NSString *)groupId unitId:(NSString *)unitId {
+- (void)videoInterstitialDidLoad:(FSSVideoInterstitial *)interstitial {
     MPLogEvent([MPLogEvent adLoadSuccessForAdapter:NSStringFromClass(self.class)]);
-    [self.delegate interstitialCustomEvent:self didLoadAd:FSSRewardedVideo.sharedInstance];
+    [self.delegate interstitialCustomEvent:self didLoadAd:interstitial];
 }
 
-- (void)rewardedVideoDidFailToLoadForGroupId:(NSString *)groupId unitId:(NSString *)unitId error:(NSError *)error {
+- (void)videoInterstitial:(FSSVideoInterstitial *)interstitial didFailToLoadWithError:(NSError *)error {
     MPLogEvent([MPLogEvent adLoadFailedForAdapter:NSStringFromClass(self.class) error:error]);
     [self.delegate interstitialCustomEvent:self didFailToLoadAdWithError:error];
 }
 
-- (void)rewardedVideoDidFailToPlayForGroupId:(NSString *)groupId unitId:(NSString *)unitId error:(NSError *)error {
+- (void)videoInterstitial:(FSSVideoInterstitial *)interstitial didFailToPlayWithError:(NSError *)error {
     MPLogEvent([MPLogEvent adShowFailedForAdapter:NSStringFromClass(self.class) error:error]);
 }
 
-- (void)rewardedVideoWillAppearForGroupId:(NSString *)groupId unitId:(NSString *)unitId {
+- (void)videoInterstitialWillAppear:(FSSVideoInterstitial *)interstitial {
     MPLogEvent([MPLogEvent adWillAppearForAdapter:NSStringFromClass(self.class)]);
     [self.delegate interstitialCustomEventWillAppear:self];
 }
 
-- (void)rewardedVideoDidAppearForGroupId:(NSString *)groupId unitId:(NSString *)unitId {
+- (void)videoInterstitialDidAppear:(FSSVideoInterstitial *)interstitial {
     MPLogEvent([MPLogEvent adDidAppearForAdapter:NSStringFromClass(self.class)]);
     [self.delegate interstitialCustomEventDidAppear:self];
     MPLogEvent([MPLogEvent adShowSuccessForAdapter:NSStringFromClass(self.class)]);
 }
 
-- (void)rewardedVideoWillDisappearForGroupId:(NSString *)groupId unitId:(NSString *)unitId {
+- (void)videoInterstitialWillDisappear:(FSSVideoInterstitial *)interstitial {
     MPLogEvent([MPLogEvent adWillDisappearForAdapter:NSStringFromClass(self.class)]);
     [self.delegate interstitialCustomEventWillDisappear:self];
 }
 
-- (void)rewardedVideoDidDisappearForGroupId:(NSString *)groupId unitId:(NSString *)unitId {
+- (void)videoInterstitialDidDisappear:(FSSVideoInterstitial *)interstitial {
     MPLogEvent([MPLogEvent adDidDisappearForAdapter:NSStringFromClass(self.class)]);
     [self.delegate interstitialCustomEventDidDisappear:self];
     MPLogEvent([MPLogEvent adDidDismissModalForAdapter:NSStringFromClass(self.class)]);

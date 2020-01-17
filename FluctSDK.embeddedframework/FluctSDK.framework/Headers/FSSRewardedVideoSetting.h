@@ -5,12 +5,13 @@
 //  Copyright © 2019年 fluct, Inc. All rights reserved.
 //
 
+#import "FSSFullscreenVideoSetting.h"
 #import "FSSRewardedVideoAdnetworkActivation.h"
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FSSRewardedVideoSetting : NSObject
+@interface FSSRewardedVideoSetting : NSObject <FSSFullscreenVideoSetting>
 
 @property (class, nonatomic, readonly) FSSRewardedVideoSetting *defaultSetting NS_SWIFT_NAME(default);
 

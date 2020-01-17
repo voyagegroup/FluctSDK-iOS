@@ -27,12 +27,23 @@ static NSString *const FSSNendSupportVersion = @"8.1";
     return [[NADRewardedVideo alloc] initWithSpotId:spotId apiKey:apiKey];
 }
 
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary delegate:(id<FSSRewardedVideoCustomEventDelegate>)delegate testMode:(BOOL)testMode debugMode:(BOOL)debugMode targeting:(FSSAdRequestTargeting *)targeting {
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary
+                          delegate:(id<FSSRewardedVideoCustomEventDelegate>)delegate
+                          testMode:(BOOL)testMode
+                         debugMode:(BOOL)debugMode
+                         skippable:(BOOL)skippable
+                         targeting:(FSSAdRequestTargeting *)targeting {
+
     if (![FSSRewardedVideoCustomEventNend isOSAtLeastVersion:FSSNendSupportVersion]) {
         return nil;
     }
 
-    self = [super initWithDictionary:dictionary delegate:delegate testMode:testMode debugMode:debugMode targeting:nil];
+    self = [super initWithDictionary:dictionary
+                            delegate:delegate
+                            testMode:testMode
+                           debugMode:debugMode
+                           skippable:skippable
+                           targeting:nil];
 
     _nendRewardedVideo = [FSSRewardedVideoCustomEventNend initializeNendSDKWithSpotId:dictionary[@"spot_id"] apiKey:dictionary[@"api_key"]];
     _nendRewardedVideo.delegate = self;
@@ -69,10 +80,10 @@ static NSString *const FSSNendSupportVersion = @"8.1";
         [self.nendRewardedVideo showAdFromViewController:viewController];
         [self.delegate rewardedVideoWillAppearForCustomEvent:self];
     } else {
-        NSError *error = [NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain code:FSSRewardedVideoAdErrorNotReady userInfo:nil];
+        NSError *error = [NSError errorWithDomain:FSSVideoErrorSDKDomain code:FSSVideoErrorNotReady userInfo:nil];
         [self.delegate rewardedVideoDidFailToPlayForCustomEvent:self
                                                      fluctError:error
-                                                 adnetworkError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                 adnetworkError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
                                                                                     code:NADRewardedVideoErrorExtendNotReady
                                                                                 userInfo:@{NSLocalizedDescriptionKey : @"not ready"}]];
     }
@@ -87,7 +98,7 @@ static NSString *const FSSNendSupportVersion = @"8.1";
 
 - (void)nadRewardVideoAdDidReceiveAd:(NADRewardedVideo *)nadRewardedVideoAd {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         weakSelf.adnwStatus = FSSRewardedVideoADNWStatusLoaded;
         [weakSelf.delegate rewardedVideoDidLoadForCustomEvent:weakSelf];
     });
@@ -95,38 +106,38 @@ static NSString *const FSSNendSupportVersion = @"8.1";
 
 - (void)nadRewardVideoAd:(NADRewardedVideo *)nadRewardedVideoAd didFailToLoadWithError:(NSError *)error {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
         [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:weakSelf
-                                                         fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                         fluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
                                                                                         code:[self rewardedVideoErrorCodeWithError:error]
                                                                                     userInfo:nil]
                                                      adnetworkError:error];
     });
 }
 
-- (FSSRewardedVideoErrorCode)rewardedVideoErrorCodeWithError:(NSError *)error {
+- (FSSVideoError)rewardedVideoErrorCodeWithError:(NSError *)error {
     switch (error.code) {
     case 204:
-        return FSSRewardedVideoAdErrorNoAds;
+        return FSSVideoErrorNoAds;
 
     case 400:
-        return FSSRewardedVideoAdErrorBadRequest;
+        return FSSVideoErrorBadRequest;
 
     default:
-        return FSSRewardedVideoAdErrorLoadFailed;
+        return FSSVideoErrorLoadFailed;
     }
 }
 
 - (void)nadRewardVideoAdDidFailedToPlay:(NADRewardedVideo *)nadRewardedVideoAd {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
         [weakSelf.delegate rewardedVideoDidFailToPlayForCustomEvent:weakSelf
-                                                         fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
-                                                                                        code:FSSRewardedVideoAdErrorPlayFailed
+                                                         fluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
+                                                                                        code:FSSVideoErrorPlayFailed
                                                                                     userInfo:nil]
-                                                     adnetworkError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                     adnetworkError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
                                                                                         code:NADRewardedVideoErrorExtendPlayFailed
                                                                                     userInfo:@{NSLocalizedDescriptionKey : @"play failed"}]];
     });
@@ -134,21 +145,21 @@ static NSString *const FSSNendSupportVersion = @"8.1";
 
 - (void)nadRewardVideoAdDidOpen:(NADRewardedVideo *)nadRewardedVideoAd {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoDidAppearForCustomEvent:weakSelf];
     });
 }
 
 - (void)nadRewardVideoAdDidCompletePlaying:(NADRewardedVideo *)nadRewardedVideoAd {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoShouldRewardForCustomEvent:weakSelf];
     });
 }
 
 - (void)nadRewardVideoAdDidClose:(NADRewardedVideo *)nadRewardedVideoAd {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoWillDisappearForCustomEvent:weakSelf];
         [weakSelf.delegate rewardedVideoDidDisappearForCustomEvent:weakSelf];
     });
@@ -156,7 +167,7 @@ static NSString *const FSSNendSupportVersion = @"8.1";
 
 - (void)nadRewardVideoAdDidClickAd:(NADRewardedVideo *)nadRewardedVideoAd {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoDidClickForCustomEvent:weakSelf];
     });
 }

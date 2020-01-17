@@ -3,7 +3,7 @@
 //  SampleApp
 //
 //  Fluct SDK
-//  Copyright © 2016年 fluct, Inc. All rights reserved.
+//  Copyright © 2020年 fluct, Inc. All rights reserved.
 
 import UIKit
 import FluctSDK

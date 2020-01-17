@@ -24,12 +24,14 @@ typedef NS_ENUM(NSInteger, MintegralErrorExtend) {
                           delegate:(id<FSSRewardedVideoCustomEventDelegate>)delegate
                           testMode:(BOOL)testMode
                          debugMode:(BOOL)debugMode
+                         skippable:(BOOL)skippable
                          targeting:(FSSAdRequestTargeting *)targeting {
 
     self = [super initWithDictionary:dictionary
                             delegate:delegate
                             testMode:testMode
                            debugMode:debugMode
+                           skippable:skippable
                            targeting:targeting];
 
     static dispatch_once_t onceToken;
@@ -69,8 +71,8 @@ typedef NS_ENUM(NSInteger, MintegralErrorExtend) {
                                       viewController:viewController];
     } else {
         self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
-        NSError *error = [NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
-                                             code:FSSRewardedVideoAdErrorLoadFailed
+        NSError *error = [NSError errorWithDomain:FSSVideoErrorSDKDomain
+                                             code:FSSVideoErrorLoadFailed
                                          userInfo:nil];
         [self.delegate rewardedVideoDidFailToLoadForCustomEvent:self
                                                      fluctError:error
@@ -85,15 +87,15 @@ typedef NS_ENUM(NSInteger, MintegralErrorExtend) {
 #pragma mark - MTGRewardAdLoadDelegate
 - (void)onVideoAdLoadSuccess:(nullable NSString *)unitId {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         if (![unitId isEqualToString:weakSelf.unitId]) {
             //unexpected
             weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
             [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:self
-                                                             fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
-                                                                                            code:FSSRewardedVideoAdErrorLoadFailed
+                                                             fluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
+                                                                                            code:FSSVideoErrorLoadFailed
                                                                                         userInfo:nil]
-                                                         adnetworkError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                         adnetworkError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
                                                                                             code:MintegralErrorExtendUnexpectedUnitId
                                                                                         userInfo:@{NSLocalizedDescriptionKey : @"unexpected unit id when onVideoAdLoadSuccess."}]];
             return;
@@ -106,10 +108,10 @@ typedef NS_ENUM(NSInteger, MintegralErrorExtend) {
 
 - (void)onVideoAdLoadFailed:(nullable NSString *)unitId error:(nonnull NSError *)error {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
-        NSError *fluctError = [NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
-                                                  code:FSSRewardedVideoAdErrorLoadFailed
+        NSError *fluctError = [NSError errorWithDomain:FSSVideoErrorSDKDomain
+                                                  code:FSSVideoErrorLoadFailed
                                               userInfo:nil];
         [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:self
                                                          fluctError:fluctError
@@ -120,15 +122,15 @@ typedef NS_ENUM(NSInteger, MintegralErrorExtend) {
 #pragma mark - MTGRewardAdShowDelegate
 - (void)onVideoAdShowSuccess:(nullable NSString *)unitId {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         if (![unitId isEqualToString:weakSelf.unitId]) {
             //unexpected
             weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
             [weakSelf.delegate rewardedVideoDidFailToPlayForCustomEvent:self
-                                                             fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
-                                                                                            code:FSSRewardedVideoAdErrorPlayFailed
+                                                             fluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
+                                                                                            code:FSSVideoErrorPlayFailed
                                                                                         userInfo:nil]
-                                                         adnetworkError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                         adnetworkError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
                                                                                             code:MintegralErrorExtendUnexpectedUnitId
                                                                                         userInfo:@{NSLocalizedDescriptionKey : @"unexpected unit id when onVideoAdShowSuccess."}]];
             return;
@@ -141,10 +143,10 @@ typedef NS_ENUM(NSInteger, MintegralErrorExtend) {
 
 - (void)onVideoAdShowFailed:(nullable NSString *)unitId withError:(nonnull NSError *)error {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
-        NSError *fluctError = [NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
-                                                  code:FSSRewardedVideoAdErrorPlayFailed
+        NSError *fluctError = [NSError errorWithDomain:FSSVideoErrorSDKDomain
+                                                  code:FSSVideoErrorPlayFailed
                                               userInfo:nil];
         [weakSelf.delegate rewardedVideoDidFailToPlayForCustomEvent:self
                                                          fluctError:fluctError
@@ -154,15 +156,15 @@ typedef NS_ENUM(NSInteger, MintegralErrorExtend) {
 
 - (void)onVideoPlayCompleted:(nullable NSString *)unitId {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         if (![unitId isEqualToString:weakSelf.unitId]) {
             //unexpected
             weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
             [weakSelf.delegate rewardedVideoDidFailToPlayForCustomEvent:self
-                                                             fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
-                                                                                            code:FSSRewardedVideoAdErrorPlayFailed
+                                                             fluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
+                                                                                            code:FSSVideoErrorPlayFailed
                                                                                         userInfo:nil]
-                                                         adnetworkError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                         adnetworkError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
                                                                                             code:MintegralErrorExtendUnexpectedUnitId
                                                                                         userInfo:@{NSLocalizedDescriptionKey : @"unexpected unit id when onVideoPlayCompleted."}]];
             return;
@@ -174,15 +176,15 @@ typedef NS_ENUM(NSInteger, MintegralErrorExtend) {
 
 - (void)onVideoAdClicked:(nullable NSString *)unitId {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         if (![unitId isEqualToString:weakSelf.unitId]) {
             //unexpected
             weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
             [weakSelf.delegate rewardedVideoDidFailToPlayForCustomEvent:self
-                                                             fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
-                                                                                            code:FSSRewardedVideoAdErrorPlayFailed
+                                                             fluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
+                                                                                            code:FSSVideoErrorPlayFailed
                                                                                         userInfo:nil]
-                                                         adnetworkError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                         adnetworkError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
                                                                                             code:MintegralErrorExtendUnexpectedUnitId
                                                                                         userInfo:@{NSLocalizedDescriptionKey : @"unexpected unit id when onVideoAdClicked."}]];
             return;
@@ -194,15 +196,15 @@ typedef NS_ENUM(NSInteger, MintegralErrorExtend) {
 
 - (void)onVideoAdDismissed:(nullable NSString *)unitId withConverted:(BOOL)converted withRewardInfo:(nullable MTGRewardAdInfo *)rewardInfo {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         if (![unitId isEqualToString:weakSelf.unitId]) {
             //unexpected
             weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
             [weakSelf.delegate rewardedVideoDidFailToPlayForCustomEvent:self
-                                                             fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
-                                                                                            code:FSSRewardedVideoAdErrorPlayFailed
+                                                             fluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
+                                                                                            code:FSSVideoErrorPlayFailed
                                                                                         userInfo:nil]
-                                                         adnetworkError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                         adnetworkError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
                                                                                             code:MintegralErrorExtendUnexpectedUnitId
                                                                                         userInfo:@{NSLocalizedDescriptionKey : @"unexpected unit id when onVideoAdDismissed."}]];
             return;

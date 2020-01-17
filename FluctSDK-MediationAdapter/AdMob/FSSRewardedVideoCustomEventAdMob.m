@@ -22,8 +22,14 @@ typedef NS_ENUM(NSInteger, FSSAdMobVideoErrorExtendend) {
                           delegate:(id<FSSRewardedVideoCustomEventDelegate>)delegate
                           testMode:(BOOL)testMode
                          debugMode:(BOOL)debugMode
+                         skippable:(BOOL)skippable
                          targeting:(FSSAdRequestTargeting *)targeting {
-    self = [super initWithDictionary:dictionary delegate:delegate testMode:testMode debugMode:debugMode targeting:nil];
+    self = [super initWithDictionary:dictionary
+                            delegate:delegate
+                            testMode:testMode
+                           debugMode:debugMode
+                           skippable:skippable
+                           targeting:nil];
     if (self) {
         _applicationID = dictionary[@"application_id"];
         _adUnitID = dictionary[@"ad_unit_id"];
@@ -55,10 +61,10 @@ typedef NS_ENUM(NSInteger, FSSAdMobVideoErrorExtendend) {
 - (void)didFailToLoadWithError:(nonnull NSError *)error {
     self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:weakSelf
-                                                         fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
-                                                                                        code:FSSRewardedVideoAdErrorLoadFailed
+                                                         fluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
+                                                                                        code:FSSVideoErrorLoadFailed
                                                                                     userInfo:nil]
                                                      adnetworkError:error];
     });
@@ -66,14 +72,14 @@ typedef NS_ENUM(NSInteger, FSSAdMobVideoErrorExtendend) {
 
 - (void)didRewardUser {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoShouldRewardForCustomEvent:weakSelf];
     });
 }
 
 - (void)rewardBasedVideoAdDidClose {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoWillDisappearForCustomEvent:weakSelf];
         [weakSelf.delegate rewardedVideoDidDisappearForCustomEvent:weakSelf];
     });
@@ -81,7 +87,7 @@ typedef NS_ENUM(NSInteger, FSSAdMobVideoErrorExtendend) {
 
 - (void)rewardBasedVideoAdDidOpen {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoWillAppearForCustomEvent:weakSelf];
         [weakSelf.delegate rewardedVideoDidAppearForCustomEvent:weakSelf];
     });
@@ -90,7 +96,7 @@ typedef NS_ENUM(NSInteger, FSSAdMobVideoErrorExtendend) {
 - (void)rewardBasedVideoAdDidReceiveAd {
     self.adnwStatus = FSSRewardedVideoADNWStatusLoaded;
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoDidLoadForCustomEvent:weakSelf];
     });
 }
@@ -98,12 +104,12 @@ typedef NS_ENUM(NSInteger, FSSAdMobVideoErrorExtendend) {
 - (void)rewardBasedVideoOtherAdUnitProcessed {
     self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:weakSelf
-                                                         fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
-                                                                                        code:FSSRewardedVideoAdErrorLoadFailed
+                                                         fluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
+                                                                                        code:FSSVideoErrorLoadFailed
                                                                                     userInfo:nil]
-                                                     adnetworkError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                     adnetworkError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
                                                                                         code:FSSAdMobVideoErrorExtendendProcessingAnotherAd
                                                                                     userInfo:@{NSLocalizedDescriptionKey : @"processing another ad."}]];
     });

@@ -29,12 +29,23 @@ static NSString *const FSSAppLovinSupportVersion = @"9.0";
     return [[ALIncentivizedInterstitialAd alloc] initWithZoneIdentifier:zoneName sdk:sdk];
 }
 
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary delegate:(id<FSSRewardedVideoCustomEventDelegate>)delegate testMode:(BOOL)testMode debugMode:(BOOL)debugMode targeting:(FSSAdRequestTargeting *)targeting {
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary
+                          delegate:(id<FSSRewardedVideoCustomEventDelegate>)delegate
+                          testMode:(BOOL)testMode
+                         debugMode:(BOOL)debugMode
+                         skippable:(BOOL)skippable
+                         targeting:(FSSAdRequestTargeting *)targeting {
+
     if (![FSSRewardedVideoCustomEventAppLovin isOSAtLeastVersion:FSSAppLovinSupportVersion]) {
         return nil;
     }
 
-    self = [super initWithDictionary:dictionary delegate:delegate testMode:testMode debugMode:debugMode targeting:nil];
+    self = [super initWithDictionary:dictionary
+                            delegate:delegate
+                            testMode:testMode
+                           debugMode:debugMode
+                           skippable:skippable
+                           targeting:nil];
     if (self) {
         static dispatch_once_t onceToken;
         ALSdk *applovinSDK = [FSSRewardedVideoCustomEventAppLovin sharedWithKey:dictionary[@"sdk_key"]];
@@ -68,10 +79,10 @@ static NSString *const FSSAppLovinSupportVersion = @"9.0";
         [self.rewardedVideo showAndNotify:nil];
     } else {
         // kALErrorCodeIncentiviziedAdNotPreloaded
-        NSError *error = [NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain code:FSSRewardedVideoAdErrorNotReady userInfo:nil];
+        NSError *error = [NSError errorWithDomain:FSSVideoErrorSDKDomain code:FSSVideoErrorNotReady userInfo:nil];
         [self.delegate rewardedVideoDidFailToPlayForCustomEvent:self
                                                      fluctError:error
-                                                 adnetworkError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                 adnetworkError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
                                                                                     code:kALErrorCodeIncentiviziedAdNotPreloaded
                                                                                 userInfo:@{NSLocalizedDescriptionKey : @"incentivizied ad not preloaded."}]];
     }
@@ -89,7 +100,7 @@ static NSString *const FSSAppLovinSupportVersion = @"9.0";
 
 - (void)adService:(ALAdService *)adService didLoadAd:(ALAd *)ad {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         weakSelf.adnwStatus = FSSRewardedVideoADNWStatusLoaded;
         [weakSelf.delegate rewardedVideoDidLoadForCustomEvent:weakSelf];
     });
@@ -97,42 +108,42 @@ static NSString *const FSSAppLovinSupportVersion = @"9.0";
 
 - (void)adService:(ALAdService *)adService didFailToLoadAdWithError:(int)code {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
         switch (code) {
         case kALErrorCodeNoFill:
             [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:weakSelf
-                                                             fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
-                                                                                            code:FSSRewardedVideoAdErrorNoAds
+                                                             fluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
+                                                                                            code:FSSVideoErrorNoAds
                                                                                         userInfo:nil]
-                                                         adnetworkError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                         adnetworkError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
                                                                                             code:code
                                                                                         userInfo:@{NSLocalizedDescriptionKey : @"no fill."}]];
             break;
         case kALErrorCodeIncentivizedValidationNetworkTimeout:
             [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:weakSelf
-                                                             fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
-                                                                                            code:FSSRewardedVideoAdErrorTimeout
+                                                             fluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
+                                                                                            code:FSSVideoErrorTimeout
                                                                                         userInfo:nil]
-                                                         adnetworkError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                         adnetworkError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
                                                                                             code:code
                                                                                         userInfo:@{NSLocalizedDescriptionKey : @"incentivized validation network timeout."}]];
             break;
         case kALErrorCodeUnableToRenderAd:
             [weakSelf.delegate rewardedVideoDidFailToPlayForCustomEvent:weakSelf
-                                                             fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
-                                                                                            code:FSSRewardedVideoAdErrorPlayFailed
+                                                             fluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
+                                                                                            code:FSSVideoErrorPlayFailed
                                                                                         userInfo:nil]
-                                                         adnetworkError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                         adnetworkError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
                                                                                             code:code
                                                                                         userInfo:@{NSLocalizedDescriptionKey : @"unable to render ad."}]];
             break;
         default:
             [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:weakSelf
-                                                             fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
-                                                                                            code:FSSRewardedVideoAdErrorUnknown
+                                                             fluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
+                                                                                            code:FSSVideoErrorUnknown
                                                                                         userInfo:nil]
-                                                         adnetworkError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                         adnetworkError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
                                                                                             code:code
                                                                                         userInfo:nil]];
             break;
@@ -144,7 +155,7 @@ static NSString *const FSSAppLovinSupportVersion = @"9.0";
 
 - (void)ad:(ALAd *)ad wasDisplayedIn:(UIView *)view {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoWillAppearForCustomEvent:weakSelf];
         [weakSelf.delegate rewardedVideoDidAppearForCustomEvent:weakSelf];
     });
@@ -152,7 +163,7 @@ static NSString *const FSSAppLovinSupportVersion = @"9.0";
 
 - (void)ad:(ALAd *)ad wasHiddenIn:(UIView *)view {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoWillDisappearForCustomEvent:weakSelf];
         [weakSelf.delegate rewardedVideoDidDisappearForCustomEvent:weakSelf];
     });
@@ -160,7 +171,7 @@ static NSString *const FSSAppLovinSupportVersion = @"9.0";
 
 - (void)ad:(ALAd *)ad wasClickedIn:(UIView *)view {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoDidClickForCustomEvent:weakSelf];
     });
 }
@@ -173,7 +184,7 @@ static NSString *const FSSAppLovinSupportVersion = @"9.0";
 - (void)videoPlaybackEndedInAd:(ALAd *)ad atPlaybackPercent:(NSNumber *)percentPlayed fullyWatched:(BOOL)wasFullyWatched {
     if (wasFullyWatched) {
         __weak __typeof(self) weakSelf = self;
-        dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+        dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
             [weakSelf.delegate rewardedVideoShouldRewardForCustomEvent:weakSelf];
         });
     }

@@ -26,7 +26,9 @@ static NSString *const FSSAdColonySupportVersion = @"9.0";
                           delegate:(id<FSSRewardedVideoCustomEventDelegate>)delegate
                           testMode:(BOOL)testMode
                          debugMode:(BOOL)debugMode
+                         skippable:(BOOL)skippable
                          targeting:(FSSAdRequestTargeting *)targeting {
+
     if (![FSSRewardedVideoCustomEvent isOSAtLeastVersion:FSSAdColonySupportVersion]) {
         return nil;
     }
@@ -35,6 +37,7 @@ static NSString *const FSSAdColonySupportVersion = @"9.0";
                             delegate:delegate
                             testMode:testMode
                            debugMode:debugMode
+                           skippable:skippable
                            targeting:nil];
 
     if (self) {
@@ -76,10 +79,10 @@ static NSString *const FSSAdColonySupportVersion = @"9.0";
     if (self.adnwStatus == FSSRewardedVideoADNWStatusLoading) {
         self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
         [self.delegate rewardedVideoDidFailToLoadForCustomEvent:self
-                                                     fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
-                                                                                    code:FSSRewardedVideoAdErrorTimeout
+                                                     fluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
+                                                                                    code:FSSVideoErrorTimeout
                                                                                 userInfo:nil]
-                                                 adnetworkError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                 adnetworkError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
                                                                                     code:AdColonyVideoErrorExtendendTimeout
                                                                                 userInfo:@{NSLocalizedDescriptionKey : @"timeout."}]];
     }
@@ -116,7 +119,7 @@ static NSString *const FSSAdColonySupportVersion = @"9.0";
     }
     self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
 
-    NSError *fluctError = [NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+    NSError *fluctError = [NSError errorWithDomain:FSSVideoErrorSDKDomain
                                               code:[self errorCodeForAdColonyRequestError:error.code]
                                           userInfo:error.userInfo];
     [self.delegate rewardedVideoDidFailToLoadForCustomEvent:self
@@ -145,25 +148,25 @@ static NSString *const FSSAdColonySupportVersion = @"9.0";
 - (void)adColonyInterstitialExpired {
     self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
     [self.delegate rewardedVideoDidFailToPlayForCustomEvent:self
-                                                 fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
-                                                                                code:FSSRewardedVideoAdErrorExpired
+                                                 fluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
+                                                                                code:FSSVideoErrorExpired
                                                                             userInfo:@{NSLocalizedDescriptionKey : @"expired ad"}]
-                                             adnetworkError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                             adnetworkError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
                                                                                 code:AdColonyVideoErrorExtendendTimeout
                                                                             userInfo:@{NSLocalizedDescriptionKey : @"expired ad."}]];
 }
 
-- (FSSRewardedVideoErrorCode)errorCodeForAdColonyRequestError:(AdColonyRequestError)adColonyRequestError {
+- (FSSVideoError)errorCodeForAdColonyRequestError:(AdColonyRequestError)adColonyRequestError {
     switch (adColonyRequestError) {
     case AdColonyRequestErrorNoFillForRequest:
-        return FSSRewardedVideoAdErrorNoAds;
+        return FSSVideoErrorNoAds;
     case AdColonyRequestErrorSkippedRequest:
     case AdColonyRequestErrorUnready:
-        return FSSRewardedVideoAdErrorLoadFailed;
+        return FSSVideoErrorLoadFailed;
     case AdColonyRequestErrorInvalidRequest:
-        return FSSRewardedVideoAdErrorBadRequest;
+        return FSSVideoErrorBadRequest;
     default:
-        return FSSRewardedVideoAdErrorUnknown;
+        return FSSVideoErrorUnknown;
     }
 }
 @end

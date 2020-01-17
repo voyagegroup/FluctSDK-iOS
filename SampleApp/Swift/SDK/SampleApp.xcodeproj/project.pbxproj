@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A24ECA81D812CCC0014B706 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A24ECA71D812CCC0014B706 /* TabBarController.swift */; };
-		3A6AADB11D8148DA005D94C1 /* BannerNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6AADB01D8148DA005D94C1 /* BannerNavigationController.swift */; };
-		3ADBC1981D825A62003D7AB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADBC1971D825A62003D7AB3 /* ViewController.swift */; };
+		7548D92423D032CB009CF032 /* AdMobBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7548D92323D032CB009CF032 /* AdMobBannerViewController.swift */; };
+		7548D92623D032DB009CF032 /* AdMobRewardedVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7548D92523D032DB009CF032 /* AdMobRewardedVideoViewController.swift */; };
+		7548D92823D032E5009CF032 /* AdMobVideoInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7548D92723D032E5009CF032 /* AdMobVideoInterstitialViewController.swift */; };
+		7548D92A23D032EF009CF032 /* MoPubBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7548D92923D032EF009CF032 /* MoPubBannerViewController.swift */; };
+		7548D92C23D032F9009CF032 /* MoPubRewardedVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7548D92B23D032F9009CF032 /* MoPubRewardedVideoViewController.swift */; };
+		7548D92E23D03305009CF032 /* MoPubVideoInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7548D92D23D03305009CF032 /* MoPubVideoInterstitialViewController.swift */; };
+		75A7AC0823CD67DC00FD3031 /* VideoInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A7AC0723CD67DC00FD3031 /* VideoInterstitialViewController.swift */; };
 		960884221F9EC23B005F65FD /* RewardedVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960884211F9EC23A005F65FD /* RewardedVideoViewController.swift */; };
 		966CC73C1DF7C98C0005EF1C /* BannerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966CC73B1DF7C98C0005EF1C /* BannerTableViewController.swift */; };
 		966CC73E1DF7C9B50005EF1C /* BannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966CC73D1DF7C9B50005EF1C /* BannerTableViewCell.swift */; };
@@ -24,9 +28,6 @@
 
 /* Begin PBXFileReference section */
 		3A1810D7207F2DC900D584AD /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
-		3A24ECA71D812CCC0014B706 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		3A6AADB01D8148DA005D94C1 /* BannerNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerNavigationController.swift; sourceTree = "<group>"; };
-		3ADBC1971D825A62003D7AB3 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		568C2CDD7B81A45C8434AAE9 /* Pods_SampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6598B1CE7DE67EEA2CF05FB4 /* Pods-SampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.release.xcconfig"; path = "Target Support Files/Pods-SampleApp/Pods-SampleApp.release.xcconfig"; sourceTree = "<group>"; };
 		72F91F107F542D77C4EA7F07 /* Pods-SampleApp-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp-Swift.release.xcconfig"; path = "Target Support Files/Pods-SampleApp-Swift/Pods-SampleApp-Swift.release.xcconfig"; sourceTree = "<group>"; };
@@ -38,6 +39,13 @@
 		7519965D21C0B59D007C62CE /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		7519965F21C0B5A6007C62CE /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		7519966121C0B5AD007C62CE /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		7548D92323D032CB009CF032 /* AdMobBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobBannerViewController.swift; sourceTree = "<group>"; };
+		7548D92523D032DB009CF032 /* AdMobRewardedVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobRewardedVideoViewController.swift; sourceTree = "<group>"; };
+		7548D92723D032E5009CF032 /* AdMobVideoInterstitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobVideoInterstitialViewController.swift; sourceTree = "<group>"; };
+		7548D92923D032EF009CF032 /* MoPubBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoPubBannerViewController.swift; sourceTree = "<group>"; };
+		7548D92B23D032F9009CF032 /* MoPubRewardedVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoPubRewardedVideoViewController.swift; sourceTree = "<group>"; };
+		7548D92D23D03305009CF032 /* MoPubVideoInterstitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoPubVideoInterstitialViewController.swift; sourceTree = "<group>"; };
+		75A7AC0723CD67DC00FD3031 /* VideoInterstitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoInterstitialViewController.swift; sourceTree = "<group>"; };
 		845EBA47124CC371A063A0EC /* Pods-SampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.debug.xcconfig"; path = "Target Support Files/Pods-SampleApp/Pods-SampleApp.debug.xcconfig"; sourceTree = "<group>"; };
 		8DCF10F0021ED2BCF9314B50 /* Pods-SampleApp-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp-Swift.debug.xcconfig"; path = "Target Support Files/Pods-SampleApp-Swift/Pods-SampleApp-Swift.debug.xcconfig"; sourceTree = "<group>"; };
 		960884211F9EC23A005F65FD /* RewardedVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardedVideoViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +85,82 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		7548D91B23D03278009CF032 /* AdMob */ = {
+			isa = PBXGroup;
+			children = (
+				7548D91D23D0328D009CF032 /* Banner */,
+				7548D91F23D03299009CF032 /* RewardedVideo */,
+				7548D91E23D03292009CF032 /* VideoInterstitial */,
+			);
+			path = AdMob;
+			sourceTree = "<group>";
+		};
+		7548D91C23D0327D009CF032 /* MoPub */ = {
+			isa = PBXGroup;
+			children = (
+				7548D92023D032A4009CF032 /* Banner */,
+				7548D92123D032A8009CF032 /* RewardedVideo */,
+				7548D92223D032AE009CF032 /* VideoInterstitial */,
+			);
+			path = MoPub;
+			sourceTree = "<group>";
+		};
+		7548D91D23D0328D009CF032 /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				7548D92323D032CB009CF032 /* AdMobBannerViewController.swift */,
+			);
+			path = Banner;
+			sourceTree = "<group>";
+		};
+		7548D91E23D03292009CF032 /* VideoInterstitial */ = {
+			isa = PBXGroup;
+			children = (
+				7548D92723D032E5009CF032 /* AdMobVideoInterstitialViewController.swift */,
+			);
+			path = VideoInterstitial;
+			sourceTree = "<group>";
+		};
+		7548D91F23D03299009CF032 /* RewardedVideo */ = {
+			isa = PBXGroup;
+			children = (
+				7548D92523D032DB009CF032 /* AdMobRewardedVideoViewController.swift */,
+			);
+			path = RewardedVideo;
+			sourceTree = "<group>";
+		};
+		7548D92023D032A4009CF032 /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				7548D92923D032EF009CF032 /* MoPubBannerViewController.swift */,
+			);
+			path = Banner;
+			sourceTree = "<group>";
+		};
+		7548D92123D032A8009CF032 /* RewardedVideo */ = {
+			isa = PBXGroup;
+			children = (
+				7548D92B23D032F9009CF032 /* MoPubRewardedVideoViewController.swift */,
+			);
+			path = RewardedVideo;
+			sourceTree = "<group>";
+		};
+		7548D92223D032AE009CF032 /* VideoInterstitial */ = {
+			isa = PBXGroup;
+			children = (
+				7548D92D23D03305009CF032 /* MoPubVideoInterstitialViewController.swift */,
+			);
+			path = VideoInterstitial;
+			sourceTree = "<group>";
+		};
+		75A7AC0623CD67BC00FD3031 /* VideoInterstitial */ = {
+			isa = PBXGroup;
+			children = (
+				75A7AC0723CD67DC00FD3031 /* VideoInterstitialViewController.swift */,
+			);
+			path = VideoInterstitial;
+			sourceTree = "<group>";
+		};
 		960884201F9EC17A005F65FD /* RewardedVideo */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,12 +172,10 @@
 		9661EEF61F15FCE400286B72 /* Banner */ = {
 			isa = PBXGroup;
 			children = (
+				966CC73D1DF7C9B50005EF1C /* BannerTableViewCell.swift */,
+				966CC73B1DF7C98C0005EF1C /* BannerTableViewController.swift */,
 				96F22C381D3899D300C3136E /* BannerViewController.swift */,
 				969EC1FF1D3E0CF7005F475E /* ManyBannerViewController.swift */,
-				3A24ECA71D812CCC0014B706 /* TabBarController.swift */,
-				3A6AADB01D8148DA005D94C1 /* BannerNavigationController.swift */,
-				966CC73B1DF7C98C0005EF1C /* BannerTableViewController.swift */,
-				966CC73D1DF7C9B50005EF1C /* BannerTableViewCell.swift */,
 			);
 			path = Banner;
 			sourceTree = "<group>";
@@ -139,12 +221,14 @@
 			children = (
 				96F22C421D3899D300C3136E /* Info.plist */,
 				96F22C361D3899D300C3136E /* AppDelegate.swift */,
-				3ADBC1971D825A62003D7AB3 /* ViewController.swift */,
+				96F22C3D1D3899D300C3136E /* Assets.xcassets */,
 				96F22C3F1D3899D300C3136E /* LaunchScreen.storyboard */,
 				96F22C3A1D3899D300C3136E /* Main.storyboard */,
-				96F22C3D1D3899D300C3136E /* Assets.xcassets */,
+				7548D91B23D03278009CF032 /* AdMob */,
 				9661EEF61F15FCE400286B72 /* Banner */,
+				7548D91C23D0327D009CF032 /* MoPub */,
 				960884201F9EC17A005F65FD /* RewardedVideo */,
+				75A7AC0623CD67BC00FD3031 /* VideoInterstitial */,
 			);
 			path = SampleApp;
 			sourceTree = "<group>";
@@ -161,6 +245,7 @@
 				96F22C301D3899D300C3136E /* Frameworks */,
 				96F22C311D3899D300C3136E /* Resources */,
 				706AAA3D2632AD002E656CF7 /* [CP] Copy Pods Resources */,
+				B7A2C37451FBFCD12F278D9E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -226,13 +311,15 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SampleApp/Pods-SampleApp-resources.sh",
+				"${PODS_ROOT}/AppLovinSDK/applovin-ios-sdk-6.11.1/AppLovinSDKResources.bundle",
 				"${PODS_ROOT}/../../../../FluctSDK.embeddedframework/Resources/FluctSDKResources.bundle",
 				"${PODS_ROOT}/NendSDK_iOS/NendAd.embeddedframework/NendAd.framework/Resources/NendAdResource.bundle",
-				"${PODS_ROOT}/TapjoySDK/TapjoySDK_iOS_v12.3.4/Libraries/Tapjoy.embeddedframework/Resources/TapjoyResources.bundle",
-				"${PODS_ROOT}/TapjoySDK/TapjoySDK_iOS_v12.3.4/Libraries/Tapjoy.embeddedframework/Tapjoy.framework/Versions/A/Resources/TapjoyResources.bundle",
+				"${PODS_ROOT}/TapjoySDK/TapjoySDK_iOS_v12.4.1/Libraries/Tapjoy.embeddedframework/Resources/TapjoyResources.bundle",
+				"${PODS_ROOT}/TapjoySDK/TapjoySDK_iOS_v12.4.1/Libraries/Tapjoy.embeddedframework/Tapjoy.framework/Versions/A/Resources/TapjoyResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AppLovinSDKResources.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FluctSDKResources.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NendAdResource.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TapjoyResources.bundle",
@@ -264,6 +351,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B7A2C37451FBFCD12F278D9E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SampleApp/Pods-SampleApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/mopub-ios-sdk/MoPub.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MoPub.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SampleApp/Pods-SampleApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -271,13 +380,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7548D92A23D032EF009CF032 /* MoPubBannerViewController.swift in Sources */,
+				75A7AC0823CD67DC00FD3031 /* VideoInterstitialViewController.swift in Sources */,
+				7548D92623D032DB009CF032 /* AdMobRewardedVideoViewController.swift in Sources */,
 				96F22C391D3899D300C3136E /* BannerViewController.swift in Sources */,
+				7548D92C23D032F9009CF032 /* MoPubRewardedVideoViewController.swift in Sources */,
+				7548D92423D032CB009CF032 /* AdMobBannerViewController.swift in Sources */,
 				96F22C371D3899D300C3136E /* AppDelegate.swift in Sources */,
 				966CC73E1DF7C9B50005EF1C /* BannerTableViewCell.swift in Sources */,
-				3A24ECA81D812CCC0014B706 /* TabBarController.swift in Sources */,
-				3ADBC1981D825A62003D7AB3 /* ViewController.swift in Sources */,
+				7548D92E23D03305009CF032 /* MoPubVideoInterstitialViewController.swift in Sources */,
+				7548D92823D032E5009CF032 /* AdMobVideoInterstitialViewController.swift in Sources */,
 				960884221F9EC23B005F65FD /* RewardedVideoViewController.swift in Sources */,
-				3A6AADB11D8148DA005D94C1 /* BannerNavigationController.swift in Sources */,
 				969EC2001D3E0CF7005F475E /* ManyBannerViewController.swift in Sources */,
 				966CC73C1DF7C98C0005EF1C /* BannerTableViewController.swift in Sources */,
 			);
@@ -428,6 +541,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SampleApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.fluct.SampleApp;
 				PRODUCT_NAME = SampleApp;
@@ -441,6 +555,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SampleApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.fluct.SampleApp;
 				PRODUCT_NAME = SampleApp;

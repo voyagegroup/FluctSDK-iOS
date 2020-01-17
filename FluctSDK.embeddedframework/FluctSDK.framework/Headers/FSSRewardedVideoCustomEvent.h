@@ -23,12 +23,14 @@ typedef NS_ENUM(NSInteger, FSSRewardedVideoADNWStatus) {
 @property (nonatomic, weak) id<FSSRewardedVideoCustomEventDelegate> delegate;
 @property (nonatomic, readonly) BOOL testMode;
 @property (nonatomic, readonly) BOOL debugMode;
+@property (nonatomic, readonly, getter=isSkippable) BOOL skippable;
 @property (nonatomic) FSSRewardedVideoADNWStatus adnwStatus;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary
                           delegate:(id<FSSRewardedVideoCustomEventDelegate>)delegate
                           testMode:(BOOL)testMode
                          debugMode:(BOOL)debugMode
+                         skippable:(BOOL)skippable
                          targeting:(FSSAdRequestTargeting *)targeting;
 
 - (void)loadRewardedVideoWithDictionary:(NSDictionary *)dictionary;

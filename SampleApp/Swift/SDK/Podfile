@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '8.1'
+platform :ios, '9.0'
 source 'https://cdn.cocoapods.org/'
 
 target 'SampleApp' do
@@ -7,11 +7,22 @@ target 'SampleApp' do
   use_frameworks!
 
   # Pods for SampleApp
+  # 実際に使うときは :path指定は不要です。
   pod 'FluctSDK', :path => '../../../FluctSDK.podspec'
   pod 'FluctSDK-MediationAdapter', :path => '../../../FluctSDK-MediationAdapter.podspec'
 
   # Xcode10の環境で動作させる場合は以下のADNWのSDKのバージョンを指定する必要があります
   pod 'MaioSDK', '1.4.8'
   pod 'AdColony', '4.1.1'
+
+  # AdMobのMediationにCustom EventでFluctSDKを入れる際には以下のpodが必須です
+  pod 'Google-Mobile-Ads-SDK'
+  # 実際に使うときは :path指定は不要です。
+  pod 'GoogleMobileAdsMediationFluct', :path => '../../../GoogleMobileAdsMediationFluct.podspec'
+
+  # MoPubのCustom NetworkでFluctSDKを入れる際には以下のpodが必須です
+  pod 'mopub-ios-sdk'
+  # 実際に使うときは :path指定は不要です。
+  pod 'MoPubMediationAdapterFluct', :path => '../../../MopubMediationAdapterFluct.podspec'
 
 end

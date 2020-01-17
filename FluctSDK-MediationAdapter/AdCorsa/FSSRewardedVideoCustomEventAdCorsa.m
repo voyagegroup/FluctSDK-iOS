@@ -25,12 +25,14 @@ static const NSTimeInterval timeoutSecond = 5;
                           delegate:(id<FSSRewardedVideoCustomEventDelegate>)delegate
                           testMode:(BOOL)testMode
                          debugMode:(BOOL)debugMode
+                         skippable:(BOOL)skippable
                          targeting:(FSSAdRequestTargeting *)targeting {
 
     self = [super initWithDictionary:dictionary
                             delegate:delegate
                             testMode:testMode
                            debugMode:debugMode
+                           skippable:skippable
                            targeting:nil];
 
     if (self) {
@@ -73,10 +75,10 @@ static const NSTimeInterval timeoutSecond = 5;
 
     // AdCorsaVideoErrorExtendendNotReady
     [self.delegate rewardedVideoDidFailToPlayForCustomEvent:self
-                                                 fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
-                                                                                code:FSSRewardedVideoAdErrorNotReady
+                                                 fluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
+                                                                                code:FSSVideoErrorNotReady
                                                                             userInfo:nil]
-                                             adnetworkError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                             adnetworkError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
                                                                                 code:AdCorsaVideoErrorExtendendNotReady
                                                                             userInfo:@{NSLocalizedDescriptionKey : @"not ready."}]];
 }
@@ -90,10 +92,10 @@ static const NSTimeInterval timeoutSecond = 5;
     if (self.adnwStatus == FSSRewardedVideoADNWStatusLoading) {
         self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
         [self.delegate rewardedVideoDidFailToLoadForCustomEvent:self
-                                                     fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
-                                                                                    code:FSSRewardedVideoAdErrorTimeout
+                                                     fluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
+                                                                                    code:FSSVideoErrorTimeout
                                                                                 userInfo:nil]
-                                                 adnetworkError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                 adnetworkError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
                                                                                     code:AdCorsaVideoErrorExtendendTimeout
                                                                                 userInfo:@{NSLocalizedDescriptionKey : @"time out."}]];
     }
@@ -123,7 +125,7 @@ static const NSTimeInterval timeoutSecond = 5;
 - (void)onGlossomAdsReward:(NSString *)zoneId success:(BOOL)success {
     if (success) {
         __weak __typeof(self) weakSelf = self;
-        dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+        dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
             [weakSelf.delegate rewardedVideoShouldRewardForCustomEvent:weakSelf];
         });
     }
@@ -133,7 +135,7 @@ static const NSTimeInterval timeoutSecond = 5;
 
 - (void)onGlossomAdsVideoFinish:(NSString *)zoneId {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoShouldRewardForCustomEvent:weakSelf];
     });
 }
@@ -142,7 +144,7 @@ static const NSTimeInterval timeoutSecond = 5;
 
 - (void)onGlossomAdsAdShow:(NSString *)zoneId {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoWillAppearForCustomEvent:weakSelf];
         [weakSelf.delegate rewardedVideoDidAppearForCustomEvent:weakSelf];
     });
@@ -150,7 +152,7 @@ static const NSTimeInterval timeoutSecond = 5;
 
 - (void)onGlossomAdsAdClose:(NSString *)zoneId isShown:(BOOL)shown {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoWillDisappearForCustomEvent:weakSelf];
         [weakSelf.delegate rewardedVideoDidDisappearForCustomEvent:weakSelf];
     });

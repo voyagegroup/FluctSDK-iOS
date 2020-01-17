@@ -26,8 +26,19 @@ typedef NS_ENUM(NSInteger, TJErrorExtended) {
 
 @implementation FSSRewardedVideoCustomEventTapjoy
 
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary delegate:(id<FSSRewardedVideoCustomEventDelegate>)delegate testMode:(BOOL)testMode debugMode:(BOOL)debugMode targeting:(FSSAdRequestTargeting *)targeting {
-    self = [super initWithDictionary:dictionary delegate:delegate testMode:testMode debugMode:debugMode targeting:nil];
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary
+                          delegate:(id<FSSRewardedVideoCustomEventDelegate>)delegate
+                          testMode:(BOOL)testMode
+                         debugMode:(BOOL)debugMode
+                         skippable:(BOOL)skippable
+                         targeting:(FSSAdRequestTargeting *)targeting {
+
+    self = [super initWithDictionary:dictionary
+                            delegate:delegate
+                            testMode:testMode
+                           debugMode:debugMode
+                           skippable:skippable
+                           targeting:nil];
 
     if (!self) {
         return nil;
@@ -86,10 +97,10 @@ typedef NS_ENUM(NSInteger, TJErrorExtended) {
 - (void)onConnectionFailed {
     self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
     [self.delegate rewardedVideoDidFailToLoadForCustomEvent:self
-                                                 fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
-                                                                                code:FSSRewardedVideoAdErrorLoadFailed
+                                                 fluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
+                                                                                code:FSSVideoErrorLoadFailed
                                                                             userInfo:@{NSLocalizedDescriptionKey : @"Tapjoy connect Failed"}]
-                                             adnetworkError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                             adnetworkError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
                                                                                 code:TJErrorExtendedConnectionFailed
                                                                             userInfo:@{NSLocalizedDescriptionKey : @"connection failed."}]];
 }
@@ -125,7 +136,7 @@ typedef NS_ENUM(NSInteger, TJErrorExtended) {
     _connectionStatus = FSSTapjoyConnectionFailed;
 
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         if (weakSelf.adnwStatus == FSSRewardedVideoADNWStatusLoading) {
             [weakSelf onConnectionFailed];
         }
@@ -147,14 +158,14 @@ typedef NS_ENUM(NSInteger, TJErrorExtended) {
 - (void)requestDidSucceed:(TJPlacement *)placement {
     if (!placement.isContentAvailable) {
         __weak __typeof(self) weakSelf = self;
-        dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+        dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
             weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
             // TJErrorExtendedNoContentAvailable
             [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:weakSelf
-                                                             fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
-                                                                                            code:FSSRewardedVideoAdErrorLoadFailed
+                                                             fluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
+                                                                                            code:FSSVideoErrorLoadFailed
                                                                                         userInfo:@{NSLocalizedDescriptionKey : @"Tapjoy has no ad content"}]
-                                                         adnetworkError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                         adnetworkError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
                                                                                             code:TJErrorExtendedNoContentAvailable
                                                                                         userInfo:@{NSLocalizedDescriptionKey : @"no content available."}]];
         });
@@ -163,7 +174,7 @@ typedef NS_ENUM(NSInteger, TJErrorExtended) {
 
 - (void)contentIsReady:(TJPlacement *)placement {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         if (weakSelf.adnwStatus == FSSRewardedVideoADNWStatusLoading) {
             weakSelf.adnwStatus = FSSRewardedVideoADNWStatusLoaded;
             [weakSelf.delegate rewardedVideoDidLoadForCustomEvent:weakSelf];
@@ -173,11 +184,11 @@ typedef NS_ENUM(NSInteger, TJErrorExtended) {
 
 - (void)requestDidFail:(TJPlacement *)placement error:(NSError *)error {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
         [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:weakSelf
-                                                         fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
-                                                                                        code:FSSRewardedVideoAdErrorLoadFailed
+                                                         fluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
+                                                                                        code:FSSVideoErrorLoadFailed
                                                                                     userInfo:error.userInfo]
                                                      adnetworkError:error];
     });
@@ -185,14 +196,14 @@ typedef NS_ENUM(NSInteger, TJErrorExtended) {
 
 - (void)contentDidAppear:(TJPlacement *)placement {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoDidAppearForCustomEvent:weakSelf];
     });
 }
 
 - (void)contentDidDisappear:(TJPlacement *)placement {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoWillDisappearForCustomEvent:weakSelf];
         [weakSelf.delegate rewardedVideoDidDisappearForCustomEvent:weakSelf];
     });
@@ -206,20 +217,20 @@ typedef NS_ENUM(NSInteger, TJErrorExtended) {
 - (void)videoDidComplete:(TJPlacement *)placement {
     __weak __typeof(self) weakSelf = self;
 
-    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoShouldRewardForCustomEvent:weakSelf];
     });
 }
 
 - (void)videoDidFail:(TJPlacement *)placement error:(NSString *)errorMsg {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSRewardedVideoWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
         [weakSelf.delegate rewardedVideoDidFailToPlayForCustomEvent:weakSelf
-                                                         fluctError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
-                                                                                        code:FSSRewardedVideoAdErrorPlayFailed
+                                                         fluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
+                                                                                        code:FSSVideoErrorPlayFailed
                                                                                     userInfo:@{NSLocalizedDescriptionKey : errorMsg}]
-                                                     adnetworkError:[NSError errorWithDomain:FSSRewardedVideoAdsSDKDomain
+                                                     adnetworkError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
                                                                                         code:TJErrorExtendedPlayFailed
                                                                                     userInfo:@{NSLocalizedDescriptionKey : errorMsg}]];
     });

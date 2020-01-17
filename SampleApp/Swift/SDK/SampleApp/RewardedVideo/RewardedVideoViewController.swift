@@ -2,15 +2,16 @@
 //  RewardedVideoViewController.swift
 //  SampleApp
 //
-//  Copyright © 2017年 fluct, Inc. All rights reserved.
+//  Fluct SDK
+//  Copyright © 2020年 fluct, Inc. All rights reserved.
 //
 
 import UIKit
 import FluctSDK
 
 // グループID, ユニットIDを設定して下さい
-let fluctRewardedVideoGroupID = ""
-let fluctRewardedVideoUnitID = ""
+private let fluctRewardedVideoGroupID = "1000083204"
+private let fluctRewardedVideoUnitID = "1000124351"
 
 class RewardedVideoViewController: UIViewController, FSSRewardedVideoDelegate {
     @IBOutlet weak var showButton: UIButton!
@@ -20,7 +21,7 @@ class RewardedVideoViewController: UIViewController, FSSRewardedVideoDelegate {
         // 初期化及びデリゲート設定
         FSSRewardedVideo.shared.delegate = self
         let setting = FSSRewardedVideoSetting.default
-        setting.isTestMode = true
+        setting.isDebugMode = true
         FSSRewardedVideo.shared.setting = setting
     }
 
@@ -64,7 +65,7 @@ class RewardedVideoViewController: UIViewController, FSSRewardedVideoDelegate {
     }
 
     func rewardedVideoDidFailToLoad(forGroupId groupId: String, unitId: String, error: Error) {
-        // refs: error code list are FSSRewardedVideoError.h
+        // refs: error code list are FSSVideoError.h
         print("rewarded video ad load failed. Because \(error)")
     }
 
@@ -85,7 +86,8 @@ class RewardedVideoViewController: UIViewController, FSSRewardedVideoDelegate {
     }
 
     func rewardedVideoDidFailToPlay(forGroupId groupId: String, unitId: String, error: Error) {
-        // refs: error code list are FSSRewardedVideoError.h
+        // refs: error code list are FSSVideoError.h
         print("rewarded video ad play failed. Because \(error)")
     }
+
 }
