@@ -28,6 +28,10 @@
 #import <FluctSDK/FSSVideoInterstitialAdnetworkActivation.h>
 #import <FluctSDK/FSSVideoInterstitialSetting.h>
 
+#import <FluctSDK/FSSInAppBidding.h>
+#import <FluctSDK/FSSInAppBiddingError.h>
+#import <FluctSDK/FSSInAppBiddingResponseCache.h>
+
 /*
  * SDKの各処理を行う
  * ・広告表示設定 (表示処理はFluctBannerViewにて行われる)

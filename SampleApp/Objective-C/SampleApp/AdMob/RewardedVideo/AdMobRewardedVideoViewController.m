@@ -6,8 +6,8 @@
 //
 
 #import "AdMobRewardedVideoViewController.h"
-#import <GoogleMobileAds/GoogleMobileAds.h>
 #import <FluctSDK/FluctSDK.h>
+#import <GoogleMobileAds/GoogleMobileAds.h>
 #import <GoogleMobileAdsMediationFluct/GADMAdapterFluctExtras.h>
 
 @interface AdMobRewardedVideoViewController () <GADRewardedAdDelegate>
@@ -38,14 +38,15 @@ static NSString *const kAdUnitID = @"ca-app-pub-3010029359415397/4697035240";
     GADRequest *request = [GADRequest request];
     [request registerAdNetworkExtras:extras];
 
-    [self.rewardedAd loadRequest:request completionHandler:^(GADRequestError * _Nullable error) {
-        if (error) {
-            NSLog(@"loadRequest:comptionHander error:   %@", error);
-            return;
-        }
+    [self.rewardedAd loadRequest:request
+               completionHandler:^(GADRequestError *_Nullable error) {
+                   if (error) {
+                       NSLog(@"loadRequest:comptionHander error:   %@", error);
+                       return;
+                   }
 
-        self.showButton.enabled = YES;
-    }];
+                   self.showButton.enabled = YES;
+               }];
 }
 
 - (IBAction)didTouchUpShowAdWithButton:(UIButton *)button {

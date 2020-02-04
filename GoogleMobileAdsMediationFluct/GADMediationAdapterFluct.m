@@ -53,10 +53,10 @@
     NSString *versionString = [FluctSDK version];
     NSArray<NSString *> *versionComponents = [versionString componentsSeparatedByString:@"."];
     GADVersionNumber version = {0};
-    if (versionComponents.count == 4) {
+    if (versionComponents.count == 3) {
         version.majorVersion = [versionComponents[0] integerValue];
         version.minorVersion = [versionComponents[1] integerValue];
-        version.patchVersion = [versionComponents[2] integerValue] * 100 + [versionComponents[3] integerValue];
+        version.patchVersion = [versionComponents[2] integerValue];
     }
     return version;
 }

@@ -6,8 +6,8 @@
 //
 
 #import "MoPubRewardedVideoViewController.h"
-#import <MoPub/MoPub.h>
 #import <FluctSDK/FluctSDK.h>
+#import <MoPub/MoPub.h>
 #import <MoPubMediationAdapterFluct/FluctInstanceMediationSettings.h>
 
 @interface MoPubRewardedVideoViewController () <MPRewardedVideoDelegate>
@@ -32,7 +32,7 @@ static NSString *const kAdUnitID = @"8d14fd46f8a449f8a5f1de814e4f5fde";
 
     FluctInstanceMediationSettings *mediationSetting = [FluctInstanceMediationSettings new];
     mediationSetting.setting = setting;
-    [MPRewardedVideo loadRewardedVideoAdWithAdUnitID:kAdUnitID withMediationSettings:@[mediationSetting]];
+    [MPRewardedVideo loadRewardedVideoAdWithAdUnitID:kAdUnitID withMediationSettings:@[ mediationSetting ]];
 }
 
 - (IBAction)didTouchUpShowAdWithButton:(UIButton *)button {

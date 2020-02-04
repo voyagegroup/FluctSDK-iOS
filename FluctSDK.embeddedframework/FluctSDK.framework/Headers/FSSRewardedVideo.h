@@ -37,6 +37,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)hasAdAvailableForGroupId:(NSString *)groupId unitId:(NSString *)unitId;
 - (void)presentRewardedVideoAdForGroupId:(NSString *)groupId unitId:(NSString *)unitId fromViewController:(UIViewController *)viewController;
 
+- (void)loadRewardedVideoWithGroupId:(NSString *)groupId unitId:(NSString *)unitId info:(NSDictionary<NSString *, id> *)info;
+
 @end
 
 NS_ASSUME_NONNULL_END
