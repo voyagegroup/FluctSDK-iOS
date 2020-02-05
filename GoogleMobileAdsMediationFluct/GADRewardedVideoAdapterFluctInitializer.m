@@ -89,8 +89,14 @@
     options.mediationPlatformSDKVersion = [NSString stringWithFormat:@"%s", GoogleMobileAdsVersionString];
     [FluctSDK configureWithOptions:options];
 
+    BOOL debugMode = NO;
+    GADMAdapterFluctExtras *extras = adConfiguration.extras;
+    if (extras) {
+        debugMode = extras.setting.isDebugMode;
+    }
+
     self.completionHandler = completionHandler;
-    self.bidding = [[FSSInAppBidding alloc] initWithGroupId:self.groupID unitId:self.unitID];
+    self.bidding = [[FSSInAppBidding alloc] initWithGroupId:self.groupID unitId:self.unitID debugMode:debugMode];
     [self.bidding requestWithCompletion:^(FSSInAppBiddingResponse *_Nullable response, NSError *_Nullable error) {
         if (error) {
             self.completionHandler(nil, error);
