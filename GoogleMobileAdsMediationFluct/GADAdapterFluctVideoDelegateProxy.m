@@ -89,4 +89,12 @@
     }
 }
 
+- (void)rewardedVideoDidClickForGroupId:(NSString *)groupId unitId:(NSString *)unitId {
+    NSString *key = [self keyWithGroupId:groupId unitId:unitId];
+    id<GADAdapterFluctVideoDelegateProxyItem> delegate = self.delegateTable[key];
+    if ([delegate respondsToSelector:@selector(rewardedVideoDidClickForGroupId:unitId:)]) {
+        [delegate rewardedVideoDidClickForGroupId:groupId unitId:unitId];
+    }
+}
+
 @end

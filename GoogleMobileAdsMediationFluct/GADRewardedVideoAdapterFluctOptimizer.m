@@ -112,6 +112,8 @@
     }
 
     FSSRewardedVideo.sharedInstance.delegate = GADAdapterFluctVideoDelegateProxy.sharedInstance;
+    FSSRewardedVideo.sharedInstance.rtbDelegate = GADAdapterFluctVideoDelegateProxy.sharedInstance;
+
     [[GADAdapterFluctVideoDelegateProxy sharedInstance] registerDelegate:self
                                                                  groupId:self.groupID
                                                                   unitId:self.unitID];
@@ -176,6 +178,10 @@
 
 - (void)rewardedVideoDidDisappearForGroupId:(NSString *)groupId unitId:(NSString *)unitId {
     [self.adEventDelegate didDismissFullScreenView];
+}
+
+- (void)rewardedVideoDidClickForGroupId:(NSString *)groupId unitId:(NSString *)unitId {
+    [self.adEventDelegate reportClick];
 }
 
 @end

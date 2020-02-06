@@ -19,9 +19,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)rewardedVideoDidFailToPlayForGroupId:(NSString *)groupId unitId:(NSString *)unitId error:(NSError *)error;
 @optional
 - (void)rewardedVideoShouldRewardForGroupID:(NSString *)groupId unitId:(NSString *)unitId;
+- (void)rewardedVideoDidClickForGroupId:(NSString *)groupId unitId:(NSString *)unitId;
 @end
 
-@interface GADAdapterFluctVideoDelegateProxy : NSObject <FSSRewardedVideoDelegate>
+@interface GADAdapterFluctVideoDelegateProxy : NSObject <FSSRewardedVideoDelegate, FSSRewardedVideoRTBDelegate>
 
 @property (class, nonatomic, readonly) GADAdapterFluctVideoDelegateProxy *sharedInstance;
 - (void)registerDelegate:(id<GADAdapterFluctVideoDelegateProxyItem>)delegate groupId:(NSString *)groupId unitId:(NSString *)unitId;

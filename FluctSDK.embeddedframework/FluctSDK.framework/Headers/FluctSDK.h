@@ -12,6 +12,7 @@
 #import <FluctSDK/FSSRewardedVideoAdnetworkActivation.h>
 #import <FluctSDK/FSSRewardedVideoCustomEvent.h>
 #import <FluctSDK/FSSRewardedVideoError.h>
+#import <FluctSDK/FSSRewardedVideoRTBDelegate.h>
 #import <FluctSDK/FSSRewardedVideoSetting.h>
 
 #import <FluctSDK/FSSAdRequestTargeting.h>
@@ -24,6 +25,8 @@
 #import <FluctSDK/FSSFullscreenVideoWorkQueue.h>
 
 #import <FluctSDK/FSSVideoError.h>
+
+#import <FluctSDK/FSSVIdeoInterstitialRTBDelegate.h>
 #import <FluctSDK/FSSVideoInterstitial.h>
 #import <FluctSDK/FSSVideoInterstitialAdnetworkActivation.h>
 #import <FluctSDK/FSSVideoInterstitialSetting.h>
