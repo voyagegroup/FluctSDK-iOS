@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * InAppBiddingのエラーコード
  */
-typedef NS_ENUM(NSUInteger, FSSInAppBiddingError) {
+typedef NS_ENUM(NSInteger, FSSInAppBiddingError) {
     /** Unknown */
     FSSInAppBiddingErrorUnknown = -1,
     /** リクエストがタイムアウトした */
