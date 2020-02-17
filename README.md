@@ -5,6 +5,10 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## V6.2.0 2020/02/17
+
+* 320x100のバナー広告サイズの対応
+
 ## V6.1.4 2020/02/06
 * 内部処理の変更
 

@@ -57,6 +57,8 @@
         self.adSize = FSSAdSize320x50;
     } else if (CGSizeEqualToSize(adSize.size, FSSAdSize300x250.size)) {
         self.adSize = FSSAdSize300x250;
+    } else if (CGSizeEqualToSize(adSize.size, FSSAdSize320x100.size)) {
+        self.adSize = FSSAdSize320x100;
     } else {
         *error = [NSError errorWithDomain:GADMFluctErrorDomain
                                      code:GADMFluctErrorInvalidSize

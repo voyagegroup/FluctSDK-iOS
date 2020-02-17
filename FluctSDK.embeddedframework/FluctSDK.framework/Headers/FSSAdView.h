@@ -23,6 +23,10 @@ extern FSSAdSize const FSSAdSize320x50;
  * 300x250を表すサイズ
  */
 extern FSSAdSize const FSSAdSize300x250;
+/**
+ * 320x100を表すサイズ
+ */
+extern FSSAdSize const FSSAdSize320x100;
 
 @class FSSAdView;
 
