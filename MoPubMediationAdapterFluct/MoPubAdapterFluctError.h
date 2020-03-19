@@ -13,7 +13,8 @@ static NSString *const MoPubAdapterFluctErrorDomain = @"jp.fluct.FluctSDK.MoPubC
 typedef NS_ENUM(NSInteger, MoPubAdapterFluctError) {
     MoPubAdapterFluctErrorInvalidCustomParameters,
     MoPubAdapterFluctErrorInvalidAdSize,
-    MoPubAdapterFluctErrorNotSupportAdunitFormat
+    MoPubAdapterFluctErrorNotSupportAdunitFormat,
+    MoPubAdapterFluctErrorNoResponse
 };
 
 #endif /* FluctAdapterError_h */

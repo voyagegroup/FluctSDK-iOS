@@ -10,12 +10,20 @@
 #import "FluctRewardedVideoDelegateRouter.h"
 #import <FluctSDK/FluctSDK.h>
 
-@interface FluctVideoInterstitialCustomEvent () <FSSVideoInterstitialDelegate>
+@interface FluctVideoInterstitialCustomEvent () <FSSVideoInterstitialDelegate, FSSVideoInterstitialRTBDelegate>
 @property (nonatomic, nullable) FluctCustomEventInfo *customEventInfo;
 @property (nonatomic, nullable) FSSVideoInterstitial *interstitial;
 @end
 
 @implementation FluctVideoInterstitialCustomEvent
+
+/**
+ * CustomEvent側でimpressionとclickを計測したいので
+ * NOを返す
+ */
+- (BOOL)enableAutomaticImpressionAndClickTracking {
+    return NO;
+}
 
 - (void)requestInterstitialWithCustomEventInfo:(NSDictionary *)info adMarkup:(NSString *)adMarkup {
     NSError *error;
@@ -37,6 +45,7 @@
                                                                unitId:self.customEventInfo.unitID
                                                               setting:setting];
     self.interstitial.delegate = self;
+    self.interstitial.rtbDelegate = self;
 
     MPLogEvent([MPLogEvent adLoadAttemptForAdapter:NSStringFromClass(self.class) dspCreativeId:nil dspName:nil]);
 
@@ -74,6 +83,9 @@
     MPLogEvent([MPLogEvent adDidAppearForAdapter:NSStringFromClass(self.class)]);
     [self.delegate interstitialCustomEventDidAppear:self];
     MPLogEvent([MPLogEvent adShowSuccessForAdapter:NSStringFromClass(self.class)]);
+
+    // 表示できたらimp
+    [self.delegate trackImpression];
 }
 
 - (void)videoInterstitialWillDisappear:(FSSVideoInterstitial *)interstitial {
@@ -85,6 +97,14 @@
     MPLogEvent([MPLogEvent adDidDisappearForAdapter:NSStringFromClass(self.class)]);
     [self.delegate interstitialCustomEventDidDisappear:self];
     MPLogEvent([MPLogEvent adDidDismissModalForAdapter:NSStringFromClass(self.class)]);
+}
+
+#pragma mark - FSSVideoInterstitialRTBDelegate
+
+- (void)videoInterstitialDidClick:(FSSVideoInterstitial *)interstitial {
+    MPLogEvent([MPLogEvent adTappedForAdapter:NSStringFromClass(self.class)]);
+    [self.delegate interstitialCustomEventDidReceiveTapEvent:self];
+    [self.delegate trackClick];
 }
 
 @end

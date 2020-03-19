@@ -9,6 +9,7 @@
 
 @interface FluctRewardedVideoDelegateRouter ()
 @property (nonatomic, nonnull) NSMapTable<NSString *, id<FSSRewardedVideoDelegate>> *delegateTable;
+@property (nonatomic, nonnull) NSMapTable<NSString *, id<FSSRewardedVideoRTBDelegate>> *rtbDelegateTable;
 @end
 
 @implementation FluctRewardedVideoDelegateRouter
@@ -26,6 +27,7 @@
     self = [super init];
     if (self) {
         _delegateTable = [NSMapTable strongToWeakObjectsMapTable];
+        _rtbDelegateTable = [NSMapTable strongToWeakObjectsMapTable];
     }
     return self;
 }
@@ -33,6 +35,11 @@
 - (void)addDelegate:(id<FSSRewardedVideoDelegate>)delegate groupID:(NSString *)groupID unitID:(NSString *)unitID {
     NSString *key = [self keyWithGroupId:groupID unitId:unitID];
     [self.delegateTable setObject:delegate forKey:key];
+}
+
+- (void)addRTBDelegate:(id<FSSRewardedVideoRTBDelegate>)delegate groupID:(NSString *)groupID unitID:(NSString *)unitID {
+    NSString *key = [self keyWithGroupId:groupID unitId:unitID];
+    [self.rtbDelegateTable setObject:delegate forKey:key];
 }
 
 #pragma mark - FSSRewardedVideoDelegate
@@ -93,11 +100,25 @@
     }
 }
 
+#pragma mark - FSSRewardedVideoRTBDelegate
+
+- (void)rewardedVideoDidClickForGroupId:(NSString *)groupId unitId:(NSString *)unitId {
+    id<FSSRewardedVideoRTBDelegate> delegate = [self rtbDelegateFromGroupID:groupId unitID:unitId];
+    if ([delegate respondsToSelector:@selector(rewardedVideoDidClickForGroupId:unitId:)]) {
+        [delegate rewardedVideoDidClickForGroupId:groupId unitId:unitId];
+    }
+}
+
 #pragma mark - private
 
-- (id<FSSRewardedVideoDelegate>)delegateFromGroupID:(NSString *)groupID unitID:(NSString *)unitID {
+- (id<FSSRewardedVideoDelegate> _Nullable)delegateFromGroupID:(NSString *)groupID unitID:(NSString *)unitID {
     NSString *key = [self keyWithGroupId:groupID unitId:unitID];
     return [self.delegateTable objectForKey:key];
+}
+
+- (id<FSSRewardedVideoRTBDelegate> _Nullable)rtbDelegateFromGroupID:(NSString *)groupID unitID:(NSString *)unitID {
+    NSString *key = [self keyWithGroupId:groupID unitId:unitID];
+    return [self.rtbDelegateTable objectForKey:key];
 }
 
 - (NSString *)keyWithGroupId:(NSString *)groupId unitId:(NSString *)unitId {

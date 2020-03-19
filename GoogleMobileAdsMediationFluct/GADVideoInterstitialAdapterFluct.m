@@ -7,10 +7,10 @@
 
 #import "GADVideoInterstitialAdapterFluct.h"
 #import "GADMFluctError.h"
+
 @import FluctSDK;
 
-@interface GADVideoInterstitialAdapterFluct () <FSSVideoInterstitialDelegate>
-
+@interface GADVideoInterstitialAdapterFluct () <FSSVideoInterstitialDelegate, FSSVideoInterstitialRTBDelegate>
 @property (nonatomic, nullable) NSString *groupID;
 @property (nonatomic, nullable) NSString *unitID;
 @property (nonatomic, nullable) FSSVideoInterstitial *videoInterstitial;
@@ -91,4 +91,9 @@
 - (void)videoInterstitial:(FSSVideoInterstitial *)interstitial didFailToPlayWithError:(NSError *)error {
     [self.delegate customEventInterstitial:self didFailAd:error];
 }
+
+- (void)videoInterstitialDidClick:(FSSVideoInterstitial *)interstitial {
+    [self.delegate customEventInterstitialWasClicked:self];
+}
+
 @end

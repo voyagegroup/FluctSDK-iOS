@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
     s.name                  = "MoPubMediationAdapterFluct"
     s.summary               = "fluct adapter used for mediation with the MoPub"
     s.license               = { :type => "Copyright", :text => "Copyright (c) fluct,Inc. All rights reserved." }
-    s.version               = "6.2.1"
+    s.version               = "6.3.0"
     s.author                = "fluct,Inc."
     s.requires_arc          = true
     s.static_framework      = true

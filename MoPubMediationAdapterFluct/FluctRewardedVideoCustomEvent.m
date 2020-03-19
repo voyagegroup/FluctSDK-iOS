@@ -11,11 +11,19 @@
 #import "FluctRewardedVideoDelegateRouter.h"
 #import <FluctSDK/FluctSDK.h>
 
-@interface FluctRewardedVideoCustomEvent () <FSSRewardedVideoDelegate>
+@interface FluctRewardedVideoCustomEvent () <FSSRewardedVideoDelegate, FSSRewardedVideoRTBDelegate>
 @property (nonatomic, nullable) FluctCustomEventInfo *customEventInfo;
 @end
 
 @implementation FluctRewardedVideoCustomEvent
+
+/**
+ * CustomEvent側でimpressionとclickを計測したいので
+ * NOを返す
+ */
+- (BOOL)enableAutomaticImpressionAndClickTracking {
+    return NO;
+}
 
 - (void)requestRewardedVideoWithCustomEventInfo:(NSDictionary *)info adMarkup:(NSString *)adMarkup {
     NSError *error;
@@ -35,7 +43,12 @@
     [FluctRewardedVideoDelegateRouter.sharedInstance addDelegate:self
                                                          groupID:self.customEventInfo.groupID
                                                           unitID:self.customEventInfo.unitID];
+    [FluctRewardedVideoDelegateRouter.sharedInstance addRTBDelegate:self
+                                                            groupID:self.customEventInfo.groupID
+                                                             unitID:self.customEventInfo.unitID];
+
     FSSRewardedVideo.sharedInstance.delegate = FluctRewardedVideoDelegateRouter.sharedInstance;
+    FSSRewardedVideo.sharedInstance.rtbDelegate = FluctRewardedVideoDelegateRouter.sharedInstance;
 
     FSSAdRequestTargeting *targeting;
     FluctInstanceMediationSettings *mediationSettings = [self.delegate instanceMediationSettingsForClass:[FluctInstanceMediationSettings class]];
@@ -84,6 +97,9 @@
     MPLogEvent([MPLogEvent adDidAppearForAdapter:NSStringFromClass(self.class)]);
     [self.delegate rewardedVideoDidAppearForCustomEvent:self];
     MPLogEvent([MPLogEvent adShowSuccessForAdapter:NSStringFromClass(self.class)]);
+
+    // 表示できたらimp
+    [self.delegate trackImpression];
 }
 
 - (void)rewardedVideoDidFailToPlayForGroupId:(NSString *)groupId unitId:(NSString *)unitId error:(NSError *)error {
@@ -106,6 +122,15 @@
     MPLogEvent([MPLogEvent adDidDisappearForAdapter:NSStringFromClass(self.class)]);
     MPLogEvent([MPLogEvent adDidDismissModalForAdapter:NSStringFromClass(self.class)]);
     [self.delegate rewardedVideoDidDisappearForCustomEvent:self];
+}
+
+#pragma mark - FSSRewardedVideoRTBDelegate
+
+- (void)rewardedVideoDidClickForGroupId:(NSString *)groupId unitId:(NSString *)unitId {
+    MPLogEvent([MPLogEvent adTappedForAdapter:NSStringFromClass(self.class)]);
+    [self.delegate rewardedVideoDidReceiveTapEventForCustomEvent:self];
+    // click
+    [self.delegate trackClick];
 }
 
 @end

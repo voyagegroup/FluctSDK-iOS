@@ -10,11 +10,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FluctRewardedVideoDelegateRouter : NSObject <FSSRewardedVideoDelegate>
+@interface FluctRewardedVideoDelegateRouter : NSObject <FSSRewardedVideoDelegate, FSSRewardedVideoRTBDelegate>
 
 + (FluctRewardedVideoDelegateRouter *)sharedInstance;
 
 - (void)addDelegate:(id<FSSRewardedVideoDelegate>)delegate groupID:(NSString *)groupID unitID:(NSString *)unitID;
+- (void)addRTBDelegate:(id<FSSRewardedVideoRTBDelegate>)delegate groupID:(NSString *)groupID unitID:(NSString *)unitID;
 
 @end
 
