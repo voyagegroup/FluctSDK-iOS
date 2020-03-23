@@ -5,6 +5,10 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## V6.3.1 2020/03/23
+
+* 内部処理の改善
+
 ## V6.3.0 2020/03/19
 
 * 動画インタースティシャル広告 / 動画リワード広告の動画プレイヤーにCTAボタンを表示するように対応
