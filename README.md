@@ -5,6 +5,10 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## V6.3.2 2020/03/23
+
+* `FluctSDK.h`でimportしているヘッダーの名前を修正
+
 ## V6.3.1 2020/03/23
 
 * 内部処理の改善

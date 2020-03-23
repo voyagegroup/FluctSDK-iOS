@@ -26,9 +26,9 @@
 
 #import <FluctSDK/FSSVideoError.h>
 
-#import <FluctSDK/FSSVIdeoInterstitialRTBDelegate.h>
 #import <FluctSDK/FSSVideoInterstitial.h>
 #import <FluctSDK/FSSVideoInterstitialAdnetworkActivation.h>
+#import <FluctSDK/FSSVideoInterstitialRTBDelegate.h>
 #import <FluctSDK/FSSVideoInterstitialSetting.h>
 
 #import <FluctSDK/FSSInAppBidding.h>
