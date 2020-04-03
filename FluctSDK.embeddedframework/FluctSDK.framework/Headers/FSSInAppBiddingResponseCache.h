@@ -9,6 +9,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_ENUM(NSInteger, FSSInAppBiddingCacheError) {
+    FSSInAppBiddingCacheErrorNoContent = -1000,
+    FSSInAppBiddingCacheErrorInvalidPricePoint = -1001,
+    FSSInAppBiddingCacheErrorNotFoundPrice = -1002,
+    FSSInAppBiddingCacheErrorBelowPricePoint = -1003
+};
+
 @interface FSSInAppBiddingResponseCache : NSObject
 
 @property (class, nonatomic, readonly) FSSInAppBiddingResponseCache *sharedInstance NS_SWIFT_NAME(shared);

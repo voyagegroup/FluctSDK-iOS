@@ -5,6 +5,10 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 
 # FluctSDK Release Note
 
+## V6.3.4 2020/04/03
+
+* 内部処理の改善
+
 ## V6.3.3 2020/03/26
 
 * 内部処理の修正
