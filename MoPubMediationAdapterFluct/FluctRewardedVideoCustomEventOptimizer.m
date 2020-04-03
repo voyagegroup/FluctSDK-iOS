@@ -102,6 +102,7 @@ static NSString *const kCustomEventInfoPricePointKey = @"pricePoint";
 
 - (void)rewardedVideoDidLoadForGroupID:(NSString *)groupId unitId:(NSString *)unitId {
     MPLogEvent([MPLogEvent adLoadSuccessForAdapter:NSStringFromClass(self.class)]);
+    [[FSSInAppBiddingResponseCache sharedInstance] clearResponseForGroupId:groupId unitId:unitId];
     [self.delegate rewardedVideoDidLoadAdForCustomEvent:self];
 }
 
