@@ -10,6 +10,20 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
+ * InAppBiddingが対応している広告フォーマット
+ */
+typedef NS_ENUM(NSUInteger, FSSInAppBiddingAdFormat) {
+    /**
+     * 動画リワード
+     */
+    FSSInAppBiddingAdFormatRewardedVideo = 0,
+    /**
+     * 動画インタースティシャル
+     */
+    FSSInAppBiddingAdFormatVideoInterstitial
+};
+
+/**
  * InAppBiddingのレスポンス
  */
 @interface FSSInAppBiddingResponse : NSObject
@@ -37,10 +51,16 @@ typedef void (^FSSInAppBiddingCompletionBlock)(FSSInAppBiddingResponse *_Nullabl
  * グループID
  */
 @property (nonatomic, readonly) NSString *groupId;
+
 /**
  * ユニットID
  */
 @property (nonatomic, readonly) NSString *unitId;
+
+/**
+ * 広告フォーマット
+ */
+@property (nonatomic, readonly) FSSInAppBiddingAdFormat adFormat;
 
 /**
  * デバッグモード
@@ -51,15 +71,18 @@ typedef void (^FSSInAppBiddingCompletionBlock)(FSSInAppBiddingResponse *_Nullabl
  * FSSInAppBiddingの初期化を行う
  * @param groupId   グループID
  * @param unitId    ユニットID
+ * @param adFormat  広告フォーマット
  */
-- (instancetype)initWithGroupId:(NSString *)groupId unitId:(NSString *)unitId;
+- (instancetype)initWithGroupId:(NSString *)groupId unitId:(NSString *)unitId adFormat:(FSSInAppBiddingAdFormat)adFormat;
 
 /**
  * FSSInAppBiddingの初期化を行う
  * @param groupId   グループID
  * @param unitId    ユニットID
+ * @param adFormat  広告フォーマット
+ * @param debugMode デバッグモード
  */
-- (instancetype)initWithGroupId:(NSString *)groupId unitId:(NSString *)unitId debugMode:(BOOL)debugMode;
+- (instancetype)initWithGroupId:(NSString *)groupId unitId:(NSString *)unitId adFormat:(FSSInAppBiddingAdFormat)adFormat debugMode:(BOOL)debugMode;
 
 /**
  * リクエストする

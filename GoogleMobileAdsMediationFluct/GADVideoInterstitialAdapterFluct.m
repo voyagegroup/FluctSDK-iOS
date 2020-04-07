@@ -38,6 +38,7 @@
                                                                     unitId:self.unitID
                                                                    setting:[FSSVideoInterstitialSetting defaultSetting]];
     self.videoInterstitial.delegate = self;
+    self.videoInterstitial.rtbDelegate = self;
     [self.videoInterstitial loadAd];
 }
 

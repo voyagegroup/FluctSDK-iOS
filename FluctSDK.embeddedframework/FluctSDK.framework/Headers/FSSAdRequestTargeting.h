@@ -17,7 +17,7 @@ typedef NS_ENUM(NSUInteger, FSSGender) {
 
 @interface FSSAdRequestTargeting : NSObject
 
-@property (nonatomic, copy, nullable) NSString *userID;
+@property (nonatomic, copy, nullable) NSString *userID __attribute__((deprecated));
 @property (nonatomic, copy, nullable) NSDate *birthday;
 @property (nonatomic) NSInteger age;
 @property (nonatomic) FSSGender gender;

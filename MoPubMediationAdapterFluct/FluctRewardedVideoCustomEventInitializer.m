@@ -41,6 +41,7 @@
 
     self.bidding = [[FSSInAppBidding alloc] initWithGroupId:self.customEventInfo.groupID
                                                      unitId:self.customEventInfo.unitID
+                                                   adFormat:FSSInAppBiddingAdFormatRewardedVideo
                                                   debugMode:debugMode];
     MPLogEvent([MPLogEvent adLoadAttemptForAdapter:NSStringFromClass(self.class) dspCreativeId:nil dspName:nil]);
     [self.bidding requestWithCompletion:^(FSSInAppBiddingResponse *_Nullable response, NSError *_Nullable error) {

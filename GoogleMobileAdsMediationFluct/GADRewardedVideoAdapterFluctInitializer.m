@@ -96,7 +96,10 @@
     }
 
     self.completionHandler = completionHandler;
-    self.bidding = [[FSSInAppBidding alloc] initWithGroupId:self.groupID unitId:self.unitID debugMode:debugMode];
+    self.bidding = [[FSSInAppBidding alloc] initWithGroupId:self.groupID
+                                                     unitId:self.unitID
+                                                   adFormat:FSSInAppBiddingAdFormatRewardedVideo
+                                                  debugMode:debugMode];
     [self.bidding requestWithCompletion:^(FSSInAppBiddingResponse *_Nullable response, NSError *_Nullable error) {
         if (error) {
             self.completionHandler(nil, error);

@@ -1,9 +1,14 @@
 # FluctSDK
 
-## APIドキュメント
-FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照してください
+## ドキュメント
+[こちら](https://voyagegroup.github.io/FluctSDK-Doc/#/)を参照してください
 
 # FluctSDK Release Note
+
+## V6.4.0 2020/04/07
+
+* `FSSAdRequestTargeting`の`userID`をdeprecate
+* AdMob / MoPubの新しいフォーマットに対応しました
 
 ## V6.3.5 2020/04/03
 
@@ -339,9 +344,6 @@ FluctSDK-iOSの[Wiki](https://github.com/voyagegroup/FluctSDK-iOS/wiki)を参照
 ## v4.3.1 2016/01/13
 * CocoaPodsに対応
 * SDKをframework化
-
-## v4.3.0 以前の変更点について
-* [改版履歴](https://github.com/voyagegroup/FluctSDK-iOS/wiki/%E6%94%B9%E7%89%88%E5%B1%A5%E6%AD%B4)をご確認下さい
 
 ## LICENSE
 Copyright fluct, Inc. All rights reserved.

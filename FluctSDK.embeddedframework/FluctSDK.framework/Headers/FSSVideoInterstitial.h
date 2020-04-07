@@ -111,6 +111,12 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)loadAdWithTargeting:(FSSAdRequestTargeting *_Nullable)targeting;
 
 /**
+ * 広告のロードを行う。
+ * @param adInfo 広告情報
+ */
+- (void)loadAdWithAdInfo:(NSDictionary<NSString *, id> *)adInfo;
+
+/**
  * 全画面動画広告の再生準備ができているかを返す
  * @return 準備が完了している場合はYES、それ以外はNOを返す
  */
