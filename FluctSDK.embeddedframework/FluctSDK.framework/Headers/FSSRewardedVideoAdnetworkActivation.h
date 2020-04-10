@@ -27,12 +27,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, getter=isAdCorsaActivated) BOOL adCorsaActivated;
 
 /**
- * Activation setting for AdMob.
- * Required to include `FSSRewardedVideoCustomEventAdMob` in project.
- */
-@property (nonatomic, getter=isAdMobActivated) BOOL adMobActivated;
-
-/**
  * Activation setting for AppLovin.
  * Required to include `FSSRewardedVideoCustomEventAppLovin` in project.
  */

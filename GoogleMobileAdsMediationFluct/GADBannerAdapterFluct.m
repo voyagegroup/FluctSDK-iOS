@@ -9,7 +9,7 @@
 #import "GADMFluctError.h"
 @import FluctSDK;
 
-@interface GADBannerAdapterFluct () <FSSAdViewDelegate, FSSAdViewCustomEventDelegate>
+@interface GADBannerAdapterFluct () <FSSAdViewDelegate>
 @property (nonatomic, nullable) NSString *groupID;
 @property (nonatomic, nullable) NSString *unitID;
 @property (nonatomic) FSSAdSize adSize;
@@ -34,7 +34,12 @@
 
     self.adView = [[FSSAdView alloc] initWithGroupId:self.groupID unitId:self.unitID adSize:self.adSize];
     self.adView.delegate = self;
-    self.adView.customEventDelegate = self;
+
+    // iOS12でloadされない問題の対応のため、viewController.viewのhierarchyに追加する
+    self.adView.hidden = YES;
+    UIViewController *viewController = [self.delegate viewControllerForPresentingModalView];
+    [viewController.view addSubview:self.adView];
+
     [self.adView loadAd];
 }
 
@@ -69,18 +74,25 @@
 }
 
 #pragma mark - FSSAdViewDelegate
+
+- (void)adViewDidStoreAd:(FSSAdView *)adView {
+    // iOS12でloadされない問題の対応のため、viewController.viewのhierarchyに追加されているので
+    // removeFromSuperviewする必要あり
+    [adView removeFromSuperview];
+    adView.hidden = NO;
+    [self.delegate customEventBanner:self didReceiveAd:adView];
+}
+
 - (void)adView:(FSSAdView *)adView didFailToStoreAdWithError:(NSError *)error {
+    // iOS12でloadされない問題の対応のため、viewController.viewのhierarchyに追加されているので
+    // removeFromSuperviewする
+    [adView removeFromSuperview];
     [self.delegate customEventBanner:self didFailAd:error];
 }
 
 - (void)willLeaveApplicationForAdView:(FSSAdView *)adView {
     [self.delegate customEventBannerWasClicked:self];
     [self.delegate customEventBannerWillLeaveApplication:self];
-}
-
-#pragma mark - FSSAdViewCustomEventDelegate
-- (void)adViewDidReadyForCustomEvent:(FSSAdView *)adView {
-    [self.delegate customEventBanner:self didReceiveAd:adView];
 }
 
 @end

@@ -5,6 +5,10 @@
 
 # FluctSDK Release Note
 
+## V6.4.1 2020/04/10
+
+* AdMob / MoPubのバナーフォーマットのカスタムイベントの挙動を修正
+
 ## V6.4.0 2020/04/07
 
 * `FSSAdRequestTargeting`の`userID`をdeprecate

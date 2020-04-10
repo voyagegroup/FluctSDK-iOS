@@ -19,7 +19,6 @@
 #import <FluctSDK/FSSConfigurationOptions.h>
 
 #import <FluctSDK/FSSAdView.h>
-#import <FluctSDK/FSSAdViewCustomEventDelegate.h>
 #import <FluctSDK/FSSAdViewError.h>
 
 #import <FluctSDK/FSSFullscreenVideoWorkQueue.h>

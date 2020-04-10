@@ -10,7 +10,7 @@
 #import "MoPubAdapterFluctError.h"
 #import <FluctSDK/FluctSDK.h>
 
-@interface FluctBannerCustomEvent () <FSSAdViewDelegate, FSSAdViewCustomEventDelegate>
+@interface FluctBannerCustomEvent () <FSSAdViewDelegate>
 @property (nonatomic, strong) FSSAdView *adView;
 @end
 
@@ -56,17 +56,32 @@
 
     self.adView = [[FSSAdView alloc] initWithGroupId:customEventInfo.groupID unitId:customEventInfo.unitID adSize:adSize];
     self.adView.delegate = self;
-    self.adView.customEventDelegate = self;
+
+    // iOS12でloadされない問題の対応のため、viewController.viewのhierarchyに追加する
+    self.adView.hidden = YES;
+    UIViewController *viewController = [self.delegate viewControllerForPresentingModalView];
+    [viewController.view addSubview:self.adView];
+
     [self.adView loadAd];
 }
 
 #pragma mark - FSSAdViewDelegate
 
 - (void)adViewDidStoreAd:(FSSAdView *)adView {
+    MPLogEvent([MPLogEvent adLoadSuccessForAdapter:NSStringFromClass(self.class)]);
+    // iOS12でloadされない問題の対応のため、viewController.viewのhierarchyに追加されているので
+    // removeFromSuperviewする必要あり
+    [adView removeFromSuperview];
+    adView.hidden = NO;
+
+    [self.delegate bannerCustomEvent:self didLoadAd:adView];
     MPLogEvent([MPLogEvent adShowSuccessForAdapter:NSStringFromClass(self.class)]);
 }
 
 - (void)adView:(FSSAdView *)adView didFailToStoreAdWithError:(NSError *)error {
+    // iOS12でloadされない問題の対応のため、viewController.viewのhierarchyに追加されているので
+    // removeFromSuperviewする
+    [adView removeFromSuperview];
     MPLogEvent([MPLogEvent adLoadFailedForAdapter:NSStringFromClass(self.class) error:error]);
     [self.delegate bannerCustomEvent:self didFailToLoadAdWithError:error];
     [self.adView removeFromSuperview];
@@ -78,13 +93,6 @@
     [self.delegate bannerCustomEventWillBeginAction:self];
     [self.delegate bannerCustomEventWillLeaveApplication:self];
     [self.delegate bannerCustomEventDidFinishAction:self];
-}
-
-#pragma mark - FSSAdViewCustomEventDelegate
-
-- (void)adViewDidReadyForCustomEvent:(FSSAdView *)adView {
-    MPLogEvent([MPLogEvent adLoadSuccessForAdapter:NSStringFromClass(self.class)]);
-    [self.delegate bannerCustomEvent:self didLoadAd:adView];
 }
 
 @end
