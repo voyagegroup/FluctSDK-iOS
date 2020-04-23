@@ -11,6 +11,7 @@
 static NSString *const kCustomEventInfoAdunitFormatKey = @"adunit_format";
 static NSString *const kCustomEventInfoGroupIDKey = @"groupID";
 static NSString *const kCustomEventInfoUnitIDKey = @"unitID";
+static NSString *const kCustomEventInfoPricePointKey = @"pricePoint";
 static NSString *const kMoPubAdunitFormatBanner = @"banner";
 static NSString *const kMoPubAdunitFormatRectangle = @"medium_rectangle";
 static NSString *const kMoPubAdunitFormatInterstitial = @"full";
@@ -50,18 +51,25 @@ static NSString *const kMoPubAdunitFormatRewardedVideo = @"rewarded_video";
         return nil;
     }
 
+    NSString *pricePoint = info[kCustomEventInfoPricePointKey];
+
     FluctCustomEventInfo *customEventInfo = [[FluctCustomEventInfo alloc] initWithGroupID:groupID
                                                                                    unitID:unitID
-                                                                             adunitFormat:fluctAdunitFormat];
+                                                                             adunitFormat:fluctAdunitFormat
+                                                                               pricePoint:pricePoint];
     return customEventInfo;
 }
 
-- (instancetype _Nonnull)initWithGroupID:(NSString *_Nonnull)groupID unitID:(NSString *_Nonnull)unitID adunitFormat:(FluctAdUnitFormat)adunitFormat {
+- (instancetype _Nonnull)initWithGroupID:(NSString *_Nonnull)groupID
+                                  unitID:(NSString *_Nonnull)unitID
+                            adunitFormat:(FluctAdUnitFormat)adunitFormat
+                              pricePoint:(NSString *_Nullable)pricePoint {
     self = [super init];
     if (self) {
         _groupID = groupID;
         _unitID = unitID;
         _adunitFormat = adunitFormat;
+        _pricePoint = pricePoint;
     }
     return self;
 }

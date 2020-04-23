@@ -19,6 +19,7 @@ typedef NS_CLOSED_ENUM(NSUInteger, FluctAdUnitFormat){
 @property (nonatomic, readonly) NSString *groupID;
 @property (nonatomic, readonly) NSString *unitID;
 @property (nonatomic, readonly) FluctAdUnitFormat adunitFormat;
+@property (nonatomic, nullable, readonly) NSString *pricePoint;
 
 + (instancetype)customEventInfoFromMoPubInfo:(NSDictionary<NSString *, id> *_Nullable)info error:(NSError **)error;
 

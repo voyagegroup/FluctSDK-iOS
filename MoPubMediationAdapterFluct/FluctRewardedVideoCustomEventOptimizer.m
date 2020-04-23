@@ -14,10 +14,7 @@
 
 @interface FluctRewardedVideoCustomEventOptimizer () <FSSRewardedVideoDelegate, FSSRewardedVideoRTBDelegate>
 @property (nonatomic, nullable) FluctCustomEventInfo *customEventInfo;
-@property (nonatomic, nullable) NSString *pricePoint;
 @end
-
-static NSString *const kCustomEventInfoPricePointKey = @"pricePoint";
 
 @implementation FluctRewardedVideoCustomEventOptimizer
 
@@ -38,8 +35,7 @@ static NSString *const kCustomEventInfoPricePointKey = @"pricePoint";
         return;
     }
 
-    self.pricePoint = info[kCustomEventInfoPricePointKey];
-    if (!self.pricePoint) {
+    if (!self.customEventInfo.pricePoint) {
         NSError *error = [NSError errorWithDomain:MoPubAdapterFluctErrorDomain
                                              code:MoPubAdapterFluctErrorInvalidCustomParameters
                                          userInfo:nil];
@@ -50,7 +46,7 @@ static NSString *const kCustomEventInfoPricePointKey = @"pricePoint";
 
     NSDictionary<NSString *, id> *adInfo = [FSSInAppBiddingResponseCache.sharedInstance responseForGroupId:self.customEventInfo.groupID
                                                                                                     unitId:self.customEventInfo.unitID
-                                                                                                pricePoint:self.pricePoint];
+                                                                                                pricePoint:self.customEventInfo.pricePoint];
     if (!adInfo) {
         NSError *error = [NSError errorWithDomain:MoPubAdapterFluctErrorDomain
                                              code:MoPubAdapterFluctErrorNoResponse
@@ -71,6 +67,7 @@ static NSString *const kCustomEventInfoPricePointKey = @"pricePoint";
     [FluctRewardedVideoDelegateRouter.sharedInstance addRTBDelegate:self
                                                             groupID:self.customEventInfo.groupID
                                                              unitID:self.customEventInfo.unitID];
+
     FSSRewardedVideo.sharedInstance.delegate = FluctRewardedVideoDelegateRouter.sharedInstance;
     FSSRewardedVideo.sharedInstance.rtbDelegate = FluctRewardedVideoDelegateRouter.sharedInstance;
 
@@ -102,7 +99,6 @@ static NSString *const kCustomEventInfoPricePointKey = @"pricePoint";
 
 - (void)rewardedVideoDidLoadForGroupID:(NSString *)groupId unitId:(NSString *)unitId {
     MPLogEvent([MPLogEvent adLoadSuccessForAdapter:NSStringFromClass(self.class)]);
-    [[FSSInAppBiddingResponseCache sharedInstance] clearResponseForGroupId:groupId unitId:unitId];
     [self.delegate rewardedVideoDidLoadAdForCustomEvent:self];
 }
 

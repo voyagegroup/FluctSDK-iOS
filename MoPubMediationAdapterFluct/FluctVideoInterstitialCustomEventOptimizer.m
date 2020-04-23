@@ -12,11 +12,8 @@
 
 @interface FluctVideoInterstitialCustomEventOptimizer () <FSSVideoInterstitialDelegate, FSSVideoInterstitialRTBDelegate>
 @property (nonatomic, nullable) FluctCustomEventInfo *customEventInfo;
-@property (nonatomic, nullable) NSString *pricePoint;
 @property (nonatomic, nullable) FSSVideoInterstitial *interstitial;
 @end
-
-static NSString *const kCustomEventInfoPricePointKey = @"pricePoint";
 
 @implementation FluctVideoInterstitialCustomEventOptimizer
 
@@ -37,8 +34,7 @@ static NSString *const kCustomEventInfoPricePointKey = @"pricePoint";
         return;
     }
 
-    self.pricePoint = info[kCustomEventInfoPricePointKey];
-    if (!self.pricePoint) {
+    if (!self.customEventInfo.pricePoint) {
         NSError *error = [NSError errorWithDomain:MoPubAdapterFluctErrorDomain
                                              code:MoPubAdapterFluctErrorInvalidCustomParameters
                                          userInfo:nil];
@@ -54,7 +50,7 @@ static NSString *const kCustomEventInfoPricePointKey = @"pricePoint";
 
     NSDictionary<NSString *, id> *adInfo = [FSSInAppBiddingResponseCache.sharedInstance responseForGroupId:self.customEventInfo.groupID
                                                                                                     unitId:self.customEventInfo.unitID
-                                                                                                pricePoint:self.pricePoint];
+                                                                                                pricePoint:self.customEventInfo.pricePoint];
     if (!adInfo) {
         NSError *error = [NSError errorWithDomain:MoPubAdapterFluctErrorDomain
                                              code:MoPubAdapterFluctErrorNoResponse

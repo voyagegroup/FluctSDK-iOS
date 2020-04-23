@@ -21,7 +21,6 @@ typedef NS_ENUM(NSInteger, FSSInAppBiddingCacheError) {
 @property (class, nonatomic, readonly) FSSInAppBiddingResponseCache *sharedInstance NS_SWIFT_NAME(shared);
 
 - (void)setResponse:(NSDictionary<NSString *, id> *)response forGroupId:(NSString *)groupId unitId:(NSString *)unitId;
-- (void)clearResponseForGroupId:(NSString *)groupId unitId:(NSString *)unitId;
 - (NSDictionary<NSString *, id> *_Nullable)responseForGroupId:(NSString *)groupId unitId:(NSString *)unitId pricePoint:(NSString *)pricePoint;
 
 @end

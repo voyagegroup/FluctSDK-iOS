@@ -134,7 +134,6 @@
 #pragma mark - GADAdapterFluctVideoDelegateProxyItem
 
 - (void)rewardedVideoDidLoadForGroupID:(NSString *)groupId unitId:(NSString *)unitId {
-    [[FSSInAppBiddingResponseCache sharedInstance] clearResponseForGroupId:groupId unitId:unitId];
     if (self.completionHandler) {
         self.adEventDelegate = self.completionHandler(self, nil);
         self.completionHandler = nil;
