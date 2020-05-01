@@ -48,14 +48,14 @@ typedef NS_ENUM(NSInteger, MintegralErrorExtend) {
 }
 
 - (void)loadRewardedVideoWithDictionary:(NSDictionary *)dictionary {
-    if ([MTGRewardAdManager.sharedInstance isVideoReadyToPlay:self.unitId]) {
+    if ([MTGRewardAdManager.sharedInstance isVideoReadyToPlayWithPlacementId:nil unitId:self.unitId]) {
         self.adnwStatus = FSSRewardedVideoADNWStatusLoaded;
         [self.delegate rewardedVideoDidLoadForCustomEvent:self];
         return;
     }
 
     self.adnwStatus = FSSRewardedVideoADNWStatusLoading;
-    [MTGRewardAdManager.sharedInstance loadVideo:self.unitId delegate:self];
+    [MTGRewardAdManager.sharedInstance loadVideoWithPlacementId:nil unitId:self.unitId delegate:self];
 }
 
 - (FSSRewardedVideoADNWStatus)loadStatus {
@@ -63,12 +63,13 @@ typedef NS_ENUM(NSInteger, MintegralErrorExtend) {
 }
 
 - (void)presentRewardedVideoAdFromViewController:(UIViewController *)viewController {
-    if ([MTGRewardAdManager.sharedInstance isVideoReadyToPlay:self.unitId]) {
-        [MTGRewardAdManager.sharedInstance showVideo:self.unitId
-                                        withRewardId:@"1"
-                                              userId:@""
-                                            delegate:self
-                                      viewController:viewController];
+    if ([MTGRewardAdManager.sharedInstance isVideoReadyToPlayWithPlacementId:nil unitId:self.unitId]) {
+        [MTGRewardAdManager.sharedInstance showVideoWithPlacementId:nil
+                                                             unitId:self.unitId
+                                                       withRewardId:@"1"
+                                                             userId:@""
+                                                           delegate:self
+                                                     viewController:viewController];
     } else {
         self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
         NSError *error = [NSError errorWithDomain:FSSVideoErrorSDKDomain
@@ -85,7 +86,7 @@ typedef NS_ENUM(NSInteger, MintegralErrorExtend) {
 }
 
 #pragma mark - MTGRewardAdLoadDelegate
-- (void)onVideoAdLoadSuccess:(nullable NSString *)unitId {
+- (void)onVideoAdLoadSuccess:(NSString *)placementId unitId:(NSString *)unitId {
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         if (![unitId isEqualToString:weakSelf.unitId]) {
@@ -106,7 +107,7 @@ typedef NS_ENUM(NSInteger, MintegralErrorExtend) {
     });
 }
 
-- (void)onVideoAdLoadFailed:(nullable NSString *)unitId error:(nonnull NSError *)error {
+- (void)onVideoAdLoadFailed:(NSString *)placementId unitId:(NSString *)unitId error:(NSError *)error {
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
@@ -120,7 +121,8 @@ typedef NS_ENUM(NSInteger, MintegralErrorExtend) {
 }
 
 #pragma mark - MTGRewardAdShowDelegate
-- (void)onVideoAdShowSuccess:(nullable NSString *)unitId {
+
+- (void)onVideoAdShowSuccess:(NSString *)placementId unitId:(NSString *)unitId {
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         if (![unitId isEqualToString:weakSelf.unitId]) {
@@ -141,7 +143,7 @@ typedef NS_ENUM(NSInteger, MintegralErrorExtend) {
     });
 }
 
-- (void)onVideoAdShowFailed:(nullable NSString *)unitId withError:(nonnull NSError *)error {
+- (void)onVideoAdShowFailed:(NSString *)placementId unitId:(NSString *)unitId withError:(NSError *)error {
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
@@ -154,7 +156,7 @@ typedef NS_ENUM(NSInteger, MintegralErrorExtend) {
     });
 }
 
-- (void)onVideoPlayCompleted:(nullable NSString *)unitId {
+- (void)onVideoPlayCompleted:(NSString *)placementId unitId:(NSString *)unitId {
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         if (![unitId isEqualToString:weakSelf.unitId]) {
@@ -174,7 +176,7 @@ typedef NS_ENUM(NSInteger, MintegralErrorExtend) {
     });
 }
 
-- (void)onVideoAdClicked:(nullable NSString *)unitId {
+- (void)onVideoAdClicked:(NSString *)placementId unitId:(NSString *)unitId {
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         if (![unitId isEqualToString:weakSelf.unitId]) {
@@ -194,7 +196,7 @@ typedef NS_ENUM(NSInteger, MintegralErrorExtend) {
     });
 }
 
-- (void)onVideoAdDismissed:(nullable NSString *)unitId withConverted:(BOOL)converted withRewardInfo:(nullable MTGRewardAdInfo *)rewardInfo {
+- (void)onVideoAdDismissed:(NSString *)placementId unitId:(NSString *)unitId withConverted:(BOOL)converted withRewardInfo:(MTGRewardAdInfo *)rewardInfo {
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         if (![unitId isEqualToString:weakSelf.unitId]) {
