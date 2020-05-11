@@ -11,13 +11,14 @@
 #import "GADMFluctError.h"
 #import <FluctSDK/FluctSDK.h>
 
-@interface GADRewardedVideoAdapterFluctOptimizer () <GADAdapterFluctVideoDelegateProxyItem>
+@interface GADRewardedVideoAdapterFluctOptimizer () <GADAdapterFluctVideoDelegateProxyItem, FSSRewardedVideoCustomEventOptimizerDelegate>
 @property (nonatomic, nullable, copy) GADMediationRewardedLoadCompletionHandler completionHandler;
 @property (nonatomic, nullable, weak) id<GADMediationRewardedAdEventDelegate> adEventDelegate;
 
 @property (nonatomic, nullable, copy) NSString *groupID;
 @property (nonatomic, nullable, copy) NSString *unitID;
 @property (nonatomic, nullable, copy) NSString *pricePoint;
+@property (nonatomic, nullable) FSSRewardedVideoCustomEventOptimizer *optimizer;
 @end
 
 @implementation GADRewardedVideoAdapterFluctOptimizer
@@ -87,48 +88,46 @@
         return;
     }
 
-    NSDictionary<NSString *, id> *adInfo = [FSSInAppBiddingResponseCache.sharedInstance responseForGroupId:self.groupID
-                                                                                                    unitId:self.unitID
-                                                                                                pricePoint:self.pricePoint];
-
-    if (!adInfo) {
-        NSError *error = [NSError errorWithDomain:GADMFluctErrorDomain
-                                             code:GADMFluctErrorNoResponse
-                                         userInfo:nil];
-        completionHandler(nil, error);
-        return;
-    }
-
-    self.completionHandler = completionHandler;
-
     FSSConfigurationOptions *options = [FluctSDK currentConfigureOptions];
     options.mediationPlatformType = FSSMediationPlatformTypeGoogleMobileAds;
     options.mediationPlatformSDKVersion = [NSString stringWithFormat:@"%s", GoogleMobileAdsVersionString];
     [FluctSDK configureWithOptions:options];
 
+    self.completionHandler = completionHandler;
+    self.optimizer = [[FSSRewardedVideoCustomEventOptimizer alloc] initWithGroupId:self.groupID
+                                                                            unitId:self.unitID
+                                                                        pricePoint:self.pricePoint];
+    self.optimizer.delegate = self;
+
+    FSSRewardedVideoSetting *setting = [FSSRewardedVideoSetting defaultSetting];
     GADMAdapterFluctExtras *extras = adConfiguration.extras;
     if (extras) {
-        FSSRewardedVideo.sharedInstance.setting = extras.setting;
+        setting = extras.setting;
     }
-
-    FSSRewardedVideo.sharedInstance.delegate = GADAdapterFluctVideoDelegateProxy.sharedInstance;
-    FSSRewardedVideo.sharedInstance.rtbDelegate = GADAdapterFluctVideoDelegateProxy.sharedInstance;
 
     [[GADAdapterFluctVideoDelegateProxy sharedInstance] registerDelegate:self
                                                                  groupId:self.groupID
                                                                   unitId:self.unitID];
 
-    [[FSSRewardedVideo sharedInstance] loadRewardedVideoWithGroupId:self.groupID
-                                                             unitId:self.unitID
-                                                               info:adInfo];
+    [self.optimizer requestWithSetting:setting
+                              delegate:GADAdapterFluctVideoDelegateProxy.sharedInstance
+                           rtbDelegate:GADAdapterFluctVideoDelegateProxy.sharedInstance];
 }
 
 - (void)presentFromViewController:(UIViewController *)viewController {
-    if ([FSSRewardedVideo.sharedInstance hasAdAvailableForGroupId:self.groupID unitId:self.unitID]) {
-        [FSSRewardedVideo.sharedInstance presentRewardedVideoAdForGroupId:self.groupID
-                                                                   unitId:self.unitID
-                                                       fromViewController:viewController];
+    if ([self.optimizer hasAdAvailable]) {
+        [self.optimizer presentAdFromViewController:viewController];
     }
+}
+
+#pragma mark - FSSRewardedVideoCustomEventOptimizer
+
+- (void)customEventNotFoundResponse:(FSSRewardedVideoCustomEventOptimizer *)customEvent {
+    NSError *error = [NSError errorWithDomain:GADMFluctErrorDomain
+                                         code:GADMFluctErrorNoResponse
+                                     userInfo:nil];
+    self.completionHandler(nil, error);
+    self.completionHandler = nil;
 }
 
 #pragma mark - GADAdapterFluctVideoDelegateProxyItem

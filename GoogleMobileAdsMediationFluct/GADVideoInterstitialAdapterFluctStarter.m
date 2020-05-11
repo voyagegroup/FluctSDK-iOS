@@ -9,12 +9,11 @@
 #import "GADMFluctError.h"
 #import <FluctSDK/FluctSDK.h>
 
-@interface GADVideoInterstitialAdapterFluctStarter () <FSSVideoInterstitialDelegate, FSSVideoInterstitialRTBDelegate>
-@property (nonatomic, nullable) FSSInAppBidding *bidding;
+@interface GADVideoInterstitialAdapterFluctStarter () <FSSVideoInterstitialDelegate, FSSVideoInterstitialRTBDelegate, FSSVideoInterstitialCustomEventStarterDelegate>
 @property (nonatomic, nullable) NSString *groupID;
 @property (nonatomic, nullable) NSString *unitID;
 @property (nonatomic, nullable) NSString *pricePoint;
-@property (nonatomic, nullable) FSSVideoInterstitial *videoInterstitial;
+@property (nonatomic, nullable) FSSVideoInterstitialCustomEventStarter *starter;
 @end
 
 @implementation GADVideoInterstitialAdapterFluctStarter
@@ -36,46 +35,26 @@
     options.mediationPlatformSDKVersion = [NSString stringWithFormat:@"%s", GoogleMobileAdsVersionString];
     [FluctSDK configureWithOptions:options];
 
-    self.bidding = [[FSSInAppBidding alloc] initWithGroupId:self.groupID unitId:self.unitID adFormat:FSSInAppBiddingAdFormatVideoInterstitial];
-    [self.bidding requestWithCompletion:^(FSSInAppBiddingResponse *_Nullable response, NSError *_Nullable error) {
-        if (error) {
-            [self.delegate customEventInterstitial:self didFailAd:error];
-            return;
-        }
+    self.starter = [[FSSVideoInterstitialCustomEventStarter alloc] initWithGroupId:self.groupID unitId:self.unitID pricePoint:self.pricePoint];
+    self.starter.delegate = self;
 
-        [FSSInAppBiddingResponseCache.sharedInstance setResponse:response.value
-                                                      forGroupId:self.groupID
-                                                          unitId:self.unitID];
-        [self loadVideoInterstitial];
-    }];
+    FSSVideoInterstitialSetting *setting = [FSSVideoInterstitialSetting defaultSetting];
+    [self.starter requestWithSetting:setting delegate:self rtbDelegate:self];
 }
 
 - (void)presentFromRootViewController:(nonnull UIViewController *)rootViewController {
-    if ([self.videoInterstitial hasAdAvailable]) {
-        [self.videoInterstitial presentAdFromViewController:rootViewController];
+    if ([self.starter hasAdAvailable]) {
+        [self.starter presentAdFromViewController:rootViewController];
     }
 }
 
-#pragma mark - Load VideoInterstitial
+#pragma mark - FSSVideoInterstitialCustomEventStarterDelegate
 
-- (void)loadVideoInterstitial {
-    NSDictionary<NSString *, id> *adInfo = [FSSInAppBiddingResponseCache.sharedInstance responseForGroupId:self.groupID
-                                                                                                    unitId:self.unitID
-                                                                                                pricePoint:self.pricePoint];
-    if (!adInfo) {
-        NSError *error = [NSError errorWithDomain:GADMFluctErrorDomain
-                                             code:GADMFluctErrorNoResponse
-                                         userInfo:nil];
-        [self.delegate customEventInterstitial:self didFailAd:error];
-        return;
-    }
-
-    self.videoInterstitial = [[FSSVideoInterstitial alloc] initWithGroupId:self.groupID
-                                                                    unitId:self.unitID
-                                                                   setting:[FSSVideoInterstitialSetting defaultSetting]];
-    self.videoInterstitial.delegate = self;
-    self.videoInterstitial.rtbDelegate = self;
-    [self.videoInterstitial loadAdWithAdInfo:adInfo];
+- (void)customEventNotFoundResponse:(FSSVideoInterstitialCustomEventStarter *)customEvent {
+    NSError *error = [NSError errorWithDomain:GADMFluctErrorDomain
+                                         code:GADMFluctErrorNoResponse
+                                     userInfo:nil];
+    [self.delegate customEventInterstitial:self didFailAd:error];
 }
 
 #pragma mark - setup

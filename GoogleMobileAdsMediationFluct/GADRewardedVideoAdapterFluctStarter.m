@@ -11,11 +11,11 @@
 #import "GADMFluctError.h"
 #import <FluctSDK/FluctSDK.h>
 
-@interface GADRewardedVideoAdapterFluctStarter () <GADAdapterFluctVideoDelegateProxyItem>
+@interface GADRewardedVideoAdapterFluctStarter () <GADAdapterFluctVideoDelegateProxyItem, FSSRewardedVideoCustomEventStarterDelegate>
 @property (nonatomic, nullable, copy) GADMediationRewardedLoadCompletionHandler completionHandler;
 @property (nonatomic, nullable, weak) id<GADMediationRewardedAdEventDelegate> adEventDelegate;
 
-@property (nonatomic, nullable) FSSInAppBidding *bidding;
+@property (nonatomic, nullable) FSSRewardedVideoCustomEventStarter *starter;
 @property (nonatomic, nullable, copy) NSString *groupID;
 @property (nonatomic, nullable, copy) NSString *unitID;
 @property (nonatomic, nullable, copy) NSString *pricePoint;
@@ -81,7 +81,7 @@
         self.pricePoint = ids[2];
     }
 
-    if (!self.groupID || !self.unitID) {
+    if (!self.groupID || !self.unitID || !self.pricePoint) {
         NSError *error = [NSError errorWithDomain:GADMFluctErrorDomain
                                              code:GADMFluctErrorInvalidCustomParameters
                                          userInfo:@{}];
@@ -94,77 +94,41 @@
     options.mediationPlatformSDKVersion = [NSString stringWithFormat:@"%s", GoogleMobileAdsVersionString];
     [FluctSDK configureWithOptions:options];
 
-    BOOL debugMode = NO;
     GADMAdapterFluctExtras *extras = adConfiguration.extras;
+    FSSRewardedVideoSetting *setting = [FSSRewardedVideoSetting defaultSetting];
     if (extras) {
-        debugMode = extras.setting.isDebugMode;
+        setting = extras.setting;
     }
 
     self.completionHandler = completionHandler;
-    self.bidding = [[FSSInAppBidding alloc] initWithGroupId:self.groupID
-                                                     unitId:self.unitID
-                                                   adFormat:FSSInAppBiddingAdFormatRewardedVideo
-                                                  debugMode:debugMode];
-    [self.bidding requestWithCompletion:^(FSSInAppBiddingResponse *_Nullable response, NSError *_Nullable error) {
-        if (error) {
-            self.completionHandler(nil, error);
-            self.completionHandler = nil;
-            return;
-        }
 
-        [FSSInAppBiddingResponseCache.sharedInstance setResponse:response.value
-                                                      forGroupId:self.groupID
-                                                          unitId:self.unitID];
-        [self loadRewardedVideoWithAdConfiguration:adConfiguration];
-    }];
-}
-
-- (void)presentFromViewController:(UIViewController *)viewController {
-    if ([FSSRewardedVideo.sharedInstance hasAdAvailableForGroupId:self.groupID unitId:self.unitID]) {
-        [FSSRewardedVideo.sharedInstance presentRewardedVideoAdForGroupId:self.groupID
-                                                                   unitId:self.unitID
-                                                       fromViewController:viewController];
-    }
-}
-
-#pragma mark - Load RewardedVideo
-
-- (void)loadRewardedVideoWithAdConfiguration:(GADMediationRewardedAdConfiguration *)adConfiguration {
-    if (!self.pricePoint) {
-        NSError *error = [NSError errorWithDomain:GADMFluctErrorDomain
-                                             code:GADMFluctErrorInvalidCustomParameters
-                                         userInfo:@{}];
-        self.completionHandler(nil, error);
-        return;
-    }
-
-    NSDictionary<NSString *, id> *adInfo = [FSSInAppBiddingResponseCache.sharedInstance responseForGroupId:self.groupID
-                                                                                                    unitId:self.unitID
-                                                                                                pricePoint:self.pricePoint];
-
-    if (!adInfo) {
-        NSError *error = [NSError errorWithDomain:GADMFluctErrorDomain
-                                             code:GADMFluctErrorNoResponse
-                                         userInfo:nil];
-        self.completionHandler(nil, error);
-        return;
-    }
-
-    GADMAdapterFluctExtras *extras = adConfiguration.extras;
-    if (extras) {
-        FSSRewardedVideo.sharedInstance.setting = extras.setting;
-    }
-
-    FSSRewardedVideo.sharedInstance.delegate = GADAdapterFluctVideoDelegateProxy.sharedInstance;
-    FSSRewardedVideo.sharedInstance.rtbDelegate = GADAdapterFluctVideoDelegateProxy.sharedInstance;
+    self.starter = [[FSSRewardedVideoCustomEventStarter alloc] initWithGroupId:self.groupID unitId:self.unitID pricePoint:self.pricePoint];
+    self.starter.delegate = self;
 
     [[GADAdapterFluctVideoDelegateProxy sharedInstance] registerDelegate:self
                                                                  groupId:self.groupID
                                                                   unitId:self.unitID];
+    [self.starter requestWithSetting:setting
+                            delegate:GADAdapterFluctVideoDelegateProxy.sharedInstance
+                         rtbDelegate:GADAdapterFluctVideoDelegateProxy.sharedInstance];
+}
 
-    [[FSSRewardedVideo sharedInstance] loadRewardedVideoWithGroupId:self.groupID
-                                                             unitId:self.unitID
-                                                               info:adInfo];
+- (void)presentFromViewController:(UIViewController *)viewController {
+    if ([self.starter hasAdAvailable]) {
+        [self.starter presentAdFromViewController:viewController];
+    }
+}
+
+#pragma mark - FSSRewardedVideoCustomEventStarterDelegate
+
+- (void)customEventNotFoundResponse:(FSSRewardedVideoCustomEventStarter *)customEvent {
+    if (self.completionHandler) {
+        NSError *error = [NSError errorWithDomain:GADMFluctErrorDomain
+                                             code:GADMFluctErrorInvalidCustomParameters
+                                         userInfo:@{}];
+        self.completionHandler(nil, error);
+        self.completionHandler = nil;
+    }
 }
 
 #pragma mark - GADAdapterFluctVideoDelegateProxyItem

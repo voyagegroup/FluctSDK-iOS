@@ -10,9 +10,9 @@
 #import "MoPubAdapterFluctError.h"
 #import <FluctSDK/FluctSDK.h>
 
-@interface FluctVideoInterstitialCustomEventOptimizer () <FSSVideoInterstitialDelegate, FSSVideoInterstitialRTBDelegate>
+@interface FluctVideoInterstitialCustomEventOptimizer () <FSSVideoInterstitialDelegate, FSSVideoInterstitialRTBDelegate, FSSVideoInterstitialCustomEventOptimizerDelegate>
 @property (nonatomic, nullable) FluctCustomEventInfo *customEventInfo;
-@property (nonatomic, nullable) FSSVideoInterstitial *interstitial;
+@property (nonatomic, nullable) FSSVideoInterstitialCustomEventOptimizer *optimizer;
 @end
 
 @implementation FluctVideoInterstitialCustomEventOptimizer
@@ -48,33 +48,32 @@
     options.mediationPlatformSDKVersion = MP_SDK_VERSION;
     [FluctSDK configureWithOptions:options];
 
-    NSDictionary<NSString *, id> *adInfo = [FSSInAppBiddingResponseCache.sharedInstance responseForGroupId:self.customEventInfo.groupID
-                                                                                                    unitId:self.customEventInfo.unitID
-                                                                                                pricePoint:self.customEventInfo.pricePoint];
-    if (!adInfo) {
-        NSError *error = [NSError errorWithDomain:MoPubAdapterFluctErrorDomain
-                                             code:MoPubAdapterFluctErrorNoResponse
-                                         userInfo:nil];
-        MPLogEvent([MPLogEvent adLoadFailedForAdapter:NSStringFromClass(self.class) error:error]);
-        [self.delegate interstitialCustomEvent:self didFailToLoadAdWithError:error];
-        return;
-    }
+    self.optimizer = [[FSSVideoInterstitialCustomEventOptimizer alloc] initWithGroupId:self.customEventInfo.groupID
+                                                                                unitId:self.customEventInfo.unitID
+                                                                            pricePoint:self.customEventInfo.pricePoint];
+    self.optimizer.delegate = self;
 
     FSSVideoInterstitialSetting *setting = FSSVideoInterstitialSetting.defaultSetting;
-    self.interstitial = [[FSSVideoInterstitial alloc] initWithGroupId:self.customEventInfo.groupID
-                                                               unitId:self.customEventInfo.unitID
-                                                              setting:setting];
-    self.interstitial.delegate = self;
-    self.interstitial.rtbDelegate = self;
-
     MPLogEvent([MPLogEvent adLoadAttemptForAdapter:NSStringFromClass(self.class) dspCreativeId:nil dspName:nil]);
-    [self.interstitial loadAdWithAdInfo:adInfo];
+    [self.optimizer requestWithSetting:setting delegate:self rtbDelegate:self];
 }
 
 - (void)showInterstitialFromRootViewController:(UIViewController *)rootViewController {
-    MPLogEvent([MPLogEvent adShowAttemptForAdapter:NSStringFromClass(self.class)]);
-    MPLogEvent([MPLogEvent adWillPresentModalForAdapter:NSStringFromClass(self.class)]);
-    [self.interstitial presentAdFromViewController:rootViewController];
+    if ([self.optimizer hasAdAvailable]) {
+        MPLogEvent([MPLogEvent adShowAttemptForAdapter:NSStringFromClass(self.class)]);
+        MPLogEvent([MPLogEvent adWillPresentModalForAdapter:NSStringFromClass(self.class)]);
+        [self.optimizer presentAdFromViewController:rootViewController];
+    }
+}
+
+#pragma mark - FSSVideoInterstitialCustomEventOptimizerDelegate
+
+- (void)customEventNotFoundResponse:(FSSVideoInterstitialCustomEventOptimizer *)customEvent {
+    NSError *error = [NSError errorWithDomain:MoPubAdapterFluctErrorDomain
+                                         code:MoPubAdapterFluctErrorNoResponse
+                                     userInfo:nil];
+    MPLogEvent([MPLogEvent adLoadFailedForAdapter:NSStringFromClass(self.class) error:error]);
+    [self.delegate interstitialCustomEvent:self didFailToLoadAdWithError:error];
 }
 
 #pragma mark - FSSVideoInterstitialDelegate

@@ -5,6 +5,7 @@
 //  Copyright © 2020 fluct, Inc. All rights reserved.
 //
 
+#import <CoreGraphics/CoreGraphics.h>
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
@@ -20,7 +21,11 @@ typedef NS_ENUM(NSUInteger, FSSInAppBiddingAdFormat) {
     /**
      * 動画インタースティシャル
      */
-    FSSInAppBiddingAdFormatVideoInterstitial
+    FSSInAppBiddingAdFormatVideoInterstitial,
+    /**
+     * バナー
+     */
+    FSSInAppBiddingAdFormatBanner
 };
 
 /**
@@ -89,6 +94,13 @@ typedef void (^FSSInAppBiddingCompletionBlock)(FSSInAppBiddingResponse *_Nullabl
  * @param completion    リクエスト処理が完了した時にcallされるblock
  */
 - (void)requestWithCompletion:(FSSInAppBiddingCompletionBlock)completion;
+
+/**
+ * リクエストする
+ * @param adSize        広告描画領域
+ * @param completion    リクエスト処理が完了した時にcallされるblock
+ */
+- (void)requestWithAdSize:(CGSize)adSize completion:(FSSInAppBiddingCompletionBlock)completion;
 
 @end
 

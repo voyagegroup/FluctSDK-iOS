@@ -16,6 +16,10 @@
 
 @implementation FluctBannerCustomEvent
 
+- (BOOL)enableAutomaticImpressionAndClickTracking {
+    return NO;
+}
+
 - (void)requestAdWithSize:(CGSize)size customEventInfo:(NSDictionary *)info adMarkup:(NSString *)adMarkup {
     NSError *error;
     FluctCustomEventInfo *customEventInfo = [FluctCustomEventInfo customEventInfoFromMoPubInfo:info
@@ -90,9 +94,7 @@
 
 - (void)willLeaveApplicationForAdView:(FSSAdView *)adView {
     MPLogEvent([MPLogEvent adWillLeaveApplicationForAdapter:NSStringFromClass(self.class)]);
-    [self.delegate bannerCustomEventWillBeginAction:self];
     [self.delegate bannerCustomEventWillLeaveApplication:self];
-    [self.delegate bannerCustomEventDidFinishAction:self];
 }
 
 @end

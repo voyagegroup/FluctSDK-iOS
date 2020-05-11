@@ -31,8 +31,16 @@
 #import <FluctSDK/FSSVideoInterstitialSetting.h>
 
 #import <FluctSDK/FSSInAppBidding.h>
+#import <FluctSDK/FSSInAppBiddingBannerResponseCache.h>
 #import <FluctSDK/FSSInAppBiddingError.h>
-#import <FluctSDK/FSSInAppBiddingResponseCache.h>
+#import <FluctSDK/FSSInAppBiddingFullscreenVideoResponseCache.h>
+
+#import <FluctSDK/FSSBannerCustomEventOptimizer.h>
+#import <FluctSDK/FSSBannerCustomEventStarter.h>
+#import <FluctSDK/FSSRewardedVideoCustomEventOptimizer.h>
+#import <FluctSDK/FSSRewardedVideoCustomEventStarter.h>
+#import <FluctSDK/FSSVideoInterstitialCustomEventOptimizer.h>
+#import <FluctSDK/FSSVideoInterstitialCustomEventStarter.h>
 
 /*
  * SDKの各処理を行う
