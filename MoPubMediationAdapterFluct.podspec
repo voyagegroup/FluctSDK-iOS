@@ -11,6 +11,6 @@ Pod::Spec.new do |s|
     s.source_files          = "MoPubMediationAdapterFluct/*.{h,m}"
     s.platform              = :ios
     s.ios.deployment_target = "9.0"
-    s.dependency "FluctSDK", ">= 6.4.2"
+    s.dependency "FluctSDK", ">= 6.5.0"
     s.dependency "mopub-ios-sdk", ">= 5.10.0"
 end

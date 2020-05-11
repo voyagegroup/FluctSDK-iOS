@@ -11,6 +11,6 @@ Pod::Spec.new do |s|
     s.source_files          = "GoogleMobileAdsMediationFluct/*.{h,m}"
     s.platform              = :ios
     s.ios.deployment_target = "8.1"
-    s.dependency "FluctSDK", ">= 6.4.2"
+    s.dependency "FluctSDK", ">= 6.5.0"
     s.dependency "Google-Mobile-Ads-SDK", ">= 7.42.2"
 end
