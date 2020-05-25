@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
     s.name                  = "FluctSDK-MediationAdapter"
     s.summary               = "Mediation Adapter for FluctSDK ad Framework"
     s.license               = { :type => "Copyright", :text => "Copyright (c) fluct,Inc. All rights reserved." }
-    s.version               = "6.6.0"
+    s.version               = "6.7.0"
     s.author                = "fluct,Inc."
     s.requires_arc          = true
     s.static_framework      = true
@@ -57,5 +57,12 @@ Pod::Spec.new do |s|
         ss.source_files = "FluctSDK-MediationAdapter/Mintegral/*.{h,m}"
         ss.dependency "FluctSDK"
         ss.dependency "MintegralAdSDK/RewardVideoAd", '>= 6.2.0'
+    end
+
+    s.subspec "Five" do |ss|
+        ss.source_files = "FluctSDK-MediationAdapter/Five/*.{h,m}"
+        ss.dependency "FluctSDK"
+        ss.frameworks = "AdSupport", "AVFoundation", "CoreMedia", "CoreTelephony", "SystemConfiguration", "AudioToolbox", "WebKit", "StoreKit"
+        ss.vendored_frameworks = "FluctSDK-MediationAdapter/Five/FiveAd.framework"
     end
 end

@@ -10,6 +10,7 @@
 - (BOOL)isAdColonyActivated;
 - (BOOL)isAdCorsaActivated;
 - (BOOL)isAppLovinActivated;
+- (BOOL)isFiveActivated;
 - (BOOL)isFluctActivated;
 - (BOOL)isMaioActivated;
 - (BOOL)isNendActivated;

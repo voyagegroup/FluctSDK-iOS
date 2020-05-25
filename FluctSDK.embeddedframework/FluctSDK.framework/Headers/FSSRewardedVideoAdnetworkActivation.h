@@ -33,6 +33,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, getter=isAppLovinActivated) BOOL appLovinActivated;
 
 /**
+ * Activation setting for Five.
+ * Required to include `FSSRewardedVideoCustomEventFive` in project.
+ */
+@property (nonatomic, getter=isFiveActivated) BOOL fiveActivated;
+
+/**
  * Activation setting for fluct.
  */
 @property (nonatomic, getter=isFluctActivated) BOOL fluctActivated;
