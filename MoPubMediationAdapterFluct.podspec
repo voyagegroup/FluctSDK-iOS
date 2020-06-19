@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
     s.source                = { :git => "https://github.com/voyagegroup/FluctSDK-iOS.git", :tag => s.version }
     s.source_files          = "MoPubMediationAdapterFluct/*.{h,m}"
     s.platform              = :ios
-    s.ios.deployment_target = "9.0"
+    s.ios.deployment_target = "10.0"
     s.dependency "FluctSDK", ">= 6.6.0"
     s.dependency "mopub-ios-sdk", ">= 5.13.0"
 end
