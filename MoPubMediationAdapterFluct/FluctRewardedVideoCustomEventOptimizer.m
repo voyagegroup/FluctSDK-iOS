@@ -26,13 +26,17 @@
     return NO;
 }
 
-- (void)requestRewardedVideoWithCustomEventInfo:(NSDictionary *)info adMarkup:(NSString *)adMarkup {
+- (BOOL)isRewardExpected {
+    return YES;
+}
+
+- (void)requestAdWithAdapterInfo:(NSDictionary *)info adMarkup:(NSString *)adMarkup {
     NSError *error;
     self.customEventInfo = [FluctCustomEventInfo customEventInfoFromMoPubInfo:info
                                                                         error:&error];
     if (error) {
         MPLogEvent([MPLogEvent adLoadFailedForAdapter:NSStringFromClass(self.class) error:error]);
-        [self.delegate rewardedVideoDidFailToLoadAdForCustomEvent:self error:error];
+        [self.delegate fullscreenAdAdapter:self didFailToLoadAdWithError:error];
         return;
     }
 
@@ -41,7 +45,7 @@
                                              code:MoPubAdapterFluctErrorInvalidCustomParameters
                                          userInfo:nil];
         MPLogEvent([MPLogEvent adLoadFailedForAdapter:NSStringFromClass(self.class) error:error]);
-        [self.delegate rewardedVideoDidFailToLoadAdForCustomEvent:self error:error];
+        [self.delegate fullscreenAdAdapter:self didFailToLoadAdWithError:error];
         return;
     }
 
@@ -56,7 +60,7 @@
     self.optimizer.delegate = self;
 
     FSSRewardedVideoSetting *setting = [FSSRewardedVideoSetting defaultSetting];
-    FluctInstanceMediationSettings *mediationSettings = [self.delegate instanceMediationSettingsForClass:[FluctInstanceMediationSettings class]];
+    FluctInstanceMediationSettings *mediationSettings = [self.delegate fullscreenAdAdapter:self instanceMediationSettingsForClass:[FluctInstanceMediationSettings class]];
     if (mediationSettings) {
         setting = mediationSettings.setting;
     }
@@ -78,7 +82,7 @@
     return [self.optimizer hasAdAvailable];
 }
 
-- (void)presentRewardedVideoFromViewController:(UIViewController *)viewController {
+- (void)presentAdFromViewController:(UIViewController *)viewController {
     MPLogEvent([MPLogEvent adShowAttemptForAdapter:NSStringFromClass(self.class)]);
     MPLogEvent([MPLogEvent adWillPresentModalForAdapter:NSStringFromClass(self.class)]);
     [self.optimizer presentAdFromViewController:viewController];
@@ -91,64 +95,61 @@
                                          code:MoPubAdapterFluctErrorNoResponse
                                      userInfo:nil];
     MPLogEvent([MPLogEvent adLoadFailedForAdapter:NSStringFromClass(self.class) error:error]);
-    [self.delegate rewardedVideoDidFailToLoadAdForCustomEvent:self error:error];
+    [self.delegate fullscreenAdAdapter:self didFailToLoadAdWithError:error];
 }
 
 #pragma mark - FSSRewardedVideoDelegate
 
 - (void)rewardedVideoDidLoadForGroupID:(NSString *)groupId unitId:(NSString *)unitId {
     MPLogEvent([MPLogEvent adLoadSuccessForAdapter:NSStringFromClass(self.class)]);
-    [self.delegate rewardedVideoDidLoadAdForCustomEvent:self];
+    [self.delegate fullscreenAdAdapterDidLoadAd:self];
 }
 
 - (void)rewardedVideoDidFailToLoadForGroupId:(NSString *)groupId unitId:(NSString *)unitId error:(NSError *)error {
     MPLogEvent([MPLogEvent adLoadFailedForAdapter:NSStringFromClass(self.class) error:error]);
-    [self.delegate rewardedVideoDidFailToLoadAdForCustomEvent:self error:error];
+    [self.delegate fullscreenAdAdapter:self didFailToLoadAdWithError:error];
 }
 
 - (void)rewardedVideoWillAppearForGroupId:(NSString *)groupId unitId:(NSString *)unitId {
     MPLogEvent([MPLogEvent adWillAppearForAdapter:NSStringFromClass(self.class)]);
-    [self.delegate rewardedVideoWillAppearForCustomEvent:self];
+    [self.delegate fullscreenAdAdapterAdWillAppear:self];
 }
 
 - (void)rewardedVideoDidAppearForGroupId:(NSString *)groupId unitId:(NSString *)unitId {
     MPLogEvent([MPLogEvent adDidAppearForAdapter:NSStringFromClass(self.class)]);
-    [self.delegate rewardedVideoDidAppearForCustomEvent:self];
+    [self.delegate fullscreenAdAdapterAdDidAppear:self];
     MPLogEvent([MPLogEvent adShowSuccessForAdapter:NSStringFromClass(self.class)]);
-
-    // 表示できたらimp
-    [self.delegate trackImpression];
+    [self.delegate fullscreenAdAdapterDidTrackImpression:self];
 }
 
 - (void)rewardedVideoDidFailToPlayForGroupId:(NSString *)groupId unitId:(NSString *)unitId error:(NSError *)error {
     MPLogEvent([MPLogEvent adShowFailedForAdapter:NSStringFromClass(self.class) error:error]);
-    [self.delegate rewardedVideoDidFailToPlayForCustomEvent:self error:error];
+    [self.delegate fullscreenAdAdapter:self didFailToShowAdWithError:error];
 }
 
 - (void)rewardedVideoShouldRewardForGroupID:(NSString *)groupId unitId:(NSString *)unitId {
     MPRewardedVideoReward *reward = [[MPRewardedVideoReward alloc] initWithCurrencyAmount:@0];
     MPLogEvent([MPLogEvent adShouldRewardUserWithReward:reward]);
-    [self.delegate rewardedVideoShouldRewardUserForCustomEvent:self reward:reward];
+    [self.delegate fullscreenAdAdapter:self willRewardUser:reward];
 }
 
 - (void)rewardedVideoWillDisappearForGroupId:(NSString *)groupId unitId:(NSString *)unitId {
     MPLogEvent([MPLogEvent adWillDisappearForAdapter:NSStringFromClass(self.class)]);
-    [self.delegate rewardedVideoWillDisappearForCustomEvent:self];
+    [self.delegate fullscreenAdAdapterAdWillDisappear:self];
 }
 
 - (void)rewardedVideoDidDisappearForGroupId:(NSString *)groupId unitId:(NSString *)unitId {
     MPLogEvent([MPLogEvent adDidDisappearForAdapter:NSStringFromClass(self.class)]);
     MPLogEvent([MPLogEvent adDidDismissModalForAdapter:NSStringFromClass(self.class)]);
-    [self.delegate rewardedVideoDidDisappearForCustomEvent:self];
+    [self.delegate fullscreenAdAdapterAdDidDisappear:self];
 }
 
 #pragma mark - FSSRewardedVideoRTBDelegate
 
 - (void)rewardedVideoDidClickForGroupId:(NSString *)groupId unitId:(NSString *)unitId {
     MPLogEvent([MPLogEvent adTappedForAdapter:NSStringFromClass(self.class)]);
-    [self.delegate rewardedVideoDidReceiveTapEventForCustomEvent:self];
-    // click
-    [self.delegate trackClick];
+    [self.delegate fullscreenAdAdapterDidReceiveTap:self];
+    [self.delegate fullscreenAdAdapterDidTrackClick:self];
 }
 
 @end

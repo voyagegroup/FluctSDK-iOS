@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FluctVideoInterstitialCustomEventOptimizer : MPInterstitialCustomEvent
+@interface FluctVideoInterstitialCustomEventOptimizer : MPFullscreenAdAdapter <MPThirdPartyFullscreenAdAdapter>
 @end
 
 NS_ASSUME_NONNULL_END

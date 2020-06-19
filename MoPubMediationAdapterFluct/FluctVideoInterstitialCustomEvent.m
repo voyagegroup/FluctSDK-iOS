@@ -17,21 +17,28 @@
 
 @implementation FluctVideoInterstitialCustomEvent
 
-/**
- * CustomEvent側でimpressionとclickを計測したいので
- * NOを返す
- */
+#pragma mark - MPFullscreenAdapter Override
+
+- (void)dealloc {
+    self.interstitial.delegate = nil;
+    self.interstitial = nil;
+}
+
+- (BOOL)isRewardExpected {
+    return NO;
+}
+
 - (BOOL)enableAutomaticImpressionAndClickTracking {
     return NO;
 }
 
-- (void)requestInterstitialWithCustomEventInfo:(NSDictionary *)info adMarkup:(NSString *)adMarkup {
+- (void)requestAdWithAdapterInfo:(NSDictionary *)info adMarkup:(NSString *)adMarkup {
     NSError *error;
     self.customEventInfo = [FluctCustomEventInfo customEventInfoFromMoPubInfo:info
                                                                         error:&error];
     if (error) {
         MPLogEvent([MPLogEvent adLoadFailedForAdapter:NSStringFromClass(self.class) error:error]);
-        [self.delegate interstitialCustomEvent:self didFailToLoadAdWithError:error];
+        [self.delegate fullscreenAdAdapter:self didFailToLoadAdWithError:error];
         return;
     }
 
@@ -52,50 +59,53 @@
     [self.interstitial loadAd];
 }
 
-- (void)showInterstitialFromRootViewController:(UIViewController *)rootViewController {
+- (BOOL)hasAdAvailable {
+    return [self.interstitial hasAdAvailable];
+}
+
+- (void)presentAdFromViewController:(UIViewController *)viewController {
     MPLogEvent([MPLogEvent adShowAttemptForAdapter:NSStringFromClass(self.class)]);
     MPLogEvent([MPLogEvent adWillPresentModalForAdapter:NSStringFromClass(self.class)]);
-    [self.interstitial presentAdFromViewController:rootViewController];
+    [self.interstitial presentAdFromViewController:viewController];
 }
 
 #pragma mark - FSSVideoInterstitialDelegate
 
 - (void)videoInterstitialDidLoad:(FSSVideoInterstitial *)interstitial {
     MPLogEvent([MPLogEvent adLoadSuccessForAdapter:NSStringFromClass(self.class)]);
-    [self.delegate interstitialCustomEvent:self didLoadAd:interstitial];
+    [self.delegate fullscreenAdAdapterDidLoadAd:self];
 }
 
 - (void)videoInterstitial:(FSSVideoInterstitial *)interstitial didFailToLoadWithError:(NSError *)error {
     MPLogEvent([MPLogEvent adLoadFailedForAdapter:NSStringFromClass(self.class) error:error]);
-    [self.delegate interstitialCustomEvent:self didFailToLoadAdWithError:error];
+    [self.delegate fullscreenAdAdapter:self didFailToLoadAdWithError:error];
 }
 
 - (void)videoInterstitial:(FSSVideoInterstitial *)interstitial didFailToPlayWithError:(NSError *)error {
-    MPLogEvent([MPLogEvent adShowFailedForAdapter:NSStringFromClass(self.class) error:error]);
+    [self.delegate fullscreenAdAdapter:self didFailToShowAdWithError:error];
 }
 
 - (void)videoInterstitialWillAppear:(FSSVideoInterstitial *)interstitial {
     MPLogEvent([MPLogEvent adWillAppearForAdapter:NSStringFromClass(self.class)]);
-    [self.delegate interstitialCustomEventWillAppear:self];
+    [self.delegate fullscreenAdAdapterAdWillAppear:self];
 }
 
 - (void)videoInterstitialDidAppear:(FSSVideoInterstitial *)interstitial {
     MPLogEvent([MPLogEvent adDidAppearForAdapter:NSStringFromClass(self.class)]);
-    [self.delegate interstitialCustomEventDidAppear:self];
+    [self.delegate fullscreenAdAdapterAdDidAppear:self];
     MPLogEvent([MPLogEvent adShowSuccessForAdapter:NSStringFromClass(self.class)]);
 
-    // 表示できたらimp
-    [self.delegate trackImpression];
+    [self.delegate fullscreenAdAdapterDidTrackImpression:self];
 }
 
 - (void)videoInterstitialWillDisappear:(FSSVideoInterstitial *)interstitial {
     MPLogEvent([MPLogEvent adWillDisappearForAdapter:NSStringFromClass(self.class)]);
-    [self.delegate interstitialCustomEventWillDisappear:self];
+    [self.delegate fullscreenAdAdapterAdWillDisappear:self];
 }
 
 - (void)videoInterstitialDidDisappear:(FSSVideoInterstitial *)interstitial {
     MPLogEvent([MPLogEvent adDidDisappearForAdapter:NSStringFromClass(self.class)]);
-    [self.delegate interstitialCustomEventDidDisappear:self];
+    [self.delegate fullscreenAdAdapterAdDidDisappear:self];
     MPLogEvent([MPLogEvent adDidDismissModalForAdapter:NSStringFromClass(self.class)]);
 }
 
@@ -103,8 +113,8 @@
 
 - (void)videoInterstitialDidClick:(FSSVideoInterstitial *)interstitial {
     MPLogEvent([MPLogEvent adTappedForAdapter:NSStringFromClass(self.class)]);
-    [self.delegate interstitialCustomEventDidReceiveTapEvent:self];
-    [self.delegate trackClick];
+    [self.delegate fullscreenAdAdapterDidReceiveTap:self];
+    [self.delegate fullscreenAdAdapterDidTrackClick:self];
 }
 
 @end

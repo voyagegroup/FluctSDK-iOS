@@ -11,22 +11,18 @@
 #import <FluctSDK/FluctSDK.h>
 
 @interface FluctBannerCustomEvent () <FSSAdViewDelegate>
-@property (nonatomic, strong) FSSAdView *adView;
+@property (nonatomic, strong) FSSAdView *bannerView;
 @end
 
 @implementation FluctBannerCustomEvent
 
-- (BOOL)enableAutomaticImpressionAndClickTracking {
-    return NO;
-}
-
-- (void)requestAdWithSize:(CGSize)size customEventInfo:(NSDictionary *)info adMarkup:(NSString *)adMarkup {
+- (void)requestAdWithSize:(CGSize)size adapterInfo:(NSDictionary *)info adMarkup:(NSString *)adMarkup {
     NSError *error;
     FluctCustomEventInfo *customEventInfo = [FluctCustomEventInfo customEventInfoFromMoPubInfo:info
                                                                                          error:&error];
     if (error) {
         MPLogEvent([MPLogEvent adLoadFailedForAdapter:NSStringFromClass(self.class) error:error]);
-        [self.delegate bannerCustomEvent:self didFailToLoadAdWithError:error];
+        [self.delegate inlineAdAdapter:self didFailToLoadAdWithError:error];
         return;
     }
 
@@ -47,7 +43,7 @@
                                     code:MoPubAdapterFluctErrorInvalidAdSize
                                 userInfo:@{NSLocalizedDescriptionKey : @"invalid ad unit format"}];
         MPLogEvent([MPLogEvent adLoadFailedForAdapter:NSStringFromClass(self.class) error:error]);
-        [self.delegate bannerCustomEvent:self didFailToLoadAdWithError:error];
+        [self.delegate inlineAdAdapter:self didFailToLoadAdWithError:error];
         return;
     }
 
@@ -58,15 +54,15 @@
 
     MPLogEvent([MPLogEvent adLoadAttemptForAdapter:NSStringFromClass(self.class) dspCreativeId:nil dspName:nil]);
 
-    self.adView = [[FSSAdView alloc] initWithGroupId:customEventInfo.groupID unitId:customEventInfo.unitID adSize:adSize];
-    self.adView.delegate = self;
+    self.bannerView = [[FSSAdView alloc] initWithGroupId:customEventInfo.groupID unitId:customEventInfo.unitID adSize:adSize];
+    self.bannerView.delegate = self;
 
     // iOS12でloadされない問題の対応のため、viewController.viewのhierarchyに追加する
-    self.adView.hidden = YES;
-    UIViewController *viewController = [self.delegate viewControllerForPresentingModalView];
-    [viewController.view addSubview:self.adView];
+    self.bannerView.hidden = YES;
+    UIViewController *viewController = [self.delegate inlineAdAdapterViewControllerForPresentingModalView:self];
+    [viewController.view addSubview:self.bannerView];
 
-    [self.adView loadAd];
+    [self.bannerView loadAd];
 }
 
 #pragma mark - FSSAdViewDelegate
@@ -78,7 +74,7 @@
     [adView removeFromSuperview];
     adView.hidden = NO;
 
-    [self.delegate bannerCustomEvent:self didLoadAd:adView];
+    [self.delegate inlineAdAdapter:self didLoadAdWithAdView:adView];
     MPLogEvent([MPLogEvent adShowSuccessForAdapter:NSStringFromClass(self.class)]);
 }
 
@@ -87,14 +83,14 @@
     // removeFromSuperviewする
     [adView removeFromSuperview];
     MPLogEvent([MPLogEvent adLoadFailedForAdapter:NSStringFromClass(self.class) error:error]);
-    [self.delegate bannerCustomEvent:self didFailToLoadAdWithError:error];
-    [self.adView removeFromSuperview];
-    self.adView = nil;
+    [self.delegate inlineAdAdapter:self didFailToLoadAdWithError:error];
+    [self.bannerView removeFromSuperview];
+    self.bannerView = nil;
 }
 
 - (void)willLeaveApplicationForAdView:(FSSAdView *)adView {
     MPLogEvent([MPLogEvent adWillLeaveApplicationForAdapter:NSStringFromClass(self.class)]);
-    [self.delegate bannerCustomEventWillLeaveApplication:self];
+    [self.delegate inlineAdAdapterWillLeaveApplication:self];
 }
 
 @end

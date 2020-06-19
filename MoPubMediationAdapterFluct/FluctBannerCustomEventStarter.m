@@ -17,13 +17,13 @@
 
 @implementation FluctBannerCustomEventStarter
 
-- (void)requestAdWithSize:(CGSize)size customEventInfo:(NSDictionary *)info adMarkup:(NSString *)adMarkup {
+- (void)requestAdWithSize:(CGSize)size adapterInfo:(NSDictionary *)info adMarkup:(NSString *)adMarkup {
     NSError *error;
     self.customEventInfo = [FluctCustomEventInfo customEventInfoFromMoPubInfo:info
                                                                         error:&error];
     if (error) {
         MPLogEvent([MPLogEvent adLoadFailedForAdapter:NSStringFromClass(self.class) error:error]);
-        [self.delegate bannerCustomEvent:self didFailToLoadAdWithError:error];
+        [self.delegate inlineAdAdapter:self didFailToLoadAdWithError:error];
         return;
     }
 
@@ -37,7 +37,7 @@
                                              code:MoPubAdapterFluctErrorInvalidCustomParameters
                                          userInfo:nil];
         MPLogEvent([MPLogEvent adLoadFailedForAdapter:NSStringFromClass(self.class) error:error]);
-        [self.delegate bannerCustomEvent:self didFailToLoadAdWithError:error];
+        [self.delegate inlineAdAdapter:self didFailToLoadAdWithError:error];
         return;
     }
 
@@ -46,7 +46,7 @@
                                                              pricePoint:self.customEventInfo.pricePoint];
     self.starter.delegate = self;
 
-    UIViewController *viewController = [self.delegate viewControllerForPresentingModalView];
+    UIViewController *viewController = [self.delegate inlineAdAdapterViewControllerForPresentingModalView:self];
     MPLogEvent([MPLogEvent adLoadAttemptForAdapter:NSStringFromClass(self.class) dspCreativeId:nil dspName:nil]);
     [self.starter requestWithAdSize:size rootViewController:viewController];
 }
@@ -58,23 +58,23 @@
                                          code:MoPubAdapterFluctErrorNoResponse
                                      userInfo:nil];
     MPLogEvent([MPLogEvent adLoadFailedForAdapter:NSStringFromClass(self.class) error:error]);
-    [self.delegate bannerCustomEvent:self didFailToLoadAdWithError:error];
+    [self.delegate inlineAdAdapter:self didFailToLoadAdWithError:error];
 }
 
 - (void)customEvent:(FSSBannerCustomEventStarter *)customEvent didStoreAdView:(FSSAdView *)adView {
     MPLogEvent([MPLogEvent adLoadSuccessForAdapter:NSStringFromClass(self.class)]);
-    [self.delegate bannerCustomEvent:self didLoadAd:adView];
+    [self.delegate inlineAdAdapter:self didLoadAdWithAdView:adView];
     MPLogEvent([MPLogEvent adShowSuccessForAdapter:NSStringFromClass(self.class)]);
 }
 
 - (void)customEvent:(FSSBannerCustomEventStarter *)customEvent didFailToStoreAdView:(FSSAdView *)adView withError:(NSError *)error {
     MPLogEvent([MPLogEvent adLoadFailedForAdapter:NSStringFromClass(self.class) error:error]);
-    [self.delegate bannerCustomEvent:self didFailToLoadAdWithError:error];
+    [self.delegate inlineAdAdapter:self didFailToLoadAdWithError:error];
 }
 
 - (void)customEvent:(FSSBannerCustomEventStarter *)customEvent willLeaveApplicationForAdView:(FSSAdView *)adView {
     MPLogEvent([MPLogEvent adWillLeaveApplicationForAdapter:NSStringFromClass(self.class)]);
-    [self.delegate bannerCustomEventWillLeaveApplication:self];
+    [self.delegate inlineAdAdapterWillLeaveApplication:self];
 }
 
 @end

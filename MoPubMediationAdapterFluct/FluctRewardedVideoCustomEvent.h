@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FluctRewardedVideoCustomEvent : MPRewardedVideoCustomEvent
+@interface FluctRewardedVideoCustomEvent : MPFullscreenAdAdapter <MPThirdPartyFullscreenAdAdapter>
 @end
 
 NS_ASSUME_NONNULL_END

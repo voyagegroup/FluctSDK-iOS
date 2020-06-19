@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FluctBannerCustomEvent : MPBannerCustomEvent
+@interface FluctBannerCustomEvent : MPInlineAdAdapter <MPThirdPartyInlineAdAdapter>
 @end
 
 NS_ASSUME_NONNULL_END
