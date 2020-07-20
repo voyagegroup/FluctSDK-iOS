@@ -221,6 +221,9 @@ static NSString *const FSSMaioSupportVersion = @"8.0";
     case MaioFailReasonIncorrectZoneId:
         message = @"incorrect zone id.";
         break;
+    case MaioFailReasonNotFoundViewContext:
+        message = @"not found view context.";
+        break;
     }
     return [NSError errorWithDomain:FSSVideoErrorSDKDomain
                                code:failReason

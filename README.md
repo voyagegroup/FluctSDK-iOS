@@ -5,6 +5,12 @@
 
 # FluctSDK Release Note
 
+## V6.9.0 2020/07/20
+
+* 開発環境をXcode11へアップデート
+* 動画リワードメディエーションしているADNWのSDKをアップデート
+  * 詳しくは[リリースノート](https://github.com/voyagegroup/FluctSDK-iOS/releases/latest)を参照ください
+
 ## V6.8.1 2020/06/23
 
 * Unity ver2019 の新しい仕様に合わせて動画プレイヤーを修正

@@ -46,7 +46,8 @@
         [mediationMetaData setName:@"fluct"];
         [mediationMetaData setVersion:[FluctSDK version]];
         [mediationMetaData commit];
-        [UnityAds initialize:dictionary[@"game_id"] delegate:self testMode:testMode];
+        [UnityAds initialize:dictionary[@"game_id"] testMode:testMode];
+        [UnityAds addDelegate:self];
     } else if ([UnityAds isReady:placementId]) {
         [delegate unityAdsReady:placementId];
     } else {
