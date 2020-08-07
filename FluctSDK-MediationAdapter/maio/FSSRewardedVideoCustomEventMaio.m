@@ -14,7 +14,7 @@
 @property (nonatomic) BOOL isInitialNotificationForAdapter;
 @end
 
-static const NSInteger timeoutSecond = 30;
+static const NSInteger timeoutSecond = 3;
 
 static NSString *const FSSMaioSupportVersion = @"8.0";
 

@@ -5,6 +5,10 @@
 
 # FluctSDK Release Note
 
+## V6.9.1 2020/08/07
+
+* SDK Mediation内のタイムアウト秒数を調整しました
+
 ## V6.9.0 2020/07/20
 
 * 開発環境をXcode11へアップデート
