@@ -16,7 +16,6 @@
 - (BOOL)isNendActivated;
 - (BOOL)isTapjoyActivated;
 - (BOOL)isUnityAdsActivated;
-- (BOOL)isMintegralActivated;
 - (BOOL)hasDeactivatedAdnetwork;
 
 @end

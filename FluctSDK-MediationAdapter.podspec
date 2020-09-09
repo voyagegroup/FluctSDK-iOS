@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
     s.name                  = "FluctSDK-MediationAdapter"
     s.summary               = "Mediation Adapter for FluctSDK ad Framework"
     s.license               = { :type => "Copyright", :text => "Copyright (c) fluct,Inc. All rights reserved." }
-    s.version               = "6.9.2"
+    s.version               = "6.10.0"
     s.author                = "fluct,Inc."
     s.requires_arc          = true
     s.static_framework      = true
@@ -51,12 +51,6 @@ Pod::Spec.new do |s|
         ss.source_files = "FluctSDK-MediationAdapter/UnityAds/*.{h,m}"
         ss.dependency "FluctSDK"
         ss.dependency "UnityAds", '>= 3.4.6'
-    end
-
-    s.subspec "Mintegral" do |ss|
-        ss.source_files = "FluctSDK-MediationAdapter/Mintegral/*.{h,m}"
-        ss.dependency "FluctSDK"
-        ss.dependency "MintegralAdSDK/RewardVideoAd", '>= 6.3.3.0'
     end
 
     s.subspec "Five" do |ss|
