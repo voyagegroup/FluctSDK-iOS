@@ -20,7 +20,6 @@
 @class FADSettings;
 @class FADInterstitial;
 @class FADInFeed;
-@class FADBounce;
 @class FADAdViewW320H180;
 
 typedef enum: NSInteger {
@@ -43,9 +42,9 @@ typedef enum: NSInteger {
   kFADFormatInterstitialLandscape = 1, // until ver.20180420
   kFADFormatInterstitialPortrait = 2,  // until ver.20180420
   kFADFormatInFeed = 3,
-  kFADFormatBounce = 4,
+  kFADFormatBounce = 4,                // until ver.20200625
   kFADFormatW320H180 = 5,
-  kFADFormatW300H250 = 6,
+  kFADFormatW300H250 = 6,              // not available
   kFADFormatCustomLayout = 7,
   kFADFormatVideoReward = 8            // use this for interstitial too since ver.20180601
 } FADFormat;
@@ -85,10 +84,17 @@ typedef NS_ENUM (NSInteger, FADNeedChildDirectedTreatment) {
   kFADNeedChildDirectedTreatmentTrue = 2
 };
 
+static NSString* const kFADConfigAppIdKey = @"FIVE_APP_ID";
+static NSString* const kFADConfigAdFormatKey = @"FIVE_AD_FORMATS";
+static NSString* const kFADConfigIsTestKey = @"FIVE_IS_TEST";
+
 /******************************************************************************
  * FADConfig
  ******************************************************************************/
 @interface FADConfig : NSObject
+
++ (FADConfig*) loadFromInfoDictionary;
+
 - (id)initWithAppId:(NSString *)appId;
 
 @property (nonatomic,readonly) NSString *appId;
@@ -100,6 +106,16 @@ typedef NS_ENUM (NSInteger, FADNeedChildDirectedTreatment) {
 
 @property (nonatomic) BOOL isTest; // NO by default.
 @end
+
+/******************************************************************************
+ * FADMediaUserAttribute
+ ******************************************************************************/
+@interface FADMediaUserAttribute : NSObject
+- (id)initWithKey:(NSString *)key value:(NSString *)value;
+@property (nonatomic,readonly) NSString *key;
+@property (nonatomic,readonly) NSString *value;
+@end
+
 
 /******************************************************************************
  * FADSettings
@@ -114,12 +130,6 @@ typedef NS_ENUM (NSInteger, FADNeedChildDirectedTreatment) {
 // Once registerConfig is called with valid config argument, this returns true.
 + (BOOL)isConfigRegistered;
 
-// enableLoading is currently not available. This method is left for backward compatibility. You should not use this method.
-+ (void)enableLoading:(BOOL)enabled __attribute__((deprecated("enableLoading is currently not available. This method is left for backward compatibility. You should not use this method.")));
-
-// Always return YES. This method is left for backward compatibility. You should not use this method.
-+ (BOOL)isLoadingEnabled __attribute__((deprecated("isLoadingEnabled is currently not available. This method is left for backward compatibility. You should not use this method.")));
-
 // enabled by default.
 + (void)enableSound:(BOOL)enabled;
 + (BOOL)isSoundEnabled;
@@ -127,8 +137,9 @@ typedef NS_ENUM (NSInteger, FADNeedChildDirectedTreatment) {
 + (NSString *)version;
 
 // setup WKUserContentController to show web page ads within WKWebView.
-+ (void)setupFADWKWebViewHelperScript:(WKUserContentController *)controller;
++ (void)setupFADWKWebViewHelperScript:(WKUserContentController *)controller __attribute__((deprecated("WebView feature is deprecated. We might delete this API in a future release.")));
 
++ (void)setMediaUserAttributes:(NSArray<FADMediaUserAttribute*> *)attributes;
 @end
 
 /******************************************************************************
@@ -166,7 +177,7 @@ typedef NS_ENUM (NSInteger, FADNeedChildDirectedTreatment) {
 - (BOOL)show;
 @end
 
-__attribute__((deprecated("W320H180 ad format is deprecated. We might delete this API in future release. Use CustomLayout ad format and FADAdViewCustomLayout instead.")))
+__attribute__((deprecated("W320H180 ad format is deprecated. We might delete this API in a future release. Use CustomLayout ad format and FADAdViewCustomLayout instead.")))
 @interface FADAdViewW320H180: UIView<FADAdInterface>
 - (instancetype)initWithFrame:(CGRect)frame slotId:(NSString *)slotId;
 - (instancetype)init __attribute__((unavailable("init is not available")));
@@ -178,20 +189,7 @@ __attribute__((deprecated("W320H180 ad format is deprecated. We might delete thi
 - (NSString *)getAdvertiserName;
 @end
 
-__attribute__((deprecated("Bounce ad format is deprecated. We might delete this API in future release. Use CustomLayout ad format and FADAdViewCustomLayout instead.")))
-@interface FADBounce: NSObject<FADAdInterface>
-- (instancetype)initWithSlotId:(NSString *)slotId scrollView:(UIScrollView *)scrollView;
-- (instancetype)initWithSlotId:(NSString *)slotId scrollView:(UIScrollView *)scrollView offsetY:(float)offsetY;
-- (instancetype)initWithSlotId:(NSString *)slotId scrollView:(UIScrollView *)scrollView offsetY:(float)offsetY contentsHeight:(float)contentsHeight;
-- (instancetype)init __attribute__((unavailable("init is not available")));
-
-// Default timeout interval is 10 seconds.
-// If a timeout occurs, it returns as a kFADErrorNetworkError.
-- (void)loadAdAsync;
-- (void)loadAdAsyncWithTimeoutInterval:(NSTimeInterval)timeout;
-@end
-
-__attribute__((deprecated("InFeed ad format is deprecated. We might delete this API in future release. Use CustomLayout ad format and FADAdViewCustomLayout instead.")))
+__attribute__((deprecated("InFeed ad format is deprecated. We might delete this API in a future release. Use CustomLayout ad format and FADAdViewCustomLayout instead.")))
 @interface FADInFeed: UIView<FADAdInterface>
 // height will changed when loadAd is completed.
 - (instancetype)initWithSlotId:(NSString *)slotId width:(float)width;
@@ -229,6 +227,32 @@ __attribute__((deprecated("InFeed ad format is deprecated. We might delete this 
 - (BOOL)show;
 @end
 
+@interface FADNative: NSObject<FADAdInterface>
+- (instancetype)initWithSlotId:(NSString *)slotId videoViewWidth:(float)videoViewWidth;
+- (instancetype)init __attribute__((unavailable("init is not available")));
+
+// Default timeout interval is 10 seconds.
+// If a timeout occurs, it returns as a kFADErrorNetworkError.
+- (void)loadAdAsync;
+- (void)loadAdAsyncWithTimeoutInterval:(NSTimeInterval)timeout;
+
+// The methods below are only available after ad is loaded.
+- (void) registerViewForInteraction:(UIView*)nativeAdView
+            withInformationIconView:(UIView*)informationIconView
+                 withClickableViews:(NSArray<UIView*>*)clickableViews;
+
+
+- (UIView*)getAdMainView;
+
+// return values are non-nil, but NSString may be empty string e.g. @""
+- (NSString*)getButtonText;
+- (NSString*)getDescriptionText;
+- (NSString*)getAdvertiserName;
+- (NSString*)getAdTitle;
+
+- (void) loadIconImageAsyncWithBlock:(void (^) (UIImage*))block;
+- (void) loadInformationIconImageAsyncWithBlock:(void (^) (UIImage*))block;
+@end
 
 /******************************************************************************
  * FADDelegate

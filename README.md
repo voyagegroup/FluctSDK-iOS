@@ -5,6 +5,12 @@
 
 # FluctSDK Release Note
 
+## V6.11.0 2020/09/16
+
+* iOS14に対応
+* SKAdNetworkに対応
+* 開発環境をXcode12へアップデート
+
 ## V6.10.0 2020/09/09
 
 * JavaScriptのサンプルコードを削除

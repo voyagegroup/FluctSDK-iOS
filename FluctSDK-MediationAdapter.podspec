@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
     s.name                  = "FluctSDK-MediationAdapter"
     s.summary               = "Mediation Adapter for FluctSDK ad Framework"
     s.license               = { :type => "Copyright", :text => "Copyright (c) fluct,Inc. All rights reserved." }
-    s.version               = "6.10.0"
+    s.version               = "6.11.0"
     s.author                = "fluct,Inc."
     s.requires_arc          = true
     s.static_framework      = true
@@ -10,35 +10,36 @@ Pod::Spec.new do |s|
     s.source                = { :git => "https://github.com/voyagegroup/FluctSDK-iOS.git", :tag => s.version }
     s.platform              = :ios
     s.ios.deployment_target = "9.0"
+    s.xcconfig              = { "EXCLUDED_ARCHS[sdk=iphonesimulator*]" => "arm64" }
 
     s.subspec "AdColony" do |ss|
         ss.source_files = "FluctSDK-MediationAdapter/AdColony/*.{h,m}"
         ss.dependency "FluctSDK"
-        ss.dependency "AdColony", '>= 4.2.0'
+        ss.dependency "AdColony", '>= 4.3.1'
     end
 
     s.subspec "AdCorsa" do |ss|
         ss.source_files = "FluctSDK-MediationAdapter/AdCorsa/*.{h,m}"
         ss.dependency "FluctSDK"
-        ss.dependency "GlossomAds", '>= 2.1.1'
+        ss.dependency "GlossomAds", '>= 2.2.0'
     end
 
     s.subspec "AppLovin" do |ss|
         ss.source_files = "FluctSDK-MediationAdapter/AppLovin/*.{h,m}"
         ss.dependency "FluctSDK"
-        ss.dependency "AppLovinSDK", '>=6.13.0'
+        ss.dependency "AppLovinSDK", '>=6.14.2'
     end
 
     s.subspec "maio" do |ss|
         ss.source_files = "FluctSDK-MediationAdapter/maio/*.{h,m}"
         ss.dependency "FluctSDK"
-        ss.dependency "MaioSDK", '>= 1.5.4'
+        ss.dependency "MaioSDK", '>= 1.5.5'
     end
 
     s.subspec "nend" do |ss|
         ss.source_files = "FluctSDK-MediationAdapter/nend/*.{h,m}"
         ss.dependency "FluctSDK"
-        ss.dependency "NendSDK_iOS", '>= 6.0.0'
+        ss.dependency "NendSDK_iOS", '>= 6.0.3'
     end
 
     s.subspec "Tapjoy" do |ss|
@@ -50,7 +51,7 @@ Pod::Spec.new do |s|
     s.subspec "UnityAds" do |ss|
         ss.source_files = "FluctSDK-MediationAdapter/UnityAds/*.{h,m}"
         ss.dependency "FluctSDK"
-        ss.dependency "UnityAds", '>= 3.4.6'
+        ss.dependency "UnityAds", '>= 3.4.8'
     end
 
     s.subspec "Five" do |ss|

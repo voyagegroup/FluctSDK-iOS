@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
     s.name                  = "FluctSDK"
     s.summary               = "FluctSDK ad Framework"
     s.license               = { :type => "Copyright", :text => "Copyright (c) fluct,Inc. All rights reserved." }
-    s.version               = "6.10.0"
+    s.version               = "6.11.0"
     s.author                = "fluct,Inc."
     s.requires_arc          = true
     s.homepage              = "https://fluct.jp/"
@@ -10,8 +10,9 @@ Pod::Spec.new do |s|
     s.resource              = "FluctSDK.embeddedframework/Resources/FluctSDKResources.bundle"
     s.vendored_frameworks   = "FluctSDK.embeddedframework/FluctSDK.framework"
     s.platform              = :ios
-    s.ios.deployment_target = "8.1"
+    s.ios.deployment_target = "9.0"
     s.compiler_flags        = "-ObjC"
-    s.frameworks            = "AdSupport", "CoreTelephony", "MediaPlayer", "CoreMedia", "SystemConfiguration", "StoreKit", "Social", "AVFoundation", "WebKit"
+    s.frameworks            = "AdSupport", "CoreTelephony", "MediaPlayer", "CoreMedia", "SystemConfiguration", "StoreKit", "Social", "AVFoundation", "WebKit", "AppTrackingTransparency"
     s.libraries             = "xml2"
+    s.xcconfig              = { "EXCLUDED_ARCHS[sdk=iphonesimulator*]" => "arm64" }
 end
