@@ -16,7 +16,7 @@ PODS:
     - FluctSDK
   - FluctSDK-MediationAdapter/AdCorsa (6.11.0):
     - FluctSDK
-    - GlossomAds (>= 2.2.0)
+    - GlossomAds (>= 2.1.1)
   - FluctSDK-MediationAdapter/AppLovin (6.11.0):
     - AppLovinSDK (>= 6.14.2)
     - FluctSDK
@@ -126,7 +126,7 @@ SPEC CHECKSUMS:
   AdColony: 526a7bfe223dea50b9193d215d4b6fcbfc1515d1
   AppLovinSDK: 3201f352b21f10a575ac24c1ea6f7bfc0ae9c64e
   FluctSDK: 6317efc92df1b450d3775e66e950503cc49f392e
-  FluctSDK-MediationAdapter: 2e7e1b9145ff75d80bda444836ce6e8f95146d8a
+  FluctSDK-MediationAdapter: 4260b2b11c0c318146f3994d699533a8c7d5f9e4
   GlossomAds: d8401d81e1e69ba56f04db14444cfc98b73f589b
   Google-Mobile-Ads-SDK: af735e001ee534d9dd2ce0a87cd8c355b19844b5
   GoogleAppMeasurement: 1a66f478c68ecd6c16ee63ee60c7c3a648e6b337
