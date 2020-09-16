@@ -12,7 +12,8 @@ Pod::Spec.new do |s|
     s.platform              = :ios
     s.ios.deployment_target = "9.0"
     s.compiler_flags        = "-ObjC"
-    s.frameworks            = "AdSupport", "CoreTelephony", "MediaPlayer", "CoreMedia", "SystemConfiguration", "StoreKit", "Social", "AVFoundation", "WebKit", "AppTrackingTransparency"
+    s.frameworks            = "AdSupport", "CoreTelephony", "MediaPlayer", "CoreMedia", "SystemConfiguration", "StoreKit", "Social", "AVFoundation", "WebKit"
+    s.weak_framework        = 'AppTrackingTransparency'
     s.libraries             = "xml2"
     s.xcconfig              = { "EXCLUDED_ARCHS[sdk=iphonesimulator*]" => "arm64" }
 end
