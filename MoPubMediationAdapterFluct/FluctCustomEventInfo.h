@@ -9,12 +9,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NS_CLOSED_ENUM(NSUInteger, FluctAdUnitFormat) {
+typedef NS_CLOSED_ENUM(NSUInteger, FluctAdUnitFormat){
     FluctAdUnitFormatBanner,
     FluctAdUnitFormatMediumRectangle,
     FluctAdUnitFormatInterstitial,
-    FluctAdUnitFormatRewardedVideo
-};
+    FluctAdUnitFormatRewardedVideo};
 
 @interface FluctCustomEventInfo : NSObject
 @property (nonatomic, readonly) NSString *groupID;
