@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
     s.source_files          = "GoogleMobileAdsMediationFluct/*.{h,m}"
     s.platform              = :ios
     s.ios.deployment_target = "9.0"
-    s.dependency "FluctSDK", ">= 6.6.0"
+    s.dependency "FluctSDK", ">= 6.12.0"
     s.dependency "Google-Mobile-Ads-SDK", ">= 7.42.2"
-    s.xcconfig              = { "EXCLUDED_ARCHS[sdk=iphonesimulator*]" => "arm64" }
+    s.xcconfig              = { "EXCLUDED_ARCHS[sdk=iphonesimulator*]" => "arm64 arm64e armv7 armv7s" }
 end

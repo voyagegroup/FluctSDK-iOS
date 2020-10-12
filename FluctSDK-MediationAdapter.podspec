@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
     s.source                = { :git => "https://github.com/voyagegroup/FluctSDK-iOS.git", :tag => s.version }
     s.platform              = :ios
     s.ios.deployment_target = "9.0"
-    s.xcconfig              = { "EXCLUDED_ARCHS[sdk=iphonesimulator*]" => "arm64" }
+    s.xcconfig              = { "EXCLUDED_ARCHS[sdk=iphonesimulator*]" => "arm64 arm64e armv7 armv7s" }
 
     s.subspec "AdColony" do |ss|
         ss.source_files = "FluctSDK-MediationAdapter/AdColony/*.{h,m}"

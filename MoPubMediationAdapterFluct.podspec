@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
     s.source_files          = "MoPubMediationAdapterFluct/*.{h,m}"
     s.platform              = :ios
     s.ios.deployment_target = "10.0"
-    s.dependency "FluctSDK", ">= 6.6.0"
+    s.dependency "FluctSDK", ">= 6.12.0"
     s.dependency "mopub-ios-sdk", ">= 5.13.0"
-    s.xcconfig              = { "EXCLUDED_ARCHS[sdk=iphonesimulator*]" => "arm64" }
+    s.xcconfig              = { "EXCLUDED_ARCHS[sdk=iphonesimulator*]" => "arm64 arm64e armv7 armv7s" }
 end

@@ -45,7 +45,7 @@ PODS:
     - "GoogleUtilities/NSData+zlib (~> 6.7)"
     - nanopb (~> 1.30906.0)
   - GoogleMobileAdsMediationFluct (6.12.0):
-    - FluctSDK (>= 6.6.0)
+    - FluctSDK (>= 6.12.0)
     - Google-Mobile-Ads-SDK (>= 7.42.2)
   - GoogleUserMessagingPlatform (1.2.0)
   - GoogleUtilities/AppDelegateSwizzler (6.7.2):
@@ -75,7 +75,7 @@ PODS:
   - mopub-ios-sdk/NativeAds (5.13.1):
     - mopub-ios-sdk/Core
   - MoPubMediationAdapterFluct (6.12.0):
-    - FluctSDK (>= 6.6.0)
+    - FluctSDK (>= 6.12.0)
     - mopub-ios-sdk (>= 5.13.0)
   - nanopb (1.30906.0):
     - nanopb/decode (= 1.30906.0)
@@ -125,17 +125,17 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AdColony: 03c713bc6fedcaf3fc92f21f89276bc8a332e9c6
   AppLovinSDK: 7d10e98a208223cb23b4287040fbdc6a26aa9224
-  FluctSDK: 792277af9f66568110d7002f2977ea731aeaa060
-  FluctSDK-MediationAdapter: 19322d04a623203543dafe1ff1b725e3302fec3b
+  FluctSDK: b94f510d5d00093641430013c8e6539d4895aab9
+  FluctSDK-MediationAdapter: 143f6004c631aa1f87883bd61ffc4d5ccfd3bfb1
   GlossomAds: 392c295a54c528e3a6960f99b59be273c949831b
   Google-Mobile-Ads-SDK: 7d7074359c040f5add4e0963bf860e14690060d0
   GoogleAppMeasurement: 966e88df9d19c15715137bb2ddaf52373f111436
-  GoogleMobileAdsMediationFluct: 13eb92eb1b49fb0ee2c45e8458a5d0c5eed1d565
+  GoogleMobileAdsMediationFluct: 2f517f89483778b593ff8f03dc1a68af12bb68b7
   GoogleUserMessagingPlatform: c85530d930ba509583aa5a6d50a10aca22cf8502
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
   MaioSDK: e650a08efe62572f3d8de1ecd96572a35714a6b9
   mopub-ios-sdk: 18af57aaf79d0ea3d0232b43b2d603ae8ea8e826
-  MoPubMediationAdapterFluct: 4cbe162904d5e2dac0245490a28b567b2f07dc58
+  MoPubMediationAdapterFluct: 34c9612a86ba3c1717ecc35e3732d87147b62439
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   NendSDK_iOS: 5f4d2574d19aece3ebf8ef1833ece0c4af48da23
   PromisesObjC: b14b1c6b68e306650688599de8a45e49fae81151
