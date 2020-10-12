@@ -12,7 +12,6 @@
 @interface GADBannerAdapterFluct () <FSSAdViewDelegate>
 @property (nonatomic, nullable) NSString *groupID;
 @property (nonatomic, nullable) NSString *unitID;
-@property (nonatomic) FSSAdSize adSize;
 @property (nonatomic) FSSAdView *adView;
 @end
 
@@ -22,7 +21,7 @@
 
 - (void)requestBannerAd:(GADAdSize)adSize parameter:(NSString *)serverParameter label:(NSString *)serverLabel request:(GADCustomEventRequest *)request {
     NSError *error = nil;
-    if (![self setupAdapterWithParameter:serverParameter adSize:adSize error:&error]) {
+    if (![self setupAdapterWithParameter:serverParameter error:&error]) {
         [self.delegate customEventBanner:self didFailAd:error];
         return;
     }
@@ -32,7 +31,7 @@
     options.mediationPlatformSDKVersion = [NSString stringWithFormat:@"%s", GoogleMobileAdsVersionString];
     [FluctSDK configureWithOptions:options];
 
-    self.adView = [[FSSAdView alloc] initWithGroupId:self.groupID unitId:self.unitID adSize:self.adSize];
+    self.adView = [[FSSAdView alloc] initWithGroupId:self.groupID unitId:self.unitID size:adSize.size];
     self.adView.delegate = self;
 
     // iOS12でloadされない問題の対応のため、viewController.viewのhierarchyに追加する
@@ -44,7 +43,7 @@
 }
 
 #pragma mark - setup
-- (BOOL)setupAdapterWithParameter:(NSString *)serverParameter adSize:(GADAdSize)adSize error:(NSError **)error {
+- (BOOL)setupAdapterWithParameter:(NSString *)serverParameter error:(NSError **)error {
     NSArray<NSString *> *ids = [serverParameter componentsSeparatedByString:@","];
     if (ids.count != 2) {
         if (error) {
@@ -57,19 +56,6 @@
 
     self.groupID = ids.firstObject;
     self.unitID = ids.lastObject;
-
-    if (CGSizeEqualToSize(adSize.size, FSSAdSize320x50.size)) {
-        self.adSize = FSSAdSize320x50;
-    } else if (CGSizeEqualToSize(adSize.size, FSSAdSize300x250.size)) {
-        self.adSize = FSSAdSize300x250;
-    } else if (CGSizeEqualToSize(adSize.size, FSSAdSize320x100.size)) {
-        self.adSize = FSSAdSize320x100;
-    } else {
-        *error = [NSError errorWithDomain:GADMFluctErrorDomain
-                                     code:GADMFluctErrorInvalidSize
-                                 userInfo:@{}];
-        return NO;
-    }
     return YES;
 }
 

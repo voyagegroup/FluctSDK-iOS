@@ -38,7 +38,7 @@
     self.optimizer.delegate = self;
 
     UIViewController *viewController = [self.delegate viewControllerForPresentingModalView];
-    [self.optimizer requestWithRootViewController:viewController];
+    [self.optimizer requestWithRootViewController:viewController size:adSize.size];
 }
 
 #pragma mark - FSSBannerCustomEventOptimizer

@@ -94,10 +94,22 @@ extern FSSAdSize const FSSAdSize320x100;
  * FSSAdViewの初期化を行う。
  * @param groupId グループID
  * @param unitId ユニットID
+ * @param size 広告サイズ
+ */
+- (instancetype)initWithGroupId:(NSString *)groupId
+                         unitId:(NSString *)unitId
+                           size:(CGSize)size;
+
+/**
+ * FSSAdViewの初期化を行う。
+ * @param groupId グループID
+ * @param unitId ユニットID
+ * @param size 広告サイズ
  * @param adInfo 広告情報
  */
 - (instancetype)initWithGroupId:(NSString *)groupId
                          unitId:(NSString *)unitId
+                           size:(CGSize)size
                          adInfo:(NSDictionary<NSString *, id> *)adInfo;
 
 /**
