@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
     s.name                  = "FluctSDK"
     s.summary               = "FluctSDK ad Framework"
     s.license               = { :type => "Copyright", :text => "Copyright (c) fluct,Inc. All rights reserved." }
-    s.version               = "6.12.0"
+    s.version               = "6.12.1"
     s.author                = "fluct,Inc."
     s.requires_arc          = true
     s.homepage              = "https://fluct.jp/"
@@ -15,5 +15,6 @@ Pod::Spec.new do |s|
     s.frameworks            = "AdSupport", "CoreTelephony", "MediaPlayer", "CoreMedia", "SystemConfiguration", "StoreKit", "Social", "AVFoundation", "WebKit"
     s.weak_framework        = 'AppTrackingTransparency'
     s.libraries             = "xml2"
-    s.xcconfig              = { "EXCLUDED_ARCHS[sdk=iphonesimulator*]" => "arm64 arm64e armv7 armv7s" }
+    s.pod_target_xcconfig   = { "EXCLUDED_ARCHS[sdk=iphonesimulator*]" => "arm64 arm64e armv7 armv7s" }
+    s.user_target_xcconfig   = { "EXCLUDED_ARCHS[sdk=iphonesimulator*]" => "arm64 arm64e armv7 armv7s" }
 end
