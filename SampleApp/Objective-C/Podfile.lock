@@ -27,7 +27,7 @@ PODS:
     - MaioSDK (>= 1.5.5)
   - FluctSDK-MediationAdapter/nend (6.12.3):
     - FluctSDK
-    - NendSDK_iOS (>= 7.0.0)
+    - NendSDK_iOS (= 7.0.0)
   - FluctSDK-MediationAdapter/Tapjoy (6.12.3):
     - FluctSDK
     - TapjoySDK (>= 12.7.0)
@@ -126,7 +126,7 @@ SPEC CHECKSUMS:
   AdColony: a655685ae4a62eb8d6ddffa5fc1436858872a9e7
   AppLovinSDK: 7d10e98a208223cb23b4287040fbdc6a26aa9224
   FluctSDK: 68b0f8e15d47b44b0c0150f2b56a14913c708c7e
-  FluctSDK-MediationAdapter: 2101632a4665d60ed182bde0811f0048936c8339
+  FluctSDK-MediationAdapter: 2767b13e978919973d6f182615218fb0e59537d5
   GlossomAds: 392c295a54c528e3a6960f99b59be273c949831b
   Google-Mobile-Ads-SDK: 7d7074359c040f5add4e0963bf860e14690060d0
   GoogleAppMeasurement: a6a3a066369828db64eda428cb2856dc1cdc7c4e

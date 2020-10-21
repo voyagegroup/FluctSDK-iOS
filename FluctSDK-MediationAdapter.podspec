@@ -38,7 +38,7 @@ Pod::Spec.new do |s|
     s.subspec "nend" do |ss|
         ss.source_files = "FluctSDK-MediationAdapter/nend/*.{h,m}"
         ss.dependency "FluctSDK"
-        ss.dependency "NendSDK_iOS", '>= 7.0.0'
+        ss.dependency "NendSDK_iOS", '= 7.0.0'
     end
 
     s.subspec "Tapjoy" do |ss|
