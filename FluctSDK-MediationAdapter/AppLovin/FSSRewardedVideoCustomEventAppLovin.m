@@ -165,6 +165,9 @@ static NSString *const FSSAppLovinSupportVersion = @"9.0";
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoWillDisappearForCustomEvent:weakSelf];
+    });
+    // wasHiddenInが呼ばれた時、最前面にALAppLovinVideoViewControllerが残っているので完全に消えるまで遅延させる
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.5 * NSEC_PER_SEC), FSSFullscreenVideoWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoDidDisappearForCustomEvent:weakSelf];
     });
 }
