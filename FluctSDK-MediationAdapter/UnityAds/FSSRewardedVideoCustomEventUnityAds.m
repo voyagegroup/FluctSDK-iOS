@@ -6,7 +6,6 @@
 //
 
 #import "FSSRewardedVideoCustomEventUnityAds.h"
-#import "FSSRewardedVideoConditionObserver.h"
 #import "FSSRewardedVideoUnityAdsManager.h"
 
 /**
@@ -26,7 +25,7 @@ static const NSInteger timeoutSecond = 30;
 @property (nonatomic) BOOL isInitialNotificationForAdapter;
 @property (nonatomic, weak) UIViewController *viewController;
 
-@property (nonatomic) FSSRewardedVideoConditionObserver *observer;
+@property (nonatomic) FSSConditionObserver *observer;
 
 @end
 
@@ -80,7 +79,7 @@ static NSString *const FSSUnityAdsSupportVersion = @"9.0";
 - (void)presentRewardedVideoAdFromViewController:(UIViewController *)viewController {
     self.viewController = viewController;
     __weak __typeof(self) weakSelf = self;
-    self.observer = [[FSSRewardedVideoConditionObserver alloc] initWithInterval:0.1f
+    self.observer = [[FSSConditionObserver alloc] initWithInterval:0.1f
         fallbackLimit:20
         completionHandler:^{
             dispatch_async(FSSFullscreenVideoWorkQueue(), ^{

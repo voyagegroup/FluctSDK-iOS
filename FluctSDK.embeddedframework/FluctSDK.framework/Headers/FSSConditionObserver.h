@@ -1,5 +1,5 @@
 //
-//  FSSRewardedVideoConditionObserver.h
+//  FSSConditionObserver.h
 //  FluctSDK
 //
 
@@ -9,7 +9,7 @@ typedef void (^completionHandler)(void);
 typedef BOOL (^shouldCompletionBlock)(void);
 
 NS_ASSUME_NONNULL_BEGIN
-@interface FSSRewardedVideoConditionObserver : NSObject
+@interface FSSConditionObserver : NSObject
 
 - (instancetype)initWithInterval:(NSTimeInterval)interval
                    fallbackLimit:(NSInteger)limit

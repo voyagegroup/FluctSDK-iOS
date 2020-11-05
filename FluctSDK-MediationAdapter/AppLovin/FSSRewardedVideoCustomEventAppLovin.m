@@ -12,6 +12,8 @@
 
 @property (nonatomic) ALIncentivizedInterstitialAd *rewardedVideo;
 
+@property (nonatomic) FSSConditionObserver *observer;
+
 + (ALSdk *)sharedWithKey:(NSString *)sdkKey;
 + (ALIncentivizedInterstitialAd *)rewardedVideoWithSdk:(ALSdk *)sdk zoneName:(nonnull NSString *)zone;
 
@@ -75,9 +77,7 @@ static NSString *const FSSAppLovinSupportVersion = @"9.0";
 }
 
 - (void)presentRewardedVideoAdFromViewController:(UIViewController *)viewController {
-    if ([self.rewardedVideo isReadyForDisplay]) {
-        [self.rewardedVideo showAndNotify:nil];
-    } else {
+    if (![self.rewardedVideo isReadyForDisplay]) {
         // kALErrorCodeIncentiviziedAdNotPreloaded
         NSError *error = [NSError errorWithDomain:FSSVideoErrorSDKDomain code:FSSVideoErrorNotReady userInfo:nil];
         [self.delegate rewardedVideoDidFailToPlayForCustomEvent:self
@@ -85,7 +85,33 @@ static NSString *const FSSAppLovinSupportVersion = @"9.0";
                                                  adnetworkError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
                                                                                     code:kALErrorCodeIncentiviziedAdNotPreloaded
                                                                                 userInfo:@{NSLocalizedDescriptionKey : @"incentivizied ad not preloaded."}]];
+        return;
     }
+
+    [self.rewardedVideo showAndNotify:nil];
+
+    __weak __typeof(self) weakSelf = self;
+    // wasHiddenInが呼ばれた時、最前面にALAppLovinVideoViewControllerが残っているので完全に消えるまで遅延させる
+    self.observer = [[FSSConditionObserver alloc] initWithInterval:0.1f
+        fallbackLimit:20
+        completionHandler:^{
+            dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
+                [weakSelf.delegate rewardedVideoDidDisappearForCustomEvent:weakSelf];
+            });
+        }
+        fallbackHandler:^{
+            dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
+                NSError *fluctError = [NSError errorWithDomain:FSSVideoErrorSDKDomain
+                                                          code:FSSVideoErrorUnknown
+                                                      userInfo:@{NSLocalizedDescriptionKey : @"Failed callback for rewardedVideoDidDisappearForCustomEvent"}];
+                [weakSelf.delegate rewardedVideoDidFailToPlayForCustomEvent:weakSelf
+                                                                 fluctError:fluctError
+                                                             adnetworkError:fluctError];
+            });
+        }
+        shouldCompletionCondition:^BOOL {
+            return !viewController.presentedViewController;
+        }];
 }
 
 - (NSString *)sdkVersion {
@@ -166,10 +192,8 @@ static NSString *const FSSAppLovinSupportVersion = @"9.0";
     dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoWillDisappearForCustomEvent:weakSelf];
     });
-    // wasHiddenInが呼ばれた時、最前面にALAppLovinVideoViewControllerが残っているので完全に消えるまで遅延させる
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.5 * NSEC_PER_SEC), FSSFullscreenVideoWorkQueue(), ^{
-        [weakSelf.delegate rewardedVideoDidDisappearForCustomEvent:weakSelf];
-    });
+
+    [self.observer start];
 }
 
 - (void)ad:(ALAd *)ad wasClickedIn:(UIView *)view {

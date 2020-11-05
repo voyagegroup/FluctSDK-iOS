@@ -42,6 +42,8 @@
 #import <FluctSDK/FSSVideoInterstitialCustomEventOptimizer.h>
 #import <FluctSDK/FSSVideoInterstitialCustomEventStarter.h>
 
+#import <FluctSDK/FSSConditionObserver.h>
+
 /*
  * SDKの各処理を行う
  * ・広告表示設定 (表示処理はFluctBannerViewにて行われる)
