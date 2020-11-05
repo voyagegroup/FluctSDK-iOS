@@ -13,26 +13,26 @@ PODS:
     - FluctSDK-MediationAdapter/UnityAds (= 6.12.4)
   - FluctSDK-MediationAdapter/AdColony (6.12.4):
     - AdColony (>= 4.3.1)
-    - FluctSDK
+    - FluctSDK (>= 6.12.4)
   - FluctSDK-MediationAdapter/AdCorsa (6.12.4):
-    - FluctSDK
+    - FluctSDK (>= 6.12.4)
     - GlossomAds (~> 2.1.1)
   - FluctSDK-MediationAdapter/AppLovin (6.12.4):
     - AppLovinSDK (>= 6.14.2)
-    - FluctSDK
+    - FluctSDK (>= 6.12.4)
   - FluctSDK-MediationAdapter/Five (6.12.4):
-    - FluctSDK
+    - FluctSDK (>= 6.12.4)
   - FluctSDK-MediationAdapter/maio (6.12.4):
-    - FluctSDK
+    - FluctSDK (>= 6.12.4)
     - MaioSDK (>= 1.5.5)
   - FluctSDK-MediationAdapter/nend (6.12.4):
-    - FluctSDK
+    - FluctSDK (>= 6.12.4)
     - NendSDK_iOS (= 7.0.0)
   - FluctSDK-MediationAdapter/Tapjoy (6.12.4):
-    - FluctSDK
+    - FluctSDK (>= 6.12.4)
     - TapjoySDK (>= 12.7.0)
   - FluctSDK-MediationAdapter/UnityAds (6.12.4):
-    - FluctSDK
+    - FluctSDK (>= 6.12.4)
     - UnityAds (>= 3.4.8)
   - GlossomAds (2.1.1)
   - Google-Mobile-Ads-SDK (7.66.0):
@@ -126,7 +126,7 @@ SPEC CHECKSUMS:
   AdColony: a655685ae4a62eb8d6ddffa5fc1436858872a9e7
   AppLovinSDK: 7d10e98a208223cb23b4287040fbdc6a26aa9224
   FluctSDK: f8753eb5a079ad1dad7d685dd9d47bbd453609c9
-  FluctSDK-MediationAdapter: 6bb2ea4aea740d6d23cdb7e206fe321c3da2e87a
+  FluctSDK-MediationAdapter: 6902780b04f2a8ca3d869863acd29acabba5e379
   GlossomAds: 392c295a54c528e3a6960f99b59be273c949831b
   Google-Mobile-Ads-SDK: 7d7074359c040f5add4e0963bf860e14690060d0
   GoogleAppMeasurement: a6a3a066369828db64eda428cb2856dc1cdc7c4e
