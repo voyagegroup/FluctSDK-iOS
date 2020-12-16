@@ -142,13 +142,6 @@ static NSString *const FSSNendSupportVersion = @"8.1";
     });
 }
 
-- (void)nadRewardVideoAdDidCompletePlaying:(NADRewardedVideo *)nadRewardedVideoAd {
-    __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
-        [weakSelf.delegate rewardedVideoShouldRewardForCustomEvent:weakSelf];
-    });
-}
-
 - (void)nadRewardVideoAdDidClose:(NADRewardedVideo *)nadRewardedVideoAd {
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
@@ -165,6 +158,10 @@ static NSString *const FSSNendSupportVersion = @"8.1";
 }
 
 - (void)nadRewardVideoAd:(NADRewardedVideo *)nadRewardedVideoAd didReward:(NADReward *)reward {
+    __weak __typeof(self) weakSelf = self;
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
+        [weakSelf.delegate rewardedVideoShouldRewardForCustomEvent:weakSelf];
+    });
 }
 
 + (NADUserFeature *)generateUserFeatureWithTargeting:(FSSAdRequestTargeting *)targeting {
