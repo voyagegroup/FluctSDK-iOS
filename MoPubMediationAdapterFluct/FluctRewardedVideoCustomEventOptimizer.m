@@ -136,12 +136,23 @@
 - (void)rewardedVideoWillDisappearForGroupId:(NSString *)groupId unitId:(NSString *)unitId {
     MPLogEvent([MPLogEvent adWillDisappearForAdapter:NSStringFromClass(self.class)]);
     [self.delegate fullscreenAdAdapterAdWillDisappear:self];
+
+    // `fullscreenAdAdapterAdWillDismiss:` was introduced in MoPub SDK 5.15.0.
+    if ([self.delegate respondsToSelector:@selector(fullscreenAdAdapterAdWillDismiss:)]) {
+        [self.delegate fullscreenAdAdapterAdWillDismiss:self];
+    }
 }
 
 - (void)rewardedVideoDidDisappearForGroupId:(NSString *)groupId unitId:(NSString *)unitId {
     MPLogEvent([MPLogEvent adDidDisappearForAdapter:NSStringFromClass(self.class)]);
     MPLogEvent([MPLogEvent adDidDismissModalForAdapter:NSStringFromClass(self.class)]);
     [self.delegate fullscreenAdAdapterAdDidDisappear:self];
+
+    // Signal that the fullscreen ad is closing and the state should be reset.
+    // `fullscreenAdAdapterAdDidDismiss:` was introduced in MoPub SDK 5.15.0.
+    if ([self.delegate respondsToSelector:@selector(fullscreenAdAdapterAdDidDismiss:)]) {
+        [self.delegate fullscreenAdAdapterAdDidDismiss:self];
+    }
 }
 
 #pragma mark - FSSRewardedVideoRTBDelegate

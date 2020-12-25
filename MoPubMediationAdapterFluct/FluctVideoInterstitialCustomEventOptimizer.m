@@ -115,12 +115,23 @@
 - (void)videoInterstitialWillDisappear:(FSSVideoInterstitial *)interstitial {
     MPLogEvent([MPLogEvent adWillDisappearForAdapter:NSStringFromClass(self.class)]);
     [self.delegate fullscreenAdAdapterAdWillDisappear:self];
+
+    // `fullscreenAdAdapterAdWillDismiss:` was introduced in MoPub SDK 5.15.0.
+    if ([self.delegate respondsToSelector:@selector(fullscreenAdAdapterAdWillDismiss:)]) {
+        [self.delegate fullscreenAdAdapterAdWillDismiss:self];
+    }
 }
 
 - (void)videoInterstitialDidDisappear:(FSSVideoInterstitial *)interstitial {
     MPLogEvent([MPLogEvent adDidDisappearForAdapter:NSStringFromClass(self.class)]);
     [self.delegate fullscreenAdAdapterAdDidDisappear:self];
     MPLogEvent([MPLogEvent adDidDismissModalForAdapter:NSStringFromClass(self.class)]);
+
+    // Signal that the fullscreen ad is closing and the state should be reset.
+    // `fullscreenAdAdapterAdDidDismiss:` was introduced in MoPub SDK 5.15.0.
+    if ([self.delegate respondsToSelector:@selector(fullscreenAdAdapterAdDidDismiss:)]) {
+        [self.delegate fullscreenAdAdapterAdDidDismiss:self];
+    }
 }
 
 #pragma mark - FSSVideoInterstitialRTBDelegate
