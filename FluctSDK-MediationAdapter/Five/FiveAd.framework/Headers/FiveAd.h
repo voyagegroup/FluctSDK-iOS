@@ -241,7 +241,6 @@ __attribute__((deprecated("InFeed ad format is deprecated. We might delete this 
             withInformationIconView:(UIView*)informationIconView
                  withClickableViews:(NSArray<UIView*>*)clickableViews;
 
-
 - (UIView*)getAdMainView;
 
 // return values are non-nil, but NSString may be empty string e.g. @""
