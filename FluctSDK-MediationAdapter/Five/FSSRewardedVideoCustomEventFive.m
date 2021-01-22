@@ -126,16 +126,11 @@ typedef NS_ENUM(NSInteger, FiveErrorExtend) {
     });
 }
 
-- (void)fiveAdDidViewThrough:(id<FADAdInterface>)ad {
-    __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
-        [weakSelf.delegate rewardedVideoShouldRewardForCustomEvent:self];
-    });
-}
-
 - (void)fiveAdDidClose:(id<FADAdInterface>)ad {
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
+        //- (void)fiveAdDidViewThrough:(id<FADAdInterface>)adは呼ばれない時もあるので使わない。
+        [weakSelf.delegate rewardedVideoShouldRewardForCustomEvent:self];
         [weakSelf.delegate rewardedVideoWillDisappearForCustomEvent:self];
         [weakSelf.delegate rewardedVideoDidDisappearForCustomEvent:self];
     });
