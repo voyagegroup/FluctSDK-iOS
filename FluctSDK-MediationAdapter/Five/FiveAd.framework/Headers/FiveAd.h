@@ -135,6 +135,7 @@ static NSString* const kFADConfigIsTestKey = @"FIVE_IS_TEST";
 + (BOOL)isSoundEnabled;
 
 + (NSString *)version;
++ (NSString *)semanticVersion;
 
 // setup WKUserContentController to show web page ads within WKWebView.
 + (void)setupFADWKWebViewHelperScript:(WKUserContentController *)controller __attribute__((deprecated("WebView feature is deprecated. We might delete this API in a future release.")));
