@@ -46,9 +46,16 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, getter=isUnityAdsActivated) BOOL unityAdsActivated;
 
 /**
- * 設定されている情報を文字列にして出力する
+ * 設定されている情報の文字列を返す
+ * @return 設定されている情報の文字列
  */
 - (NSString *)description;
+
+/**
+ * 設定されている情報のディクショナリーを返す
+ * @return 設定されている情報のディクショナリー
+ */
+- (NSDictionary<NSString *, id> *)dictionary;
 
 /**
  * 配信不可設定にしているADNWがあるかどうかを返す

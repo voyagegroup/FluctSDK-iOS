@@ -69,6 +69,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSString *)description;
 
+- (NSDictionary<NSString *, id> *)dictionary;
+
 - (BOOL)hasDeactivatedAdnetwork;
 
 @end

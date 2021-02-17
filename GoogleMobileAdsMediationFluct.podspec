@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
     s.name                  = "GoogleMobileAdsMediationFluct"
     s.summary               = "fluct adapter used for mediation with the Google Mobile Ads SDK"
     s.license               = { :type => "Copyright", :text => "Copyright (c) fluct,Inc. All rights reserved." }
-    s.version               = "6.12.14"
+    s.version               = "6.12.15"
     s.author                = "fluct,Inc."
     s.requires_arc          = true
     s.static_framework      = true
@@ -12,5 +12,5 @@ Pod::Spec.new do |s|
     s.platform              = :ios
     s.ios.deployment_target = "9.0"
     s.dependency "FluctSDK", ">= 6.12.1"
-    s.dependency "Google-Mobile-Ads-SDK", ">= 7.42.2"
+    s.dependency "Google-Mobile-Ads-SDK", "~> 7"
 end
