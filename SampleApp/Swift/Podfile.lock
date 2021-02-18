@@ -1,37 +1,37 @@
 PODS:
   - AdColony (4.4.1.1)
   - AppLovinSDK (6.14.4)
-  - FluctSDK (6.12.15)
-  - FluctSDK-MediationAdapter (6.12.15):
-    - FluctSDK-MediationAdapter/AdColony (= 6.12.15)
-    - FluctSDK-MediationAdapter/AdCorsa (= 6.12.15)
-    - FluctSDK-MediationAdapter/AppLovin (= 6.12.15)
-    - FluctSDK-MediationAdapter/Five (= 6.12.15)
-    - FluctSDK-MediationAdapter/maio (= 6.12.15)
-    - FluctSDK-MediationAdapter/nend (= 6.12.15)
-    - FluctSDK-MediationAdapter/Tapjoy (= 6.12.15)
-    - FluctSDK-MediationAdapter/UnityAds (= 6.12.15)
-  - FluctSDK-MediationAdapter/AdColony (6.12.15):
+  - FluctSDK (6.12.14)
+  - FluctSDK-MediationAdapter (6.12.14):
+    - FluctSDK-MediationAdapter/AdColony (= 6.12.14)
+    - FluctSDK-MediationAdapter/AdCorsa (= 6.12.14)
+    - FluctSDK-MediationAdapter/AppLovin (= 6.12.14)
+    - FluctSDK-MediationAdapter/Five (= 6.12.14)
+    - FluctSDK-MediationAdapter/maio (= 6.12.14)
+    - FluctSDK-MediationAdapter/nend (= 6.12.14)
+    - FluctSDK-MediationAdapter/Tapjoy (= 6.12.14)
+    - FluctSDK-MediationAdapter/UnityAds (= 6.12.14)
+  - FluctSDK-MediationAdapter/AdColony (6.12.14):
     - AdColony (>= 4.3.1)
     - FluctSDK (>= 6.12.4)
-  - FluctSDK-MediationAdapter/AdCorsa (6.12.15):
+  - FluctSDK-MediationAdapter/AdCorsa (6.12.14):
     - FluctSDK (>= 6.12.4)
     - GlossomAds (>= 2.2.2)
-  - FluctSDK-MediationAdapter/AppLovin (6.12.15):
+  - FluctSDK-MediationAdapter/AppLovin (6.12.14):
     - AppLovinSDK (>= 6.14.2)
     - FluctSDK (>= 6.12.4)
-  - FluctSDK-MediationAdapter/Five (6.12.15):
+  - FluctSDK-MediationAdapter/Five (6.12.14):
     - FluctSDK (>= 6.12.4)
-  - FluctSDK-MediationAdapter/maio (6.12.15):
+  - FluctSDK-MediationAdapter/maio (6.12.14):
     - FluctSDK (>= 6.12.4)
     - MaioSDK (>= 1.5.5)
-  - FluctSDK-MediationAdapter/nend (6.12.15):
+  - FluctSDK-MediationAdapter/nend (6.12.14):
     - FluctSDK (>= 6.12.4)
     - NendSDK_iOS (= 7.0.0)
-  - FluctSDK-MediationAdapter/Tapjoy (6.12.15):
+  - FluctSDK-MediationAdapter/Tapjoy (6.12.14):
     - FluctSDK (>= 6.12.4)
     - TapjoySDK (>= 12.7.0)
-  - FluctSDK-MediationAdapter/UnityAds (6.12.15):
+  - FluctSDK-MediationAdapter/UnityAds (6.12.14):
     - FluctSDK (>= 6.12.4)
     - UnityAds (>= 3.5.1)
   - GlossomAds (2.2.2)
@@ -44,7 +44,7 @@ PODS:
     - GoogleUtilities/Network (~> 6.7)
     - "GoogleUtilities/NSData+zlib (~> 6.7)"
     - nanopb (~> 1.30906.0)
-  - GoogleMobileAdsMediationFluct (6.12.15):
+  - GoogleMobileAdsMediationFluct (6.12.14):
     - FluctSDK (>= 6.12.1)
     - Google-Mobile-Ads-SDK (~> 7)
   - GoogleUserMessagingPlatform (1.2.0)
@@ -74,7 +74,7 @@ PODS:
     - mopub-ios-sdk/NativeAds
   - mopub-ios-sdk/NativeAds (5.15.0):
     - mopub-ios-sdk/Core
-  - MoPubMediationAdapterFluct (6.12.15):
+  - MoPubMediationAdapterFluct (6.12.14):
     - FluctSDK (>= 6.12.1)
     - mopub-ios-sdk (>= 5.15.0)
   - nanopb (1.30906.0):
@@ -125,17 +125,17 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AdColony: a655685ae4a62eb8d6ddffa5fc1436858872a9e7
   AppLovinSDK: 7d10e98a208223cb23b4287040fbdc6a26aa9224
-  FluctSDK: dd83d1e543320ecfa826372d8619c3d858a435a7
-  FluctSDK-MediationAdapter: d0bb47ca98905ed7fb926d310919df6cd04a635d
+  FluctSDK: b934dc46c398a5b54e04d9be17f762ac725f8ad7
+  FluctSDK-MediationAdapter: 66c2bace45f2f59db8b48c4df7957ca023f3ca51
   GlossomAds: 1ad4c13430448da5d8acaa2f0595c1189f3af824
   Google-Mobile-Ads-SDK: 7d7074359c040f5add4e0963bf860e14690060d0
   GoogleAppMeasurement: a6a3a066369828db64eda428cb2856dc1cdc7c4e
-  GoogleMobileAdsMediationFluct: 44b6a409f42c85df1756f00b58cbb5264cc5a7ef
+  GoogleMobileAdsMediationFluct: 45d6bfee4d0152ad58a2baf720013e9eb2aa75ee
   GoogleUserMessagingPlatform: c85530d930ba509583aa5a6d50a10aca22cf8502
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
   MaioSDK: e650a08efe62572f3d8de1ecd96572a35714a6b9
   mopub-ios-sdk: a21098174b9420a291aca9fcdae832d0f2e2a368
-  MoPubMediationAdapterFluct: db2dd0e03db046ea2d68e49af1400b8632884e5e
+  MoPubMediationAdapterFluct: 912b7000b16cdd1f8ddec416d648cfedeb997efc
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   NendSDK_iOS: 5f4d2574d19aece3ebf8ef1833ece0c4af48da23
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
