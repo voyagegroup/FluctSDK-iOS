@@ -109,7 +109,7 @@
 }
 
 - (void)rewardedVideoShouldRewardForGroupID:(NSString *)groupId unitId:(NSString *)unitId {
-    MPRewardedVideoReward *reward = [[MPRewardedVideoReward alloc] initWithCurrencyAmount:@0];
+    MPReward *reward = [MPReward unspecifiedReward];
     MPLogEvent([MPLogEvent adShouldRewardUserWithReward:reward]);
     [self.delegate fullscreenAdAdapter:self willRewardUser:reward];
 }
