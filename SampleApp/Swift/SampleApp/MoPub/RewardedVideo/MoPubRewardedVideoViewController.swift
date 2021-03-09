@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import MoPub
+import MoPubSDK
 import FluctSDK
 import MoPubMediationAdapterFluct
 
@@ -21,7 +21,7 @@ class MoPubRewardedVideoViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        MPRewardedVideo.setDelegate(self, forAdUnitId: adUnitID)
+        MPRewardedAds.setDelegate(self, forAdUnitId: adUnitID)
     }
 
     @IBAction func didTouchUpLoadAd(button: UIButton) {
@@ -30,65 +30,66 @@ class MoPubRewardedVideoViewController: UIViewController {
         setting.activation.isUnityAdsActivated = false
         let mediationSetting = FluctInstanceMediationSettings()
         mediationSetting.setting = setting
-        MPRewardedVideo.loadAd(withAdUnitID: adUnitID, withMediationSettings: [setting])
+        MPRewardedAds.loadRewardedAd(withAdUnitID: adUnitID, withMediationSettings: [setting])
     }
 
     @IBAction func didTouchUpShowAd(button: UIButton) {
-        if MPRewardedVideo.hasAdAvailable(forAdUnitID: adUnitID),
-            let rewards = MPRewardedVideo.availableRewards(forAdUnitID: adUnitID),
-            let reward = rewards.first as? MPRewardedVideoReward {
-            MPRewardedVideo.presentAd(forAdUnitID: adUnitID, from: self, with: reward)
+        guard MPRewardedAds.hasAdAvailable(forAdUnitID: adUnitID) else {
+            return
         }
+
+        let reward = MPRewardedAds.selectedReward(forAdUnitID: adUnitID)
+        MPRewardedAds.presentRewardedAd(forAdUnitID: adUnitID, from: self, with: reward)
     }
 
 }
 
 // MARK: - MPRewardedVideoDelegate
 
-extension MoPubRewardedVideoViewController: MPRewardedVideoDelegate {
+extension MoPubRewardedVideoViewController: MPRewardedAdsDelegate {
 
-    func rewardedVideoAdDidLoad(forAdUnitID adUnitID: String!) {
+    func rewardedAdDidLoad(forAdUnitID adUnitID: String!) {
         print(#function)
         showButton.isEnabled = true
     }
 
-    func rewardedVideoAdDidFailToLoad(forAdUnitID adUnitID: String!, error: Error!) {
+    func rewardedAdDidFailToLoad(forAdUnitID adUnitID: String!, error: Error!) {
         print(#function, error!)
     }
 
-    func rewardedVideoAdWillAppear(forAdUnitID adUnitID: String!) {
+    func rewardedAdWillPresent(forAdUnitID adUnitID: String!) {
         print(#function)
     }
 
-    func rewardedVideoAdDidAppear(forAdUnitID adUnitID: String!) {
+    func rewardedAdDidPresent(forAdUnitID adUnitID: String!) {
         print(#function)
     }
 
-    func rewardedVideoAdDidFailToPlay(forAdUnitID adUnitID: String!, error: Error!) {
+    func rewardedAdDidFailToShow(forAdUnitID adUnitID: String!, error: Error!) {
         print(#function, error!)
     }
 
-    func rewardedVideoAdShouldReward(forAdUnitID adUnitID: String!, reward: MPRewardedVideoReward!) {
+    func rewardedAdShouldReward(forAdUnitID adUnitID: String!, reward: MPReward!) {
         print(#function, reward!)
     }
 
-    func rewardedVideoAdDidExpire(forAdUnitID adUnitID: String!) {
+    func rewardedAdDidExpire(forAdUnitID adUnitID: String!) {
         print(#function)
     }
 
-    func rewardedVideoAdDidReceiveTapEvent(forAdUnitID adUnitID: String!) {
+    func rewardedAdDidReceiveTapEvent(forAdUnitID adUnitID: String!) {
         print(#function)
     }
 
-    func rewardedVideoAdWillLeaveApplication(forAdUnitID adUnitID: String!) {
+    func rewardedAdWillLeaveApplication(forAdUnitID adUnitID: String!) {
         print(#function)
     }
 
-    func rewardedVideoAdWillDisappear(forAdUnitID adUnitID: String!) {
+    func rewardedAdWillDismiss(forAdUnitID adUnitID: String!) {
         print(#function)
     }
 
-    func rewardedVideoAdDidDisappear(forAdUnitID adUnitID: String!) {
+    func rewardedAdDidDismiss(forAdUnitID adUnitID: String!) {
         print(#function)
         showButton.isEnabled = false
     }

@@ -8,7 +8,7 @@
 
 import UIKit
 import GoogleMobileAds
-import MoPub
+import MoPubSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

@@ -29,13 +29,7 @@ static NSString *const kRewardedVideoUnitID = @"1000124351";
 
 - (IBAction)didTouchUpLoadAd:(id)sender {
     // 動画リワード広告の読み込み
-    // targeting パラメータの設定は任意で、頂いたお問合わせの調査等で利用します。
-    // 詳しくは
-    // https://github.com/voyagegroup/FluctSDK-iOS/wiki/Objective-C%E3%81%A7%E3%81%AE%E5%8B%95%E7%94%BB%E3%83%AA%E3%83%AF%E3%83%BC%E3%83%89%E5%BA%83%E5%91%8A%E5%AE%9F%E8%A3%85
-    // をご参照下さい
     FSSAdRequestTargeting *targeting = [FSSAdRequestTargeting new];
-    // fluct_userという文字列を sha256 ハッシュ関数にかけた結果の e313cbbd0628f189fc60ced535b64c92726f3f8d1dd2e04aa20847ff332c8278 という文字列がfluctのサーバに送信されます
-    targeting.userID = @"fluct_user";
     [FSSRewardedVideo.sharedInstance loadRewardedVideoWithGroupId:kRewardedVideoGroupID
                                                            unitId:kRewardedVideoUnitID
                                                         targeting:targeting];

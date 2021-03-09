@@ -7,10 +7,10 @@
 
 #import "MoPubRewardedVideoViewController.h"
 #import <FluctSDK/FluctSDK.h>
-#import <MoPub/MoPub.h>
 #import <MoPubMediationAdapterFluct/FluctInstanceMediationSettings.h>
+#import <MoPubSDK/MoPub.h>
 
-@interface MoPubRewardedVideoViewController () <MPRewardedVideoDelegate>
+@interface MoPubRewardedVideoViewController () <MPRewardedAdsDelegate>
 @property (nonatomic, weak) IBOutlet UIButton *showButton;
 @end
 
@@ -22,7 +22,7 @@ static NSString *const kAdUnitID = @"8d14fd46f8a449f8a5f1de814e4f5fde";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [MPRewardedVideo setDelegate:self forAdUnitId:kAdUnitID];
+    [MPRewardedAds setDelegate:self forAdUnitId:kAdUnitID];
 }
 
 - (IBAction)didTouchUpLoadAdWithButton:(UIButton *)button {
@@ -32,60 +32,60 @@ static NSString *const kAdUnitID = @"8d14fd46f8a449f8a5f1de814e4f5fde";
 
     FluctInstanceMediationSettings *mediationSetting = [FluctInstanceMediationSettings new];
     mediationSetting.setting = setting;
-    [MPRewardedVideo loadRewardedVideoAdWithAdUnitID:kAdUnitID withMediationSettings:@[ mediationSetting ]];
+    [MPRewardedAds loadRewardedAdWithAdUnitID:kAdUnitID withMediationSettings:@[ mediationSetting ]];
 }
 
 - (IBAction)didTouchUpShowAdWithButton:(UIButton *)button {
-    if ([MPRewardedVideo hasAdAvailableForAdUnitID:kAdUnitID]) {
-        NSArray<MPRewardedVideoReward *> *rewards = [MPRewardedVideo availableRewardsForAdUnitID:kAdUnitID];
-        [MPRewardedVideo presentRewardedVideoAdForAdUnitID:kAdUnitID fromViewController:self withReward:rewards.firstObject];
+    if ([MPRewardedAds hasAdAvailableForAdUnitID:kAdUnitID]) {
+        MPReward *reward = [MPRewardedAds selectedRewardForAdUnitID:kAdUnitID];
+        [MPRewardedAds presentRewardedAdForAdUnitID:kAdUnitID fromViewController:self withReward:reward];
     }
 }
 
-#pragma mark - MPRewardedVideoDelegate
+#pragma mark - MPRewardedAdsDelegate
 
-- (void)rewardedVideoAdDidLoadForAdUnitID:(NSString *)adUnitID {
+- (void)rewardedAdDidLoadForAdUnitID:(NSString *)adUnitID {
     NSLog(@"%s", __FUNCTION__);
     self.showButton.enabled = YES;
 }
 
-- (void)rewardedVideoAdDidFailToLoadForAdUnitID:(NSString *)adUnitID error:(NSError *)error {
+- (void)rewardedAdDidFailToLoadForAdUnitID:(NSString *)adUnitID error:(NSError *)error {
     NSLog(@"%s, %@", __FUNCTION__, error);
 }
 
-- (void)rewardedVideoAdWillAppearForAdUnitID:(NSString *)adUnitID {
+- (void)rewardedAdWillPresentForAdUnitID:(NSString *)adUnitID {
     NSLog(@"%s", __FUNCTION__);
 }
 
-- (void)rewardedVideoAdDidAppearForAdUnitID:(NSString *)adUnitID {
+- (void)rewardedAdDidPresentForAdUnitID:(NSString *)adUnitID {
     NSLog(@"%s", __FUNCTION__);
 }
 
-- (void)rewardedVideoAdDidFailToPlayForAdUnitID:(NSString *)adUnitID error:(NSError *)error {
+- (void)rewardedAdDidFailToShowForAdUnitID:(NSString *)adUnitID error:(NSError *)error {
     NSLog(@"%s, %@", __FUNCTION__, error);
 }
 
-- (void)rewardedVideoAdShouldRewardForAdUnitID:(NSString *)adUnitID reward:(MPRewardedVideoReward *)reward {
+- (void)rewardedAdShouldRewardForAdUnitID:(NSString *)adUnitID reward:(MPReward *)reward {
     NSLog(@"%s, %@", __FUNCTION__, reward);
 }
 
-- (void)rewardedVideoAdDidExpireForAdUnitID:(NSString *)adUnitID {
+- (void)rewardedAdDidExpireForAdUnitID:(NSString *)adUnitID {
     NSLog(@"%s", __FUNCTION__);
 }
 
-- (void)rewardedVideoAdDidReceiveTapEventForAdUnitID:(NSString *)adUnitID {
+- (void)rewardedAdDidReceiveTapEventForAdUnitID:(NSString *)adUnitID {
     NSLog(@"%s", __FUNCTION__);
 }
 
-- (void)rewardedVideoAdWillLeaveApplicationForAdUnitID:(NSString *)adUnitID {
+- (void)rewardedAdWillLeaveApplicationForAdUnitID:(NSString *)adUnitID {
     NSLog(@"%s", __FUNCTION__);
 }
 
-- (void)rewardedVideoAdWillDisappearForAdUnitID:(NSString *)adUnitID {
+- (void)rewardedAdWillDismissForAdUnitID:(NSString *)adUnitID {
     NSLog(@"%s", __FUNCTION__);
 }
 
-- (void)rewardedVideoAdDidDisappearForAdUnitID:(NSString *)adUnitID {
+- (void)rewardedAdDidDismissForAdUnitID:(NSString *)adUnitID {
     NSLog(@"%s", __FUNCTION__);
     self.showButton.enabled = NO;
 }

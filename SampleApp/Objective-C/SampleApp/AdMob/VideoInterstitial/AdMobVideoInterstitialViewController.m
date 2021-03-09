@@ -8,9 +8,9 @@
 #import "AdMobVideoInterstitialViewController.h"
 #import <GoogleMobileAds/GoogleMobileAds.h>
 
-@interface AdMobVideoInterstitialViewController () <GADInterstitialDelegate>
+@interface AdMobVideoInterstitialViewController () <GADFullScreenContentDelegate>
 @property (nonatomic, weak) IBOutlet UIButton *showButton;
-@property (nonatomic, nullable) GADInterstitial *interstitial;
+@property (nonatomic, nullable) GADInterstitialAd *interstitial;
 @end
 
 // AdUnitIDを適切なものに変えてください
@@ -24,47 +24,37 @@ static NSString *const kAdUnitID = @"ca-app-pub-3010029359415397/5031866416";
 }
 
 - (IBAction)didTouchUpLoadAdWithButton:(UIButton *)button {
-    self.interstitial = [[GADInterstitial alloc] initWithAdUnitID:kAdUnitID];
-    self.interstitial.delegate = self;
-    [self.interstitial loadRequest:[GADRequest request]];
+    GADRequest *request = [GADRequest request];
+    [GADInterstitialAd loadWithAdUnitID:kAdUnitID
+                                request:request
+                      completionHandler:^(GADInterstitialAd *_Nullable interstitialAd, NSError *_Nullable error) {
+                          if (error) {
+                              NSLog(@"error:  %@", error);
+                              return;
+                          }
+                          self.interstitial = interstitialAd;
+                          self.interstitial.fullScreenContentDelegate = self;
+                          self.showButton.enabled = YES;
+                      }];
 }
 
 - (IBAction)didTouchUpShowAdWithButton:(UIButton *)button {
-    if (self.interstitial.isReady) {
-        [self.interstitial presentFromRootViewController:self];
-    }
+    [self.interstitial presentFromRootViewController:self];
 }
 
-#pragma mark - GADInterstitialDelegate
+#pragma mark - GADFullScreenContentDelegate
 
-- (void)interstitialDidReceiveAd:(GADInterstitial *)ad {
-    NSLog(@"%s", __FUNCTION__);
-    self.showButton.enabled = YES;
-}
-
-- (void)interstitial:(GADInterstitial *)ad didFailToReceiveAdWithError:(GADRequestError *)error {
-    NSLog(@"%s, %@", __FUNCTION__, error);
-}
-
-- (void)interstitialWillPresentScreen:(GADInterstitial *)ad {
+- (void)adDidPresentFullScreenContent:(id<GADFullScreenPresentingAd>)ad {
     NSLog(@"%s", __FUNCTION__);
 }
 
-- (void)interstitialWillDismissScreen:(GADInterstitial *)ad {
-    NSLog(@"%s", __FUNCTION__);
-}
-
-- (void)interstitialDidDismissScreen:(GADInterstitial *)ad {
+- (void)adDidDismissFullScreenContent:(id<GADFullScreenPresentingAd>)ad {
     NSLog(@"%s", __FUNCTION__);
     self.showButton.enabled = NO;
 }
 
-- (void)interstitialWillLeaveApplication:(GADInterstitial *)ad {
-    NSLog(@"%s", __FUNCTION__);
-}
-
-- (void)interstitialDidFailToPresentScreen:(GADInterstitial *)ad {
-    NSLog(@"%s", __FUNCTION__);
+- (void)ad:(id<GADFullScreenPresentingAd>)ad didFailToPresentFullScreenContentWithError:(NSError *)error {
+    NSLog(@"%s: %@", __FUNCTION__, error);
 }
 
 @end

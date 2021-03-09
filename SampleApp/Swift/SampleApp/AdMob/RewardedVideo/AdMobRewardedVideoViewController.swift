@@ -26,51 +26,52 @@ class AdMobRewardedVideoViewController: UIViewController {
     }
 
     @IBAction func didTouchUpLoadAd(button: UIButton) {
-        rewardedAd = GADRewardedAd(adUnitID: adUnitID)
+        let request = GADRequest()
+
         let setting = FSSRewardedVideoSetting.default
         // UnityAdsだけ再生しない
         setting.activation.isUnityAdsActivated = false
         setting.isDebugMode = true
         let extra = GADMAdapterFluctExtras()
         extra.setting = setting
-
-        let request = GADRequest()
         request.register(extra)
-        rewardedAd?.load(request) {[weak self] (error) in
+
+        GADRewardedAd.load(withAdUnitID: adUnitID, request: request) {[weak self] (ad, error) in
             if let error = error {
                 print(error)
                 return
             }
+            self?.rewardedAd = ad
+            self?.rewardedAd?.fullScreenContentDelegate = self
             self?.showButton.isEnabled = true
         }
     }
 
     @IBAction func didTouchUpShowAd(button: UIButton) {
-        guard let rewardedAd = self.rewardedAd, rewardedAd.isReady else { return }
-        rewardedAd.present(fromRootViewController: self, delegate: self)
+        guard let rewardedAd = self.rewardedAd else { return }
+        rewardedAd.present(fromRootViewController: self) {[rewardedAd] in
+            print(rewardedAd.adReward)
+        }
     }
 
 }
 
-// MARK: - GADRewardedAdDelegate
+extension AdMobRewardedVideoViewController: GADFullScreenContentDelegate {
 
-extension AdMobRewardedVideoViewController: GADRewardedAdDelegate {
-
-    func rewardedAd(_ rewardedAd: GADRewardedAd, userDidEarn reward: GADAdReward) {
-        print(#function)
-    }
-
-    func rewardedAd(_ rewardedAd: GADRewardedAd, didFailToPresentWithError error: Error) {
+    func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
         print(#function, error)
     }
 
-    func rewardedAdDidDismiss(_ rewardedAd: GADRewardedAd) {
+    func adDidPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        print(#function)
+    }
+
+    func adDidRecordImpression(_ ad: GADFullScreenPresentingAd) {
+        print(#function)
+    }
+
+    func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
         print(#function)
         self.showButton.isEnabled = false
     }
-
-    func rewardedAdDidPresent(_ rewardedAd: GADRewardedAd) {
-        print(#function)
-    }
-
 }

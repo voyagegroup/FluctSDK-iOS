@@ -42,27 +42,24 @@ class AdMobBannerViewController: UIViewController {
 
 extension AdMobBannerViewController: GADBannerViewDelegate {
 
-    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
         print(#function)
     }
 
-    func adViewWillPresentScreen(_ bannerView: GADBannerView) {
+    func bannerViewWillPresentScreen(_ bannerView: GADBannerView) {
         print(#function)
     }
 
-    func adViewWillDismissScreen(_ bannerView: GADBannerView) {
+    func bannerViewWillDismissScreen(_ bannerView: GADBannerView) {
         print(#function)
     }
 
-    func adViewDidDismissScreen(_ bannerView: GADBannerView) {
+    func bannerViewDidDismissScreen(_ bannerView: GADBannerView) {
         print(#function)
     }
 
-    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
+    func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
         print(#function, error)
     }
 
-    func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
-        print(#function)
-    }
 }

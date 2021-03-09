@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import MoPub
+import MoPubSDK
 
 // AdUnitIDを適切なものに変えてください
 private let adUnitID: String = "f9095a7d80e5405e84021cf54d5caf2a"
@@ -61,11 +61,11 @@ extension MoPubVideoInterstitialViewController: MPInterstitialAdControllerDelega
         print(#function)
     }
 
-    func interstitialWillDisappear(_ interstitial: MPInterstitialAdController!) {
+    func interstitialWillDismiss(_ interstitial: MPInterstitialAdController!) {
         print(#function)
     }
 
-    func interstitialDidDisappear(_ interstitial: MPInterstitialAdController!) {
+    func interstitialDidDismiss(_ interstitial: MPInterstitialAdController!) {
         print(#function)
         showButton.isEnabled = false
     }

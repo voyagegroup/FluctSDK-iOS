@@ -6,7 +6,7 @@
 //
 
 #import "MoPubBannerViewController.h"
-#import <MoPub/MoPub.h>
+#import <MoPubSDK/MoPub.h>
 
 @interface MoPubBannerViewController () <MPAdViewDelegate>
 @property (nonatomic, nullable) MPAdView *adView;

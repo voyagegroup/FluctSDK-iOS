@@ -37,27 +37,19 @@ static NSString *const kAdUnitID = @"ca-app-pub-3010029359415397/1722697861";
 
 #pragma mark - GADBannerViewDelegate
 
-- (void)adViewDidReceiveAd:(GADBannerView *)bannerView {
+- (void)bannerViewDidReceiveAd:(GADBannerView *)bannerView {
     NSLog(@"%s", __FUNCTION__);
 }
 
-- (void)adViewWillPresentScreen:(GADBannerView *)bannerView {
+- (void)bannerViewWillPresentScreen:(GADBannerView *)bannerView {
     NSLog(@"%s", __FUNCTION__);
 }
 
-- (void)adViewWillDismissScreen:(GADBannerView *)bannerView {
+- (void)bannerViewDidDismissScreen:(GADBannerView *)bannerView {
     NSLog(@"%s", __FUNCTION__);
 }
 
-- (void)adViewDidDismissScreen:(GADBannerView *)bannerView {
-    NSLog(@"%s", __FUNCTION__);
-}
-
-- (void)adViewWillLeaveApplication:(GADBannerView *)bannerView {
-    NSLog(@"%s", __FUNCTION__);
-}
-
-- (void)adView:(GADBannerView *)bannerView didFailToReceiveAdWithError:(GADRequestError *)error {
+- (void)bannerView:(GADBannerView *)bannerView didFailToReceiveAdWithError:(NSError *)error {
     NSLog(@"%s, %@", __FUNCTION__, error);
 }
 

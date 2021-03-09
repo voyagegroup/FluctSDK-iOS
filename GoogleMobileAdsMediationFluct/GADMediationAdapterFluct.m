@@ -49,7 +49,7 @@
     return version;
 }
 
-+ (GADVersionNumber)version {
++ (GADVersionNumber)adapterVersion {
     NSString *versionString = [FluctSDK version];
     NSArray<NSString *> *versionComponents = [versionString componentsSeparatedByString:@"."];
     GADVersionNumber version = {0};

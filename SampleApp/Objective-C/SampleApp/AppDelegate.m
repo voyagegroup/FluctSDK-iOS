@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import <GoogleMobileAds/GoogleMobileAds.h>
-#import <MoPub/MoPub.h>
+#import <MoPubSDK/MoPub.h>
 
 @implementation AppDelegate
 

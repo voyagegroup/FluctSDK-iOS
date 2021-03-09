@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import MoPub
+import MoPubSDK
 
 // AdUnitIDを適切なものに変えてください
 private let adUnitID: String = "49b7ea66f5124f47b0d89e85b40137bf"

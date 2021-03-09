@@ -10,7 +10,7 @@
 #import <GoogleMobileAds/GoogleMobileAds.h>
 #import <GoogleMobileAdsMediationFluct/GADMAdapterFluctExtras.h>
 
-@interface AdMobRewardedVideoViewController () <GADRewardedAdDelegate>
+@interface AdMobRewardedVideoViewController () <GADFullScreenContentDelegate>
 @property (nonatomic, weak) IBOutlet UIButton *showButton;
 @property (nonatomic, nullable) GADRewardedAd *rewardedAd;
 @end
@@ -26,7 +26,7 @@ static NSString *const kAdUnitID = @"ca-app-pub-3010029359415397/4697035240";
 }
 
 - (IBAction)didTouchUpLoadAdWithButton:(UIButton *)button {
-    self.rewardedAd = [[GADRewardedAd alloc] initWithAdUnitID:kAdUnitID];
+    GADRequest *request = [GADRequest request];
 
     FSSRewardedVideoSetting *setting = FSSRewardedVideoSetting.defaultSetting;
     setting.debugMode = YES;
@@ -35,43 +35,42 @@ static NSString *const kAdUnitID = @"ca-app-pub-3010029359415397/4697035240";
     GADMAdapterFluctExtras *extras = [GADMAdapterFluctExtras new];
     extras.setting = setting;
 
-    GADRequest *request = [GADRequest request];
     [request registerAdNetworkExtras:extras];
 
-    [self.rewardedAd loadRequest:request
-               completionHandler:^(GADRequestError *_Nullable error) {
-                   if (error) {
-                       NSLog(@"loadRequest:comptionHander error:   %@", error);
-                       return;
-                   }
+    [GADRewardedAd loadWithAdUnitID:kAdUnitID
+                            request:request
+                  completionHandler:^(GADRewardedAd *_Nullable rewardedAd, NSError *_Nullable error) {
+                      if (error) {
+                          NSLog(@"loadRequest:comptionHander error:   %@", error);
+                          return;
+                      }
 
-                   self.showButton.enabled = YES;
-               }];
+                      self.rewardedAd = rewardedAd;
+                      self.rewardedAd.fullScreenContentDelegate = self;
+                      self.showButton.enabled = YES;
+                  }];
 }
 
 - (IBAction)didTouchUpShowAdWithButton:(UIButton *)button {
-    if (self.rewardedAd.isReady) {
-        [self.rewardedAd presentFromRootViewController:self delegate:self];
-    }
+    [self.rewardedAd presentFromRootViewController:self
+                          userDidEarnRewardHandler:^{
+                              NSLog(@"%s, %@", __FUNCTION__, self.rewardedAd.adReward);
+                          }];
 }
 
-#pragma mark - GADRewardedAdDelegate
+#pragma mark - GADFullScreenContentDelegate
 
-- (void)rewardedAd:(GADRewardedAd *)rewardedAd userDidEarnReward:(GADAdReward *)reward {
-    NSLog(@"%s, %@", __FUNCTION__, reward);
+- (void)adDidPresentFullScreenContent:(id<GADFullScreenPresentingAd>)ad {
+    NSLog(@"%s", __FUNCTION__);
 }
 
-- (void)rewardedAd:(GADRewardedAd *)rewardedAd didFailToPresentWithError:(NSError *)error {
-    NSLog(@"%s, %@", __FUNCTION__, error);
-}
-
-- (void)rewardedAdDidDismiss:(GADRewardedAd *)rewardedAd {
+- (void)adDidDismissFullScreenContent:(id<GADFullScreenPresentingAd>)ad {
     NSLog(@"%s", __FUNCTION__);
     self.showButton.enabled = NO;
 }
 
-- (void)rewardedAdDidPresent:(GADRewardedAd *)rewardedAd {
-    NSLog(@"%s", __FUNCTION__);
+- (void)ad:(id<GADFullScreenPresentingAd>)ad didFailToPresentFullScreenContentWithError:(NSError *)error {
+    NSLog(@"%s, %@", __FUNCTION__, error);
 }
 
 @end

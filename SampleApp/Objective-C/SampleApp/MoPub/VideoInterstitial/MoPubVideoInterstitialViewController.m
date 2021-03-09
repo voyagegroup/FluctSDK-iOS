@@ -6,7 +6,7 @@
 //
 
 #import "MoPubVideoInterstitialViewController.h"
-#import <MoPub/MoPub.h>
+#import <MoPubSDK/MoPub.h>
 
 @interface MoPubVideoInterstitialViewController () <MPInterstitialAdControllerDelegate>
 @property (nonatomic, weak) IBOutlet UIButton *showButton;
@@ -58,11 +58,11 @@ static NSString *const kAdUnitID = @"f9095a7d80e5405e84021cf54d5caf2a";
     NSLog(@"%s", __FUNCTION__);
 }
 
-- (void)interstitialWillDisappear:(MPInterstitialAdController *)interstitial {
+- (void)interstitialWillDismiss:(MPInterstitialAdController *)interstitial {
     NSLog(@"%s", __FUNCTION__);
 }
 
-- (void)interstitialDidDisappear:(MPInterstitialAdController *)interstitial {
+- (void)interstitialDidDismiss:(MPInterstitialAdController *)interstitial {
     NSLog(@"%s", __FUNCTION__);
     self.showButton.enabled = NO;
 }

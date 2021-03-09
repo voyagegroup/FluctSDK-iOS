@@ -14,7 +14,7 @@ class AdMobVideoInterstitialViewController: UIViewController {
 
     @IBOutlet weak var showButton: UIButton!
 
-    private var interstitial: GADInterstitial?
+    private var interstitial: GADInterstitialAd?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,48 +23,42 @@ class AdMobVideoInterstitialViewController: UIViewController {
     }
 
     @IBAction func didTouchUpLoadAd(button: UIButton) {
-        interstitial = GADInterstitial(adUnitID: adUnitID)
-        interstitial?.delegate = self
-        interstitial?.load(GADRequest())
+        let request = GADRequest()
+        GADInterstitialAd.load(withAdUnitID: adUnitID, request: request) {[weak self] (ad, error) in
+            if let error = error {
+                print(#function, error)
+                return
+            }
+
+            self?.interstitial = ad
+            self?.interstitial?.fullScreenContentDelegate = self
+            self?.showButton.isEnabled = true
+        }
     }
 
     @IBAction func didTouchUpShowAd(button: UIButton) {
-        guard let interstitial = self.interstitial, interstitial.isReady else { return }
+        guard let interstitial = self.interstitial else { return }
         interstitial.present(fromRootViewController: self)
     }
 
 }
 
-extension AdMobVideoInterstitialViewController: GADInterstitialDelegate {
+extension AdMobVideoInterstitialViewController: GADFullScreenContentDelegate {
 
-    func interstitialDidReceiveAd(_ ad: GADInterstitial) {
-        print(#function)
-        self.showButton.isEnabled = true
-    }
-
-    func interstitial(_ ad: GADInterstitial, didFailToReceiveAdWithError error: GADRequestError) {
+    func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
         print(#function, error)
     }
 
-    func interstitialWillPresentScreen(_ ad: GADInterstitial) {
+    func adDidPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
         print(#function)
     }
 
-    func interstitialWillDismissScreen(_ ad: GADInterstitial) {
+    func adDidRecordImpression(_ ad: GADFullScreenPresentingAd) {
         print(#function)
     }
 
-    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+    func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
         print(#function)
         self.showButton.isEnabled = false
     }
-
-    func interstitialWillLeaveApplication(_ ad: GADInterstitial) {
-        print(#function)
-    }
-
-    func interstitialDidFail(toPresentScreen ad: GADInterstitial) {
-        print(#function)
-    }
-
 }
