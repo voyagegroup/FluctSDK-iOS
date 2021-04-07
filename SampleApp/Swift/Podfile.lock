@@ -1,37 +1,37 @@
 PODS:
   - AdColony (4.5.0)
   - AppLovinSDK (6.15.2)
-  - FluctSDK (6.13.2)
-  - FluctSDK-MediationAdapter (6.13.2):
-    - FluctSDK-MediationAdapter/AdColony (= 6.13.2)
-    - FluctSDK-MediationAdapter/AdCorsa (= 6.13.2)
-    - FluctSDK-MediationAdapter/AppLovin (= 6.13.2)
-    - FluctSDK-MediationAdapter/Five (= 6.13.2)
-    - FluctSDK-MediationAdapter/maio (= 6.13.2)
-    - FluctSDK-MediationAdapter/nend (= 6.13.2)
-    - FluctSDK-MediationAdapter/Tapjoy (= 6.13.2)
-    - FluctSDK-MediationAdapter/UnityAds (= 6.13.2)
-  - FluctSDK-MediationAdapter/AdColony (6.13.2):
+  - FluctSDK (6.13.3)
+  - FluctSDK-MediationAdapter (6.13.3):
+    - FluctSDK-MediationAdapter/AdColony (= 6.13.3)
+    - FluctSDK-MediationAdapter/AdCorsa (= 6.13.3)
+    - FluctSDK-MediationAdapter/AppLovin (= 6.13.3)
+    - FluctSDK-MediationAdapter/Five (= 6.13.3)
+    - FluctSDK-MediationAdapter/maio (= 6.13.3)
+    - FluctSDK-MediationAdapter/nend (= 6.13.3)
+    - FluctSDK-MediationAdapter/Tapjoy (= 6.13.3)
+    - FluctSDK-MediationAdapter/UnityAds (= 6.13.3)
+  - FluctSDK-MediationAdapter/AdColony (6.13.3):
     - AdColony (>= 4.3.1)
     - FluctSDK (>= 6.12.4)
-  - FluctSDK-MediationAdapter/AdCorsa (6.13.2):
+  - FluctSDK-MediationAdapter/AdCorsa (6.13.3):
     - FluctSDK (>= 6.12.4)
     - GlossomAds (>= 2.2.2)
-  - FluctSDK-MediationAdapter/AppLovin (6.13.2):
+  - FluctSDK-MediationAdapter/AppLovin (6.13.3):
     - AppLovinSDK (>= 6.14.2)
     - FluctSDK (>= 6.12.4)
-  - FluctSDK-MediationAdapter/Five (6.13.2):
+  - FluctSDK-MediationAdapter/Five (6.13.3):
     - FluctSDK (>= 6.12.4)
-  - FluctSDK-MediationAdapter/maio (6.13.2):
+  - FluctSDK-MediationAdapter/maio (6.13.3):
     - FluctSDK (>= 6.12.4)
     - MaioSDK (>= 1.5.5)
-  - FluctSDK-MediationAdapter/nend (6.13.2):
+  - FluctSDK-MediationAdapter/nend (6.13.3):
     - FluctSDK (>= 6.12.4)
     - NendSDK_iOS (= 7.0.0)
-  - FluctSDK-MediationAdapter/Tapjoy (6.13.2):
+  - FluctSDK-MediationAdapter/Tapjoy (6.13.3):
     - FluctSDK (>= 6.12.4)
     - TapjoySDK (>= 12.8.0)
-  - FluctSDK-MediationAdapter/UnityAds (6.13.2):
+  - FluctSDK-MediationAdapter/UnityAds (6.13.3):
     - FluctSDK (>= 6.12.4)
     - UnityAds (>= 3.5.1)
   - GlossomAds (2.2.2)
@@ -44,7 +44,7 @@ PODS:
     - GoogleUtilities/Network (~> 7.0)
     - "GoogleUtilities/NSData+zlib (~> 7.0)"
     - nanopb (~> 2.30907.0)
-  - GoogleMobileAdsMediationFluct (6.13.2):
+  - GoogleMobileAdsMediationFluct (6.13.3):
     - FluctSDK (>= 6.12.1)
     - Google-Mobile-Ads-SDK (>= 8.1.0)
   - GoogleUserMessagingPlatform (1.4.0)
@@ -74,7 +74,7 @@ PODS:
     - mopub-ios-sdk/NativeAds
   - mopub-ios-sdk/NativeAds (5.16.1):
     - mopub-ios-sdk/Core
-  - MoPubMediationAdapterFluct (6.13.2):
+  - MoPubMediationAdapterFluct (6.13.3):
     - FluctSDK (>= 6.12.1)
     - mopub-ios-sdk (>= 5.15.0)
   - nanopb (2.30907.0):
@@ -125,17 +125,17 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AdColony: e54ee1d060491410135a5a1c9b010bcb4a171dab
   AppLovinSDK: fc91aca5b6b529cae7181a43f63633363dddbe3b
-  FluctSDK: d4fde8c0cef2692196bd2d908f9954c526997007
-  FluctSDK-MediationAdapter: cdbc338c2d5fb96013e026b992d11ef0958170ac
+  FluctSDK: ee491219ed388f60bc3280260be97bffd40b235f
+  FluctSDK-MediationAdapter: cbb0489d34e038966fd79085afdbd7ac864f3485
   GlossomAds: 1ad4c13430448da5d8acaa2f0595c1189f3af824
   Google-Mobile-Ads-SDK: efb7fb74595668fbbe680f0d1c06f9a8ff694c7c
   GoogleAppMeasurement: 0c3b134b2c0a90c4c24833873894bfe0e42a0384
-  GoogleMobileAdsMediationFluct: ae81d6552a90297d338e14d87b69cbe1330f3c64
+  GoogleMobileAdsMediationFluct: 0afee0bbb857fd7b643f11c0a6c65ae4037a3121
   GoogleUserMessagingPlatform: b168e8c46cd8f92aa3e34b584c4ca78a411ce367
   GoogleUtilities: 31c5b01f978a70c6cff2afc6272b3f1921614b43
   MaioSDK: 5a93c2209c02c4a8bddfd5da4c9a1f900bd60573
   mopub-ios-sdk: d207b434e6aef9c2f57423512e5eda1edf82930f
-  MoPubMediationAdapterFluct: 7e7c2f1fc263d1166348d116bba3d56cc86c608c
+  MoPubMediationAdapterFluct: 3a118f723c938311a90af964732acd04713eaaba
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
   NendSDK_iOS: 5f4d2574d19aece3ebf8ef1833ece0c4af48da23
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
