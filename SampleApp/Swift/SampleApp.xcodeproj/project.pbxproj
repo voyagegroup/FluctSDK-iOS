@@ -311,7 +311,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SampleApp/Pods-SampleApp-resources.sh",
-				"${PODS_ROOT}/AppLovinSDK/applovin-ios-sdk-6.15.2/AppLovinSDKResources.bundle",
+				"${PODS_ROOT}/AppLovinSDK/applovin-ios-sdk-10.1.1/AppLovinSDKResources.bundle",
 				"${PODS_ROOT}/../../../FluctSDK.embeddedframework/Resources/FluctSDKResources.bundle",
 				"${PODS_ROOT}/NendSDK_iOS/NendAd.embeddedframework/NendAd.framework/Resources/NendAdResource.bundle",
 			);
