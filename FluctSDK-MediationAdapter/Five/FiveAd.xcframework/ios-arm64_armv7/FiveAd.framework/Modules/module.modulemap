@@ -1,0 +1,6 @@
+framework module FiveAd {
+  umbrella header "FiveAd.h"
+
+  export *
+  module * { export * }
+}

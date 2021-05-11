@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
     s.name                  = "FluctSDK-MediationAdapter"
     s.summary               = "Mediation Adapter for FluctSDK ad Framework"
     s.license               = { :type => "Copyright", :text => "Copyright (c) fluct,Inc. All rights reserved." }
-    s.version               = "6.13.4"
+    s.version               = "6.13.5"
     s.author                = "fluct,Inc."
     s.requires_arc          = true
     s.static_framework      = true
@@ -39,7 +39,7 @@ Pod::Spec.new do |s|
     s.subspec "nend" do |ss|
         ss.source_files = "FluctSDK-MediationAdapter/nend/*.{h,m}"
         ss.dependency "FluctSDK", ">=6.12.4"
-        ss.dependency "NendSDK_iOS", '= 7.0.0'
+        ss.dependency "NendSDK_iOS", '>= 7.0.4'
     end
 
     s.subspec "Tapjoy" do |ss|
@@ -57,7 +57,6 @@ Pod::Spec.new do |s|
     s.subspec "Five" do |ss|
         ss.source_files = "FluctSDK-MediationAdapter/Five/*.{h,m}"
         ss.dependency "FluctSDK", ">=6.12.4"
-        ss.frameworks = "AdSupport", "AVFoundation", "CoreMedia", "CoreTelephony", "SystemConfiguration", "AudioToolbox", "WebKit", "StoreKit"
-        ss.vendored_frameworks = "FluctSDK-MediationAdapter/Five/FiveAd.framework"
+        ss.dependency "FiveAd", '>= 2.3.20210326'
     end
 end
