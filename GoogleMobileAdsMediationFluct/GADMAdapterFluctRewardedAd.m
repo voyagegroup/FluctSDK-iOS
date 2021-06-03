@@ -48,8 +48,10 @@
     FSSRewardedVideo.sharedInstance.delegate = GADAdapterFluctVideoDelegateProxy.sharedInstance;
 
     GADMAdapterFluctExtras *extras = adConfiguration.extras;
-    if (extras) {
+    if (extras.setting) {
         FSSRewardedVideo.sharedInstance.setting = extras.setting;
+    }
+    if (extras.targeting) {
         [[FSSRewardedVideo sharedInstance] loadRewardedVideoWithGroupId:self.groupID
                                                                  unitId:self.unitID
                                                               targeting:extras.targeting];

@@ -2,38 +2,38 @@ PODS:
   - AdColony (4.5.0)
   - AppLovinSDK (10.1.1)
   - FiveAd (2.3.20210326)
-  - FluctSDK (6.13.6)
-  - FluctSDK-MediationAdapter (6.13.6):
-    - FluctSDK-MediationAdapter/AdColony (= 6.13.6)
-    - FluctSDK-MediationAdapter/AdCorsa (= 6.13.6)
-    - FluctSDK-MediationAdapter/AppLovin (= 6.13.6)
-    - FluctSDK-MediationAdapter/Five (= 6.13.6)
-    - FluctSDK-MediationAdapter/maio (= 6.13.6)
-    - FluctSDK-MediationAdapter/nend (= 6.13.6)
-    - FluctSDK-MediationAdapter/Tapjoy (= 6.13.6)
-    - FluctSDK-MediationAdapter/UnityAds (= 6.13.6)
-  - FluctSDK-MediationAdapter/AdColony (6.13.6):
+  - FluctSDK (6.13.7)
+  - FluctSDK-MediationAdapter (6.13.7):
+    - FluctSDK-MediationAdapter/AdColony (= 6.13.7)
+    - FluctSDK-MediationAdapter/AdCorsa (= 6.13.7)
+    - FluctSDK-MediationAdapter/AppLovin (= 6.13.7)
+    - FluctSDK-MediationAdapter/Five (= 6.13.7)
+    - FluctSDK-MediationAdapter/maio (= 6.13.7)
+    - FluctSDK-MediationAdapter/nend (= 6.13.7)
+    - FluctSDK-MediationAdapter/Tapjoy (= 6.13.7)
+    - FluctSDK-MediationAdapter/UnityAds (= 6.13.7)
+  - FluctSDK-MediationAdapter/AdColony (6.13.7):
     - AdColony (>= 4.3.1)
     - FluctSDK (>= 6.12.4)
-  - FluctSDK-MediationAdapter/AdCorsa (6.13.6):
+  - FluctSDK-MediationAdapter/AdCorsa (6.13.7):
     - FluctSDK (>= 6.12.4)
     - GlossomAds (>= 2.2.2)
-  - FluctSDK-MediationAdapter/AppLovin (6.13.6):
+  - FluctSDK-MediationAdapter/AppLovin (6.13.7):
     - AppLovinSDK (>= 10.0.0)
     - FluctSDK (>= 6.12.4)
-  - FluctSDK-MediationAdapter/Five (6.13.6):
+  - FluctSDK-MediationAdapter/Five (6.13.7):
     - FiveAd (>= 2.3.20210326)
     - FluctSDK (>= 6.12.4)
-  - FluctSDK-MediationAdapter/maio (6.13.6):
+  - FluctSDK-MediationAdapter/maio (6.13.7):
     - FluctSDK (>= 6.12.4)
     - MaioSDK (>= 1.5.5)
-  - FluctSDK-MediationAdapter/nend (6.13.6):
+  - FluctSDK-MediationAdapter/nend (6.13.7):
     - FluctSDK (>= 6.12.4)
     - NendSDK_iOS (>= 7.0.4)
-  - FluctSDK-MediationAdapter/Tapjoy (6.13.6):
+  - FluctSDK-MediationAdapter/Tapjoy (6.13.7):
     - FluctSDK (>= 6.12.4)
     - TapjoySDK (>= 12.8.0)
-  - FluctSDK-MediationAdapter/UnityAds (6.13.6):
+  - FluctSDK-MediationAdapter/UnityAds (6.13.7):
     - FluctSDK (>= 6.12.4)
     - UnityAds (>= 3.5.1)
   - GlossomAds (2.2.2)
@@ -46,7 +46,7 @@ PODS:
     - GoogleUtilities/Network (~> 7.0)
     - "GoogleUtilities/NSData+zlib (~> 7.0)"
     - nanopb (~> 2.30907.0)
-  - GoogleMobileAdsMediationFluct (6.13.6):
+  - GoogleMobileAdsMediationFluct (6.13.7):
     - FluctSDK (>= 6.12.1)
     - Google-Mobile-Ads-SDK (>= 8.1.0)
   - GoogleUserMessagingPlatform (1.4.0)
@@ -68,17 +68,17 @@ PODS:
   - GoogleUtilities/Reachability (7.2.2):
     - GoogleUtilities/Logger
   - MaioSDK (1.5.6)
-  - mopub-ios-sdk (5.16.1):
-    - mopub-ios-sdk/MoPubSDK (= 5.16.1)
-  - mopub-ios-sdk/Core (5.16.1)
-  - mopub-ios-sdk/MoPubSDK (5.16.1):
+  - mopub-ios-sdk (5.17.0):
+    - mopub-ios-sdk/MoPubSDK (= 5.17.0)
+  - mopub-ios-sdk/Core (5.17.0)
+  - mopub-ios-sdk/MoPubSDK (5.17.0):
     - mopub-ios-sdk/Core
     - mopub-ios-sdk/NativeAds
-  - mopub-ios-sdk/NativeAds (5.16.1):
+  - mopub-ios-sdk/NativeAds (5.17.0):
     - mopub-ios-sdk/Core
-  - MoPubMediationAdapterFluct (6.13.6):
+  - MoPubMediationAdapterFluct (6.13.7):
     - FluctSDK (>= 6.12.1)
-    - mopub-ios-sdk (>= 5.15.0)
+    - mopub-ios-sdk (>= 5.17.0)
   - nanopb (2.30907.0):
     - nanopb/decode (= 2.30907.0)
     - nanopb/encode (= 2.30907.0)
@@ -129,17 +129,17 @@ SPEC CHECKSUMS:
   AdColony: e54ee1d060491410135a5a1c9b010bcb4a171dab
   AppLovinSDK: 575c3c64158878fdd445ea3d48f4fd2233633336
   FiveAd: 23314935d863a3010dc95e62eb93cc3e1af6c328
-  FluctSDK: eb10402b6dcb2fc4d14b88c0badf63c6084f1489
-  FluctSDK-MediationAdapter: 4216863d0bfd72fa821ad3e49a1347445aaa1e5f
+  FluctSDK: 4c2d75cc7fe7eb68c4883238ebf91d2eb8d40679
+  FluctSDK-MediationAdapter: 73e27a9579d5b1e8c066cbfebd338131d67ac632
   GlossomAds: 1ad4c13430448da5d8acaa2f0595c1189f3af824
   Google-Mobile-Ads-SDK: efb7fb74595668fbbe680f0d1c06f9a8ff694c7c
   GoogleAppMeasurement: 0c3b134b2c0a90c4c24833873894bfe0e42a0384
-  GoogleMobileAdsMediationFluct: 5f68228d53ca39502626e850c0ae43129167d958
+  GoogleMobileAdsMediationFluct: 9a78a43eeafe66816d2cc385d02d6729ca27a2c6
   GoogleUserMessagingPlatform: b168e8c46cd8f92aa3e34b584c4ca78a411ce367
   GoogleUtilities: 31c5b01f978a70c6cff2afc6272b3f1921614b43
   MaioSDK: 5a93c2209c02c4a8bddfd5da4c9a1f900bd60573
-  mopub-ios-sdk: d207b434e6aef9c2f57423512e5eda1edf82930f
-  MoPubMediationAdapterFluct: 0b054a65c67a8ebcb99e8157e099578b865bd17e
+  mopub-ios-sdk: 36d322902674b79b0560a1cb8d15af0548d364ea
+  MoPubMediationAdapterFluct: 55899fdbe85993e9bc0504b2bac5494e85401323
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
   NendSDK_iOS: 392a7732a36640c7ce151673abb99212b173c1cb
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97

@@ -96,7 +96,7 @@
 
     GADMAdapterFluctExtras *extras = adConfiguration.extras;
     FSSRewardedVideoSetting *setting = [FSSRewardedVideoSetting defaultSetting];
-    if (extras) {
+    if (extras.setting) {
         setting = extras.setting;
     }
 
