@@ -113,8 +113,9 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * 広告のロードを行う。
  * @param adInfo 広告情報
+ * @param requestedDate リクエストを開始した時間
  */
-- (void)loadAdWithAdInfo:(NSDictionary<NSString *, id> *)adInfo;
+- (void)loadAdWithAdInfo:(NSDictionary<NSString *, id> *)adInfo requestedDate:(NSDate *)requestedDate;
 
 /**
  * 全画面動画広告の再生準備ができているかを返す

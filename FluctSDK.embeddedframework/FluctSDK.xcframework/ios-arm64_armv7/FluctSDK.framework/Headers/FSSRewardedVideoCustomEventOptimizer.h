@@ -29,7 +29,15 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithGroupId:(NSString *)groupId unitId:(NSString *)unitId pricePoint:(NSString *)pricePoint;
 - (instancetype)initWithGroupId:(NSString *)groupId unitId:(NSString *)unitId pricePoint:(NSString *)pricePoint cache:(FSSInAppBiddingFullscreenVideoResponseCache *)cache;
 
-- (void)requestWithSetting:(FSSRewardedVideoSetting *)setting delegate:(id<FSSRewardedVideoDelegate>)delegate rtbDelegate:(id<FSSRewardedVideoRTBDelegate>)rtbDelegate;
+- (void)requestWithSetting:(FSSRewardedVideoSetting *)setting
+                  delegate:(id<FSSRewardedVideoDelegate>)delegate
+               rtbDelegate:(id<FSSRewardedVideoRTBDelegate>)rtbDelegate;
+
+- (void)requestWithSetting:(FSSRewardedVideoSetting *)setting
+             requestedDate:(NSDate *_Nullable)requestedDate
+                  delegate:(id<FSSRewardedVideoDelegate>)delegate
+               rtbDelegate:(id<FSSRewardedVideoRTBDelegate>)rtbDelegate;
+
 - (BOOL)hasAdAvailable;
 - (void)presentAdFromViewController:(UIViewController *)viewController;
 
