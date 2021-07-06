@@ -2,7 +2,7 @@ PODS:
   - AdColony (4.5.0)
   - AppLovinSDK (10.1.1)
   - FiveAd (2.3.20210326)
-  - FluctSDK (6.13.9)
+  - FluctSDK (6.13.10)
   - FluctSDK-MediationAdapter (6.13.9):
     - FluctSDK-MediationAdapter/AdColony (= 6.13.9)
     - FluctSDK-MediationAdapter/AdCorsa (= 6.13.9)
@@ -129,7 +129,7 @@ SPEC CHECKSUMS:
   AdColony: e54ee1d060491410135a5a1c9b010bcb4a171dab
   AppLovinSDK: 575c3c64158878fdd445ea3d48f4fd2233633336
   FiveAd: 23314935d863a3010dc95e62eb93cc3e1af6c328
-  FluctSDK: 8eb5e9bd2f29eef4b7d68790301ee1a3ba580c3d
+  FluctSDK: 843c64e6102f2db39b63538b3fb6f3e805ac2b94
   FluctSDK-MediationAdapter: 632dcbaad89a5d89f1e1c94b7b51ca8ddf43c9d6
   GlossomAds: 1ad4c13430448da5d8acaa2f0595c1189f3af824
   Google-Mobile-Ads-SDK: efb7fb74595668fbbe680f0d1c06f9a8ff694c7c
