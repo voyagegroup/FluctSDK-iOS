@@ -21,7 +21,6 @@ typedef NS_ENUM(NSInteger, UnityAdsErrorExtend) {
 - (void)unityAdsDidFinish:(nonnull NSString *)placementId withFinishState:(UnityAdsFinishState)state;
 - (void)unityAdsDidStart:(nonnull NSString *)placementId;
 - (void)unityAdsReady:(nonnull NSString *)placementId;
-- (void)unityAdsDidClick:(nonnull NSString *)placementId;
 - (void)unityAdsWillAppear;
 - (void)unityAdsNoFill;
 @end

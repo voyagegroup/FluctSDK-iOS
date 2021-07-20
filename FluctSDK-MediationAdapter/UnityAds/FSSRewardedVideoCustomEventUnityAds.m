@@ -210,13 +210,6 @@ static NSString *const FSSUnityAdsSupportVersion = @"9.0";
     });
 }
 
-- (void)unityAdsDidClick:(NSString *)placementId {
-    __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
-        [weakSelf.delegate rewardedVideoDidClickForCustomEvent:weakSelf];
-    });
-}
-
 - (void)unityAdsWillAppear {
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSFullscreenVideoWorkQueue(), ^{

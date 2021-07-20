@@ -58,7 +58,8 @@
         return;
     }
 
-    [[FSSRewardedVideo sharedInstance] loadRewardedVideoWithGroupId:self.groupID unitId:self.unitID];
+    [[FSSRewardedVideo sharedInstance] loadRewardedVideoWithGroupId:self.groupID
+                                                             unitId:self.unitID];
 }
 
 - (void)presentFromViewController:(nonnull UIViewController *)viewController {

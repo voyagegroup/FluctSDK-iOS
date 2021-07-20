@@ -7,7 +7,7 @@
 
 #import "FSSRewardedVideoUnityAdsManager.h"
 
-@interface FSSRewardedVideoUnityAdsManager () <UnityAdsExtendedDelegate>
+@interface FSSRewardedVideoUnityAdsManager () <UnityAdsDelegate>
 @property (nonatomic) NSMutableDictionary *delegateTable;
 @property (nonatomic, copy) NSString *currentPlacementId;
 @end
@@ -74,7 +74,7 @@
     return self.delegateTable[placementId];
 }
 
-#pragma mark UnityAdsExtendedDelegate
+#pragma mark UnityAdsDelegate
 - (void)unityAdsDidError:(UnityAdsError)error withMessage:(nonnull NSString *)message {
     if (error == kUnityAdsErrorShowError) {
         [[self getDelegate:self.currentPlacementId] unityAdsDidError:kUnityAdsErrorShowError withMessage:message];
@@ -102,14 +102,4 @@
     [[self getDelegate:placementId] unityAdsReady:placementId];
 }
 
-- (void)unityAdsDidClick:(nonnull NSString *)placementId {
-    [[self getDelegate:placementId] unityAdsDidClick:placementId];
-}
-
-- (void)unityAdsPlacementStateChanged:(nonnull NSString *)placementId oldState:(UnityAdsPlacementState)oldState newState:(UnityAdsPlacementState)newState {
-    if (newState == kUnityAdsPlacementStateNoFill) {
-        [[self getDelegate:placementId] unityAdsNoFill];
-        [self.delegateTable removeObjectForKey:placementId];
-    }
-}
 @end
