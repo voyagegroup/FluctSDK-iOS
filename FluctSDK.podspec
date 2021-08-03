@@ -16,6 +16,5 @@ Pod::Spec.new do |s|
     s.weak_framework        = 'AppTrackingTransparency'
     s.libraries             = "xml2"
     s.pod_target_xcconfig   = { "EXCLUDED_ARCHS[sdk=iphonesimulator*]" => "arm64 arm64e armv7 armv7s", "EXCLUDED_ARCHS[sdk=iphoneos*]" => "i386 x86_64" }
-    s.user_target_xcconfig  = { "EXCLUDED_ARCHS[sdk=iphonesimulator*]" => "arm64 arm64e armv7 armv7s", "EXCLUDED_ARCHS[sdk=iphoneos*]" => "i386 x86_64" }
     s.cocoapods_version     = ">= 1.9.0"
 end
