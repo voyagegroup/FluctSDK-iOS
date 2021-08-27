@@ -60,7 +60,6 @@
 
 - (void)customEvent:(FSSBannerCustomEventOptimizer *)customEvent willLeaveApplicationForAdView:(FSSAdView *)adView {
     [self.delegate customEventBannerWasClicked:self];
-    [self.delegate customEventBannerWillLeaveApplication:self];
 }
 
 #pragma mark - setup

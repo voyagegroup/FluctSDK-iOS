@@ -15,7 +15,8 @@ static NSString *const kCustomEventInfoPricePointKey = @"pricePoint";
 static NSString *const kMoPubAdunitFormatBanner = @"banner";
 static NSString *const kMoPubAdunitFormatRectangle = @"medium_rectangle";
 static NSString *const kMoPubAdunitFormatInterstitial = @"full";
-static NSString *const kMoPubAdunitFormatRewardedVideo = @"rewarded_video";
+static NSString *const kMoPubAdunitFormatRewardedVideoEqualLessThan5_16_0 = @"rewarded_video";
+static NSString *const kMoPubAdunitFormatRewardedVideo = @"rewarded";
 
 @implementation FluctCustomEventInfo
 
@@ -28,7 +29,8 @@ static NSString *const kMoPubAdunitFormatRewardedVideo = @"rewarded_video";
         fluctAdunitFormat = FluctAdUnitFormatMediumRectangle;
     } else if ([adunitFormat isEqualToString:kMoPubAdunitFormatInterstitial]) {
         fluctAdunitFormat = FluctAdUnitFormatInterstitial;
-    } else if ([adunitFormat isEqualToString:kMoPubAdunitFormatRewardedVideo]) {
+    } else if ([adunitFormat isEqualToString:kMoPubAdunitFormatRewardedVideoEqualLessThan5_16_0] ||
+               [adunitFormat isEqualToString:kMoPubAdunitFormatRewardedVideo]) {
         fluctAdunitFormat = FluctAdUnitFormatRewardedVideo;
     } else {
         // fluctとして対応してないadunit formatが来た時はerror

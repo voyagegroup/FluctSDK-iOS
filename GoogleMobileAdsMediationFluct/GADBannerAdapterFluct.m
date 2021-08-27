@@ -78,7 +78,6 @@
 
 - (void)willLeaveApplicationForAdView:(FSSAdView *)adView {
     [self.delegate customEventBannerWasClicked:self];
-    [self.delegate customEventBannerWillLeaveApplication:self];
 }
 
 @end
