@@ -6,6 +6,7 @@
 //
 
 #import "FluctBannerCustomEventOptimizer.h"
+#import "FluctBannerSize.h"
 #import "FluctCustomEventInfo.h"
 #import "MoPubAdapterFluctError.h"
 #import <FluctSDK/FluctSDK.h>
@@ -24,6 +25,16 @@
     self.customEventInfo = [FluctCustomEventInfo customEventInfoFromMoPubInfo:info
                                                                         error:&error];
     if (error) {
+        MPLogEvent([MPLogEvent adLoadFailedForAdapter:NSStringFromClass(self.class) error:error]);
+        [self.delegate inlineAdAdapter:self didFailToLoadAdWithError:error];
+        return;
+    }
+
+    FSSAdSize adSize = [FluctBannerSize getFluctAdSize:size];
+    if (CGSizeEqualToSize(adSize.size, CGSizeZero)) {
+        error = [NSError errorWithDomain:MoPubAdapterFluctErrorDomain
+                                    code:MoPubAdapterFluctErrorInvalidAdSize
+                                userInfo:@{NSLocalizedDescriptionKey : @"invalid ad unit format"}];
         MPLogEvent([MPLogEvent adLoadFailedForAdapter:NSStringFromClass(self.class) error:error]);
         [self.delegate inlineAdAdapter:self didFailToLoadAdWithError:error];
         return;
@@ -49,7 +60,7 @@
     self.optimizer.delegate = self;
 
     UIViewController *viewController = [self.delegate inlineAdAdapterViewControllerForPresentingModalView:self];
-    [self.optimizer requestWithRootViewController:viewController size:size];
+    [self.optimizer requestWithRootViewController:viewController size:adSize.size];
 }
 
 #pragma mark - FSSBannerCustomEventOptimizerDelegate

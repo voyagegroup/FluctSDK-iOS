@@ -6,6 +6,7 @@
 //
 
 #import "FluctBannerCustomEvent.h"
+#import "FluctBannerSize.h"
 #import "FluctCustomEventInfo.h"
 #import "MoPubAdapterFluctError.h"
 #import <FluctSDK/FluctSDK.h>
@@ -26,18 +27,7 @@
         return;
     }
 
-    FSSAdSize adSize = {CGSizeZero};
-    switch (customEventInfo.adunitFormat) {
-    case FluctAdUnitFormatBanner:
-        adSize = FSSAdSize320x50;
-        break;
-    case FluctAdUnitFormatMediumRectangle:
-        adSize = FSSAdSize300x250;
-        break;
-    default:
-        break;
-    }
-
+    FSSAdSize adSize = [FluctBannerSize getFluctAdSize:size];
     if (CGSizeEqualToSize(adSize.size, CGSizeZero)) {
         error = [NSError errorWithDomain:MoPubAdapterFluctErrorDomain
                                     code:MoPubAdapterFluctErrorInvalidAdSize
