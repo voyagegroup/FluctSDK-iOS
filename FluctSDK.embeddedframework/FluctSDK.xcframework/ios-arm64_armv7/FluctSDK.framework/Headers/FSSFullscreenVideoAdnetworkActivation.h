@@ -14,6 +14,7 @@
 - (BOOL)isFluctActivated;
 - (BOOL)isMaioActivated;
 - (BOOL)isNendActivated;
+- (BOOL)isPangleActivated;
 - (BOOL)isTapjoyActivated;
 - (BOOL)isUnityAdsActivated;
 - (BOOL)hasDeactivatedAdnetwork;

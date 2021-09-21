@@ -56,6 +56,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, getter=isNendActivated) BOOL nendActivated;
 
 /**
+ * Activation setting for Pangle.
+ * Required to include `FSSRewardedVideoCustomEventPangle` in project.
+ */
+@property (nonatomic, getter=isPangleActivated) BOOL pangleActivated;
+
+/**
  * Activation setting for Tapjoy.
  * Required to include `FSSRewardedVideoCustomEventTapjoy` in project.
  */
