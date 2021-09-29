@@ -146,7 +146,7 @@ typedef NS_ENUM(NSUInteger, AdColonyManagerState) {
 - (FSSAdColonyDelegateDispacher *)getOrCreateDelgateDispatcherByZoneId:(NSString *)zoneId
                                                                   from:(NSMutableDictionary<NSString *, FSSAdColonyDelegateDispacher *> *)table
                                                                   with:(id<FSSRewardedVideoAdColonyManagerDelegate>)managerDelegate {
-    if (!table[zoneId]) {
+    if (!table[zoneId].delegate) {
         table[zoneId] = [[FSSAdColonyDelegateDispacher alloc] initWithDelegate:managerDelegate];
     }
     return table[zoneId];
