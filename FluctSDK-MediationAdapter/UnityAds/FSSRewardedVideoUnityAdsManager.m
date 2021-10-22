@@ -82,7 +82,7 @@
         return;
     }
 
-    //notify to all delegates.
+    // notify to all delegates.
     [self.delegateTable enumerateKeysAndObjectsUsingBlock:^(id _Nonnull key, id<FSSRewardedVideoUnityAdsManagerDelegate> _Nonnull delegate, BOOL *_Nonnull stop) {
         [delegate unityAdsDidError:error withMessage:message];
         [self.delegateTable removeObjectForKey:key];

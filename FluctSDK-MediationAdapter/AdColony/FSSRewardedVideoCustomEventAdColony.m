@@ -102,7 +102,7 @@ static NSString *const FSSAdColonySupportVersion = @"9.0";
     [self clearTimer];
 
     if (self.adnwStatus == FSSRewardedVideoADNWStatusNotDisplayable) {
-        //already timeout. do nothing.
+        // already timeout. do nothing.
         return;
     }
 
@@ -114,7 +114,7 @@ static NSString *const FSSAdColonySupportVersion = @"9.0";
     [self clearTimer];
 
     if (self.adnwStatus == FSSRewardedVideoADNWStatusNotDisplayable) {
-        //already timeout. do nothing.
+        // already timeout. do nothing.
         return;
     }
     self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;

@@ -95,13 +95,13 @@
 
 - (void)maioDidFail:(NSString *)zoneId reason:(MaioFailReason)reason {
     if (zoneId.length) {
-        //error for specific zoneId
+        // error for specific zoneId
         [[self getDelegate:zoneId] maioDidFail:zoneId reason:reason];
         [self.delegateTable removeObjectForKey:zoneId];
         return;
     }
 
-    //error for all zoneId
+    // error for all zoneId
     [self.delegateTable enumerateKeysAndObjectsUsingBlock:^(id _Nonnull key, id<FSSRewardedVideoMaioManagerDelegate> _Nonnull delegate, BOOL *_Nonnull stop) {
         [delegate maioDidFail:zoneId reason:reason];
         [self.delegateTable removeObjectForKey:key];

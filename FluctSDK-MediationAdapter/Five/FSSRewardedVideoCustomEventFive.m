@@ -12,7 +12,7 @@ typedef NS_ENUM(NSInteger, FiveErrorExtend) {
     FiveErrorExtendNotReady = -1
 };
 
-@interface FSSRewardedVideoCustomEventFive () <FADDelegate>
+@interface FSSRewardedVideoCustomEventFive () <FADLoadDelegate, FADAdViewEventListener>
 @property (nonnull) FADVideoReward *rewardedVideo;
 @end
 
@@ -29,7 +29,6 @@ typedef NS_ENUM(NSInteger, FiveErrorExtend) {
     dispatch_once(&onceToken, ^{
         FADConfig *config = [[FADConfig alloc] initWithAppId:dictionary[@"app_id"]];
         config.isTest = testMode;
-        config.fiveAdFormat = [NSSet setWithObjects:[NSNumber numberWithInt:kFADFormatVideoReward], nil];
         [FADSettings registerConfig:config];
     });
 
@@ -59,7 +58,8 @@ typedef NS_ENUM(NSInteger, FiveErrorExtend) {
 
     if (self) {
         self.rewardedVideo = rewardedVideo;
-        self.rewardedVideo.delegate = self;
+        [self.rewardedVideo setLoadDelegate:self];
+        [self.rewardedVideo setAdViewEventListener:self];
     }
 
     return self;
@@ -96,7 +96,7 @@ typedef NS_ENUM(NSInteger, FiveErrorExtend) {
     return FADSettings.version;
 }
 
-#pragma mark - FADDelegate
+#pragma mark - FADLoadDelegate
 - (void)fiveAdDidLoad:(id<FADAdInterface>)ad {
     self.adnwStatus = FSSRewardedVideoADNWStatusLoaded;
     __weak __typeof(self) weakSelf = self;
@@ -119,6 +119,7 @@ typedef NS_ENUM(NSInteger, FiveErrorExtend) {
     });
 }
 
+#pragma mark - FADAdViewEventListener
 - (void)fiveAdDidStart:(id<FADAdInterface>)ad {
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSFullscreenVideoWorkQueue(), ^{

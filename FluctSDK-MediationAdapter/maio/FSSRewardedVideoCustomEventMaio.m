@@ -148,7 +148,7 @@ static NSString *const FSSMaioSupportVersion = @"8.0";
 
         NSError *adnwError = [self convertADNWErrorFromFailReason:reason];
 
-        //error after initialization
+        // error after initialization
         if (reason == MaioFailReasonVideoPlayback) {
             [weakSelf.delegate rewardedVideoDidFailToPlayForCustomEvent:weakSelf
                                                              fluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
@@ -158,7 +158,7 @@ static NSString *const FSSMaioSupportVersion = @"8.0";
             return;
         }
 
-        //initialization error
+        // initialization error
         if (weakSelf.isInitialNotificationForAdapter) {
             weakSelf.isInitialNotificationForAdapter = NO;
 

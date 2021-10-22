@@ -44,7 +44,7 @@ typedef NS_ENUM(NSUInteger, AdColonyManagerState) {
 }
 
 - (void)adColonyInterstitialWillLeaveApplication:(AdColonyInterstitial *_Nonnull)interstitial {
-    //do nothing so far
+    // do nothing so far
 }
 
 - (void)adColonyInterstitialDidReceiveClick:(AdColonyInterstitial *_Nonnull)interstitial {
@@ -85,7 +85,7 @@ typedef NS_ENUM(NSUInteger, AdColonyManagerState) {
 
 - (void)configureWithAppId:(NSString *)appId zoneIDs:(NSArray<NSString *> *)zoneIDs testMode:(BOOL)testMode debug:(BOOL)debugMode {
     if (self.state == Configuring || self.state == Configured) {
-        //do nothing
+        // do nothing
         return;
     }
     self.state = Configuring;
