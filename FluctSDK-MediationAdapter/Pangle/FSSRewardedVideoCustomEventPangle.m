@@ -12,6 +12,8 @@
 @property (nonnull) BURewardedVideoAd *rewardedVideo;
 @end
 
+static NSString *const FSSPangleSupportVersion = @"10.0";
+
 @implementation FSSRewardedVideoCustomEventPangle
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary
@@ -20,6 +22,10 @@
                          debugMode:(BOOL)debugMode
                          skippable:(BOOL)skippable
                          targeting:(FSSAdRequestTargeting *)targeting {
+
+    if (![FSSRewardedVideoCustomEventPangle isOSAtLeastVersion:FSSPangleSupportVersion]) {
+        return nil;
+    }
 
     self = [super initWithDictionary:dictionary
                             delegate:delegate
