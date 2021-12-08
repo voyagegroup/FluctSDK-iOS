@@ -144,4 +144,18 @@ typedef NS_ENUM(NSInteger, FiveErrorExtend) {
     });
 }
 
+- (void)fiveAd:(id<FADAdInterface>)ad didFailedToShowAdWithError:(FADErrorCode)errorCode {
+    self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
+    NSError *fluctError = [NSError errorWithDomain:FSSVideoErrorSDKDomain
+                                              code:FSSVideoErrorPlayFailed
+                                          userInfo:nil];
+    NSError *fiveError = [NSError errorWithDomain:FSSVideoErrorSDKDomain
+                                             code:errorCode
+                                         userInfo:nil];
+    __weak __typeof(self) weakSelf = self;
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
+        [weakSelf.delegate rewardedVideoDidFailToPlayForCustomEvent:self fluctError:fluctError adnetworkError:fiveError];
+    });
+}
+
 @end
