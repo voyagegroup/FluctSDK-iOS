@@ -8,7 +8,6 @@
 @protocol FSSFullscreenVideoAdnetworkActivation <NSObject>
 
 - (BOOL)isAdColonyActivated;
-- (BOOL)isAdCorsaActivated;
 - (BOOL)isAppLovinActivated;
 - (BOOL)isFiveActivated;
 - (BOOL)isFluctActivated;

@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Activation setting for AdCorsa.
  * Required to include `FSSRewardedVideoCustomEventAdCorsa` in project.
  */
-@property (nonatomic, getter=isAdCorsaActivated) BOOL adCorsaActivated;
+@property (nonatomic, getter=isAdCorsaActivated) BOOL adCorsaActivated __attribute__((deprecated));
 
 /**
  * Activation setting for AppLovin.
