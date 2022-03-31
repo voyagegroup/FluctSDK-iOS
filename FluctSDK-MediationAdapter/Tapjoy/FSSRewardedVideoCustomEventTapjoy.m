@@ -136,7 +136,7 @@ typedef NS_ENUM(NSInteger, TJErrorExtended) {
     _connectionStatus = FSSTapjoyConnectionFailed;
 
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
+    dispatch_async(FSSWorkQueue(), ^{
         if (weakSelf.adnwStatus == FSSRewardedVideoADNWStatusLoading) {
             [weakSelf onConnectionFailed];
         }
@@ -158,7 +158,7 @@ typedef NS_ENUM(NSInteger, TJErrorExtended) {
 - (void)requestDidSucceed:(TJPlacement *)placement {
     if (!placement.isContentAvailable) {
         __weak __typeof(self) weakSelf = self;
-        dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
+        dispatch_async(FSSWorkQueue(), ^{
             weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
             // TJErrorExtendedNoContentAvailable
             [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:weakSelf
@@ -174,7 +174,7 @@ typedef NS_ENUM(NSInteger, TJErrorExtended) {
 
 - (void)contentIsReady:(TJPlacement *)placement {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
+    dispatch_async(FSSWorkQueue(), ^{
         if (weakSelf.adnwStatus == FSSRewardedVideoADNWStatusLoading) {
             weakSelf.adnwStatus = FSSRewardedVideoADNWStatusLoaded;
             [weakSelf.delegate rewardedVideoDidLoadForCustomEvent:weakSelf];
@@ -184,7 +184,7 @@ typedef NS_ENUM(NSInteger, TJErrorExtended) {
 
 - (void)requestDidFail:(TJPlacement *)placement error:(NSError *)error {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
+    dispatch_async(FSSWorkQueue(), ^{
         weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
         [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:weakSelf
                                                          fluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
@@ -196,14 +196,14 @@ typedef NS_ENUM(NSInteger, TJErrorExtended) {
 
 - (void)contentDidAppear:(TJPlacement *)placement {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
+    dispatch_async(FSSWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoDidAppearForCustomEvent:weakSelf];
     });
 }
 
 - (void)contentDidDisappear:(TJPlacement *)placement {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
+    dispatch_async(FSSWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoWillDisappearForCustomEvent:weakSelf];
         [weakSelf.delegate rewardedVideoDidDisappearForCustomEvent:weakSelf];
     });
@@ -217,14 +217,14 @@ typedef NS_ENUM(NSInteger, TJErrorExtended) {
 - (void)videoDidComplete:(TJPlacement *)placement {
     __weak __typeof(self) weakSelf = self;
 
-    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
+    dispatch_async(FSSWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoShouldRewardForCustomEvent:weakSelf];
     });
 }
 
 - (void)videoDidFail:(TJPlacement *)placement error:(NSString *)errorMsg {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
+    dispatch_async(FSSWorkQueue(), ^{
         weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
         [weakSelf.delegate rewardedVideoDidFailToPlayForCustomEvent:weakSelf
                                                          fluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain

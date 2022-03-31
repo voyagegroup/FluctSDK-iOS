@@ -82,12 +82,12 @@ static NSString *const FSSUnityAdsSupportVersion = @"9.0";
     self.observer = [[FSSConditionObserver alloc] initWithInterval:0.1f
         fallbackLimit:20
         completionHandler:^{
-            dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
+            dispatch_async(FSSWorkQueue(), ^{
                 [weakSelf.delegate rewardedVideoDidDisappearForCustomEvent:weakSelf];
             });
         }
         fallbackHandler:^{
-            dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
+            dispatch_async(FSSWorkQueue(), ^{
                 NSError *fluctError = [NSError errorWithDomain:FSSVideoErrorSDKDomain
                                                           code:FSSVideoErrorUnknown
                                                       userInfo:@{NSLocalizedDescriptionKey : @"Failed callback for rewardedVideoDidDisappearForCustomEvent"}];
@@ -133,7 +133,7 @@ static NSString *const FSSUnityAdsSupportVersion = @"9.0";
 
 - (void)unityAdsReady:(NSString *)placementId {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
+    dispatch_async(FSSWorkQueue(), ^{
         [weakSelf clearTimer];
 
         if (weakSelf.isInitialNotificationForAdapter) {
@@ -146,7 +146,7 @@ static NSString *const FSSUnityAdsSupportVersion = @"9.0";
 
 - (void)unityAdsDidStart:(NSString *)placementId {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
+    dispatch_async(FSSWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoDidAppearForCustomEvent:weakSelf];
     });
 }
@@ -154,7 +154,7 @@ static NSString *const FSSUnityAdsSupportVersion = @"9.0";
 - (void)unityAdsDidFinish:(NSString *)placementId withFinishState:(UnityAdsFinishState)state {
     __weak __typeof(self) weakSelf = self;
 
-    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
+    dispatch_async(FSSWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoShouldRewardForCustomEvent:weakSelf];
         [weakSelf.delegate rewardedVideoWillDisappearForCustomEvent:weakSelf];
     });
@@ -164,7 +164,7 @@ static NSString *const FSSUnityAdsSupportVersion = @"9.0";
 
 - (void)unityAdsDidError:(UnityAdsError)error withMessage:(NSString *)message {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
+    dispatch_async(FSSWorkQueue(), ^{
         NSError *unityAdsError = [NSError errorWithDomain:FSSVideoErrorSDKDomain
                                                      code:error
                                                  userInfo:@{NSLocalizedDescriptionKey : message}];
@@ -212,14 +212,14 @@ static NSString *const FSSUnityAdsSupportVersion = @"9.0";
 
 - (void)unityAdsWillAppear {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
+    dispatch_async(FSSWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoWillAppearForCustomEvent:weakSelf];
     });
 }
 
 - (void)unityAdsNoFill {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
+    dispatch_async(FSSWorkQueue(), ^{
         [weakSelf clearTimer];
         weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
         weakSelf.isInitialNotificationForAdapter = NO;

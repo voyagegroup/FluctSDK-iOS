@@ -73,7 +73,7 @@ static NSString *const FSSPangleSupportVersion = @"10.0";
 
 - (void)rewardedVideoAd:(BURewardedVideoAd *)rewardedVideoAd didFailWithError:(NSError *_Nullable)error {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
+    dispatch_async(FSSWorkQueue(), ^{
         weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
         [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:weakSelf
                                                          fluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
@@ -85,7 +85,7 @@ static NSString *const FSSPangleSupportVersion = @"10.0";
 
 - (void)rewardedVideoAdVideoDidLoad:(BURewardedVideoAd *)rewardedVideoAd {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
+    dispatch_async(FSSWorkQueue(), ^{
         weakSelf.adnwStatus = FSSRewardedVideoADNWStatusLoaded;
         [weakSelf.delegate rewardedVideoDidLoadForCustomEvent:weakSelf];
     });
@@ -93,35 +93,35 @@ static NSString *const FSSPangleSupportVersion = @"10.0";
 
 - (void)rewardedVideoAdWillVisible:(BURewardedVideoAd *)rewardedVideoAd {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
+    dispatch_async(FSSWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoWillAppearForCustomEvent:weakSelf];
     });
 }
 
 - (void)rewardedVideoAdDidVisible:(BURewardedVideoAd *)rewardedVideoAd {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
+    dispatch_async(FSSWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoDidAppearForCustomEvent:weakSelf];
     });
 }
 
 - (void)rewardedVideoAdWillClose:(BURewardedVideoAd *)rewardedVideoAd {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
+    dispatch_async(FSSWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoWillDisappearForCustomEvent:weakSelf];
     });
 }
 
 - (void)rewardedVideoAdDidClose:(BURewardedVideoAd *)rewardedVideoAd {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
+    dispatch_async(FSSWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoDidDisappearForCustomEvent:weakSelf];
     });
 }
 
 - (void)rewardedVideoAdDidClick:(BURewardedVideoAd *)rewardedVideoAd {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
+    dispatch_async(FSSWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoDidClickForCustomEvent:weakSelf];
     });
 }
@@ -131,7 +131,7 @@ static NSString *const FSSPangleSupportVersion = @"10.0";
         return;
     }
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
+    dispatch_async(FSSWorkQueue(), ^{
         weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
         [weakSelf.delegate rewardedVideoDidFailToPlayForCustomEvent:weakSelf
                                                          fluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
@@ -143,14 +143,14 @@ static NSString *const FSSPangleSupportVersion = @"10.0";
 
 - (void)rewardedVideoAdServerRewardDidSucceed:(BURewardedVideoAd *)rewardedVideoAd verify:(BOOL)verify {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
+    dispatch_async(FSSWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoShouldRewardForCustomEvent:self];
     });
 }
 
 - (void)rewardedVideoAdServerRewardDidFail:(BURewardedVideoAd *)rewardedVideoAd error:(NSError *)error {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
+    dispatch_async(FSSWorkQueue(), ^{
         weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
         [weakSelf.delegate rewardedVideoDidFailToPlayForCustomEvent:weakSelf
                                                          fluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain

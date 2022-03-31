@@ -17,7 +17,8 @@ typedef NS_ENUM(NSUInteger, FSSDevelopmentEnvironmentType) {
 typedef NS_ENUM(NSUInteger, FSSMediationPlatformType) {
     FSSMediationPlatformTypeNone,
     FSSMediationPlatformTypeGoogleMobileAds,
-    FSSMediationPlatformTypeMoPub
+    FSSMediationPlatformTypeMoPub,
+    FSSMediationPlatformTypeMax
 };
 
 @interface FSSConfigurationOptions : NSObject
