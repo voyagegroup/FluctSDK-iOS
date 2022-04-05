@@ -8,7 +8,6 @@
 
 import UIKit
 import GoogleMobileAds
-import MoPubSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         initializeAdMob()
-        initializeMoPub()
         return true
     }
 
@@ -27,11 +25,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // AdMobを使用する場合は以下を追加する
         GADMobileAds.sharedInstance().start(completionHandler: nil)
     }
-
-    private func initializeMoPub() {
-        // MoPubを使用する場合は以下を追加する
-        let sdkConfig = MPMoPubConfiguration(adUnitIdForAppInitialization: "49b7ea66f5124f47b0d89e85b40137bf")
-        MoPub.sharedInstance().initializeSdk(with: sdkConfig, completion: nil)
-    }
-
 }

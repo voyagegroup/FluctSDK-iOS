@@ -99,7 +99,7 @@ static NSString *const FSSMaioSupportVersion = @"8.0";
 - (void)maioDidChangeCanShow:(NSString *)zoneId newValue:(BOOL)newValue {
     __weak __typeof(self) weakSelf = self;
 
-    dispatch_async(FSSWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [weakSelf clearTimer];
 
         if (self.isInitialNotificationForAdapter) {
@@ -112,7 +112,7 @@ static NSString *const FSSMaioSupportVersion = @"8.0";
 
 - (void)maioWillStartAd:(NSString *)zoneId {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoWillAppearForCustomEvent:weakSelf];
         [weakSelf.delegate rewardedVideoDidAppearForCustomEvent:weakSelf];
     });
@@ -120,21 +120,21 @@ static NSString *const FSSMaioSupportVersion = @"8.0";
 
 - (void)maioDidFinishAd:(NSString *)zoneId playtime:(NSInteger)playtime skipped:(BOOL)skipped rewardParam:(NSString *)rewardParam {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoShouldRewardForCustomEvent:weakSelf];
     });
 }
 
 - (void)maioDidClickAd:(NSString *)zoneId {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoDidClickForCustomEvent:self];
     });
 }
 
 - (void)maioDidCloseAd:(NSString *)zoneId {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoWillDisappearForCustomEvent:weakSelf];
         [weakSelf.delegate rewardedVideoDidDisappearForCustomEvent:weakSelf];
     });
@@ -142,7 +142,7 @@ static NSString *const FSSMaioSupportVersion = @"8.0";
 
 - (void)maioDidFail:(NSString *)zoneId reason:(MaioFailReason)reason {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [self clearTimer];
         weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
 

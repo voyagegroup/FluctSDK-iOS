@@ -10,9 +10,6 @@
 		7548D92423D032CB009CF032 /* AdMobBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7548D92323D032CB009CF032 /* AdMobBannerViewController.swift */; };
 		7548D92623D032DB009CF032 /* AdMobRewardedVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7548D92523D032DB009CF032 /* AdMobRewardedVideoViewController.swift */; };
 		7548D92823D032E5009CF032 /* AdMobVideoInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7548D92723D032E5009CF032 /* AdMobVideoInterstitialViewController.swift */; };
-		7548D92A23D032EF009CF032 /* MoPubBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7548D92923D032EF009CF032 /* MoPubBannerViewController.swift */; };
-		7548D92C23D032F9009CF032 /* MoPubRewardedVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7548D92B23D032F9009CF032 /* MoPubRewardedVideoViewController.swift */; };
-		7548D92E23D03305009CF032 /* MoPubVideoInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7548D92D23D03305009CF032 /* MoPubVideoInterstitialViewController.swift */; };
 		75A7AC0823CD67DC00FD3031 /* VideoInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A7AC0723CD67DC00FD3031 /* VideoInterstitialViewController.swift */; };
 		960884221F9EC23B005F65FD /* RewardedVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960884211F9EC23A005F65FD /* RewardedVideoViewController.swift */; };
 		966CC73C1DF7C98C0005EF1C /* BannerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966CC73B1DF7C98C0005EF1C /* BannerTableViewController.swift */; };
@@ -42,9 +39,6 @@
 		7548D92323D032CB009CF032 /* AdMobBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobBannerViewController.swift; sourceTree = "<group>"; };
 		7548D92523D032DB009CF032 /* AdMobRewardedVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobRewardedVideoViewController.swift; sourceTree = "<group>"; };
 		7548D92723D032E5009CF032 /* AdMobVideoInterstitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobVideoInterstitialViewController.swift; sourceTree = "<group>"; };
-		7548D92923D032EF009CF032 /* MoPubBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoPubBannerViewController.swift; sourceTree = "<group>"; };
-		7548D92B23D032F9009CF032 /* MoPubRewardedVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoPubRewardedVideoViewController.swift; sourceTree = "<group>"; };
-		7548D92D23D03305009CF032 /* MoPubVideoInterstitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoPubVideoInterstitialViewController.swift; sourceTree = "<group>"; };
 		75A7AC0723CD67DC00FD3031 /* VideoInterstitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoInterstitialViewController.swift; sourceTree = "<group>"; };
 		845EBA47124CC371A063A0EC /* Pods-SampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.debug.xcconfig"; path = "Target Support Files/Pods-SampleApp/Pods-SampleApp.debug.xcconfig"; sourceTree = "<group>"; };
 		8DCF10F0021ED2BCF9314B50 /* Pods-SampleApp-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp-Swift.debug.xcconfig"; path = "Target Support Files/Pods-SampleApp-Swift/Pods-SampleApp-Swift.debug.xcconfig"; sourceTree = "<group>"; };
@@ -95,16 +89,6 @@
 			path = AdMob;
 			sourceTree = "<group>";
 		};
-		7548D91C23D0327D009CF032 /* MoPub */ = {
-			isa = PBXGroup;
-			children = (
-				7548D92023D032A4009CF032 /* Banner */,
-				7548D92123D032A8009CF032 /* RewardedVideo */,
-				7548D92223D032AE009CF032 /* VideoInterstitial */,
-			);
-			path = MoPub;
-			sourceTree = "<group>";
-		};
 		7548D91D23D0328D009CF032 /* Banner */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,30 +111,6 @@
 				7548D92523D032DB009CF032 /* AdMobRewardedVideoViewController.swift */,
 			);
 			path = RewardedVideo;
-			sourceTree = "<group>";
-		};
-		7548D92023D032A4009CF032 /* Banner */ = {
-			isa = PBXGroup;
-			children = (
-				7548D92923D032EF009CF032 /* MoPubBannerViewController.swift */,
-			);
-			path = Banner;
-			sourceTree = "<group>";
-		};
-		7548D92123D032A8009CF032 /* RewardedVideo */ = {
-			isa = PBXGroup;
-			children = (
-				7548D92B23D032F9009CF032 /* MoPubRewardedVideoViewController.swift */,
-			);
-			path = RewardedVideo;
-			sourceTree = "<group>";
-		};
-		7548D92223D032AE009CF032 /* VideoInterstitial */ = {
-			isa = PBXGroup;
-			children = (
-				7548D92D23D03305009CF032 /* MoPubVideoInterstitialViewController.swift */,
-			);
-			path = VideoInterstitial;
 			sourceTree = "<group>";
 		};
 		75A7AC0623CD67BC00FD3031 /* VideoInterstitial */ = {
@@ -226,7 +186,6 @@
 				96F22C3A1D3899D300C3136E /* Main.storyboard */,
 				7548D91B23D03278009CF032 /* AdMob */,
 				9661EEF61F15FCE400286B72 /* Banner */,
-				7548D91C23D0327D009CF032 /* MoPub */,
 				960884201F9EC17A005F65FD /* RewardedVideo */,
 				75A7AC0623CD67BC00FD3031 /* VideoInterstitial */,
 			);
@@ -361,17 +320,13 @@
 				"${PODS_ROOT}/Target Support Files/Pods-SampleApp/Pods-SampleApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
-				"${BUILT_PRODUCTS_DIR}/mopub-ios-sdk/MoPubSDK.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/mopub-ios-sdk/Core/OMSDK_Mopub.framework/OMSDK_Mopub",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MoPubSDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OMSDK_Mopub.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -385,15 +340,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7548D92A23D032EF009CF032 /* MoPubBannerViewController.swift in Sources */,
 				75A7AC0823CD67DC00FD3031 /* VideoInterstitialViewController.swift in Sources */,
 				7548D92623D032DB009CF032 /* AdMobRewardedVideoViewController.swift in Sources */,
 				96F22C391D3899D300C3136E /* BannerViewController.swift in Sources */,
-				7548D92C23D032F9009CF032 /* MoPubRewardedVideoViewController.swift in Sources */,
 				7548D92423D032CB009CF032 /* AdMobBannerViewController.swift in Sources */,
 				96F22C371D3899D300C3136E /* AppDelegate.swift in Sources */,
 				966CC73E1DF7C9B50005EF1C /* BannerTableViewCell.swift in Sources */,
-				7548D92E23D03305009CF032 /* MoPubVideoInterstitialViewController.swift in Sources */,
 				7548D92823D032E5009CF032 /* AdMobVideoInterstitialViewController.swift in Sources */,
 				960884221F9EC23B005F65FD /* RewardedVideoViewController.swift in Sources */,
 				969EC2001D3E0CF7005F475E /* ManyBannerViewController.swift in Sources */,

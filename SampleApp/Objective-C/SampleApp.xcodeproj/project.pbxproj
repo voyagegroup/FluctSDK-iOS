@@ -10,9 +10,6 @@
 		752879F723D052E00079CAE6 /* AdMobBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752879F623D052E00079CAE6 /* AdMobBannerViewController.m */; };
 		752879FA23D052F30079CAE6 /* AdMobRewardedVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752879F923D052F30079CAE6 /* AdMobRewardedVideoViewController.m */; };
 		752879FD23D052FE0079CAE6 /* AdMobVideoInterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752879FC23D052FE0079CAE6 /* AdMobVideoInterstitialViewController.m */; };
-		75287A0023D053080079CAE6 /* MoPubBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 752879FF23D053080079CAE6 /* MoPubBannerViewController.m */; };
-		75287A0323D053120079CAE6 /* MoPubRewardedVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75287A0223D053120079CAE6 /* MoPubRewardedVideoViewController.m */; };
-		75287A0623D0531F0079CAE6 /* MoPubVideoInterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75287A0523D0531F0079CAE6 /* MoPubVideoInterstitialViewController.m */; };
 		7581898A22D30F8600EBC905 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7581896722D30F8600EBC905 /* main.m */; };
 		7581898E22D30F8600EBC905 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7581897022D30F8600EBC905 /* Images.xcassets */; };
 		7581899022D30F8600EBC905 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7581897222D30F8600EBC905 /* AppDelegate.m */; };
@@ -36,12 +33,6 @@
 		752879F923D052F30079CAE6 /* AdMobRewardedVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdMobRewardedVideoViewController.m; sourceTree = "<group>"; };
 		752879FB23D052FE0079CAE6 /* AdMobVideoInterstitialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdMobVideoInterstitialViewController.h; sourceTree = "<group>"; };
 		752879FC23D052FE0079CAE6 /* AdMobVideoInterstitialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdMobVideoInterstitialViewController.m; sourceTree = "<group>"; };
-		752879FE23D053080079CAE6 /* MoPubBannerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoPubBannerViewController.h; sourceTree = "<group>"; };
-		752879FF23D053080079CAE6 /* MoPubBannerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoPubBannerViewController.m; sourceTree = "<group>"; };
-		75287A0123D053120079CAE6 /* MoPubRewardedVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoPubRewardedVideoViewController.h; sourceTree = "<group>"; };
-		75287A0223D053120079CAE6 /* MoPubRewardedVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoPubRewardedVideoViewController.m; sourceTree = "<group>"; };
-		75287A0423D0531F0079CAE6 /* MoPubVideoInterstitialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoPubVideoInterstitialViewController.h; sourceTree = "<group>"; };
-		75287A0523D0531F0079CAE6 /* MoPubVideoInterstitialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoPubVideoInterstitialViewController.m; sourceTree = "<group>"; };
 		7581896422D30F8600EBC905 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7581896522D30F8600EBC905 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7581896722D30F8600EBC905 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -129,16 +120,6 @@
 			path = AdMob;
 			sourceTree = "<group>";
 		};
-		75DDA2FF23D0524F0009FBB8 /* MoPub */ = {
-			isa = PBXGroup;
-			children = (
-				75DDA30623D052A90009FBB8 /* Banner */,
-				75DDA30723D052AD0009FBB8 /* RewardedVideo */,
-				75DDA30823D052B30009FBB8 /* VideoInterstitial */,
-			);
-			path = MoPub;
-			sourceTree = "<group>";
-		};
 		75DDA30323D052920009FBB8 /* Banner */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,33 +143,6 @@
 			children = (
 				752879FB23D052FE0079CAE6 /* AdMobVideoInterstitialViewController.h */,
 				752879FC23D052FE0079CAE6 /* AdMobVideoInterstitialViewController.m */,
-			);
-			path = VideoInterstitial;
-			sourceTree = "<group>";
-		};
-		75DDA30623D052A90009FBB8 /* Banner */ = {
-			isa = PBXGroup;
-			children = (
-				752879FE23D053080079CAE6 /* MoPubBannerViewController.h */,
-				752879FF23D053080079CAE6 /* MoPubBannerViewController.m */,
-			);
-			path = Banner;
-			sourceTree = "<group>";
-		};
-		75DDA30723D052AD0009FBB8 /* RewardedVideo */ = {
-			isa = PBXGroup;
-			children = (
-				75287A0123D053120079CAE6 /* MoPubRewardedVideoViewController.h */,
-				75287A0223D053120079CAE6 /* MoPubRewardedVideoViewController.m */,
-			);
-			path = RewardedVideo;
-			sourceTree = "<group>";
-		};
-		75DDA30823D052B30009FBB8 /* VideoInterstitial */ = {
-			isa = PBXGroup;
-			children = (
-				75287A0423D0531F0079CAE6 /* MoPubVideoInterstitialViewController.h */,
-				75287A0523D0531F0079CAE6 /* MoPubVideoInterstitialViewController.m */,
 			);
 			path = VideoInterstitial;
 			sourceTree = "<group>";
@@ -224,7 +178,6 @@
 				7581899A22D30FB200EBC905 /* Main.storyboard */,
 				75DDA2FE23D0524B0009FBB8 /* AdMob */,
 				7581897C22D30F8600EBC905 /* Banner */,
-				75DDA2FF23D0524F0009FBB8 /* MoPub */,
 				7581897322D30F8600EBC905 /* RewardedVideo */,
 				75C2A8D323C70AA200BFE1E7 /* VideoInterstitial */,
 			);
@@ -374,7 +327,6 @@
 			files = (
 				752879FA23D052F30079CAE6 /* AdMobRewardedVideoViewController.m in Sources */,
 				752879FD23D052FE0079CAE6 /* AdMobVideoInterstitialViewController.m in Sources */,
-				75287A0023D053080079CAE6 /* MoPubBannerViewController.m in Sources */,
 				7581898A22D30F8600EBC905 /* main.m in Sources */,
 				7581899122D30F8600EBC905 /* RewardedVideoViewController.m in Sources */,
 				75C2A8D623C70ABF00BFE1E7 /* VideoInterstitialViewController.m in Sources */,
@@ -382,10 +334,8 @@
 				7581899422D30F8600EBC905 /* BannerTableViewController.m in Sources */,
 				7581899022D30F8600EBC905 /* AppDelegate.m in Sources */,
 				7581899522D30F8600EBC905 /* BannerViewController.m in Sources */,
-				75287A0623D0531F0079CAE6 /* MoPubVideoInterstitialViewController.m in Sources */,
 				752879F723D052E00079CAE6 /* AdMobBannerViewController.m in Sources */,
 				7581899622D30F8600EBC905 /* ManyBannerViewController.m in Sources */,
-				75287A0323D053120079CAE6 /* MoPubRewardedVideoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

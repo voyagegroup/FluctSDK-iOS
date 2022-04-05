@@ -90,7 +90,7 @@ static NSString *const FSSNendSupportVersion = @"8.1";
 
 - (void)nadRewardVideoAdDidReceiveAd:(NADRewardedVideo *)nadRewardedVideoAd {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         weakSelf.adnwStatus = FSSRewardedVideoADNWStatusLoaded;
         [weakSelf.delegate rewardedVideoDidLoadForCustomEvent:weakSelf];
     });
@@ -98,7 +98,7 @@ static NSString *const FSSNendSupportVersion = @"8.1";
 
 - (void)nadRewardVideoAd:(NADRewardedVideo *)nadRewardedVideoAd didFailToLoadWithError:(NSError *)error {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
         [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:weakSelf
                                                          fluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
@@ -123,7 +123,7 @@ static NSString *const FSSNendSupportVersion = @"8.1";
 
 - (void)nadRewardVideoAdDidFailedToPlay:(NADRewardedVideo *)nadRewardedVideoAd {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
         [weakSelf.delegate rewardedVideoDidFailToPlayForCustomEvent:weakSelf
                                                          fluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
@@ -137,14 +137,14 @@ static NSString *const FSSNendSupportVersion = @"8.1";
 
 - (void)nadRewardVideoAdDidOpen:(NADRewardedVideo *)nadRewardedVideoAd {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoDidAppearForCustomEvent:weakSelf];
     });
 }
 
 - (void)nadRewardVideoAdDidClose:(NADRewardedVideo *)nadRewardedVideoAd {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoWillDisappearForCustomEvent:weakSelf];
         [weakSelf.delegate rewardedVideoDidDisappearForCustomEvent:weakSelf];
     });
@@ -152,14 +152,14 @@ static NSString *const FSSNendSupportVersion = @"8.1";
 
 - (void)nadRewardVideoAdDidClickAd:(NADRewardedVideo *)nadRewardedVideoAd {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoDidClickForCustomEvent:weakSelf];
     });
 }
 
 - (void)nadRewardVideoAd:(NADRewardedVideo *)nadRewardedVideoAd didReward:(NADReward *)reward {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoShouldRewardForCustomEvent:weakSelf];
     });
 }

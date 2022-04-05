@@ -112,12 +112,12 @@ typedef NS_ENUM(NSUInteger, AdColonyManagerState) {
         zone.reward = ^(BOOL success, NSString *name, int amount) {
             FSSAdColonyDelegateDispacher *delegateDispatcher = weakSelf.delegateDispatcherTable[zoneID];
             __weak __typeof(delegateDispatcher) weakDelegateDispatcher = delegateDispatcher;
-            dispatch_async(FSSWorkQueue(), ^{
+            dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
                 [weakDelegateDispatcher.delegate rewarded];
             });
         };
     }];
-    dispatch_async(FSSWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         for (void (^callback)(void) in weakSelf.configCompletionArray) {
             callback();
         }

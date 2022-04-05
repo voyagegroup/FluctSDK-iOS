@@ -95,12 +95,12 @@ static NSString *const FSSAppLovinSupportVersion = @"9.0";
     self.observer = [[FSSConditionObserver alloc] initWithInterval:0.1f
         fallbackLimit:20
         completionHandler:^{
-            dispatch_async(FSSWorkQueue(), ^{
+            dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
                 [weakSelf.delegate rewardedVideoDidDisappearForCustomEvent:weakSelf];
             });
         }
         fallbackHandler:^{
-            dispatch_async(FSSWorkQueue(), ^{
+            dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
                 NSError *fluctError = [NSError errorWithDomain:FSSVideoErrorSDKDomain
                                                           code:FSSVideoErrorUnknown
                                                       userInfo:@{NSLocalizedDescriptionKey : @"Failed callback for rewardedVideoDidDisappearForCustomEvent"}];
@@ -126,7 +126,7 @@ static NSString *const FSSAppLovinSupportVersion = @"9.0";
 
 - (void)adService:(ALAdService *)adService didLoadAd:(ALAd *)ad {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         weakSelf.adnwStatus = FSSRewardedVideoADNWStatusLoaded;
         [weakSelf.delegate rewardedVideoDidLoadForCustomEvent:weakSelf];
     });
@@ -134,7 +134,7 @@ static NSString *const FSSAppLovinSupportVersion = @"9.0";
 
 - (void)adService:(ALAdService *)adService didFailToLoadAdWithError:(int)code {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
         switch (code) {
         case kALErrorCodeNoFill:
@@ -181,7 +181,7 @@ static NSString *const FSSAppLovinSupportVersion = @"9.0";
 
 - (void)ad:(ALAd *)ad wasDisplayedIn:(UIView *)view {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoWillAppearForCustomEvent:weakSelf];
         [weakSelf.delegate rewardedVideoDidAppearForCustomEvent:weakSelf];
     });
@@ -189,7 +189,7 @@ static NSString *const FSSAppLovinSupportVersion = @"9.0";
 
 - (void)ad:(ALAd *)ad wasHiddenIn:(UIView *)view {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoWillDisappearForCustomEvent:weakSelf];
     });
 
@@ -198,7 +198,7 @@ static NSString *const FSSAppLovinSupportVersion = @"9.0";
 
 - (void)ad:(ALAd *)ad wasClickedIn:(UIView *)view {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoDidClickForCustomEvent:weakSelf];
     });
 }
@@ -211,7 +211,7 @@ static NSString *const FSSAppLovinSupportVersion = @"9.0";
 - (void)videoPlaybackEndedInAd:(ALAd *)ad atPlaybackPercent:(NSNumber *)percentPlayed fullyWatched:(BOOL)wasFullyWatched {
     if (wasFullyWatched) {
         __weak __typeof(self) weakSelf = self;
-        dispatch_async(FSSWorkQueue(), ^{
+        dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
             [weakSelf.delegate rewardedVideoShouldRewardForCustomEvent:weakSelf];
         });
     }

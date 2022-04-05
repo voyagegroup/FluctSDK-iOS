@@ -21,7 +21,7 @@
 #import <FluctSDK/FSSAdView.h>
 #import <FluctSDK/FSSAdViewError.h>
 
-#import <FluctSDK/FSSWorkQueue.h>
+#import <FluctSDK/FSSFullscreenVideoWorkQueue.h>
 
 #import <FluctSDK/FSSVideoError.h>
 

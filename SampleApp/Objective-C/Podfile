@@ -16,9 +16,4 @@ target 'SampleApp' do
   # 実際に使うときは :path指定は不要です。
   pod 'GoogleMobileAdsMediationFluct', :path => '../../GoogleMobileAdsMediationFluct.podspec'
 
-  # MoPubのCustom NetworkでFluctSDKを入れる際には以下のpodが必須です
-  pod 'mopub-ios-sdk'
-  # 実際に使うときは :path指定は不要です。
-  pod 'MoPubMediationAdapterFluct', :path => '../../MopubMediationAdapterFluct.podspec'
-
 end

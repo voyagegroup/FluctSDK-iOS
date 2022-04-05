@@ -20,4 +20,3 @@ $ pod install --repo-update
 - 動画リワード
 - Mediation
     - AdMob
-    - MoPub

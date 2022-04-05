@@ -100,7 +100,7 @@ typedef NS_ENUM(NSInteger, FiveErrorExtend) {
 - (void)fiveAdDidLoad:(id<FADAdInterface>)ad {
     self.adnwStatus = FSSRewardedVideoADNWStatusLoaded;
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoDidLoadForCustomEvent:self];
     });
 }
@@ -114,7 +114,7 @@ typedef NS_ENUM(NSInteger, FiveErrorExtend) {
                                              code:errorCode
                                          userInfo:nil];
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:self fluctError:fluctError adnetworkError:fiveError];
     });
 }
@@ -122,14 +122,14 @@ typedef NS_ENUM(NSInteger, FiveErrorExtend) {
 #pragma mark - FADAdViewEventListener
 - (void)fiveAdDidStart:(id<FADAdInterface>)ad {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoDidAppearForCustomEvent:self];
     });
 }
 
 - (void)fiveAdDidClose:(id<FADAdInterface>)ad {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         //- (void)fiveAdDidViewThrough:(id<FADAdInterface>)adは呼ばれない時もあるので使わない。
         [weakSelf.delegate rewardedVideoShouldRewardForCustomEvent:self];
         [weakSelf.delegate rewardedVideoWillDisappearForCustomEvent:self];
@@ -139,7 +139,7 @@ typedef NS_ENUM(NSInteger, FiveErrorExtend) {
 
 - (void)fiveAdDidClick:(id<FADAdInterface>)ad {
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoDidClickForCustomEvent:self];
     });
 }
@@ -153,7 +153,7 @@ typedef NS_ENUM(NSInteger, FiveErrorExtend) {
                                              code:errorCode
                                          userInfo:nil];
     __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSWorkQueue(), ^{
+    dispatch_async(FSSFullscreenVideoWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoDidFailToPlayForCustomEvent:self fluctError:fluctError adnetworkError:fiveError];
     });
 }
