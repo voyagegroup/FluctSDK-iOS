@@ -1,46 +1,56 @@
 PODS:
-  - AdColony (4.7.2)
-  - Ads-Global (3.9.0.4):
-    - Ads-Global/BUAdSDK (= 3.9.0.4)
-  - Ads-Global/BUAdSDK (3.9.0.4):
+  - AdColony (4.8.0)
+  - Ads-Global (4.3.0.5):
+    - Ads-Global/APM (= 4.3.0.5)
+    - Ads-Global/BUAdSDK (= 4.3.0.5)
+  - Ads-Global/APM (4.3.0.5):
+    - RangersAPM-Pangle/Crash (= 2.3.2-pangle)
+    - RangersAPM-Pangle/Global (= 2.3.2-pangle)
+    - RangersAPM-Pangle/SessionTracker (= 2.3.2-pangle)
+  - Ads-Global/BUAdSDK (4.3.0.5):
     - Ads-Global/BUFoundation
     - Ads-Global/International
-  - Ads-Global/BUFoundation (3.9.0.4)
-  - Ads-Global/International (3.9.0.4)
-  - AppLovinSDK (11.1.1)
-  - FiveAd (2.4.20211004)
-  - FluctSDK (6.16.1)
-  - FluctSDK-MediationAdapter (6.16.1):
-    - FluctSDK-MediationAdapter/AdColony (= 6.16.1)
-    - FluctSDK-MediationAdapter/AppLovin (= 6.16.1)
-    - FluctSDK-MediationAdapter/Five (= 6.16.1)
-    - FluctSDK-MediationAdapter/maio (= 6.16.1)
-    - FluctSDK-MediationAdapter/nend (= 6.16.1)
-    - FluctSDK-MediationAdapter/Pangle (= 6.16.1)
-    - FluctSDK-MediationAdapter/Tapjoy (= 6.16.1)
-    - FluctSDK-MediationAdapter/UnityAds (= 6.16.1)
-  - FluctSDK-MediationAdapter/AdColony (6.16.1):
+  - Ads-Global/BUFoundation (4.3.0.5):
+    - BURelyFoundation_Global (= 0.0.1.47)
+  - Ads-Global/International (4.3.0.5):
+    - Ads-Global/BUFoundation
+  - AppLovinSDK (11.3.2)
+  - BURelyFoundation_Global (0.0.1.47):
+    - BURelyFoundation_Global/NETWork (= 0.0.1.47)
+  - BURelyFoundation_Global/NETWork (0.0.1.47)
+  - FiveAd (2.4.20220225)
+  - FluctSDK (6.16.2)
+  - FluctSDK-MediationAdapter (6.16.2):
+    - FluctSDK-MediationAdapter/AdColony (= 6.16.2)
+    - FluctSDK-MediationAdapter/AppLovin (= 6.16.2)
+    - FluctSDK-MediationAdapter/Five (= 6.16.2)
+    - FluctSDK-MediationAdapter/maio (= 6.16.2)
+    - FluctSDK-MediationAdapter/nend (= 6.16.2)
+    - FluctSDK-MediationAdapter/Pangle (= 6.16.2)
+    - FluctSDK-MediationAdapter/Tapjoy (= 6.16.2)
+    - FluctSDK-MediationAdapter/UnityAds (= 6.16.2)
+  - FluctSDK-MediationAdapter/AdColony (6.16.2):
     - AdColony (>= 4.3.1)
     - FluctSDK (>= 6.14.0)
-  - FluctSDK-MediationAdapter/AppLovin (6.16.1):
+  - FluctSDK-MediationAdapter/AppLovin (6.16.2):
     - AppLovinSDK (>= 11.1.1)
     - FluctSDK (>= 6.14.0)
-  - FluctSDK-MediationAdapter/Five (6.16.1):
+  - FluctSDK-MediationAdapter/Five (6.16.2):
     - FiveAd (>= 2.4.20211004)
     - FluctSDK (>= 6.14.0)
-  - FluctSDK-MediationAdapter/maio (6.16.1):
+  - FluctSDK-MediationAdapter/maio (6.16.2):
     - FluctSDK (>= 6.14.0)
     - MaioSDK (>= 1.5.8)
-  - FluctSDK-MediationAdapter/nend (6.16.1):
+  - FluctSDK-MediationAdapter/nend (6.16.2):
     - FluctSDK (>= 6.14.0)
     - NendSDK_iOS (>= 7.0.4)
-  - FluctSDK-MediationAdapter/Pangle (6.16.1):
+  - FluctSDK-MediationAdapter/Pangle (6.16.2):
     - Ads-Global (>= 3.4.2.3)
     - FluctSDK (>= 6.14.0)
-  - FluctSDK-MediationAdapter/Tapjoy (6.16.1):
+  - FluctSDK-MediationAdapter/Tapjoy (6.16.2):
     - FluctSDK (>= 6.14.0)
     - TapjoySDK (>= 12.8.0)
-  - FluctSDK-MediationAdapter/UnityAds (6.16.1):
+  - FluctSDK-MediationAdapter/UnityAds (6.16.2):
     - FluctSDK (>= 6.14.0)
     - UnityAds (= 3.7.5)
   - Google-Mobile-Ads-SDK (8.10.0):
@@ -59,7 +69,7 @@ PODS:
     - GoogleUtilities/Network (~> 7.4)
     - "GoogleUtilities/NSData+zlib (~> 7.4)"
     - nanopb (~> 2.30908.0)
-  - GoogleMobileAdsMediationFluct (6.16.1):
+  - GoogleMobileAdsMediationFluct (6.16.2):
     - FluctSDK (>= 6.12.1)
     - Google-Mobile-Ads-SDK (>= 8.1.0)
   - GoogleUserMessagingPlatform (2.0.0)
@@ -80,28 +90,51 @@ PODS:
   - "GoogleUtilities/NSData+zlib (7.5.2)"
   - GoogleUtilities/Reachability (7.5.2):
     - GoogleUtilities/Logger
-  - MaioSDK (1.5.8)
+  - MaioSDK (1.6.1)
   - nanopb (2.30908.0):
     - nanopb/decode (= 2.30908.0)
     - nanopb/encode (= 2.30908.0)
   - nanopb/decode (2.30908.0)
   - nanopb/encode (2.30908.0)
-  - NendSDK_iOS (7.0.6)
+  - NendSDK_iOS (7.2.0)
+  - OneKit-Pangle/BaseKit (1.1.21-pangle)
+  - OneKit-Pangle/Database (1.1.21-pangle):
+    - OneKit-Pangle/Service
+  - OneKit-Pangle/Service (1.1.21-pangle)
   - PromisesObjC (2.0.0)
-  - TapjoySDK (12.8.1)
+  - RangersAPM-Pangle/Core (2.3.2-pangle):
+    - OneKit-Pangle/BaseKit (= 1.1.21-pangle)
+  - RangersAPM-Pangle/Crash (2.3.2-pangle):
+    - RangersAPM-Pangle/Core
+    - RangersAPM-Pangle/HMD
+    - RangersAPM-Pangle/Public
+  - RangersAPM-Pangle/Global (2.3.2-pangle):
+    - RangersAPM-Pangle/Core
+    - RangersAPM-Pangle/Public
+  - RangersAPM-Pangle/HMD (2.3.2-pangle):
+    - OneKit-Pangle/Database (= 1.1.21-pangle)
+    - RangersAPM-Pangle/Core
+  - RangersAPM-Pangle/Public (2.3.2-pangle):
+    - RangersAPM-Pangle/Core
+  - RangersAPM-Pangle/SessionTracker (2.3.2-pangle):
+    - RangersAPM-Pangle/Core
+    - RangersAPM-Pangle/HMD
+    - RangersAPM-Pangle/Public
+  - TapjoySDK (12.9.1)
   - UnityAds (3.7.5)
 
 DEPENDENCIES:
-  - FluctSDK (from `../../FluctSDK.podspec`)
-  - FluctSDK-MediationAdapter (from `../../FluctSDK-MediationAdapter.podspec`)
+  - FluctSDK (from `../../../FluctSDK.podspec`)
+  - FluctSDK-MediationAdapter (from `../../../FluctSDK-MediationAdapter.podspec`)
   - Google-Mobile-Ads-SDK
-  - GoogleMobileAdsMediationFluct (from `../../GoogleMobileAdsMediationFluct.podspec`)
+  - GoogleMobileAdsMediationFluct (from `../../../GoogleMobileAdsMediationFluct.podspec`)
 
 SPEC REPOS:
   trunk:
     - AdColony
     - Ads-Global
     - AppLovinSDK
+    - BURelyFoundation_Global
     - FiveAd
     - Google-Mobile-Ads-SDK
     - GoogleAppMeasurement
@@ -110,37 +143,42 @@ SPEC REPOS:
     - MaioSDK
     - nanopb
     - NendSDK_iOS
+    - OneKit-Pangle
     - PromisesObjC
+    - RangersAPM-Pangle
     - TapjoySDK
     - UnityAds
 
 EXTERNAL SOURCES:
   FluctSDK:
-    :path: "../../FluctSDK.podspec"
+    :path: "../../../FluctSDK.podspec"
   FluctSDK-MediationAdapter:
-    :path: "../../FluctSDK-MediationAdapter.podspec"
+    :path: "../../../FluctSDK-MediationAdapter.podspec"
   GoogleMobileAdsMediationFluct:
-    :path: "../../GoogleMobileAdsMediationFluct.podspec"
+    :path: "../../../GoogleMobileAdsMediationFluct.podspec"
 
 SPEC CHECKSUMS:
-  AdColony: 970af2bff1e500c8a681bfcbd85f8054c0f57071
-  Ads-Global: 371ecc237669dd564ead2ff8ea6b5255211f8d25
-  AppLovinSDK: a418677708090e2116e9080c3ca46cc81df7b8de
-  FiveAd: ae744e341df8185a8dd4c47164ccfa95362ee93a
-  FluctSDK: 90f33d9cc963f8444731c43e4e2ebe3b7240f1f9
-  FluctSDK-MediationAdapter: 2450993bfb44209bc98a2287971eb004eefbf0c6
+  AdColony: eba15b485d1e63d36601d5da4916af73d343b897
+  Ads-Global: edc0bdd5771c011e7233158bfc5ac17ca2d59564
+  AppLovinSDK: e0bf2984979b082f7c167e4babc3290b4eac5f24
+  BURelyFoundation_Global: 2cb922d28b6f3493cfdf24eb30f1e3ae61b6ca47
+  FiveAd: d75b8f628a7ddfdb4929ab1611a69c6d34c22838
+  FluctSDK: 6a49c507254979142b3bff4fa4d47e153712eaee
+  FluctSDK-MediationAdapter: 1bf5e8889ec0ea1b36f8f13e97191a21603af075
   Google-Mobile-Ads-SDK: 9c78323a7069cd42ddf1ad2fddbaec889b085091
   GoogleAppMeasurement: 2be61ce546ad074dbe4dd545f222ac6033bb1d9e
-  GoogleMobileAdsMediationFluct: 31210292124516c208ef616fd1ab522a71c31964
+  GoogleMobileAdsMediationFluct: 9ba3ff185a3304cbcca18eb4e8357c99037bf0c6
   GoogleUserMessagingPlatform: ab890ce5f6620f293a21b6bdd82e416a2c73aeca
   GoogleUtilities: 8de2a97a17e15b6b98e38e8770e2d129a57c0040
-  MaioSDK: 873950cab1bdba6dce0b94b82974d6cec8f99368
+  MaioSDK: 8cdb25ab052655f4d73620fa7e083cde983559cc
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
-  NendSDK_iOS: 43c45dad9195c8e814c2da6497fe3d66515fb982
+  NendSDK_iOS: 035fd2568f837caaaeeaf18817632106b9355f10
+  OneKit-Pangle: 68a778c39d36ed8feffd667a6b49225427bcf286
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
-  TapjoySDK: 6d344dfb0cd205014c9286580d5c97857b170402
+  RangersAPM-Pangle: 97c8fe91af08574a739cc72a714b735efb6c891f
+  TapjoySDK: 4a3ea5146704a2ba8aab84f4e6f7dcec172972b9
   UnityAds: 9adbfd8ccc008e4e3e7b1bcf5666a126df4f1a8e
 
-PODFILE CHECKSUM: f201a35768384b243b23c5c9d21c9a722914a979
+PODFILE CHECKSUM: 9f0c4eccf18fe20052ae560af39ea9cdcc0666f8
 
 COCOAPODS: 1.11.2

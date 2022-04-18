@@ -11,7 +11,7 @@ CocoaPods: 1.8.4
 CocoaPodsを使用します
 
 ```sh
-$ pod install --repo-update
+$ pod install
 ```
 
 ## 用意しているサンプル
