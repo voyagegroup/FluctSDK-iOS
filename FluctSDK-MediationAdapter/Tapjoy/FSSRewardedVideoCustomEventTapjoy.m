@@ -24,6 +24,8 @@ typedef NS_ENUM(NSInteger, TJErrorExtended) {
 @property (nonatomic) FSSTapjoyConnectionStatus connectionStatus;
 @end
 
+static NSString *const FSSTapjoyUnsupportedVersion = @"12.0";
+
 @implementation FSSRewardedVideoCustomEventTapjoy
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary
@@ -32,6 +34,12 @@ typedef NS_ENUM(NSInteger, TJErrorExtended) {
                          debugMode:(BOOL)debugMode
                          skippable:(BOOL)skippable
                          targeting:(FSSAdRequestTargeting *)targeting {
+
+    // see: https://vg-ceg.backlog.com/view/FLUCT_SSP-15507
+    // iOS12.0でコールバックが返ってこないため、12.0系ではTapjoyを呼び出さない
+    if ([[FSSRewardedVideoCustomEventTapjoy currentSystemVersion] hasPrefix:FSSTapjoyUnsupportedVersion]) {
+        return nil;
+    }
 
     self = [super initWithDictionary:dictionary
                             delegate:delegate
