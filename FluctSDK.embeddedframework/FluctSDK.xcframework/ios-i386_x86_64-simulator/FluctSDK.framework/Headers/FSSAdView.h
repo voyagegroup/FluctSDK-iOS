@@ -5,6 +5,7 @@
 //  Copyright © 2019 fluct, Inc. All rights reserved.
 //
 
+#import "FSSAdRequestTargeting.h"
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
@@ -116,6 +117,12 @@ extern FSSAdSize const FSSAdSize320x100;
  * 広告のロードを行う。
  */
 - (void)loadAd;
+
+/**
+ * 広告のロードを行う。
+ * @param targeting ターゲティング
+ */
+- (void)loadAdWithTargeting:(nullable FSSAdRequestTargeting *)targeting;
 
 @end
 
