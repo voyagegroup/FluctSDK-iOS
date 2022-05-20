@@ -21,6 +21,7 @@ typedef NS_ENUM(NSUInteger, FSSGender) {
 @property (nonatomic, copy, nullable) NSDate *birthday;
 @property (nonatomic) NSInteger age;
 @property (nonatomic) FSSGender gender;
+@property (nonatomic, copy, nullable) NSString *publisherProvidedID;
 - (void)setTargetingValues:(NSArray<NSString *> *)values forKey:(NSString *)key;
 @end
 
