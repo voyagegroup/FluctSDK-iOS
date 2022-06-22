@@ -16,4 +16,8 @@ target 'SampleApp' do
   # 実際に使うときは :path指定は不要です。
   pod 'GoogleMobileAdsMediationFluct', :path => '../../../GoogleMobileAdsMediationFluct.podspec'
 
+  # MaxのMediationにCustom EventでFluctSDKを入れる際には以下のpodが必須です
+  pod 'AppLovinSDK'
+  # 実際に使うときは :path指定は不要です。
+  pod 'MaxMediationAdapterFluct', :path => '../../../MaxMediationAdapterFluct.podspec'
 end

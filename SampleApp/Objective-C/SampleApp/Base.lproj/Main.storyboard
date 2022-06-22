@@ -302,6 +302,26 @@
                                             <segue destination="xHy-Je-Ft1" kind="show" id="zFn-jQ-Y6g"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="G2f-qA-VZx" style="IBUITableViewCellStyleDefault" id="TJa-KK-dTL">
+                                        <rect key="frame" x="0.0" y="256.00000381469727" width="414" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TJa-KK-dTL" id="UMK-0P-KQH">
+                                            <rect key="frame" x="0.0" y="0.0" width="384.33333333333331" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Max" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="G2f-qA-VZx">
+                                                    <rect key="frame" x="20" y="0.0" width="356.33333333333331" height="43.666667938232422"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Gv2-a8-u8f" kind="show" id="bJz-zF-tdm"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -611,10 +631,107 @@
             </objects>
             <point key="canvasLocation" x="400" y="-907"/>
         </scene>
+        <!--Max Mediation-->
+        <scene sceneID="sxh-k3-SMp">
+            <objects>
+                <tableViewController id="Gv2-a8-u8f" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="6on-ho-gUm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="Format" id="ZvB-jt-wOF">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="cNv-6S-Gmr" style="IBUITableViewCellStyleDefault" id="nSU-HQ-XG5">
+                                        <rect key="frame" x="0.0" y="31.666666030883789" width="414" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nSU-HQ-XG5" id="wVM-g9-i2V">
+                                            <rect key="frame" x="0.0" y="0.0" width="384.33333333333331" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Rewarded Video" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cNv-6S-Gmr">
+                                                    <rect key="frame" x="20" y="0.0" width="356.33333333333331" height="43.666667938232422"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Dea-hr-VCL" kind="show" id="reX-Oc-HFH"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="Gv2-a8-u8f" id="9SX-nV-Lpl"/>
+                            <outlet property="delegate" destination="Gv2-a8-u8f" id="La8-Ot-z2v"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Max Mediation" id="u1x-jv-1Ud">
+                        <barButtonItem key="backBarButtonItem" title="Max Mediation" id="CYX-Yg-u3R"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TLC-zm-cBB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-510" y="-229"/>
+        </scene>
+        <!--RewardedVideo-->
+        <scene sceneID="1D4-85-bDM">
+            <objects>
+                <viewController id="Dea-hr-VCL" customClass="MaxRewardedVideoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fBd-yd-9ux"/>
+                        <viewControllerLayoutGuide type="bottom" id="ymj-Sh-Ihn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="N3l-4A-fj8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="TPu-lA-WCq">
+                                <rect key="frame" x="36" y="407" width="342" height="82"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cyk-iv-Q0x">
+                                        <rect key="frame" x="0.0" y="0.0" width="342" height="33"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <state key="normal" title="Load Ad"/>
+                                        <connections>
+                                            <action selector="didTouchUpLoadAdWithButton:" destination="Dea-hr-VCL" eventType="touchUpInside" id="Eds-tr-2ME"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WhS-w5-4br">
+                                        <rect key="frame" x="0.0" y="49" width="342" height="33"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <state key="normal" title="Show Ad"/>
+                                        <connections>
+                                            <action selector="didTouchUpShowAdWithButton:" destination="Dea-hr-VCL" eventType="touchUpInside" id="Gjp-bF-LRW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="TPu-lA-WCq" secondAttribute="trailing" constant="16" id="b0I-wO-4zl"/>
+                            <constraint firstItem="TPu-lA-WCq" firstAttribute="centerY" secondItem="N3l-4A-fj8" secondAttribute="centerY" id="vpq-Tn-cWe"/>
+                            <constraint firstItem="TPu-lA-WCq" firstAttribute="leading" secondItem="N3l-4A-fj8" secondAttribute="leadingMargin" constant="16" id="zTV-ok-RPb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="RewardedVideo" id="u0a-28-9Yt"/>
+                    <connections>
+                        <outlet property="showButton" destination="WhS-w5-4br" id="ySI-ob-sWR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vYB-Ng-E9c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-510" y="-907"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

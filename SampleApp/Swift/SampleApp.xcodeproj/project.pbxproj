@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D7F77982859B5290064BE0D /* MaxRewardedVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7F77972859B5290064BE0D /* MaxRewardedVideoViewController.swift */; };
 		7548D92423D032CB009CF032 /* AdMobBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7548D92323D032CB009CF032 /* AdMobBannerViewController.swift */; };
 		7548D92623D032DB009CF032 /* AdMobRewardedVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7548D92523D032DB009CF032 /* AdMobRewardedVideoViewController.swift */; };
 		7548D92823D032E5009CF032 /* AdMobVideoInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7548D92723D032E5009CF032 /* AdMobVideoInterstitialViewController.swift */; };
@@ -27,6 +28,7 @@
 		3A1810D7207F2DC900D584AD /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		568C2CDD7B81A45C8434AAE9 /* Pods_SampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6598B1CE7DE67EEA2CF05FB4 /* Pods-SampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.release.xcconfig"; path = "Target Support Files/Pods-SampleApp/Pods-SampleApp.release.xcconfig"; sourceTree = "<group>"; };
+		6D7F77972859B5290064BE0D /* MaxRewardedVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaxRewardedVideoViewController.swift; sourceTree = "<group>"; };
 		72F91F107F542D77C4EA7F07 /* Pods-SampleApp-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp-Swift.release.xcconfig"; path = "Target Support Files/Pods-SampleApp-Swift/Pods-SampleApp-Swift.release.xcconfig"; sourceTree = "<group>"; };
 		7519965321C0B507007C62CE /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		7519965521C0B521007C62CE /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -77,6 +79,22 @@
 				6598B1CE7DE67EEA2CF05FB4 /* Pods-SampleApp.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		6D7F77952859B5290064BE0D /* Max */ = {
+			isa = PBXGroup;
+			children = (
+				6D7F77962859B5290064BE0D /* RewardedVideo */,
+			);
+			path = Max;
+			sourceTree = "<group>";
+		};
+		6D7F77962859B5290064BE0D /* RewardedVideo */ = {
+			isa = PBXGroup;
+			children = (
+				6D7F77972859B5290064BE0D /* MaxRewardedVideoViewController.swift */,
+			);
+			path = RewardedVideo;
 			sourceTree = "<group>";
 		};
 		7548D91B23D03278009CF032 /* AdMob */ = {
@@ -185,6 +203,7 @@
 				96F22C3F1D3899D300C3136E /* LaunchScreen.storyboard */,
 				96F22C3A1D3899D300C3136E /* Main.storyboard */,
 				7548D91B23D03278009CF032 /* AdMob */,
+				6D7F77952859B5290064BE0D /* Max */,
 				9661EEF61F15FCE400286B72 /* Banner */,
 				960884201F9EC17A005F65FD /* RewardedVideo */,
 				75A7AC0623CD67BC00FD3031 /* VideoInterstitial */,
@@ -272,7 +291,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-SampleApp/Pods-SampleApp-resources.sh",
 				"${PODS_ROOT}/Ads-Global/SDK/LICENSE",
 				"${PODS_ROOT}/Ads-Global/SDK/BUAdSDK.bundle",
-				"${PODS_ROOT}/AppLovinSDK/applovin-ios-sdk-11.3.2/AppLovinSDKResources.bundle",
+				"${PODS_ROOT}/AppLovinSDK/applovin-ios-sdk-11.4.2/AppLovinSDKResources.bundle",
 				"${PODS_ROOT}/../../../../FluctSDK.embeddedframework/Resources/FluctSDKResources.bundle",
 				"${PODS_ROOT}/NendSDK_iOS/NendAd.embeddedframework/NendAd.framework/Resources/NendAdResource.bundle",
 				"${PODS_ROOT}/RangersAPM-Pangle/RangersAPM-Pangle/Assets/Core/APMInsightCore.bundle",
@@ -349,6 +368,7 @@
 				75A7AC0823CD67DC00FD3031 /* VideoInterstitialViewController.swift in Sources */,
 				7548D92623D032DB009CF032 /* AdMobRewardedVideoViewController.swift in Sources */,
 				96F22C391D3899D300C3136E /* BannerViewController.swift in Sources */,
+				6D7F77982859B5290064BE0D /* MaxRewardedVideoViewController.swift in Sources */,
 				7548D92423D032CB009CF032 /* AdMobBannerViewController.swift in Sources */,
 				96F22C371D3899D300C3136E /* AppDelegate.swift in Sources */,
 				966CC73E1DF7C9B50005EF1C /* BannerTableViewCell.swift in Sources */,

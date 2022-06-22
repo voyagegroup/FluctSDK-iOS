@@ -24,6 +24,8 @@
 	<string>1</string>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-3010029359415397~7008515571</string>
+	<key>AppLovinSdkKey</key>
+	<string>s0H0vZpbr6FVNX5CQ70INOmC2rMqTkpKl4Kdd7ETET-c03qRBqkTDUmFK64prt7axRDTZS1px_Py2DND26nFbW</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
