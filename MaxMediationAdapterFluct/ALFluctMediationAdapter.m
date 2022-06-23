@@ -43,14 +43,14 @@ static MAAdapterInitializationStatus ALFluctInitializationStatus = NSIntegerMin;
         options.mediationPlatformSDKVersion = ALSdk.version;
         [FluctSDK configureWithOptions:options];
 
-        // isTesting だとテスト広告しか表示されないため、Fluctのsettingをする意味がないが念の為設定しています。
-        FSSRewardedVideoSetting *setting = FSSRewardedVideoSetting.defaultSetting;
-
-        if ([parameters isTesting]) {
-            setting.testMode = YES;
-            setting.debugMode = YES;
-        }
-        FSSRewardedVideo.sharedInstance.setting = setting;
+        // Max SDKの設定とは別にFSSRewardedVideoSettingを利用することでtestMode/DebugModeの設定が可能
+        // if ([parameters isTesting]) {
+        //     // isTesting だとテスト広告しか表示されない
+        //     FSSRewardedVideoSetting *setting = FSSRewardedVideoSetting.defaultSetting;
+        //     setting.testMode = YES;
+        //     setting.debugMode = YES;
+        //     FSSRewardedVideo.sharedInstance.setting = setting;
+        // }
 
         [self log:@"FluctSDK initialized"];
 
