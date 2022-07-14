@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
     s.name                  = "FluctSDK-MediationAdapter"
     s.summary               = "Mediation Adapter for FluctSDK ad Framework"
     s.license               = { :type => "Copyright", :text => "Copyright (c) fluct,Inc. All rights reserved." }
-    s.version               = "6.19.1"
+    s.version               = "6.19.2"
     s.author                = "fluct,Inc."
     s.requires_arc          = true
     s.static_framework      = true
@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
     s.subspec "maio" do |ss|
         ss.source_files = "FluctSDK-MediationAdapter/maio/*.{h,m}"
         ss.dependency "FluctSDK", ">=6.14.0"
-        ss.dependency "MaioSDK", '>= 1.5.8'
+        ss.dependency "MaioSDK", '>= 1.6.2'
     end
 
     s.subspec "nend" do |ss|
