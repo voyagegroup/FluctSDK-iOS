@@ -56,6 +56,10 @@
 		<data>
 		HO+623bN+emmw/tWXAO7zNioxZY=
 		</data>
+		<key>Headers/FSSPrivacySettings.h</key>
+		<data>
+		gfMEkXL3zVw00/7ED6IVIpWBjLU=
+		</data>
 		<key>Headers/FSSRewardedVideo.h</key>
 		<data>
 		/mElK4aOD3FkfR7uNpqu2fgVKzQ=
@@ -122,11 +126,11 @@
 		</data>
 		<key>Headers/FluctSDK.h</key>
 		<data>
-		3ec4PvVkqWmj43olr31ethT+ASE=
+		sD4wHUNFeyFPJv4xdhhSd/DSKS4=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		cmGZyqhYGJFLCV6fiJtUhLkj4Hs=
+		Qkkzgm8HxeAzRQCTBNHum5s/dZc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -276,6 +280,17 @@
 			<key>hash2</key>
 			<data>
 			rCD+i1fhM5tq3Xli5zvpnS1Mka1e/8j1Qui4oc0N1X8=
+			</data>
+		</dict>
+		<key>Headers/FSSPrivacySettings.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			gfMEkXL3zVw00/7ED6IVIpWBjLU=
+			</data>
+			<key>hash2</key>
+			<data>
+			xyTwzbrqWqxfiC4SmNCObfmEwjBBzpXgEBGzjc4o3CU=
 			</data>
 		</dict>
 		<key>Headers/FSSRewardedVideo.h</key>
@@ -458,11 +473,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			3ec4PvVkqWmj43olr31ethT+ASE=
+			sD4wHUNFeyFPJv4xdhhSd/DSKS4=
 			</data>
 			<key>hash2</key>
 			<data>
-			eiX1f80ACcLyjpE+5yuUKjdUKPzoFfxC/k5gPGfMUmc=
+			0ZCRowZ/3dcF+vFJ5PGP3CTKq81LulYiSCOh7ix8/2U=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

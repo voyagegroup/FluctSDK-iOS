@@ -17,6 +17,7 @@
 
 #import <FluctSDK/FSSAdRequestTargeting.h>
 #import <FluctSDK/FSSConfigurationOptions.h>
+#import <FluctSDK/FSSPrivacySettings.h>
 
 #import <FluctSDK/FSSAdView.h>
 #import <FluctSDK/FSSAdViewError.h>
