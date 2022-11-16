@@ -23,38 +23,38 @@ PODS:
     - BURelyFoundation_Global/NETWork (= 0.0.1.58)
   - BURelyFoundation_Global/NETWork (0.0.1.58)
   - FiveAd (2.4.20220630)
-  - FluctSDK (6.20.3)
-  - FluctSDK-MediationAdapter (6.20.3):
-    - FluctSDK-MediationAdapter/AdColony (= 6.20.3)
-    - FluctSDK-MediationAdapter/AppLovin (= 6.20.3)
-    - FluctSDK-MediationAdapter/Five (= 6.20.3)
-    - FluctSDK-MediationAdapter/maio (= 6.20.3)
-    - FluctSDK-MediationAdapter/nend (= 6.20.3)
-    - FluctSDK-MediationAdapter/Pangle (= 6.20.3)
-    - FluctSDK-MediationAdapter/Tapjoy (= 6.20.3)
-    - FluctSDK-MediationAdapter/UnityAds (= 6.20.3)
-  - FluctSDK-MediationAdapter/AdColony (6.20.3):
+  - FluctSDK (6.20.4)
+  - FluctSDK-MediationAdapter (6.20.4):
+    - FluctSDK-MediationAdapter/AdColony (= 6.20.4)
+    - FluctSDK-MediationAdapter/AppLovin (= 6.20.4)
+    - FluctSDK-MediationAdapter/Five (= 6.20.4)
+    - FluctSDK-MediationAdapter/maio (= 6.20.4)
+    - FluctSDK-MediationAdapter/nend (= 6.20.4)
+    - FluctSDK-MediationAdapter/Pangle (= 6.20.4)
+    - FluctSDK-MediationAdapter/Tapjoy (= 6.20.4)
+    - FluctSDK-MediationAdapter/UnityAds (= 6.20.4)
+  - FluctSDK-MediationAdapter/AdColony (6.20.4):
     - AdColony (>= 4.9.0)
     - FluctSDK (>= 6.14.0)
-  - FluctSDK-MediationAdapter/AppLovin (6.20.3):
+  - FluctSDK-MediationAdapter/AppLovin (6.20.4):
     - AppLovinSDK (>= 11.1.1)
     - FluctSDK (>= 6.14.0)
-  - FluctSDK-MediationAdapter/Five (6.20.3):
+  - FluctSDK-MediationAdapter/Five (6.20.4):
     - FiveAd (>= 2.4.20220630)
     - FluctSDK (>= 6.14.0)
-  - FluctSDK-MediationAdapter/maio (6.20.3):
+  - FluctSDK-MediationAdapter/maio (6.20.4):
     - FluctSDK (>= 6.14.0)
     - MaioSDK (>= 1.6.2)
-  - FluctSDK-MediationAdapter/nend (6.20.3):
+  - FluctSDK-MediationAdapter/nend (6.20.4):
     - FluctSDK (>= 6.14.0)
     - NendSDK_iOS (>= 7.0.4)
-  - FluctSDK-MediationAdapter/Pangle (6.20.3):
+  - FluctSDK-MediationAdapter/Pangle (6.20.4):
     - Ads-Global (>= 4.5.2.7)
     - FluctSDK (>= 6.14.0)
-  - FluctSDK-MediationAdapter/Tapjoy (6.20.3):
+  - FluctSDK-MediationAdapter/Tapjoy (6.20.4):
     - FluctSDK (>= 6.14.0)
     - TapjoySDK (>= 12.8.0)
-  - FluctSDK-MediationAdapter/UnityAds (6.20.3):
+  - FluctSDK-MediationAdapter/UnityAds (6.20.4):
     - FluctSDK (>= 6.14.0)
     - UnityAds (= 3.7.5)
   - Google-Mobile-Ads-SDK (8.10.0):
@@ -73,7 +73,7 @@ PODS:
     - GoogleUtilities/Network (~> 7.4)
     - "GoogleUtilities/NSData+zlib (~> 7.4)"
     - nanopb (~> 2.30908.0)
-  - GoogleMobileAdsMediationFluct (6.20.3):
+  - GoogleMobileAdsMediationFluct (6.20.4):
     - FluctSDK (>= 6.12.1)
     - Google-Mobile-Ads-SDK (>= 8.1.0)
   - GoogleUserMessagingPlatform (2.0.0)
@@ -95,7 +95,7 @@ PODS:
   - GoogleUtilities/Reachability (7.5.2):
     - GoogleUtilities/Logger
   - MaioSDK (1.6.2)
-  - MaxMediationAdapterFluct (6.20.3):
+  - MaxMediationAdapterFluct (6.20.4):
     - AppLovinSDK (>= 11.4.2)
     - FluctSDK (>= 6.19.0)
   - nanopb (2.30908.0):
@@ -174,15 +174,15 @@ SPEC CHECKSUMS:
   AppLovinSDK: 119a0b2a743f9d9c6002c58776b1013778a65084
   BURelyFoundation_Global: 4d19085056d58dc06a102f2d41c140ab2fc47da5
   FiveAd: b4c86cbb62a14212c3448fffb7563c08c9671e89
-  FluctSDK: 0a70a206036c6e66293d8e4540552e05030af893
-  FluctSDK-MediationAdapter: d70cd3bd819a05a920beffb6ab2a4cbeacfefd79
+  FluctSDK: 3b66eda41a946f62db7450d3709bf2ba3a696a2f
+  FluctSDK-MediationAdapter: 87f79bebf093b52d69824866f96ed19c784cf3cf
   Google-Mobile-Ads-SDK: 9c78323a7069cd42ddf1ad2fddbaec889b085091
   GoogleAppMeasurement: 2be61ce546ad074dbe4dd545f222ac6033bb1d9e
-  GoogleMobileAdsMediationFluct: 24a6c77ef06b5d21a5628627ab7e6fbe22605b92
+  GoogleMobileAdsMediationFluct: ac0603785993f690e7294cc662ad527b2bae0251
   GoogleUserMessagingPlatform: ab890ce5f6620f293a21b6bdd82e416a2c73aeca
   GoogleUtilities: 8de2a97a17e15b6b98e38e8770e2d129a57c0040
   MaioSDK: 674022c6f61693de0601e110da2564ca121df37d
-  MaxMediationAdapterFluct: ec153defad244287fb2d45c4c89a57d7d1f488ef
+  MaxMediationAdapterFluct: 93099fe706d94ae2445eed4ed8b0f4ba55d6fcab
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   NendSDK_iOS: 035fd2568f837caaaeeaf18817632106b9355f10
   OneKit-Pangle: a1db5e9289faf278e7ef158923c993412f2cea03
