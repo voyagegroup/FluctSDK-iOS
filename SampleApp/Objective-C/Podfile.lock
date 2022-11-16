@@ -1,5 +1,5 @@
 PODS:
-  - AdColony (4.8.0)
+  - AdColony (4.9.0)
   - Ads-Global (4.5.2.7):
     - Ads-Global/BUAdSDK (= 4.5.2.7)
   - Ads-Global/APM (4.5.2.7):
@@ -34,7 +34,7 @@ PODS:
     - FluctSDK-MediationAdapter/Tapjoy (= 6.20.3)
     - FluctSDK-MediationAdapter/UnityAds (= 6.20.3)
   - FluctSDK-MediationAdapter/AdColony (6.20.3):
-    - AdColony (>= 4.3.1)
+    - AdColony (>= 4.9.0)
     - FluctSDK (>= 6.14.0)
   - FluctSDK-MediationAdapter/AppLovin (6.20.3):
     - AppLovinSDK (>= 11.1.1)
@@ -169,13 +169,13 @@ EXTERNAL SOURCES:
     :path: "../../../MaxMediationAdapterFluct.podspec"
 
 SPEC CHECKSUMS:
-  AdColony: eba15b485d1e63d36601d5da4916af73d343b897
+  AdColony: 4f3738dc633d7aaa8ec60729df973076cc8e97ed
   Ads-Global: c2fab60fb986a32ca6f9eec29b2af7eb1e04e9aa
   AppLovinSDK: 119a0b2a743f9d9c6002c58776b1013778a65084
   BURelyFoundation_Global: 4d19085056d58dc06a102f2d41c140ab2fc47da5
   FiveAd: b4c86cbb62a14212c3448fffb7563c08c9671e89
   FluctSDK: 0a70a206036c6e66293d8e4540552e05030af893
-  FluctSDK-MediationAdapter: bc0812c75799c677ecc9e8e9ba853c5b34ff978d
+  FluctSDK-MediationAdapter: d70cd3bd819a05a920beffb6ab2a4cbeacfefd79
   Google-Mobile-Ads-SDK: 9c78323a7069cd42ddf1ad2fddbaec889b085091
   GoogleAppMeasurement: 2be61ce546ad074dbe4dd545f222ac6033bb1d9e
   GoogleMobileAdsMediationFluct: 24a6c77ef06b5d21a5628627ab7e6fbe22605b92

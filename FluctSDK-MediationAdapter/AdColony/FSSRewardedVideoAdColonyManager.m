@@ -83,7 +83,7 @@ typedef NS_ENUM(NSUInteger, AdColonyManagerState) {
     return self;
 }
 
-- (void)configureWithAppId:(NSString *)appId zoneIDs:(NSArray<NSString *> *)zoneIDs testMode:(BOOL)testMode debug:(BOOL)debugMode {
+- (void)configureWithAppId:(NSString *)appId testMode:(BOOL)testMode debug:(BOOL)debugMode {
     if (self.state == Configuring || self.state == Configured) {
         // do nothing
         return;
@@ -96,7 +96,6 @@ typedef NS_ENUM(NSUInteger, AdColonyManagerState) {
 
     __weak __typeof(self) weakSelf = self;
     [AdColony configureWithAppID:appId
-                         zoneIDs:zoneIDs
                          options:options
                       completion:^(NSArray<AdColonyZone *> *_Nonnull zones) {
                           [weakSelf adColonyConfigureCallback:zones];
@@ -118,8 +117,9 @@ typedef NS_ENUM(NSUInteger, AdColonyManagerState) {
         };
     }];
     dispatch_async(FSSWorkQueue(), ^{
-        for (void (^callback)(void) in weakSelf.configCompletionArray) {
+        for (void (^callback)(void) in [weakSelf.configCompletionArray copy]) {
             callback();
+            [weakSelf.configCompletionArray removeObject:callback];
         }
     });
 }

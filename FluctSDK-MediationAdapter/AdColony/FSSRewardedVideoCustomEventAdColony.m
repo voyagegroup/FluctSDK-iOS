@@ -41,9 +41,9 @@ static NSString *const FSSAdColonySupportVersion = @"9.0";
                            targeting:nil];
 
     if (self) {
+        // 古いadcolony SDKでは"all_zone_ids"を利用するのでdlvのレスポンスから削除はできない
         self.zoneId = dictionary[@"zone_id"];
         [[FSSRewardedVideoAdColonyManager sharedInstance] configureWithAppId:dictionary[@"app_id"]
-                                                                     zoneIDs:dictionary[@"all_zone_ids"]
                                                                     testMode:testMode
                                                                        debug:debugMode];
     }

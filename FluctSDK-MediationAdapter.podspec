@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
     s.subspec "AdColony" do |ss|
         ss.source_files = "FluctSDK-MediationAdapter/AdColony/*.{h,m}"
         ss.dependency "FluctSDK", ">=6.14.0"
-        ss.dependency "AdColony", '>= 4.3.1'
+        ss.dependency "AdColony", '>= 4.9.0'
     end
 
     s.subspec "AppLovin" do |ss|

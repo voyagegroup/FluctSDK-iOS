@@ -27,7 +27,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface FSSRewardedVideoAdColonyManager : NSObject
 + (instancetype)sharedInstance;
 - (void)configureWithAppId:(NSString *)appId
-                   zoneIDs:(NSArray<NSString *> *)zoneIDs
                   testMode:(BOOL)testMode
                      debug:(BOOL)debugMode;
 - (void)loadRewardedVideoWithZoneId:(NSString *)zoneId
