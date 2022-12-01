@@ -19,8 +19,6 @@ typedef NS_ENUM(NSInteger, NADRewardedVideoErrorExtend) {
 
 @end
 
-static NSString *const FSSNendSupportVersion = @"8.1";
-
 @implementation FSSRewardedVideoCustomEventNend
 
 + (NADRewardedVideo *)initializeNendSDKWithSpotId:(NSString *)spotId apiKey:(NSString *)apiKey {
@@ -33,11 +31,6 @@ static NSString *const FSSNendSupportVersion = @"8.1";
                          debugMode:(BOOL)debugMode
                          skippable:(BOOL)skippable
                          targeting:(FSSAdRequestTargeting *)targeting {
-
-    if (![FSSRewardedVideoCustomEventNend isOSAtLeastVersion:FSSNendSupportVersion]) {
-        return nil;
-    }
-
     self = [super initWithDictionary:dictionary
                             delegate:delegate
                             testMode:testMode

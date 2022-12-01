@@ -13,7 +13,6 @@ typedef NS_ENUM(NSInteger, AdColonyVideoErrorExtendend) {
 };
 
 static const NSInteger timeoutSecond = 3;
-static NSString *const FSSAdColonySupportVersion = @"9.0";
 
 @interface FSSRewardedVideoCustomEventAdColony () <FSSRewardedVideoAdColonyManagerDelegate>
 @property (nonatomic, copy) NSString *zoneId;
@@ -28,11 +27,6 @@ static NSString *const FSSAdColonySupportVersion = @"9.0";
                          debugMode:(BOOL)debugMode
                          skippable:(BOOL)skippable
                          targeting:(FSSAdRequestTargeting *)targeting {
-
-    if (![FSSRewardedVideoCustomEvent isOSAtLeastVersion:FSSAdColonySupportVersion]) {
-        return nil;
-    }
-
     self = [super initWithDictionary:dictionary
                             delegate:delegate
                             testMode:testMode

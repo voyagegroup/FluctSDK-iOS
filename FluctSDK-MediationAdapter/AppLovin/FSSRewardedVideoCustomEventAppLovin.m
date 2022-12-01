@@ -19,8 +19,6 @@
 
 @end
 
-static NSString *const FSSAppLovinSupportVersion = @"9.0";
-
 @implementation FSSRewardedVideoCustomEventAppLovin
 
 + (ALSdk *)sharedWithKey:(NSString *)sdkKey {
@@ -37,11 +35,6 @@ static NSString *const FSSAppLovinSupportVersion = @"9.0";
                          debugMode:(BOOL)debugMode
                          skippable:(BOOL)skippable
                          targeting:(FSSAdRequestTargeting *)targeting {
-
-    if (![FSSRewardedVideoCustomEventAppLovin isOSAtLeastVersion:FSSAppLovinSupportVersion]) {
-        return nil;
-    }
-
     self = [super initWithDictionary:dictionary
                             delegate:delegate
                             testMode:testMode

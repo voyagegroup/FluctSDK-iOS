@@ -16,8 +16,6 @@
 
 static const NSInteger timeoutSecond = 3;
 
-static NSString *const FSSMaioSupportVersion = @"8.0";
-
 @implementation FSSRewardedVideoCustomEventMaio
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary
@@ -26,11 +24,6 @@ static NSString *const FSSMaioSupportVersion = @"8.0";
                          debugMode:(BOOL)debugMode
                          skippable:(BOOL)skippable
                          targeting:(FSSAdRequestTargeting *)targeting {
-
-    if (![FSSRewardedVideoCustomEvent isOSAtLeastVersion:FSSMaioSupportVersion]) {
-        return nil;
-    }
-
     self = [super initWithDictionary:dictionary
                             delegate:delegate
                             testMode:testMode

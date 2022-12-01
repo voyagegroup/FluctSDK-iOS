@@ -20,8 +20,6 @@ static const NSInteger timeoutSecond = 30;
 @property (nonatomic) id<FSSUnityAdsProtocol> unityAds;
 @end
 
-static NSString *const FSSUnityAdsSupportVersion = @"9.0";
-
 @implementation FSSRewardedVideoCustomEventUnityAds
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary
@@ -48,10 +46,6 @@ static NSString *const FSSUnityAdsSupportVersion = @"9.0";
                          targeting:(FSSAdRequestTargeting *)targeting
                    unityAdsManager:(FSSUnityAdsManager *)unityAdsManager
                           unityAds:(id<FSSUnityAdsProtocol>)unityAds {
-    if (![FSSRewardedVideoCustomEventUnityAds isOSAtLeastVersion:FSSUnityAdsSupportVersion]) {
-        return nil;
-    }
-
     self = [super initWithDictionary:dictionary
                             delegate:delegate
                             testMode:testMode
