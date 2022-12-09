@@ -10,12 +10,9 @@
 #import "FSSUnityAdsManager.h"
 #import <UnityAds/UnityAds.h>
 
-static const NSInteger timeoutSecond = 30;
-
 @interface FSSRewardedVideoCustomEventUnityAds () <FSSUnityAdsManagerDelegate, UnityAdsShowDelegate>
 @property (nonatomic, copy) NSString *gameID;
 @property (nonatomic, copy) NSString *placementID;
-@property (nonatomic) NSTimer *timeoutTimer;
 @property (nonatomic) FSSUnityAdsManager *unityAdsManager;
 @property (nonatomic) id<FSSUnityAdsProtocol> unityAds;
 @end
@@ -63,13 +60,6 @@ static const NSInteger timeoutSecond = 30;
 
 - (void)loadRewardedVideoWithDictionary:(NSDictionary *)dictionary {
     self.adnwStatus = FSSRewardedVideoADNWStatusLoading;
-    // if target placement id could not complete load, call load failed
-    self.timeoutTimer = [NSTimer scheduledTimerWithTimeInterval:timeoutSecond
-                                                         target:self
-                                                       selector:@selector(timeout)
-                                                       userInfo:nil
-                                                        repeats:NO];
-
     [self.unityAdsManager loadWithGameId:self.gameID
                                 testMode:self.testMode
                                debugMode:self.debugMode
@@ -90,35 +80,12 @@ static const NSInteger timeoutSecond = 30;
     return [UnityAds getVersion];
 }
 
-- (void)timeout {
-    [self clearTimer];
-    if (self.adnwStatus == FSSRewardedVideoADNWStatusLoading) {
-        self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
-        NSError *fluctError = [NSError errorWithDomain:FSSVideoErrorSDKDomain
-                                                  code:FSSVideoErrorTimeout
-                                              userInfo:nil];
-        [self.delegate rewardedVideoDidFailToLoadForCustomEvent:self
-                                                     fluctError:fluctError
-                                                 adnetworkError:fluctError];
-    }
-}
-
-- (void)clearTimer {
-    [self.timeoutTimer invalidate];
-    self.timeoutTimer = nil;
-}
-
-- (void)dealloc {
-    [self clearTimer];
-}
-
 #pragma mark FSSUnityAdsManagerDelegate
 
 - (void)unityAdsFailedToInitializeWithFluctError:(NSError *)fluctError
                                   adnetworkError:(NSError *)adnetworkError {
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSWorkQueue(), ^{
-        [weakSelf clearTimer];
         weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
         [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:weakSelf
                                                          fluctError:fluctError
@@ -131,7 +98,6 @@ static const NSInteger timeoutSecond = 30;
 - (void)unityAdsAdLoaded:(NSString *)placementId {
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSWorkQueue(), ^{
-        [weakSelf clearTimer];
         weakSelf.adnwStatus = FSSRewardedVideoADNWStatusLoaded;
         [weakSelf.delegate rewardedVideoDidLoadForCustomEvent:weakSelf];
     });
@@ -142,7 +108,6 @@ static const NSInteger timeoutSecond = 30;
                    withMessage:(NSString *)message {
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSWorkQueue(), ^{
-        [weakSelf clearTimer];
         weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
         NSError *unityAdsError = [NSError errorWithDomain:FSSVideoErrorSDKDomain
                                                      code:error

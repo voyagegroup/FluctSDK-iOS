@@ -12,11 +12,8 @@ typedef NS_ENUM(NSInteger, AdColonyVideoErrorExtendend) {
     AdColonyVideoErrorExtendendExpired = -2
 };
 
-static const NSInteger timeoutSecond = 3;
-
 @interface FSSRewardedVideoCustomEventAdColony () <FSSRewardedVideoAdColonyManagerDelegate>
 @property (nonatomic, copy) NSString *zoneId;
-@property (nonatomic) NSTimer *timeoutTimer;
 @end
 
 @implementation FSSRewardedVideoCustomEventAdColony
@@ -50,11 +47,6 @@ static const NSInteger timeoutSecond = 3;
 
 - (void)loadRewardedVideoWithDictionary:(NSDictionary *)dictionary {
     self.adnwStatus = FSSRewardedVideoADNWStatusLoading;
-    self.timeoutTimer = [NSTimer scheduledTimerWithTimeInterval:timeoutSecond
-                                                         target:self
-                                                       selector:@selector(timeout)
-                                                       userInfo:nil
-                                                        repeats:NO];
     [[FSSRewardedVideoAdColonyManager sharedInstance] loadRewardedVideoWithZoneId:self.zoneId
                                                                          delegate:self];
 }
@@ -68,33 +60,8 @@ static const NSInteger timeoutSecond = 3;
     return [AdColony getSDKVersion];
 }
 
-- (void)timeout {
-    [self clearTimer];
-    if (self.adnwStatus == FSSRewardedVideoADNWStatusLoading) {
-        self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
-        [self.delegate rewardedVideoDidFailToLoadForCustomEvent:self
-                                                     fluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
-                                                                                    code:FSSVideoErrorTimeout
-                                                                                userInfo:nil]
-                                                 adnetworkError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
-                                                                                    code:AdColonyVideoErrorExtendendTimeout
-                                                                                userInfo:@{NSLocalizedDescriptionKey : @"timeout."}]];
-    }
-}
-
-- (void)clearTimer {
-    [self.timeoutTimer invalidate];
-    self.timeoutTimer = nil;
-}
-
-- (void)dealloc {
-    [self clearTimer];
-}
-
 #pragma mark - FSSRewardedVideoAdColonyManagerDelegate
 - (void)adColonyInterstitialDidLoad {
-    [self clearTimer];
-
     if (self.adnwStatus == FSSRewardedVideoADNWStatusNotDisplayable) {
         // already timeout. do nothing.
         return;
@@ -105,8 +72,6 @@ static const NSInteger timeoutSecond = 3;
 }
 
 - (void)adColonyInterstitialDidFailToLoad:(AdColonyAdRequestError *)error {
-    [self clearTimer];
-
     if (self.adnwStatus == FSSRewardedVideoADNWStatusNotDisplayable) {
         // already timeout. do nothing.
         return;

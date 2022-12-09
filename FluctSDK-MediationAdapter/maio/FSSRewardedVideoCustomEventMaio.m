@@ -10,11 +10,8 @@
 @interface FSSRewardedVideoCustomEventMaio ()
 
 @property (nonatomic, copy) NSString *zoneID;
-@property (nonatomic) NSTimer *timeoutTimer;
 @property (nonatomic) BOOL isInitialNotificationForAdapter;
 @end
-
-static const NSInteger timeoutSecond = 3;
 
 @implementation FSSRewardedVideoCustomEventMaio
 
@@ -41,11 +38,6 @@ static const NSInteger timeoutSecond = 3;
 
 - (void)loadRewardedVideoWithDictionary:(NSDictionary *)dictionary {
     self.adnwStatus = FSSRewardedVideoADNWStatusLoading;
-    self.timeoutTimer = [NSTimer scheduledTimerWithTimeInterval:timeoutSecond
-                                                         target:self
-                                                       selector:@selector(timeout)
-                                                       userInfo:nil
-                                                        repeats:NO];
     [[FSSRewardedVideoMaioManager sharedInstance] loadRewardedVideoWithDictionary:dictionary
                                                                          delegate:self
                                                                          testMode:self.testMode];
@@ -64,37 +56,11 @@ static const NSInteger timeoutSecond = 3;
     return [Maio sdkVersion];
 }
 
-- (void)timeout {
-    [self clearTimer];
-    if (self.isInitialNotificationForAdapter) {
-        self.isInitialNotificationForAdapter = NO;
-        self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
-        [self.delegate rewardedVideoDidFailToLoadForCustomEvent:self
-                                                     fluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
-                                                                                    code:FSSVideoErrorTimeout
-                                                                                userInfo:nil]
-                                                 adnetworkError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
-                                                                                    code:MaioFailReasonExtendTimeout
-                                                                                userInfo:@{NSLocalizedDescriptionKey : @"timeout."}]];
-    }
-}
-
-- (void)clearTimer {
-    [self.timeoutTimer invalidate];
-    self.timeoutTimer = nil;
-}
-
-- (void)dealloc {
-    [self clearTimer];
-}
-
 #pragma mark FSSRewardedVideoMaioManagerDelegate
 - (void)maioDidChangeCanShow:(NSString *)zoneId newValue:(BOOL)newValue {
     __weak __typeof(self) weakSelf = self;
 
     dispatch_async(FSSWorkQueue(), ^{
-        [weakSelf clearTimer];
-
         if (self.isInitialNotificationForAdapter) {
             weakSelf.isInitialNotificationForAdapter = NO;
             weakSelf.adnwStatus = FSSRewardedVideoADNWStatusLoaded;
@@ -136,7 +102,6 @@ static const NSInteger timeoutSecond = 3;
 - (void)maioDidFail:(NSString *)zoneId reason:(MaioFailReason)reason {
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSWorkQueue(), ^{
-        [self clearTimer];
         weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
 
         NSError *adnwError = [self convertADNWErrorFromFailReason:reason];
