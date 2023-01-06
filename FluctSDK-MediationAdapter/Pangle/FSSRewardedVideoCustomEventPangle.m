@@ -6,13 +6,19 @@
 //
 
 #import "FSSRewardedVideoCustomEventPangle.h"
-#import <BUAdSDK/BUAdSDK.h>
+#import "FSSPangleLoadManager.h"
+#import <PAGAdSDK/PAGAdSDK.h>
 
-@interface FSSRewardedVideoCustomEventPangle () <BURewardedVideoAdDelegate>
-@property (nonnull) BURewardedVideoAd *rewardedVideo;
+@interface FSSRewardedVideoCustomEventPangle () <FSSPangleLoadManagerDelegate, PAGRewardedAdDelegate>
+
+@property (nonatomic, copy) NSString *appId;
+@property (nonatomic, copy) NSString *slotId;
+@property (nonatomic) FSSPangleLoadManager *pangleLoadManager;
+@property (nonatomic) PAGRewardedAd *rewardedVideo;
+
 @end
 
-static NSString *const FSSPangleSupportVersion = @"10.0";
+static NSString *const FSSPangleSupportVersion = @"12.0";
 
 @implementation FSSRewardedVideoCustomEventPangle
 
@@ -27,135 +33,136 @@ static NSString *const FSSPangleSupportVersion = @"10.0";
         return nil;
     }
 
+    return [self initWithDictionary:dictionary
+                           delegate:delegate
+                           testMode:testMode
+                          debugMode:debugMode
+                          skippable:skippable
+                          targeting:nil
+                  pangleLoadManager:[FSSPangleLoadManager sharedInstance]];
+}
+
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary
+                          delegate:(id<FSSRewardedVideoCustomEventDelegate>)delegate
+                          testMode:(BOOL)testMode
+                         debugMode:(BOOL)debugMode
+                         skippable:(BOOL)skippable
+                         targeting:(FSSAdRequestTargeting *)targeting
+                 pangleLoadManager:(FSSPangleLoadManager *)pangleLoadManager {
     self = [super initWithDictionary:dictionary
                             delegate:delegate
                             testMode:testMode
                            debugMode:debugMode
                            skippable:skippable
-                           targeting:targeting];
+                           targeting:nil];
 
-    if (self) {
-        static dispatch_once_t onceToken;
-        dispatch_once(&onceToken, ^{
-            [BUAdSDKManager setAppID:dictionary[@"app_id"]];
-            [BUAdSDKManager setLoglevel:debugMode ? BUAdSDKLogLevelDebug : BUAdSDKLogLevelError];
-        });
-        BURewardedVideoModel *model = [[BURewardedVideoModel alloc] init];
-        _rewardedVideo = [[BURewardedVideoAd alloc] initWithSlotID:dictionary[@"ad_placement_id"] rewardedVideoModel:model];
-        _rewardedVideo.delegate = self;
-    }
+    self.appId = dictionary[@"app_id"];
+    self.slotId = dictionary[@"ad_placement_id"];
+    self.pangleLoadManager = pangleLoadManager;
 
     return self;
 }
 
 - (void)loadRewardedVideoWithDictionary:(NSDictionary *)dictionary {
     self.adnwStatus = FSSRewardedVideoADNWStatusLoading;
-    [self.rewardedVideo loadAdData];
+    [self.pangleLoadManager loadWithAppId:self.appId
+                                debugMode:self.debugMode
+                                   slotId:self.slotId
+                                 delegate:self];
 }
 
 - (void)presentRewardedVideoAdFromViewController:(UIViewController *)viewController {
-    [self.rewardedVideo showAdFromRootViewController:viewController];
+    __weak __typeof(self) weakSelf = self;
+    dispatch_async(FSSWorkQueue(), ^{
+        [weakSelf.delegate rewardedVideoWillAppearForCustomEvent:weakSelf];
+    });
+    [self.rewardedVideo presentFromRootViewController:viewController];
 }
 
 - (NSString *)sdkVersion {
-    return BUAdSDKManager.SDKVersion;
+    return PAGSdk.SDKVersion;
 }
 
 - (FSSRewardedVideoADNWStatus)loadStatus {
     return self.adnwStatus;
 }
 
-#pragma mark - BURewardedVideoAdDelegate
+#pragma mark - FSSPangleLoadManagerDelegate
 
-- (void)rewardedVideoAdDidLoad:(BURewardedVideoAd *)rewardedVideoAd {
-    // noop
-}
-
-- (void)rewardedVideoAd:(BURewardedVideoAd *)rewardedVideoAd didFailWithError:(NSError *_Nullable)error {
+- (void)pangleFailedToInitializeWithFluctError:(NSError *)fluctError
+                                adnetworkError:(NSError *)adnetworkError {
+    self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSWorkQueue(), ^{
-        weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
         [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:weakSelf
-                                                         fluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
-                                                                                        code:FSSVideoErrorLoadFailed
-                                                                                    userInfo:nil]
-                                                     adnetworkError:error];
+                                                         fluctError:fluctError
+                                                     adnetworkError:adnetworkError];
     });
 }
 
-- (void)rewardedVideoAdVideoDidLoad:(BURewardedVideoAd *)rewardedVideoAd {
+- (void)pangleRewardedAdDidLoad:(PAGRewardedAd *)rewardedAd {
+    self.adnwStatus = FSSRewardedVideoADNWStatusLoaded;
+    self.rewardedVideo = rewardedAd;
+    self.rewardedVideo.delegate = self;
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSWorkQueue(), ^{
-        weakSelf.adnwStatus = FSSRewardedVideoADNWStatusLoaded;
         [weakSelf.delegate rewardedVideoDidLoadForCustomEvent:weakSelf];
     });
 }
 
-- (void)rewardedVideoAdWillVisible:(BURewardedVideoAd *)rewardedVideoAd {
+- (void)pangleRewardedAdFailedToLoad:(NSError *)error {
+    self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSWorkQueue(), ^{
-        [weakSelf.delegate rewardedVideoWillAppearForCustomEvent:weakSelf];
+        NSError *fluctError = [NSError errorWithDomain:FSSVideoErrorSDKDomain
+                                                  code:FSSVideoErrorLoadFailed
+                                              userInfo:nil];
+        [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:weakSelf
+                                                         fluctError:fluctError
+                                                     adnetworkError:error];
     });
 }
 
-- (void)rewardedVideoAdDidVisible:(BURewardedVideoAd *)rewardedVideoAd {
+#pragma mark - PAGRewardedAdDelegate
+
+- (void)adDidShow:(PAGRewardedAd *)ad {
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoDidAppearForCustomEvent:weakSelf];
     });
 }
 
-- (void)rewardedVideoAdWillClose:(BURewardedVideoAd *)rewardedVideoAd {
-    __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSWorkQueue(), ^{
-        [weakSelf.delegate rewardedVideoWillDisappearForCustomEvent:weakSelf];
-    });
-}
-
-- (void)rewardedVideoAdDidClose:(BURewardedVideoAd *)rewardedVideoAd {
-    __weak __typeof(self) weakSelf = self;
-    dispatch_async(FSSWorkQueue(), ^{
-        [weakSelf.delegate rewardedVideoDidDisappearForCustomEvent:weakSelf];
-    });
-}
-
-- (void)rewardedVideoAdDidClick:(BURewardedVideoAd *)rewardedVideoAd {
+- (void)adDidClick:(PAGRewardedAd *)ad {
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoDidClickForCustomEvent:weakSelf];
     });
 }
 
-- (void)rewardedVideoAdDidPlayFinish:(BURewardedVideoAd *)rewardedVideoAd didFailWithError:(NSError *_Nullable)error {
-    if (!error) {
-        return;
-    }
+- (void)adDidDismiss:(PAGRewardedAd *)ad {
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSWorkQueue(), ^{
-        weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
-        [weakSelf.delegate rewardedVideoDidFailToPlayForCustomEvent:weakSelf
-                                                         fluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
-                                                                                        code:FSSVideoErrorPlayFailed
-                                                                                    userInfo:nil]
-                                                     adnetworkError:error];
+        [weakSelf.delegate rewardedVideoWillDisappearForCustomEvent:weakSelf];
+        [weakSelf.delegate rewardedVideoDidDisappearForCustomEvent:weakSelf];
     });
 }
 
-- (void)rewardedVideoAdServerRewardDidSucceed:(BURewardedVideoAd *)rewardedVideoAd verify:(BOOL)verify {
+- (void)rewardedAd:(PAGRewardedAd *)rewardedAd userDidEarnReward:(PAGRewardModel *)rewardModel {
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSWorkQueue(), ^{
-        [weakSelf.delegate rewardedVideoShouldRewardForCustomEvent:self];
+        [weakSelf.delegate rewardedVideoShouldRewardForCustomEvent:weakSelf];
     });
 }
 
-- (void)rewardedVideoAdServerRewardDidFail:(BURewardedVideoAd *)rewardedVideoAd error:(NSError *)error {
+- (void)rewardedAd:(PAGRewardedAd *)rewardedAd userEarnRewardFailWithError:(NSError *)error {
+    self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSWorkQueue(), ^{
-        weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
+        NSError *fluctError = [NSError errorWithDomain:FSSVideoErrorSDKDomain
+                                                  code:FSSVideoErrorPlayFailed
+                                              userInfo:nil];
         [weakSelf.delegate rewardedVideoDidFailToPlayForCustomEvent:weakSelf
-                                                         fluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
-                                                                                        code:FSSVideoErrorPlayFailed
-                                                                                    userInfo:nil]
+                                                         fluctError:fluctError
                                                      adnetworkError:error];
     });
 }
