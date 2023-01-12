@@ -9,7 +9,14 @@ target 'SampleApp' do
   # Pods for SampleApp
   # 実際に使うときは :path指定は不要です。
   pod 'FluctSDK', :path => '../../../FluctSDK.podspec'
-  pod 'FluctSDK-MediationAdapter', :path => '../../../FluctSDK-MediationAdapter.podspec'
+  pod 'FluctSDK-MediationAdapter/AdColony', :path => '../../../FluctSDK-MediationAdapter.podspec'
+  pod 'FluctSDK-MediationAdapter/AppLovin', :path => '../../../FluctSDK-MediationAdapter.podspec'
+  pod 'FluctSDK-MediationAdapter/maio', :path => '../../../FluctSDK-MediationAdapter.podspec'
+  pod 'FluctSDK-MediationAdapter/nend', :path => '../../../FluctSDK-MediationAdapter.podspec'
+  pod 'FluctSDK-MediationAdapter/Tapjoy', :path => '../../../FluctSDK-MediationAdapter.podspec'
+  pod 'FluctSDK-MediationAdapter/UnityAds', :path => '../../../FluctSDK-MediationAdapter.podspec'
+  pod 'FluctSDK-MediationAdapter/Five', :path => '../../../FluctSDK-MediationAdapter.podspec'
+  pod 'FluctSDK-MediationAdapter/Pangle', :path => '../../../FluctSDK-MediationAdapter.podspec'
 
   # AdMobのMediationにCustom EventでFluctSDKを入れる際には以下のpodが必須です
   pod 'Google-Mobile-Ads-SDK'
