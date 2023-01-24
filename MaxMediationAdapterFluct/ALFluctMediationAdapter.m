@@ -79,7 +79,7 @@ static MAAdapterInitializationStatus ALFluctInitializationStatus = NSIntegerMin;
 - (void)loadRewardedAdForParameters:(nonnull id<MAAdapterResponseParameters>)parameters
                           andNotify:(nonnull id<MARewardedAdapterDelegate>)delegate {
 
-    if ([ALFluctMediationAdapter shouldNotDeliverAds:parameters]) {
+    if (![ALFluctMediationAdapter canDeliverAds:parameters]) {
         [delegate didFailToLoadRewardedAdWithError:[ALFluctMediationAdapter maxErrorFromFluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
                                                                                                                        code:FSSVideoErrorNoAds
                                                                                                                    userInfo:@{NSLocalizedDescriptionKey : @"FluctSDK dose not deliver ads to this user to comply with GDPR, CCPA, COPPA"}]]];
@@ -192,12 +192,29 @@ static MAAdapterInitializationStatus ALFluctInitializationStatus = NSIntegerMin;
     return targeting;
 }
 
-+ (BOOL)shouldNotDeliverAds:(nonnull id<MAAdapterResponseParameters>)parameters {
-    NSNumber *gdpr = parameters.userConsent;
-    NSNumber *ccpa = parameters.doNotSell;
-    NSNumber *coppa = parameters.ageRestrictedUser;
++ (BOOL)canDeliverAds:(nonnull id<MAAdapterResponseParameters>)parameters {
+    // GDPR
+    NSNumber *userConsent = parameters.userConsent;
+    bool canDeliverAdsForUserConsent = userConsent == nil || [userConsent boolValue];
+    if (!canDeliverAdsForUserConsent) {
+        return false;
+    }
 
-    return ![gdpr boolValue] || [ccpa boolValue] || [coppa boolValue];
+    // CCPA
+    NSNumber *doNotSell = parameters.doNotSell;
+    bool canDeliverAdsForDoNotSell = doNotSell == nil || ![doNotSell boolValue];
+    if (!canDeliverAdsForDoNotSell) {
+        return false;
+    }
+
+    // child users for CCPA, GDPR, COPPA, etc
+    NSNumber *ageRestrictedUser = parameters.ageRestrictedUser;
+    bool canDeliverAdsForAgeRestrictUser = ageRestrictedUser == nil || ![ageRestrictedUser boolValue];
+    if (!canDeliverAdsForAgeRestrictUser) {
+        return false;
+    }
+
+    return true;
 }
 
 @end
