@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
     s.name                  = "FluctSDK-MediationAdapter"
     s.summary               = "Mediation Adapter for FluctSDK ad Framework"
     s.license               = { :type => "Copyright", :text => "Copyright (c) fluct,Inc. All rights reserved." }
-    s.version               = "6.21.4"
+    s.version               = "6.22.0"
     s.author                = "fluct,Inc."
     s.requires_arc          = true
     s.static_framework      = true
@@ -10,8 +10,9 @@ Pod::Spec.new do |s|
     s.source                = { :git => "https://github.com/voyagegroup/FluctSDK-iOS.git", :tag => s.version }
     s.platform              = :ios
     s.ios.deployment_target = "9.0"
+    s.swift_version         = "5.0"
     s.cocoapods_version     = ">= 1.9.0"
-    s.default_subspec = 'Core'
+    s.default_subspec = "Core"
 
     s.subspec "Core" do |ss|
         ss.dependency "FluctSDK", ">=6.14.0"
@@ -23,6 +24,19 @@ Pod::Spec.new do |s|
         ss.dependency "FluctSDK", ">=6.14.0"
         ss.dependency "AdColony", '>= 4.9.0'
         ss.ios.deployment_target = "9.0"
+    end
+
+    s.subspec "AMoAd" do |ss|
+        ss.source_files = "FluctSDK-MediationAdapter/AMoAd/*.{h,m,swift}"
+        ss.dependency "FluctSDK", ">=6.14.0"
+        if ENV['FLUCT_POD_LINT'] 
+            ss.dependency "AMoAd", '6.1.6'
+        else
+            ss.dependency "AMoAd", '>=6.1.6'
+        end
+        ss.ios.deployment_target = "9.0"
+        ss.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+        ss.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
     end
 
     s.subspec "AppLovin" do |ss|
