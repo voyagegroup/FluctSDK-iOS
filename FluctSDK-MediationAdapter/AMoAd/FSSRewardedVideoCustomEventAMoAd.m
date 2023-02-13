@@ -32,6 +32,10 @@ typedef NS_ENUM(NSInteger, AMoAdErrorExtend) {
                          skippable:(BOOL)skippable
                          targeting:(FSSAdRequestTargeting *)targeting {
 
+    if (![FSSAMoAdInterstitialVideo isAMoAdActive]) {
+        return nil;
+    }
+
     FSSAMoAdInterstitialVideo *rewardedVideo = [[FSSAMoAdInterstitialVideo alloc] initWithSid:dictionary[@"sid"]];
 
     return [self initWithDictionary:dictionary
