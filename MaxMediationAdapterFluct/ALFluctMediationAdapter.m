@@ -5,12 +5,13 @@
 //
 
 #import "ALFluctMediationAdapter.h"
+#import "ALFluctRewardedVideoDelegateProxy.h"
 @import FluctSDK;
 
 static NSString *const kGroupId = @"groupID";
 static NSString *const kUnitId = @"unitID";
 
-@interface ALFluctMediationAdapterRewardedVideoAdDelegate : NSObject <FSSRewardedVideoDelegate>
+@interface ALFluctMediationAdapterRewardedVideoAdDelegate : NSObject <ALFluctRewardedVideoDelegateProxyItem>
 @property (nonatomic, weak) ALFluctMediationAdapter *parentAdapter;
 @property (nonatomic, strong) id<MARewardedAdapterDelegate> delegate;
 - (instancetype)initWithParentAdapter:(ALFluctMediationAdapter *)parentAdapter andNotify:(id<MARewardedAdapterDelegate>)delegate;
@@ -94,7 +95,13 @@ static MAAdapterInitializationStatus ALFluctInitializationStatus = NSIntegerMin;
 
     self.rewardedAdapterDelegate = [[ALFluctMediationAdapterRewardedVideoAdDelegate alloc] initWithParentAdapter:self
                                                                                                        andNotify:delegate];
-    FSSRewardedVideo.sharedInstance.delegate = self.rewardedAdapterDelegate;
+    [ALFluctRewardedVideoDelegateProxy.sharedInstance registerDelegate:self.rewardedAdapterDelegate
+                                                               groupId:groupID
+                                                                unitId:unitID];
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        FSSRewardedVideo.sharedInstance.delegate = ALFluctRewardedVideoDelegateProxy.sharedInstance;
+    });
 
     [FSSRewardedVideo.sharedInstance loadRewardedVideoWithGroupId:groupID
                                                            unitId:unitID
