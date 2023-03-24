@@ -293,8 +293,6 @@
 				"${PODS_ROOT}/AppLovinSDK/applovin-ios-sdk-11.4.2/AppLovinSDKResources.bundle",
 				"${PODS_ROOT}/../../../../FluctSDK.embeddedframework/Resources/FluctSDKResources.bundle",
 				"${PODS_ROOT}/NendSDK_iOS/NendAd.embeddedframework/NendAd.framework/Resources/NendAdResource.bundle",
-				"${PODS_ROOT}/RangersAPM-Pangle/RangersAPM-Pangle/Assets/Core/APMInsightCore.bundle",
-				"${PODS_ROOT}/RangersAPM-Pangle/RangersAPM-Pangle/Assets/Crash/APMInsightCrash.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -302,8 +300,6 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AppLovinSDKResources.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FluctSDKResources.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NendAdResource.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/APMInsightCore.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/APMInsightCrash.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
