@@ -1,6 +1,0 @@
-framework module FluctSDK {
-  umbrella header "FluctSDK.h"
-
-  export *
-  module * { export * }
-}
