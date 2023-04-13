@@ -16,6 +16,8 @@ typedef NS_ENUM(NSInteger, FiveErrorExtend) {
 @property (nonnull) FADVideoReward *rewardedVideo;
 @end
 
+static NSString *const FSSFiveSupportVersion = @"11.0";
+
 @implementation FSSRewardedVideoCustomEventFive
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary
@@ -24,6 +26,10 @@ typedef NS_ENUM(NSInteger, FiveErrorExtend) {
                          debugMode:(BOOL)debugMode
                          skippable:(BOOL)skippable
                          targeting:(FSSAdRequestTargeting *)targeting {
+
+    if (![FSSRewardedVideoCustomEventFive isOSAtLeastVersion:FSSFiveSupportVersion]) {
+        return nil;
+    }
 
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
