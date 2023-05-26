@@ -31,7 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithGroupId:(NSString *)groupId unitId:(NSString *)unitId pricePoint:(NSString *)pricePoint;
 - (instancetype)initWithGroupId:(NSString *)groupId unitId:(NSString *)unitId pricePoint:(NSString *)pricePoint cache:(FSSInAppBiddingBannerResponseCache *)cache;
 
-- (void)requestWithRootViewController:(UIViewController *)rootViewController size:(CGSize)size;
+- (void)requestWithTopViewController:(UIViewController *)topViewController size:(CGSize)size;
 
 @end
 

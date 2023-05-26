@@ -62,7 +62,7 @@ extension AdMobRewardedVideoViewController: GADFullScreenContentDelegate {
         print(#function, error)
     }
 
-    func adDidPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+    func adWillPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
         print(#function)
     }
 

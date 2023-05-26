@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface GADVideoInterstitialAdapterFluct : NSObject <GADCustomEventInterstitial>
+@interface GADVideoInterstitialAdapterFluct : NSObject <GADMediationAdapter, GADMediationInterstitialAd>
 @end
 
 NS_ASSUME_NONNULL_END

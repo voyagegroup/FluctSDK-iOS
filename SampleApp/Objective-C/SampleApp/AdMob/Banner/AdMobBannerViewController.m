@@ -21,7 +21,7 @@ static NSString *const kAdUnitID = @"ca-app-pub-3010029359415397/1722697861";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
-    GADBannerView *bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
+    GADBannerView *bannerView = [[GADBannerView alloc] initWithAdSize:GADAdSizeBanner];
     bannerView.rootViewController = self;
     bannerView.adUnitID = kAdUnitID;
 

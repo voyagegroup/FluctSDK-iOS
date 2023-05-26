@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface GADBannerAdapterFluct : NSObject <GADCustomEventBanner>
+@interface GADBannerAdapterFluct : NSObject <GADMediationAdapter, GADMediationBannerAd>
 @end
 
 NS_ASSUME_NONNULL_END

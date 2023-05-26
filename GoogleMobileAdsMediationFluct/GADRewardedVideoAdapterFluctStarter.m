@@ -9,10 +9,12 @@
 #import "GADAdapterFluctVideoDelegateProxy.h"
 #import "GADMAdapterFluctExtras.h"
 #import "GADMFluctError.h"
+#import "GADMediationAdapterFluctUtil.h"
 #import <FluctSDK/FluctSDK.h>
+#import <stdatomic.h>
 
 @interface GADRewardedVideoAdapterFluctStarter () <GADAdapterFluctVideoDelegateProxyItem, FSSRewardedVideoCustomEventStarterDelegate>
-@property (nonatomic, nullable, copy) GADMediationRewardedLoadCompletionHandler completionHandler;
+@property (nonatomic, nullable, copy) GADMediationRewardedLoadCompletionHandler loadCompletionHandler;
 @property (nonatomic, nullable, weak) id<GADMediationRewardedAdEventDelegate> adEventDelegate;
 
 @property (nonatomic, nullable) FSSRewardedVideoCustomEventStarter *starter;
@@ -24,68 +26,49 @@
 @implementation GADRewardedVideoAdapterFluctStarter
 
 + (void)setUpWithConfiguration:(GADMediationServerConfiguration *)configuration completionHandler:(GADMediationAdapterSetUpCompletionBlock)completionHandler {
-    NSMutableSet *params = [[NSMutableSet alloc] init];
-    for (GADMediationCredentials *credential in configuration.credentials) {
-        NSString *param = [credential.settings valueForKey:GADCustomEventParametersServer];
-        [params addObject:param];
-    }
 
-    if (params.count == 0) {
-        // custom event parameters がセットされていない
-        NSError *error = [NSError errorWithDomain:GADMFluctErrorDomain
-                                             code:GADMFluctErrorInvalidCustomParameters
-                                         userInfo:nil];
-        completionHandler(error);
-        return;
-    }
-
-    completionHandler(nil);
+    [GADMediationAdapterFluctUtil setUpWithConfiguration:configuration
+                                       completionHandler:completionHandler];
 }
 
 + (GADVersionNumber)adSDKVersion {
-    NSString *versionString = [FluctSDK version];
-    NSArray<NSString *> *versionComponents = [versionString componentsSeparatedByString:@"."];
-    GADVersionNumber version = {0};
-    if (versionComponents.count == 3) {
-        version.majorVersion = [versionComponents[0] integerValue];
-        version.minorVersion = [versionComponents[1] integerValue];
-        version.patchVersion = [versionComponents[2] integerValue];
-    }
-    return version;
+    return [GADMediationAdapterFluctUtil adSDKVersion];
+}
+
++ (GADVersionNumber)adapterVersion {
+    return [GADMediationAdapterFluctUtil adapterVersion];
 }
 
 + (nullable Class<GADAdNetworkExtras>)networkExtrasClass {
     return [GADMAdapterFluctExtras class];
 }
 
-+ (GADVersionNumber)adapterVersion {
-    NSString *versionString = [FluctSDK version];
-    NSArray<NSString *> *versionComponents = [versionString componentsSeparatedByString:@"."];
-    GADVersionNumber version = {0};
-    if (versionComponents.count == 3) {
-        version.majorVersion = [versionComponents[0] integerValue];
-        version.minorVersion = [versionComponents[1] integerValue];
-        version.patchVersion = [versionComponents[2] integerValue];
-    }
-
-    return version;
-}
-
 - (void)loadRewardedAdForAdConfiguration:(GADMediationRewardedAdConfiguration *)adConfiguration
                        completionHandler:(GADMediationRewardedLoadCompletionHandler)completionHandler {
-    NSString *params = adConfiguration.credentials.settings[GADCustomEventParametersServer];
-    NSArray<NSString *> *ids = [params componentsSeparatedByString:@","];
-    if (ids.count == 3) {
-        self.groupID = ids[0];
-        self.unitID = ids[1];
-        self.pricePoint = ids[2];
-    }
 
-    if (!self.groupID || !self.unitID || !self.pricePoint) {
-        NSError *error = [NSError errorWithDomain:GADMFluctErrorDomain
-                                             code:GADMFluctErrorInvalidCustomParameters
-                                         userInfo:@{}];
-        completionHandler(nil, error);
+    __block atomic_flag completionHandlerCalled = ATOMIC_FLAG_INIT;
+    __block GADMediationRewardedLoadCompletionHandler
+        originalCompletionHandler = [completionHandler copy];
+
+    self.loadCompletionHandler = ^id<GADMediationRewardedAdEventDelegate>(
+        _Nullable id<GADMediationRewardedAd> ad, NSError *_Nullable error) {
+        if (atomic_flag_test_and_set(&completionHandlerCalled)) {
+            return nil;
+        }
+
+        id<GADMediationRewardedAdEventDelegate> delegate = nil;
+        if (originalCompletionHandler) {
+            delegate = originalCompletionHandler(ad, error);
+        }
+
+        originalCompletionHandler = nil;
+
+        return delegate;
+    };
+
+    NSError *error = nil;
+    if (![self setupAdapterWithParameter:[adConfiguration.credentials.settings objectForKey:GADCustomEventParametersServer] error:&error]) {
+        self.adEventDelegate = self.loadCompletionHandler(nil, error);
         return;
     }
 
@@ -99,8 +82,6 @@
     if (extras.setting) {
         setting = extras.setting;
     }
-
-    self.completionHandler = completionHandler;
 
     self.starter = [[FSSRewardedVideoCustomEventStarter alloc] initWithGroupId:self.groupID unitId:self.unitID pricePoint:self.pricePoint];
     self.starter.delegate = self;
@@ -116,38 +97,53 @@
 - (void)presentFromViewController:(UIViewController *)viewController {
     if ([self.starter hasAdAvailable]) {
         [self.starter presentAdFromViewController:viewController];
+    } else {
+        NSError *error = [NSError errorWithDomain:GADMFluctErrorDomain
+                                             code:GADMFluctErrorHasNotAdAvailable
+                                         userInfo:nil];
+        [self.adEventDelegate didFailToPresentWithError:error];
     }
+}
+
+#pragma mark - setup
+
+- (BOOL)setupAdapterWithParameter:(NSString *)serverParameter error:(NSError **)error {
+    NSArray<NSString *> *ids = [serverParameter componentsSeparatedByString:@","];
+    if (ids.count != 3) {
+        if (error) {
+            *error = [NSError errorWithDomain:GADMFluctErrorDomain
+                                         code:GADMFluctErrorInvalidCustomParameters
+                                     userInfo:@{}];
+        }
+        return NO;
+    }
+
+    self.groupID = ids[0];
+    self.unitID = ids[1];
+    self.pricePoint = ids[2];
+    return YES;
 }
 
 #pragma mark - FSSRewardedVideoCustomEventStarterDelegate
 
 - (void)customEventNotFoundResponse:(FSSRewardedVideoCustomEventStarter *)customEvent {
-    if (self.completionHandler) {
-        NSError *error = [NSError errorWithDomain:GADMFluctErrorDomain
-                                             code:GADMFluctErrorInvalidCustomParameters
-                                         userInfo:@{}];
-        self.completionHandler(nil, error);
-        self.completionHandler = nil;
-    }
+    NSError *error = [NSError errorWithDomain:GADMFluctErrorDomain
+                                         code:GADMFluctErrorInvalidCustomParameters
+                                     userInfo:@{}];
+    self.adEventDelegate = self.loadCompletionHandler(nil, error);
 }
 
 #pragma mark - GADAdapterFluctVideoDelegateProxyItem
 
 - (void)rewardedVideoDidLoadForGroupID:(NSString *)groupId unitId:(NSString *)unitId {
-    if (self.completionHandler) {
-        self.adEventDelegate = self.completionHandler(self, nil);
-        self.completionHandler = nil;
-    }
+    self.adEventDelegate = self.loadCompletionHandler(self, nil);
 }
 
 - (void)rewardedVideoDidFailToLoadForGroupId:(NSString *)groupId unitId:(NSString *)unitId error:(NSError *)error {
-    if (self.completionHandler) {
-        NSError *err = [NSError errorWithDomain:GADMFluctErrorDomain
-                                           code:error.code
-                                       userInfo:error.userInfo];
-        self.completionHandler(nil, err);
-        self.completionHandler = nil;
-    }
+    NSError *err = [NSError errorWithDomain:GADMFluctErrorDomain
+                                       code:error.code
+                                   userInfo:error.userInfo];
+    self.adEventDelegate = self.loadCompletionHandler(nil, err);
 }
 
 - (void)rewardedVideoWillAppearForGroupId:(NSString *)groupId unitId:(NSString *)unitId {
@@ -167,9 +163,7 @@
 
 - (void)rewardedVideoShouldRewardForGroupID:(NSString *)groupId unitId:(NSString *)unitId {
     [self.adEventDelegate didEndVideo];
-    GADAdReward *rewardItem = [[GADAdReward alloc] initWithRewardType:@""
-                                                         rewardAmount:[NSDecimalNumber one]];
-    [self.adEventDelegate didRewardUserWithReward:rewardItem];
+    [self.adEventDelegate didRewardUser];
 }
 
 - (void)rewardedVideoWillDisappearForGroupId:(NSString *)groupId unitId:(NSString *)unitId {
