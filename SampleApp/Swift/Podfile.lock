@@ -36,35 +36,35 @@ PODS:
   - BURelyFoundation_Global/Zip (0.1.0.16):
     - BURelyFoundation_Global/Foundation
   - FiveAd (2.6.20230215)
-  - FluctSDK (6.26.1)
-  - FluctSDK-MediationAdapter/AdColony (6.26.1):
+  - FluctSDK (6.26.2)
+  - FluctSDK-MediationAdapter/AdColony (6.26.2):
     - AdColony (>= 4.9.0)
     - FluctSDK (>= 6.14.0)
-  - FluctSDK-MediationAdapter/AMoAd (6.26.1):
+  - FluctSDK-MediationAdapter/AMoAd (6.26.2):
     - FluctSDK (>= 6.14.0)
     - ReachabilitySwift
     - SnapKit
-  - FluctSDK-MediationAdapter/AppLovin (6.26.1):
+  - FluctSDK-MediationAdapter/AppLovin (6.26.2):
     - AppLovinSDK (>= 11.1.1)
     - FluctSDK (>= 6.14.0)
-  - FluctSDK-MediationAdapter/Five (6.26.1):
+  - FluctSDK-MediationAdapter/Five (6.26.2):
     - FiveAd (>= 2.6.20230215)
     - FluctSDK (>= 6.14.0)
-  - FluctSDK-MediationAdapter/maio (6.26.1):
+  - FluctSDK-MediationAdapter/maio (6.26.2):
     - FluctSDK (>= 6.14.0)
     - MaioSDK (>= 1.6.3)
-  - FluctSDK-MediationAdapter/nend (6.26.1):
+  - FluctSDK-MediationAdapter/nend (6.26.2):
     - FluctSDK (>= 6.14.0)
     - NendSDK_iOS (>= 8.0.1)
-  - FluctSDK-MediationAdapter/Pangle (6.26.1):
+  - FluctSDK-MediationAdapter/Pangle (6.26.2):
     - Ads-Global (>= 5.2.0.7)
     - FluctSDK (>= 6.14.0)
-  - FluctSDK-MediationAdapter/Tapjoy (6.26.1):
+  - FluctSDK-MediationAdapter/Tapjoy (6.26.2):
     - FluctSDK (>= 6.14.0)
-    - TapjoySDK (>= 12.11.1)
-  - FluctSDK-MediationAdapter/UnityAds (6.26.1):
+    - TapjoySDK (>= 13.0.1)
+  - FluctSDK-MediationAdapter/UnityAds (6.26.2):
     - FluctSDK (>= 6.14.0)
-    - UnityAds (>= 4.6.1)
+    - UnityAds (>= 4.7.1)
   - Google-Mobile-Ads-SDK (10.4.0):
     - GoogleAppMeasurement (< 11.0, >= 7.0)
     - GoogleUserMessagingPlatform (>= 1.1)
@@ -88,7 +88,7 @@ PODS:
     - GoogleUtilities/Network (~> 7.8)
     - "GoogleUtilities/NSData+zlib (~> 7.8)"
     - nanopb (< 2.30910.0, >= 2.30908.0)
-  - GoogleMobileAdsMediationFluct (6.26.1):
+  - GoogleMobileAdsMediationFluct (6.26.2):
     - FluctSDK (>= 6.12.1)
     - Google-Mobile-Ads-SDK (>= 9.8.0)
   - GoogleUserMessagingPlatform (2.0.1)
@@ -110,7 +110,7 @@ PODS:
   - GoogleUtilities/Reachability (7.11.1):
     - GoogleUtilities/Logger
   - MaioSDK (1.6.3)
-  - MaxMediationAdapterFluct (6.26.1):
+  - MaxMediationAdapterFluct (6.26.2):
     - AppLovinSDK (>= 11.4.2)
     - FluctSDK (>= 6.19.0)
   - nanopb (2.30909.0):
@@ -122,8 +122,8 @@ PODS:
   - PromisesObjC (2.2.0)
   - ReachabilitySwift (5.0.0)
   - SnapKit (5.6.0)
-  - TapjoySDK (12.11.1)
-  - UnityAds (4.6.1)
+  - TapjoySDK (13.0.1)
+  - UnityAds (4.7.1)
 
 DEPENDENCIES:
   - AppLovinSDK
@@ -177,22 +177,22 @@ SPEC CHECKSUMS:
   AppLovinSDK: 119a0b2a743f9d9c6002c58776b1013778a65084
   BURelyFoundation_Global: 4c9c90e6880e9e426052ac00577734098e3e5e60
   FiveAd: 7b99280e24a3bfc1b9b9ef5b822d82815bb3baf9
-  FluctSDK: 081627584567d894e5c83c7748be929ab3deb764
-  FluctSDK-MediationAdapter: b6569ab9468ef23e8e0de8f010dcf11cf127727c
+  FluctSDK: 0b80e992480dec713c3c9f9b741eba42a9ae469d
+  FluctSDK-MediationAdapter: cde7c0ecb530119ff70f94271f2d07f067e7ea07
   Google-Mobile-Ads-SDK: 32fe7836431a06a29f7734ae092b600137c8108d
   GoogleAppMeasurement: 0ba93018e916f7badf915c2337d43cc1fa96b3f9
-  GoogleMobileAdsMediationFluct: 1bd3a529c4991de4e4ef8069e88e3b50b72614ae
+  GoogleMobileAdsMediationFluct: 1d4fb6d2973257d7618ce5f645a453889c03c163
   GoogleUserMessagingPlatform: 5f8b30daf181805317b6b985bb51c1ff3beca054
   GoogleUtilities: 9aa0ad5a7bc171f8bae016300bfcfa3fb8425749
   MaioSDK: a66f3974f8edb8053077b937c00081621d7142a6
-  MaxMediationAdapterFluct: 2fb2f6099ca30587cc0f1a14e7a587bd021231c5
+  MaxMediationAdapterFluct: 9e75ad70cc3581627469d57ef994567eb3c8742f
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   NendSDK_iOS: ece43e55b584cc7ab06ac0b75c6506de79fea3fd
   PromisesObjC: 09985d6d70fbe7878040aa746d78236e6946d2ef
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
-  TapjoySDK: 7edeac6d20f9d941fab1352c81ecd3e885c36167
-  UnityAds: 824808c73af90fe4302ee0594381c8d515e5ce97
+  TapjoySDK: 30df1515a5a0a16076c6610c517911657164b2c2
+  UnityAds: 7c095394cf4815bb607db6b98de86b06b068cb51
 
 PODFILE CHECKSUM: 308350b7f81ba6806f45ab9ea250cebe711dace2
 
