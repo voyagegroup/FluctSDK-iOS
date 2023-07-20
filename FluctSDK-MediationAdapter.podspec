@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
     s.name                  = "FluctSDK-MediationAdapter"
     s.summary               = "Mediation Adapter for FluctSDK ad Framework"
     s.license               = { :type => "Copyright", :text => "Copyright (c) fluct,Inc. All rights reserved." }
-    s.version               = "6.27.1"
+    s.version               = "6.27.2"
     s.author                = "fluct,Inc."
     s.requires_arc          = true
     s.static_framework      = true
@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
         ss.dependency "FluctSDK", ">=6.14.0"
         ss.dependency "ReachabilitySwift"
         ss.dependency "SnapKit"
-        ss.pod_target_xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '"/AMoAd"' }
+        ss.pod_target_xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '"${PODS_ROOT}/AMoAd"' }
         ss.ios.deployment_target = "11.0"
     end
 

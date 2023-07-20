@@ -10,11 +10,6 @@ target 'SampleApp' do
   # 実際に使うときは :path指定は不要です。
   pod 'FluctSDK', :path => '../../../FluctSDK.podspec'
   pod 'FluctSDK-MediationAdapter/AdColony', :path => '../../../FluctSDK-MediationAdapter.podspec'
-  # AMoAdメディエーションを利用する場合はAMoAdのインストールが必要です。
-  # AMoAdはご利用のXcodeバージョンによって、お使いいただけるAMoAdバージョンが異なります。AMoAdバージョンを直接ご指定ください。
-  # AMoAdリリースノート https://github.com/amoad/amoad-ios-sdk/releases
-  # pod 'AMoAd', 'x.x.x'
-  pod 'FluctSDK-MediationAdapter/AMoAd', :path => '../../../FluctSDK-MediationAdapter.podspec'
   pod 'FluctSDK-MediationAdapter/AppLovin', :path => '../../../FluctSDK-MediationAdapter.podspec'
   pod 'FluctSDK-MediationAdapter/maio', :path => '../../../FluctSDK-MediationAdapter.podspec'
   pod 'FluctSDK-MediationAdapter/nend', :path => '../../../FluctSDK-MediationAdapter.podspec'
@@ -22,6 +17,12 @@ target 'SampleApp' do
   pod 'FluctSDK-MediationAdapter/UnityAds', :path => '../../../FluctSDK-MediationAdapter.podspec'
   pod 'FluctSDK-MediationAdapter/Five', :path => '../../../FluctSDK-MediationAdapter.podspec'
   pod 'FluctSDK-MediationAdapter/Pangle', :path => '../../../FluctSDK-MediationAdapter.podspec'
+
+  # AMoAdメディエーションを利用する場合はFluctSDK-MediationAdapter/AMoAdとは別に、AMoAd本体のインストールが必要です。
+  # AMoAdはご利用中のXcodeバージョンによって、お使いいただけるAMoAdバージョンが異なります。AMoAdリリースノートを参考にしてAMoAdのバージョンを直接ご指定ください。
+  # AMoAdリリースノート https://github.com/amoad/amoad-ios-sdk/releases
+  pod 'AMoAd', '6.1.12' # Xcode14.2をご利用中の場合の例
+  pod 'FluctSDK-MediationAdapter/AMoAd', :path => '../../../FluctSDK-MediationAdapter.podspec'
 
   # AdMobのMediationにCustom EventでFluctSDKを入れる際には以下のpodが必須です
   pod 'Google-Mobile-Ads-SDK'
