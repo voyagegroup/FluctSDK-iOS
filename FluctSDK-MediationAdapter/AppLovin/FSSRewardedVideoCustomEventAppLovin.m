@@ -45,7 +45,7 @@
         static dispatch_once_t onceToken;
         ALSdk *applovinSDK = [FSSRewardedVideoCustomEventAppLovin sharedWithKey:dictionary[@"sdk_key"]];
         dispatch_once(&onceToken, ^{
-            applovinSDK.settings.isVerboseLogging = debugMode;
+            applovinSDK.settings.verboseLoggingEnabled = debugMode;
             [applovinSDK initializeSdk];
         });
         _rewardedVideo = [FSSRewardedVideoCustomEventAppLovin rewardedVideoWithSdk:applovinSDK zoneName:dictionary[@"zone"]];
