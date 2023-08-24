@@ -163,7 +163,12 @@ private class FSSAMoAdInterstitialVideoDelegateBridge: AMoAdInterstitialVideoDel
 
     /// 動画の再生中にユーザが×ボタンをタップして広告を閉じることを許可するか
     @objc public var isCancellable: Bool {
-        return false
+        get {
+            return false
+        }
+        set {
+            // do nothing
+        }
     }
 
     @objc public init(sid: String) {

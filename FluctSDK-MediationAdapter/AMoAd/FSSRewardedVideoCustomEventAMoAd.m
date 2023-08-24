@@ -65,6 +65,7 @@ typedef NS_ENUM(NSInteger, AMoAdErrorExtend) {
     if (self) {
         _rewardedVideo = rewardedVideo;
         _rewardedVideo.delegate = self;
+        _rewardedVideo.isCancellable = NO;
     }
     return self;
 }
@@ -185,7 +186,8 @@ typedef NS_ENUM(NSInteger, AMoAdErrorExtend) {
 }
 
 - (void)amoadInterstitialVideoDidShowWithAmoadInterstitialVideo:(FSSAMoAdInterstitialVideo *)amoadInterstitialVideo {
-    // TODO いつ呼ばれるか確認する
+    // DidStartの後に呼ばれる
+    // do nothing
 }
 
 - (void)amoadInterstitialVideoWillDismissWithAmoadInterstitialVideo:(FSSAMoAdInterstitialVideo *)amoadInterstitialVideo {
