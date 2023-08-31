@@ -19,7 +19,7 @@ typedef NS_ENUM(NSInteger, NADRewardedVideoErrorExtend) {
 
 @end
 
-static NSString *const FSSNendSupportVersion = @"10.0";
+static NSString *const FSSNendSupportVersion = @"11.0";
 
 @implementation FSSRewardedVideoCustomEventNend
 

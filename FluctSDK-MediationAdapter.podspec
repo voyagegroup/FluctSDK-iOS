@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
     s.name                  = "FluctSDK-MediationAdapter"
     s.summary               = "Mediation Adapter for FluctSDK ad Framework"
     s.license               = { :type => "Copyright", :text => "Copyright (c) fluct,Inc. All rights reserved." }
-    s.version               = "6.27.5"
+    s.version               = "6.27.6"
     s.author                = "fluct,Inc."
     s.requires_arc          = true
     s.static_framework      = true
@@ -52,8 +52,8 @@ Pod::Spec.new do |s|
     s.subspec "nend" do |ss|
         ss.source_files = "FluctSDK-MediationAdapter/nend/*.{h,m}"
         ss.dependency "FluctSDK", ">=6.14.0"
-        ss.dependency "NendSDK_iOS", '>= 8.0.1'
-        ss.ios.deployment_target = "10.0"
+        ss.dependency "NendSDK_iOS", '>= 8.1.0'
+        ss.ios.deployment_target = "11.0"
     end
 
     s.subspec "Tapjoy" do |ss|
@@ -80,7 +80,7 @@ Pod::Spec.new do |s|
     s.subspec "Pangle" do |ss|
         ss.source_files = "FluctSDK-MediationAdapter/Pangle/*.{h,m}"
         ss.dependency "FluctSDK", ">=6.14.0"
-        ss.dependency "Ads-Global", '>= 5.2.1.1'
+        ss.dependency "Ads-Global", '>=5.4.0.9'
         ss.ios.deployment_target = "9.0"
     end
 end
