@@ -13,7 +13,6 @@ target 'SampleApp' do
   pod 'FluctSDK-MediationAdapter/AppLovin', :path => '../../../FluctSDK-MediationAdapter.podspec'
   pod 'FluctSDK-MediationAdapter/maio', :path => '../../../FluctSDK-MediationAdapter.podspec'
   pod 'FluctSDK-MediationAdapter/nend', :path => '../../../FluctSDK-MediationAdapter.podspec'
-  pod 'FluctSDK-MediationAdapter/Tapjoy', :path => '../../../FluctSDK-MediationAdapter.podspec'
   pod 'FluctSDK-MediationAdapter/UnityAds', :path => '../../../FluctSDK-MediationAdapter.podspec'
   pod 'FluctSDK-MediationAdapter/Five', :path => '../../../FluctSDK-MediationAdapter.podspec'
   pod 'FluctSDK-MediationAdapter/Pangle', :path => '../../../FluctSDK-MediationAdapter.podspec'

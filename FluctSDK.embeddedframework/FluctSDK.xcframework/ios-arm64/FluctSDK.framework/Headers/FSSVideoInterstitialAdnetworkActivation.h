@@ -38,7 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Activation setting for Tapjoy.
  */
-@property (nonatomic, getter=isTapjoyActivated) BOOL tapjoyActivated;
+@property (nonatomic, getter=isTapjoyActivated) BOOL tapjoyActivated __attribute__((deprecated));
 
 /**
  * Activation setting for UnityAds.

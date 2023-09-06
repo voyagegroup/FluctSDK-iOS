@@ -71,7 +71,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Activation setting for Tapjoy.
  * Required to include `FSSRewardedVideoCustomEventTapjoy` in project.
  */
-@property (nonatomic, getter=isTapjoyActivated) BOOL tapjoyActivated;
+@property (nonatomic, getter=isTapjoyActivated) BOOL tapjoyActivated __attribute__((deprecated));
 
 /**
  * Activation setting for UnityAds.
