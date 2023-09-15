@@ -9,7 +9,6 @@ target 'SampleApp' do
   # Pods for SampleApp
   # 実際に使うときは :path指定は不要です。
   pod 'FluctSDK', :path => '../../../FluctSDK.podspec'
-  pod 'FluctSDK-MediationAdapter/AdColony', :path => '../../../FluctSDK-MediationAdapter.podspec'
   pod 'FluctSDK-MediationAdapter/AppLovin', :path => '../../../FluctSDK-MediationAdapter.podspec'
   pod 'FluctSDK-MediationAdapter/maio', :path => '../../../FluctSDK-MediationAdapter.podspec'
   pod 'FluctSDK-MediationAdapter/nend', :path => '../../../FluctSDK-MediationAdapter.podspec'

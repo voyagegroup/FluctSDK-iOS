@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Activation setting for AdColony.
  */
-@property (nonatomic, getter=isAdColonyActivated) BOOL adColonyActivated;
+@property (nonatomic, getter=isAdColonyActivated) BOOL adColonyActivated __attribute__((deprecated));
 
 /**
  * Activation setting for fluct.
