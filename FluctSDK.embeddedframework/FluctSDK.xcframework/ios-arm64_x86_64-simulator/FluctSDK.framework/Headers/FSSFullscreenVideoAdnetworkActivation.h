@@ -7,7 +7,6 @@
 
 @protocol FSSFullscreenVideoAdnetworkActivation <NSObject>
 
-- (BOOL)isAdColonyActivated;
 - (BOOL)isAMoAdActivated;
 - (BOOL)isAppLovinActivated;
 - (BOOL)isFiveActivated;
@@ -15,7 +14,6 @@
 - (BOOL)isMaioActivated;
 - (BOOL)isNendActivated;
 - (BOOL)isPangleActivated;
-- (BOOL)isTapjoyActivated;
 - (BOOL)isUnityAdsActivated;
 - (BOOL)hasDeactivatedAdnetwork;
 
