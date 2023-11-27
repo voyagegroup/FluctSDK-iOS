@@ -16,12 +16,6 @@ class AdMobVideoInterstitialViewController: UIViewController {
 
     private var interstitial: GADInterstitialAd?
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
     @IBAction func didTouchUpLoadAd(button: UIButton) {
         let request = GADRequest()
         GADInterstitialAd.load(withAdUnitID: adUnitID, request: request) {[weak self] (ad, error) in

@@ -19,12 +19,6 @@ class AdMobRewardedVideoViewController: UIViewController {
 
     private var rewardedAd: GADRewardedAd?
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
     @IBAction func didTouchUpLoadAd(button: UIButton) {
         let request = GADRequest()
 

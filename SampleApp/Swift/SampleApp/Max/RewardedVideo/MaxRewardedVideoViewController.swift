@@ -18,12 +18,6 @@ class MaxRewardedVideoViewController: UIViewController {
 
     private var rewardedAd: MARewardedAd!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
     @IBAction func didTouchUpLoadAd(button: UIButton) {
         // Fluct Setting
         let setting = FSSRewardedVideoSetting.default
