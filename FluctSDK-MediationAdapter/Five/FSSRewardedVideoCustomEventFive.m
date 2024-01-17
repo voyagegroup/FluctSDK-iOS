@@ -12,7 +12,7 @@ typedef NS_ENUM(NSInteger, FiveErrorExtend) {
     FiveErrorExtendNotReady = -1
 };
 
-@interface FSSRewardedVideoCustomEventFive () <FADLoadDelegate, FADAdViewEventListener>
+@interface FSSRewardedVideoCustomEventFive () <FADLoadDelegate, FADVideoRewardEventListener>
 @property (nonnull) FADVideoReward *rewardedVideo;
 @end
 
@@ -65,7 +65,7 @@ static NSString *const FSSFiveSupportVersion = @"11.0";
     if (self) {
         self.rewardedVideo = rewardedVideo;
         [self.rewardedVideo setLoadDelegate:self];
-        [self.rewardedVideo setAdViewEventListener:self];
+        [self.rewardedVideo setEventListener:self];
     }
 
     return self;
@@ -125,32 +125,37 @@ static NSString *const FSSFiveSupportVersion = @"11.0";
     });
 }
 
-#pragma mark - FADAdViewEventListener
-- (void)fiveAdDidStart:(id<FADAdInterface>)ad {
+#pragma mark - FADVideoRewardEventListener
+- (void)fiveVideoRewardAdDidPlay:(nonnull FADVideoReward *)ad {
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoDidAppearForCustomEvent:self];
     });
 }
 
-- (void)fiveAdDidClose:(id<FADAdInterface>)ad {
+- (void)fiveVideoRewardAdDidReward:(nonnull FADVideoReward *)ad {
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSWorkQueue(), ^{
-        //- (void)fiveAdDidViewThrough:(id<FADAdInterface>)adは呼ばれない時もあるので使わない。
         [weakSelf.delegate rewardedVideoShouldRewardForCustomEvent:self];
-        [weakSelf.delegate rewardedVideoWillDisappearForCustomEvent:self];
-        [weakSelf.delegate rewardedVideoDidDisappearForCustomEvent:self];
     });
 }
 
-- (void)fiveAdDidClick:(id<FADAdInterface>)ad {
+- (void)fiveVideoRewardAdDidClick:(nonnull FADVideoReward *)ad {
     __weak __typeof(self) weakSelf = self;
     dispatch_async(FSSWorkQueue(), ^{
         [weakSelf.delegate rewardedVideoDidClickForCustomEvent:self];
     });
 }
 
-- (void)fiveAd:(id<FADAdInterface>)ad didFailedToShowAdWithError:(FADErrorCode)errorCode {
+- (void)fiveVideoRewardAdFullScreenDidClose:(nonnull FADVideoReward *)ad {
+    __weak __typeof(self) weakSelf = self;
+    dispatch_async(FSSWorkQueue(), ^{
+        [weakSelf.delegate rewardedVideoWillDisappearForCustomEvent:self];
+        [weakSelf.delegate rewardedVideoDidDisappearForCustomEvent:self];
+    });
+}
+
+- (void)fiveVideoRewardAd:(nonnull FADVideoReward *)ad didFailedToShowAdWithError:(FADErrorCode)errorCode {
     self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
     NSError *fluctError = [NSError errorWithDomain:FSSVideoErrorSDKDomain
                                               code:FSSVideoErrorPlayFailed
