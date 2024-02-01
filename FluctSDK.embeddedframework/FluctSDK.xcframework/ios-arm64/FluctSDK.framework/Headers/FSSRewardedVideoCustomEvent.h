@@ -6,6 +6,7 @@
 //
 
 #import "FSSAdRequestTargeting.h"
+#import "FSSFullscreenVideoSetting.h"
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
@@ -31,7 +32,8 @@ typedef NS_ENUM(NSInteger, FSSRewardedVideoADNWStatus) {
                           testMode:(BOOL)testMode
                          debugMode:(BOOL)debugMode
                          skippable:(BOOL)skippable
-                         targeting:(FSSAdRequestTargeting *)targeting;
+                         targeting:(FSSAdRequestTargeting *)targeting
+                           setting:(id<FSSFullscreenVideoSetting>)setting;
 
 - (void)loadRewardedVideoWithDictionary:(NSDictionary *)dictionary;
 - (FSSRewardedVideoADNWStatus)loadStatus;

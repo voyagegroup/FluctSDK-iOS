@@ -34,13 +34,15 @@
                           testMode:(BOOL)testMode
                          debugMode:(BOOL)debugMode
                          skippable:(BOOL)skippable
-                         targeting:(FSSAdRequestTargeting *)targeting {
+                         targeting:(FSSAdRequestTargeting *)targeting
+                           setting:(id<FSSFullscreenVideoSetting>)setting {
     self = [super initWithDictionary:dictionary
                             delegate:delegate
                             testMode:testMode
                            debugMode:debugMode
                            skippable:skippable
-                           targeting:nil];
+                           targeting:nil
+                             setting:setting];
     if (self) {
         static dispatch_once_t onceToken;
         ALSdk *applovinSDK = [FSSRewardedVideoCustomEventAppLovin sharedWithKey:dictionary[@"sdk_key"]];

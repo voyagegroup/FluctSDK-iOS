@@ -24,13 +24,15 @@
                           testMode:(BOOL)testMode
                          debugMode:(BOOL)debugMode
                          skippable:(BOOL)skippable
-                         targeting:(FSSAdRequestTargeting *)targeting {
+                         targeting:(FSSAdRequestTargeting *)targeting
+                           setting:(id<FSSFullscreenVideoSetting>)setting {
     return [self initWithDictionary:dictionary
                            delegate:delegate
                            testMode:testMode
                           debugMode:debugMode
                           skippable:skippable
                           targeting:nil
+                            setting:setting
                     unityAdsManager:[FSSUnityAdsManager sharedInstanceWithUnityAds:[FSSUnityAds new]]
                            unityAds:[FSSUnityAds new]];
 }
@@ -41,6 +43,7 @@
                          debugMode:(BOOL)debugMode
                          skippable:(BOOL)skippable
                          targeting:(FSSAdRequestTargeting *)targeting
+                           setting:(id<FSSFullscreenVideoSetting>)setting
                    unityAdsManager:(FSSUnityAdsManager *)unityAdsManager
                           unityAds:(id<FSSUnityAdsProtocol>)unityAds {
     self = [super initWithDictionary:dictionary
@@ -48,7 +51,8 @@
                             testMode:testMode
                            debugMode:debugMode
                            skippable:skippable
-                           targeting:nil];
+                           targeting:nil
+                             setting:setting];
 
     self.gameID = dictionary[@"game_id"];
     self.placementID = dictionary[@"placement_id"];

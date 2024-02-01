@@ -30,7 +30,8 @@ typedef NS_ENUM(NSInteger, AMoAdErrorExtend) {
                           testMode:(BOOL)testMode
                          debugMode:(BOOL)debugMode
                          skippable:(BOOL)skippable
-                         targeting:(FSSAdRequestTargeting *)targeting {
+                         targeting:(FSSAdRequestTargeting *)targeting
+                           setting:(id<FSSFullscreenVideoSetting>)setting {
 
     if (![FSSAMoAdInterstitialVideo isAMoAdActive]) {
         return nil;
@@ -44,6 +45,7 @@ typedef NS_ENUM(NSInteger, AMoAdErrorExtend) {
                           debugMode:debugMode
                           skippable:skippable
                           targeting:targeting
+                            setting:setting
                       rewardedVideo:rewardedVideo];
 }
 
@@ -53,6 +55,7 @@ typedef NS_ENUM(NSInteger, AMoAdErrorExtend) {
                          debugMode:(BOOL)debugMode
                          skippable:(BOOL)skippable
                          targeting:(FSSAdRequestTargeting *)targeting
+                           setting:(id<FSSFullscreenVideoSetting>)setting
                      rewardedVideo:(FSSAMoAdInterstitialVideo *)rewardedVideo {
 
     self = [super initWithDictionary:dictionary
@@ -60,7 +63,8 @@ typedef NS_ENUM(NSInteger, AMoAdErrorExtend) {
                             testMode:testMode
                            debugMode:debugMode
                            skippable:skippable
-                           targeting:targeting];
+                           targeting:targeting
+                             setting:setting];
 
     if (self) {
         _rewardedVideo = rewardedVideo;

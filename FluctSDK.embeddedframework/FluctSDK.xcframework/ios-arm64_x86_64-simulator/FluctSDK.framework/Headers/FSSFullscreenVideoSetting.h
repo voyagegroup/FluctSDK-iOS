@@ -10,6 +10,7 @@
 @protocol FSSFullscreenVideoSetting <NSObject>
 - (BOOL)isDebugMode;
 - (BOOL)isTestMode;
+- (BOOL)isInformationIconActivated;
 - (id<FSSFullscreenVideoAdnetworkActivation>)activation;
 - (NSDictionary<NSString *, id> *)dictionary;
 @end

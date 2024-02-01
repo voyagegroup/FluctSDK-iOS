@@ -25,7 +25,8 @@ static NSString *const FSSFiveSupportVersion = @"11.0";
                           testMode:(BOOL)testMode
                          debugMode:(BOOL)debugMode
                          skippable:(BOOL)skippable
-                         targeting:(FSSAdRequestTargeting *)targeting {
+                         targeting:(FSSAdRequestTargeting *)targeting
+                           setting:(id<FSSFullscreenVideoSetting>)setting {
 
     if (![FSSRewardedVideoCustomEventFive isOSAtLeastVersion:FSSFiveSupportVersion]) {
         return nil;
@@ -44,6 +45,7 @@ static NSString *const FSSFiveSupportVersion = @"11.0";
                           debugMode:debugMode
                           skippable:skippable
                           targeting:targeting
+                            setting:setting
                       rewardedVideo:[[FADVideoReward alloc] initWithSlotId:dictionary[@"slot_id"]]];
 }
 
@@ -53,6 +55,7 @@ static NSString *const FSSFiveSupportVersion = @"11.0";
                          debugMode:(BOOL)debugMode
                          skippable:(BOOL)skippable
                          targeting:(FSSAdRequestTargeting *)targeting
+                           setting:(id<FSSFullscreenVideoSetting>)setting
                      rewardedVideo:(FADVideoReward *)rewardedVideo {
 
     self = [super initWithDictionary:dictionary
@@ -60,7 +63,8 @@ static NSString *const FSSFiveSupportVersion = @"11.0";
                             testMode:testMode
                            debugMode:debugMode
                            skippable:skippable
-                           targeting:targeting];
+                           targeting:targeting
+                             setting:setting];
 
     if (self) {
         self.rewardedVideo = rewardedVideo;

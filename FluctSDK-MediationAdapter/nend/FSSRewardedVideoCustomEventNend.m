@@ -32,7 +32,8 @@ static NSString *const FSSNendSupportVersion = @"11.0";
                           testMode:(BOOL)testMode
                          debugMode:(BOOL)debugMode
                          skippable:(BOOL)skippable
-                         targeting:(FSSAdRequestTargeting *)targeting {
+                         targeting:(FSSAdRequestTargeting *)targeting
+                           setting:(id<FSSFullscreenVideoSetting>)setting {
 
     if (![FSSRewardedVideoCustomEventNend isOSAtLeastVersion:FSSNendSupportVersion]) {
         return nil;
@@ -43,7 +44,8 @@ static NSString *const FSSNendSupportVersion = @"11.0";
                             testMode:testMode
                            debugMode:debugMode
                            skippable:skippable
-                           targeting:nil];
+                           targeting:nil
+                             setting:setting];
 
     _nendRewardedVideo = [FSSRewardedVideoCustomEventNend initializeNendSDKWithSpotId:dictionary[@"spot_id"] apiKey:dictionary[@"api_key"]];
     _nendRewardedVideo.delegate = self;

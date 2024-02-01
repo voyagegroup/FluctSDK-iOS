@@ -30,6 +30,12 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, getter=isTestMode) BOOL testMode;
 
+/**
+ * Setting for informartion icon
+ * This property controls the display of the information icon specifically for reserved ads and house ads targeted at special customers.
+ */
+@property (nonatomic, getter=isInformationIconActivated) BOOL informationIconActivated;
+
 - (NSString *)description;
 
 @end

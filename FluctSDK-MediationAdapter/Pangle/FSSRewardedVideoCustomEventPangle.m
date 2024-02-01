@@ -27,7 +27,8 @@ static NSString *const FSSPangleSupportVersion = @"12.0";
                           testMode:(BOOL)testMode
                          debugMode:(BOOL)debugMode
                          skippable:(BOOL)skippable
-                         targeting:(FSSAdRequestTargeting *)targeting {
+                         targeting:(FSSAdRequestTargeting *)targeting
+                           setting:(id<FSSFullscreenVideoSetting>)setting {
 
     if (![FSSRewardedVideoCustomEventPangle isOSAtLeastVersion:FSSPangleSupportVersion]) {
         return nil;
@@ -39,6 +40,7 @@ static NSString *const FSSPangleSupportVersion = @"12.0";
                           debugMode:debugMode
                           skippable:skippable
                           targeting:nil
+                            setting:setting
                   pangleLoadManager:[FSSPangleLoadManager sharedInstance]];
 }
 
@@ -48,13 +50,15 @@ static NSString *const FSSPangleSupportVersion = @"12.0";
                          debugMode:(BOOL)debugMode
                          skippable:(BOOL)skippable
                          targeting:(FSSAdRequestTargeting *)targeting
+                           setting:(id<FSSFullscreenVideoSetting>)setting
                  pangleLoadManager:(FSSPangleLoadManager *)pangleLoadManager {
     self = [super initWithDictionary:dictionary
                             delegate:delegate
                             testMode:testMode
                            debugMode:debugMode
                            skippable:skippable
-                           targeting:nil];
+                           targeting:nil
+                             setting:setting];
 
     self.appId = dictionary[@"app_id"];
     self.slotId = dictionary[@"ad_placement_id"];
