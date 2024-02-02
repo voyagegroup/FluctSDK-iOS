@@ -42,8 +42,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, getter=isInformationIconActivated) BOOL informationIconActivated;
 
-- (NSString *)description;
-
 /**
  * 設定されている情報を文字列にして出力する
  */
