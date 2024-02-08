@@ -39,6 +39,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)loadRewardedVideoWithGroupId:(NSString *)groupId unitId:(NSString *)unitId info:(NSDictionary<NSString *, id> *)info requestedDate:(NSDate *)requestedDate;
 
+/**
+ * [この機能はBetaバージョンです]
+ * ロードした広告を破棄します
+ * 破棄後はdelegateへのコールバックは実行されません
+ * @param groupId グループID
+ * @param unitId ユニットID
+ */
+- (void)removeRewardedVideoWithGroupId:(NSString *)groupId unitId:(NSString *)unitId NS_SWIFT_NAME(removeAd(withGroupId:unitId:));
+
 @end
 
 NS_ASSUME_NONNULL_END
