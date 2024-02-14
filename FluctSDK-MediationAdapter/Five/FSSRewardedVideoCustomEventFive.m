@@ -16,7 +16,7 @@ typedef NS_ENUM(NSInteger, FiveErrorExtend) {
 @property (nonnull) FADVideoReward *rewardedVideo;
 @end
 
-static NSString *const FSSFiveSupportVersion = @"11.0";
+static NSString *const FSSFiveSupportVersion = @"12.0";
 
 @implementation FSSRewardedVideoCustomEventFive
 
