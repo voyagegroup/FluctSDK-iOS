@@ -59,7 +59,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Activation setting for nend.
  * Required to include `FSSRewardedVideoCustomEventNend` in project.
  */
-@property (nonatomic, getter=isNendActivated) BOOL nendActivated;
+@property (nonatomic, getter=isNendActivated) BOOL nendActivated __attribute__((deprecated));
 
 /**
  * Activation setting for Pangle.

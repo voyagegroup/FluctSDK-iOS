@@ -12,7 +12,6 @@
 - (BOOL)isFiveActivated;
 - (BOOL)isFluctActivated;
 - (BOOL)isMaioActivated;
-- (BOOL)isNendActivated;
 - (BOOL)isPangleActivated;
 - (BOOL)isUnityAdsActivated;
 - (BOOL)hasDeactivatedAdnetwork;
