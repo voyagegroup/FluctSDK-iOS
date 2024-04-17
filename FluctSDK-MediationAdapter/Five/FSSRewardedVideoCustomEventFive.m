@@ -98,12 +98,12 @@ static NSString *const FSSFiveSupportVersion = @"12.0";
                                                  adnetworkError:fiveError];
         return;
     }
-    [self.rewardedVideo show];
+    [self.rewardedVideo showWithViewController:viewController];
     [self.delegate rewardedVideoWillAppearForCustomEvent:self];
 }
 
 - (NSString *)sdkVersion {
-    return FADSettings.version;
+    return FADSettings.semanticVersion;
 }
 
 #pragma mark - FADLoadDelegate
