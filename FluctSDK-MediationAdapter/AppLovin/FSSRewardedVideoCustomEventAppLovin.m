@@ -6,28 +6,21 @@
 //
 
 #import "FSSRewardedVideoCustomEventAppLovin.h"
+#import "FSSAppLovin.h"
+#import "FSSRewardedVideoAppLovinManager.h"
 #import <AppLovinSDK/AppLovinSDK.h>
 
-@interface FSSRewardedVideoCustomEventAppLovin () <ALAdLoadDelegate, ALAdDisplayDelegate, ALAdVideoPlaybackDelegate>
+@interface FSSRewardedVideoCustomEventAppLovin () <FSSRewardedVideoAppLovinManagerDelegate, ALAdLoadDelegate, ALAdDisplayDelegate, ALAdVideoPlaybackDelegate>
 
-@property (nonatomic) ALIncentivizedInterstitialAd *rewardedVideo;
-
+@property (nonatomic) id<FSSAppLovinProtocol> appLovin;
+@property (nonatomic, copy) NSString *zoneName;
+@property (nonatomic, copy) NSString *sdkKey;
+@property (nonatomic) FSSRewardedVideoAppLovinManager *appLovinManager;
 @property (nonatomic) FSSConditionObserver *observer;
-
-+ (ALSdk *)sharedWithKey:(NSString *)sdkKey;
-+ (ALIncentivizedInterstitialAd *)rewardedVideoWithSdk:(ALSdk *)sdk zoneName:(nonnull NSString *)zone;
 
 @end
 
 @implementation FSSRewardedVideoCustomEventAppLovin
-
-+ (ALSdk *)sharedWithKey:(NSString *)sdkKey {
-    return [ALSdk sharedWithKey:sdkKey];
-}
-
-+ (ALIncentivizedInterstitialAd *)rewardedVideoWithSdk:(ALSdk *)sdk zoneName:(nonnull NSString *)zoneName {
-    return [[ALIncentivizedInterstitialAd alloc] initWithZoneIdentifier:zoneName sdk:sdk];
-}
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary
                           delegate:(id<FSSRewardedVideoCustomEventDelegate>)delegate
@@ -36,6 +29,26 @@
                          skippable:(BOOL)skippable
                          targeting:(FSSAdRequestTargeting *)targeting
                            setting:(id<FSSFullscreenVideoSetting>)setting {
+    return [self initWithDictionary:dictionary
+                           delegate:delegate
+                           testMode:testMode
+                          debugMode:debugMode
+                          skippable:skippable
+                          targeting:nil
+                            setting:setting
+                           appLovin:[FSSAppLovin new]
+                    appLovinManager:[FSSRewardedVideoAppLovinManager sharedInstance]];
+}
+
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary
+                          delegate:(id<FSSRewardedVideoCustomEventDelegate>)delegate
+                          testMode:(BOOL)testMode
+                         debugMode:(BOOL)debugMode
+                         skippable:(BOOL)skippable
+                         targeting:(FSSAdRequestTargeting *)targeting
+                           setting:(id<FSSFullscreenVideoSetting>)setting
+                          appLovin:(id<FSSAppLovinProtocol>)appLovin
+                   appLovinManager:(FSSRewardedVideoAppLovinManager *)appLovinManager {
     self = [super initWithDictionary:dictionary
                             delegate:delegate
                             testMode:testMode
@@ -43,27 +56,26 @@
                            skippable:skippable
                            targeting:nil
                              setting:setting];
-    if (self) {
-        static dispatch_once_t onceToken;
-        ALSdk *applovinSDK = [FSSRewardedVideoCustomEventAppLovin sharedWithKey:dictionary[@"sdk_key"]];
-        dispatch_once(&onceToken, ^{
-            applovinSDK.settings.verboseLoggingEnabled = debugMode;
-            [applovinSDK initializeSdk];
-        });
-        _rewardedVideo = [FSSRewardedVideoCustomEventAppLovin rewardedVideoWithSdk:applovinSDK zoneName:dictionary[@"zone"]];
-        _rewardedVideo.adDisplayDelegate = self;
-        _rewardedVideo.adVideoPlaybackDelegate = self;
-    }
+
+    self.zoneName = dictionary[@"zone"];
+    self.sdkKey = dictionary[@"sdk_key"];
+    self.appLovin = appLovin;
+    self.appLovinManager = appLovinManager;
+
     return self;
 }
 
 - (void)loadRewardedVideoWithDictionary:(NSDictionary *)dictionary {
-    if ([self.rewardedVideo isReadyForDisplay]) {
+    if ([self.appLovin isReadyForDisplay]) {
         self.adnwStatus = FSSRewardedVideoADNWStatusLoaded;
         [self.delegate rewardedVideoDidLoadForCustomEvent:self];
     } else {
-        [self.rewardedVideo preloadAndNotify:self];
         self.adnwStatus = FSSRewardedVideoADNWStatusLoading;
+        [self.appLovinManager loadRewardedVideoWithSdkKey:self.sdkKey
+                                                 zoneName:self.zoneName
+                                                 appLovin:self.appLovin
+                                                 delegate:self
+                                                 testMode:self.testMode];
     }
 }
 
@@ -72,8 +84,8 @@
 }
 
 - (void)presentRewardedVideoAdFromViewController:(UIViewController *)viewController {
-    if (![self.rewardedVideo isReadyForDisplay]) {
-        // kALErrorCodeIncentiviziedAdNotPreloaded
+    if (![self.appLovin isReadyForDisplay]) {
+        self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
         NSError *error = [NSError errorWithDomain:FSSVideoErrorSDKDomain code:FSSVideoErrorNotReady userInfo:nil];
         [self.delegate rewardedVideoDidFailToPlayForCustomEvent:self
                                                      fluctError:error
@@ -83,7 +95,7 @@
         return;
     }
 
-    [self.rewardedVideo showAndNotify:nil];
+    [self.appLovin show];
 
     __weak __typeof(self) weakSelf = self;
     // wasHiddenInが呼ばれた時、最前面にALAppLovinVideoViewControllerが残っているので完全に消えるまで遅延させる
@@ -114,7 +126,7 @@
 }
 
 - (void)invalidate {
-    self.rewardedVideo = nil;
+    self.appLovin = nil;
 }
 
 #pragma mark ALAdLoadDelegate
@@ -210,6 +222,27 @@
             [weakSelf.delegate rewardedVideoShouldRewardForCustomEvent:weakSelf];
         });
     }
+}
+
+#pragma mark FSSRewardedVideoAppLovinManagerDelegate
+
+- (void)appLovinLoad:(id<FSSAppLovinProtocol>)ad {
+    self.appLovin = ad;
+    __weak __typeof(self) weakSelf = self;
+    dispatch_async(FSSWorkQueue(), ^{
+        weakSelf.adnwStatus = FSSRewardedVideoADNWStatusLoaded;
+        [weakSelf.delegate rewardedVideoDidLoadForCustomEvent:weakSelf];
+    });
+}
+
+- (void)appLovinFailedToInitializeWithFluctError:(nonnull NSError *)fluctError adnetworkError:(nonnull NSError *)adnetworkError {
+    __weak __typeof(self) weakSelf = self;
+    dispatch_async(FSSWorkQueue(), ^{
+        weakSelf.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
+        [weakSelf.delegate rewardedVideoDidFailToLoadForCustomEvent:weakSelf
+                                                         fluctError:fluctError
+                                                     adnetworkError:adnetworkError];
+    });
 }
 
 @end
