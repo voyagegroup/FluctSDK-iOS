@@ -23,6 +23,12 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)setIsUnderAgeOfConsent:(BOOL)isUnderAgeOfConsent;
 
+/**
+ * FluctSDKにIDFAの取得と送信を許可するかどうかを指定する。
+ * @param idfaAllowed IDFAの取得と送信を許可する
+ */
++ (void)setIdfaAllowed:(BOOL)idfaAllowed;
+
 @end
 
 NS_ASSUME_NONNULL_END
