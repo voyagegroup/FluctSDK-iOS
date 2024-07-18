@@ -311,7 +311,7 @@
 				"${PODS_CONFIGURATION_BUILD_DIR}/Ads-Global/AdsGlobalSDK.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/FiveAd/FiveAd_resources.bundle",
 				"${PODS_ROOT}/../../../../FluctSDK.embeddedframework/Resources/FluctSDKResources.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/UnityAds/UnityAds.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/UnityAds/UnityAdsResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -319,7 +319,7 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AdsGlobalSDK.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FiveAd_resources.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FluctSDKResources.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UnityAds.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UnityAdsResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
