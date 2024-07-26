@@ -104,8 +104,7 @@ static MAAdapterInitializationStatus ALFluctInitializationStatus = NSIntegerMin;
     });
 
     [FSSRewardedVideo.sharedInstance loadRewardedVideoWithGroupId:groupID
-                                                           unitId:unitID
-                                                        targeting:[ALFluctMediationAdapter generateTargetingFromTargetData:ALSdk.shared.targetingData]];
+                                                           unitId:unitID];
 }
 
 - (void)showRewardedAdForParameters:(nonnull id<MAAdapterResponseParameters>)parameters
@@ -168,35 +167,6 @@ static MAAdapterInitializationStatus ALFluctInitializationStatus = NSIntegerMin;
     return [MAAdapterError errorWithAdapterError:adapterError
                         mediatedNetworkErrorCode:fluctErrorCode
                      mediatedNetworkErrorMessage:error.localizedDescription];
-}
-
-+ (FSSAdRequestTargeting *_Nullable)generateTargetingFromTargetData:(ALTargetingData *_Nullable)targetData {
-    if (!targetData) {
-        return nil;
-    }
-
-    FSSAdRequestTargeting *targeting = [FSSAdRequestTargeting new];
-
-    switch (targetData.gender) {
-    case ALGenderFemale:
-        targeting.gender = FSSGenderFemale;
-        break;
-    case ALGenderMale:
-        targeting.gender = FSSGenderMale;
-        break;
-    case ALGenderUnknown:
-    case ALGenderOther:
-    default:
-        targeting.gender = FSSGenderUnknown;
-    }
-
-    if (targetData.yearOfBirth) {
-        NSDateComponents *comps = [[NSDateComponents alloc] init];
-        [comps setYear:[targetData.yearOfBirth intValue]];
-        targeting.birthday = [[NSCalendar currentCalendar] dateFromComponents:comps];
-    }
-
-    return targeting;
 }
 
 + (BOOL)canDeliverAds:(nonnull id<MAAdapterResponseParameters>)parameters {
