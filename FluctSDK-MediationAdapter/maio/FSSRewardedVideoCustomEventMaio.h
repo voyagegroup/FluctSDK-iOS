@@ -5,9 +5,9 @@
 //  Copyright © 2017年 fluct, Inc. All rights reserved.
 //
 
-#import "FSSRewardedVideoMaioManager.h"
+#import "FSSMaio.h"
 #import <FluctSDK/FluctSDK.h>
 
-@interface FSSRewardedVideoCustomEventMaio : FSSRewardedVideoCustomEvent <FSSRewardedVideoMaioManagerDelegate>
+@interface FSSRewardedVideoCustomEventMaio : FSSRewardedVideoCustomEvent <MaioRewardedLoadCallback, MaioRewardedShowCallback>
 
 @end

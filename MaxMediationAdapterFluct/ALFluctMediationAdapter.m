@@ -87,6 +87,12 @@ static MAAdapterInitializationStatus ALFluctInitializationStatus = NSIntegerMin;
         return;
     }
 
+    /*
+     * 歴史的理由で`customParameters`に各種枠IDを入れているが、
+     * 現行のAppLovinドキュメントでは`thirdPartyAdPlacementIdentifier`を利用するよう指示がある為、
+     * 今後どうすべきか、もし変更する場合既存枠をどうするか、は検討が必要
+     * https://developers.applovin.com/en/demand-partners/building-a-custom-adapter/#ios
+     */
     NSString *placementIdentifier = parameters.thirdPartyAdPlacementIdentifier;
     NSString *groupID = parameters.customParameters[kGroupId];
     NSString *unitID = parameters.customParameters[kUnitId];
