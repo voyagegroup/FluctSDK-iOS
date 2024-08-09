@@ -218,7 +218,6 @@ static MAAdapterInitializationStatus ALFluctInitializationStatus = NSIntegerMin;
                                      unitId:(NSString *)unitId {
 
     [self.parentAdapter log:@"Rewarded user for group id: %@, unit id: %@", groupId, unitId];
-    [self.delegate didCompleteRewardedAdVideo];
 }
 
 - (void)rewardedVideoDidLoadForGroupID:(NSString *)groupId
@@ -243,7 +242,6 @@ static MAAdapterInitializationStatus ALFluctInitializationStatus = NSIntegerMin;
                                   unitId:(NSString *)unitId {
     [self.parentAdapter log:@"Rewarded ad appeared for group id: %@, unit id: %@", groupId, unitId];
     [self.delegate didDisplayRewardedAd];
-    [self.delegate didStartRewardedAdVideo];
 }
 
 - (void)rewardedVideoWillDisappearForGroupId:(NSString *)groupId
