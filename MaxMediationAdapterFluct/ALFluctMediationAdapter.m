@@ -11,6 +11,35 @@
 static NSString *const kGroupId = @"groupID";
 static NSString *const kUnitId = @"unitID";
 
+@interface ALFluctMediationAdapterParam : NSObject
+- (instancetype)initWithParameters:(nonnull id<MAAdapterResponseParameters>)params;
+@property (nonatomic, copy) NSString *groupId;
+@property (nonatomic, copy) NSString *unitId;
+@end
+
+@implementation ALFluctMediationAdapterParam
+- (instancetype)initWithParameters:(nonnull id<MAAdapterResponseParameters>)parameters {
+    self = [super init];
+    if (self) {
+        if ([parameters.customParameters objectForKey:kGroupId] && [parameters.customParameters objectForKey:kUnitId]) {
+            _groupId = parameters.customParameters[kGroupId];
+            _unitId = parameters.customParameters[kUnitId];
+        }
+        NSString *placementIdentifier = parameters.thirdPartyAdPlacementIdentifier;
+        NSArray<NSString *> *ids = [placementIdentifier componentsSeparatedByString:@","];
+        if (ids.count == 2) {
+            _groupId = ids[0];
+            _unitId = ids[1];
+        }
+        if ([_groupId length] == 0 || [_unitId length] == 0) {
+            return nil;
+        }
+    }
+    return self;
+}
+
+@end
+
 @interface ALFluctMediationAdapterRewardedVideoAdDelegate : NSObject <ALFluctRewardedVideoDelegateProxyItem>
 @property (nonatomic, weak) ALFluctMediationAdapter *parentAdapter;
 @property (nonatomic, strong) id<MARewardedAdapterDelegate> delegate;
@@ -86,43 +115,39 @@ static MAAdapterInitializationStatus ALFluctInitializationStatus = NSIntegerMin;
                                                                                                                    userInfo:@{NSLocalizedDescriptionKey : @"FluctSDK dose not deliver ads to this user to comply with GDPR, CCPA, COPPA"}]]];
         return;
     }
+    ALFluctMediationAdapterParam *param = [[ALFluctMediationAdapterParam alloc] initWithParameters:parameters];
 
-    /*
-     * 歴史的理由で`customParameters`に各種枠IDを入れているが、
-     * 現行のAppLovinドキュメントでは`thirdPartyAdPlacementIdentifier`を利用するよう指示がある為、
-     * 今後どうすべきか、もし変更する場合既存枠をどうするか、は検討が必要
-     * https://developers.applovin.com/en/demand-partners/building-a-custom-adapter/#ios
-     */
-    NSString *placementIdentifier = parameters.thirdPartyAdPlacementIdentifier;
-    NSString *groupID = parameters.customParameters[kGroupId];
-    NSString *unitID = parameters.customParameters[kUnitId];
+    [self log:@"Loading rewarded ad for group id: %@, unit id: %@", param.groupId, param.unitId];
 
-    [self log:@"Loading rewarded ad for placemet id: %@, group id: %@, unit id: %@", placementIdentifier, groupID, unitID];
+    if (!param) {
+        [delegate didFailToLoadRewardedAdWithError:[ALFluctMediationAdapter maxErrorFromFluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
+                                                                                                                       code:FSSVideoErrorBadRequest
+                                                                                                                   userInfo:@{NSLocalizedDescriptionKey : @"FluctSDK dose not deliver ads to invalid group_id and/or unit_id"}]]];
+        return;
+    }
 
     self.rewardedAdapterDelegate = [[ALFluctMediationAdapterRewardedVideoAdDelegate alloc] initWithParentAdapter:self
                                                                                                        andNotify:delegate];
     [ALFluctRewardedVideoDelegateProxy.sharedInstance registerDelegate:self.rewardedAdapterDelegate
-                                                               groupId:groupID
-                                                                unitId:unitID];
+                                                               groupId:param.groupId
+                                                                unitId:param.unitId];
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         FSSRewardedVideo.sharedInstance.delegate = ALFluctRewardedVideoDelegateProxy.sharedInstance;
     });
 
-    [FSSRewardedVideo.sharedInstance loadRewardedVideoWithGroupId:groupID
-                                                           unitId:unitID];
+    [FSSRewardedVideo.sharedInstance loadRewardedVideoWithGroupId:param.groupId
+                                                           unitId:param.unitId];
 }
 
 - (void)showRewardedAdForParameters:(nonnull id<MAAdapterResponseParameters>)parameters
                           andNotify:(nonnull id<MARewardedAdapterDelegate>)delegate {
-    NSString *placementIdentifier = parameters.thirdPartyAdPlacementIdentifier;
-    NSString *groupID = parameters.customParameters[kGroupId];
-    NSString *unitID = parameters.customParameters[kUnitId];
+    ALFluctMediationAdapterParam *param = [[ALFluctMediationAdapterParam alloc] initWithParameters:parameters];
 
-    [self log:@"Showing rewarded ad for placemet id: %@, group id: %@, unit id: %@", placementIdentifier, groupID, unitID];
+    [self log:@"Showing rewarded ad for group id: %@, unit id: %@", param.groupId, param.unitId];
 
-    [FSSRewardedVideo.sharedInstance presentRewardedVideoAdForGroupId:groupID
-                                                               unitId:unitID
+    [FSSRewardedVideo.sharedInstance presentRewardedVideoAdForGroupId:param.groupId
+                                                               unitId:param.unitId
                                                    fromViewController:[ALUtils topViewControllerFromKeyWindow]];
     [delegate didDisplayRewardedAd];
 }
