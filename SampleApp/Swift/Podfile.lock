@@ -5,7 +5,7 @@ PODS:
     - Ads-Global/Dep_Accurate
   - Ads-Global/Dep_Accurate (6.1.0.6):
     - BURelyFoundation_Global/Pangle (= 1.0.0.0)
-  - AppLovinSDK (12.4.1)
+  - AppLovinSDK (13.0.0)
   - BURelyFoundation_Global/AFNetworking (1.0.0.0)
   - BURelyFoundation_Global/APM (1.0.0.0)
   - BURelyFoundation_Global/Foundation (1.0.0.0):
@@ -35,31 +35,31 @@ PODS:
   - BURelyFoundation_Global/Zip (1.0.0.0):
     - BURelyFoundation_Global/Foundation
   - FiveAd (2.7.20240411)
-  - FluctSDK (6.37.0)
-  - FluctSDK-MediationAdapter/AppLovin (6.37.0):
-    - AppLovinSDK (= 12.4.1)
+  - FluctSDK (6.37.1)
+  - FluctSDK-MediationAdapter/AppLovin (6.37.1):
+    - AppLovinSDK (= 13.0.0)
     - FluctSDK (>= 6.14.0)
-  - FluctSDK-MediationAdapter/Five (6.37.0):
+  - FluctSDK-MediationAdapter/Five (6.37.1):
     - FiveAd (= 2.7.20240411)
     - FluctSDK (>= 6.14.0)
-  - FluctSDK-MediationAdapter/maio (6.37.0):
+  - FluctSDK-MediationAdapter/maio (6.37.1):
     - FluctSDK (>= 6.14.0)
     - MaioSDK-v2 (= 2.1.5)
-  - FluctSDK-MediationAdapter/Pangle (6.37.0):
+  - FluctSDK-MediationAdapter/Pangle (6.37.1):
     - Ads-Global (= 6.1.0.6)
     - FluctSDK (>= 6.14.0)
-  - FluctSDK-MediationAdapter/UnityAds (6.37.0):
+  - FluctSDK-MediationAdapter/UnityAds (6.37.1):
     - FluctSDK (>= 6.14.0)
     - UnityAds (= 4.12.1)
   - Google-Mobile-Ads-SDK (11.1.0):
     - GoogleUserMessagingPlatform (>= 1.1)
-  - GoogleMobileAdsMediationFluct (6.37.0):
+  - GoogleMobileAdsMediationFluct (6.37.1):
     - FluctSDK (>= 6.12.1)
     - Google-Mobile-Ads-SDK (>= 9.8.0)
   - GoogleUserMessagingPlatform (2.2.0)
   - MaioSDK-v2 (2.1.5)
-  - MaxMediationAdapterFluct (6.37.0):
-    - AppLovinSDK (>= 12.4.1)
+  - MaxMediationAdapterFluct (6.37.1):
+    - AppLovinSDK (>= 13.0.0)
     - FluctSDK (>= 6.19.0)
   - UnityAds (4.12.1)
 
@@ -98,16 +98,16 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Ads-Global: 907f4b2b94d722b33ef58e8b5a8d522718117273
-  AppLovinSDK: c57ad0d34625c971d2db127f8ef60570b28ff51a
+  AppLovinSDK: c0ecb434df24008b6ecdd7f1e5b8587bc45ff381
   BURelyFoundation_Global: d8099571ab7a0767ec0a334052108e33ff6d8a3f
   FiveAd: 27375ac7fde76085544389cc090d744149fdbe78
-  FluctSDK: f39d38e7eda29b524084ed6e09b7194bd89c413c
-  FluctSDK-MediationAdapter: 84dbd948bc9bda5fb7170124a0e6b51bab0d5012
+  FluctSDK: ba66aba3bdf30c3c2da3fcf53ac8be8b40cf90d5
+  FluctSDK-MediationAdapter: ce15ce12d4e8cc95be0ca72993d80121f10f9fbd
   Google-Mobile-Ads-SDK: 4a1f2ccef63660f9a74efc6a6ea979483d421aaa
-  GoogleMobileAdsMediationFluct: 56dd471119f684cb8fa3ab7be3d305ed6f6723c9
+  GoogleMobileAdsMediationFluct: 9c3c6694170ed42c34080cf9823be9ceba9bd629
   GoogleUserMessagingPlatform: d31dbfb40ec02c5d9683029815c5d5a7f46389ee
   MaioSDK-v2: 548968f22aa62f4955780d24f197eb205148082c
-  MaxMediationAdapterFluct: 98244dbdeffaf1a3b5e6c4404b002656c8fa6436
+  MaxMediationAdapterFluct: eb101785933bfc0f1c3b4bd45947e8a2de383bfb
   UnityAds: f89ac1e717f5d566a58479a5b7cb9ed3a744cae3
 
 PODFILE CHECKSUM: b2342549e8173b7d8f6de4bb18b654e3985f60c1

@@ -215,13 +215,6 @@ static MAAdapterInitializationStatus ALFluctInitializationStatus = NSIntegerMin;
         return false;
     }
 
-    // child users for CCPA, GDPR, COPPA, etc
-    NSNumber *ageRestrictedUser = parameters.ageRestrictedUser;
-    bool canDeliverAdsForAgeRestrictUser = ageRestrictedUser == nil || ![ageRestrictedUser boolValue];
-    if (!canDeliverAdsForAgeRestrictUser) {
-        return false;
-    }
-
     return true;
 }
 
