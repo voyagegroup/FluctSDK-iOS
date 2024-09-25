@@ -85,19 +85,6 @@ static NSString *const FSSFiveSupportVersion = @"12.0";
 }
 
 - (void)presentRewardedVideoAdFromViewController:(UIViewController *)viewController {
-    if (self.rewardedVideo.state != kFADStateLoaded) {
-        self.adnwStatus = FSSRewardedVideoADNWStatusNotDisplayable;
-        NSError *fluctError = [NSError errorWithDomain:FSSVideoErrorSDKDomain
-                                                  code:FSSVideoErrorNotReady
-                                              userInfo:nil];
-        NSError *fiveError = [NSError errorWithDomain:FSSVideoErrorSDKDomain
-                                                 code:FiveErrorExtendNotReady
-                                             userInfo:nil];
-        [self.delegate rewardedVideoDidFailToPlayForCustomEvent:self
-                                                     fluctError:fluctError
-                                                 adnetworkError:fiveError];
-        return;
-    }
     [self.rewardedVideo showWithViewController:viewController];
     [self.delegate rewardedVideoWillAppearForCustomEvent:self];
 }
