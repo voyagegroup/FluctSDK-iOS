@@ -1,21 +1,21 @@
 PODS:
-  - Ads-Global (6.1.0.6):
-    - Ads-Global/BUAdSDK (= 6.1.0.6)
-  - Ads-Global/BUAdSDK (6.1.0.6):
+  - Ads-Global (6.2.0.9):
+    - Ads-Global/BUAdSDK (= 6.2.0.9)
+  - Ads-Global/BUAdSDK (6.2.0.9):
     - Ads-Global/Dep_Accurate
-  - Ads-Global/Dep_Accurate (6.1.0.6):
-    - BURelyFoundation_Global/Pangle (= 1.0.0.0)
+  - Ads-Global/Dep_Accurate (6.2.0.9):
+    - BURelyFoundation_Global/Pangle (= 1.0.0.6)
   - AppLovinSDK (13.0.0)
-  - BURelyFoundation_Global/AFNetworking (1.0.0.0)
-  - BURelyFoundation_Global/APM (1.0.0.0)
-  - BURelyFoundation_Global/Foundation (1.0.0.0):
+  - BURelyFoundation_Global/AFNetworking (1.0.0.6)
+  - BURelyFoundation_Global/APM (1.0.0.6)
+  - BURelyFoundation_Global/Foundation (1.0.0.6):
     - BURelyFoundation_Global/NETWork
-  - BURelyFoundation_Global/Gecko (1.0.0.0):
+  - BURelyFoundation_Global/Gecko (1.0.0.6):
     - BURelyFoundation_Global/Foundation
-  - BURelyFoundation_Global/Header (1.0.0.0)
-  - BURelyFoundation_Global/NETWork (1.0.0.0):
+  - BURelyFoundation_Global/Header (1.0.0.6)
+  - BURelyFoundation_Global/NETWork (1.0.0.6):
     - BURelyFoundation_Global/AFNetworking
-  - BURelyFoundation_Global/Pangle (1.0.0.0):
+  - BURelyFoundation_Global/Pangle (1.0.0.6):
     - BURelyFoundation_Global/AFNetworking
     - BURelyFoundation_Global/APM
     - BURelyFoundation_Global/Foundation
@@ -26,39 +26,39 @@ PODS:
     - BURelyFoundation_Global/YYModel
     - BURelyFoundation_Global/ZFPlayer
     - BURelyFoundation_Global/Zip
-  - BURelyFoundation_Global/SDWebImage (1.0.0.0):
+  - BURelyFoundation_Global/SDWebImage (1.0.0.6):
     - BURelyFoundation_Global/Foundation
-  - BURelyFoundation_Global/YYModel (1.0.0.0)
-  - BURelyFoundation_Global/ZFPlayer (1.0.0.0):
+  - BURelyFoundation_Global/YYModel (1.0.0.6)
+  - BURelyFoundation_Global/ZFPlayer (1.0.0.6):
     - BURelyFoundation_Global/Foundation
     - BURelyFoundation_Global/Zip
-  - BURelyFoundation_Global/Zip (1.0.0.0):
+  - BURelyFoundation_Global/Zip (1.0.0.6):
     - BURelyFoundation_Global/Foundation
   - FiveAd (2.8.20240827)
-  - FluctSDK (6.37.2)
-  - FluctSDK-MediationAdapter/AppLovin (6.37.2):
+  - FluctSDK (6.37.3)
+  - FluctSDK-MediationAdapter/AppLovin (6.37.3):
     - AppLovinSDK (= 13.0.0)
     - FluctSDK (>= 6.14.0)
-  - FluctSDK-MediationAdapter/Five (6.37.2):
+  - FluctSDK-MediationAdapter/Five (6.37.3):
     - FiveAd (= 2.8.20240827)
     - FluctSDK (>= 6.14.0)
-  - FluctSDK-MediationAdapter/maio (6.37.2):
+  - FluctSDK-MediationAdapter/maio (6.37.3):
     - FluctSDK (>= 6.14.0)
     - MaioSDK-v2 (= 2.1.5)
-  - FluctSDK-MediationAdapter/Pangle (6.37.2):
-    - Ads-Global (= 6.1.0.6)
+  - FluctSDK-MediationAdapter/Pangle (6.37.3):
+    - Ads-Global (= 6.2.0.9)
     - FluctSDK (>= 6.14.0)
-  - FluctSDK-MediationAdapter/UnityAds (6.37.2):
+  - FluctSDK-MediationAdapter/UnityAds (6.37.3):
     - FluctSDK (>= 6.14.0)
     - UnityAds (= 4.12.1)
   - Google-Mobile-Ads-SDK (11.1.0):
     - GoogleUserMessagingPlatform (>= 1.1)
-  - GoogleMobileAdsMediationFluct (6.37.2):
+  - GoogleMobileAdsMediationFluct (6.37.3):
     - FluctSDK (>= 6.12.1)
     - Google-Mobile-Ads-SDK (>= 9.8.0)
   - GoogleUserMessagingPlatform (2.2.0)
   - MaioSDK-v2 (2.1.5)
-  - MaxMediationAdapterFluct (6.37.2):
+  - MaxMediationAdapterFluct (6.37.3):
     - AppLovinSDK (>= 13.0.0)
     - FluctSDK (>= 6.19.0)
   - UnityAds (4.12.1)
@@ -97,17 +97,17 @@ EXTERNAL SOURCES:
     :path: "../../../MaxMediationAdapterFluct.podspec"
 
 SPEC CHECKSUMS:
-  Ads-Global: 907f4b2b94d722b33ef58e8b5a8d522718117273
+  Ads-Global: 71993aa8928051e4d8cf3cb8aaed9ce9a1c95f55
   AppLovinSDK: c0ecb434df24008b6ecdd7f1e5b8587bc45ff381
-  BURelyFoundation_Global: d8099571ab7a0767ec0a334052108e33ff6d8a3f
+  BURelyFoundation_Global: 17faee76affe097bd20b422fe829f9f90ed10e25
   FiveAd: 1d6b833138351af2fb2248897eac71531c21cfd6
-  FluctSDK: 0d53815212b636730b6ec0d03bb81d3b4d6c0db7
-  FluctSDK-MediationAdapter: 15f4cd016dfb85f28ba01f907faab4e34542caa8
+  FluctSDK: 609211d57ad1fc8f5eadaf6feb8208945575fefc
+  FluctSDK-MediationAdapter: ab483e430b04863f7cf1008008ccfc815488eac7
   Google-Mobile-Ads-SDK: 4a1f2ccef63660f9a74efc6a6ea979483d421aaa
-  GoogleMobileAdsMediationFluct: 13b68be963c78d3f5360afa1148707be5756e8a3
+  GoogleMobileAdsMediationFluct: 525ae1b283b69b1c27f9ae19abb25c4092158ce8
   GoogleUserMessagingPlatform: d31dbfb40ec02c5d9683029815c5d5a7f46389ee
   MaioSDK-v2: 548968f22aa62f4955780d24f197eb205148082c
-  MaxMediationAdapterFluct: fc78006a95ea43ca33cfcbf86d18cb70e9cedf57
+  MaxMediationAdapterFluct: da9011e2f52da9989b8daa5bf769f3c1ef05b0b5
   UnityAds: f89ac1e717f5d566a58479a5b7cb9ed3a744cae3
 
 PODFILE CHECKSUM: b2342549e8173b7d8f6de4bb18b654e3985f60c1

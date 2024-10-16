@@ -5,40 +5,11 @@
 //
 
 #import "ALFluctMediationAdapter.h"
+#import "ALFluctMediationAdapterError.h"
+#import "ALFluctMediationAdapterParam.h"
+#import "ALFluctMediationAdapterUtility.h"
 #import "ALFluctRewardedVideoDelegateProxy.h"
 @import FluctSDK;
-
-static NSString *const kGroupId = @"groupID";
-static NSString *const kUnitId = @"unitID";
-
-@interface ALFluctMediationAdapterParam : NSObject
-- (instancetype)initWithParameters:(nonnull id<MAAdapterResponseParameters>)params;
-@property (nonatomic, copy) NSString *groupId;
-@property (nonatomic, copy) NSString *unitId;
-@end
-
-@implementation ALFluctMediationAdapterParam
-- (instancetype)initWithParameters:(nonnull id<MAAdapterResponseParameters>)parameters {
-    self = [super init];
-    if (self) {
-        if ([parameters.customParameters objectForKey:kGroupId] && [parameters.customParameters objectForKey:kUnitId]) {
-            _groupId = parameters.customParameters[kGroupId];
-            _unitId = parameters.customParameters[kUnitId];
-        }
-        NSString *placementIdentifier = parameters.thirdPartyAdPlacementIdentifier;
-        NSArray<NSString *> *ids = [placementIdentifier componentsSeparatedByString:@","];
-        if (ids.count == 2) {
-            _groupId = ids[0];
-            _unitId = ids[1];
-        }
-        if ([_groupId length] == 0 || [_unitId length] == 0) {
-            return nil;
-        }
-    }
-    return self;
-}
-
-@end
 
 @interface ALFluctMediationAdapterRewardedVideoAdDelegate : NSObject <ALFluctRewardedVideoDelegateProxyItem>
 @property (nonatomic, weak) ALFluctMediationAdapter *parentAdapter;
@@ -109,20 +80,18 @@ static MAAdapterInitializationStatus ALFluctInitializationStatus = NSIntegerMin;
 - (void)loadRewardedAdForParameters:(nonnull id<MAAdapterResponseParameters>)parameters
                           andNotify:(nonnull id<MARewardedAdapterDelegate>)delegate {
 
-    if (![ALFluctMediationAdapter canDeliverAds:parameters]) {
-        [delegate didFailToLoadRewardedAdWithError:[ALFluctMediationAdapter maxErrorFromFluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
-                                                                                                                       code:FSSVideoErrorNoAds
-                                                                                                                   userInfo:@{NSLocalizedDescriptionKey : @"FluctSDK dose not deliver ads to this user to comply with GDPR, CCPA, COPPA"}]]];
+    if (![ALFluctMediationAdapterUtility canDeliverAds:parameters]) {
+        [delegate didFailToLoadRewardedAdWithError:[ALFluctMediationAdapterError maxErrorFromFluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
+                                                                                                                            code:FSSVideoErrorNoAds
+                                                                                                                        userInfo:@{NSLocalizedDescriptionKey : @"FluctSDK dose not deliver ads to this user to comply with GDPR, CCPA"}]]];
         return;
     }
     ALFluctMediationAdapterParam *param = [[ALFluctMediationAdapterParam alloc] initWithParameters:parameters];
-
     [self log:@"Loading rewarded ad for group id: %@, unit id: %@", param.groupId, param.unitId];
-
     if (!param) {
-        [delegate didFailToLoadRewardedAdWithError:[ALFluctMediationAdapter maxErrorFromFluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
-                                                                                                                       code:FSSVideoErrorBadRequest
-                                                                                                                   userInfo:@{NSLocalizedDescriptionKey : @"FluctSDK dose not deliver ads to invalid group_id and/or unit_id"}]]];
+        [delegate didFailToLoadRewardedAdWithError:[ALFluctMediationAdapterError maxErrorFromFluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
+                                                                                                                            code:FSSVideoErrorBadRequest
+                                                                                                                        userInfo:@{NSLocalizedDescriptionKey : @"FluctSDK dose not deliver ads to invalid group_id and/or unit_id"}]]];
         return;
     }
 
@@ -150,72 +119,6 @@ static MAAdapterInitializationStatus ALFluctInitializationStatus = NSIntegerMin;
                                                                unitId:param.unitId
                                                    fromViewController:[ALUtils topViewControllerFromKeyWindow]];
     [delegate didDisplayRewardedAd];
-}
-
-#pragma mark - Utility Methods
-
-+ (MAAdapterError *)maxErrorFromFluctError:(NSError *)error {
-
-    NSInteger fluctErrorCode = error.code;
-    MAAdapterError *adapterError = MAAdapterError.unspecified;
-    switch (fluctErrorCode) {
-    case FSSVideoErrorInitializeFailed:
-        adapterError = MAAdapterError.notInitialized;
-        break;
-    case FSSVideoErrorLoadFailed:
-    case FSSVideoErrorNotReady:
-    case FSSVideoErrorPlayFailed:
-        adapterError = MAAdapterError.adNotReady;
-        break;
-    case FSSVideoErrorNoAds:
-        adapterError = MAAdapterError.noFill;
-        break;
-    case FSSVideoErrorBadRequest:
-        adapterError = MAAdapterError.badRequest;
-        break;
-    case FSSVideoErrorWrongConfiguration:
-    case FSSVideoErrorInvalidApp:
-        adapterError = MAAdapterError.invalidConfiguration;
-        break;
-    case FSSVideoErrorNotConnectedToInternet:
-        adapterError = MAAdapterError.noConnection;
-        break;
-    case FSSVideoErrorExpired:
-        adapterError = MAAdapterError.adExpiredError;
-        break;
-    case FSSVideoErrorVastParseFailed:
-        adapterError = MAAdapterError.invalidLoadState;
-        break;
-    case FSSVideoErrorTimeout:
-        adapterError = MAAdapterError.timeout;
-        break;
-    case FSSVideoErrorUnknown:
-    default:
-        adapterError = MAAdapterError.unspecified;
-        break;
-    }
-
-    return [MAAdapterError errorWithAdapterError:adapterError
-                        mediatedNetworkErrorCode:fluctErrorCode
-                     mediatedNetworkErrorMessage:error.localizedDescription];
-}
-
-+ (BOOL)canDeliverAds:(nonnull id<MAAdapterResponseParameters>)parameters {
-    // GDPR
-    NSNumber *userConsent = parameters.userConsent;
-    bool canDeliverAdsForUserConsent = userConsent == nil || [userConsent boolValue];
-    if (!canDeliverAdsForUserConsent) {
-        return false;
-    }
-
-    // CCPA
-    NSNumber *doNotSell = parameters.doNotSell;
-    bool canDeliverAdsForDoNotSell = doNotSell == nil || ![doNotSell boolValue];
-    if (!canDeliverAdsForDoNotSell) {
-        return false;
-    }
-
-    return true;
 }
 
 @end
@@ -248,7 +151,7 @@ static MAAdapterInitializationStatus ALFluctInitializationStatus = NSIntegerMin;
                                       unitId:(NSString *)unitId
                                        error:(NSError *)error {
     [self.parentAdapter log:@"Rewarded ad failed to load for group id: %@, unit id: %@, error: %@", groupId, unitId, error];
-    [self.delegate didFailToLoadRewardedAdWithError:[ALFluctMediationAdapter maxErrorFromFluctError:error]];
+    [self.delegate didFailToLoadRewardedAdWithError:[ALFluctMediationAdapterError maxErrorFromFluctError:error]];
 }
 
 - (void)rewardedVideoWillAppearForGroupId:(NSString *)groupId
@@ -280,7 +183,7 @@ static MAAdapterInitializationStatus ALFluctInitializationStatus = NSIntegerMin;
                                       unitId:(NSString *)unitId
                                        error:(NSError *)error {
     [self.parentAdapter log:@"Rewarded ad failed to play for group id: %@, unit id: %@, error: %@", groupId, unitId, error];
-    [self.delegate didFailToDisplayRewardedAdWithError:[ALFluctMediationAdapter maxErrorFromFluctError:error]];
+    [self.delegate didFailToDisplayRewardedAdWithError:[ALFluctMediationAdapterError maxErrorFromFluctError:error]];
 }
 
 @end
