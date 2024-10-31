@@ -10,10 +10,10 @@ static NSString *const kGroupId = @"groupID";
 static NSString *const kUnitId = @"unitID";
 
 @implementation ALFluctMediationAdapterParam
-- (instancetype)initWithParameters:(nonnull id<MAAdapterResponseParameters>)parameters {
+- (instancetype)initWithParameters:(nonnull id<MAAdapterResponseParameters>)parameters useCustomParameters:(BOOL)useCustomParameters {
     self = [super init];
     if (self) {
-        if ([parameters.customParameters objectForKey:kGroupId] && [parameters.customParameters objectForKey:kUnitId]) {
+        if ([parameters.customParameters objectForKey:kGroupId] && [parameters.customParameters objectForKey:kUnitId] && useCustomParameters) {
             _groupId = parameters.customParameters[kGroupId];
             _unitId = parameters.customParameters[kUnitId];
         }

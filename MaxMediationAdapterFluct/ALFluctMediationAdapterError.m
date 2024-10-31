@@ -9,7 +9,35 @@
 
 @implementation ALFluctMediationAdapterError
 
-+ (MAAdapterError *)maxErrorFromFluctError:(NSError *)error {
++ (MAAdapterError *)maxErrorFromFluctAdViewError:(NSError *)error {
+
+    NSInteger fluctErrorCode = error.code;
+    MAAdapterError *adapterError = MAAdapterError.unspecified;
+    switch (fluctErrorCode) {
+    case FSSAdViewErrorNoAds:
+        adapterError = MAAdapterError.noFill;
+        break;
+    case FSSAdViewErrorBadRequest:
+        adapterError = MAAdapterError.badRequest;
+        break;
+    case FSSAdViewErrorNotConnectedToInternet:
+        adapterError = MAAdapterError.noConnection;
+        break;
+    case FSSAdViewErrorServerError:
+        adapterError = MAAdapterError.serverError;
+        break;
+    case FSSAdViewErrorUnknown:
+    default:
+        adapterError = MAAdapterError.unspecified;
+        break;
+    }
+
+    return [MAAdapterError errorWithAdapterError:adapterError
+                        mediatedNetworkErrorCode:fluctErrorCode
+                     mediatedNetworkErrorMessage:error.localizedDescription];
+}
+
++ (MAAdapterError *)maxErrorFromFluctVideoError:(NSError *)error {
 
     NSInteger fluctErrorCode = error.code;
     MAAdapterError *adapterError = MAAdapterError.unspecified;

@@ -5,6 +5,7 @@
 //
 
 #import "ALFluctMediationAdapter.h"
+#import "ALFluctAdViewAdapter.h"
 #import "ALFluctMediationAdapterError.h"
 #import "ALFluctMediationAdapterParam.h"
 #import "ALFluctMediationAdapterUtility.h"
@@ -18,9 +19,8 @@
 @end
 
 @interface ALFluctMediationAdapter ()
-
 @property (nonatomic, strong) ALFluctMediationAdapterRewardedVideoAdDelegate *rewardedAdapterDelegate;
-
+@property (nonatomic, strong) ALFluctAdViewAdapter *adViewAdapter;
 @end
 
 @implementation ALFluctMediationAdapter
@@ -73,6 +73,14 @@ static MAAdapterInitializationStatus ALFluctInitializationStatus = NSIntegerMin;
 
 - (void)destroy {
     self.rewardedAdapterDelegate = nil;
+    self.adViewAdapter = nil;
+}
+
+#pragma mark - MAAdViewAdapter
+
+- (void)loadAdViewAdForParameters:(nonnull id<MAAdapterResponseParameters>)parameters adFormat:(nonnull MAAdFormat *)adFormat andNotify:(nonnull id<MAAdViewAdapterDelegate>)delegate {
+    self.adViewAdapter = [[ALFluctAdViewAdapter alloc] init];
+    [self.adViewAdapter loadAdViewAdapterWithAdapter:self parameters:parameters adFormat:adFormat andNotify:delegate];
 }
 
 #pragma mark - MARewardedAdapter
@@ -81,17 +89,17 @@ static MAAdapterInitializationStatus ALFluctInitializationStatus = NSIntegerMin;
                           andNotify:(nonnull id<MARewardedAdapterDelegate>)delegate {
 
     if (![ALFluctMediationAdapterUtility canDeliverAds:parameters]) {
-        [delegate didFailToLoadRewardedAdWithError:[ALFluctMediationAdapterError maxErrorFromFluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
-                                                                                                                            code:FSSVideoErrorNoAds
-                                                                                                                        userInfo:@{NSLocalizedDescriptionKey : @"FluctSDK dose not deliver ads to this user to comply with GDPR, CCPA"}]]];
+        [delegate didFailToLoadRewardedAdWithError:[ALFluctMediationAdapterError maxErrorFromFluctVideoError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
+                                                                                                                                 code:FSSVideoErrorNoAds
+                                                                                                                             userInfo:@{NSLocalizedDescriptionKey : @"FluctSDK dose not deliver ads to this user to comply with GDPR, CCPA"}]]];
         return;
     }
-    ALFluctMediationAdapterParam *param = [[ALFluctMediationAdapterParam alloc] initWithParameters:parameters];
+    ALFluctMediationAdapterParam *param = [[ALFluctMediationAdapterParam alloc] initWithParameters:parameters useCustomParameters:YES];
     [self log:@"Loading rewarded ad for group id: %@, unit id: %@", param.groupId, param.unitId];
     if (!param) {
-        [delegate didFailToLoadRewardedAdWithError:[ALFluctMediationAdapterError maxErrorFromFluctError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
-                                                                                                                            code:FSSVideoErrorBadRequest
-                                                                                                                        userInfo:@{NSLocalizedDescriptionKey : @"FluctSDK dose not deliver ads to invalid group_id and/or unit_id"}]]];
+        [delegate didFailToLoadRewardedAdWithError:[ALFluctMediationAdapterError maxErrorFromFluctVideoError:[NSError errorWithDomain:FSSVideoErrorSDKDomain
+                                                                                                                                 code:FSSVideoErrorBadRequest
+                                                                                                                             userInfo:@{NSLocalizedDescriptionKey : @"FluctSDK dose not deliver ads to invalid group_id and/or unit_id"}]]];
         return;
     }
 
@@ -111,7 +119,7 @@ static MAAdapterInitializationStatus ALFluctInitializationStatus = NSIntegerMin;
 
 - (void)showRewardedAdForParameters:(nonnull id<MAAdapterResponseParameters>)parameters
                           andNotify:(nonnull id<MARewardedAdapterDelegate>)delegate {
-    ALFluctMediationAdapterParam *param = [[ALFluctMediationAdapterParam alloc] initWithParameters:parameters];
+    ALFluctMediationAdapterParam *param = [[ALFluctMediationAdapterParam alloc] initWithParameters:parameters useCustomParameters:YES];
 
     [self log:@"Showing rewarded ad for group id: %@, unit id: %@", param.groupId, param.unitId];
 
@@ -151,7 +159,7 @@ static MAAdapterInitializationStatus ALFluctInitializationStatus = NSIntegerMin;
                                       unitId:(NSString *)unitId
                                        error:(NSError *)error {
     [self.parentAdapter log:@"Rewarded ad failed to load for group id: %@, unit id: %@, error: %@", groupId, unitId, error];
-    [self.delegate didFailToLoadRewardedAdWithError:[ALFluctMediationAdapterError maxErrorFromFluctError:error]];
+    [self.delegate didFailToLoadRewardedAdWithError:[ALFluctMediationAdapterError maxErrorFromFluctVideoError:error]];
 }
 
 - (void)rewardedVideoWillAppearForGroupId:(NSString *)groupId
@@ -183,7 +191,7 @@ static MAAdapterInitializationStatus ALFluctInitializationStatus = NSIntegerMin;
                                       unitId:(NSString *)unitId
                                        error:(NSError *)error {
     [self.parentAdapter log:@"Rewarded ad failed to play for group id: %@, unit id: %@, error: %@", groupId, unitId, error];
-    [self.delegate didFailToDisplayRewardedAdWithError:[ALFluctMediationAdapterError maxErrorFromFluctError:error]];
+    [self.delegate didFailToDisplayRewardedAdWithError:[ALFluctMediationAdapterError maxErrorFromFluctVideoError:error]];
 }
 
 @end

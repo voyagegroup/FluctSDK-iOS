@@ -11,7 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ALFluctMediationAdapterError : NSObject
 
-+ (MAAdapterError *)maxErrorFromFluctError:(NSError *)error;
++ (MAAdapterError *)maxErrorFromFluctVideoError:(NSError *)error;
++ (MAAdapterError *)maxErrorFromFluctAdViewError:(NSError *)error;
 
 @end
 

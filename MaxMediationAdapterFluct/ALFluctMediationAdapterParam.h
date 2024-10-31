@@ -10,7 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ALFluctMediationAdapterParam : NSObject
-- (instancetype)initWithParameters:(nonnull id<MAAdapterResponseParameters>)params;
+- (instancetype)initWithParameters:(nonnull id<MAAdapterResponseParameters>)parameters useCustomParameters:(BOOL)useCustomParameters;
 @property (nonatomic, readonly, copy) NSString *groupId;
 @property (nonatomic, readonly, copy) NSString *unitId;
 @end
