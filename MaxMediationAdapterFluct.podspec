@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
     s.name                  = "MaxMediationAdapterFluct"
     s.summary               = "fluct adapter used for mediation with the AppLovin MAX SDK"
     s.license               = { :type => "Copyright", :text => "Copyright (c) fluct,Inc. All rights reserved." }
-    s.version               = "6.38.3"
+    s.version               = "6.39.0"
     s.author                = "fluct,Inc."
     s.requires_arc          = true
     s.static_framework      = true

@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
     s.name                  = "FluctSDK-MediationAdapter"
     s.summary               = "Mediation Adapter for FluctSDK ad Framework"
     s.license               = { :type => "Copyright", :text => "Copyright (c) fluct,Inc. All rights reserved." }
-    s.version               = "6.38.3"
+    s.version               = "6.39.0"
     s.author                = "fluct,Inc."
     s.requires_arc          = true
     s.static_framework      = true
@@ -17,15 +17,6 @@ Pod::Spec.new do |s|
     s.subspec "Core" do |ss|
         ss.dependency "FluctSDK", ">=6.14.0"
         ss.ios.deployment_target = "9.0"
-    end
-
-    s.subspec "AMoAd" do |ss|
-        ss.source_files = "FluctSDK-MediationAdapter/AMoAd/*.{h,m,swift}"
-        ss.dependency "FluctSDK", ">=6.14.0"
-        ss.dependency "ReachabilitySwift"
-        ss.dependency "SnapKit"
-        ss.pod_target_xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '"${PODS_ROOT}/AMoAd"' }
-        ss.ios.deployment_target = "13.0"
     end
 
     s.subspec "AppLovin" do |ss|
@@ -59,7 +50,7 @@ Pod::Spec.new do |s|
     s.subspec "Pangle" do |ss|
         ss.source_files = "FluctSDK-MediationAdapter/Pangle/*.{h,m}"
         ss.dependency "FluctSDK", ">=6.14.0"
-        ss.dependency "Ads-Global", '6.3.1.0'
+        ss.dependency "Ads-Global", '6.5.0.8'
         ss.ios.deployment_target = "12.0"
     end
 end

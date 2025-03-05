@@ -27,12 +27,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, getter=isAdCorsaActivated) BOOL adCorsaActivated __attribute__((deprecated));
 
 /**
- * Activation setting for AMoAd.
- * Required to include `FSSRewardedVideoCustomEventAMoAd` in project.
- */
-@property (nonatomic, getter=isAMoAdActivated) BOOL amoAdActivated;
-
-/**
  * Activation setting for AppLovin.
  * Required to include `FSSRewardedVideoCustomEventAppLovin` in project.
  */
