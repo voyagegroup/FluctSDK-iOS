@@ -5,8 +5,7 @@
 //  Copyright © 2020 fluct, Inc. All rights reserved.
 //
 
-#import <CoreGraphics/CoreGraphics.h>
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
