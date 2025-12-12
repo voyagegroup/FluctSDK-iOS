@@ -311,6 +311,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-SampleApp/Pods-SampleApp-resources.sh",
 				"${PODS_ROOT}/Ads-Global/SDK/PAGAdSDK.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/Ads-Global/AdsGlobalSDK.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/Ads-Global/TikTokBusinessSDK.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/FiveAd/FiveAd_resources.bundle",
 				"${PODS_ROOT}/../../../../FluctSDK.embeddedframework/Resources/FluctSDKResources.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/UnityAds/UnityAdsResources.bundle",
@@ -319,6 +320,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/PAGAdSDK.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AdsGlobalSDK.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TikTokBusinessSDK.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FiveAd_resources.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FluctSDKResources.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UnityAdsResources.bundle",

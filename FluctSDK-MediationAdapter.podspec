@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
     s.name                  = "FluctSDK-MediationAdapter"
     s.summary               = "Mediation Adapter for FluctSDK ad Framework"
     s.license               = { :type => "Copyright", :text => "Copyright (c) fluct,Inc. All rights reserved." }
-    s.version               = "6.40.0"
+    s.version               = "6.40.1"
     s.author                = "fluct,Inc."
     s.requires_arc          = true
     s.static_framework      = true
@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
     s.subspec "AppLovin" do |ss|
         ss.source_files = "FluctSDK-MediationAdapter/AppLovin/*.{h,m}"
         ss.dependency "FluctSDK", ">=6.14.0"
-        ss.dependency "AppLovinSDK", '=13.3.1'
+        ss.dependency "AppLovinSDK", '=13.5.1'
         ss.ios.deployment_target = "12.0"
     end
 
@@ -36,21 +36,21 @@ Pod::Spec.new do |s|
     s.subspec "UnityAds" do |ss|
         ss.source_files = "FluctSDK-MediationAdapter/UnityAds/*.{h,m}"
         ss.dependency "FluctSDK", ">=6.14.0"
-        ss.dependency "UnityAds", '=4.16.1'
+        ss.dependency "UnityAds", '=4.16.5'
         ss.ios.deployment_target = "13.0"
     end
 
     s.subspec "Five" do |ss|
         ss.source_files = "FluctSDK-MediationAdapter/Five/*.{h,m}"
         ss.dependency "FluctSDK", ">=6.14.0"
-        ss.dependency "FiveAd", '=2.9.20250912'
+        ss.dependency "FiveAd", '=2.9.20251119'
         ss.ios.deployment_target = "15.0"
     end
 
     s.subspec "Pangle" do |ss|
         ss.source_files = "FluctSDK-MediationAdapter/Pangle/*.{h,m}"
         ss.dependency "FluctSDK", ">=6.14.0"
-        ss.dependency "Ads-Global", '7.5.0.7'
+        ss.dependency "Ads-Global", '7.8.0.6'
         ss.ios.deployment_target = "12.0"
     end
 end
