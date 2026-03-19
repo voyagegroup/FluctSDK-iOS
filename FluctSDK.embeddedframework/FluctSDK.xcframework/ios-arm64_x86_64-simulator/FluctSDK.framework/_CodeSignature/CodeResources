@@ -56,6 +56,22 @@
 		<data>
 		HO+623bN+emmw/tWXAO7zNioxZY=
 		</data>
+		<key>Headers/FSSMediaContent.h</key>
+		<data>
+		bvI6UtTeIzx+nmm2X8lJy6WIUG4=
+		</data>
+		<key>Headers/FSSNativeAd.h</key>
+		<data>
+		86fHtDhhV5PDXplE+dmQo7KV3FU=
+		</data>
+		<key>Headers/FSSNativeAdError.h</key>
+		<data>
+		KaGNbsQCaDyKMOIZn67wjnoBtxw=
+		</data>
+		<key>Headers/FSSNativeAdImage.h</key>
+		<data>
+		3tBAanvkhj6GKheSIvpnUTUVYZI=
+		</data>
 		<key>Headers/FSSPrivacySettings.h</key>
 		<data>
 		FqbaAjqrsxAzXsGeXqA20MsqDaA=
@@ -130,7 +146,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		iZdw9IkVJ/w5HQk2tcwUAjzVjl4=
+		BDoc45nxxW1mJHhyz6nm+TM4CxQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -280,6 +296,50 @@
 			<key>hash2</key>
 			<data>
 			rCD+i1fhM5tq3Xli5zvpnS1Mka1e/8j1Qui4oc0N1X8=
+			</data>
+		</dict>
+		<key>Headers/FSSMediaContent.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			bvI6UtTeIzx+nmm2X8lJy6WIUG4=
+			</data>
+			<key>hash2</key>
+			<data>
+			hzZN208qIy7tVtR3ipm9ZHKtHAB40UzcfMT5cosmvbg=
+			</data>
+		</dict>
+		<key>Headers/FSSNativeAd.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			86fHtDhhV5PDXplE+dmQo7KV3FU=
+			</data>
+			<key>hash2</key>
+			<data>
+			ZJoxViJWAjKyX87d0corkAZYqneWb1DelktXnvfXDjk=
+			</data>
+		</dict>
+		<key>Headers/FSSNativeAdError.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			KaGNbsQCaDyKMOIZn67wjnoBtxw=
+			</data>
+			<key>hash2</key>
+			<data>
+			WdsKnZ1e7dTpS2t4w3K3bpfWzj9SdihOe4z8zuSkZeo=
+			</data>
+		</dict>
+		<key>Headers/FSSNativeAdImage.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			3tBAanvkhj6GKheSIvpnUTUVYZI=
+			</data>
+			<key>hash2</key>
+			<data>
+			rkT+BtMChv15qgYSKXZwm3bpt2HL/AQ/OCJqbKngpy4=
 			</data>
 		</dict>
 		<key>Headers/FSSPrivacySettings.h</key>
