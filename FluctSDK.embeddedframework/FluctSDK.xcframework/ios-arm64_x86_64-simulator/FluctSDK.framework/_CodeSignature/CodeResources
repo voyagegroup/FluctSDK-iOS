@@ -60,9 +60,21 @@
 		<data>
 		bvI6UtTeIzx+nmm2X8lJy6WIUG4=
 		</data>
+		<key>Headers/FSSMediationNativeAd.h</key>
+		<data>
+		TirBcg5VhrXSeYIIlzQ/wS786nI=
+		</data>
+		<key>Headers/FSSMediationNativeAdLoader.h</key>
+		<data>
+		drE2U177mtfOx7lx5DKa9UR6t/E=
+		</data>
 		<key>Headers/FSSNativeAd.h</key>
 		<data>
 		86fHtDhhV5PDXplE+dmQo7KV3FU=
+		</data>
+		<key>Headers/FSSNativeAdChoicesView.h</key>
+		<data>
+		loFDypW2d5PlfQjp5ASWPsyh/xA=
 		</data>
 		<key>Headers/FSSNativeAdError.h</key>
 		<data>
@@ -71,6 +83,10 @@
 		<key>Headers/FSSNativeAdImage.h</key>
 		<data>
 		3tBAanvkhj6GKheSIvpnUTUVYZI=
+		</data>
+		<key>Headers/FSSNativeAdLoader.h</key>
+		<data>
+		m1erva7RvjGhJqWX74Ia+i5V2yU=
 		</data>
 		<key>Headers/FSSPrivacySettings.h</key>
 		<data>
@@ -142,11 +158,11 @@
 		</data>
 		<key>Headers/FluctSDK.h</key>
 		<data>
-		sD4wHUNFeyFPJv4xdhhSd/DSKS4=
+		vs9BT2iV0zDijkZWyMTpHj5w0Ws=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		BDoc45nxxW1mJHhyz6nm+TM4CxQ=
+		EhZEt118ycbThoxUWOx/n6yCVqg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -309,6 +325,28 @@
 			hzZN208qIy7tVtR3ipm9ZHKtHAB40UzcfMT5cosmvbg=
 			</data>
 		</dict>
+		<key>Headers/FSSMediationNativeAd.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			TirBcg5VhrXSeYIIlzQ/wS786nI=
+			</data>
+			<key>hash2</key>
+			<data>
+			TYa0S+pLf07ahXoO6QjaaK9g6N+lYzr3a9fdOniSEUM=
+			</data>
+		</dict>
+		<key>Headers/FSSMediationNativeAdLoader.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			drE2U177mtfOx7lx5DKa9UR6t/E=
+			</data>
+			<key>hash2</key>
+			<data>
+			T+RdA9IRPFOqczmpYWsle6nSNN4zKnaTd8F00jIoHGg=
+			</data>
+		</dict>
 		<key>Headers/FSSNativeAd.h</key>
 		<dict>
 			<key>hash</key>
@@ -318,6 +356,17 @@
 			<key>hash2</key>
 			<data>
 			ZJoxViJWAjKyX87d0corkAZYqneWb1DelktXnvfXDjk=
+			</data>
+		</dict>
+		<key>Headers/FSSNativeAdChoicesView.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			loFDypW2d5PlfQjp5ASWPsyh/xA=
+			</data>
+			<key>hash2</key>
+			<data>
+			23CKu5kpJUWIjRqFf6EH84KUJMWTbTYzpDaeBoPkDHY=
 			</data>
 		</dict>
 		<key>Headers/FSSNativeAdError.h</key>
@@ -340,6 +389,17 @@
 			<key>hash2</key>
 			<data>
 			rkT+BtMChv15qgYSKXZwm3bpt2HL/AQ/OCJqbKngpy4=
+			</data>
+		</dict>
+		<key>Headers/FSSNativeAdLoader.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			m1erva7RvjGhJqWX74Ia+i5V2yU=
+			</data>
+			<key>hash2</key>
+			<data>
+			rMYCZdYFEpwmNrpk+pmt2XB8zs94HQhP19qUPfa1e+w=
 			</data>
 		</dict>
 		<key>Headers/FSSPrivacySettings.h</key>
@@ -533,11 +593,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			sD4wHUNFeyFPJv4xdhhSd/DSKS4=
+			vs9BT2iV0zDijkZWyMTpHj5w0Ws=
 			</data>
 			<key>hash2</key>
 			<data>
-			0ZCRowZ/3dcF+vFJ5PGP3CTKq81LulYiSCOh7ix8/2U=
+			AmZ399pcoi3v75fYASAHNhH1fC7jt9U+yU5HQD2zNzo=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

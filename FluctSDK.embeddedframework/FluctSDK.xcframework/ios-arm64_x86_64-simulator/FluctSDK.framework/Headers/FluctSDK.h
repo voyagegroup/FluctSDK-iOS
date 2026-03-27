@@ -31,6 +31,15 @@
 #import <FluctSDK/FSSVideoInterstitialRTBDelegate.h>
 #import <FluctSDK/FSSVideoInterstitialSetting.h>
 
+#import <FluctSDK/FSSMediaContent.h>
+#import <FluctSDK/FSSMediationNativeAd.h>
+#import <FluctSDK/FSSMediationNativeAdLoader.h>
+#import <FluctSDK/FSSNativeAd.h>
+#import <FluctSDK/FSSNativeAdChoicesView.h>
+#import <FluctSDK/FSSNativeAdError.h>
+#import <FluctSDK/FSSNativeAdImage.h>
+#import <FluctSDK/FSSNativeAdLoader.h>
+
 #import <FluctSDK/FSSInAppBidding.h>
 #import <FluctSDK/FSSInAppBiddingBannerResponseCache.h>
 #import <FluctSDK/FSSInAppBiddingError.h>
