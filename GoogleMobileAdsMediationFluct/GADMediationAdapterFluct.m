@@ -7,6 +7,7 @@
 
 #import "GADMediationAdapterFluct.h"
 #import "GADMAdapterFluctExtras.h"
+#import "GADMAdapterFluctNativeAd.h"
 #import "GADMAdapterFluctRewardedAd.h"
 #import "GADMFluctError.h"
 #import "GADMediationAdapterFluctUtil.h"
@@ -14,6 +15,7 @@
 @import FluctSDK;
 
 @interface GADMediationAdapterFluct ()
+@property (nonatomic, nullable) GADMAdapterFluctNativeAd *nativeAd;
 @property (nonatomic, nullable) GADMAdapterFluctRewardedAd *rewardedAd;
 @end
 
@@ -35,6 +37,13 @@
 
 + (nullable Class<GADAdNetworkExtras>)networkExtrasClass {
     return [GADMAdapterFluctExtras class];
+}
+
+- (void)loadNativeAdForAdConfiguration:(GADMediationNativeAdConfiguration *)adConfiguration
+                     completionHandler:(GADMediationNativeLoadCompletionHandler)completionHandler {
+    self.nativeAd = [GADMAdapterFluctNativeAd new];
+    [self.nativeAd loadNativeAdForAdConfiguration:adConfiguration
+                                completionHandler:completionHandler];
 }
 
 - (void)loadRewardedAdForAdConfiguration:(GADMediationRewardedAdConfiguration *)adConfiguration completionHandler:(GADMediationRewardedLoadCompletionHandler)completionHandler {

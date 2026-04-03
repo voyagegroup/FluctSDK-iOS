@@ -1,37 +1,37 @@
 PODS:
-  - Ads-Global (7.9.0.6):
-    - Ads-Global/BUAdSDK (= 7.9.0.6)
-  - Ads-Global/BUAdSDK (7.9.0.6):
+  - Ads-Global (7.9.1.0):
+    - Ads-Global/BUAdSDK (= 7.9.1.0)
+  - Ads-Global/BUAdSDK (7.9.1.0):
     - Ads-Global/PangleSDK
     - Ads-Global/TikTokBusinessSDK
-  - Ads-Global/PangleSDK (7.9.0.6)
-  - Ads-Global/TikTokBusinessSDK (7.9.0.6)
+  - Ads-Global/PangleSDK (7.9.1.0)
+  - Ads-Global/TikTokBusinessSDK (7.9.1.0)
   - AppLovinSDK (13.6.1)
-  - FiveAd (2.9.20260303)
-  - FluctSDK (6.42.0)
-  - FluctSDK-MediationAdapter/AppLovin (6.42.0):
+  - FiveAd (3.0.1)
+  - FluctSDK (6.42.1)
+  - FluctSDK-MediationAdapter/AppLovin (6.42.1):
     - AppLovinSDK (= 13.6.1)
     - FluctSDK (>= 6.14.0)
-  - FluctSDK-MediationAdapter/Five (6.42.0):
-    - FiveAd (= 2.9.20260303)
+  - FluctSDK-MediationAdapter/Five (6.42.1):
+    - FiveAd (= 3.0.1)
     - FluctSDK (>= 6.14.0)
-  - FluctSDK-MediationAdapter/maio (6.42.0):
+  - FluctSDK-MediationAdapter/maio (6.42.1):
     - FluctSDK (>= 6.14.0)
     - MaioSDK-v2 (= 2.1.6)
-  - FluctSDK-MediationAdapter/Pangle (6.42.0):
-    - Ads-Global (= 7.9.0.6)
+  - FluctSDK-MediationAdapter/Pangle (6.42.1):
+    - Ads-Global (= 7.9.1.0)
     - FluctSDK (>= 6.14.0)
-  - FluctSDK-MediationAdapter/UnityAds (6.42.0):
+  - FluctSDK-MediationAdapter/UnityAds (6.42.1):
     - FluctSDK (>= 6.14.0)
     - UnityAds (= 4.17.0)
   - Google-Mobile-Ads-SDK (11.1.0):
     - GoogleUserMessagingPlatform (>= 1.1)
-  - GoogleMobileAdsMediationFluct (6.42.0):
+  - GoogleMobileAdsMediationFluct (6.42.1):
     - FluctSDK (>= 6.12.1)
     - Google-Mobile-Ads-SDK (>= 9.8.0)
   - GoogleUserMessagingPlatform (2.2.0)
   - MaioSDK-v2 (2.1.6)
-  - MaxMediationAdapterFluct (6.42.0):
+  - MaxMediationAdapterFluct (6.42.1):
     - AppLovinSDK (>= 13.6.1)
     - FluctSDK (>= 6.19.0)
   - UnityAds (4.17.0)
@@ -69,16 +69,16 @@ EXTERNAL SOURCES:
     :path: "../../../MaxMediationAdapterFluct.podspec"
 
 SPEC CHECKSUMS:
-  Ads-Global: fb1fa75ebbf100ab9ff216d81b71a05cf1a73675
+  Ads-Global: 3bc69240cb29360318f0911b7c7e10b3df08b6d3
   AppLovinSDK: fb0795377cc861aa8813019ddc5d05fbd998c527
-  FiveAd: 5dbc1a082e43a998b2b441cdec46a6a6dd443cd9
-  FluctSDK: 56f339064b3676fe5117c00ff4442ae6933e4129
-  FluctSDK-MediationAdapter: fafc96f97bead6e462e41ecea17198862faeee04
+  FiveAd: febdd24752d269ddc9145788f27060e816c227c8
+  FluctSDK: 01c28e6638fbc53483f967c4aec09bcb4b5da88c
+  FluctSDK-MediationAdapter: 634c52c1bb5cd6a6c2818adfe6f75f84812a0d63
   Google-Mobile-Ads-SDK: 4a1f2ccef63660f9a74efc6a6ea979483d421aaa
-  GoogleMobileAdsMediationFluct: c3bcbcf6059419347f7f4b4dc4e6c54380f43488
+  GoogleMobileAdsMediationFluct: 345d1e5974e6cfeaf0fc036e3d7bcf6a6592db75
   GoogleUserMessagingPlatform: d31dbfb40ec02c5d9683029815c5d5a7f46389ee
   MaioSDK-v2: 02780811845ba7dff080c9b92b6a5d29484ac777
-  MaxMediationAdapterFluct: 523e72330fd679d7ecb52121b246f8874e195aaa
+  MaxMediationAdapterFluct: 4b022b8c77669142f92690f0e8322967018bd9c7
   UnityAds: adbe0d522fd14b8298c5e159164fc43396165843
 
 PODFILE CHECKSUM: 2382850baa3285d69c3c7a66ac0051f1d29444d3
