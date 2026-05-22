@@ -35,9 +35,9 @@
 #import <FluctSDK/FSSMediationNativeAd.h>
 #import <FluctSDK/FSSMediationNativeAdLoader.h>
 #import <FluctSDK/FSSNativeAd.h>
-#import <FluctSDK/FSSNativeAdChoicesView.h>
 #import <FluctSDK/FSSNativeAdError.h>
 #import <FluctSDK/FSSNativeAdImage.h>
+#import <FluctSDK/FSSNativeAdInformationIconView.h>
 #import <FluctSDK/FSSNativeAdLoader.h>
 
 #import <FluctSDK/FSSInAppBidding.h>

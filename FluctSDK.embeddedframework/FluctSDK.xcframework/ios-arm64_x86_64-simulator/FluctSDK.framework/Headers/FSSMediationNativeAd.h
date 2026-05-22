@@ -6,7 +6,7 @@
 //
 
 #import "FSSMediaContent.h"
-#import "FSSNativeAdChoicesView.h"
+#import "FSSNativeAdInformationIconView.h"
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly, copy, nullable) NSString *headline;
 @property (nonatomic, readonly, copy, nullable) NSString *advertiser;
 @property (nonatomic, readonly, copy, nullable) NSString *callToAction;
-@property (nonatomic, readonly, nullable) FSSNativeAdChoicesView *adChoicesView;
+@property (nonatomic, readonly, nullable) FSSNativeAdInformationIconView *informationIconView;
 - (void)trackImpression;
 - (void)handleClickWithViewController:(UIViewController *)viewController;
 @end

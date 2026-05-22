@@ -6,6 +6,7 @@
 //
 
 #import "GADMAdapterFluctNativeAd.h"
+#import "GADMAdapterFluctExtras.h"
 #import "GADMFluctError.h"
 #import "GADMediationAdapterFluctUtil.h"
 @import FluctSDK;
@@ -57,7 +58,15 @@
     options.mediationPlatformSDKVersion = [NSString stringWithFormat:@"%s", GoogleMobileAdsVersionString];
     [FluctSDK configureWithOptions:options];
 
-    self.adLoader = [[FSSMediationNativeAdLoader alloc] initWithGroupId:self.groupID unitId:self.unitID];
+    GADMAdapterFluctExtras *extras = adConfiguration.extras;
+    if (extras.targeting) {
+        self.adLoader = [[FSSMediationNativeAdLoader alloc] initWithGroupId:self.groupID
+                                                                     unitId:self.unitID
+                                                                  targeting:extras.targeting];
+    } else {
+        self.adLoader = [[FSSMediationNativeAdLoader alloc] initWithGroupId:self.groupID
+                                                                     unitId:self.unitID];
+    }
     self.adLoader.delegate = self;
     [self.adLoader loadAd];
 }
@@ -138,7 +147,7 @@
 }
 
 - (nullable UIView *)adChoicesView {
-    return self.nativeAd.adChoicesView;
+    return self.nativeAd.informationIconView;
 }
 
 - (void)didRenderInView:(UIView *)view

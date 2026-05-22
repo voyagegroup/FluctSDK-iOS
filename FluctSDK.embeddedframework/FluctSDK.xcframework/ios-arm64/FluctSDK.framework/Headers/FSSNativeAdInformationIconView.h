@@ -1,5 +1,5 @@
 //
-//  FSSNativeAdChoicesView.h
+//  FSSNativeAdInformationIconView.h
 //  FluctSDK
 //
 //  Copyright © 2026 fluct, Inc. All rights reserved.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FSSNativeAdChoicesView : UIView
+@interface FSSNativeAdInformationIconView : UIView
 
 - (instancetype)init;
 - (instancetype)initWithUrlString:(nonnull NSString *)urlString;

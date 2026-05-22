@@ -9,6 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class FSSAdRequestTargeting;
 @class FSSMediationNativeAdLoader;
 @class FSSMediationNativeAd;
 
@@ -30,6 +31,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithGroupId:(NSString *)groupId
                          unitId:(NSString *)unitId;
+
+- (instancetype)initWithGroupId:(NSString *)groupId
+                         unitId:(NSString *)unitId
+                      targeting:(nullable FSSAdRequestTargeting *)targeting;
 
 - (void)loadAd;
 
