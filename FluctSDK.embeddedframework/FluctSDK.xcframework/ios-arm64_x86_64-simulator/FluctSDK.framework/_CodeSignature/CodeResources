@@ -162,7 +162,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		FH5yH7yJgTArgFmYFR/ziGLoEDo=
+		uNtxohFPzRsA3cjkF5IGrWjx5oI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -173,10 +173,6 @@
 	<dict>
 		<key>Headers/FSSAdRequestTargeting.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			nQuLsYMFCl/Pa5UPezAzGTAwvlA=
-			</data>
 			<key>hash2</key>
 			<data>
 			ZQDtegj+njHBHIgmKjsYYmv1wjwuW+hC0Vuz2cC5mVo=
@@ -184,10 +180,6 @@
 		</dict>
 		<key>Headers/FSSAdView.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			53EGPXTrrJq2yJbaYbZVAXXLg88=
-			</data>
 			<key>hash2</key>
 			<data>
 			GeZxRubXDlCnRBOjgf2wv+XmYQBrv2UQbRqippziq8o=
@@ -195,10 +187,6 @@
 		</dict>
 		<key>Headers/FSSAdViewError.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			Xngq8T8qRU6fL4HoYoBy1U2XPgs=
-			</data>
 			<key>hash2</key>
 			<data>
 			JlE4HsM0DMRq1AMXufAHjDXYQgLXQqjT7Yq0C5D3R2o=
@@ -206,10 +194,6 @@
 		</dict>
 		<key>Headers/FSSBannerCustomEventOptimizer.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			ljRlh8X6ZqZoEPxTqvLcFDAEiBw=
-			</data>
 			<key>hash2</key>
 			<data>
 			6SmtaVg358ebbLcjeXUUt1e7VzagwE6pGI8ZSfcV98I=
@@ -217,10 +201,6 @@
 		</dict>
 		<key>Headers/FSSBannerCustomEventStarter.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			sp7VMBlXL/5mGwMV5A0x4IcHaVo=
-			</data>
 			<key>hash2</key>
 			<data>
 			OuS4GMGT0AUPgkTNofm7BCaA2obgvX0+X4Z17KFrC50=
@@ -228,10 +208,6 @@
 		</dict>
 		<key>Headers/FSSConditionObserver.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			UwdZBMZSC0GtxwFh6726OpuBb1w=
-			</data>
 			<key>hash2</key>
 			<data>
 			htoMmteKtosMmTgawTDkc4A3Qb6ALbENUHx/VbhoSdw=
@@ -239,10 +215,6 @@
 		</dict>
 		<key>Headers/FSSConfigurationOptions.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			BgscySdLWTd5ypIq81RGQhoUE/4=
-			</data>
 			<key>hash2</key>
 			<data>
 			FyQ1JTgcIFPaUkLPFxOhAB2MKMesh7TU4hBpNIdv/CA=
@@ -250,10 +222,6 @@
 		</dict>
 		<key>Headers/FSSFullscreenVideoAdnetworkActivation.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			+8pw1aL7ixgHlPSeQtVNHfZcH/A=
-			</data>
 			<key>hash2</key>
 			<data>
 			MA2pv0Z7ISr6Or+8BI/5UEBPX4l/A4S1yKP8r0Xte5E=
@@ -261,10 +229,6 @@
 		</dict>
 		<key>Headers/FSSFullscreenVideoSetting.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			9BxLcn8ay3XXa5uhNkTDuRiZy2E=
-			</data>
 			<key>hash2</key>
 			<data>
 			kEwe7WBDyb6xbS11EerDBn+Ms+AetoKnQeZ7wWLxyVs=
@@ -272,10 +236,6 @@
 		</dict>
 		<key>Headers/FSSInAppBidding.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			rb94HDAlTTJ9z6cURGMK1O33qSE=
-			</data>
 			<key>hash2</key>
 			<data>
 			bXvxeBDrM06XTWNojSCOD5jiKRJ8wMztBFjHxa2i0Q4=
@@ -283,10 +243,6 @@
 		</dict>
 		<key>Headers/FSSInAppBiddingBannerResponseCache.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			1c6SQZrbKQ4xPHwKibbj54QFNtY=
-			</data>
 			<key>hash2</key>
 			<data>
 			OyWU5dkxEoo0Kd1IfQ2VZ6MBtk2F+L3fQTM1279XbNg=
@@ -294,10 +250,6 @@
 		</dict>
 		<key>Headers/FSSInAppBiddingError.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			cpFPuTKHJEdjTEqF4c0Q0dfkCQ4=
-			</data>
 			<key>hash2</key>
 			<data>
 			4/XlneVXYsvhmXlXo0a7xqeVMq2VG44/ppylo6xfmfs=
@@ -305,10 +257,6 @@
 		</dict>
 		<key>Headers/FSSInAppBiddingFullscreenVideoResponseCache.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			HO+623bN+emmw/tWXAO7zNioxZY=
-			</data>
 			<key>hash2</key>
 			<data>
 			rCD+i1fhM5tq3Xli5zvpnS1Mka1e/8j1Qui4oc0N1X8=
@@ -316,10 +264,6 @@
 		</dict>
 		<key>Headers/FSSMediaContent.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			bvI6UtTeIzx+nmm2X8lJy6WIUG4=
-			</data>
 			<key>hash2</key>
 			<data>
 			hzZN208qIy7tVtR3ipm9ZHKtHAB40UzcfMT5cosmvbg=
@@ -327,10 +271,6 @@
 		</dict>
 		<key>Headers/FSSMediationNativeAd.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			QI3F9ceaxm3AvHjgPLf9woktwrU=
-			</data>
 			<key>hash2</key>
 			<data>
 			lqt4UbAMh03hCNJDToNVCHhn/Fg10cqHq6t34GS7PWk=
@@ -338,10 +278,6 @@
 		</dict>
 		<key>Headers/FSSMediationNativeAdLoader.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			ZtvgRj/9bkMr4e8LbIzY97NSM8k=
-			</data>
 			<key>hash2</key>
 			<data>
 			e5kJmQ9Olah0xjxg9c+z/3/RGi2VTvvjxFGiNlkl1kM=
@@ -349,10 +285,6 @@
 		</dict>
 		<key>Headers/FSSNativeAd.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			86fHtDhhV5PDXplE+dmQo7KV3FU=
-			</data>
 			<key>hash2</key>
 			<data>
 			ZJoxViJWAjKyX87d0corkAZYqneWb1DelktXnvfXDjk=
@@ -360,10 +292,6 @@
 		</dict>
 		<key>Headers/FSSNativeAdError.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			KaGNbsQCaDyKMOIZn67wjnoBtxw=
-			</data>
 			<key>hash2</key>
 			<data>
 			WdsKnZ1e7dTpS2t4w3K3bpfWzj9SdihOe4z8zuSkZeo=
@@ -371,10 +299,6 @@
 		</dict>
 		<key>Headers/FSSNativeAdImage.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			3tBAanvkhj6GKheSIvpnUTUVYZI=
-			</data>
 			<key>hash2</key>
 			<data>
 			rkT+BtMChv15qgYSKXZwm3bpt2HL/AQ/OCJqbKngpy4=
@@ -382,10 +306,6 @@
 		</dict>
 		<key>Headers/FSSNativeAdInformationIconView.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			n8sSETUne3LUnpLrTYkJe6z4ZUk=
-			</data>
 			<key>hash2</key>
 			<data>
 			DRWG4WviVZOk/KMt8Xv6tBHQpbXXuKqG2UVqP0DeKuM=
@@ -393,10 +313,6 @@
 		</dict>
 		<key>Headers/FSSNativeAdLoader.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			m1erva7RvjGhJqWX74Ia+i5V2yU=
-			</data>
 			<key>hash2</key>
 			<data>
 			rMYCZdYFEpwmNrpk+pmt2XB8zs94HQhP19qUPfa1e+w=
@@ -404,10 +320,6 @@
 		</dict>
 		<key>Headers/FSSPrivacySettings.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			FqbaAjqrsxAzXsGeXqA20MsqDaA=
-			</data>
 			<key>hash2</key>
 			<data>
 			gyHm89nZyUBv1dPLkjLG/npzUVWq3GiJF9zr91M5edM=
@@ -415,10 +327,6 @@
 		</dict>
 		<key>Headers/FSSRewardedVideo.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			y8j4L1m0SYv7R7mC4qQlhmGqAxg=
-			</data>
 			<key>hash2</key>
 			<data>
 			DXWNNU31sO5IYPxydtGZhmMZWEPbXEYftpeMWYZC91E=
@@ -426,10 +334,6 @@
 		</dict>
 		<key>Headers/FSSRewardedVideoAdnetworkActivation.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			DEsJVayZVt/DuS/FfePB9T0c5pE=
-			</data>
 			<key>hash2</key>
 			<data>
 			ljpojED9FLsyk3fHFLtCZYklX3qsS/DHARsg5veX0lg=
@@ -437,10 +341,6 @@
 		</dict>
 		<key>Headers/FSSRewardedVideoCustomEvent.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			sTfz+CJJiAElrh4vxgZFCisyV08=
-			</data>
 			<key>hash2</key>
 			<data>
 			wHPZ4TQf0axF7ozjQyX4Lf9W61n6zu6Djj/p4C6P6i4=
@@ -448,10 +348,6 @@
 		</dict>
 		<key>Headers/FSSRewardedVideoCustomEventOptimizer.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			Di4QrwwAGqO8Xd9KL7mWlQe1Dlw=
-			</data>
 			<key>hash2</key>
 			<data>
 			VNwiDR8gepn8ca3yfBqKPW3dWfv+I4uF89Alj/lf29Q=
@@ -459,10 +355,6 @@
 		</dict>
 		<key>Headers/FSSRewardedVideoCustomEventStarter.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			F9apr7xmqF++rlFlTJggSrqIY+4=
-			</data>
 			<key>hash2</key>
 			<data>
 			ZBm8OA4+J1jmxDWJ/5MgtaiG2CBddUiEDEo5jvjgD3o=
@@ -470,10 +362,6 @@
 		</dict>
 		<key>Headers/FSSRewardedVideoError.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			N7OBAN1LIa6lA65Jo+jXFt1WHpA=
-			</data>
 			<key>hash2</key>
 			<data>
 			gLLH3NJmOwiKgZ4xU88cQdppuvqNKlzocyqd53Q3E8E=
@@ -481,10 +369,6 @@
 		</dict>
 		<key>Headers/FSSRewardedVideoRTBDelegate.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			VrsHtdISxpywS8q9c0QQY0sYbzc=
-			</data>
 			<key>hash2</key>
 			<data>
 			BRICBkG25zfVkEuvzSxAuoJ9cDQMt/5n8s/0qlaO0As=
@@ -492,10 +376,6 @@
 		</dict>
 		<key>Headers/FSSRewardedVideoSetting.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			27XQ0egVGQ7gANH96MnD47PqMGQ=
-			</data>
 			<key>hash2</key>
 			<data>
 			tfAD0Bhy9QvpgutHIP1gDdv7uGO055+nH4JFN9rpeDo=
@@ -503,10 +383,6 @@
 		</dict>
 		<key>Headers/FSSVideoError.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			x7iSQKuWxPJ6i8SzKq7SQsd469w=
-			</data>
 			<key>hash2</key>
 			<data>
 			1IoLwV4YfH9WNXKyIGpE1wzm38M/1+gSbokjUlriVeY=
@@ -514,10 +390,6 @@
 		</dict>
 		<key>Headers/FSSVideoInterstitial.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			HO8M21wpslmMlHMrgqALxFklKQc=
-			</data>
 			<key>hash2</key>
 			<data>
 			g9nbJ8mpfvrgc+6qCiN9SZBnWfIfFt7PavEgOVhodgE=
@@ -525,10 +397,6 @@
 		</dict>
 		<key>Headers/FSSVideoInterstitialAdnetworkActivation.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			k8270i0HaPTb0BdTqfmNGFtfNAY=
-			</data>
 			<key>hash2</key>
 			<data>
 			5h2x4oDQO6o8TTL4KkbvvXlrgrWZ9YtqgTC8PE6yk5U=
@@ -536,10 +404,6 @@
 		</dict>
 		<key>Headers/FSSVideoInterstitialCustomEventOptimizer.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			c40k6FMAmKzomMQcMy7vy5R5Lug=
-			</data>
 			<key>hash2</key>
 			<data>
 			EeE0Sw8Ggb0pRk4J7bXtYlVjEUNeghnFU9yA+89a98c=
@@ -547,10 +411,6 @@
 		</dict>
 		<key>Headers/FSSVideoInterstitialCustomEventStarter.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			HbyVk+pvivRf8E9UCAyI9PkGOzc=
-			</data>
 			<key>hash2</key>
 			<data>
 			1kNjiD4/kW3qT5PIXCn/UJDfg05XGGyq2LpRojALbOA=
@@ -558,10 +418,6 @@
 		</dict>
 		<key>Headers/FSSVideoInterstitialRTBDelegate.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			HeTwMn2jfIVNX0ZpTA5bJkaFHcQ=
-			</data>
 			<key>hash2</key>
 			<data>
 			LlW41vKcmkZEN6oGzwQxHics03dXuh2dBiBdM7B5xKc=
@@ -569,10 +425,6 @@
 		</dict>
 		<key>Headers/FSSVideoInterstitialSetting.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			w13HK8dO8RTVzPqE3yGf3bVebQc=
-			</data>
 			<key>hash2</key>
 			<data>
 			5VEyTKYdkisNi8yfi2pRif1rNDFGZIye3GcbZ+Gunxs=
@@ -580,10 +432,6 @@
 		</dict>
 		<key>Headers/FSSWorkQueue.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			1e43doNbbYR/lhcywcNGzoIo8i8=
-			</data>
 			<key>hash2</key>
 			<data>
 			+vNmQxqIwM6QdvixO3xrsQhaFTKL+Q0dkuJ8OzXDZLE=
@@ -591,10 +439,6 @@
 		</dict>
 		<key>Headers/FluctSDK.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			2OBXY2HZTsiqtev9HcpX0REesZ0=
-			</data>
 			<key>hash2</key>
 			<data>
 			MUM6MNIupRGg22FRpd4qHtz2U+3QvbuVah29rBkKuhw=
@@ -602,10 +446,6 @@
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			CJ4t1KSpY3DKcYjNZ72S4Mqep4A=
-			</data>
 			<key>hash2</key>
 			<data>
 			3poUTZW3DSvteA2+PcaTZjNK6tbJwtBCmI/2p8G+wn8=
