@@ -20,6 +20,7 @@
 @property (nonatomic) GADMediationNativeLoadCompletionHandler loadCompletionHandler;
 @property (nonatomic, weak) id<GADMediationNativeAdEventDelegate> adEventDelegate;
 @property (nonatomic, nullable) FSSMediationNativeAd *nativeAd;
+@property (nonatomic) GADAdChoicesPosition adChoicesPosition;
 @end
 
 @implementation GADMAdapterFluctNativeAd
@@ -51,6 +52,15 @@
     if (![self setupAdapterWithParameter:[adConfiguration.credentials.settings objectForKey:GADCustomEventParametersServer] error:&error]) {
         self.adEventDelegate = self.loadCompletionHandler(nil, error);
         return;
+    }
+
+    // publisher が GADNativeAdViewAdOptions で指定した ad choices の表示位置を取得する
+    self.adChoicesPosition = GADAdChoicesPositionTopRightCorner;
+    for (GADAdLoaderOptions *option in adConfiguration.options) {
+        if ([option isKindOfClass:[GADNativeAdViewAdOptions class]]) {
+            self.adChoicesPosition = ((GADNativeAdViewAdOptions *)option).preferredAdChoicesPosition;
+            break;
+        }
     }
 
     FSSConfigurationOptions *options = FSSConfigurationOptions.defaultOptions;
@@ -93,7 +103,23 @@
 
 - (void)mediationNativeAdLoader:(FSSMediationNativeAdLoader *)adLoader didStoreMediationNativeAd:(FSSMediationNativeAd *)nativeAd {
     self.nativeAd = nativeAd;
+    self.nativeAd.informationIconView.position =
+        [GADMAdapterFluctNativeAd informationIconPositionFromAdChoicesPosition:self.adChoicesPosition];
     self.adEventDelegate = self.loadCompletionHandler(self, nil);
+}
+
++ (FSSNativeAdInformationIconPosition)informationIconPositionFromAdChoicesPosition:(GADAdChoicesPosition)position {
+    switch (position) {
+    case GADAdChoicesPositionTopLeftCorner:
+        return FSSNativeAdInformationIconPositionTopLeft;
+    case GADAdChoicesPositionBottomRightCorner:
+        return FSSNativeAdInformationIconPositionBottomRight;
+    case GADAdChoicesPositionBottomLeftCorner:
+        return FSSNativeAdInformationIconPositionBottomLeft;
+    case GADAdChoicesPositionTopRightCorner:
+    default:
+        return FSSNativeAdInformationIconPositionTopRight;
+    }
 }
 
 - (void)mediationNativeAdLoader:(FSSMediationNativeAdLoader *)adLoader didFailToStoreAdWithError:(NSError *)error {
@@ -150,14 +176,25 @@
     return self.nativeAd.informationIconView;
 }
 
+// fluct側でimpressionを計測し reportImpression でGMAに通知する。
+// これによりアプリへ nativeAdDidRecordImpression が配送される
+- (BOOL)handlesUserImpressions {
+    return YES;
+}
+
 - (void)didRenderInView:(UIView *)view
        clickableAssetViews:(NSDictionary<GADNativeAssetIdentifier, UIView *> *)clickableAssetViews
     nonclickableAssetViews:(NSDictionary<GADNativeAssetIdentifier, UIView *> *)nonclickableAssetViews
             viewController:(UIViewController *)viewController {
+    __weak __typeof(self) weakSelf = self;
+    [self.nativeAd startImpressionTrackingWithView:view
+                                        completion:^{
+                                            [weakSelf.adEventDelegate reportImpression];
+                                        }];
 }
 
 - (void)didRecordImpression {
-    [self.nativeAd trackImpression];
+    // handlesUserImpressions = YES のため呼ばれない想定
 }
 
 - (void)didRecordClickOnAssetWithName:(GADNativeAssetIdentifier)assetName
@@ -167,6 +204,7 @@
 }
 
 - (void)didUntrackView:(nullable UIView *)view {
+    [self.nativeAd stopImpressionTracking];
 }
 
 @end

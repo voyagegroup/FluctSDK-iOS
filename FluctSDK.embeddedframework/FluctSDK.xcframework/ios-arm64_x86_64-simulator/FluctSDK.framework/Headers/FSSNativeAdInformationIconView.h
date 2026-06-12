@@ -9,7 +9,17 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_ENUM(NSInteger, FSSNativeAdInformationIconPosition) {
+    FSSNativeAdInformationIconPositionTopRight,
+    FSSNativeAdInformationIconPositionTopLeft,
+    FSSNativeAdInformationIconPositionBottomRight,
+    FSSNativeAdInformationIconPositionBottomLeft,
+};
+
 @interface FSSNativeAdInformationIconView : UIView
+
+// アイコンを寄せるコーナー。default は TopRight。
+@property (nonatomic) FSSNativeAdInformationIconPosition position;
 
 - (instancetype)init;
 - (instancetype)initWithUrlString:(nonnull NSString *)urlString;
