@@ -8,31 +8,31 @@ PODS:
   - Ads-Global/TikTokBusinessSDK (7.9.1.0)
   - AppLovinSDK (13.6.3)
   - FiveAd (3.0.1)
-  - FluctSDK (6.43.3)
-  - FluctSDK-MediationAdapter/AppLovin (6.43.3):
+  - FluctSDK (6.43.4)
+  - FluctSDK-MediationAdapter/AppLovin (6.43.4):
     - AppLovinSDK (= 13.6.3)
     - FluctSDK (>= 6.14.0)
-  - FluctSDK-MediationAdapter/Five (6.43.3):
+  - FluctSDK-MediationAdapter/Five (6.43.4):
     - FiveAd (= 3.0.1)
     - FluctSDK (>= 6.14.0)
-  - FluctSDK-MediationAdapter/maio (6.43.3):
+  - FluctSDK-MediationAdapter/maio (6.43.4):
     - FluctSDK (>= 6.14.0)
     - MaioSDK-v2 (= 2.2.1)
-  - FluctSDK-MediationAdapter/Pangle (6.43.3):
+  - FluctSDK-MediationAdapter/Pangle (6.43.4):
     - Ads-Global (= 7.9.1.0)
     - FluctSDK (>= 6.14.0)
-  - FluctSDK-MediationAdapter/UnityAds (6.43.3):
+  - FluctSDK-MediationAdapter/UnityAds (6.43.4):
     - FluctSDK (>= 6.14.0)
     - UnityAds (= 4.18.1)
   - Google-Mobile-Ads-SDK (11.1.0):
     - GoogleUserMessagingPlatform (>= 1.1)
-  - GoogleMobileAdsMediationFluct (6.43.3):
+  - GoogleMobileAdsMediationFluct (6.43.4):
     - FluctSDK (>= 6.12.1)
     - Google-Mobile-Ads-SDK (>= 9.8.0)
   - GoogleUserMessagingPlatform (2.2.0)
   - IronSourceAdQualitySDK (9.6.0)
   - MaioSDK-v2 (2.2.1)
-  - MaxMediationAdapterFluct (6.43.3):
+  - MaxMediationAdapterFluct (6.43.4):
     - AppLovinSDK (>= 13.6.1)
     - FluctSDK (>= 6.19.0)
   - UnityAds (4.18.1):
@@ -75,14 +75,14 @@ SPEC CHECKSUMS:
   Ads-Global: 3bc69240cb29360318f0911b7c7e10b3df08b6d3
   AppLovinSDK: f3da9503e8193d8c4badc1a9965d73a0779812fa
   FiveAd: febdd24752d269ddc9145788f27060e816c227c8
-  FluctSDK: 11ef6a2aeacd40f1c0fcc3d9b572b17ed260ef57
-  FluctSDK-MediationAdapter: 4cc07c6637ab781b1c8fcd6179be78bb2d14eb30
+  FluctSDK: 138c055a8cf3c1571ca373177f1c2fb4bb81a59c
+  FluctSDK-MediationAdapter: 22be2cbd97963ce69e46924fff8ee97ee86e2c0b
   Google-Mobile-Ads-SDK: 4a1f2ccef63660f9a74efc6a6ea979483d421aaa
-  GoogleMobileAdsMediationFluct: f3bd32a380dbccd08b650e675d474057a2bafa77
+  GoogleMobileAdsMediationFluct: 3abc328ae11460801a09475698d3069b6189b68e
   GoogleUserMessagingPlatform: d31dbfb40ec02c5d9683029815c5d5a7f46389ee
   IronSourceAdQualitySDK: 3723b551e1c0b2d0f026deee385d9ef4b2d41cc8
   MaioSDK-v2: 56de765ad67948f3fb368593b27a6176fe1f09b9
-  MaxMediationAdapterFluct: 20ed72079f5f6fb7df92a39f3a7a8877e0ba26a5
+  MaxMediationAdapterFluct: fec86c28a25ebb4f458110a69f2cda2a1f3a28f9
   UnityAds: 07379b63b1044dcad98b3092319166fd6f2cfda4
 
 PODFILE CHECKSUM: 7ad189f80207f821a1931dc3d743aec9a5391f82

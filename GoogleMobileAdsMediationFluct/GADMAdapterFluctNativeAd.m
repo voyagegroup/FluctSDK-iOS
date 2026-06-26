@@ -149,7 +149,7 @@
 }
 
 - (nullable NSString *)body {
-    return nil;
+    return self.nativeAd.body;
 }
 
 - (nullable GADNativeAdImage *)icon {
@@ -182,6 +182,14 @@
     return YES;
 }
 
+// fluct側でクリックを検知し reportClick でGMAに通知する。
+// これによりアプリへ nativeAdDidRecordClick が配送される。
+// NO(GMA側でクリック検知)にすると didRecordClickOnAssetWithName: は呼ばれるが、
+// アプリへ nativeAdDidRecordClick が配送されない
+- (BOOL)handlesUserClicks {
+    return YES;
+}
+
 - (void)didRenderInView:(UIView *)view
        clickableAssetViews:(NSDictionary<GADNativeAssetIdentifier, UIView *> *)clickableAssetViews
     nonclickableAssetViews:(NSDictionary<GADNativeAssetIdentifier, UIView *> *)nonclickableAssetViews
@@ -191,6 +199,15 @@
                                         completion:^{
                                             [weakSelf.adEventDelegate reportImpression];
                                         }];
+    // fluct側はタップのたびにこのcompletionを呼ぶ(クリックは重複排除しない)。
+    // ただし連続タップしてもアプリへの nativeAdDidRecordClick は1回しか配送されない。
+    // (差分) GMA自身のネイティブ広告はアセットを連続タップすると nativeAdDidRecordClick が複数回発火する。
+    [self.nativeAd startClickTrackingWithView:view
+                               clickableViews:clickableAssetViews.allValues
+                               viewController:viewController
+                                   completion:^{
+                                       [weakSelf.adEventDelegate reportClick];
+                                   }];
 }
 
 - (void)didRecordImpression {
@@ -200,11 +217,12 @@
 - (void)didRecordClickOnAssetWithName:(GADNativeAssetIdentifier)assetName
                                  view:(UIView *)view
                        viewController:(UIViewController *)viewController {
-    [self.nativeAd handleClickWithViewController:viewController];
+    // handlesUserClicks = YES のため呼ばれない想定
 }
 
 - (void)didUntrackView:(nullable UIView *)view {
     [self.nativeAd stopImpressionTracking];
+    [self.nativeAd stopClickTracking];
 }
 
 @end

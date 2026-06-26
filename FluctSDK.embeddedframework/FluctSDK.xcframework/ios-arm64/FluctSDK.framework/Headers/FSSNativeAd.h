@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, readonly, copy, nullable) NSString *callToAction;
 
+@property (nonatomic, readonly, copy, nullable) NSString *body;
+
 @end
 
 NS_ASSUME_NONNULL_END

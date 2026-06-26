@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly, copy, nullable) NSString *headline;
 @property (nonatomic, readonly, copy, nullable) NSString *advertiser;
 @property (nonatomic, readonly, copy, nullable) NSString *callToAction;
+@property (nonatomic, readonly, copy, nullable) NSString *body;
 @property (nonatomic, readonly, nullable) FSSNativeAdInformationIconView *informationIconView;
 
 /// 広告が描画されたViewを渡してimpression計測を開始する。
@@ -28,6 +29,19 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// セル再利用などでViewと広告の紐付けが切れた場合に計測を停止する
 - (void)stopImpressionTracking;
+
+/// 広告が描画されたViewへのタップ検知を開始する。
+/// clickableViewsの領域へのタップを検知するとcompletionを呼んだ上でクリック処理（クリック計測・LP遷移）を行う。
+/// clickableViewsが空の場合はView全体をクリック可能として扱う。
+/// information icon（AdChoices）へのタップはクリックとして扱わない。
+/// 再度呼ばれた場合は検知を新しいViewに張り替える。
+- (void)startClickTrackingWithView:(UIView *)view
+                    clickableViews:(NSArray<UIView *> *)clickableViews
+                    viewController:(UIViewController *)viewController
+                        completion:(nullable void (^)(void))completion;
+
+/// セル再利用などでViewと広告の紐付けが切れた場合にタップ検知を停止する
+- (void)stopClickTracking;
 
 - (void)handleClickWithViewController:(UIViewController *)viewController;
 @end
