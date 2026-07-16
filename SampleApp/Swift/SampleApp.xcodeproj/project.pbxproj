@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		455A22332FF61A820000669E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455A22322FF61A7C0000669E /* SceneDelegate.swift */; };
 		6D7F77982859B5290064BE0D /* MaxRewardedVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7F77972859B5290064BE0D /* MaxRewardedVideoViewController.swift */; };
 		7548D92423D032CB009CF032 /* AdMobBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7548D92323D032CB009CF032 /* AdMobBannerViewController.swift */; };
 		7548D92623D032DB009CF032 /* AdMobRewardedVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7548D92523D032DB009CF032 /* AdMobRewardedVideoViewController.swift */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		3A1810D7207F2DC900D584AD /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		455A22322FF61A7C0000669E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		568C2CDD7B81A45C8434AAE9 /* Pods_SampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6598B1CE7DE67EEA2CF05FB4 /* Pods-SampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.release.xcconfig"; path = "Target Support Files/Pods-SampleApp/Pods-SampleApp.release.xcconfig"; sourceTree = "<group>"; };
 		6D7F77972859B5290064BE0D /* MaxRewardedVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaxRewardedVideoViewController.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 			children = (
 				96F22C421D3899D300C3136E /* Info.plist */,
 				96F22C361D3899D300C3136E /* AppDelegate.swift */,
+				455A22322FF61A7C0000669E /* SceneDelegate.swift */,
 				96F22C3D1D3899D300C3136E /* Assets.xcassets */,
 				96F22C3F1D3899D300C3136E /* LaunchScreen.storyboard */,
 				96F22C3A1D3899D300C3136E /* Main.storyboard */,
@@ -316,6 +319,7 @@
 				"${PODS_ROOT}/../../../../FluctSDK.embeddedframework/Resources/FluctSDKResources.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/IronSourceAdQualitySDK/IronSourceAdQualityPrivacyInfo.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/UnityAds/UnityAdsResources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/UnityCoherenceLib/UnityCoherenceLib.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -326,6 +330,7 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FluctSDKResources.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IronSourceAdQualityPrivacyInfo.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UnityAdsResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UnityCoherenceLib.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -372,6 +377,7 @@
 				960884221F9EC23B005F65FD /* RewardedVideoViewController.swift in Sources */,
 				969EC2001D3E0CF7005F475E /* ManyBannerViewController.swift in Sources */,
 				966CC73C1DF7C98C0005EF1C /* BannerTableViewController.swift in Sources */,
+				455A22332FF61A820000669E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,7 +526,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SampleApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.fluct.SampleApp;
 				PRODUCT_NAME = SampleApp;
@@ -534,7 +540,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SampleApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.fluct.SampleApp;
 				PRODUCT_NAME = SampleApp;

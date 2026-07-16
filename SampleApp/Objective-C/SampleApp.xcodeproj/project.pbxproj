@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		455A22372FF63A190000669E /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 455A22362FF63A190000669E /* SceneDelegate.m */; };
 		6D7B6B44299CC4B000FA91EA /* VideoInterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7B6B43299CC4B000FA91EA /* VideoInterstitialViewController.m */; };
 		6D7B6B47299CC4BA00FA91EA /* RewardedVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7B6B45299CC4BA00FA91EA /* RewardedVideoViewController.m */; };
 		6DB4DFA72859D1010088B926 /* MaxRewardedVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB4DFA62859D1010088B926 /* MaxRewardedVideoViewController.m */; };
@@ -28,6 +29,8 @@
 /* Begin PBXFileReference section */
 		3C3A29A65B20BEEC7AE26635 /* Pods-SampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.release.xcconfig"; path = "Target Support Files/Pods-SampleApp/Pods-SampleApp.release.xcconfig"; sourceTree = "<group>"; };
 		405842209D260329D6FC241D /* Pods-SampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.debug.xcconfig"; path = "Target Support Files/Pods-SampleApp/Pods-SampleApp.debug.xcconfig"; sourceTree = "<group>"; };
+		455A22342FF635300000669E /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		455A22362FF63A190000669E /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		6D7B6B42299CC4B000FA91EA /* VideoInterstitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoInterstitialViewController.h; sourceTree = "<group>"; };
 		6D7B6B43299CC4B000FA91EA /* VideoInterstitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoInterstitialViewController.m; sourceTree = "<group>"; };
 		6D7B6B45299CC4BA00FA91EA /* RewardedVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RewardedVideoViewController.m; sourceTree = "<group>"; };
@@ -188,6 +191,8 @@
 		75F740E822D30D96002A9928 /* SampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				455A22342FF635300000669E /* SceneDelegate.h */,
+				455A22362FF63A190000669E /* SceneDelegate.m */,
 				7581896522D30F8600EBC905 /* AppDelegate.h */,
 				7581897222D30F8600EBC905 /* AppDelegate.m */,
 				7581896722D30F8600EBC905 /* main.m */,
@@ -348,6 +353,7 @@
 			files = (
 				6D7B6B47299CC4BA00FA91EA /* RewardedVideoViewController.m in Sources */,
 				752879FA23D052F30079CAE6 /* AdMobRewardedVideoViewController.m in Sources */,
+				455A22372FF63A190000669E /* SceneDelegate.m in Sources */,
 				6D7B6B44299CC4B000FA91EA /* VideoInterstitialViewController.m in Sources */,
 				752879FD23D052FE0079CAE6 /* AdMobVideoInterstitialViewController.m in Sources */,
 				7581898A22D30F8600EBC905 /* main.m in Sources */,
@@ -434,7 +440,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -487,7 +493,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -504,7 +510,7 @@
 				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/SampleApp-Prefix.pch";
 				INFOPLIST_FILE = SampleApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -524,7 +530,7 @@
 				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/SampleApp-Prefix.pch";
 				INFOPLIST_FILE = SampleApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
