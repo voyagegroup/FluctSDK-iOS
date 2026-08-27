@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly, copy, nullable) NSString *advertiser;
 @property (nonatomic, readonly, copy, nullable) NSString *callToAction;
 @property (nonatomic, readonly, copy, nullable) NSString *body;
+/// icon画像 (OpenRTB Native 1.2 image type=1)。レスポンスにicon assetがない場合はnil
+@property (nonatomic, readonly, nullable) UIImage *icon;
 @property (nonatomic, readonly, nullable) FSSNativeAdInformationIconView *informationIconView;
 
 /// 広告が描画されたViewを渡してimpression計測を開始する。

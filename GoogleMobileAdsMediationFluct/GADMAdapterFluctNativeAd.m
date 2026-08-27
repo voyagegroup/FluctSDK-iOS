@@ -153,7 +153,11 @@
 }
 
 - (nullable GADNativeAdImage *)icon {
-    return nil;
+    UIImage *iconImage = self.nativeAd.icon;
+    if (!iconImage) {
+        return nil;
+    }
+    return [[GADNativeAdImage alloc] initWithImage:iconImage];
 }
 
 - (nullable NSDecimalNumber *)starRating {
