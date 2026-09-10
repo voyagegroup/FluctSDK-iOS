@@ -16,6 +16,7 @@
 @implementation FSSAppLovin
 - (void)initializeWithSdkKey:(NSString *)sdkKey
            completionHandler:(void (^)(BOOL))completion {
+    [ALSdk shared].settings.creativeDebuggerEnabled = NO;
     ALSdkInitializationConfiguration *initConfig = [ALSdkInitializationConfiguration configurationWithSdkKey:sdkKey
                                                                                                 builderBlock:^(ALSdkInitializationConfigurationBuilder *builder) {
                                                                                                     builder.mediationProvider = @"fluct";
