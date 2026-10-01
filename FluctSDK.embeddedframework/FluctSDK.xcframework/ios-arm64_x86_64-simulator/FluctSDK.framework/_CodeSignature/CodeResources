@@ -32,6 +32,10 @@
 		<data>
 		BgscySdLWTd5ypIq81RGQhoUE/4=
 		</data>
+		<key>Headers/FSSExperimentalSettings.h</key>
+		<data>
+		G+J4JThs0++8VLDX+KOVwJq1e1E=
+		</data>
 		<key>Headers/FSSFullscreenVideoAdnetworkActivation.h</key>
 		<data>
 		+8pw1aL7ixgHlPSeQtVNHfZcH/A=
@@ -158,11 +162,11 @@
 		</data>
 		<key>Headers/FluctSDK.h</key>
 		<data>
-		2OBXY2HZTsiqtev9HcpX0REesZ0=
+		lgC+HS/jLEboZbtvmKukXi67+i8=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		TpUfZIBbfE9ijFNDk9vVLJTwAfg=
+		q+7B+ejp+ZkwqMiNwkIHpJqr32o=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -218,6 +222,13 @@
 			<key>hash2</key>
 			<data>
 			FyQ1JTgcIFPaUkLPFxOhAB2MKMesh7TU4hBpNIdv/CA=
+			</data>
+		</dict>
+		<key>Headers/FSSExperimentalSettings.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			RG5HpsypLjB/0PNdbEW4yosrzo5aFk/pJpmEyWdeZJU=
 			</data>
 		</dict>
 		<key>Headers/FSSFullscreenVideoAdnetworkActivation.h</key>
@@ -441,7 +452,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			MUM6MNIupRGg22FRpd4qHtz2U+3QvbuVah29rBkKuhw=
+			2+0feFaZJ0/dS6jbr/I7jZoWzNVGktZ/pd10uLbXcFU=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
