@@ -71,7 +71,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Activation setting for UnityAds.
  * Required to include `FSSRewardedVideoCustomEventUnityAds` in project.
  */
-@property (nonatomic, getter=isUnityAdsActivated) BOOL unityAdsActivated;
+@property (nonatomic, getter=isUnityAdsActivated) BOOL unityAdsActivated __attribute__((deprecated));
 
 - (NSString *)description;
 

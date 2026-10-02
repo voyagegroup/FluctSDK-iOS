@@ -43,7 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Activation setting for UnityAds.
  */
-@property (nonatomic, getter=isUnityAdsActivated) BOOL unityAdsActivated;
+@property (nonatomic, getter=isUnityAdsActivated) BOOL unityAdsActivated __attribute__((deprecated));
 
 /**
  * 設定されている情報の文字列を返す
