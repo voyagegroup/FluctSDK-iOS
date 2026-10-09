@@ -8,27 +8,27 @@ PODS:
   - Ads-Global/TikTokBusinessSDK (7.9.1.0)
   - AppLovinSDK (13.6.4)
   - FiveAd (3.0.1)
-  - FluctSDK (6.44.6)
-  - FluctSDK-MediationAdapter/AppLovin (6.44.6):
+  - FluctSDK (6.44.7)
+  - FluctSDK-MediationAdapter/AppLovin (6.44.7):
     - AppLovinSDK (= 13.6.4)
     - FluctSDK (>= 6.14.0)
-  - FluctSDK-MediationAdapter/Five (6.44.6):
+  - FluctSDK-MediationAdapter/Five (6.44.7):
     - FiveAd (= 3.0.1)
     - FluctSDK (>= 6.14.0)
-  - FluctSDK-MediationAdapter/maio (6.44.6):
+  - FluctSDK-MediationAdapter/maio (6.44.7):
     - FluctSDK (>= 6.14.0)
     - MaioSDK-v2 (= 2.2.3)
-  - FluctSDK-MediationAdapter/Pangle (6.44.6):
+  - FluctSDK-MediationAdapter/Pangle (6.44.7):
     - Ads-Global (= 7.9.1.0)
     - FluctSDK (>= 6.14.0)
   - Google-Mobile-Ads-SDK (11.1.0):
     - GoogleUserMessagingPlatform (>= 1.1)
-  - GoogleMobileAdsMediationFluct (6.44.6):
+  - GoogleMobileAdsMediationFluct (6.44.7):
     - FluctSDK (>= 6.12.1)
     - Google-Mobile-Ads-SDK (>= 9.8.0)
   - GoogleUserMessagingPlatform (2.2.0)
   - MaioSDK-v2 (2.2.3)
-  - MaxMediationAdapterFluct (6.44.6):
+  - MaxMediationAdapterFluct (6.44.7):
     - AppLovinSDK (>= 13.6.4)
     - FluctSDK (>= 6.19.0)
 
@@ -66,13 +66,13 @@ SPEC CHECKSUMS:
   Ads-Global: 3bc69240cb29360318f0911b7c7e10b3df08b6d3
   AppLovinSDK: 730be87bac90c5b0f7d507c3a2530213f7685370
   FiveAd: febdd24752d269ddc9145788f27060e816c227c8
-  FluctSDK: 032327706540447c22a5a9806a3d0268de76d453
-  FluctSDK-MediationAdapter: 9f8b00cb74bc42982f2d41489337279a26223084
+  FluctSDK: a3974041872909f3db2fd3842318c99417789346
+  FluctSDK-MediationAdapter: 1f92d6fc3adfd2d1cbf16234acb865b98067785b
   Google-Mobile-Ads-SDK: 4a1f2ccef63660f9a74efc6a6ea979483d421aaa
-  GoogleMobileAdsMediationFluct: 602b6ec6991828a9b4d197afc2aaa400514a1525
+  GoogleMobileAdsMediationFluct: 465cf2de15657c091c3e1dc73f16f528c4a7c0dd
   GoogleUserMessagingPlatform: d31dbfb40ec02c5d9683029815c5d5a7f46389ee
   MaioSDK-v2: f083c9fe31d4d71cbb3338abd3f9933f7b17a6aa
-  MaxMediationAdapterFluct: 921117d091e3b5469cf5df5c300810114b28c79d
+  MaxMediationAdapterFluct: 313e81d71a9a42e8eefe34285b35a09fc00ffbbd
 
 PODFILE CHECKSUM: e7b9f8ccb42f22334ffe4bb476a68181cdd30003
 

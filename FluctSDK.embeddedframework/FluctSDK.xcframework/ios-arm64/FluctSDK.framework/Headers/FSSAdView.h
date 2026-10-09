@@ -58,6 +58,12 @@ extern FSSAdSize const FSSAdSize320x100;
 
 /**
  * FSSAdViewはバナー広告の表示を行う。
+ *
+ * 複数のSceneを利用するアプリ(UIApplicationSupportsMultipleScenes)では、fluctの広告は同時に一つのSceneでのみ利用できる。
+ * - Sceneを閉じる時点で、他のSceneに表示中のFSSAdViewを保持しないこと。
+ * - Sceneを閉じる時点で、ロード済みでwindowに未表示のFSSAdViewを保持しないこと(閉じるSceneのViewControllerが保持するものも含む)。
+ * - 表示中のFSSAdViewを別のSceneのwindowへ移動しないこと。
+ * これらに反する場合、閉じたSceneおよびそのSceneに表示していたFSSAdViewが解放されないことがある。
  */
 @interface FSSAdView : UIView
 

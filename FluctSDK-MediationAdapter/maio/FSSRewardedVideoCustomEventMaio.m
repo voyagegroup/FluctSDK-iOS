@@ -13,7 +13,7 @@
 @property (nonatomic, copy) NSString *zoneID;
 @end
 
-static NSString *const FSSMaioSupportVersion = @"14.0";
+static NSString *const FSSMaioSupportVersion = @"15.0";
 
 @implementation FSSRewardedVideoCustomEventMaio
 

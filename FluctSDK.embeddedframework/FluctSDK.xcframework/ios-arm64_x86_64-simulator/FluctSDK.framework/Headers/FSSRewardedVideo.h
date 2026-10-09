@@ -26,6 +26,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+/**
+ * FSSRewardedVideoは動画リワード広告の表示を行う。
+ *
+ * 複数のSceneを利用するアプリ(UIApplicationSupportsMultipleScenes)では、fluctの広告は同時に一つのSceneでのみ利用できる。
+ * - Sceneを閉じる時点で、他のSceneで動画リワード広告を表示しないこと。
+ * これに反する場合、他のSceneの広告が閉じられるまで、閉じたSceneが解放されないことがある。
+ */
 @interface FSSRewardedVideo : NSObject
 
 @property (class, nonatomic, readonly) FSSRewardedVideo *sharedInstance NS_SWIFT_NAME(shared);

@@ -68,6 +68,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * 全画面動画広告の表示を行う。
+ *
+ * 複数のSceneを利用するアプリ(UIApplicationSupportsMultipleScenes)では、fluctの広告は同時に一つのSceneでのみ利用できる。
+ * - Sceneを閉じる時点で、他のSceneで全画面動画広告を表示しないこと。
+ * これに反する場合、他のSceneの広告が閉じられるまで、閉じたSceneが解放されないことがある。
  */
 @interface FSSVideoInterstitial : NSObject
 
