@@ -23,8 +23,6 @@ class AdMobRewardedVideoViewController: UIViewController {
         let request = GADRequest()
 
         let setting = FSSRewardedVideoSetting.default
-        // UnityAdsだけ再生しない
-        setting.activation.isUnityAdsActivated = false
         setting.isDebugMode = true
         let extra = GADMAdapterFluctExtras()
         extra.setting = setting

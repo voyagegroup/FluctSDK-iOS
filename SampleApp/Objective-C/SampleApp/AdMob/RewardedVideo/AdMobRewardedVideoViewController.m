@@ -30,7 +30,6 @@ static NSString *const kAdUnitID = @"ca-app-pub-3010029359415397/4697035240";
 
     FSSRewardedVideoSetting *setting = FSSRewardedVideoSetting.defaultSetting;
     setting.debugMode = YES;
-    setting.activation.unityAdsActivated = NO;
 
     GADMAdapterFluctExtras *extras = [GADMAdapterFluctExtras new];
     extras.setting = setting;
